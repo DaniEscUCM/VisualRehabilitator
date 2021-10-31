@@ -1,4 +1,4 @@
-package com.example.visualrehabilitator;
+package com.macularehab;
 
 import org.junit.Test;
 
