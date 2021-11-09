@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_main.xml" value="0.23505434782608695" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27666666666666667" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27666666666666667" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_exercises.xml" value="0.271875" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_settings.xml" value="0.2" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/fragment_second.xml" value="0.33" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/menu/menu_main.xml" value="0.33" />
       </map>
     </option>
   </component>
