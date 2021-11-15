@@ -38,7 +38,7 @@
         app:tint="@color/black" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/dataButton"
         android:layout_width="436dp"
         android:layout_height="243dp"
         android:layout_marginTop="108dp"

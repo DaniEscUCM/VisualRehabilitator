@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".PatientLogin"
+            android:exported="false" />
+        <activity
             android:name=".ExercisesActivity"
             android:exported="false" />
         <activity

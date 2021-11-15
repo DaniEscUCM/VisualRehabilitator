@@ -32,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 Exercises(v);
             }
         });
+
+        //PATIENT
+        Button dataButton = (Button) findViewById(R.id.dataButton);
+        dataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickData(v);
+            }
+        });
     }
 
     public void Settings(View view){
@@ -41,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void Exercises(View view){
         Intent i = new Intent( this, ExercisesActivity.class );
+        startActivity(i);
+    }
+
+    //PATIENT
+    public void onClickData(View view) {
+
+        Intent i = new Intent(this, PatientLogin.class);
         startActivity(i);
     }
 }
