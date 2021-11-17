@@ -35,12 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         //PATIENT
         Button dataButton = (Button) findViewById(R.id.dataButton);
-        dataButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClickData(v);
-            }
-        });
     }
 
     public void Settings(View view){

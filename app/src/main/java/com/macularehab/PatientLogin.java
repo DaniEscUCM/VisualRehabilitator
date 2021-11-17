@@ -14,8 +14,4 @@ public class PatientLogin extends AppCompatActivity  {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_patient_login);
     }
-
-    public void Close(View view){
-        finish();
-    }
 }
