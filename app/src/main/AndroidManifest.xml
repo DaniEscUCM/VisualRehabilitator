@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".FirstExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FirstExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ExercisesActivity"
             android:exported="false" />
         <activity

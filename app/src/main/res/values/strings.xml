@@ -8,4 +8,16 @@
     <string name="textview_settings">Settings</string>
     <string name="textview_exercises">Exercises</string>
     <string name="imagebutton_des_back">Go back</string>
+    <string name="first_exercise">First exercise</string>
+    <string name="second_exercise">Second exercise</string>
+    <string name="third_exercise">Third exercise</string>
+    <string name="fourth_exercise">Fourth exercise</string>
+    <string name="fifth_exercise">Fifth exercise</string>
+    <string name="sixth_exercise">Sixth exercise</string>
+    <string name="seventh_exercise">Seventh exercise</string>
+    <string name="eighth_exercise">Eighth exercise</string>
+    <string name="ninth_exercise">Ninth exercise</string>
+    <string name="button_play">Play button</string>
+    <string name="first_exercise_description">Here would be a description of the exercise</string>
+    <string name="home_button">Home button</string>
 </resources>
