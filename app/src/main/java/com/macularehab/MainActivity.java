@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.macularehab.login.MainLogin;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         //PATIENT
         Button dataButton = (Button) findViewById(R.id.dataButton);
 
-        //askFirstTime();
+        askFirstTime();
     }
 
     public void Settings(View view){
@@ -55,7 +57,10 @@ public class MainActivity extends AppCompatActivity {
     //PATIENT
     public void onClickData(View view) {
 
-        Intent i = new Intent(this, PatientLogin.class);
+        /*Intent i = new Intent(this, PatientLogin.class);
+        startActivity(i);*/
+
+        Intent i = new Intent(getApplicationContext(), MainLogin.class);
         startActivity(i);
     }
 
