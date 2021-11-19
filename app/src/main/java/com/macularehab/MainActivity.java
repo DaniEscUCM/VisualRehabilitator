@@ -1,8 +1,11 @@
 package com.macularehab;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         //PATIENT
         Button dataButton = (Button) findViewById(R.id.dataButton);
+
+        //askFirstTime();
     }
 
     public void Settings(View view){
@@ -52,5 +57,35 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(this, PatientLogin.class);
         startActivity(i);
+    }
+
+    private void askFirstTime() {
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstStart", true);
+
+        if (firstStart) {
+
+            showFirstStart();
+        }
+    }
+
+    private void showFirstStart() {
+
+        new AlertDialog.Builder(this)
+                .setTitle("First Time Dialog")
+                .setMessage("This only be show once")
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create().show();
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
     }
 }
