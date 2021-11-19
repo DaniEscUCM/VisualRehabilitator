@@ -13,12 +13,12 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@string/home_button"
+        android:contentDescription="@string/button_home"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_info"
-        app:tint="#050000" />
+        app:srcCompat="@drawable/house_icon"
+        app:tint="#5C5757" />
 
     <ImageButton
         android:id="@+id/first_exercise_settings"
@@ -39,6 +39,7 @@
         android:layout_width="208dp"
         android:layout_height="197dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

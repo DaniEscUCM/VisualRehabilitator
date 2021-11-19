@@ -17,7 +17,8 @@
     <string name="seventh_exercise">Seventh exercise</string>
     <string name="eighth_exercise">Eighth exercise</string>
     <string name="ninth_exercise">Ninth exercise</string>
-    <string name="button_play">Play button</string>
-    <string name="first_exercise_description">Here would be a description of the exercise</string>
-    <string name="home_button">Home button</string>
+    <string name="button_play">Play</string>
+    <string name="first_exercise_description">Here would be the description of the first exercise</string>
+    <string name="button_home">Home</string>
+    <string name="button_for_click">Button to click</string>
 </resources>
