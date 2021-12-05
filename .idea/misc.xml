@@ -22,6 +22,11 @@
         <entry key="..\:/Users/diego/UCM4/TFG/VisualRehabilitator/app/src/main/res/layout/activity_settings.xml" value="0.14364035087719298" />
         <entry key="..\:/Users/diego/UCM4/TFG/VisualRehabilitator/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.205859375" />
         <entry key="..\:/Users/diego/UCM4/TFG/VisualRehabilitator/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.205859375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.18914473684210525" />
+        <entry key="app/src/main/res/layout/activity_login_professional.xml" value="0.18914473684210525" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14035087719298245" />
+        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.18914473684210525" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.18914473684210525" />
       </map>
     </option>
   </component>
