@@ -60,7 +60,7 @@
                 android:focusable="true" />
 
             <Button
-                android:id="@+id/exercise2"
+                android:id="@+id/button_exercise2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/second_exercise"

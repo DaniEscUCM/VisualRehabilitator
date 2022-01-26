@@ -21,7 +21,7 @@ public class ExercisesActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Close(v);
+                close(v);
             }
         });
 
@@ -32,13 +32,24 @@ public class ExercisesActivity extends AppCompatActivity {
                 first_exercise(v);
             }
         });
+        Button second_exercise_button = (Button) findViewById(R.id.button_exercise2);
+        second_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                second_exercise(v);
+            }
+        });
     }
-    public void Close(View view){
+    public void close(View view){
         finish();
     }
 
     public void first_exercise(View view){
         Intent i = new Intent( this, FirstExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void second_exercise(View view){
+        Intent i = new Intent( this, ProfesionalActivity.class );
         startActivity(i);
     }
 }
