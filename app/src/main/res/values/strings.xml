@@ -3,6 +3,7 @@
     <string name="button_data">Data</string>
     <string name="button_create">Create</string>
     <string name="button_singin">Sing In</string>
+    <string name="button_login">Log In</string>
     <string name="button_des_data">Data</string>
     <string name="button_exercices">Exercices</string>
     <string name="button_des_exercices">Exercices</string>
@@ -13,6 +14,7 @@
     <string name="textview_username">Username</string>
     <string name="textview_pasword">Pasword</string>
     <string name="textview_profesional_singin">Profesional Singin</string>
+    <string name="textview_profesional_loggin">Profesional Log in</string>
     <string name="imagebutton_des_back">Go back</string>
     <string name="first_exercise">First exercise</string>
     <string name="second_exercise">Second exercise</string>
@@ -29,4 +31,10 @@
     <string name="button_for_click">Button to click</string>
     <string name="toast_user_created">User created</string>
     <string name="toast_fill_fields">please fill all the fields</string>
+    <string name="textview_loginPatient">Patient</string>
+    <string name="textview_loginProfessional">Professional</string>
+    <string name="textview_whoIsUsing">Who is using this app?</string>
+    <string name="textview_infoLogin">Already have an account</string>
+    <string name="textview_infoSingin">Create an account</string>
+    <string name="textview_professionalAccount">Professional account</string>
 </resources>

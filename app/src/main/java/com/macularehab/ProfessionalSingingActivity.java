@@ -2,6 +2,7 @@ package com.macularehab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,7 @@ import com.macularehab.model.Professional;
 
 import java.util.UUID;
 
-public class ProfesionalActivity extends AppCompatActivity {
+public class ProfessionalSingingActivity extends AppCompatActivity {
 
     EditText nameP, unameP, paswP;
     FirebaseDatabase firebaseDatabase;
@@ -27,7 +28,7 @@ public class ProfesionalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_profesional);
+        setContentView(R.layout.activity_professional_singing);
 
         //initialize database
         FirebaseApp.initializeApp(this);
@@ -60,13 +61,13 @@ public class ProfesionalActivity extends AppCompatActivity {
     }
 
     public void singInProfessional (View view){
-        //validar
+        //validate
         String name = nameP.getText().toString();
         String uname = unameP.getText().toString();
         String pasw = paswP.getText().toString(); //ver como guardar el hash
-        validar();
+
         if(name.equals("")||uname.equals("")||pasw.equals("")) {
-            validar();
+            validate();
 
         }else{
             Professional p = new Professional();
@@ -76,12 +77,13 @@ public class ProfesionalActivity extends AppCompatActivity {
             p.setUid(UUID.randomUUID().toString());
             databaseReference.child("Professional").child(p.getUid()).setValue(p);
             Toast.makeText(this, "User created", Toast.LENGTH_LONG).show();
-            limpiar();
+            clean();
+            goToMain();
         }
 
     }
 
-    public void validar(){
+    public void validate(){
         String name = nameP.getText().toString();
         String uname = unameP.getText().toString();
         String pasw = paswP.getText().toString(); //ver como guardar el hash
@@ -96,9 +98,14 @@ public class ProfesionalActivity extends AppCompatActivity {
         }
     }
 
-    public void limpiar(){
+    public void clean(){
         nameP.setText("");
         unameP.setText("");
         paswP.setText("");
+    }
+
+    public void goToMain(){
+        Intent i = new Intent( this, MainActivity.class);
+        startActivity(i);
     }
 }

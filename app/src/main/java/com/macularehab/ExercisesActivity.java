@@ -49,7 +49,6 @@ public class ExercisesActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void second_exercise(View view){
-        Intent i = new Intent( this, ProfesionalActivity.class );
-        startActivity(i);
+       //to do
     }
 }
