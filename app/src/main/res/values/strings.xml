@@ -37,4 +37,7 @@
     <string name="textview_infoLogin">Already have an account</string>
     <string name="textview_infoSingin">Create an account</string>
     <string name="textview_professionalAccount">Professional account</string>
+    <string name="textview_welcome">Welcome</string>
+    <string name="textview_patientlist">Patient list</string>
+    <string name="button_newPatient">New patient</string>
 </resources>

@@ -105,7 +105,8 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
     }
 
     public void goToMain(){
-        Intent i = new Intent( this, MainActivity.class);
+        Intent i = new Intent( this, ProfessionalPageActivity.class);
+        i.putExtra("username",unameP.getText().toString()); //we pass the username to activity : Professional Page
         startActivity(i);
     }
 }

@@ -68,7 +68,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     }
 
     public void goToMain(){
-        Intent i = new Intent( this, MainActivity.class);
+        Intent i = new Intent( this, ProfessionalPageActivity.class);
+        i.putExtra("username",unameP.getText().toString()); //we pass the username to activity : Professional Page
         startActivity(i);
     }
 
@@ -111,7 +112,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     }
 
-    public void correct(){
+    public void correct(){ //to make provide correct error message
         if(!encontrado[0]){
             Toast.makeText(this, "User not found", Toast.LENGTH_LONG).show();
             unameP.setError("not found");
@@ -127,7 +128,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             goToMain();
         }
     }
-    public void validate(){
+    public void validate(){ //to make sure everything is filled
         String name = unameP.getText().toString();
         String pasw = paswP.getText().toString();
         if(name.equals("")){
