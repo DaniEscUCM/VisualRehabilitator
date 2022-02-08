@@ -12,10 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
-            android:name=".login.MainLogin"
+            android:name=".ProfessionalPageActivity"
             android:exported="false" />
         <activity
-            android:name=".PatientLogin"
+            android:name=".ProfessionalLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfessionalSingingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfessionalIdentificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IdentificationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FirstExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FirstExerciseDescriptionActivity"
             android:exported="false" />
         <activity
             android:name=".ExercisesActivity"
@@ -25,13 +46,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

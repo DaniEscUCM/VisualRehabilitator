@@ -7,11 +7,12 @@
     tools:context=".ExercisesActivity">
 
     <ImageButton
-        android:id="@+id/imageButton_back_exerc"
+        android:id="@+id/imageButton_back_exerc_menu"
         android:layout_width="90dp"
         android:layout_height="79dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#00FFFFFF"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
@@ -23,10 +24,122 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="52dp"
+        android:contentDescription="@string/textview_exercises"
         android:text="@string/textview_exercises"
         android:textSize="60sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc_menu"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="1277dp"
+        android:layout_height="710dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_exercise1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/first_exercise"
+                android:text="@string/first_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5"
+                android:focusable="true" />
+
+            <Button
+                android:id="@+id/button_exercise2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/second_exercise"
+                android:text="@string/second_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+            <Button
+                android:id="@+id/exercise3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/third_exercise"
+                android:text="@string/third_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+            <Button
+                android:id="@+id/exercise4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/fourth_exercise"
+                android:text="@string/fourth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+            <Button
+                android:id="@+id/exercise5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/fifth_exercise"
+                android:text="@string/fifth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+            <Button
+                android:id="@+id/exercise6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/sixth_exercise"
+                android:text="@string/sixth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+            <Button
+                android:id="@+id/exercise7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/seventh_exercise"
+                android:text="@string/seventh_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+            <Button
+                android:id="@+id/exercise8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/eighth_exercise"
+                android:text="@string/eighth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+            <Button
+                android:id="@+id/exercise9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ninth_exercise"
+                android:text="@string/ninth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp"
+                app:iconTint="#3F51B5" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
