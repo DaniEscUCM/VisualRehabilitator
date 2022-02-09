@@ -24,6 +24,9 @@
             android:name=".ProfessionalIdentificationActivity"
             android:exported="false" />
         <activity
+            android:name=".PatientLogin"
+            android:exported="false" />
+        <activity
             android:name=".IdentificationActivity"
             android:exported="true">
             <intent-filter>
