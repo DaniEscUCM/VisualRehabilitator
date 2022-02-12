@@ -2,7 +2,7 @@
     <string name="app_name">MaculaRehab</string>
     <string name="button_data">Data</string>
     <string name="button_create">Create</string>
-    <string name="button_singin">Sing In</string>
+    <string name="button_singin">Register</string>
     <string name="button_login">Log In</string>
     <string name="button_des_data">Data</string>
     <string name="button_exercices">Exercices</string>
