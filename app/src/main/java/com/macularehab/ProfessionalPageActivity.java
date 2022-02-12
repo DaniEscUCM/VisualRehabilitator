@@ -29,10 +29,23 @@ public class ProfessionalPageActivity extends AppCompatActivity {
                 goToMain(v);
             }
         });
+
+        Button button_add_patient =(Button) findViewById(R.id.button_newpatient);
+        button_add_patient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                add_patient(v);
+            }
+        });
     }
 
     public void goToMain(View view){
         Intent i = new Intent( this, MainActivity.class);
+        startActivity(i);
+    }
+
+    public void add_patient(View view){
+        Intent i = new Intent( this, MapTestExplanation.class);
         startActivity(i);
     }
 }

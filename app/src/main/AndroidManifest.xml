@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".MapTest"
+            android:exported="false" />
+        <activity
+            android:name=".MapTestExplanation"
+            android:exported="false" />
+        <activity
             android:name=".ProfessionalPageActivity"
             android:exported="false" />
         <activity
@@ -74,7 +80,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
