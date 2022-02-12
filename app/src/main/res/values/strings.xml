@@ -4,6 +4,8 @@
     <string name="button_create">Create</string>
     <string name="button_singin">Register</string>
     <string name="button_login">Log In</string>
+    <string name="button_login_patient">LOGIN</string>
+    <string name="button_signup_patient">SIGNUP</string>
     <string name="button_des_data">Data</string>
     <string name="button_exercices">Exercices</string>
     <string name="button_des_exercices">Exercices</string>
