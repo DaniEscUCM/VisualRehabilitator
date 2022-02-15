@@ -26,7 +26,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="328dp"
         android:layout_marginTop="64dp"
-        android:text="@string/textview_profesional_singin"
+        android:text="@string/textview_professional_singin"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc_prof"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/textview_pasword"
+            android:hint="@string/textview_password"
             android:inputType="textPassword"
             android:minHeight="48dp" />
 

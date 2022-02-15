@@ -32,114 +32,132 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc_menu"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="1277dp"
-        android:layout_height="710dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/button_exercise1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:clickable="true"
+        android:contentDescription="@string/first_exercise"
+        android:focusable="true"
+        android:text="@string/first_exercise"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/button_exercise2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/pink_dark"
+        android:clickable="true"
+        android:contentDescription="@string/second_exercise"
+        android:focusable="true"
+        android:text="@string/second_exercise"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise1" />
 
-            <Button
-                android:id="@+id/button_exercise1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:contentDescription="@string/first_exercise"
-                android:text="@string/first_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5"
-                android:focusable="true" />
+    <Button
+        android:id="@+id/button_exercise3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:contentDescription="@string/third_exercise"
+        android:focusable="true"
+        android:text="@string/third_exercise"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise2" />
 
-            <Button
-                android:id="@+id/button_exercise2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/second_exercise"
-                android:text="@string/second_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
+    <Button
+        android:id="@+id/exercise4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/pink_dark"
+        android:clickable="true"
+        android:contentDescription="@string/fourth_exercise"
+        android:focusable="true"
+        android:text="@string/fourth_exercise"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise3" />
 
-            <Button
-                android:id="@+id/exercise3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/third_exercise"
-                android:text="@string/third_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
+    <Button
+        android:id="@+id/exercise5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/fifth_exercise"
+        android:focusable="true"
+        android:text="@string/fifth_exercise"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise4" />
 
-            <Button
-                android:id="@+id/exercise4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/fourth_exercise"
-                android:text="@string/fourth_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
+    <Button
+        android:id="@+id/exercise6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/pink_dark"
+        android:clickable="true"
+        android:contentDescription="@string/sixth_exercise"
+        android:focusable="true"
+        android:text="@string/sixth_exercise"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise5" />
 
-            <Button
-                android:id="@+id/exercise5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/fifth_exercise"
-                android:text="@string/fifth_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
+    <Button
+        android:id="@+id/exercise7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/seventh_exercise"
+        android:text="@string/seventh_exercise"
+        android:focusable="true"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise6" />
 
-            <Button
-                android:id="@+id/exercise6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/sixth_exercise"
-                android:text="@string/sixth_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
+    <Button
+        android:id="@+id/exercise8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/pink_dark"
+        android:clickable="true"
+        android:contentDescription="@string/eighth_exercise"
+        android:text="@string/eighth_exercise"
+        android:focusable="true"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise7" />
 
-            <Button
-                android:id="@+id/exercise7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/seventh_exercise"
-                android:text="@string/seventh_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
+    <Button
+        android:id="@+id/exercise9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/ninth_exercise"
+        android:text="@string/ninth_exercise"
+        android:focusable="true"
+        android:textAlignment="viewStart"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise8" />
 
-            <Button
-                android:id="@+id/exercise8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/eighth_exercise"
-                android:text="@string/eighth_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
-
-            <Button
-                android:id="@+id/exercise9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/ninth_exercise"
-                android:text="@string/ninth_exercise"
-                android:textAlignment="viewStart"
-                android:textSize="48sp"
-                app:iconTint="#3F51B5" />
-
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
