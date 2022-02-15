@@ -21,7 +21,7 @@
         app:tint="#5C5757" />
 
     <ImageButton
-        android:id="@+id/first_exercise_settings"
+        android:id="@+id/third_exercise_settings"
         android:layout_width="99dp"
         android:layout_height="91dp"
         android:layout_marginTop="40dp"
@@ -46,6 +46,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?android:attr/listChoiceIndicatorSingle" />
+        app:srcCompat="@android:drawable/radiobutton_off_background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

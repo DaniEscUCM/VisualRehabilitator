@@ -1,23 +1,21 @@
 package com.macularehab;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class FirstExerciseActivity extends AppCompatActivity {
+public class ThirdExerciseActivity extends AppCompatActivity {
     int counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_exercise);
+        setContentView(R.layout.activity_third_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //move();
         ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
@@ -28,7 +26,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_setting = (ImageButton) findViewById(R.id.first_exercise_settings);
+        ImageButton button_setting = (ImageButton) findViewById(R.id.third_exercise_settings);
         button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,28 +43,6 @@ public class FirstExerciseActivity extends AppCompatActivity {
         });
     }
 
-/*
-    //Declare timer
-    CountDownTimer cTimer = null;
-
-    //Start timer function
-    void startTimer() {
-        cTimer = new CountDownTimer(30, 10) {
-            public void onTick(long millisUntilFinished) {
-            }
-            public void onFinish() {
-            }
-        };
-        cTimer.start();
-    }
-
-
-    //cancel timer
-    void cancelTimer() {
-        if(cTimer!=null)
-            cTimer.cancel();
-    }*/
-
     private int move(int counter){
         ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
         Display disp_info = getWindowManager().getDefaultDisplay();
@@ -80,16 +56,17 @@ public class FirstExerciseActivity extends AppCompatActivity {
             button_dot.setY(y);
         }
         else if(counter > 0 && counter < 5) {
-            //startTimer();
-            //disp_info.getSize(point_info);
+            disp_info.getSize(point_info);
             int u = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
             int v = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
             button_dot.getPivotX();
             button_dot.setX(u);
             button_dot.setY(v);
         }
-        else { finish(); }
-        return ++counter;
+        else {
+            finish();
+        }
+        return counter++;
     }
 
     public void Close(View view){

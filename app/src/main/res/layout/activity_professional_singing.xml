@@ -12,7 +12,7 @@
         android:layout_height="79dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="48dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="@color/grey"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"

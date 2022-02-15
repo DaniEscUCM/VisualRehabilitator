@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/first_exercise_description"
+    android:id="@+id/third_exercise_description"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
     tools:context=".FirstExerciseDescriptionActivity">
 
     <ImageButton
-        android:id="@+id/imageButton_back_exerc1"
+        android:id="@+id/imageButton_back_exerc3"
         android:layout_width="100dp"
         android:layout_height="101dp"
         android:layout_marginStart="64dp"
