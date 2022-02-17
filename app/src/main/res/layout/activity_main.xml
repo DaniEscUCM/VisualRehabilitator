@@ -43,7 +43,7 @@
         android:layout_height="243dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="#3F51B5"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/button_des_data"
         android:text="@string/button_data"
         android:textSize="60sp"

@@ -4,21 +4,23 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ThirdExerciseActivity extends AppCompatActivity {
-    int counter = 0;
+    int counter = 0, counterCorrect, total = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //move();
-        ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
+        counterCorrect = 0;
+        ImageButton button_dot = findViewById(R.id.dot_button);
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +28,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_setting = (ImageButton) findViewById(R.id.third_exercise_settings);
+        ImageButton button_setting = findViewById(R.id.third_exercise_settings);
         button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +36,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_home = (ImageButton) findViewById(R.id.home_button);
+        ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,33 +45,78 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         });
     }
 
+    //Declare timer
+    CountDownTimer cTimer = null;
+
+    //Start timer function
+    void startTimer() {
+        //10s (10000 mili segundos) para hacer click en el circulo
+        //Lo pongo a 3s para hacer pruebas
+        cTimer = new CountDownTimer(3000, 10) {
+            public void onTick(long millisUntilFinished) { }
+            public void onFinish() {
+                move(++counter);
+            }
+        };
+        cTimer.start();
+    }
+
+    //cancel timer
+    /*void cancelTimer() {
+        if(cTimer!=null)
+            cTimer.cancel();
+    }*/
+
     private int move(int counter){
-        ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
+        startTimer();
+        ImageButton button_dot = findViewById(R.id.dot_button);
         Display disp_info = getWindowManager().getDefaultDisplay();
         Point point_info = new Point();
         disp_info.getSize(point_info);
+        int x, y;
         if(counter == 0) {   //La primera vez aparece en el centro
-            int x = (int) ((point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            int y = (int) ((point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
+            /* x = point_info.x - (2 * button_dot.getWidth()) + button_dot.getWidth();
+            y = point_info.y - (2 * button_dot.getHeight()) + button_dot.getHeight();*/
+            x = button_dot.getWidth() + button_dot.getWidth();
+            y = button_dot.getHeight() + button_dot.getHeight();
+            button_dot.getPivotX();
+            button_dot.setX(x);
+            button_dot.setY(y);
+            ++counterCorrect;
+            //por algun motivo, al primer punto le da igual el temporizador
+
+            //Esto sobraria pero sin esto el primer punto dek else if SIEMPRE sale en el mismo sitio (abajo drch)
+            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
+            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
             button_dot.getPivotX();
             button_dot.setX(x);
             button_dot.setY(y);
         }
-        else if(counter > 0 && counter < 5) {
-            disp_info.getSize(point_info);
-            int u = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            int v = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
+        else if(counter > 0 && counter < total) {
+            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
+            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
             button_dot.getPivotX();
-            button_dot.setX(u);
-            button_dot.setY(v);
+            button_dot.setX(x);
+            button_dot.setY(y);
+            ++counterCorrect;
         }
         else {
             finish();
         }
-        return counter++;
+        return ++counter;
     }
 
     public void Close(View view){
+        if (counterCorrect*2 >= total) { //si ha acertado el doble o mas del total
+            String message_correct = "Well done, you hit " + counterCorrect + "out of" + total;
+            Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+
+            //se desbloquea el siguiente ejercicio
+        }
+        else {
+            String message_failed = "Sorry, try again";
+            Toast.makeText(this, message_failed, Toast.LENGTH_LONG).show();
+        }
         finish();
     }
 

@@ -8,16 +8,16 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+public class FourthExerciseDescriptionActivity extends AppCompatActivity {
 
-public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        setContentView(R.layout.activity_third_exercise_description);
+        setContentView(R.layout.activity_fourth_exercise_description);
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc3);
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc4);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +25,7 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex3);
+        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex4);
         button_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +33,7 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_settings = (ImageButton) findViewById(R.id.conf_third_exercise_button);
+        ImageButton button_settings = (ImageButton) findViewById(R.id.conf_fourth_exercise_button);
         button_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,18 +43,16 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void setting(View v) {
-        Intent i = new Intent( this, SettingsActivity.class );
+        Intent i = new Intent(this, SettingsActivity.class);
         startActivity(i);
     }
 
     private void play_exercise(View v) {
-        Intent i = new Intent( this, ThirdExerciseActivity.class );
+        Intent i = new Intent(this, FourthExerciseActivity.class);
         startActivity(i);
     }
 
-    public void Close(View view){
+    public void Close(View view) {
         finish();
     }
-
-
 }

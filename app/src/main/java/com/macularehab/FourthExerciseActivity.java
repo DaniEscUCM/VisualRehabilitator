@@ -11,13 +11,12 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-public class SecondExerciseActivity extends AppCompatActivity {
+public class FourthExerciseActivity extends AppCompatActivity {
     int counter = 0, counterCorrect, total = 7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_exercise);
+        setContentView(R.layout.activity_fourth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         counterCorrect = 0;
         ImageButton button_dot = findViewById(R.id.dot_button);
@@ -28,7 +27,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_setting = findViewById(R.id.first_exercise_settings);
+        ImageButton button_setting = findViewById(R.id.fourth_exercise_settings);
         button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -48,6 +48,13 @@ public class ExercisesActivity extends AppCompatActivity {
                 third_exercise(v);
             }
         });
+        Button fourth_exercise_button = (Button) findViewById(R.id.button_exercise4);
+        fourth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fourth_exercise(v);
+            }
+        });
 
     }
     public void close(View view){
@@ -65,6 +72,10 @@ public class ExercisesActivity extends AppCompatActivity {
 
     public void third_exercise(View view){
         Intent i = new Intent( this, ThirdExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void fourth_exercise(View view){
+        Intent i = new Intent( this, FourthExerciseDescriptionActivity.class );
         startActivity(i);
     }
 }

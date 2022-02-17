@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button_exercise2" />
 
     <Button
-        android:id="@+id/exercise4"
+        android:id="@+id/button_exercise4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button_exercise3" />
 
     <Button
-        android:id="@+id/exercise5"
+        android:id="@+id/button_exercise5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -101,10 +101,10 @@
         android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise4" />
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise4" />
 
     <Button
-        android:id="@+id/exercise6"
+        android:id="@+id/button_exercise6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -116,10 +116,10 @@
         android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise5" />
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise5" />
 
     <Button
-        android:id="@+id/exercise7"
+        android:id="@+id/button_exercise7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -129,10 +129,10 @@
         android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise6" />
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise6" />
 
     <Button
-        android:id="@+id/exercise8"
+        android:id="@+id/button_exercise8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -144,10 +144,10 @@
         android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise7" />
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise7" />
 
     <Button
-        android:id="@+id/exercise9"
+        android:id="@+id/button_exercise9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -157,7 +157,7 @@
         android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise8" />
+        app:layout_constraintTop_toBottomOf="@+id/button_exercise8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
