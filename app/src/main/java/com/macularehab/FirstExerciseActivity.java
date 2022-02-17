@@ -24,9 +24,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
         ImageButton button_dot = findViewById(R.id.dot_button);
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                counter = move(counter);
-            }
+            public void onClick(View v) { counter = move(counter); }
         });
 
         ImageButton button_setting = findViewById(R.id.first_exercise_settings);
@@ -76,8 +74,6 @@ public class FirstExerciseActivity extends AppCompatActivity {
         disp_info.getSize(point_info);
         int x, y;
         if(counter == 0) {   //La primera vez aparece en el centro
-            /* x = point_info.x - (2 * button_dot.getWidth()) + button_dot.getWidth();
-            y = point_info.y - (2 * button_dot.getHeight()) + button_dot.getHeight();*/
             x = button_dot.getWidth() + button_dot.getWidth();
             y = button_dot.getHeight() + button_dot.getHeight();
             button_dot.getPivotX();
