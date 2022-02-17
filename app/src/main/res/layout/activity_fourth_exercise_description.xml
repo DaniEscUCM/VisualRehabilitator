@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/first_exercise_description"
+    android:id="@+id/third_exercise_description"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".FirstExerciseDescriptionActivity">
+    tools:context=".FourthExerciseDescriptionActivity">
 
     <ImageButton
-        android:id="@+id/imageButton_back_exerc1"
+        android:id="@+id/imageButton_back_exerc4"
         android:layout_width="100dp"
         android:layout_height="101dp"
         android:layout_marginStart="64dp"
@@ -17,25 +17,25 @@
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/conf_first_exercise_button"
+        app:layout_constraintBottom_toBottomOf="@+id/conf_fourth_exercise_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/conf_first_exercise_button"
+        app:layout_constraintTop_toTopOf="@+id/conf_fourth_exercise_button"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
-        android:id="@+id/textViewFirstExerciseDescription"
+        android:id="@+id/textViewFourthExerciseDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
         android:layout_marginTop="52dp"
-        android:text="@string/first_exercise"
+        android:text="@string/fourth_exercise"
         android:textSize="60sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc1"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/button_play_ex1"
+        android:id="@+id/button_play_ex4"
         android:layout_width="147dp"
         android:layout_height="151dp"
         android:layout_marginBottom="48dp"
@@ -51,7 +51,7 @@
         app:tint="@color/black" />
 
     <ImageButton
-        android:id="@+id/conf_first_exercise_button"
+        android:id="@+id/conf_fourth_exercise_button"
         android:layout_width="112dp"
         android:layout_height="105dp"
         android:layout_marginEnd="80dp"
@@ -60,23 +60,24 @@
         android:contentDescription="@string/imagebutton_des_settings"
         android:focusable="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewFirstExerciseDescription"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewFourthExerciseDescription"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewFirstExerciseDescription"
+        app:layout_constraintTop_toTopOf="@+id/textViewFourthExerciseDescription"
         app:srcCompat="@android:drawable/ic_menu_manage"
-        app:tint="#000000" />
+        app:tint="@color/black" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView"
         android:layout_width="887dp"
         android:layout_height="332dp"
         android:layout_marginTop="128dp"
         android:gravity="center"
-        android:text="@string/first_exercise_description"
+        android:text="@string/fourth_exercise_description"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFirstExerciseDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewFourthExerciseDescription" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

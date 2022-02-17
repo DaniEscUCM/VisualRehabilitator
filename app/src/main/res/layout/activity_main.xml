@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="73dp"
@@ -38,18 +38,18 @@
         app:tint="@color/black" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_data"
         android:layout_width="436dp"
         android:layout_height="243dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="#3F51B5"
+        android:backgroundTint="@color/blue"
         android:contentDescription="@string/button_des_data"
         android:text="@string/button_data"
         android:textSize="60sp"
         app:layout_constraintEnd_toStartOf="@+id/button_exercises"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_app_name" />
 
     <Button
         android:id="@+id/button_exercises"
@@ -57,14 +57,13 @@
         android:layout_height="243dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="120dp"
-        android:backgroundTint="#3F51B5"
+        android:backgroundTint="@color/pink_dark"
         android:clickable="true"
-        android:contentDescription="@string/button_des_exercices"
-        android:text="@string/button_exercices"
-        android:textColor="#FDF5F8"
+        android:contentDescription="@string/button_des_exercises"
+        android:focusable="true"
+        android:text="@string/button_exercises"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:focusable="true" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_app_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
