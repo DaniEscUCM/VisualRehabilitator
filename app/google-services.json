@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "698288178498",
+    "project_id": "macularehab",
+    "storage_bucket": "macularehab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698288178498:android:ec52a291992af6b8b1f4db",
+        "android_client_info": {
+          "package_name": "com.macularehab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698288178498-0b30ponco8hfg0gq09prbtdru57condu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbJHZx2jlBrdHtRlm0dmb7N6jAB3nWO2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698288178498-0b30ponco8hfg0gq09prbtdru57condu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

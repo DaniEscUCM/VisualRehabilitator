@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="73dp"
+        android:layout_marginBottom="504dp"
+        android:contentDescription="@string/app_name"
+        android:text="@string/app_name"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_settings" />
+
+    <ImageButton
+        android:id="@+id/imageButton_settings"
+        android:layout_width="133dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="96dp"
+        android:backgroundTint="#00FFFFFF"
+        android:clickable="true"
+        android:contentDescription="@string/imagebutton_des_settings"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_manage"
+        app:tint="@color/black" />
+
+    <Button
+        android:id="@+id/dataButton"
+        android:layout_width="436dp"
+        android:layout_height="243dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#3F51B5"
+        android:contentDescription="@string/button_des_data"
+        android:onClick="onClickData"
+        android:text="@string/button_data"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_exercises"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button_exercises"
+        android:layout_width="436dp"
+        android:layout_height="243dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="120dp"
+        android:backgroundTint="#3F51B5"
+        android:clickable="true"
+        android:contentDescription="@string/button_des_exercices"
+        android:text="@string/button_exercices"
+        android:textColor="#FDF5F8"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:focusable="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
