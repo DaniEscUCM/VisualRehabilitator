@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapTestLeftActivity">
+
+    <ImageView
+        android:id="@+id/circle_grid"
+        android:layout_width="546dp"
+        android:layout_height="557dp"
+        android:contentDescription="@string/dot_instruction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rejilla_circular" />
+
+    <TextView
+        android:id="@+id/textInstruction"
+        android:layout_width="573dp"
+        android:layout_height="256dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/dot_instruction"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/centre_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674" />
+
+    <ImageView
+        android:id="@+id/centre_dot"
+        android:layout_width="27dp"
+        android:layout_height="37dp"
+        android:contentDescription="@string/dot_instruction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/red_dot" />
+
+    <ImageView
+        android:id="@+id/find_dot"
+        android:layout_width="31dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/dot_instruction"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/centre_dot"
+        app:layout_constraintEnd_toEndOf="@+id/circle_grid"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toEndOf="@+id/centre_dot"
+        app:layout_constraintTop_toTopOf="@+id/circle_grid"
+        app:layout_constraintVertical_bias="0.726"
+        app:srcCompat="@drawable/red_dot" />
+
+    <ImageButton
+        android:id="@+id/nextButtonTest1"
+        android:layout_width="109dp"
+        android:layout_height="106dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/next_test"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_media_ff"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="#000000" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

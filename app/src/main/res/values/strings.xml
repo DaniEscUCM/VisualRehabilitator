@@ -62,4 +62,11 @@
     <string name="textview_welcome">Welcome</string>
     <string name="textview_patientlist">Patient list</string>
     <string name="button_newPatient">New patient</string>
+    <string name="distance_30cm">Face the screen with a 30cm distance</string>
+    <string name="touch_instruction">Touch the screen when you see the new dot</string>
+    <string name="cover_right_eye">Without pressing, cover right eye</string>
+    <string name="cover_left_eye">Without pressing, cover left eye</string>
+    <string name="circular_grid">Circular grid</string>
+    <string name="dot_instruction">Don`t move your head and look at the centre dot</string>
+    <string name="next_test">Press to go to next test</string>
 </resources>
