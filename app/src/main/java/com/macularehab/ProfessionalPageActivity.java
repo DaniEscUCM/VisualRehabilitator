@@ -45,7 +45,7 @@ public class ProfessionalPageActivity extends AppCompatActivity {
     }
 
     public void add_patient(View view){
-        Intent i = new Intent( this, MapTestExplanation.class);
+        Intent i = new Intent( this, MapTestLeftExplanationActivity.class);
         startActivity(i);
     }
 }

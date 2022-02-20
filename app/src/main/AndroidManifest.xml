@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
-            android:name=".MapTest"
+            android:name=".MapTestLeftActivity"
             android:exported="false" />
         <activity
-            android:name=".MapTestExplanation"
+            android:name=".MapTestLeftExplanationActivity"
             android:exported="false" />
         <activity
             android:name=".ProfessionalPageActivity"

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class MapTestExplanation extends AppCompatActivity {
+public class MapTestLeftExplanationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class MapTestExplanation extends AppCompatActivity {
     }
 
     private void play_test(View v) {
-        Intent i = new Intent( this, MapTest.class );
+        Intent i = new Intent( this, MapTestLeftActivity.class );
         startActivity(i);
     }
 

@@ -4,22 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapTestExplanation">
+    tools:context=".MapTestLeftExplanationActivity">
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="255dp"
         android:layout_height="56dp"
-        android:layout_marginTop="344dp"
-        android:text="@string/cover_left_eye"
+        android:layout_marginBottom="40dp"
+        android:text="@string/cover_right_eye"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton_play"
         app:layout_constraintEnd_toStartOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toEndOf="@+id/distance_instruction"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toEndOf="@+id/distance_instruction" />
 
     <TextView
         android:id="@+id/distance_instruction"
@@ -49,28 +47,30 @@
         app:srcCompat="@android:drawable/ic_media_play"
         app:tint="#FD1F4C02" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="213dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="488dp"
-        android:contentDescription="@string/distance_30cm"
-        android:scaleX="-1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/perfil" />
-
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/imageFilterView3"
         android:layout_width="272dp"
         android:layout_height="205dp"
-        android:layout_marginStart="188dp"
+        android:layout_marginEnd="496dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageFilterView5"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/pantalla" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="213dp"
+        android:layout_height="194dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="80dp"
+        android:contentDescription="@string/distance_30cm"
+        android:scaleX="-1"
+        app:layout_constraintBottom_toTopOf="@+id/distance_instruction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_back_map_test"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/perfil" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/imageFilterView5"
@@ -79,9 +79,10 @@
         android:contentDescription="@string/touch_instruction"
         app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66"
         app:srcCompat="@drawable/touch_sin_fondo" />
 
     <TextView
@@ -108,5 +109,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cover_right_eye"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
+        app:layout_constraintEnd_toStartOf="@+id/imageFilterView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageFilterView3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
