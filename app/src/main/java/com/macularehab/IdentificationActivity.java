@@ -33,7 +33,9 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     public void patient(View view){
-        //fill
+        Intent patientView = new Intent(this, PatientIdentificationActivity.class);
+        //Intent patientView = new Intent(this, PatientLogin.class);
+        startActivity(patientView);
     }
 
     public void professional(View view){
