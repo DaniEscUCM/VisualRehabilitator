@@ -74,7 +74,12 @@
         <activity
             android:name=".FourthExerciseDescriptionActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".FifthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FifthExerciseDescriptionActivity"
+            android:exported="false" />
         <activity
             android:name=".ExercisesActivity"
             android:exported="false" />

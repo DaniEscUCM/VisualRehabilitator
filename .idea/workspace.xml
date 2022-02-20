@@ -26,9 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60d64969-d0ba-4436-9001-4c140891afe7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ExercisesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ExercisesActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FirstExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FirstExerciseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SecondExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SecondExerciseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ThirdExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ThirdExerciseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercises.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercises.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_second_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_second_exercise.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +145,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alba\Desktop\Uni\TFG\VisualRehabilitator\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.macularehab" />
     </key>
     <key name="android.template.-1139481558">
       <recent name="com.macularehab" />

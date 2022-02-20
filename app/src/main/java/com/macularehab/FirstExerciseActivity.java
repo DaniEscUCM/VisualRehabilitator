@@ -104,6 +104,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view){
+        finish();
         if (counterCorrect*2 >= total) { //si ha acertado el doble o mas del total
             String message_correct = "Well done, you hit " + counterCorrect + "out of" + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
@@ -114,7 +115,6 @@ public class FirstExerciseActivity extends AppCompatActivity {
             String message_failed = "Sorry, try again";
             Toast.makeText(this, message_failed, Toast.LENGTH_LONG).show();
         }
-        finish();
     }
 
     public void Settings(View view){

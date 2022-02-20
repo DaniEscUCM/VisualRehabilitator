@@ -5,28 +5,46 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ThirdExerciseActivity extends AppCompatActivity {
-    int counter = 0, counterCorrect, total = 5;
+    private int counter = 0, counterCorrect;
+    private final int total = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         counterCorrect = 0;
+        /*List<Number> numbers = null;
+        for(int i = 1; i < 4;i++) {
+            numbers.add(i);
+        }
+        //arrayOrder.shuffle();
+        Collections.shuffle(numbers);*/
         ImageButton button_dot = findViewById(R.id.dot_button);
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter = move(counter);
+                startTimer();
+                counter = move2(counter);
+                //counter2 = move2(counter2);
             }
         });
+
 
         ImageButton button_setting = findViewById(R.id.third_exercise_settings);
         button_setting.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +73,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         cTimer = new CountDownTimer(3000, 10) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
-                move(++counter);
+                move2(++counter);
             }
         };
         cTimer.start();
@@ -67,6 +85,8 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             cTimer.cancel();
     }*/
 
+
+/*
     private int move(int counter){
         startTimer();
         ImageButton button_dot = findViewById(R.id.dot_button);
@@ -74,27 +94,20 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         Point point_info = new Point();
         disp_info.getSize(point_info);
         int x, y;
-        if(counter == 0) {   //La primera vez aparece en el centro
+        if(counter == 0) {   //La primera vez aparece en el centro*/
             /* x = point_info.x - (2 * button_dot.getWidth()) + button_dot.getWidth();
             y = point_info.y - (2 * button_dot.getHeight()) + button_dot.getHeight();*/
-            x = button_dot.getWidth() + button_dot.getWidth();
+            /*x = button_dot.getWidth() + button_dot.getWidth();
             y = button_dot.getHeight() + button_dot.getHeight();
             button_dot.getPivotX();
             button_dot.setX(x);
             button_dot.setY(y);
             ++counterCorrect;
             //por algun motivo, al primer punto le da igual el temporizador
-
-            //Esto sobraria pero sin esto el primer punto dek else if SIEMPRE sale en el mismo sitio (abajo drch)
-            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
-            button_dot.getPivotX();
-            button_dot.setX(x);
-            button_dot.setY(y);
         }
         else if(counter > 0 && counter < total) {
-            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
+            x = (int) (0.025 * (point_info.x - (button_dot.getWidth()))) + button_dot.getWidth();
+            y = (int) (0.025 * (point_info.y - (button_dot.getHeight()))) + button_dot.getHeight();
             button_dot.getPivotX();
             button_dot.setX(x);
             button_dot.setY(y);
@@ -103,6 +116,24 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         else {
             finish();
         }
+        return ++counter;
+    }*/
+
+    private int move2(int counter){
+        if(counter < total){
+            startTimer();
+            ImageButton find_dot = findViewById(R.id.dot_button); //no estaba asi
+            Display disp_info = getWindowManager().getDefaultDisplay();
+            Point point_info = new Point();
+            disp_info.getSize(point_info);
+            int x = (int) (Math.random() * (point_info.x - (2 * find_dot.getWidth()))) + find_dot.getWidth();
+            int y = (int) (Math.random() * (point_info.y - (2 * find_dot.getHeight()))) + find_dot.getHeight();
+
+            find_dot.getPivotX();
+            find_dot.setX(x);
+            find_dot.setY(y);
+        }
+        else{finish();}
         return ++counter;
     }
 

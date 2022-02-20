@@ -25,6 +25,8 @@ public class ExercisesActivity extends AppCompatActivity {
             }
         });
 
+        //All the bottons for each exercise:
+
         Button first_exercise_button = (Button) findViewById(R.id.button_exercise1);
         first_exercise_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +57,13 @@ public class ExercisesActivity extends AppCompatActivity {
                 fourth_exercise(v);
             }
         });
+        Button fifth_exercise_button = (Button) findViewById(R.id.button_exercise5);
+        fifth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fifth_exercise(v);
+            }
+        });
 
     }
     public void close(View view){
@@ -76,6 +85,10 @@ public class ExercisesActivity extends AppCompatActivity {
     }
     public void fourth_exercise(View view){
         Intent i = new Intent( this, FourthExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void fifth_exercise(View view){
+        Intent i = new Intent( this, FifthExerciseDescriptionActivity.class );
         startActivity(i);
     }
 }
