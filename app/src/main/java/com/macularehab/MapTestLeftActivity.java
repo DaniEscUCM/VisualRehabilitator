@@ -2,9 +2,13 @@ package com.macularehab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -13,13 +17,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapTestLeftActivity extends AppCompatActivity implements View.OnTouchListener {
+public class MapTestLeftActivity extends AppCompatActivity{
 
     private CountDownTimer cTimer;
     private ImageView centre_dot;
@@ -45,17 +50,7 @@ public class MapTestLeftActivity extends AppCompatActivity implements View.OnTou
 
         init_coor();
 
-        new View.OnTouchListener(){
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(blinking){
-                    find=true;
-                    cTimer.onFinish();
-                    cTimer.cancel();
-                }
-                return true;
-            }
-        };
+
 
         //Make instruction disappear
 
@@ -83,8 +78,6 @@ public class MapTestLeftActivity extends AppCompatActivity implements View.OnTou
                 }
             }
         }
-
-        //count= coor.size()-1;
     }
 
     private void blink_centre(){
@@ -133,7 +126,7 @@ public class MapTestLeftActivity extends AppCompatActivity implements View.OnTou
                     blink_centre();
                 }
                 else{
-                    show_results();
+                    draw_results();
                 }
             }
 
@@ -141,12 +134,10 @@ public class MapTestLeftActivity extends AppCompatActivity implements View.OnTou
         cTimer.start();
 
     }
-
-    public boolean onTouch(View v, MotionEvent event) {
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
         if(blinking){
             find=true;
-            cTimer.onFinish();
-            cTimer.cancel();
         }
         return true;
     }
@@ -160,7 +151,7 @@ public class MapTestLeftActivity extends AppCompatActivity implements View.OnTou
         metric_unit = grid.getWidth()/14;
         float x = centre_dot.getX() + (metric_unit * coor.get(count).first);
         float y = centre_dot.getY() + (metric_unit * coor.get(count).second);
-        //grid.getWidth();
+
         find_dot.getPivotX();
         find_dot.setX(x);
         find_dot.setY(y);
@@ -177,14 +168,27 @@ public class MapTestLeftActivity extends AppCompatActivity implements View.OnTou
     }
 
     private void draw_results(){
-        Canvas canvas= new Canvas();
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
-        for(int i=0;i<coor_result.size();i++) {
-            canvas.drawCircle(coor_result.get(i).first,coor_result.get(i).second,(float) find_dot.getWidth()/2, paint);
-        }
+        paint.setColor(Color.BLUE);
 
-        //canvas.drawPath(path, paint);//Paint the final shape
+        Canvas canvas= new Canvas();
+        //canvas.drawPaint(paint);
+
+        //for(int i=0;i<coor_result.size();i++) {
+            ImageView dot = new ImageView(this);
+            Bitmap bmp = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
+            float x = centre_dot.getX() + (metric_unit * coor.get(0).first);
+            float y = centre_dot.getY() + (metric_unit * coor.get(0).second);
+            //dot.setX(x);
+            //dot.setY(y);
+            canvas.drawCircle(bmp.getWidth()/2, bmp.getHeight()/2, 500, paint);
+            dot.setImageBitmap(bmp);
+            dot.bringToFront();
+       // }
+
+        show_results();
+
     }
 
 }
