@@ -27,6 +27,9 @@
             android:name=".PatientLogin"
             android:exported="false" />
         <activity
+            android:name=".PatientSignUp"
+            android:exported="false" />
+        <activity
             android:name=".PatientIdentificationActivity"
             android:exported="false" />
         <activity
