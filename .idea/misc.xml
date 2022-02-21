@@ -42,7 +42,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise_description.xml" value="0.21" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_identification.xml" value="0.23828125" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_main.xml" value="0.11896929824561403" />
-
+        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_map_test.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise_description.xml" value="0.12911184210526316" />
@@ -53,15 +53,14 @@
         <entry key="app/src/main/res/layout/activity_login_patient_choose.xml" value="0.2582236842105263" />
         <entry key="app/src/main/res/layout/activity_login_professional.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/activity_map_test.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_map_test_explanation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.2582236842105263" />
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
-        <entry key="app/src/main/res/layout/activity_map_test.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_map_test_explanation.xml" value="0.25" />
-
       </map>
     </option>
   </component>
