@@ -26,15 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60d64969-d0ba-4436-9001-4c140891afe7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/PatientSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/PatientSignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalLoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalLoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalSingingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalSingingActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\dani_\.android\avd\Pixel_C_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/diegoalrp/.android/avd/Pixel_C_API_31.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -101,6 +103,10 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="android-custom-view/Users/diegoalrp/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.5.0/8d3b87c7463f55053836b805e014cb238f64757a/material-1.5.0-sources.jar!/com/google/android/material/button/MaterialButton.java_MaterialButton_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-view/Users/diegoalrp/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.5.0/8d3b87c7463f55053836b805e014cb238f64757a/material-1.5.0-sources.jar!/com/google/android/material/button/MaterialButton.java_SELECTED" value="MaterialButton" />
+    <property name="android-custom-view/Users/diegoalrp/Library/Android/sdk/sources/android-31/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-view/Users/diegoalrp/Library/Android/sdk/sources/android-31/android/view/View.java_View_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-viewC:/Users/Alba/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.5.0/8d3b87c7463f55053836b805e014cb238f64757a/material-1.5.0-sources.jar!/com/google/android/material/button/MaterialButton.java_MaterialButton_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-viewC:/Users/Alba/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.5.0/8d3b87c7463f55053836b805e014cb238f64757a/material-1.5.0-sources.jar!/com/google/android/material/button/MaterialButton.java_SELECTED" value="MaterialButton" />
     <property name="android-custom-viewC:/Users/Alba/AppData/Local/Android/Sdk/sources/android-31/android/view/View.java_SELECTED" value="View" />
@@ -248,5 +254,21 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalSingingActivity.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalSingingActivity.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

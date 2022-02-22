@@ -81,7 +81,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             validate();
         }else{
 
-            databaseReference.child("Professional").addValueEventListener(new ValueEventListener() {
+            databaseReference.child("Professional").child("Dr. House").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if(dataSnapshot.exists()){
