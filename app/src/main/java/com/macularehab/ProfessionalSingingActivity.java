@@ -30,7 +30,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
 
     public String currentUserID;
 
-    EditText nameP, unameP, paswP;
+    EditText nameP, mailP, paswP;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -48,7 +48,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         nameP = findViewById(R.id.editTextProfesionalName);
-        unameP = findViewById(R.id.editTextProfesionalUname);
+        mailP = findViewById(R.id.editTextProfesionalMail);
         paswP = findViewById(R.id.editTextProfesionalPasword);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc_prof);
@@ -75,35 +75,26 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
     public void singInProfessional (View view){
         //validate
         String name = nameP.getText().toString();
-        String uname = unameP.getText().toString();
-        String pasw = paswP.getText().toString(); //ver como guardar el hash
+        String mail = mailP.getText().toString();
+        String pasw = paswP.getText().toString();
 
-        if(name.equals("")||uname.equals("")||pasw.equals("") || (pasw.length() < 6)) {
+        if(name.equals("")||mail.equals("")||pasw.equals("") || (pasw.length() < 6)) {
             validate();
 
         }else{
 
-            createAccount(uname, pasw);
+            createAccount(name, mail, pasw);
 
             Log.d(TAG, "hola");
 
-            /*Professional p = new Professional();
-            p.setName(name);
-            p.setUsername(uname);
-            p.setPassword(pasw);
-            p.setUid(currentUserID);
-            databaseReference.child("Professional").child(currentUserID).setValue(p);
-            Toast.makeText(this, "User created", Toast.LENGTH_LONG).show();
-            clean();
-            goToMain();*/
         }
 
     }
 
-    private void createAccount(String email, String password) {
+    private void createAccount(String name,String mail, String password) {
         // [START create_user_with_email]
 
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+        firebaseAuth.createUserWithEmailAndPassword(mail, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -113,17 +104,8 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                             FirebaseUser currentUser = firebaseAuth.getCurrentUser();
                             //updateUI(user);
                             ProfessionalSingingActivity.this.currentUserID = currentUser.getUid();
+                            addDB(name,mail,password);
 
-                            Professional p = new Professional();
-                            p.setName(email);
-                            p.setUsername(email);
-                            p.setPassword(password);
-                            p.setUid(currentUserID);
-                            databaseReference.child("Professional").child(currentUserID).setValue(p);
-
-                            Toast.makeText(ProfessionalSingingActivity.this, "User created", Toast.LENGTH_LONG).show();
-                            clean();
-                            goToMain();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -138,15 +120,27 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         // [END create_user_with_email]
     }
 
+    public void addDB(String name, String email, String password){
+        Professional p = new Professional();
+        p.setName(name);
+        p.setUid(currentUserID);
+
+        databaseReference.child("Professional").child(currentUserID).setValue(p);
+
+        Toast.makeText(ProfessionalSingingActivity.this, "User created", Toast.LENGTH_LONG).show();
+        clean();
+        goToMain();
+    }
+
     public void validate(){
         String name = nameP.getText().toString();
-        String uname = unameP.getText().toString();
-        String pasw = paswP.getText().toString(); //ver como guardar el hash
+        String mail = mailP.getText().toString();
+        String pasw = paswP.getText().toString();
         if(name.equals("")){
             nameP.setError("required");
         }
-        if(uname.equals("")){
-            unameP.setError("required");
+        if(mail.equals("")){
+            mailP.setError("required");
         }
         if(pasw.equals("")){
             paswP.setError("required");
@@ -158,13 +152,13 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
 
     public void clean(){
         nameP.setText("");
-        unameP.setText("");
+        mailP.setText("");
         paswP.setText("");
     }
 
     public void goToMain(){
         Intent i = new Intent( this, ProfessionalPageActivity.class);
-        i.putExtra("username",unameP.getText().toString()); //we pass the username to activity : Professional Page
+        i.putExtra("username",mailP.getText().toString()); //we pass the username to activity : Professional Page
         startActivity(i);
     }
 }

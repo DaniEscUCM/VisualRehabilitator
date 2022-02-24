@@ -4,8 +4,6 @@ public class Professional {
 
     private String uid;
     private String Name;
-    private String Username;
-    private String Password;
 
     public Professional(){
 
@@ -25,22 +23,6 @@ public class Professional {
 
     public void setName(String name) {
         Name = name;
-    }
-
-    public String getUsername() {
-        return Username;
-    }
-
-    public void setUsername(String username) {
-        Username = username;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
     }
 
     @Override

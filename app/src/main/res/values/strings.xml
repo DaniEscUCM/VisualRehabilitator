@@ -18,6 +18,14 @@
     <string name="hint_patient_signup_signup">SignUp</string>
     <string name="hint_patient_signup_signup_button">SignUp</string>
     <!-- Fin Apartado Paciente .-->
+
+    <!-- Apartado Professional .-->
+    <string name="text_professional_singup_text">Professional Sing Up</string>
+    <string name="hint_professional_signup_name">Name</string>
+    <string name="hint_professional_signup_email">Email Address</string>
+    <string name="hint_professional_signup_password">Password</string>
+    <!-- Fin Apartado Professional .-->
+
     <string name="button_des_data">Data</string>
     <string name="button_exercises">Exercises</string>
     <string name="button_des_exercises">Exercises</string>

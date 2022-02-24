@@ -50,11 +50,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/textview_username"
+                android:text="@string/hint_professional_signup_email"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextProfessionalName"
+                android:id="@+id/editTextTextProfessionalEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
