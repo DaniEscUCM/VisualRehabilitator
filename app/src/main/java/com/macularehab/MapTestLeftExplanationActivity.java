@@ -14,7 +14,7 @@ public class MapTestLeftExplanationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_map_test_explanation);
+        setContentView(R.layout.activity_map_test_left_explanation);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_map_test);
         button.setOnClickListener(new View.OnClickListener() {

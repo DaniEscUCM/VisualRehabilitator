@@ -2,14 +2,8 @@ package com.macularehab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Pair;
@@ -18,15 +12,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.macularehab.draws.Dot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MapTestLeftActivity extends AppCompatActivity{
 
-    private CountDownTimer cTimer;
+
     private ImageView centre_dot;
     private ImageView find_dot;
     private ImageView grid;
@@ -41,9 +36,9 @@ public class MapTestLeftActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_map_test);
+        setContentView(R.layout.activity_map_test_left);
 
-        TextView instruction = findViewById((R.id.textInstruction));
+        TextView instruction = findViewById(R.id.textInstruction);
         centre_dot= findViewById(R.id.centre_dot);
         find_dot=  findViewById(R.id.find_dot);
         grid = findViewById(R.id.circle_grid);
@@ -66,7 +61,9 @@ public class MapTestLeftActivity extends AppCompatActivity{
 
         //Make centre dot blink three times
 
-        blink_centre();
+        //blink_centre();
+
+        draw_results();
     }
 
     private void init_coor() {
@@ -104,7 +101,7 @@ public class MapTestLeftActivity extends AppCompatActivity{
     private void blink_find(){
         blinking=true;
 
-        cTimer = new CountDownTimer(3000, 500) {
+        new CountDownTimer(3000, 500) {
             boolean vi=false;
 
             public void onTick(long millisUntilFinished) {
@@ -130,8 +127,7 @@ public class MapTestLeftActivity extends AppCompatActivity{
                 }
             }
 
-        };
-        cTimer.start();
+        }.start();
 
     }
     @Override
@@ -168,25 +164,19 @@ public class MapTestLeftActivity extends AppCompatActivity{
     }
 
     private void draw_results(){
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.BLUE);
+
+        float x = centre_dot.getX() ;
+        float y = centre_dot.getY() ;
 
         Canvas canvas= new Canvas();
-        //canvas.drawPaint(paint);
 
-        //for(int i=0;i<coor_result.size();i++) {
-            ImageView dot = new ImageView(this);
-            Bitmap bmp = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
-            float x = centre_dot.getX() + (metric_unit * coor.get(0).first);
-            float y = centre_dot.getY() + (metric_unit * coor.get(0).second);
-            //dot.setX(x);
-            //dot.setY(y);
-            canvas.drawCircle(bmp.getWidth()/2, bmp.getHeight()/2, 500, paint);
-            dot.setImageBitmap(bmp);
-            dot.bringToFront();
-       // }
+        Dot all_dots = new Dot(this,x,y,coor, find_dot.getWidth(), metric_unit); //TODO poner las coordenadas correctas
+        all_dots.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        all_dots.draw(canvas);
 
+        LinearLayout circle = (LinearLayout) findViewById(R.id.left_results_layout);
+
+        circle.addView(all_dots);
         show_results();
 
     }

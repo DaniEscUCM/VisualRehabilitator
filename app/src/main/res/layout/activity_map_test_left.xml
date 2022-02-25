@@ -76,4 +76,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="#000000" />
 
+    <LinearLayout
+        android:id="@+id/left_results_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/circle_grid"
+        app:layout_constraintEnd_toEndOf="@+id/circle_grid"
+        app:layout_constraintStart_toStartOf="@+id/circle_grid"
+        app:layout_constraintTop_toTopOf="@+id/circle_grid"></LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
