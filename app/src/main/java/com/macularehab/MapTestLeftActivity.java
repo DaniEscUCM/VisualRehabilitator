@@ -3,6 +3,7 @@ package com.macularehab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -11,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.macularehab.draws.Dot;
@@ -21,16 +21,16 @@ import java.util.List;
 
 public class MapTestLeftActivity extends AppCompatActivity{
 
-
     private ImageView centre_dot;
     private ImageView find_dot;
     private ImageView grid;
     private final List<Pair<Integer,Integer>> coor = new ArrayList<>();
     private final List<Pair<Integer,Integer>> coor_result = new ArrayList<>();
     private int count=0;
-    private int metric_unit=0;
+    private float metric_unit=0;
     private boolean blinking = false;
     private boolean find=false;
+    private final float diameter_dots=14;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,6 @@ public class MapTestLeftActivity extends AppCompatActivity{
 
         init_coor();
 
-
-
         //Make instruction disappear
 
         new CountDownTimer(5000, 1000) {
@@ -60,14 +58,10 @@ public class MapTestLeftActivity extends AppCompatActivity{
         }.start();
 
         //Make centre dot blink three times
-
-        //blink_centre();
-
-        draw_results();
+        blink_centre();
     }
 
     private void init_coor() {
-
         for(int i=-7;i<=7;i++){
             for(int j=-7; j<=7;j++){
                 if (i*i + j*j <= 7*7 && !(i==0 && j==0)) {
@@ -130,6 +124,7 @@ public class MapTestLeftActivity extends AppCompatActivity{
         }.start();
 
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event){
         if(blinking){
@@ -138,13 +133,8 @@ public class MapTestLeftActivity extends AppCompatActivity{
         return true;
     }
 
-    private void show_results(){
-        ImageButton next=findViewById((R.id.nextButtonTest1));
-        next.setVisibility(View.VISIBLE);
-    }
-
     private void move(){
-        metric_unit = grid.getWidth()/14;
+        metric_unit = grid.getWidth()/diameter_dots;
         float x = centre_dot.getX() + (metric_unit * coor.get(count).first);
         float y = centre_dot.getY() + (metric_unit * coor.get(count).second);
 
@@ -164,20 +154,27 @@ public class MapTestLeftActivity extends AppCompatActivity{
     }
 
     private void draw_results(){
+        ImageView out=findViewById(R.id.multiple_dots);
+        Bitmap btm= Bitmap.createBitmap(out.getWidth(),out.getWidth(), Bitmap.Config.ARGB_8888);
 
-        float x = centre_dot.getX() ;
-        float y = centre_dot.getY() ;
+        float x = (out.getWidth()/(float)2) ;
+        float y = (out.getWidth()/(float)2);
 
-        Canvas canvas= new Canvas();
+        Canvas canvas= new Canvas(btm);
 
-        Dot all_dots = new Dot(this,x,y,coor, find_dot.getWidth(), metric_unit); //TODO poner las coordenadas correctas
-        all_dots.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        Dot all_dots = new Dot(x,y,coor_result, find_dot.getWidth()/(float)2, metric_unit);
         all_dots.draw(canvas);
+        out.setImageBitmap(btm);
+        out.setVisibility(View.VISIBLE);
 
-        LinearLayout circle = (LinearLayout) findViewById(R.id.left_results_layout);
-
-        circle.addView(all_dots);
-        show_results();
+        ImageButton next=findViewById((R.id.nextButtonTest1));
+        next.setVisibility(View.VISIBLE);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO move to next window
+            }
+        });
 
     }
 
