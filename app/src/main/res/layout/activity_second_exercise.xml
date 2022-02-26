@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstExerciseActivity">
+    tools:context=".SecondExerciseActivity">
 
     <ImageButton
         android:id="@+id/home_button"
@@ -21,7 +21,7 @@
         app:tint="#5C5757" />
 
     <ImageButton
-        android:id="@+id/first_exercise_settings"
+        android:id="@+id/second_exercise_settings"
         android:layout_width="99dp"
         android:layout_height="91dp"
         android:layout_marginTop="40dp"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_manage"
-        app:tint="@color/black" />
+        app:tint="#000000" />
 
     <ImageButton
         android:id="@+id/dot_button"

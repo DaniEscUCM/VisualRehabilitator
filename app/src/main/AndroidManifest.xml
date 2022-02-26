@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".MapTestLeftActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapTestLeftExplanationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfessionalPageActivity"
             android:exported="false" />
         <activity
@@ -48,6 +54,25 @@
             android:name=".FirstExerciseDescriptionActivity"
             android:exported="false" />
         <activity
+            android:name=".SecondExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SecondExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThirdExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ThirdExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FourthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FourthExerciseDescriptionActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ExercisesActivity"
             android:exported="false" />
         <activity
@@ -55,7 +80,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.macularehab;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,7 +43,7 @@ public class PatientSignUp extends AppCompatActivity {
         });
     }
 
-    /*@Override
+    @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -51,7 +52,7 @@ public class PatientSignUp extends AppCompatActivity {
             //TODO
             reload();
         }
-    }*/
+    }
 
     private void readEmail() {
 

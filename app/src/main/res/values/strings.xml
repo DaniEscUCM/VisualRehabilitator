@@ -18,17 +18,25 @@
     <string name="hint_patient_signup_signup">SignUp</string>
     <string name="hint_patient_signup_signup_button">SignUp</string>
     <!-- Fin Apartado Paciente .-->
+
+    <!-- Apartado Professional .-->
+    <string name="text_professional_singup_text">Professional Sing Up</string>
+    <string name="hint_professional_signup_name">Name</string>
+    <string name="hint_professional_signup_email">Email Address</string>
+    <string name="hint_professional_signup_password">Password</string>
+    <!-- Fin Apartado Professional .-->
+
     <string name="button_des_data">Data</string>
-    <string name="button_exercices">Exercices</string>
-    <string name="button_des_exercices">Exercices</string>
+    <string name="button_exercises">Exercises</string>
+    <string name="button_des_exercises">Exercises</string>
     <string name="imagebutton_des_settings">Change settings</string>
     <string name="textview_settings">Settings</string>
     <string name="textview_exercises">Exercises</string>
     <string name="textview_name">Name</string>
     <string name="textview_username">Username</string>
-    <string name="textview_pasword">Pasword</string>
-    <string name="textview_profesional_singin">Profesional Singin</string>
-    <string name="textview_profesional_loggin">Profesional Log in</string>
+    <string name="textview_password">Password</string>
+    <string name="textview_professional_singin">Professional Sing in</string>
+    <string name="textview_professional_loggin">Professional Log in</string>
     <string name="imagebutton_des_back">Go back</string>
     <string name="first_exercise">First exercise</string>
     <string name="second_exercise">Second exercise</string>
@@ -41,6 +49,14 @@
     <string name="ninth_exercise">Ninth exercise</string>
     <string name="button_play">Play</string>
     <string name="first_exercise_description">Here would be the description of the first exercise</string>
+    <string name="second_exercise_description">Here would be the description of the second exercise</string>
+    <string name="third_exercise_description">Here would be the description of the third exercise</string>
+    <string name="fourth_exercise_description">Here would be the description of the fourth exercise</string>
+    <string name="fifth_exercise_description">Here would be the description of the fifth exercise</string>
+    <string name="sixth_exercise_description">Here would be the description of the sixth exercise</string>
+    <string name="seventh_exercise_description">Here would be the description of the seventh exercise</string>
+    <string name="eighth_exercise_description">Here would be the description of the eighth exercise</string>
+    <string name="ninth_exercise_description">Here would be the description of the ninth exercise</string>
     <string name="button_home">Home</string>
     <string name="button_for_click">Button to click</string>
     <string name="toast_user_created">User created</string>
@@ -54,4 +70,11 @@
     <string name="textview_welcome">Welcome</string>
     <string name="textview_patientlist">Patient list</string>
     <string name="button_newPatient">New patient</string>
+    <string name="distance_30cm">Face the screen with a 30cm distance</string>
+    <string name="touch_instruction">Touch the screen when you see the new dot</string>
+    <string name="cover_right_eye">Without pressing, cover right eye</string>
+    <string name="cover_left_eye">Without pressing, cover left eye</string>
+    <string name="circular_grid">Circular grid</string>
+    <string name="dot_instruction">Don`t move your head and look at the centre dot</string>
+    <string name="next_test">Press to go to next test</string>
 </resources>

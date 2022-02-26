@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:text="@string/textview_profesional_loggin"
+        android:text="@string/textview_professional_loggin"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton_back_prof_login"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,11 +50,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/textview_username"
+                android:text="@string/hint_professional_signup_email"
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editTextTextProfessionalName"
+                android:id="@+id/editTextTextProfessionalEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/textview_pasword"
+                android:text="@string/textview_password"
                 android:textSize="24sp" />
 
             <EditText

@@ -6,23 +6,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 import com.macularehab.model.Professional;
 
 public class ProfessionalLoginActivity extends AppCompatActivity {
 
-    EditText unameP, paswP;
+    private FirebaseAuth firebaseAuth;
+    private static final String TAG = "EmailPassword";
+
+    EditText mailP, paswP;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Professional prof;
@@ -38,8 +43,10 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
 
-        unameP = findViewById(R.id.editTextTextProfessionalName);
+        mailP = findViewById(R.id.editTextTextProfessionalEmail);
         paswP = findViewById(R.id.editTextTextProfessionalPassword);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         ImageButton buttonBack = (ImageButton) findViewById(R.id.imageButton_back_prof_login);
         buttonBack.setOnClickListener(new View.OnClickListener() {
@@ -63,76 +70,75 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     }
 
     public void clean(){
-        unameP.setText("");
+        mailP.setText("");
         paswP.setText("");
     }
 
     public void goToMain(){
         Intent i = new Intent( this, ProfessionalPageActivity.class);
-        i.putExtra("username",unameP.getText().toString()); //we pass the username to activity : Professional Page
+        //i.putExtra("username",unameP.getText().toString()); //we pass the username to activity : Professional Page
         startActivity(i);
     }
 
     public void login(View view){
-        String uname = unameP.getText().toString();
-        String pasw = paswP.getText().toString();
+        String mail = mailP.getText().toString();
+        String pasword = paswP.getText().toString();
 
-        if(uname.equals("")||pasw.equals("")){
+        if(mail.equals("")||pasword.equals("")){
             validate();
         }else{
-
-            databaseReference.child("Professional").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists()){
-                        encontrado[0]=false;
-                        encontrado[1]=false;
-                        for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                            Professional p = snapshot.getValue(Professional.class);
-                            if(p.getUsername().equals(uname)){
-                                encontrado[0] = true;
-                                if(p.getPassword().equals(pasw)){
-                                    encontrado[1]=true;
-                                    prof = p;
-
-                                }
-                            }
-                        }
-                        correct();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
+            loginAuth(mail,pasword);
 
         }
 
+    }
+    private void loginAuth(String mail, String password) {
+        // [START login_user_with_email]
+
+        firebaseAuth.signInWithEmailAndPassword(mail, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "loginUserWithEmail:success");
+                            goToMain();
+                            //updateUI(user);
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "loginUserWithEmail:failure", task.getException());
+                            Toast.makeText(ProfessionalLoginActivity.this, "Login failed.",
+                                    Toast.LENGTH_LONG).show();
+                            //updateUI(null);
+
+                        }
+                    }
+                });
+        // [END login_user_with_email]
     }
 
     public void correct(){ //to make provide correct error message
         if(!encontrado[0]){
             Toast.makeText(this, "User not found", Toast.LENGTH_LONG).show();
-            unameP.setError("not found");
-            unameP.setText("");
+            mailP.setError("not found");
+            mailP.setText("");
             paswP.setText("");
         }else if(!encontrado[1]){
             Toast.makeText(this, "Password incorrect", Toast.LENGTH_LONG).show();
             paswP.setError("incorrect");
             paswP.setText("");
         }else{
-            String toastmes = "Welcome "+ prof.getUsername();
+            String toastmes = "Welcome "+ prof.getName();
             Toast.makeText(this, toastmes, Toast.LENGTH_LONG).show();
             goToMain();
         }
     }
     public void validate(){ //to make sure everything is filled
-        String name = unameP.getText().toString();
+        String mail = mailP.getText().toString();
         String pasw = paswP.getText().toString();
-        if(name.equals("")){
-            unameP.setError("required");
+        if(mail.equals("")){
+            mailP.setError("required");
         }
         if(pasw.equals("")){
             paswP.setError("required");

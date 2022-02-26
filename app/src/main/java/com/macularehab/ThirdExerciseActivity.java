@@ -1,7 +1,5 @@
 package com.macularehab;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
@@ -12,22 +10,25 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class FirstExerciseActivity extends AppCompatActivity {
+public class ThirdExerciseActivity extends AppCompatActivity {
     int counter = 0, counterCorrect, total = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_exercise);
+        setContentView(R.layout.activity_third_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         counterCorrect = 0;
         ImageButton button_dot = findViewById(R.id.dot_button);
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { counter = move(counter); }
+            public void onClick(View v) {
+                counter = move(counter);
+            }
         });
 
-        ImageButton button_setting = findViewById(R.id.first_exercise_settings);
+        ImageButton button_setting = findViewById(R.id.third_exercise_settings);
         button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +75,8 @@ public class FirstExerciseActivity extends AppCompatActivity {
         disp_info.getSize(point_info);
         int x, y;
         if(counter == 0) {   //La primera vez aparece en el centro
+            /* x = point_info.x - (2 * button_dot.getWidth()) + button_dot.getWidth();
+            y = point_info.y - (2 * button_dot.getHeight()) + button_dot.getHeight();*/
             x = button_dot.getWidth() + button_dot.getWidth();
             y = button_dot.getHeight() + button_dot.getHeight();
             button_dot.getPivotX();
