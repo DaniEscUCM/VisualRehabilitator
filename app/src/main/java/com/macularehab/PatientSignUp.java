@@ -11,13 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.macularehab.login.SignUp;
 
@@ -45,14 +40,14 @@ public class PatientSignUp extends AppCompatActivity {
         this.email_text = findViewById(R.id.patient_email_signup);
         this.password_text = findViewById(R.id.patient_password_signup);
 
-        Log.w("actividad", " creada");
+        Log.w("actividad signUp", " creada");
 
         Button signUpButton = findViewById(R.id.patient_signup_button);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Log.w("boton", " presionado");
+                Log.w("boton signUp", " presionado");
                 readEmail();
             }
         });
@@ -63,7 +58,7 @@ public class PatientSignUp extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
 
-        Log.w("actividad", " empezada");
+        Log.w("actividad signUp", " empezada");
         boolean signedIn = this.signUp.user_is_signed_in();
         if(signedIn){
             Log.w("actividad", " paciente conectado");
@@ -83,19 +78,21 @@ public class PatientSignUp extends AppCompatActivity {
 
         validate_user_input();
 
-        boolean is_ok = this.signUp.readEmail(name, email_username, password);
+        this.signUp.readEmail(name, email_username, password, this);
+    }
 
-        if (is_ok) {
-            //Continuar
-            Toast.makeText(PatientSignUp.this, "User created", Toast.LENGTH_LONG).show();
-            clean();
-        }
-        else {
-            //TODO copiar codigo de Maria, para que aparezca el aviso.
-            Toast.makeText(PatientSignUp.this, "Authentication failed.",
-                    Toast.LENGTH_LONG).show();
-            showAlertFailToSignUp();
-        }
+    public void patient_signed_successfully() {
+
+        Toast.makeText(PatientSignUp.this, "User created", Toast.LENGTH_LONG).show();
+        clean();
+        reload();
+    }
+
+    public void patient_signingUp_failed() {
+
+        Toast.makeText(PatientSignUp.this, "Authentication failed.",
+                Toast.LENGTH_LONG).show();
+        showAlertFailToSignUp();
     }
 
     public void validate_user_input(){

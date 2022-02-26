@@ -4,20 +4,31 @@
     <string name="button_create">Create</string>
     <string name="button_singin">Register</string>
     <string name="button_login">Log In</string>
+
     <!-- Apartado paciente .-->
     <string name="button_login_patient">LOGIN</string>
     <string name="button_signup_patient">SIGNUP</string>
     <string name="text_patient_account">Patient Account</string>
     <string name="text_ask_patient_login">Have already an account</string>
     <string name="text_ask_patient_signup">Create an account</string>
+    <!-- Apartado LogIn .-->
     <string name="hint_patient_login_name">Name</string>
     <string name="hint_patient_login_email">Email Address / Username</string>
     <string name="hint_patient_login_password">Password</string>
-    <string name="hint_patient_signup_email">Email Address</string>
+    <string name="hint_patient_login_welcome">Welcome</string>
+    <string name="hint_patient_login_login">LogIn</string>
+    <string name="hint_patient_login_login_button">LogIn</string>
+    <!-- Apartado SignUp .-->
+    <string name="hint_patient_signup_name">Name</string>
+    <string name="hint_patient_signup_email">Email Address / Username</string>
     <string name="hint_patient_signup_password">Password</string>
     <string name="hint_patient_signup_welcome">Welcome</string>
     <string name="hint_patient_signup_signup">SignUp</string>
     <string name="hint_patient_signup_signup_button">SignUp</string>
+    <!-- Apartado Home .-->
+    <string name="hint_patient_home_logout_button">LogOut</string>
+    <string name="patient_home_welcome_text">Welcome</string>
+    <string name="patient_home_name_default">Patient</string>
     <!-- Fin Apartado Paciente .-->
 
     <!-- Apartado Professional .-->

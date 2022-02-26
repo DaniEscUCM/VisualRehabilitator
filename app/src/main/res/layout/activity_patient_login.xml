@@ -6,73 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".PatientLogin">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/text_login_welcome"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
-        android:ems="10"
-        android:hint="Correo Electrónico"
-        android:inputType="textPersonName"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        android:text="@string/hint_patient_login_welcome"
+        android:textSize="96sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/hint_patient_login_login"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_login_welcome" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/patient_email_login"
+        android:layout_width="1100dp"
+        android:layout_height="80dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="168dp"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/hint_patient_login_email"
+        android:inputType="textEmailAddress"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_login" />
+
+    <Button
+        android:id="@+id/patient_login_button"
+        android:layout_width="1100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/hint_patient_login_login_button"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/patient_password_login" />
+
+    <EditText
+        android:id="@+id/patient_password_login"
+        android:layout_width="1100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/hint_patient_login_password"
         android:inputType="textPassword"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/patient_email_login" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_logo" />
-
-    <Button
-        android:id="@+id/singInButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
-        android:text="Iniciar Sesión"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
-
-    <Button
-        android:id="@+id/singUpButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
-        android:text="Registrarse"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/singInButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,7 @@
 package com.macularehab.login;
 
+import android.content.Intent;
 import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -11,40 +10,40 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.macularehab.PatientSignUp;
-import com.macularehab.ProfessionalSingingActivity;
-import com.macularehab.R;
+import com.macularehab.PatientHome;
+import com.macularehab.PatientLogin;
 import com.macularehab.model.Patient;
-import com.macularehab.model.Professional;
 
-import java.util.concurrent.Executor;
-
-public class SignUp {
+public class LogIn {
 
     private FirebaseAuth mAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private String name;
     private String email_username;
     private String password;
 
-    private PatientSignUp patientSignUp;
+    private PatientLogin patientLogin;
 
     private static final String TAG = "EmailPassword";
 
     private FirebaseUser user;
-    private boolean user_created_successfully;
+    private boolean user_signedIn_successfully;
+
+    private String username;
 
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
 
-    public SignUp() {
+    public LogIn(PatientLogin patientLogin) {
 
         mAuth = FirebaseAuth.getInstance();
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
+
+        this.patientLogin = patientLogin;
     }
 
     public boolean user_is_signed_in(){
@@ -52,15 +51,16 @@ public class SignUp {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
 
-            Log.w("actividad", currentUser.getUid());
+            user = currentUser;
+            Log.w("LogIn Already", currentUser.getUid());
             return true;
         }
         return false;
     }
 
-    public void readEmail(String name, String email_username, String password, PatientSignUp patientSignUp) {
+    public void readEmail(String email_username, String password, PatientLogin patientLogin) {
 
-        this.patientSignUp = patientSignUp;
+        this.patientLogin = patientLogin;
 
         int email_length = email_username.length();
         boolean is_email = false;
@@ -76,47 +76,35 @@ public class SignUp {
             email_username += GENERIC_EMAIL;
         }
 
-        this.name = name;
         this.email_username = email_username;
         this.password = password;
 
-        this.user_created_successfully = true;
-
-        createAccount(email_username, password);
+        //createAccount(email_username, password);
+        signIn(email_username, password);
     }
 
-    private void createAccount(String email, String password) {
-        // [START create_user_with_email]
-        mAuth.createUserWithEmailAndPassword(email, password)
+    private void signIn(String email, String password) {
+        // [START sign_in_with_email]
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.w(TAG, "createUserWithEmail:success");
+                            Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            SignUp.this.user = user;
-                            SignUp.this.user_created_successfully = true;
-                            createUserDB(user.getUid());
-                            SignUp.this.patientSignUp.patient_signed_successfully();
-                            //updateUI(user);
+                            LogIn.this.user = user;
+                            LogIn.this.user_signedIn_successfully = true;
+                            LogIn.this.patientLogin.user_loggedIn_successfully();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
 
-                            SignUp.this.user_created_successfully = false;
-                            SignUp.this.patientSignUp.patient_signingUp_failed();
-
+                            LogIn.this.user_signedIn_successfully = false;
+                            LogIn.this.patientLogin.user_loggin_failed();
                         }
                     }
                 });
-        // [END create_user_with_email]
-    }
-
-    public void createUserDB(String currentUserID) {
-
-        Patient patient = new Patient(this.name, this.email_username, currentUserID);
-
-        databaseReference.child("Patient").child(currentUserID).setValue(patient);
+        // [END sign_in_with_email]
     }
 }

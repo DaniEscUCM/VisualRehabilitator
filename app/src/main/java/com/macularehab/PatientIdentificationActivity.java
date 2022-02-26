@@ -25,11 +25,20 @@ public class PatientIdentificationActivity extends AppCompatActivity {
 
         startAnalytics();
 
-        Button signUpButton = findViewById(R.id.button_signin_patient);
+        Button signUpButton = findViewById(R.id.button_choose_signup_patient);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 patientSignUp();
+            }
+        });
+
+        Button logInButton = findViewById((R.id.button_choose_login_patient));
+        logInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                patientLogIn();
             }
         });
     }
@@ -45,9 +54,14 @@ public class PatientIdentificationActivity extends AppCompatActivity {
 
     private void patientSignUp() {
 
-        Intent patientView = new Intent(this, PatientSignUp.class);
-        //Intent patientView = new Intent(this, PatientLogin.class);
-        startActivity(patientView);
+        Intent patientSignUpView = new Intent(this, PatientSignUp.class);
+        startActivity(patientSignUpView);
+    }
+
+    private void patientLogIn() {
+
+        Intent patientLogInView = new Intent(this, PatientLogin.class);
+        startActivity(patientLogInView);
     }
 }
 
