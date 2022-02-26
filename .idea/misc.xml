@@ -55,7 +55,10 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_map_test.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_map_test_explanation.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.2582236842105263" />
+        <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.13854166666666667" />
+        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />

@@ -30,6 +30,9 @@
             android:name=".ProfessionalIdentificationActivity"
             android:exported="false" />
         <activity
+            android:name=".PatientHome"
+            android:exported="false" />
+        <activity
             android:name=".PatientLogin"
             android:exported="false" />
         <activity

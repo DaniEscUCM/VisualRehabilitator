@@ -10,7 +10,8 @@
     <string name="text_patient_account">Patient Account</string>
     <string name="text_ask_patient_login">Have already an account</string>
     <string name="text_ask_patient_signup">Create an account</string>
-    <string name="hint_patient_login_email">Email Address</string>
+    <string name="hint_patient_login_name">Name</string>
+    <string name="hint_patient_login_email">Email Address / Username</string>
     <string name="hint_patient_login_password">Password</string>
     <string name="hint_patient_signup_email">Email Address</string>
     <string name="hint_patient_signup_password">Password</string>
