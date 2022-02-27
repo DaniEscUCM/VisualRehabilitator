@@ -32,7 +32,7 @@ public class PatientLogin extends AppCompatActivity  {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_patient_login);
 
-        this.logIn = new LogIn(this);
+        this.logIn = new LogIn();
 
         this.email_text = findViewById(R.id.patient_email_login);
         this.password_text = findViewById(R.id.patient_password_login);
@@ -57,10 +57,9 @@ public class PatientLogin extends AppCompatActivity  {
         // Check if user is signed in (non-null) and update UI accordingly.
 
         Log.w("actividad LogIn", " empezada");
-        boolean signedIn = this.logIn.user_is_signed_in();
+        boolean signedIn = this.logIn.patient_is_signed_in(this);
         if(signedIn){
             Log.w("actividad LogIn", " paciente conectado");
-            //TODO hay que hacer la interfaz en caso de que el usuario este ya iniciado
             reload();
         }
     }
@@ -146,8 +145,7 @@ public class PatientLogin extends AppCompatActivity  {
         this.password_text.setText("");
     }
 
-    //TODO
-    private void reload() {
+    public void reload() {
 
         Intent intent = new Intent( this, PatientHome.class);
         startActivity(intent);

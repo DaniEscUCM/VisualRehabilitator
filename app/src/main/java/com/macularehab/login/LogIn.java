@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.PatientHome;
 import com.macularehab.PatientLogin;
+import com.macularehab.ProfessionalLoginActivity;
 import com.macularehab.model.Patient;
 
 public class LogIn {
@@ -24,6 +25,9 @@ public class LogIn {
     private DatabaseReference databaseReference;
     private String email_username;
     private String password;
+
+    boolean is_patient = false;
+    boolean is_professional = false;
 
     private PatientLogin patientLogin;
 
@@ -36,24 +40,81 @@ public class LogIn {
 
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
 
-    public LogIn(PatientLogin patientLogin) {
+    public LogIn() {
 
         mAuth = FirebaseAuth.getInstance();
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
-
-        this.patientLogin = patientLogin;
     }
 
-    public boolean user_is_signed_in(){
+    public boolean patient_is_signed_in(PatientLogin patientLogin){
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
 
             user = currentUser;
-            Log.w("LogIn Already", currentUser.getUid());
-            return true;
+            Log.i("LogIn Already", currentUser.getUid());
+
+            databaseReference.child("Patient").child(currentUser.getUid())
+                    .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                    if (!task.isSuccessful()) {
+                        Log.e("firebase", "Error getting data", task.getException());
+
+                        is_patient = false;
+                    }
+                    else {
+                        String value = String.valueOf(task.getResult().getValue());
+                        Log.w("firebase", value);
+
+                        if (!value.equals("null")) {
+                            is_patient = true;
+                            patientLogin.reload();
+                        }
+                    }
+                }
+            });
+
+            return false;
+        }
+        return false;
+    }
+
+    public boolean professional_is_signed_in(ProfessionalLoginActivity professionalLoginActivity){
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+
+            user = currentUser;
+            Log.i("LogIn Already", currentUser.getUid());
+
+            databaseReference.child("Professional").child(currentUser.getUid())
+                    .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                    //task.getResult()
+                    if (!task.isSuccessful()) {
+                        Log.e("firebase", "Error getting data", task.getException());
+
+                        is_professional = false;
+                    }
+                    else {
+                        String value = String.valueOf(task.getResult().getValue());
+                        Log.w("firebase", value);
+
+                        if (!value.equals("null")) {
+                            is_professional = true;
+                            professionalLoginActivity.goToMain();
+                        }
+                        //LogIn.this.patientLogin.startHome(value);
+                    }
+                }
+            });
+            return false;
         }
         return false;
     }
@@ -95,6 +156,7 @@ public class LogIn {
                             FirebaseUser user = mAuth.getCurrentUser();
                             LogIn.this.user = user;
                             LogIn.this.user_signedIn_successfully = true;
+                            //TODO hacerlo generico
                             LogIn.this.patientLogin.user_loggedIn_successfully();
                         } else {
                             // If sign in fails, display a message to the user.

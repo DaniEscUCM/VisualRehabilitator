@@ -20,6 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.macularehab.login.LogIn;
 import com.macularehab.model.Professional;
 
 public class ProfessionalLoginActivity extends AppCompatActivity {
@@ -63,6 +64,19 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                 login(v);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        LogIn logIn = new LogIn();
+
+        boolean is_login = logIn.professional_is_signed_in(this);
+
+        if (is_login) {
+            goToMain();
+        }
     }
 
     public void close(View view){
