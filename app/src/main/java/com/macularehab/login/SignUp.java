@@ -58,7 +58,7 @@ public class SignUp {
         return false;
     }
 
-    public void readEmail(String name, String email_username, String password, PatientSignUp patientSignUp) {
+    public void readEmail( String email_username, String password, PatientSignUp patientSignUp) {
 
         this.patientSignUp = patientSignUp;
 
@@ -76,13 +76,15 @@ public class SignUp {
             email_username += GENERIC_EMAIL;
         }
 
-        this.name = name;
         this.email_username = email_username;
         this.password = password;
 
         this.user_created_successfully = true;
 
         createAccount(email_username, password);
+        //the session will be established as a patient
+
+
     }
 
     private void createAccount(String email, String password) {
@@ -97,9 +99,10 @@ public class SignUp {
                             FirebaseUser user = mAuth.getCurrentUser();
                             SignUp.this.user = user;
                             SignUp.this.user_created_successfully = true;
-                            createUserDB(user.getUid());
+                           // createUserDB(user.getUid());
                             SignUp.this.patientSignUp.patient_signed_successfully();
                             //updateUI(user);
+                            SignUp.this.patientSignUp.addDB();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -112,11 +115,16 @@ public class SignUp {
                 });
         // [END create_user_with_email]
     }
+    public String getUID(){
 
+        FirebaseUser user = mAuth.getCurrentUser();
+        return user.getUid().toString();
+    }
+    /*
     public void createUserDB(String currentUserID) {
 
         Patient patient = new Patient(this.name, this.email_username, currentUserID);
 
         databaseReference.child("Patient").child(currentUserID).setValue(patient);
-    }
+    }*/
 }
