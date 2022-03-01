@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rejilla_circular" />
+        app:srcCompat="@drawable/tencmgrid" />
 
     <TextView
         android:id="@+id/textInstruction"
@@ -81,12 +81,12 @@
         android:id="@+id/multiple_dots"
         android:layout_width="662dp"
         android:layout_height="626dp"
+        android:contentDescription="@string/dot_instruction"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.502"
         app:srcCompat="@drawable/house_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

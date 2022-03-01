@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -30,7 +33,10 @@ public class MapTestLeftActivity extends AppCompatActivity{
     private float metric_unit=0;
     private boolean blinking = false;
     private boolean find=false;
-    private final float diameter_dots=14;
+    private final int diameter_dots=21;//dots in position 0 + 1
+    private float centre_x = 0;
+    private float centre_y = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +49,26 @@ public class MapTestLeftActivity extends AppCompatActivity{
         find_dot=  findViewById(R.id.find_dot);
         grid = findViewById(R.id.circle_grid);
 
-        init_coor();
+        //Set grid to correct size
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+        float width = (float) (display.xdpi * 3.93701);
+        float height= (float) (display.ydpi * 3.93701);
+
+        grid.getLayoutParams().width = (int) width;
+        grid.getLayoutParams().height = (int) height;
+        grid.requestLayout();
+
+        Display disp_info = getWindowManager().getDefaultDisplay();
+        Point point_info = new Point();
+        disp_info.getSize(point_info);
+        centre_x = point_info.x/(float)2;
+        centre_y = point_info.y/(float)2;
+
+        //centre_dot.setX(centre_x);
+        //centre_dot.setY(centre_y);
+
+
+        init_coor(); //set coordinates
 
         //Make instruction disappear
 
@@ -62,9 +87,10 @@ public class MapTestLeftActivity extends AppCompatActivity{
     }
 
     private void init_coor() {
-        for(int i=-7;i<=7;i++){
-            for(int j=-7; j<=7;j++){
-                if (i*i + j*j <= 7*7 && !(i==0 && j==0)) {
+        int dot=(diameter_dots/2);
+        for(int i=-dot;i<=dot;i++){
+            for(int j=-dot; j<=dot;j++){
+                if (i*i + j*j <= dot*dot && !(i==0 && j==0)) {
                     coor.add(new Pair<>(i, j));
                 }
             }
@@ -134,9 +160,9 @@ public class MapTestLeftActivity extends AppCompatActivity{
     }
 
     private void move(){
-        metric_unit = grid.getWidth()/diameter_dots;
-        float x = centre_dot.getX() + (metric_unit * coor.get(count).first);
-        float y = centre_dot.getY() + (metric_unit * coor.get(count).second);
+        metric_unit = grid.getWidth()/(float) diameter_dots;
+        float x = centre_x + (metric_unit * coor.get(count).first);
+        float y = centre_y + (metric_unit * coor.get(count).second);
 
         find_dot.getPivotX();
         find_dot.setX(x);
@@ -155,9 +181,12 @@ public class MapTestLeftActivity extends AppCompatActivity{
 
     private void draw_results(){
         ImageView out=findViewById(R.id.multiple_dots);
-        Bitmap btm= Bitmap.createBitmap(out.getWidth(),out.getWidth(), Bitmap.Config.ARGB_8888);
+        out.getLayoutParams().width = grid.getWidth();
+        out.getLayoutParams().height = grid.getHeight();
 
-        float x = (out.getWidth()/(float)2) ;
+        Bitmap btm= Bitmap.createBitmap(grid.getWidth(),grid.getWidth(), Bitmap.Config.ARGB_8888);
+
+        float x = (out.getWidth()/(float)2);
         float y = (out.getWidth()/(float)2);
 
         Canvas canvas= new Canvas(btm);
@@ -169,6 +198,7 @@ public class MapTestLeftActivity extends AppCompatActivity{
 
         ImageButton next=findViewById((R.id.nextButtonTest1));
         next.setVisibility(View.VISIBLE);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
