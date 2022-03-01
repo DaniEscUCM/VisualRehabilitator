@@ -73,7 +73,7 @@ public class FifthExerciseActivity extends AppCompatActivity {
     }
 
     private void move(){
-        if(++counter == total) { //13==13, el ultimo es el 12
+        if(++counter == total) { 
             System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
