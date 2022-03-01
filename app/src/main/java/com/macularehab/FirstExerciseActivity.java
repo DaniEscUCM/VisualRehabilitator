@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 
 public class FirstExerciseActivity extends AppCompatActivity {
-    int counter = 0, counterCorrect, total = 5;
+    int counter = 0, counterCorrect, total = 7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,8 @@ public class FirstExerciseActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         counterCorrect = 0;
         ImageButton button_dot = findViewById(R.id.dot_button);
+        move(counter); //lo llamo una primera vez antes del OnClick para
+        //que empiece el temporatizador sin clickear.
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { counter = move(counter); }
@@ -80,14 +82,6 @@ public class FirstExerciseActivity extends AppCompatActivity {
             button_dot.setX(x);
             button_dot.setY(y);
             ++counterCorrect;
-            //por algun motivo, al primer punto le da igual el temporizador
-
-            //Esto sobraria pero sin esto el primer punto dek else if SIEMPRE sale en el mismo sitio (abajo drch)
-            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
-            button_dot.getPivotX();
-            button_dot.setX(x);
-            button_dot.setY(y);
         }
         else if(counter > 0 && counter < total) {
             x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
@@ -98,6 +92,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
             ++counterCorrect;
         }
         else {
+            System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect);
             finish();
         }
         return ++counter;
@@ -115,6 +110,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
             String message_failed = "Sorry, try again";
             Toast.makeText(this, message_failed, Toast.LENGTH_LONG).show();
         }
+        System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect);
     }
 
     public void Settings(View view){

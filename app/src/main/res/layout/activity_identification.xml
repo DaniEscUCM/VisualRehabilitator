@@ -22,11 +22,12 @@
         android:id="@+id/button_patient_iden"
         android:layout_width="389dp"
         android:layout_height="137dp"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="156dp"
         android:backgroundTint="@color/blue"
         android:text="@string/textview_loginPatient"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -34,12 +35,14 @@
         android:id="@+id/button_professional_ident"
         android:layout_width="389dp"
         android:layout_height="137dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="200dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="156dp"
         android:backgroundTint="@color/pink_dark"
         android:text="@string/textview_loginProfessional"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/button_patient_iden"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

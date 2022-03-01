@@ -1,46 +1,46 @@
 package com.macularehab;
 
-import static java.util.Collections.shuffle;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
 
 public class SecondExerciseActivity extends AppCompatActivity {
-    protected int counter = 0, counterCorrect, counterUpL = 0, counterUpR = 0,counterDownL = 0,counterDownR = 0;
-    protected final int total = 7;
-    List<Double> list = Arrays.asList(0.05, 2.75, 4.25);
+    protected int counter, counterCorrect,counterFailed;
+    protected final int total = 10;
+    protected boolean triangle;
+    protected CountDownTimer timer = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        counterCorrect = 0;
-        //shuffle(list);
-        //Collections.shuffle(list);
+        counterCorrect = counterFailed = 0; counter = -1;
+        triangle = false;
+        //Aqui primero tendria que aparecer el foco
+        //No seria image button, solo image, o image button sin que se pueda hacer click
+        //Poner un temporizador de 5s antes de que aparezca la 1a figura
+        //El foco se "Multiplica" por la posicion que toque y las figuras se dejan
+        //donde estan, en el centro.
         ImageButton button_dot = findViewById(R.id.dot_button);
-        move(counter, list.get(1));
+        move();
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter = move(counter, list.get(1)); //list.get(counter%list.size())
+                if(triangle) {++counterCorrect;}
+                else {++counterFailed;}
+                cancelTimer();
+                move();
             }
         });
 
-        ImageButton button_setting = findViewById(R.id.second_exercise_settings);
+        ImageButton button_setting = findViewById(R.id.exercise_settings);
         button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,70 +57,60 @@ public class SecondExerciseActivity extends AppCompatActivity {
         });
     }
 
-    CountDownTimer cTimer = null;     //Declare timer
-
-    void startTimer() {     //Start timer function
+    private void startTimer() {     //Start timer function
         //10s (10000 mili segundos) para hacer click en el circulo
-        //Lo pongo a 3s para hacer pruebas
-        cTimer = new CountDownTimer(3000, 10) {
+        //Lo pongo a 3-6s para hacer pruebas
+        timer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
-                move(++counter,list.get(0));
+                move();
             }
         };
-        cTimer.start();
+        timer.start();
     }
 
-    void startTimerInit() {     //Start timer function
-        cTimer = new CountDownTimer(1000, 1) {
-            public void onTick(long millisUntilFinished) { }
-            public void onFinish() {
-                move(++counter,list.get(0));
-            }
-        };
-        cTimer.start();
+    private void cancelTimer() {
+        if(timer!=null)
+            timer.cancel();
+            //cTimer.onFinish();
     }
 
-    private int init(int counter){
-        startTimerInit();
-        ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
-        Display disp_info = getWindowManager().getDefaultDisplay();
-        Point point_info = new Point();
-        disp_info.getSize(point_info);
-        int x = (int) (Math.random() * (point_info.x - (2*button_dot.getWidth()))) + button_dot.getWidth() ;
-        int y = (int) (Math.random() * (point_info.y - (2*button_dot.getHeight()))) + button_dot.getHeight();
-        button_dot.getPivotX();
-        button_dot.setX(x);
-        button_dot.setY(y);
-        return counter;
-    }
-
-    private int move(int counter, Double position){
-        startTimer();
-        ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
-        Display disp_info = getWindowManager().getDefaultDisplay();
-        Point point_info = new Point();
-        disp_info.getSize(point_info);
-        /*int x = (int) (position * (point_info.x - (2*button_dot.getWidth()))) + button_dot.getWidth() ;
-        int y = (int) (position * (point_info.y - (2*button_dot.getHeight()))) + button_dot.getHeight();*/
-        int x = (int) (Math.random() * (point_info.x - (2*button_dot.getWidth()))) + button_dot.getWidth() ;
-        int y = (int) (Math.random() * (point_info.y - (2*button_dot.getHeight()))) + button_dot.getHeight();
-
-        button_dot.getPivotX();
-        button_dot.setX(x);
-        button_dot.setY(y);
-        ++counterCorrect;
+    private void move(){
         if(++counter == total) {
+            System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
+            String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
+            Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
             finish();
         }
-        return counter;
+        else {
+            ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
+            System.out.println("counter: " + counter);
+            startTimer();
+            if (counter == 0 || counter == 5 || counter == 7 || counter == 9) {
+                button_dot.setImageResource(R.drawable.circle_black);
+                triangle = false;
+                System.out.println("counter: " + counter + ". circulo");
+            } else if (counter == 1 || counter == 3 || counter == 6) {
+                button_dot.setImageResource(R.drawable.triangle);
+                triangle = true;
+                System.out.println("counter: " + counter + ". triang");
+            } else { //2,4,8
+                button_dot.setImageResource(R.drawable.star);
+                triangle = false;
+                System.out.println("counter: " + counter + ". estrella");
+            }
+        }
     }
 
     public void Close(View view){
+        System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
+        String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
+        Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
         finish();
     }
 
     public void Settings(View view){
+        finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
         Intent i = new Intent( this, SettingsActivity.class );
         startActivity(i);
     }
