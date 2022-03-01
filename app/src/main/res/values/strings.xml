@@ -61,15 +61,27 @@
     <string name="ninth_exercise">Ninth exercise</string>
     <string name="button_play">Play</string>
     <string name="first_exercise_description">Here would be the description of the first exercise</string>
-    <string name="second_exercise_description">Here would be the description of the second exercise</string>
-    <string name="third_exercise_description">Here would be the description of the third exercise</string>
-    <string name="fourth_exercise_description">Here would be the description of the fourth exercise</string>
-    <string name="fifth_exercise_description">Here would be the description of the fifth exercise</string>
+    <string name="second_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras. Haz click cuando aparezca un triángulo.</string>
+    <string name="third_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras, más pequeñas y sin relleno. Haz click cuando aparezca un triángulo.</string>
+    <string name="fourth_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de letras. Haz click cuando aparezca la E.</string>
+    <string name="fifth_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de letras más pequeñas que en el ejercicio anterior. Haz click cuando aparezca la E.</string>
     <string name="sixth_exercise_description">Here would be the description of the sixth exercise</string>
     <string name="seventh_exercise_description">Here would be the description of the seventh exercise</string>
     <string name="eighth_exercise_description">Here would be the description of the eighth exercise</string>
     <string name="ninth_exercise_description">Here would be the description of the ninth exercise</string>
     <string name="button_home">Home</string>
+    <string name="circle_for_click">Circle</string>
+    <string name="triangle_for_click">Triangle</string>
+    <string name="star_for_click">Star</string>
+    <string name="letter_A">A</string>
+    <string name="letter_E">E</string>
+    <string name="letter_M">M</string>
+    <string name="letter_T">T</string>
+    <string name="letter_F">F</string>
+    <string name="letter_L">L</string>
+
+
+
     <string name="button_for_click">Button to click</string>
     <string name="toast_user_created">User created</string>
     <string name="toast_fill_fields">please fill all the fields</string>

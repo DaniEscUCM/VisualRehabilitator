@@ -2,41 +2,42 @@ package com.macularehab;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class SecondExerciseActivity extends AppCompatActivity {
-    protected int counter, counterCorrect,counterFailed;
-    protected final int total = 10;
-    protected boolean triangle;
+public class FifthExerciseActivity extends AppCompatActivity {
+    private int counter, counterCorrect, counterFailed;
+    protected final int total = 13;
+    private boolean is_letter_E;
     protected CountDownTimer timer = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second_exercise);
+        setContentView(R.layout.activity_fifth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        counterCorrect = counterFailed = 0; counter = -1;
-        triangle = false;
-        //Aqui primero tendria que aparecer el foco
-        //No seria image button, solo image, o image button sin que se pueda hacer click
-        //Poner un temporizador de 5s antes de que aparezca la 1a figura
-        //El foco se "Multiplica" por la posicion que toque y las figuras se dejan
-        //donde estan, en el centro.
-        ImageButton button_dot = findViewById(R.id.dot_button);
+        counter = -1;
+        counterCorrect = counterFailed = 0;
+        is_letter_E = false;
+        Button button_dot = findViewById(R.id.button);
         move();
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(triangle) {++counterCorrect;}
+                if(is_letter_E) {++counterCorrect;}
                 else {++counterFailed;}
                 cancelTimer();
                 move();
+
             }
         });
 
@@ -57,14 +58,11 @@ public class SecondExerciseActivity extends AppCompatActivity {
         });
     }
 
-    private void startTimer() {     //Start timer function
-        //10s (10000 mili segundos) para hacer click en el circulo
-        //Lo pongo a 3-6s para hacer pruebas
+    private void startTimer() {
+        //10s (10000 mili segundos) para hacer click en la letra
         timer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) { }
-            public void onFinish() {
-                move();
-            }
+            public void onFinish() { move(); }
         };
         timer.start();
     }
@@ -72,32 +70,36 @@ public class SecondExerciseActivity extends AppCompatActivity {
     private void cancelTimer() {
         if(timer!=null)
             timer.cancel();
-            //cTimer.onFinish();
     }
 
     private void move(){
-        if(++counter == total) {
+        if(++counter == total) { //13==13, el ultimo es el 12
             System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
             finish();
         }
         else {
-            ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
+            Button button_dot = findViewById(R.id.button);
             System.out.println("counter: " + counter);
+            is_letter_E = false;
             startTimer();
-            if (counter == 0 || counter == 5 || counter == 7 || counter == 9) {
-                button_dot.setImageResource(R.drawable.circle_black);
-                triangle = false;
-                System.out.println("counter: " + counter + ". circulo");
-            } else if (counter == 1 || counter == 3 || counter == 6) {
-                button_dot.setImageResource(R.drawable.triangle);
-                triangle = true;
-                System.out.println("counter: " + counter + ". triang");
-            } else { //2,4,8
-                button_dot.setImageResource(R.drawable.star);
-                triangle = false;
-                System.out.println("counter: " + counter + ". estrella");
+            if (counter == 2 || counter == 6 || counter == 11) {
+                button_dot.setText("T");
+                System.out.println("counter: " + counter + ". T");
+            } else if (counter == 0 || counter == 10) {
+                button_dot.setText("M");
+                System.out.println("counter: " + counter + ". M");
+            } else if (counter == 1 || counter == 4 || counter == 12) {
+                is_letter_E = true;
+                button_dot.setText("E");
+                System.out.println("counter: " + counter + ". E");
+            } else if (counter == 5 || counter == 8) {
+                button_dot.setText("L");
+                System.out.println("counter: " + counter + ". L");
+            } else { //3,7,12
+                button_dot.setText("F");
+                System.out.println("counter: " + counter + ". F");
             }
         }
     }

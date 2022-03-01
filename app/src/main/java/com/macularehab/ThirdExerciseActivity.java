@@ -5,30 +5,46 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ThirdExerciseActivity extends AppCompatActivity {
-    int counter = 0, counterCorrect, total = 5;
+    private int counter, counterCorrect, counterFailed;
+    protected final int total = 12;
+    private boolean triangle;
+    private CountDownTimer timer = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        counterCorrect = 0;
+        counter = -1; counterCorrect = counterFailed = 0;
+        triangle = false;
         ImageButton button_dot = findViewById(R.id.dot_button);
+        move();
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counter = move(counter);
+                if(triangle) {++counterCorrect;}
+                else {++counterFailed;}
+                cancelTimer();
+                move();
             }
         });
 
-        ImageButton button_setting = findViewById(R.id.third_exercise_settings);
+        ImageButton button_setting = findViewById(R.id.exercise_settings);
         button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,67 +61,68 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         });
     }
 
-    //Declare timer
-    CountDownTimer cTimer = null;
-
-    //Start timer function
-    void startTimer() {
-        //10s (10000 mili segundos) para hacer click en el circulo
-        //Lo pongo a 3s para hacer pruebas
-        cTimer = new CountDownTimer(3000, 10) {
+    private void startTimer() {
+        //10s (10000 mili segundos) para hacer click en la figura
+        timer = new CountDownTimer(10000, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
-                move(++counter);
+                move();
             }
         };
-        cTimer.start();
+        timer.start();
     }
 
-    //cancel timer
-    /*void cancelTimer() {
-        if(cTimer!=null)
-            cTimer.cancel();
-    }*/
+    private void cancelTimer() {
+        if(timer!=null)
+            timer.cancel();
+            //timer.onFinish();
+    }
 
-    private int move(int counter){
-        startTimer();
-        ImageButton button_dot = findViewById(R.id.dot_button);
-        Display disp_info = getWindowManager().getDefaultDisplay();
-        Point point_info = new Point();
-        disp_info.getSize(point_info);
-        int x, y;
-        if(counter == 0) {   //La primera vez aparece en el centro
-            /* x = point_info.x - (2 * button_dot.getWidth()) + button_dot.getWidth();
-            y = point_info.y - (2 * button_dot.getHeight()) + button_dot.getHeight();*/
-            x = button_dot.getWidth() + button_dot.getWidth();
-            y = button_dot.getHeight() + button_dot.getHeight();
-            button_dot.getPivotX();
-            button_dot.setX(x);
-            button_dot.setY(y);
-            ++counterCorrect;
-            //por algun motivo, al primer punto le da igual el temporizador
-
-            //Esto sobraria pero sin esto el primer punto dek else if SIEMPRE sale en el mismo sitio (abajo drch)
-            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
-            button_dot.getPivotX();
-            button_dot.setX(x);
-            button_dot.setY(y);
-        }
-        else if(counter > 0 && counter < total) {
-            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
-            button_dot.getPivotX();
-            button_dot.setX(x);
-            button_dot.setY(y);
-            ++counterCorrect;
-        }
-        else {
+    private void move(){
+        if(++counter == total) {
+            System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
+            String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
+            Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
             finish();
         }
-        return ++counter;
+        else {
+            ImageButton button_dot = findViewById(R.id.dot_button);
+            System.out.println("counter: " + counter);
+            startTimer();
+            triangle = false;
+            if (counter == 0 || counter == 6 || counter == 10) {
+                button_dot.setImageResource(R.drawable.circle_line);
+                System.out.println("counter: " + counter + ". circulo");
+            } else if (counter == 2 || counter == 5 || counter == 9) {
+                button_dot.setImageResource(R.drawable.triangle_line);
+                triangle = true;
+                System.out.println("counter: " + counter + ". triang");
+            } else if (counter == 4 || counter == 7 || counter == 11) {
+                button_dot.setImageResource(R.drawable.star_line);
+                System.out.println("counter: " + counter + ". estrella");
+            } else { //1,3,8
+                button_dot.setImageResource(R.drawable.semi_square_line);
+                System.out.println("counter: " + counter + ". squareL");
+            }
+        }
     }
 
+    public void Close(View view){
+        System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
+        String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
+        Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+        finish();
+    }
+
+    public void Settings(View view){
+        finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
+        Intent i = new Intent( this, SettingsActivity.class );
+        startActivity(i);
+    }
+}
+
+
+/*
     public void Close(View view){
         if (counterCorrect*2 >= total) { //si ha acertado el doble o mas del total
             String message_correct = "Well done, you hit " + counterCorrect + "out of" + total;
@@ -118,10 +135,4 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             Toast.makeText(this, message_failed, Toast.LENGTH_LONG).show();
         }
         finish();
-    }
-
-    public void Settings(View view){
-        Intent i = new Intent( this, SettingsActivity.class );
-        startActivity(i);
-    }
-}
+    }*/
