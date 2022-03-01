@@ -6,36 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".ProfessionalPageActivity">
 
-    <TextView
-        android:id="@+id/textView_welcome_professional"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="@string/textview_welcome"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="1278dp"
+        android:layout_height="105dp"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView_welcome_professional2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/textview_welcome"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textView_welcome_professional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/professional_home_name_default"
+            android:textSize="50sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="589dp"
         android:layout_height="528dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="180dp"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_welcome_professional">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button_newpatient"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/button_newPatient"
-            android:textSize="28sp" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_opticaltest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/professional_newpatient_testOptico"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/button_professional_newpatient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/professional_newpatient_formularioOptico"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/button_firstpatient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pepito Perez" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -74,15 +111,25 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button_firstpatient"
+            <ListView
+                android:id="@+id/listView_professionalPatients"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Pepito Perez" />
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_professional_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        android:gravity="right"
+        android:text="@string/hint_professional_home_logout_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

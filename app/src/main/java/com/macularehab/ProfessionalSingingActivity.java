@@ -66,6 +66,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                 singInProfessional(v);
             }
         });
+
     }
 
     public void close(View view){
@@ -161,4 +162,5 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         i.putExtra("username",mailP.getText().toString()); //we pass the username to activity : Professional Page
         startActivity(i);
     }
+
 }

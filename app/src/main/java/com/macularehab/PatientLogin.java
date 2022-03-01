@@ -45,7 +45,7 @@ public class PatientLogin extends AppCompatActivity  {
             public void onClick(View v) {
 
                 Log.w("boton LogIn", " presionado");
-                readEmail();
+                //readEmail(); Se bloquea para hacerlo bien desde professional
             }
         });
 

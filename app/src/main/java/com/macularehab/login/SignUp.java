@@ -120,11 +120,6 @@ public class SignUp {
         FirebaseUser user = mAuth.getCurrentUser();
         return user.getUid().toString();
     }
-    /*
-    public void createUserDB(String currentUserID) {
 
-        Patient patient = new Patient(this.name, this.email_username, currentUserID);
-
-        databaseReference.child("Patient").child(currentUserID).setValue(patient);
-    }*/
+    private void updateUI(FirebaseUser user) { };
 }

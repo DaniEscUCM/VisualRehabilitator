@@ -29,7 +29,7 @@ public class PatientIdentificationActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                patientSignUp();
+                /*patientSignUp()*/;
             }
         });
 

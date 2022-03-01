@@ -11,18 +11,32 @@ public class Patient {
     private String leftstain;
     private String rightstain;
     private String stain;
+    private String age;
     private String professional;
+    private String gender;
 
-    public String getProfessional() {
-        return professional;
+    public Patient(){
+
     }
 
-    public void setProfessional(String professional) {
-        this.professional = professional;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail_username() {
+        return email_username;
     }
 
     public void setEmail_username(String email_username) {
         this.email_username = email_username;
+    }
+
+    public String getUid() {
+        return uid;
     }
 
     public void setUid(String uid) {
@@ -85,6 +99,14 @@ public class Patient {
         this.age = age;
     }
 
+    public String getProfessional() {
+        return professional;
+    }
+
+    public void setProfessional(String professional) {
+        this.professional = professional;
+    }
+
     public String getGender() {
         return gender;
     }
@@ -93,23 +115,8 @@ public class Patient {
         this.gender = gender;
     }
 
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    private String age;
-    private String gender;
-
-    public Patient() {
-
-    }
-
-    public String getName() {
+    @Override
+    public String toString() {
         return this.name;
-    }
-    public String getEmail_username() { return this.email_username; }
-    public String getUid() {
-        return this.uid;
     }
 }

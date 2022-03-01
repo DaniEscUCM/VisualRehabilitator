@@ -141,6 +141,7 @@ public class PatientSignUp extends AppCompatActivity {
         p.setEmail_username(email_username);
         p.setFocuspoint(focuspoint);
         p.setProfessional(professional_uid);
+        addPatientProfessional(uid,professional_uid);
 
         databaseReference.child("Patient").child(uid).setValue(p);
     }
@@ -221,7 +222,11 @@ public class PatientSignUp extends AppCompatActivity {
 
         Intent intent = new Intent( this, PatientHome.class);
         startActivity(intent);
+        Toast.makeText(PatientSignUp.this, "User changed to new one",
+                Toast.LENGTH_LONG).show();
     }
     //TODO
-    private void updateUI(FirebaseUser user) { }
+    public void addPatientProfessional(String patient_uid,String professional_uid){
+        databaseReference.child("Professional").child(professional_uid).child("Patients").child(patient_uid).setValue(patient_uid);
+    }
 }
