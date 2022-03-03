@@ -25,17 +25,19 @@ import java.util.List;
 public class MapTestLeftActivity extends AppCompatActivity{
 
     private ImageView centre_dot;
-    private ImageView find_dot;
+    //private ImageView find_dot;
     private ImageView grid;
+    ImageView out;
     private final List<Pair<Integer,Integer>> coor = new ArrayList<>();
-    private final List<Pair<Integer,Integer>> coor_result = new ArrayList<>();
+    private List<Pair<Integer,Integer>> coor_result = new ArrayList<>();
+    private final List<Pair<Integer,Integer>> coor_mid = new ArrayList<>();
     private int count=0;
     private float metric_unit=0;
     private boolean blinking = false;
     private boolean find=false;
-    private final int diameter_dots=21;//dots in position 0 + 1
     private float centre_x = 0;
     private float centre_y = 0;
+    private float radius=0;
 
 
     @Override
@@ -46,27 +48,30 @@ public class MapTestLeftActivity extends AppCompatActivity{
 
         TextView instruction = findViewById(R.id.textInstruction);
         centre_dot= findViewById(R.id.centre_dot);
-        find_dot=  findViewById(R.id.find_dot);
+        //find_dot=  findViewById(R.id.find_dot);
         grid = findViewById(R.id.circle_grid);
+
+        out=findViewById(R.id.multiple_dots);
 
         //Set grid to correct size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
-        float width = (float) (display.xdpi * 3.93701);
-        float height= (float) (display.ydpi * 3.93701);
+        metric_unit=(float) (display.xdpi * 0.19685); //0.5cm
+        double width = metric_unit*20;//10cm
 
-        grid.getLayoutParams().width = (int) width;
-        grid.getLayoutParams().height = (int) height;
+
+        grid.getLayoutParams().width = (int) Math.ceil(width);
+        grid.getLayoutParams().height = (int) Math.ceil(width);
         grid.requestLayout();
 
-        Display disp_info = getWindowManager().getDefaultDisplay();
-        Point point_info = new Point();
-        disp_info.getSize(point_info);
-        centre_x = point_info.x/(float)2;
-        centre_y = point_info.y/(float)2;
+        radius=centre_dot.getWidth()/(float)2;
 
-        //centre_dot.setX(centre_x);
-        //centre_dot.setY(centre_y);
+        out.getLayoutParams().width = (int) Math.ceil(width)  ;
+        out.getLayoutParams().height = (int) Math.ceil(width);
 
+        centre_x = (float)(width)/(float)2;
+        centre_y = (float)(width)/(float)2;
+
+        out.requestLayout();
 
         init_coor(); //set coordinates
 
@@ -78,16 +83,17 @@ public class MapTestLeftActivity extends AppCompatActivity{
 
             public void onFinish() {
                 instruction.setVisibility(View.GONE);
+
+                //blink_centre();
+                draw_results();
             }
 
         }.start();
 
-        //Make centre dot blink three times
-        blink_centre();
     }
 
     private void init_coor() {
-        int dot=(diameter_dots/2);
+        int dot=(20/2);
         for(int i=-dot;i<=dot;i++){
             for(int j=-dot; j<=dot;j++){
                 if (i*i + j*j <= dot*dot && !(i==0 && j==0)) {
@@ -110,7 +116,9 @@ public class MapTestLeftActivity extends AppCompatActivity{
 
             public void onFinish() {
                 centre_dot.setVisibility(View.VISIBLE);
-                move();
+                //move();
+                draw_results();
+                blink_find();
             }
 
         }.start();
@@ -125,17 +133,17 @@ public class MapTestLeftActivity extends AppCompatActivity{
             boolean vi=false;
 
             public void onTick(long millisUntilFinished) {
-                if(vi) find_dot.setVisibility(View.VISIBLE);
-                else find_dot.setVisibility(View.INVISIBLE);
+                if(vi) out.setVisibility(View.VISIBLE);
+                else out.setVisibility(View.INVISIBLE);
                 vi=!vi;
             }
 
             public void onFinish() {
                 blinking=false;
-                find_dot.setVisibility(View.INVISIBLE);
+                out.setVisibility(View.INVISIBLE);
                 if(!find){
-                    coor_result.add(coor.get(count));
-                    System.out.println(coor.get(count));
+                    coor_mid.add(coor.get(count));
+                    //System.out.println(coor.get(count));
                 }
                 find=false;
                 if(count!=coor.size()-1) {
@@ -143,12 +151,26 @@ public class MapTestLeftActivity extends AppCompatActivity{
                     blink_centre();
                 }
                 else{
+                    coor_result=coor_mid;
                     draw_results();
+                    next();
                 }
             }
 
         }.start();
 
+    }
+
+    private void next() {
+        ImageButton next=findViewById((R.id.nextButtonTest1));
+        next.setVisibility(View.VISIBLE);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO move to next window
+            }
+        });
     }
 
     @Override
@@ -159,14 +181,18 @@ public class MapTestLeftActivity extends AppCompatActivity{
         return true;
     }
 
-    private void move(){
-        metric_unit = grid.getWidth()/(float) diameter_dots;
-        float x = centre_x + (metric_unit * coor.get(count).first);
-        float y = centre_y + (metric_unit * coor.get(count).second);
+   // private void move(){
+        //metric_unit = grid.getWidth()/(float) diameter_dots;
+        /*float x = centre_dot.getX() + (metric_unit * coor.get(count).first);
+        float y = centre_dot.getY() + (metric_unit * coor.get(count).second);
 
         find_dot.getPivotX();
         find_dot.setX(x);
-        find_dot.setY(y);
+        find_dot.setY(y);*/
+
+       /* coor_result.clear();
+        coor_result.add(coor.get(count));
+        draw_results();
 
         new CountDownTimer(1000, 1000) {
 
@@ -177,34 +203,35 @@ public class MapTestLeftActivity extends AppCompatActivity{
             }
 
         }.start();
-    }
+    }*/
 
     private void draw_results(){
-        ImageView out=findViewById(R.id.multiple_dots);
-        out.getLayoutParams().width = grid.getWidth();
-        out.getLayoutParams().height = grid.getHeight();
 
-        Bitmap btm= Bitmap.createBitmap(grid.getWidth(),grid.getWidth(), Bitmap.Config.ARGB_8888);
+        Bitmap btm= Bitmap.createBitmap(out.getWidth(),out.getWidth(), Bitmap.Config.ARGB_8888);
 
-        float x = (out.getWidth()/(float)2);
-        float y = (out.getWidth()/(float)2);
+
+        //tem.out.println(radius);
+        System.out.println(out.getX());
+        System.out.println(out.getY());
+        System.out.println(out.getWidth());
+        System.out.println(out.getHeight());
+        System.out.println("-----------------");
+        System.out.println(out.getWidth()/(float)2);
+        System.out.println(out.getWidth()/(float)2);
 
         Canvas canvas= new Canvas(btm);
 
-        Dot all_dots = new Dot(x,y,coor_result, find_dot.getWidth()/(float)2, metric_unit);
+        if(count!=coor.size()-1){
+            coor_result.clear();
+            coor_result.add(coor.get(count));
+        }
+        //coor_result.add(coor.get(20));
+        Dot all_dots = new Dot(out.getWidth()/(float)2,out.getWidth()/(float)2,coor, radius, metric_unit);
         all_dots.draw(canvas);
         out.setImageBitmap(btm);
         out.setVisibility(View.VISIBLE);
 
-        ImageButton next=findViewById((R.id.nextButtonTest1));
-        next.setVisibility(View.VISIBLE);
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO move to next window
-            }
-        });
 
     }
 

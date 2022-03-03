@@ -34,7 +34,7 @@ public class Dot {
         paint.setAntiAlias(true);
         paint.setDither(true);
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.RED);
     }
 
     public void draw(Canvas canvas) {
