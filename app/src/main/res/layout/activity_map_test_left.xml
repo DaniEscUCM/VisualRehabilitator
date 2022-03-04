@@ -46,22 +46,6 @@
         app:layout_constraintTop_toTopOf="@+id/circle_grid"
         app:srcCompat="@drawable/red_dot" />
 
-    <ImageView
-        android:id="@+id/find_dot"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="@string/dot_instruction"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/centre_dot"
-        app:layout_constraintEnd_toEndOf="@+id/circle_grid"
-        app:layout_constraintHorizontal_bias="0.199"
-        app:layout_constraintStart_toEndOf="@+id/centre_dot"
-        app:layout_constraintTop_toTopOf="@+id/circle_grid"
-        app:layout_constraintVertical_bias="0.726"
-        app:srcCompat="@drawable/red_dot" />
-
     <ImageButton
         android:id="@+id/nextButtonTest1"
         android:layout_width="109dp"
@@ -87,6 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502"
         app:srcCompat="@drawable/house_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
