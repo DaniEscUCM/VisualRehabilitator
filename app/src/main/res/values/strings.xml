@@ -25,6 +25,8 @@
     <string name="hint_patient_signup_welcome">Welcome</string>
     <string name="hint_patient_signup_signup">SignUp</string>
     <string name="hint_patient_signup_signup_button">SignUp</string>
+    <string name="patient_signup_enter_username">Create an username, with no spaces, it could be your name (but without spaces)</string>
+    <string name="patient_signup_password_explained">Enter the numeric code that the professional \ngave it to you as a password</string>
     <!-- Apartado Home .-->
     <string name="hint_patient_home_logout_button">LogOut</string>
     <string name="patient_home_welcome_text">Welcome</string>
