@@ -113,4 +113,7 @@
     <string name="first_test_left">First Test Left</string>
     <string name="first_test_right">First Test Right</string>
     <string name="first_test_both">First Test Both</string>
+    <string name="manual_stain_left">Manual Left Eye</string>
+    <string name="manual_stain_right">Manual Right Eye</string>
+    <string name="manual_stain_both">Manual Both Eyes</string>
 </resources>

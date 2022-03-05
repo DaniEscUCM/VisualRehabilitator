@@ -41,7 +41,7 @@ public class MapTestBothActivity extends AppCompatActivity {
         action= new MapTestActions(instruction, centre_dot, grid, out, size, metric_unit) {
             @Override
             public void next() {
-                ImageButton next=findViewById((R.id.nextButtonTest1));
+                ImageButton next=findViewById((R.id.nextButton));
                 next.setVisibility(View.VISIBLE);
 
                 next.setOnClickListener(v -> {

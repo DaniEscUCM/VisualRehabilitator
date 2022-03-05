@@ -23,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.macularehab.model.Patient;
-import com.macularehab.model.Professional;
 import com.macularehab.login.SignUp;
 
 import java.util.ArrayList;
@@ -162,7 +161,7 @@ public class ProfessionalPageActivity extends AppCompatActivity {
     }
 
     public void add_patient(View view){
-        Intent i = new Intent( this, MapTestLeftExplanationActivity.class);
+        Intent i = new Intent( this, ManualInputStainLeftActivity.class);
         startActivity(i);
     }
 
