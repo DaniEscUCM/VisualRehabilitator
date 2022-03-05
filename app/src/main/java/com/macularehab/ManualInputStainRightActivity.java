@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 import com.macularehab.actions.ManualActions;
 
-public class ManualInputStainLeftActivity extends AppCompatActivity {
+public class ManualInputStainRightActivity extends AppCompatActivity {
 
     private ManualActions actions;
 
@@ -23,8 +23,7 @@ public class ManualInputStainLeftActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_manual_input_stain_left);
-
+        setContentView(R.layout.activity_manual_input_stain_right);
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit*20;//10cm
@@ -74,7 +73,7 @@ public class ManualInputStainLeftActivity extends AppCompatActivity {
     }
 
     private void next_test(View v) {
-        Intent i = new Intent( this, ManualInputStainRightActivity.class );
+        Intent i = new Intent( this, ManualInputStainBothActivity.class );
         startActivity(i);
     }
 

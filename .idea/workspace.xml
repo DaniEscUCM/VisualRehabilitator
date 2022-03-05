@@ -26,16 +26,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60d64969-d0ba-4436-9001-4c140891afe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_manual_input_stain.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainBothActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainRightActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/actions/ManualActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_manual_input_stain_both.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_manual_input_stain_right.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainLeftActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainLeftActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/MapTestBothActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/MapTestBothActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/MapTestLeftActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/MapTestLeftActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalPageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ProfessionalPageActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_both.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_both.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_left.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_left.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/MapTestRightActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/MapTestRightActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/draws/MapTestActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/actions/MapTestActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_manual_input_stain_left.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_manual_input_stain_left.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_both_explanation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_both_explanation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_left_explanation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_left_explanation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_right_explanation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_test_right_explanation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,6 +160,9 @@
       <recent name="C:\Users\dani_\didone\didone\VisualRehabilitator\app\src\main\res\layout" />
     </key>
     <key name="android.template.-2001626650">
+      <recent name="com.macularehab" />
+    </key>
+    <key name="android.template.-2037866223">
       <recent name="com.macularehab" />
     </key>
     <key name="android.template.1202072364">
@@ -521,7 +531,7 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainLeftActivity.java</url>
           <line>69</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>

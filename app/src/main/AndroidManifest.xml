@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".ManualInputStainBothActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManualInputStainRightActivity"
+            android:exported="false" />
+        <activity
             android:name=".ManualInputStainLeftActivity"
             android:exported="false" />
         <activity

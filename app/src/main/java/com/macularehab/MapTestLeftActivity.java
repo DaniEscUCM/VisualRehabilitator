@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.macularehab.draws.MapTestActions;
+import com.macularehab.actions.MapTestActions;
 
 public class MapTestLeftActivity extends AppCompatActivity{
 

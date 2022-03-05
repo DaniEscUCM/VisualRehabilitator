@@ -1,4 +1,4 @@
-package com.macularehab.draws;
+package com.macularehab.actions;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -7,6 +7,9 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.macularehab.draws.Blinking;
+import com.macularehab.draws.DrawDot;
 
 import java.util.ArrayList;
 import java.util.List;
