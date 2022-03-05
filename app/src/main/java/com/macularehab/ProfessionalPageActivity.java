@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.macularehab.model.Patient;
 import com.macularehab.login.SignUp;
+import com.macularehab.professional.ProfessionalCreateNewPatient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -156,7 +157,8 @@ public class ProfessionalPageActivity extends AppCompatActivity {
     }
 
     public void gotoNewPat(View view){
-        Intent i = new Intent( this, PatientSignUp.class);
+        //Intent i = new Intent( this, PatientSignUp.class);
+        Intent i = new Intent( this, ProfessionalCreateNewPatient.class);
         startActivity(i);
     }
 

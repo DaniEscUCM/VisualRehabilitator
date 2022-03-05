@@ -64,6 +64,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_map_test.xml" value="0.18125" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.2145" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_fifth_exercise_description.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
@@ -84,12 +85,14 @@
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_patient_signup_password.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_patient_signup_username.xml" value="0.169757080078125" />
-        <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/activity_professional_new_patient_difficulties.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/pruena.xml" value="0.22" />
       </map>
     </option>
   </component>

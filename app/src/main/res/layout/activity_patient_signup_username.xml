@@ -16,7 +16,7 @@
         android:hint="@string/hint_patient_signup_email"
         android:inputType="textPersonName"
         android:textSize="48sp"
-        android:drawableStart="logi"
+        android:drawableStart="@drawable/login_logo_vectorized"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView_username_text"
         app:layout_constraintTop_toBottomOf="@+id/textView_username_explained" />
@@ -75,6 +75,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/hint_patient_signup_email"
         android:textSize="34sp"
+        android:drawableStart="@drawable/login_logo_vectorized"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_username_explained" />
 </androidx.constraintlayout.widget.ConstraintLayout>
