@@ -123,4 +123,11 @@
     <string name="manual_stain_right">Manual Right Eye</string>
     <string name="manual_stain_both">Manual Both Eyes</string>
     <string name="explain_manual">Touch the spaces where the stain is. It may be better with a touchpen, but not necessary. \n\nFilled by professional previus information! \n\nTo skip press next button</string>
+
+
+    <string-array name="generos">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+    </string-array>
 </resources>

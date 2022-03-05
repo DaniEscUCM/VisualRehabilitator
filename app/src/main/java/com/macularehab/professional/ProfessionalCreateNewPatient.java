@@ -18,8 +18,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //setContentView(R.layout.activity_professional_create_new_patient);
-        setContentView(R.layout.activity_professional_new_patient_difficulties);
+        setContentView(R.layout.activity_professional_create_new_patient);
+        //setContentView(R.layout.activity_professional_new_patient_difficulties);
     }
 
 }
