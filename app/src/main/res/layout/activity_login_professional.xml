@@ -61,10 +61,10 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/coverEyeImage" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/coverEyeImage"
         android:layout_width="200dp"
         android:layout_height="220dp"
         android:layout_marginTop="24dp"

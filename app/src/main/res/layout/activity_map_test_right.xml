@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapTestRightActivity">
+
+    <ImageView
+        android:id="@+id/circle_grid"
+        android:layout_width="545dp"
+        android:layout_height="545dp"
+        android:contentDescription="@string/dot_instruction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/tencmgrid" />
+
+    <TextView
+        android:id="@+id/firstTestRight"
+        android:layout_width="359dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/first_test_right"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_back_map_test"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textInstruction"
+        android:layout_width="573dp"
+        android:layout_height="256dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/dot_instruction"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/centre_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674" />
+
+    <ImageView
+        android:id="@+id/centre_dot"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/dot_instruction"
+        app:layout_constraintBottom_toBottomOf="@+id/circle_grid"
+        app:layout_constraintEnd_toEndOf="@+id/circle_grid"
+        app:layout_constraintStart_toStartOf="@+id/circle_grid"
+        app:layout_constraintTop_toTopOf="@+id/circle_grid"
+        app:srcCompat="@drawable/red_dot" />
+
+    <ImageView
+        android:id="@+id/multiple_dots"
+        android:layout_width="545dp"
+        android:layout_height="545dp"
+        android:contentDescription="@string/dot_instruction"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502"
+        app:srcCompat="@drawable/house_icon" />
+
+    <ImageButton
+        android:id="@+id/imageButton_back_map_test"
+        android:layout_width="72dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/imagebutton_des_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <ImageButton
+        android:id="@+id/repeatButton"
+        android:layout_width="118dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/repeat_test"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/stat_notify_sync"
+        app:tint="#429A37" />
+
+    <ImageButton
+        android:id="@+id/nextButtonTestR"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/next_test"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_media_ff"
+        app:tint="#000000" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
