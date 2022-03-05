@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapTestLeftActivity">
+    tools:context=".MapTestBothActivity">
+
 
     <ImageView
         android:id="@+id/circle_grid"
@@ -31,12 +32,12 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
-        android:id="@+id/firstTestLeft"
-        android:layout_width="350dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="20dp"
+        android:id="@+id/firstTestBoth"
+        android:layout_width="394dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
-        android:text="@string/first_test_left"
+        android:text="@string/first_test_both"
         android:textAlignment="center"
         android:textSize="48sp"
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_map_test"

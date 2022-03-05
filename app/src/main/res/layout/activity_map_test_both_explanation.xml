@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapTestLeftExplanationActivity">
+    tools:context=".MapTestBothExplanationActivity">
+
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="255dp"
         android:layout_height="56dp"
         android:layout_marginBottom="40dp"
-        android:text="@string/cover_right_eye"
+        android:text="@string/both_eye"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton_play"
@@ -51,9 +52,9 @@
         android:id="@+id/imageFilterView3"
         android:layout_width="272dp"
         android:layout_height="205dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/coverRightEyeImage"
+        app:layout_constraintEnd_toStartOf="@+id/coverLeftBothImage"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/pantalla" />
@@ -109,14 +110,14 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageView
-        android:id="@+id/coverRightEyeImage"
-        android:layout_width="317dp"
-        android:layout_height="297dp"
-        android:contentDescription="@string/cover_right_eye"
+        android:id="@+id/coverLeftBothImage"
+        android:layout_width="349dp"
+        android:layout_height="330dp"
+        android:contentDescription="@string/both_eye"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/right_cover" />
+        app:srcCompat="@drawable/non_cover" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

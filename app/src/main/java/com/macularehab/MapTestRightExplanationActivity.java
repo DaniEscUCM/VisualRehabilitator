@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class MapTestLeftExplanationActivity extends AppCompatActivity {
+public class MapTestRightExplanationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_map_test_left_explanation);
+        setContentView(R.layout.activity_map_test_right_explanation);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_map_test);
         button.setOnClickListener(v -> Close(v));
@@ -24,11 +24,12 @@ public class MapTestLeftExplanationActivity extends AppCompatActivity {
     }
 
     private void play_test(View v) {
-        Intent i = new Intent( this, MapTestLeftActivity.class );
+        Intent i = new Intent( this, MapTestRightActivity.class );
         startActivity(i);
     }
 
     public void Close(View view){
         finish();
     }
+
 }

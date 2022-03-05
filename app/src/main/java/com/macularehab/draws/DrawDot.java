@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Class to draw different dots in relation to a centre and a metric unit.
  */
-public class Dot {
+public class DrawDot {
 
     private Paint paint;
     private List<Pair<Integer,Integer>> coor_resul;
@@ -18,18 +18,18 @@ public class Dot {
      * Constructor to create dots with draw method with a metric unit in relation to a centre dot
      * (x,y)
      *
-     * @param x Reference x coordinate point , normally the centre of the screen
-     * @param y Reference x coordinate point , normally the centre of the screen
-     * @param coor_resul List of Pair of relation coordinates with (x,y) reference
-     * @param radius dots radius, NOT ZERO
-     * @param metric metric unit to distance between dots, if no specific unit, use 1
+     * @param _x Reference x coordinate point , normally the centre of the screen
+     * @param _y Reference x coordinate point , normally the centre of the screen
+     * @param _coor_resul List of Pair of relation coordinates with (x,y) reference
+     * @param _radius dots radius, NOT ZERO
+     * @param _metric metric unit to distance between dots, if no specific unit, use 1
      */
-    public Dot(float x, float y, List<Pair<Integer, Integer>> coor_resul, float radius, float metric) {
-        this.x=x; //TODO error radio 0 ZERO
-        this.y=y;
-        this.coor_resul=coor_resul;
-        this.radius =radius;
-        this.metric=metric;
+    public DrawDot(float _x, float _y, List<Pair<Integer, Integer>> _coor_resul, float _radius, float _metric) {
+        this.x=_x; //TODO error radio 0 ZERO
+        this.y=_y;
+        this.coor_resul=_coor_resul;
+        this.radius =_radius;
+        this.metric=_metric;
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
