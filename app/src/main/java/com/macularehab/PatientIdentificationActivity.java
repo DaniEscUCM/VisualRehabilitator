@@ -12,6 +12,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.macularehab.patient.PatientSignUpUsername;
 
 public class PatientIdentificationActivity extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class PatientIdentificationActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*patientSignUp()*/;
+                patientSignUp();
             }
         });
 
@@ -43,6 +44,12 @@ public class PatientIdentificationActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //TODO hacer que verifique si hay algun usuario con la sesion iniciada
+    }
+
     public void startAnalytics() {
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -54,7 +61,7 @@ public class PatientIdentificationActivity extends AppCompatActivity {
 
     private void patientSignUp() {
 
-        Intent patientSignUpView = new Intent(this, PatientSignUp.class);
+        Intent patientSignUpView = new Intent(this, PatientSignUpUsername.class);
         startActivity(patientSignUpView);
     }
 

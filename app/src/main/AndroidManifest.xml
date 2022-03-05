@@ -50,6 +50,8 @@
         <activity
             android:name=".ProfessionalIdentificationActivity"
             android:exported="false" />
+
+        <!-- Apartado Paciente .-->
         <activity
             android:name=".PatientHome"
             android:exported="false" />
@@ -62,6 +64,11 @@
         <activity
             android:name=".PatientIdentificationActivity"
             android:exported="false" />
+        <activity
+            android:name=".patient.PatientSignUpUsername"
+            android:exported="false" />
+        <!-- Fin Apartado Paciente .-->
+
         <activity
             android:name=".IdentificationActivity"
             android:exported="true">

@@ -20,11 +20,15 @@
     <string name="hint_patient_login_login_button">LogIn</string>
     <!-- Apartado SignUp .-->
     <string name="hint_patient_signup_name">Name</string>
-    <string name="hint_patient_signup_email">Email Address / Username</string>
-    <string name="hint_patient_signup_password">Password</string>
+    <string name="hint_patient_signup_email">Email Address / Username:</string>
+    <string name="hint_patient_signup_password">Numeric Code / Password:</string>
+    <string name="hint_patient_signup_repeat_password">Repeat Numeric Code / Password:</string>
+    <string name="patient_signup_repeat_password">Repeat Numeric Code \n/ Password:</string>
     <string name="hint_patient_signup_welcome">Welcome</string>
     <string name="hint_patient_signup_signup">SignUp</string>
     <string name="hint_patient_signup_signup_button">SignUp</string>
+    <string name="hint_patient_signup_signup_button_continue">Continue SignUp</string>
+    <string name="patient_signup_continue_explained">Press Continue Signup button to continue the sinning up process \nYou will have to enter the numeric code that the professional gave it to you</string>
     <string name="patient_signup_enter_username">Create an username, with no spaces, it could be your name (but without spaces)</string>
     <string name="patient_signup_password_explained">Enter the numeric code that the professional \ngave it to you as a password</string>
     <!-- Apartado Home .-->

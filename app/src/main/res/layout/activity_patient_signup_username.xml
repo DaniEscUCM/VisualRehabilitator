@@ -6,80 +6,75 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/editText_patient_signup_username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/hint_patient_signup_email"
         android:inputType="textPersonName"
         android:textSize="48sp"
+        android:drawableStart="logi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintStart_toEndOf="@+id/textView_username_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView_username_explained" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textView_patient_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/hint_patient_signup_signup"
         android:textSize="96sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/textView_username_explained"
         android:layout_width="855dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
         android:text="@string/patient_signup_enter_username"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_patient_signup" />
 
-    <EditText
-        android:id="@+id/editTextNumberPassword"
+    <Button
+        android:id="@+id/button_patient_continue_signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="80dp"
-        android:ems="10"
-        android:hint="@string/hint_patient_signup_password"
-        android:inputType="numberPassword"
-        android:textSize="48sp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/hint_patient_signup_signup_button_continue"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_patient_continue_explained" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/textView_patient_continue_explained"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/patient_signup_password_explained"
+        android:layout_marginTop="66dp"
+        android:text="@string/patient_signup_continue_explained"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_patient_signup_username" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/textView_username_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="80dp"
-        android:text="@string/hint_patient_signup_signup_button"
-        android:textSize="96sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/hint_patient_signup_email"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_username_explained" />
 </androidx.constraintlayout.widget.ConstraintLayout>
