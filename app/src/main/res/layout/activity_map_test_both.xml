@@ -72,7 +72,7 @@
         app:srcCompat="@drawable/red_dot" />
 
     <ImageButton
-        android:id="@+id/nextButtonTest1"
+        android:id="@+id/nextButton"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginEnd="32dp"
