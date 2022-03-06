@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,13 +24,21 @@ public class SecondExerciseActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         counterCorrect = counterFailed = 0; counter = -1;
         triangle = false;
+
         //Aqui primero tendria que aparecer el foco
         //No seria image button, solo image, o image button sin que se pueda hacer click
         //Poner un temporizador de 5s antes de que aparezca la 1a figura
         //El foco se "Multiplica" por la posicion que toque y las figuras se dejan
         //donde estan, en el centro.
+        int w = 50, h = 50;
+        ImageView foco = findViewById(R.id.foco);
+        foco.getLayoutParams().width = w;
+        foco.getLayoutParams().height = h;
+        //falta meter tamaño del foco
+
         ImageButton button_dot = findViewById(R.id.dot_button);
-        move();
+        button_dot.setVisibility(View.INVISIBLE);
+        startTimerFoco(button_dot); //5s antes de que aparezca nada más
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +66,18 @@ public class SecondExerciseActivity extends AppCompatActivity {
         });
     }
 
-    private void startTimer() {     //Start timer function
+    private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
+        timer = new CountDownTimer(5000, 1000) {
+            public void onTick(long millisUntilFinished) { }
+            public void onFinish() {
+                button_dot.setVisibility(View.VISIBLE);
+                move();
+            }
+        };
+        timer.start();
+    }
+
+    private void startTimer() {
         //10s (10000 mili segundos) para hacer click en el circulo
         //Lo pongo a 3-6s para hacer pruebas
         timer = new CountDownTimer(10000, 1000) {

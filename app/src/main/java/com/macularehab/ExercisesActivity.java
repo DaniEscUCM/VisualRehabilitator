@@ -64,6 +64,13 @@ public class ExercisesActivity extends AppCompatActivity {
                 fifth_exercise(v);
             }
         });
+        Button sixth_exercise_button = (Button) findViewById(R.id.button_exercise6);
+        sixth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sixth_exercise(v);
+            }
+        });
 
     }
     public void close(View view){
@@ -89,6 +96,10 @@ public class ExercisesActivity extends AppCompatActivity {
     }
     public void fifth_exercise(View view){
         Intent i = new Intent( this, FifthExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void sixth_exercise(View view){
+        Intent i = new Intent( this, SixthExerciseDescriptionActivity.class );
         startActivity(i);
     }
 }
