@@ -17,13 +17,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/button_create_patient_continue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="Button"
+        android:text="Continuar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintBottom_toTopOf="@+id/button_create_patient_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13">
@@ -163,12 +163,12 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName16"
+                    android:id="@+id/input_create_patient_todays_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="03/03/2022"
+                    android:hint="Today Date"
+                    android:inputType="date"
                     android:textSize="34sp" />
 
                 <Space
@@ -176,7 +176,7 @@
                     android:layout_height="8dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName17"
+                    android:id="@+id/input_create_patient_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -189,7 +189,7 @@
                     android:layout_height="8dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName18"
+                    android:id="@+id/input_create_patient_first_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -202,7 +202,7 @@
                     android:layout_height="8dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName19"
+                    android:id="@+id/input_create_patient_second_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -215,19 +215,19 @@
                     android:layout_height="8dp" />
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinner_input_create_patient_gender"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
                     android:entries="@array/generos"
                     android:textSize="60sp"/>
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName20"
+                    android:id="@+id/input_create_patient_date_of_birth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Fecha de nacimiento"
-                    android:inputType="textPersonName"
+                    android:hint="Fecha de Nacimiento"
+                    android:inputType="date"
                     android:textSize="34sp" />
 
                 <Space
@@ -235,7 +235,7 @@
                     android:layout_height="54dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName21"
+                    android:id="@+id/input_create_patient_diagnostic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -248,12 +248,12 @@
                     android:layout_height="54dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName22"
+                    android:id="@+id/input_create_patient_av"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="AV"
-                    android:inputType="textPersonName"
+                    android:inputType="numberDecimal"
                     android:textSize="34sp" />
 
                 <Space
@@ -261,12 +261,12 @@
                     android:layout_height="8dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName23"
+                    android:id="@+id/input_create_patient_cv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="CV"
-                    android:inputType="textPersonName"
+                    android:inputType="numberDecimal"
                     android:textSize="34sp" />
 
                 <Space
@@ -274,7 +274,7 @@
                     android:layout_height="8dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextMultiLine"
+                    android:id="@+id/input_create_patient_observations"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
