@@ -56,6 +56,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private int numericCode;
+    private final String patientsWithNoAccount = "PatientsWithNoAccount";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,6 +88,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         });
 
         setDate();
+        generateNumericCode();
     }
 
     private void setDate() {
@@ -101,6 +103,13 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private void buttonContinueClicked() {
 
         readInputs();
+        validateInputs();
+
+        if (!validateInputs()){
+            showAlertMissingData();
+            return;
+        }
+        createPatient();
     }
 
     private void readInputs() {
@@ -119,7 +128,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     }
 
     //TODO utilizar string.xml y tambien falta comprobar que no exista un usuario con el mismo nombre
-    private void validateInputs() {
+    private boolean validateInputs() {
 
         boolean all_correct = true;
 
@@ -156,12 +165,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
             all_correct = false;
         }
 
-        if (all_correct) {
-            createPatient();
-        }
-        else {
-            showAlertMissingData();
-        }
+        return all_correct;
     }
 
     private void showAlertMissingData() {
@@ -191,12 +195,36 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         patient.setCv(cv);
         patient.setObservations(observations);
 
+        addPatientToDataBase();
     }
 
     private void addPatientToDataBase() {
 
+        databaseReference.child(patientsWithNoAccount)
+                .child(String.valueOf(numericCode)).setValue(patient);
 
+        //prueba();
     }
+
+    /*private void prueba() {
+
+        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+
+                    Patient patient = (Patient) task.getResult().getValue();
+
+                    int p = 0;
+                    p++;
+                }
+            }
+        });
+    }*/
 
     private void generateNumericCode() {
 
@@ -204,11 +232,12 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         int max = 99999998;
         Random random = new Random();
         numericCode = random.nextInt(max-min) + min;
+        checkNumericCode();
     }
 
     private void checkNumericCode() {
 
-        databaseReference.child(String.valueOf(numericCode))
+        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {

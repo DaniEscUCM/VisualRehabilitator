@@ -138,4 +138,12 @@ public class Patient {
     public void setObservations(String observations) {
         this.observations = observations;
     }
+
+    public ArrayList<Boolean> getCheckBox() {
+        return checkBox;
+    }
+
+    public void setCheckBox(ArrayList<Boolean> checkBox) {
+        this.checkBox = checkBox;
+    }
 }
