@@ -202,29 +202,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
         databaseReference.child(patientsWithNoAccount)
                 .child(String.valueOf(numericCode)).setValue(patient);
-
-        //prueba();
     }
-
-    /*private void prueba() {
-
-        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
-                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-
-                    Patient patient = (Patient) task.getResult().getValue();
-
-                    int p = 0;
-                    p++;
-                }
-            }
-        });
-    }*/
 
     private void generateNumericCode() {
 

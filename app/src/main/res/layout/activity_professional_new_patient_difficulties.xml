@@ -54,77 +54,112 @@
                 android:textSize="48sp" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/check_create_patient_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox16"
+                android:id="@+id/check_create_patient_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Escribir"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox17"
+                android:id="@+id/check_create_patient_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Usar el movil, tableta, ordenador, otros"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox18"
+                android:id="@+id/check_create_patient_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox19"
+                android:id="@+id/check_create_patient_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox20"
+                android:id="@+id/check_create_patient_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox21"
+                android:id="@+id/check_create_patient_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox22"
+                android:id="@+id/check_create_patient_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox23"
+                android:id="@+id/check_create_patient_9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox24"
+                android:id="@+id/check_create_patient_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox25"
+                android:id="@+id/check_create_patient_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leer"
+                android:textSize="34sp" />
+
+            <CheckBox
+                android:id="@+id/check_create_patient_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leer"
+                android:textSize="34sp" />
+
+            <CheckBox
+                android:id="@+id/check_create_patient_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leer"
+                android:textSize="34sp" />
+
+            <CheckBox
+                android:id="@+id/check_create_patient_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leer"
+                android:textSize="34sp" />
+
+            <CheckBox
+                android:id="@+id/check_create_patient_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leer"
+                android:textSize="34sp" />
+
+            <CheckBox
+                android:id="@+id/check_create_patient_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leer"
@@ -142,28 +177,28 @@
                 android:textSize="48sp" />
 
             <CheckBox
-                android:id="@+id/checkBox26"
+                android:id="@+id/check_create_patient_17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox30"
+                android:id="@+id/check_create_patient_18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox31"
+                android:id="@+id/check_create_patient_19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox29"
+                android:id="@+id/check_create_patient_20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
@@ -181,21 +216,21 @@
                 android:textSize="48sp" />
 
             <CheckBox
-                android:id="@+id/checkBox32"
+                android:id="@+id/check_create_patient_21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox33"
+                android:id="@+id/check_create_patient_22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox34"
+                android:id="@+id/check_create_patient_23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
@@ -213,14 +248,14 @@
                 android:textSize="48sp" />
 
             <CheckBox
-                android:id="@+id/checkBox35"
+                android:id="@+id/check_create_patient_24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"
                 android:textSize="34sp" />
 
             <CheckBox
-                android:id="@+id/checkBox36"
+                android:id="@+id/check_create_patient_25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CheckBox"

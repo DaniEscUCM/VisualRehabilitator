@@ -146,4 +146,46 @@ public class Patient {
     public void setCheckBox(ArrayList<Boolean> checkBox) {
         this.checkBox = checkBox;
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "date='" + date + '\'' +
+                ", name='" + name + '\'' +
+                ", first_lastName='" + first_lastName + '\'' +
+                ", second_lastName='" + second_lastName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", date_of_birth='" + date_of_birth + '\'' +
+                ", diagnostic='" + diagnostic + '\'' +
+                ", av=" + av +
+                ", cv=" + cv +
+                ", observations='" + observations + '\'' +
+                ", read=" + read +
+                ", write=" + write +
+                ", use_phone=" + use_phone +
+                ", whiteboard=" + whiteboard +
+                ", job_difficulties=" + job_difficulties +
+                ", face_recognition=" + face_recognition +
+                ", see_tv=" + see_tv +
+                ", move_interior=" + move_interior +
+                ", move_exterior=" + move_exterior +
+                ", interior_to_exterior=" + interior_to_exterior +
+                ", money_management=" + money_management +
+                ", feeding=" + feeding +
+                ", home_activities=" + home_activities +
+                ", shopping=" + shopping +
+                ", eating=" + eating +
+                ", personal_care=" + personal_care +
+                ", head_movement=" + head_movement +
+                ", tv_closeness=" + tv_closeness +
+                ", specific_illumination=" + specific_illumination +
+                ", sun_bother=" + sun_bother +
+                ", conventional_glasses=" + conventional_glasses +
+                ", uses_sunglasses=" + uses_sunglasses +
+                ", glasses_are_useful=" + glasses_are_useful +
+                ", used_to_read_more=" + used_to_read_more +
+                ", wants_to_read_more=" + wants_to_read_more +
+                ", checkBox=" + checkBox +
+                '}';
+    }
 }
