@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -57,6 +59,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private Patient patient;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
+
     private int numericCode;
     public final static String numericCodeString = "numericCodeString";
     private final String patientsWithNoAccount = "Patient";
@@ -70,6 +74,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         input_patient_date = findViewById(R.id.input_create_patient_todays_date);
         input_patient_name = findViewById(R.id.input_create_patient_name);
@@ -197,6 +202,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         patient.setAv(av);
         patient.setCv(cv);
         patient.setObservations(observations);
+        patient.setProfessional_name("Unknown");
+        patient.setProfessional_uid(mAuth.getCurrentUser().getUid());
 
         addPatientToDataBase();
     }

@@ -15,6 +15,8 @@ public class Patient {
     private float av;
     private float cv;
     private String observations;
+    private String professional_name;
+    private String professional_uid;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -145,6 +147,22 @@ public class Patient {
 
     public void setCheckBox(ArrayList<Boolean> checkBox) {
         this.checkBox = checkBox;
+    }
+
+    public String getProfessional_name() {
+        return professional_name;
+    }
+
+    public void setProfessional_name(String professional_name) {
+        this.professional_name = professional_name;
+    }
+
+    public String getProfessional_uid() {
+        return professional_uid;
+    }
+
+    public void setProfessional_uid(String professional_uid) {
+        this.professional_uid = professional_uid;
     }
 
     @Override
