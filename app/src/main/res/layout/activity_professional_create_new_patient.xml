@@ -216,10 +216,10 @@
 
                 <Spinner
                     android:id="@+id/spinner_input_create_patient_gender"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="75dp"
                     android:entries="@array/generos"
-                    android:textSize="60sp"/>
+                    android:textSize="60sp" />
 
                 <EditText
                     android:id="@+id/input_create_patient_date_of_birth"
@@ -286,5 +286,13 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        tools:layout_editor_absoluteX="601dp"
+        tools:layout_editor_absoluteY="78dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
         boolean checked = ((CheckBox) view).isChecked();
 
         // Check which checkbox was clicked
-        switch(view.getId()) {
+        /*switch(view.getId()) {
             case R.id.check_create_patient_1:
                 if (checked) {
                     
@@ -52,6 +52,6 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
                 // I'm lactose intolerant
                 break;
             // TODO: Veggie sandwich
-        }
+        }*/
     }
 }
