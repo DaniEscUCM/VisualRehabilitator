@@ -85,11 +85,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         }else{
 
             createAccount(name, mail, pasw);
-
-            Log.d(TAG, "hola");
-
         }
-
     }
 
     private void createAccount(String name,String mail, String password) {
