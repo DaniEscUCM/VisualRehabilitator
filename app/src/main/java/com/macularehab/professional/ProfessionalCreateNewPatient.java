@@ -2,6 +2,7 @@ package com.macularehab.professional;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ import com.macularehab.patient.Patient;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 import java.util.Random;
 
 public class ProfessionalCreateNewPatient extends AppCompatActivity {
@@ -56,6 +58,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private int numericCode;
+    public final static String numericCodeString = "numericCodeString";
     private final String patientsWithNoAccount = "PatientsWithNoAccount";
 
     @Override
@@ -202,6 +205,24 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
         databaseReference.child(patientsWithNoAccount)
                 .child(String.valueOf(numericCode)).setValue(patient);
+
+        Intent continue_to_checkBoxes = new Intent(this, ProfessionalCreateNewPatientDifficulties.class);
+        continue_to_checkBoxes.putExtra(numericCodeString, numericCode);
+        startActivity(continue_to_checkBoxes);
+
+        /*databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+
+                }
+                else {
+                    Map<String, Object> mapa = (Map<String, Object>) task.getResult().getValue();
+                    mapa.toString();
+                }
+            }
+        });*/
     }
 
     private void generateNumericCode() {

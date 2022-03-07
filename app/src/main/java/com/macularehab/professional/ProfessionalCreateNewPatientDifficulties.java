@@ -1,57 +1,114 @@
 package com.macularehab.professional;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 //TODO
 public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity {
 
-    //private ArrayList<CheckBox>
+    private ArrayList<Boolean> arrayList;
+    private int numericCode;
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+
+    private final String patientsWithNoAccount = "PatientsWithNoAccount";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_professional_new_patient_difficulties);
+        setContentView(R.layout.activity_professional_create_new_patient_difficulties);
 
-        CheckBox checkBox = findViewById(R.id.check_create_patient_1);
-        checkBox.setOnClickListener(new View.OnClickListener() {
+        firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        databaseReference = firebaseDatabase.getReference();
+
+        Button continue_button = findViewById(R.id.button_create_new_patient_difficulties_continue);
+        continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onCheckboxClicked(v);
+                getCheckBoxesClicked();
+            }
+        });
+
+        getPatient();
+    }
+
+    private void getPatient() {
+
+        Intent intent = getIntent();
+        numericCode = intent.getIntExtra(ProfessionalCreateNewPatient.numericCodeString, 0);
+
+        if (numericCode == 0) {
+            Log.w("Patient Code", "Was not read correctly");
+        }
+    }
+
+    private void getCheckBoxesClicked() {
+
+        arrayList = new ArrayList<>(25);
+
+        LinearLayout layout = (LinearLayout) findViewById(R.id.create_new_patient_linear_layout);
+        int count = 0;
+        for (int i = 0; i < layout.getChildCount(); i++) {
+
+            View v = layout.getChildAt(i);
+            if (v instanceof CheckBox) {
+                if (((CheckBox) v).isChecked()) {
+                    arrayList.add(true);
+                }
+                else {
+                    arrayList.add(false);
+                }
+                count++;
+            }
+        }
+
+        Log.i("Difficulties", arrayList.toString());
+        //System.out.println(arrayList.toString());
+    }
+
+    private void addPatientInformation() {
+
+        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+
+                }
+                else {
+                    Map<String, Object> patientInfo = (Map<String, Object>) task.getResult().getValue();
+                    Log.i("Patient Info", patientInfo.toString());
+                    patientInfo.put("checkBok", arrayList);
+                    ProfessionalCreateNewPatientDifficulties.this.continueWithNextActivity();
+                }
             }
         });
     }
 
-    private void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
+    private void continueWithNextActivity() {
 
-        // Check which checkbox was clicked
-        /*switch(view.getId()) {
-            case R.id.check_create_patient_1:
-                if (checked) {
-                    
-                }
-                // Put some meat on the sandwich
-            else
-                // Remove the meat
-                break;
-            case R.id.checkbox_cheese:
-                if (checked)
-                // Cheese me
-            else
-                // I'm lactose intolerant
-                break;
-            // TODO: Veggie sandwich
-        }*/
+        //Intent continueActivity = new Intent(this, )
     }
 }

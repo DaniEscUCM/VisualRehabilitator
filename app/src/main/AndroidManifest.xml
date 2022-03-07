@@ -53,6 +53,9 @@
         <activity
             android:name=".professional.ProfessionalCreateNewPatient"
             android:exported="false" />
+        <activity
+            android:name=".professional.ProfessionalCreateNewPatientDifficulties"
+            android:exported="false" />
 
         <!-- Apartado Paciente .-->
         <activity
