@@ -27,10 +27,11 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "EmailPassword";
+    private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
 
     public String currentUserID;
 
-    EditText nameP, mailP, paswP;
+    EditText nameP, mailP, paswP, repPasw;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -50,6 +51,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         nameP = findViewById(R.id.editTextProfesionalName);
         mailP = findViewById(R.id.editTextProfesionalMail);
         paswP = findViewById(R.id.editTextProfesionalPasword);
+        repPasw = findViewById(R.id.editTextProfesionalRepeatPasword);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc_prof);
         button.setOnClickListener(new View.OnClickListener() {
@@ -78,11 +80,17 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         String name = nameP.getText().toString();
         String mail = mailP.getText().toString();
         String pasw = paswP.getText().toString();
+        String rep_pasw = repPasw.getText().toString();
 
-        if(name.equals("")||mail.equals("")||pasw.equals("") || (pasw.length() < 6)) {
+        if(name.equals("")||mail.equals("")||pasw.equals("") || (pasw.length() < 6) || (!pasw.equals(rep_pasw))) {
             validate();
 
         }else{
+
+            int email_length = mail.length();
+            boolean is_email = false;
+            for (int i = 0; i < email_length && !is_email; i++) if (mail.charAt(i) == '@') is_email = true;
+            if (!is_email) mail += GENERIC_EMAIL;
 
             createAccount(name, mail, pasw);
         }
@@ -133,6 +141,8 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         String name = nameP.getText().toString();
         String mail = mailP.getText().toString();
         String pasw = paswP.getText().toString();
+        String rep_pasw = repPasw.getText().toString();
+
         if(name.equals("")){
             nameP.setError("required");
         }
@@ -145,12 +155,19 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         if (pasw.length() < 6) {
             paswP.setError("Password must be at least 6 characters");
         }
+        if (!pasw.equals(rep_pasw)) {
+            paswP.setError("Passwords Doesn't Match");
+            repPasw.setError("Passwords Doesn't Match");
+            paswP.setText("");
+            repPasw.setText("");
+        }
     }
 
     public void clean(){
         nameP.setText("");
         mailP.setText("");
         paswP.setText("");
+        repPasw.setText("");
     }
 
     public void goToMain(){

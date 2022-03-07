@@ -67,6 +67,15 @@
             android:inputType="textPassword"
             android:minHeight="48dp" />
 
+        <EditText
+            android:id="@+id/editTextProfesionalRepeatPasword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_professional_signup_repeat_password"
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
+
         <Button
             android:id="@+id/button_singIn"
             android:layout_width="match_parent"
