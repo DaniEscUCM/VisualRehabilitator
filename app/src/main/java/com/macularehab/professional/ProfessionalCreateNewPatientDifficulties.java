@@ -31,8 +31,8 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-
-    private final String patientsWithNoAccount = "PatientsWithNoAccount";
+    public final static String numericCodeString = "numericCodeString";
+    private final String patientsWithNoAccount = "Patient";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -86,21 +86,25 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
 
         Log.i("Difficulties", arrayList.toString());
         //System.out.println(arrayList.toString());
+
+        addPatientInformation();
     }
 
     private void addPatientInformation() {
 
+        Log.w("Patient Code", String.valueOf(numericCode));
         databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
-
+                    Log.e("Patient", "No se ha conseguido");
                 }
                 else {
                     Map<String, Object> patientInfo = (Map<String, Object>) task.getResult().getValue();
                     Log.i("Patient Info", patientInfo.toString());
-                    patientInfo.put("checkBok", arrayList);
+                    patientInfo.put("checkBox", arrayList);
+                    databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode)).setValue(patientInfo);
                     ProfessionalCreateNewPatientDifficulties.this.continueWithNextActivity();
                 }
             }
@@ -109,6 +113,8 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
 
     private void continueWithNextActivity() {
 
-        //Intent continueActivity = new Intent(this, )
+        Intent continueActivity = new Intent(this, ProfessionalCreateNewPatientShowNumericCode.class);
+        continueActivity.putExtra(ProfessionalCreateNewPatientDifficulties.numericCodeString, numericCode);
+        startActivity(continueActivity);
     }
 }

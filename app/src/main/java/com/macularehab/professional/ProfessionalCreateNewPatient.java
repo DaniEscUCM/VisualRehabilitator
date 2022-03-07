@@ -59,7 +59,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private int numericCode;
     public final static String numericCodeString = "numericCodeString";
-    private final String patientsWithNoAccount = "PatientsWithNoAccount";
+    private final String patientsWithNoAccount = "Patient";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -209,20 +209,6 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         Intent continue_to_checkBoxes = new Intent(this, ProfessionalCreateNewPatientDifficulties.class);
         continue_to_checkBoxes.putExtra(numericCodeString, numericCode);
         startActivity(continue_to_checkBoxes);
-
-        /*databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
-                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-
-                }
-                else {
-                    Map<String, Object> mapa = (Map<String, Object>) task.getResult().getValue();
-                    mapa.toString();
-                }
-            }
-        });*/
     }
 
     private void generateNumericCode() {
