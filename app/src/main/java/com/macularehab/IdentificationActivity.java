@@ -8,14 +8,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class IdentificationActivity extends AppCompatActivity {
+
+    private ImageView selectLanguage;
+    private int currentLanguage = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_identification);
+
+        selectLanguage = findViewById(R.id.imageView_select_language);
+        selectLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeLanguage();
+            }
+        });
 
         Button buttonPatient =(Button) findViewById(R.id.button_patient_iden);
         buttonPatient.setOnClickListener(new View.OnClickListener(){
@@ -30,6 +42,19 @@ public class IdentificationActivity extends AppCompatActivity {
                 professional(v);
             }
         });
+    }
+
+    private void changeLanguage() {
+
+        if (currentLanguage == 0) {
+
+            selectLanguage.setImageResource(R.drawable.spain);
+            currentLanguage = 1;
+        }
+        else {
+            selectLanguage.setImageResource(R.drawable.united_kingdom);
+            currentLanguage = 0;
+        }
     }
 
     public void patient(View view){
