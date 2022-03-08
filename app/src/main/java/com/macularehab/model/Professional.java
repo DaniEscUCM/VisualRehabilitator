@@ -4,6 +4,8 @@ public class Professional {
 
     private String uid;
     private String Name;
+    private int ProfessionalNumericCode;
+    private int NumberOfPatients;
 
     public Professional(){
 
@@ -23,6 +25,22 @@ public class Professional {
 
     public void setName(String name) {
         Name = name;
+    }
+
+    public int getProfessionalNumericCode() {
+        return ProfessionalNumericCode;
+    }
+
+    public void setProfessionalNumericCode(int professionalNumericCode) {
+        ProfessionalNumericCode = professionalNumericCode;
+    }
+
+    public int getNumberOfPatients() {
+        return NumberOfPatients;
+    }
+
+    public void setNumberOfPatients(int numberOfPatients) {
+        NumberOfPatients = numberOfPatients;
     }
 
     @Override

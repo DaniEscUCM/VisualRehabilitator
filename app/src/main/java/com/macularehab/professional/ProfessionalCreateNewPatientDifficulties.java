@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,6 +32,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
     public final static String numericCodeString = "numericCodeString";
     private final String patientsWithNoAccount = "Patient";
 
@@ -42,6 +44,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         Button continue_button = findViewById(R.id.button_create_new_patient_difficulties_continue);
         continue_button.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +108,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
                     Log.i("Patient Info", patientInfo.toString());
                     patientInfo.put("checkBox", arrayList);
                     databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode)).setValue(patientInfo);
+                    databaseReference.child("Professional").child(mAuth.getUid()).child("Patients").setValue(patientInfo);
                     ProfessionalCreateNewPatientDifficulties.this.continueWithNextActivity();
                 }
             }

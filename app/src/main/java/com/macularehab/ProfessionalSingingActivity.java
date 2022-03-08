@@ -3,6 +3,8 @@ package com.macularehab;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.macularehab.model.Professional;
@@ -34,6 +37,10 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
     EditText nameP, mailP, paswP, repPasw;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+
+    private String name;
+    private String email;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,8 +121,9 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(ProfessionalSingingActivity.this, "Authentication failed.",
+                            Toast.makeText(ProfessionalSingingActivity.this, "Authentication failed. " + task.getException().toString(),
                                     Toast.LENGTH_LONG).show();
+                            showAlertAuthenticationFailed(task.getException().toString());
                             //updateUI(null);
 
                             //showAlertFailToSignUp();
@@ -125,11 +133,55 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         // [END create_user_with_email]
     }
 
+    private void showAlertAuthenticationFailed(String exception) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(exception)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     public void addDB(String name, String email, String password){
+
+        this.name = name;
+        this.email = email;
+        this.password = password;
+
+        getNumberOfProfessionals();
+    }
+
+    private void getNumberOfProfessionals() {
+
+        databaseReference.child("NumberOfProfessionals")
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+
+                    String value = String.valueOf(task.getResult().getValue());
+                    createNewProfessional(Integer.parseInt(value));
+                }
+            }
+        });
+    }
+
+    private void createNewProfessional(int professionalNumericCode) {
+
         Professional p = new Professional();
         p.setName(name);
         p.setUid(currentUserID);
+        p.setProfessionalNumericCode(professionalNumericCode);
+        p.setNumberOfPatients(0);
 
+        databaseReference.child("NumberOfProfessionals").setValue(professionalNumericCode + 1);
         databaseReference.child("Professional").child(currentUserID).setValue(p);
 
         Toast.makeText(ProfessionalSingingActivity.this, "User created", Toast.LENGTH_LONG).show();

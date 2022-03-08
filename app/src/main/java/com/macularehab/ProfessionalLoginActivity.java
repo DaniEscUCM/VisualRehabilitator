@@ -27,6 +27,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "EmailPassword";
+    private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
 
     EditText mailP, paswP;
     FirebaseDatabase firebaseDatabase;
@@ -101,6 +102,11 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         if(mail.equals("")||pasword.equals("")){
             validate();
         }else{
+
+            int email_length = mail.length();
+            boolean is_email = false;
+            for (int i = 0; i < email_length && !is_email; i++) if (mail.charAt(i) == '@') is_email = true;
+            if (!is_email) mail += GENERIC_EMAIL;
             loginAuth(mail,pasword);
 
         }
