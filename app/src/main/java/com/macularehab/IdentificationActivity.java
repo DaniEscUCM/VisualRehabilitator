@@ -2,18 +2,30 @@ package com.macularehab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.macularehab.language.LocaleHelper;
 
 public class IdentificationActivity extends AppCompatActivity {
 
     private ImageView selectLanguage;
     private int currentLanguage = 0;
+    private LocaleHelper localeHelper;
+    private Context context;
+    private Resources resources;
+
+    private TextView whosIsUsing;
+    private Button buttonPatient;
+    private Button buttonProfessional;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +41,15 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonPatient =(Button) findViewById(R.id.button_patient_iden);
+        whosIsUsing = findViewById(R.id.textView_who_is_using_this_app);
+
+        buttonPatient =(Button) findViewById(R.id.button_patient_iden);
         buttonPatient.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) { patient(v);}
         });
 
-        Button buttonProfessional =(Button) findViewById(R.id.button_professional_ident);
+        buttonProfessional =(Button) findViewById(R.id.button_professional_ident);
         buttonProfessional.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,14 +60,24 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private void changeLanguage() {
 
-        if (currentLanguage == 0) {
+        if (currentLanguage == 1) {
 
-            selectLanguage.setImageResource(R.drawable.spain);
-            currentLanguage = 1;
-        }
-        else {
             selectLanguage.setImageResource(R.drawable.united_kingdom);
             currentLanguage = 0;
+            context = LocaleHelper.setLocale(this, "es");
+            resources = context.getResources();
+            buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
+            buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));
+            whosIsUsing.setText(resources.getString(R.string.textview_whoIsUsing));
+        }
+        else {
+            selectLanguage.setImageResource(R.drawable.spain);
+            currentLanguage = 1;
+            context = LocaleHelper.setLocale(this, "en");
+            resources = context.getResources();
+            buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
+            buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));
+            whosIsUsing.setText(resources.getString(R.string.textview_whoIsUsing));
         }
     }
 

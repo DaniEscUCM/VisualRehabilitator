@@ -7,7 +7,7 @@
     tools:context=".IdentificationActivity">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView_who_is_using_this_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textview_whoIsUsing"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_professional_ident"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_who_is_using_this_app" />
 
     <Button
         android:id="@+id/button_professional_ident"
@@ -40,16 +40,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_patient_iden"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_who_is_using_this_app" />
 
     <ImageView
         android:id="@+id/imageView_select_language"
         android:layout_width="150dp"
         android:layout_height="200dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/united_kingdom" />
+        app:srcCompat="@drawable/spain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
