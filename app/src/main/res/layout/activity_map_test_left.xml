@@ -32,12 +32,12 @@
 
     <TextView
         android:id="@+id/firstTestLeft"
-        android:layout_width="350dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="649dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
         android:text="@string/first_test_left"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_map_test"
         app:layout_constraintTop_toTopOf="parent" />

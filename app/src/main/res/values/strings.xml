@@ -117,14 +117,18 @@
     <string name="dot_instruction">Don`t move your head and look at the centre dot</string>
     <string name="next_test">Press to go to next test</string>
     <string name="repeat_test">Press to repeat test</string>
-    <string name="first_test_left">First Test Left</string>
-    <string name="first_test_right">First Test Right</string>
-    <string name="first_test_both">First Test Both</string>
+    <string name="first_test_left">First Test Left Eye</string>
+    <string name="first_test_right">First Test Right Eye</string>
+    <string name="first_test_both">First Test Both Eyes</string>
     <string name="manual_stain_left">Manual Left Eye</string>
     <string name="manual_stain_right">Manual Right Eye</string>
     <string name="manual_stain_both">Manual Both Eyes</string>
+    <string name="second_test_left">Second Test Left Eye</string>
+    <string name="second_test_right">Second Test Right Eye</string>
+    <string name="second_test_both">Second Test Both Eyes</string>
     <string name="explain_manual">Touch the spaces where the stain is. It may be better with a touchpen, but not necessary. \n\nFilled by professional previus information! \n\nTo skip press next button</string>
-
+    <string name="explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas. It may be better with a touchpen, but not necessary. \n\nFilled by patient \n\nTo continue press next button</string>
+    <string name="short_explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas.</string>
 
     <string-array name="generos">
         <item>Masculino</item>

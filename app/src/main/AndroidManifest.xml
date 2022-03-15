@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".GridTestBothActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GridTestBothExplanationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GridTestRightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GridTestRightExplanationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GridTestLeftExplanationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GridTestLeftActivity"
+            android:exported="false" />
+        <activity
             android:name=".ManualInputStainBothActivity"
             android:exported="false" />
         <activity
@@ -58,9 +76,7 @@
             android:exported="false" />
         <activity
             android:name=".professional.ProfessionalCreateNewPatientShowNumericCode"
-            android:exported="false" />
-
-        <!-- Apartado Paciente .-->
+            android:exported="false" /> <!-- Apartado Paciente . -->
         <activity
             android:name=".PatientHome"
             android:exported="false" />
@@ -78,9 +94,7 @@
             android:exported="false" />
         <activity
             android:name=".patient.PatientSignUpPassword"
-            android:exported="false" />
-        <!-- Fin Apartado Paciente .-->
-
+            android:exported="false" /> <!-- Fin Apartado Paciente . -->
         <activity
             android:name=".IdentificationActivity"
             android:exported="true">
