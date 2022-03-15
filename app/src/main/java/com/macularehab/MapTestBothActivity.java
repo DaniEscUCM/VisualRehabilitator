@@ -67,9 +67,8 @@ public class MapTestBothActivity extends AppCompatActivity {
         return true;
     }
     private void next_test(View v) {
-        Intent i = new Intent( this, MapTestLeftExplanationActivity.class );
+        Intent i = new Intent( this, GridTestLeftExplanationActivity.class );
         startActivity(i);
-        //TODO next test
     }
 
 

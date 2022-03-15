@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapTestRightExplanationActivity">
-
+    tools:context=".GridTestRightExplanationActivity">
 
     <TextView
         android:id="@+id/textView17"
@@ -22,11 +21,11 @@
 
     <TextView
         android:id="@+id/secondTestRight"
-        android:layout_width="658dp"
-        android:layout_height="70dp"
+        android:layout_width="620dp"
+        android:layout_height="72dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/first_test_right"
+        android:layout_marginTop="28dp"
+        android:text="@string/second_test_right"
         android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_map_test"
@@ -98,10 +97,10 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="301dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="56dp"
-        android:text="@string/touch_instruction"
+        android:layout_width="339dp"
+        android:layout_height="89dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/short_explain_second"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView17"

@@ -19,13 +19,13 @@
         app:srcCompat="@drawable/tencmgrid" />
 
     <TextView
-        android:id="@+id/firstTestRight"
-        android:layout_width="359dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="40dp"
+        android:id="@+id/secondTestRight"
+        android:layout_width="564dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="@string/first_test_right"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textSize="48sp"
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_map_test"
         app:layout_constraintTop_toTopOf="parent" />
