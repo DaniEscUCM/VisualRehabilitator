@@ -34,7 +34,9 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
     public final static String numericCodeString = "numericCodeString";
-    private final String patientsWithNoAccount = "Patient";
+    private final String db_patient = "Patient";
+    private final String db_professional = "Professional";
+    private final String db_numberOfPatients = "numberOfPatients";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,6 +87,25 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
                 }
                 count++;
             }
+            else if (v instanceof LinearLayout) {
+
+                LinearLayout linearLayout = (LinearLayout) v;
+                for (int j = 0; j < linearLayout.getChildCount(); j++) {
+                    View view = linearLayout.getChildAt(j);
+                    LinearLayout linearLayout2 = (LinearLayout) view;
+                    for (int k = 0; k < linearLayout2.getChildCount(); k++) {
+                        View view2 = linearLayout2.getChildAt(k);
+                        if (view2 instanceof CheckBox) {
+                            if (((CheckBox) view2).isChecked()) {
+                                arrayList.add(true);
+                            } else {
+                                arrayList.add(false);
+                            }
+                            count++;
+                        }
+                    }
+                }
+            }
         }
 
         Log.i("Difficulties", arrayList.toString());
@@ -96,7 +117,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
     private void addPatientInformation() {
 
         Log.w("Patient Code", String.valueOf(numericCode));
-        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
+        databaseReference.child(db_patient).child(String.valueOf(numericCode))
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -107,10 +128,34 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
                     Map<String, Object> patientInfo = (Map<String, Object>) task.getResult().getValue();
                     Log.i("Patient Info", patientInfo.toString());
                     patientInfo.put("checkBox", arrayList);
-                    databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode)).setValue(patientInfo);
+                    databaseReference.child(db_patient).child(String.valueOf(numericCode)).setValue(patientInfo);
                     //TODO Aqui tengo que modificar no pacientes, sino aquel con el codigo numero
-                    databaseReference.child("Professional").child(mAuth.getUid()).child("Patients").child(String.valueOf(numericCode)).setValue(patientInfo);
+                    databaseReference.child(db_professional).child(mAuth.getUid()).child("Patients").child(String.valueOf(numericCode)).setValue(patientInfo);
+                    addNumberOfPatients();
                     ProfessionalCreateNewPatientDifficulties.this.continueWithNextActivity();
+                }
+            }
+        });
+    }
+
+    private void addNumberOfPatients() {
+
+        databaseReference.child(db_professional).child(mAuth.getUid()).child(db_numberOfPatients)
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("Patient", "No se ha conseguido");
+                }
+                else {
+
+                    String result = String.valueOf(task.getResult().getValue());
+                    int number = Integer.valueOf(result);
+                    number++;
+
+                    String newNumberOfPatienst = String.valueOf(number);
+
+                    databaseReference.child(db_professional).child(mAuth.getUid()).child(db_numberOfPatients).setValue(number);
                 }
             }
         });

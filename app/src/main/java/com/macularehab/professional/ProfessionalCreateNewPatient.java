@@ -65,7 +65,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private int numericCode;
     public final static String numericCodeString = "numericCodeString";
-    private final String patientsWithNoAccount = "Patient";
+    private final String db_patient = "Patient";
+    private final String db_professional = "Professional";
     private long professionalNumericCode;
     private long patientNumericCode;
 
@@ -170,12 +171,12 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
             all_correct = false;
         }
 
-        if (av == 0) {
+        if (av_text.equals("")) {
             input_patient_av.setError("required");
             all_correct = false;
         } else av = Float.parseFloat(av_text);
 
-        if (cv == 0) {
+        if (cv_text.equals("")) {
             input_patient_cv.setError("required");
             all_correct = false;
         } else cv = Float.parseFloat(cv_text);
@@ -209,7 +210,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         patient.setAv(av);
         patient.setCv(cv);
         patient.setObservations(observations);
-        patient.setProfessional_name("Unknown");
+        patient.setProfessional_name(mAuth.getCurrentUser().getDisplayName());
         patient.setProfessional_uid(mAuth.getCurrentUser().getUid());
 
         addPatientToDataBase();
@@ -217,7 +218,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void addPatientToDataBase() {
 
-        databaseReference.child(patientsWithNoAccount)
+        databaseReference.child(db_patient)
                 .child(String.valueOf(numericCode)).setValue(patient);
 
         Intent continue_to_checkBoxes = new Intent(this, ProfessionalCreateNewPatientDifficulties.class);
@@ -238,7 +239,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void checkNumericCode() {
 
-        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
+        databaseReference.child(db_patient).child(String.valueOf(numericCode))
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -258,7 +259,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void getProfessionalInfo() {
 
-        databaseReference.child("Professional").child(String.valueOf(mAuth.getCurrentUser().getUid()))
+        databaseReference.child(db_professional).child(String.valueOf(mAuth.getCurrentUser().getUid()))
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -267,10 +268,10 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
                 }
                 else {
 
-                    Map<String, Object> mapa = (Map<String, Object>) task.getResult().getValue();
-                    if (mapa != null) {
-                        professionalNumericCode = (long) mapa.get("professionalNumericCode");
-                        patientNumericCode = (long) mapa.get("numberOfPatients");
+                    Map<String, Object> professionalInfo = (Map<String, Object>) task.getResult().getValue();
+                    if (professionalInfo != null) {
+                        professionalNumericCode = (long) professionalInfo.get("professionalNumericCode");
+                        patientNumericCode = (long) professionalInfo.get("numberOfPatients");
                         patientNumericCode++;
                         generateNumericCode();
                     }

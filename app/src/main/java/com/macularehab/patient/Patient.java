@@ -17,6 +17,7 @@ public class Patient {
     private String observations;
     private String professional_name;
     private String professional_uid;
+    private boolean hasAccount;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -56,7 +57,9 @@ public class Patient {
     public Patient() {
 
         checkBox = new ArrayList<>(25);
-        for (int i = 0; i < 25; i++) checkBox.add(false);
+        for (int i = 0; i < 33; i++) checkBox.add(false);
+
+        hasAccount = false;
     }
 
     /**** Getters And Setters ****/
@@ -163,6 +166,14 @@ public class Patient {
 
     public void setProfessional_uid(String professional_uid) {
         this.professional_uid = professional_uid;
+    }
+
+    public boolean isHasAccount() {
+        return hasAccount;
+    }
+
+    public void setHasAccount(boolean hasAccount) {
+        this.hasAccount = hasAccount;
     }
 
     @Override
