@@ -21,6 +21,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
@@ -115,6 +116,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser currentUser = firebaseAuth.getCurrentUser();
                             //updateUI(user);
+                            setUserName();
                             ProfessionalSingingActivity.this.currentUserID = currentUser.getUid();
                             addDB(name,mail,password);
 
@@ -130,7 +132,24 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                         }
                     }
                 });
-        // [END create_user_with_email]
+    }
+
+    private void setUserName() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build();
+
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "User profile updated.");
+                        }
+                    }
+                });
     }
 
     private void showAlertAuthenticationFailed(String exception) {
@@ -179,7 +198,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         p.setName(name);
         p.setUid(currentUserID);
         p.setProfessionalNumericCode(professionalNumericCode);
-        p.setNumberOfPatients(0);
+        p.setNumberOfPatients(100);
 
         databaseReference.child("NumberOfProfessionals").setValue(professionalNumericCode + 1);
         databaseReference.child("Professional").child(currentUserID).setValue(p);

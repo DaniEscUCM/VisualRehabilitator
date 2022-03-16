@@ -52,7 +52,9 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private String gender;
     private String date_of_birth;
     private String diagnostic;
+    private String av_text;
     private float av;
+    private String cv_text;
     private float cv;
     private String observations;
 
@@ -63,7 +65,10 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private int numericCode;
     public final static String numericCodeString = "numericCodeString";
-    private final String patientsWithNoAccount = "Patient";
+    private final String db_patient = "Patient";
+    private final String db_professional = "Professional";
+    private long professionalNumericCode;
+    private long patientNumericCode;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -75,6 +80,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        getProfessionalInfo();
 
         input_patient_date = findViewById(R.id.input_create_patient_todays_date);
         input_patient_name = findViewById(R.id.input_create_patient_name);
@@ -96,7 +103,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         });
 
         setDate();
-        generateNumericCode();
+        //generateNumericCode();
     }
 
     private void setDate() {
@@ -130,9 +137,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         gender = input_patient_gender.getSelectedItem().toString();
         date_of_birth = input_patient_date_of_birth.getText().toString();
         diagnostic = input_patient_diagnostic.getText().toString();
-        av = Float.parseFloat(input_patient_av.getText().toString());
-        Log.d("AV", String.valueOf(av));
-        cv = Float.parseFloat(input_patient_cv.getText().toString());
+        av_text = input_patient_av.getText().toString();
+        cv_text = input_patient_cv.getText().toString();
     }
 
     //TODO utilizar string.xml y tambien falta comprobar que no exista un usuario con el mismo nombre
@@ -164,14 +170,16 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
             input_patient_diagnostic.setError("required");
             all_correct = false;
         }
-        if (av == 0) {
+
+        if (av_text.equals("")) {
             input_patient_av.setError("required");
             all_correct = false;
-        }
-        if (cv == 0) {
+        } else av = Float.parseFloat(av_text);
+
+        if (cv_text.equals("")) {
             input_patient_cv.setError("required");
             all_correct = false;
-        }
+        } else cv = Float.parseFloat(cv_text);
 
         return all_correct;
     }
@@ -202,7 +210,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         patient.setAv(av);
         patient.setCv(cv);
         patient.setObservations(observations);
-        patient.setProfessional_name("Unknown");
+        patient.setProfessional_name(mAuth.getCurrentUser().getDisplayName());
         patient.setProfessional_uid(mAuth.getCurrentUser().getUid());
 
         addPatientToDataBase();
@@ -210,7 +218,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void addPatientToDataBase() {
 
-        databaseReference.child(patientsWithNoAccount)
+        databaseReference.child(db_patient)
                 .child(String.valueOf(numericCode)).setValue(patient);
 
         Intent continue_to_checkBoxes = new Intent(this, ProfessionalCreateNewPatientDifficulties.class);
@@ -220,16 +228,18 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void generateNumericCode() {
 
-        int min = 11111112;
-        int max = 99999998;
+        numericCode = (int) (professionalNumericCode*100000+patientNumericCode*100);
+
+        int min = 01;
+        int max = 99;
         Random random = new Random();
-        numericCode = random.nextInt(max-min) + min;
+        numericCode += random.nextInt(max-min) + min;
         checkNumericCode();
     }
 
     private void checkNumericCode() {
 
-        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode))
+        databaseReference.child(db_patient).child(String.valueOf(numericCode))
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -240,6 +250,29 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
                     String value = String.valueOf(task.getResult().getValue());
                     if (!value.equals("null")) {
+                        generateNumericCode();
+                    }
+                }
+            }
+        });
+    }
+
+    private void getProfessionalInfo() {
+
+        databaseReference.child(db_professional).child(String.valueOf(mAuth.getCurrentUser().getUid()))
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+
+                    Map<String, Object> professionalInfo = (Map<String, Object>) task.getResult().getValue();
+                    if (professionalInfo != null) {
+                        professionalNumericCode = (long) professionalInfo.get("professionalNumericCode");
+                        patientNumericCode = (long) professionalInfo.get("numberOfPatients");
+                        patientNumericCode++;
                         generateNumericCode();
                     }
                 }

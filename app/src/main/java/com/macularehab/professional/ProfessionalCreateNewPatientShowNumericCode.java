@@ -27,7 +27,9 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
     private int numericCode;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private final String patientsWithNoAccount = "Patient";
+    private final String db_patient = "Patient";
+    private final String db_patients = "Patients";
+    private final String db_professional = "Professional";
     private TextView text_name;
 
     @Override
@@ -57,14 +59,14 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                continueToNextActivity();
             }
         });
     }
 
     private void getPatientName() {
 
-        databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode)).child("name")
+        databaseReference.child(db_professional).child(db_patients).child(String.valueOf(numericCode)).child("name")
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
