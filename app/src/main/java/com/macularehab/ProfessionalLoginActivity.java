@@ -75,9 +75,9 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
         boolean is_login = logIn.professional_is_signed_in(this);
 
-        if (is_login) {
+        /*if (is_login) {
             goToMain();
-        }
+        }*/
     }
 
     public void close(View view){

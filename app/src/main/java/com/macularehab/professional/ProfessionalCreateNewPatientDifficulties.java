@@ -108,7 +108,8 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
                     Log.i("Patient Info", patientInfo.toString());
                     patientInfo.put("checkBox", arrayList);
                     databaseReference.child(patientsWithNoAccount).child(String.valueOf(numericCode)).setValue(patientInfo);
-                    databaseReference.child("Professional").child(mAuth.getUid()).child("Patients").setValue(patientInfo);
+                    //TODO Aqui tengo que modificar no pacientes, sino aquel con el codigo numero
+                    databaseReference.child("Professional").child(mAuth.getUid()).child("Patients").child(String.valueOf(numericCode)).setValue(patientInfo);
                     ProfessionalCreateNewPatientDifficulties.this.continueWithNextActivity();
                 }
             }

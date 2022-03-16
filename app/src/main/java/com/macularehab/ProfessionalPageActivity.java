@@ -91,7 +91,8 @@ public class ProfessionalPageActivity extends AppCompatActivity {
         this.professional_uid = this.signUp.getUID();
 
 
-        listUID();
+        //TODO ATENCION!!!! ESTA LLAMADA CAUSA ERROR!!!
+        //listUID();
     }
 
     private void listUID() {
