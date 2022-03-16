@@ -43,6 +43,7 @@ public class PatientSignUpPassword extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
     private String userID;
+    private String professionalID;
 
     Map<String, Object> patientInfo;
 
@@ -150,11 +151,16 @@ public class PatientSignUpPassword extends AppCompatActivity {
 
     private void updatePatient() {
 
-        patientInfo.put("Username", username);
-        patientInfo.put("PatientCode", password_one);
+        patientInfo.put("username", username);
+        patientInfo.put("patientCode", password_one);
+        patientInfo.put("patient_uid", userID);
         databaseReference.child("Patient").child(userID).setValue(patientInfo);
 
         databaseReference.child("Patient").child(password_one).removeValue();
+
+        professionalID = String.valueOf(patientInfo.get("professional_uid"));
+
+        databaseReference.child("Professional").child(professionalID).child("Patients").child(password_one).setValue(patientInfo);
 
         startPatientHomeActivity();
     }

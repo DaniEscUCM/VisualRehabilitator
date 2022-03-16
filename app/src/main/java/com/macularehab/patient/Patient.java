@@ -18,6 +18,7 @@ public class Patient {
     private String professional_name;
     private String professional_uid;
     private boolean hasAccount;
+    private String patient_uid;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -174,6 +175,14 @@ public class Patient {
 
     public void setHasAccount(boolean hasAccount) {
         this.hasAccount = hasAccount;
+    }
+
+    public String getPatient_uid() {
+        return patient_uid;
+    }
+
+    public void setPatient_uid(String patient_uid) {
+        this.patient_uid = patient_uid;
     }
 
     @Override

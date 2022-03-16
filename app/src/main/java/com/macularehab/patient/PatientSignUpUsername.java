@@ -99,7 +99,7 @@ public class PatientSignUpUsername extends AppCompatActivity {
     }
 
     private void addUsernameToDB() {
-        databaseReference.child("PatientsUsername").setValue(username);
+        databaseReference.child("PatientsUsername").child(username).setValue(username);
     }
 
     //TODO colocar desde @strings el mensaje
