@@ -54,12 +54,24 @@
                 android:text="@string/professional_patientForm_section_1"
                 android:textSize="48sp" />
 
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_1"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,12 +166,25 @@
 
             </LinearLayout>
 
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_weight="1"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_2"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_3"
@@ -168,12 +193,24 @@
                 android:text="@string/professional_patientForm_checkBox_3"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_4"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_5"
@@ -182,12 +219,24 @@
                 android:text="@string/professional_patientForm_checkBox_5"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_6"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_7"
@@ -196,12 +245,24 @@
                 android:text="@string/professional_patientForm_checkBox_7"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_8"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_9"
@@ -210,12 +271,24 @@
                 android:text="@string/professional_patientForm_checkBox_9"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_10"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view14"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_11"
@@ -224,12 +297,24 @@
                 android:text="@string/professional_patientForm_checkBox_11"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view15"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_12"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view16"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_13"
@@ -238,12 +323,24 @@
                 android:text="@string/professional_patientForm_checkBox_13"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view17"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_14"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view18"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_15"
@@ -252,12 +349,24 @@
                 android:text="@string/professional_patientForm_checkBox_15"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view19"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_16"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view20"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <Space
                 android:layout_width="match_parent"
@@ -270,12 +379,24 @@
                 android:text="@string/professional_patientForm_section_2"
                 android:textSize="48sp" />
 
+            <View
+                android:id="@+id/view21"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_17"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view22"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_18"
@@ -284,6 +405,12 @@
                 android:text="@string/professional_patientForm_checkBox_18"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view23"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_19"
                 android:layout_width="match_parent"
@@ -291,12 +418,24 @@
                 android:text="@string/professional_patientForm_checkBox_19"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view24"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_20"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view25"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <Space
                 android:layout_width="match_parent"
@@ -309,12 +448,24 @@
                 android:text="@string/professional_patientForm_section_3"
                 android:textSize="48sp" />
 
+            <View
+                android:id="@+id/view26"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_21"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view27"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <CheckBox
                 android:id="@+id/check_create_patient_22"
@@ -323,12 +474,24 @@
                 android:text="@string/professional_patientForm_checkBox_22"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view28"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_23"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view29"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <Space
                 android:layout_width="match_parent"
@@ -341,6 +504,12 @@
                 android:text="@string/professional_patientForm_section_4"
                 android:textSize="48sp" />
 
+            <View
+                android:id="@+id/view30"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_24"
                 android:layout_width="match_parent"
@@ -348,12 +517,24 @@
                 android:text="@string/professional_patientForm_checkBox_24"
                 android:textSize="34sp" />
 
+            <View
+                android:id="@+id/view31"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
             <CheckBox
                 android:id="@+id/check_create_patient_25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_25"
                 android:textSize="34sp" />
+
+            <View
+                android:id="@+id/view32"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
         </LinearLayout>
     </ScrollView>
