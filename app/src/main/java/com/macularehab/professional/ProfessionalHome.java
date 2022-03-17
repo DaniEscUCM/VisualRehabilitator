@@ -3,20 +3,31 @@ package com.macularehab.professional;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
 import com.macularehab.patient.Patient;
+import com.macularehab.professional.patientList.PatientListAdapter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProfessionalHome extends AppCompatActivity {
 
@@ -24,8 +35,14 @@ public class ProfessionalHome extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
 
-    private final int LOADER_ID = 0;
-    private PatientListLoaderCallBacks patientListLoaderCallBacks;
+    private String professional_uid;
+    private final String db_professional = "Professional";
+    private final String db_patients = "Patients";
+
+    private ArrayList<Patient> patientList;
+    private RecyclerView recyclerView;
+    private PatientListAdapter patientListAdapter;
+    private TextView professional_name_text;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,42 +54,90 @@ public class ProfessionalHome extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
-        patientListLoaderCallBacks = new PatientListLoaderCallBacks();
+        professional_uid = mAuth.getUid();
+
+        professional_name_text = findViewById(R.id.text_professional_home_professional_name_text);
+        setProfessionalNameText();
+
+        recyclerView = findViewById(R.id.professional_patientList_recyclerView);
+        patientListAdapter = new PatientListAdapter(this, new ArrayList<Patient>());
+        recyclerView.setAdapter(patientListAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        Log.w("Here" , "A ver aqui");
+        getPatientList();
     }
 
-    private void createBundle() {
+    public void updatePatientsList(List<Patient> patientList) {
 
-        Bundle queryBundle = new Bundle();
-        //TODO posible error al obtener uid
-        queryBundle.putString(PatientListLoaderCallBacks.PROFESSIONAL_UID, mAuth.getUid());
-        //queryBundle.putString(PatientListLoaderCallBacks.EXTRA_TITLE, title);
-        LoaderManager.getInstance(this).restartLoader(LOADER_ID, queryBundle, patientListLoaderCallBacks);
+        patientListAdapter.setPatientListData(patientList);
+        patientListAdapter.notifyDataSetChanged();
     }
 
-    public class PatientListLoaderCallBacks implements LoaderManager.LoaderCallbacks<List<Patient>> {
+    //TODO Result
 
-        private static final String PROFESSIONAL_UID = "professionalID";
+    private void getPatientList() {
 
-        private Context context;
+        databaseReference.child(db_professional).child(professional_uid).child(db_patients)
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
 
-        public PatientListLoaderCallBacks(Context context) {
-            this.context = context;
+                    HashMap<String, Object> map = (HashMap<String, Object>) task.getResult().getValue();
+                    Log.w("Here", "Aqui estamos");
+                    createPatientList(map);
+                }
+            }
+        });
+    }
+
+    private void createPatientList(HashMap<String, Object> map) {
+
+        patientList = new ArrayList<Patient>();
+
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+
+            HashMap<String, Object> hashMap = (HashMap<String, Object>) entry.getValue();
+
+            Patient patient = new Patient();
+            patient.setPatient_uid(entry.getKey());
+            patient.setName((String) hashMap.get("name"));
+            patient.setFirst_lastName((String) hashMap.get("first_lastName"));
+
+            patientList.add(patient);
         }
 
-        @NonNull
-        @Override
-        public Loader<List<Patient>> onCreateLoader(int id, @Nullable Bundle args) {
-            return null;
+        updatePatientsList(patientList);
+    }
+
+    private void setProfessionalNameText() {
+
+        String name = mAuth.getCurrentUser().getDisplayName();
+        Log.w("Professional Name", name);
+        if (!name.equals("")) {
+            professional_name_text.setText(mAuth.getCurrentUser().getDisplayName());
         }
+        else {
+            databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid()).child("name")
+                    .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
 
-        @Override
-        public void onLoadFinished(@NonNull Loader<List<Patient>> loader, List<Patient> data) {
-
-        }
-
-        @Override
-        public void onLoaderReset(@NonNull Loader<List<Patient>> loader) {
-
+                    if (!task.isSuccessful()) {
+                        Log.e("firebase", "Error getting data", task.getException());
+                    }
+                    else {
+                        String value = String.valueOf(task.getResult().getValue());
+                        Log.w("firebase", value);
+                        professional_name_text.setText(value);
+                    }
+                }
+            });
         }
     }
+
 }

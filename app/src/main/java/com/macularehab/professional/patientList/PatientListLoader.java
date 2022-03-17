@@ -73,6 +73,7 @@ public class PatientListLoader extends AsyncTaskLoader<List<Patient>> {
         });
 
         while(!done);
-        done = false;c
+        done = false;
+        return null;
     }
 }
