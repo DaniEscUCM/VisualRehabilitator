@@ -100,11 +100,14 @@
         <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.16432291666666668" />
+        <entry key="app/src/main/res/layout/activity_professional_home.xml" value="0.12417491749174918" />
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/recycler_view_patient_information.xml" value="0.12417491749174918" />
       </map>
     </option>
   </component>
