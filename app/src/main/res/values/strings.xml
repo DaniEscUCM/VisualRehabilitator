@@ -102,6 +102,7 @@
     <string name="foco">Foco</string>
     <string name="seconds_description">Insert the seconds you want for each figure</string>
     <string name="seconds">seconds</string>
+    <string name="num_seconds">10</string>
     <string name="textview_name">Name</string>
     <string name="textview_username">Username</string>
     <string name="textview_password">Password</string>
@@ -117,6 +118,13 @@
     <string name="seventh_exercise">Seventh exercise</string>
     <string name="eighth_exercise">Eighth exercise</string>
     <string name="ninth_exercise">Ninth exercise</string>
+    <string name="tenth_exercise">Tenth exercise</string>
+    <string name="eleventh_exercise">Eleventh exercise</string>
+    <string name="twelfth_exercise">Twelfth exercise</string>
+    <string name="thirteenth_exercise">Thirteenth exercise</string>
+    <string name="fourteenth_exercise">Fourteenth exercise</string>
+    <string name="fifteenth_exercise">Fifteenth exercise</string>
+    <string name="sixteenth_exercise">Sixteenth exercise</string>
     <string name="button_play">Play</string>
     <string name="first_exercise_description">Here would be the description of the first exercise</string>
     <string name="second_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras. Haz click cuando aparezca un triángulo.</string>
@@ -127,6 +135,13 @@
     <string name="seventh_exercise_description">Here would be the description of the seventh exercise</string>
     <string name="eighth_exercise_description">Here would be the description of the eighth exercise</string>
     <string name="ninth_exercise_description">Here would be the description of the ninth exercise</string>
+    <string name="tenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="eleventh_exercise_description">Here would be the description of the exercise</string>
+    <string name="twelfth_exercise_description">Here would be the description of the exercise</string>
+    <string name="thirteenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="fourteenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="fifteenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="sixteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="button_home">Home</string>
     <string name="circle_for_click">Circle</string>
     <string name="triangle_for_click">Triangle</string>

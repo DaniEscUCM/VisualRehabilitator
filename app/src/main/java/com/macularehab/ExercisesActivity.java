@@ -71,6 +71,21 @@ public class ExercisesActivity extends AppCompatActivity {
                 sixth_exercise(v);
             }
         });
+        Button seventh_exercise_button = (Button) findViewById(R.id.button_exercise7);
+        seventh_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seventh_exercise(v);
+            }
+        });
+
+        Button tenth_exercise_button = (Button) findViewById(R.id.button_exercise10);
+        tenth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tenth_exercise(v);
+            }
+        });
 
     }
     public void close(View view){
@@ -85,7 +100,6 @@ public class ExercisesActivity extends AppCompatActivity {
         Intent i = new Intent(this, SecondExerciseDescriptionActivity.class);
         startActivity(i);
     }
-
     public void third_exercise(View view){
         Intent i = new Intent( this, ThirdExerciseDescriptionActivity.class );
         startActivity(i);
@@ -102,4 +116,21 @@ public class ExercisesActivity extends AppCompatActivity {
         Intent i = new Intent( this, SixthExerciseDescriptionActivity.class );
         startActivity(i);
     }
+    public void seventh_exercise(View view){
+        Intent i = new Intent( this, SeventhExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void eighth_exercise(View view){
+        //Intent i = new Intent( this, SeventhExerciseDescriptionActivity.class );
+        //startActivity(i);
+    }
+    public void ninth_exercise(View view){
+        //Intent i = new Intent( this, SeventhExerciseDescriptionActivity.class );
+        //startActivity(i);
+    }
+    public void tenth_exercise(View view){
+        Intent i = new Intent( this, TenthExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    
 }

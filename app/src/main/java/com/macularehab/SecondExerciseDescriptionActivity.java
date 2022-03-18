@@ -14,8 +14,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondExerciseDescriptionActivity extends AppCompatActivity {
-
-    @SuppressLint("SetTextI18n")
+    private static int num_seconds;
+    //@SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,7 +97,7 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
         //
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
-        int num_seconds = 10;
+        num_seconds = 10;
         if (se.equals("")) {
             System.out.println("Hola, quieres estos segundos: " + se);
 
@@ -108,6 +108,10 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
 
         Intent i = new Intent( this, SecondExerciseActivity.class );
         startActivity(i);
+    }
+
+    public static int getNumSeconds(){
+        return num_seconds;
     }
 
     public void Close(View view){
