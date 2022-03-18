@@ -57,7 +57,7 @@ public class ManualInputStainRightActivity extends AppCompatActivity {
             actions.repeat();
         });
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_map_test);
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
     }
 
@@ -74,6 +74,10 @@ public class ManualInputStainRightActivity extends AppCompatActivity {
 
     private void next_test(View v) {
         Intent i = new Intent( this, ManualInputStainBothActivity.class );
+        String value= actions.getResult_coor().toString();
+        i.putExtra("manual_right",value);
+        value= getIntent().getExtras().getString("manual_left");
+        i.putExtra("manual_left",value);
         startActivity(i);
     }
 

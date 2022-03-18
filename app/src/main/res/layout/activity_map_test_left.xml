@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/tencmgrid" />
 
     <ImageButton
-        android:id="@+id/imageButton_back_map_test"
+        android:id="@+id/imageButton_back_results"
         android:layout_width="72dp"
         android:layout_height="65dp"
         android:layout_marginStart="48dp"
@@ -39,7 +39,7 @@
         android:text="@string/first_test_left"
         android:textAlignment="viewStart"
         android:textSize="48sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_map_test"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_back_results"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

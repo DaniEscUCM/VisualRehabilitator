@@ -52,7 +52,7 @@
     <string name="hint_professional_home_logout_button">LogOut</string>
     <string name="professional_home_name_default">Professional</string>
 
-        <!-- Apartado Professional - Patient Form .-->
+    <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_section_1">Visual in children and adults</string>
     <string name="professional_patientForm_checkBox_1">Read</string>
     <string name="professional_patientForm_checkBox_1.1">Signs</string>
@@ -90,7 +90,7 @@
     <string name="professional_patientForm_section_4">Reading</string>
     <string name="professional_patientForm_checkBox_24">Does the person used to read more before the vision loss?</string>
     <string name="professional_patientForm_checkBox_25">Would like to read more</string>
-        <!-- Fin Apartado Professional - Patient Form .-->
+    <!-- Fin Apartado Professional - Patient Form .-->
     <!-- Fin Apartado Professional .-->
 
     <string name="button_des_data">Data</string>
@@ -187,6 +187,9 @@
     <string name="explain_manual">Touch the spaces where the stain is. It may be better with a touchpen, but not necessary. \n\nFilled by professional previus information! \n\nTo skip press next button</string>
     <string name="explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas. It may be better with a touchpen, but not necessary. \n\nFilled by patient \n\nTo continue press next button</string>
     <string name="short_explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas.</string>
+    <string name="skip">Skip</string>
+    <string name="tests_results">Tests Results</string>
+    <string name="calculated_focus">Caculated Focus</string>
 
     <string-array name="generos">
         <item>Masculino</item>

@@ -16,7 +16,7 @@ public class GridTestRightExplanationActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_grid_test_right_explanation);
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_map_test);
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
 
         ImageButton button_play = (ImageButton) findViewById(R.id.imageButton_play);
@@ -25,6 +25,20 @@ public class GridTestRightExplanationActivity extends AppCompatActivity {
 
     private void play_test(View v) {
         Intent i = new Intent( this, GridTestRightActivity.class );
+        String value = getIntent().getExtras().getString("grid_left");
+        i.putExtra("grid_left",value);
+        value =  getIntent().getExtras().getString("map_both");
+        i.putExtra("map_both",value);
+        value = getIntent().getExtras().getString("map_right");
+        i.putExtra("map_right",value);
+        value = getIntent().getExtras().getString("map_left");
+        i.putExtra("map_left",value);
+        value = getIntent().getExtras().getString("manual_left");
+        i.putExtra("manual_left",value);
+        value= getIntent().getExtras().getString("manual_right");
+        i.putExtra("manual_right",value);
+        value= getIntent().getExtras().getString("manual_both");
+        i.putExtra("manual_both",value);
         startActivity(i);
     }
 

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".TestsResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".GridTestBothActivity"
             android:exported="false" />
         <activity

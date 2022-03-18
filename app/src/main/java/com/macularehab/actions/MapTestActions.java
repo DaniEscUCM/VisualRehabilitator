@@ -133,4 +133,9 @@ public abstract class MapTestActions {
         centre_dot_blink.do_blink();
     }
 
+    public List<Pair<Integer, Integer>> getCoor_result() {
+        return coor_result;
+    }
+
+
 }

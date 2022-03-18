@@ -95,4 +95,8 @@ public class ManualActions {
         }
         return new Pair<>(0,0);
     }
+
+    public List<Pair<Integer, Integer>> getResult_coor() {
+        return result_coor;
+    }
 }
