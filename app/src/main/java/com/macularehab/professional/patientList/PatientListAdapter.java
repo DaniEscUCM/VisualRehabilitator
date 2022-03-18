@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -19,11 +21,13 @@ import com.macularehab.patient.Patient;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.PatientViewHolder> implements View.OnClickListener {
+public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.PatientViewHolder> implements View.OnClickListener, Filterable {
 
     private LayoutInflater mInflater;
     private ArrayList<Patient> patientList;
+    private ArrayList<Patient> patientListFull;
     private Context context;
 
     public PatientListAdapter(Context context, List<Patient> patientList) {
@@ -36,6 +40,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     public void setPatientListData(List<Patient> patientList) {
 
         this.patientList = (ArrayList<Patient>) patientList;
+        this.patientListFull = new ArrayList<>(patientList);
     }
 
     @Override
@@ -88,6 +93,55 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     public int getItemCount() {
         return patientList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return patientListFiltered;
+    }
+
+    private Filter patientListFiltered = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Patient> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(patientListFull);
+            }
+            else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (Patient patient : patientListFull) {
+
+                    String name = patient.getName();
+                    String first_lastName = patient.getFirst_lastName();
+                    String second_lastName = patient.getSecond_lastName();
+
+                    if (name != null && name.toLowerCase().contains(filterPattern)) {
+                        filteredList.add(patient);
+                    }
+                    else if (first_lastName != null && first_lastName.toLowerCase().contains(filterPattern)) {
+                        filteredList.add(patient);
+                    }
+                    else if (second_lastName != null && second_lastName.toLowerCase().contains(filterPattern)) {
+                        filteredList.add(patient);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            patientList.clear();
+            patientList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public class PatientViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

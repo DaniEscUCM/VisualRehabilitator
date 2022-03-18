@@ -48,10 +48,13 @@
             android:textSize="48sp" />
 
         <SearchView
+            android:id="@+id/professional_home_search_patient_searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_for_layout"
-            android:queryHint="Patient Name" />
+            android:queryHint="Patient Name"
+            app:actionViewClass="androidx.appcompat.widget.SearchView"
+            app:showAsAction="ifRoom|collapseActionView" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/professional_patientList_recyclerView"

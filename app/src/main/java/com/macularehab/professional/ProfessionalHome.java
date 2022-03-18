@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,6 +44,7 @@ public class ProfessionalHome extends AppCompatActivity {
     private RecyclerView recyclerView;
     private PatientListAdapter patientListAdapter;
     private TextView professional_name_text;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,6 +68,20 @@ public class ProfessionalHome extends AppCompatActivity {
 
         Log.w("Here" , "A ver aqui");
         getPatientList();
+
+        searchView = (SearchView) findViewById(R.id.professional_home_search_patient_searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                patientListAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
     }
 
     public void updatePatientsList(List<Patient> patientList) {
@@ -107,6 +123,7 @@ public class ProfessionalHome extends AppCompatActivity {
             patient.setPatient_uid(entry.getKey());
             patient.setName((String) hashMap.get("name"));
             patient.setFirst_lastName((String) hashMap.get("first_lastName"));
+            //patient.setSecond_lastName((String) hashMap.get("second_lastName"));
 
             patientList.add(patient);
         }
