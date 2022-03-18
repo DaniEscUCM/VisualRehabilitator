@@ -19,6 +19,8 @@ public class Patient {
     private String professional_uid;
     private boolean hasAccount;
     private String patient_uid;
+    private int exercises_accomplished;
+    private String date_last_test;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -57,10 +59,11 @@ public class Patient {
 
     public Patient() {
 
-        checkBox = new ArrayList<>(25);
+        checkBox = new ArrayList<>(33);
         for (int i = 0; i < 33; i++) checkBox.add(false);
 
         hasAccount = false;
+        exercises_accomplished = 0;
     }
 
     /**** Getters And Setters ****/
@@ -183,6 +186,22 @@ public class Patient {
 
     public void setPatient_uid(String patient_uid) {
         this.patient_uid = patient_uid;
+    }
+
+    public int getExercises_accomplished() {
+        return exercises_accomplished;
+    }
+
+    public void setExercises_accomplished(int exercises_accomplished) {
+        this.exercises_accomplished = exercises_accomplished;
+    }
+
+    public String getDate_last_test() {
+        return date_last_test;
+    }
+
+    public void setDate_last_test(String date_last_test) {
+        this.date_last_test = date_last_test;
     }
 
     @Override

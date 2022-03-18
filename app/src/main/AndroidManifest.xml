@@ -80,6 +80,9 @@
         <activity
             android:name=".professional.ProfessionalHome"
             android:exported="false" />
+        <activity
+            android:name=".professional.ProfessionalPatientInfo"
+            android:exported="false" />
         <!-- Apartado Paciente . -->
         <activity
             android:name=".PatientHome"
