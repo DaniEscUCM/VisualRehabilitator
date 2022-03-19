@@ -7,8 +7,8 @@
     <string name="app_name">MaculaRehab</string>
     <string name="button_data">Data</string>
     <string name="button_create">Create</string>
-    <string name="button_singin">Register</string>
-    <string name="button_login">Log In</string>
+    <string name="button_singin">Crear Cuenta</string>
+    <string name="button_login">Iniciar Sesión</string>
 
     <!-- Apartado paciente .-->
     <string name="button_login_patient">LOGIN</string>
@@ -146,7 +146,7 @@
     <string name="toast_fill_fields">please fill all the fields</string>
     <string name="textview_infoLogin">Ya tengo una cuenta</string>
     <string name="textview_infoSingin">Crear una cuenta</string>
-    <string name="textview_professionalAccount">Professional account</string>
+    <string name="textview_professionalAccount">Cuenta Profesional</string>
     <string name="textview_welcome">Welcome</string>
     <string name="textview_patientlist">Patient list</string>
     <string name="button_newPatient">New patient</string>

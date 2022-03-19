@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.macularehab.language.LocaleHelper;
+
+import java.util.Locale;
 
 public class IdentificationActivity extends AppCompatActivity {
 
@@ -60,11 +63,23 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private void changeLanguage() {
 
+        context = this;
+
         if (currentLanguage == 1) {
 
             selectLanguage.setImageResource(R.drawable.united_kingdom);
             currentLanguage = 0;
-            context = LocaleHelper.setLocale(this, "es");
+            //context = LocaleHelper.setLocale(IdentificationActivity.this, "es");
+            /*resources = context.getResources();
+            buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
+            buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));
+            whosIsUsing.setText(resources.getString(R.string.textview_whoIsUsing));*/
+            Locale locale = new Locale("es");
+            Locale.setDefault(locale);
+            Configuration configuration = context.getResources().getConfiguration();
+            configuration.setLocale(locale);
+            context.createConfigurationContext(configuration);
+            context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
             buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));
@@ -73,7 +88,17 @@ public class IdentificationActivity extends AppCompatActivity {
         else {
             selectLanguage.setImageResource(R.drawable.spain);
             currentLanguage = 1;
-            context = LocaleHelper.setLocale(this, "en");
+            //context = LocaleHelper.setLocale(IdentificationActivity.this, "en");
+            /*resources = context.getResources();
+            buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
+            buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));
+            whosIsUsing.setText(resources.getString(R.string.textview_whoIsUsing));*/
+            Locale locale = new Locale("en");
+            Locale.setDefault(locale);
+            Configuration configuration = context.getResources().getConfiguration();
+            configuration.setLocale(locale);
+            context.createConfigurationContext(configuration);
+            context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
             buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));
