@@ -2,6 +2,7 @@ package com.macularehab.actions;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.util.Pair;
 import android.view.View;
@@ -17,9 +18,9 @@ import java.util.List;
 public abstract class MapTestActions {
 
     ImageView out;
-    private final List<Pair<Integer,Integer>> coor = new ArrayList<>();
-    private List<Pair<Integer,Integer>> coor_result = new ArrayList<>();
-    private final List<Pair<Integer,Integer>> coor_mid = new ArrayList<>();
+    private final List<Pair<Float,Float>> coor = new ArrayList<>();
+    private List<Pair<Float,Float>> coor_result = new ArrayList<>();
+    private final List<Pair<Float,Float>> coor_mid = new ArrayList<>();
     private int count=0;
     private final int metric_unit;
     private boolean find=false;
@@ -78,7 +79,7 @@ public abstract class MapTestActions {
         for(int i=-dot;i<=dot;i++){
             for(int j=-dot; j<=dot;j++){
                 if (i*i + j*j <= dot*dot && i!=0 && j!=0) {
-                    coor.add(new Pair<>(i, j));
+                    coor.add(new Pair<>((float) i,(float) j));
                 }
             }
         }
@@ -94,7 +95,7 @@ public abstract class MapTestActions {
             coor_result.add(coor.get(count));
         }
 
-        DrawDot all_dots = new DrawDot(size/(float)2,size/(float)2,coor_result, metric_unit/(float)2, metric_unit);
+        DrawDot all_dots = new DrawDot(size/(float)2,size/(float)2,coor_result, metric_unit/(float)2, metric_unit, Color.RED);
         all_dots.draw(canvas);
         out.setImageBitmap(btm);
     }
@@ -133,7 +134,7 @@ public abstract class MapTestActions {
         centre_dot_blink.do_blink();
     }
 
-    public List<Pair<Integer, Integer>> getCoor_result() {
+    public List<Pair<Float, Float>> getCoor_result() {
         return coor_result;
     }
 

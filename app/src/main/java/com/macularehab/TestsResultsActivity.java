@@ -2,13 +2,16 @@ package com.macularehab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -16,9 +19,14 @@ import com.macularehab.draws.DrawDot;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 public class TestsResultsActivity extends AppCompatActivity {
+
+    private HashSet<Pair<Float,Float>> dots = new LinkedHashSet<>();
+    private ArrayList<Pair<Float,Float>> coor_resul = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +37,9 @@ public class TestsResultsActivity extends AppCompatActivity {
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
+
+        Button next=findViewById(R.id.next_view);
+        next.setOnClickListener(v -> next(v));
 
 
         //Calculate based on screen size
@@ -101,26 +112,31 @@ public class TestsResultsActivity extends AppCompatActivity {
         draw_dots.requestLayout();
         if(value!=null) {
             List<String> list = Arrays.asList(value.substring(1, value.length() - 1).split(", "));
-            List<Pair<Integer, Integer>> coor_result = new ArrayList<>();
+            List<Pair<Float, Float>> coor_result = new ArrayList<>();
             char aux = ' ';
             String accumulate = "";
-            int first = 0;
-            int second;
-            for (String s : list) {
-                for (char x : s.toCharArray()) {
-                    if (x != 'P' && x != 'a' && x != 'i' && x != 'r') {
-                        if (x == '{' || x == '}') {
-                            aux = x;
-                            if (x == '}') {
-                                second = Integer.parseInt(accumulate);
-                                coor_result.add(new Pair<>(first, second));
+            float first = 0;
+            float second;
+            for (String word : list) {
+                for (char charac : word.toCharArray()) {
+                    if (charac != 'P' && charac != 'a' && charac != 'i' && charac != 'r') {
+                        if (charac == '{' || charac == '}') {
+                            aux = charac;
+                            if (charac == '}') {
+                                second = Float.parseFloat(accumulate);
+                                Pair<Float,Float> pair =new Pair<>(first, second);
+                                coor_result.add(pair);
                                 accumulate = "";
+                                if(!dots.contains(pair)){
+                                    dots.add(pair);
+                                    this.coor_resul.add(pair);
+                                }
                             }
-                        } else if (aux == '{' && x == ' ') {
-                            first = Integer.parseInt(accumulate);
+                        } else if (aux == '{' && charac == ' ') {
+                            first = Float.parseFloat(accumulate);
                             accumulate = "";
-                        } else if (x != ' ') {
-                            accumulate += x;
+                        } else if (charac != ' ') {
+                            accumulate += charac;
                         }
                     }
 
@@ -130,13 +146,19 @@ public class TestsResultsActivity extends AppCompatActivity {
             Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
 
             Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit);
+            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
             all_dots.draw(canvas);
             draw_dots.setImageBitmap(btm_manual_left);
             draw_dots.setVisibility(View.VISIBLE);
         }
     }
-
+    private void next(View v) {
+        //TODO save into DB
+        Intent i = new Intent( this, CalculateFocusActivity.class );
+        String value= coor_resul.toString();
+        i.putExtra("resume_stain",value);
+        startActivity(i);
+    }
 
     public void Close(View view){
         finish();

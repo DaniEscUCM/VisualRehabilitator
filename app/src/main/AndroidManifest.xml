@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".CalculateFocusActivity"
+            android:exported="false" />
+        <activity
             android:name=".TestsResultsActivity"
             android:exported="false" />
         <activity

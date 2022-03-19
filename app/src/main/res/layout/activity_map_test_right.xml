@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/tencmgrid" />
 
     <TextView
-        android:id="@+id/results_test"
+        android:id="@+id/calculated_spot"
         android:layout_width="564dp"
         android:layout_height="66dp"
         android:layout_marginStart="8dp"
