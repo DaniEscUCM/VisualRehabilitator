@@ -1,9 +1,12 @@
 package com.macularehab.professional;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -31,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 
 public class ProfessionalHome extends AppCompatActivity {
+
+    private Button createNewPatientButton;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -80,6 +85,14 @@ public class ProfessionalHome extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 patientListAdapter.getFilter().filter(newText);
                 return false;
+            }
+        });
+
+        createNewPatientButton = findViewById(R.id.professional_home_create_new_patient_button);
+        createNewPatientButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityCreatePatient();
             }
         });
     }
@@ -155,6 +168,11 @@ public class ProfessionalHome extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void startActivityCreatePatient() {
+        Intent new_patient_activity = new Intent(this, ProfessionalCreateNewPatient.class);
+        startActivity(new_patient_activity);
     }
 
 }
