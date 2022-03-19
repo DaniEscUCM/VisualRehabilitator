@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 //Buttons
 
@@ -42,6 +43,17 @@ public class PatientIdentificationActivity extends AppCompatActivity {
                 patientLogIn();
             }
         });
+        ImageButton buttonBack = (ImageButton) findViewById(R.id.imageButton_back_ident2);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                close(v);
+            }
+        });
+    }
+
+    public void close(View view){
+        finish();
     }
 
     @Override

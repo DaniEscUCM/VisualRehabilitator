@@ -5,73 +5,132 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_choose_login_patient"
-        android:layout_width="450dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="99dp"
-        android:layout_marginBottom="184dp"
-        android:text="@string/button_login_patient"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ImageButton
+        android:id="@+id/imageButton_back_ident2"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
+        android:backgroundTint="@color/grey"
+        android:clickable="true"
+        android:contentDescription="@string/imagebutton_des_back"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
         android:id="@+id/button_choose_signup_patient"
         android:layout_width="450dp"
-        android:layout_height="200dp"
-        android:layout_marginEnd="93dp"
-        android:layout_marginBottom="184dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/button_signup_patient"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/text_patient_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="130dp"
-        android:text="@string/text_patient_account"
-        android:textSize="100sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
+        app:layout_constraintEnd_toStartOf="@id/button_choose_login_patient"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_ask_patient_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginBottom="31dp"
-        android:text="@string/text_ask_patient_login"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_choose_login_patient"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <TextView
         android:id="@+id/ask_patient_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="157dp"
-        android:layout_marginBottom="35dp"
         android:text="@string/text_ask_patient_signup"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_choose_signup_patient"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/guideline4"
+        app:layout_constraintEnd_toEndOf="@+id/button_choose_signup_patient"
+        app:layout_constraintStart_toStartOf="@+id/button_choose_signup_patient"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/text_patient_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_patient_account"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+    <TextView
+        android:id="@+id/text_ask_patient_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_ask_patient_login"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline4"
+        app:layout_constraintEnd_toEndOf="@+id/button_choose_login_patient"
+        app:layout_constraintStart_toStartOf="@+id/button_choose_login_patient"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="434dp"
         android:layout_height="157dp"
-        android:layout_marginEnd="102dp"
-        android:text="You have to use the code that gave it the professional to you"
+        android:text="You have to use the code the professional that gave to you"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="703dp"
+        app:layout_constraintEnd_toEndOf="@+id/button_choose_login_patient"
+        app:layout_constraintStart_toStartOf="@+id/button_choose_login_patient"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+    <Button
+        android:id="@+id/button_choose_login_patient"
+        android:layout_width="450dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/pink_dark"
+        android:text="@string/button_login_patient"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_choose_signup_patient" />
+        app:layout_constraintStart_toEndOf="@+id/button_choose_signup_patient"
+        app:layout_constraintTop_toTopOf="@id/guideline4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
