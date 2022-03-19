@@ -187,9 +187,10 @@
     <string name="explain_manual">Touch the spaces where the stain is. It may be better with a touchpen, but not necessary. \n\nFilled by professional previus information! \n\nTo skip press next button</string>
     <string name="explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas. It may be better with a touchpen, but not necessary. \n\nFilled by patient \n\nTo continue press next button</string>
     <string name="short_explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas.</string>
+    <string name="resume_stain">Resume Stain</string>
     <string name="skip">Skip</string>
     <string name="tests_results">Tests Results</string>
-    <string name="calculated_focus">Caculated Focus</string>
+    <string name="calculated_focus">Calculated Focus</string>
 
     <string-array name="generos">
         <item>Masculino</item>

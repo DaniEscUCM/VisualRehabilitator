@@ -53,7 +53,7 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_left"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,7 +96,7 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_right"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,7 +139,7 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_both"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,7 +162,7 @@
                         app:srcCompat="@drawable/tencmgrid" />
 
                     <ImageView
-                        android:id="@+id/draw_dots_both"
+                        android:id="@+id/draw_dots_manual_both"
                         android:layout_width="545dp"
                         android:layout_height="545dp"
                         android:contentDescription="@string/circular_grid"
@@ -183,7 +183,7 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/first_test_left"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -223,9 +223,10 @@
                     android:id="@+id/first_test_right"
                     android:layout_width="734dp"
                     android:layout_height="87dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/first_test_right"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -265,11 +266,12 @@
                     android:id="@+id/first_test_both"
                     android:layout_width="734dp"
                     android:layout_height="87dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/first_test_both"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <FrameLayout
                     android:id="@+id/frameLayout3"
@@ -308,11 +310,12 @@
                     android:id="@+id/second_test_left"
                     android:layout_width="734dp"
                     android:layout_height="87dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/second_test_left"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <FrameLayout
                     android:id="@+id/frameLayout4"
@@ -354,9 +357,9 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_right"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <FrameLayout
                     android:id="@+id/frameLayout5"
@@ -398,15 +401,17 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_both"
                     android:textAlignment="textStart"
-                    android:textSize="60sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <FrameLayout
                     android:id="@+id/frameLayout6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">

@@ -53,6 +53,7 @@ public class MapTestBothExplanationActivity extends AppCompatActivity {
         value= getIntent().getExtras().getString("manual_right");
         i.putExtra("manual_right",value);
         value= getIntent().getExtras().getString("manual_both");
+        i.putExtra("manual_both",value);
         startActivity(i);
     }
 
