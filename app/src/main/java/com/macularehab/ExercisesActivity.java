@@ -16,6 +16,8 @@ public class ExercisesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_exercises);
+        //leer foco encendido o no de la bd
+        //leer posicion foco
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc_menu);
         button.setOnClickListener(new View.OnClickListener() {

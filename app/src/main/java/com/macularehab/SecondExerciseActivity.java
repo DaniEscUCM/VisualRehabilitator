@@ -30,6 +30,8 @@ public class SecondExerciseActivity extends AppCompatActivity {
         //Poner un temporizador de 5s antes de que aparezca la 1a figura
         //El foco se "Multiplica" por la posicion que toque y las figuras se dejan
         //donde estan, en el centro.
+        //leer bd si el foco esta encendido
+        //if encendido --
         int w = 50, h = 50;
         ImageView foco = findViewById(R.id.foco);
         foco.getLayoutParams().width = w;
@@ -105,6 +107,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         cancelTimer();
         timer = null;
         if(++counter == total) {
+
             System.out.println("counter==total");
             if(!written) {
                 written = true;
