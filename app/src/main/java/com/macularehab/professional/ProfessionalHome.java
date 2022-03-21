@@ -24,10 +24,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
 import com.macularehab.patient.Patient;
 import com.macularehab.professional.patientList.PatientListAdapter;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,6 +57,9 @@ public class ProfessionalHome extends AppCompatActivity {
     private PatientListAdapter patientListAdapter;
     private TextView professional_name_text;
     private SearchView searchView;
+
+    //Store Data
+    private final String filename = "ProfessionalPatientList.json";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -129,11 +139,54 @@ public class ProfessionalHome extends AppCompatActivity {
                     Log.w("Here", "Aqui estamos seeee");
 
                     if (map != null) {
-                        createPatientList(map);
+                        writeInternalStorage(map);
+                        //createPatientList(map);
                     }
                 }
             }
         });
+    }
+
+    private void writeInternalStorage(HashMap<String, Object> map) {
+
+        Gson gson = new Gson();
+        String data = gson.toJson(map);
+        File file = new File(ProfessionalHome.this.getFilesDir(), filename);
+        try {
+            FileOutputStream fileOutputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            fileOutputStream.write(data.getBytes());
+            fileOutputStream.flush();
+            fileOutputStream.close();
+            readInternalStorage();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void readInternalStorage() {
+
+        try {
+            FileInputStream fileInputStream = openFileInput(filename);
+            int a;
+            StringBuilder temp = new StringBuilder();
+            while ((a = fileInputStream.read()) != -1) {
+                temp.append((char) a);
+            }
+
+            String fin = temp.toString();
+            fileInputStream.close();
+
+            Gson gson = new Gson();
+            HashMap<String, Object> map = gson.fromJson(fin, HashMap.class);
+            createPatientList(map);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void createPatientList(HashMap<String, Object> map) {
@@ -143,7 +196,8 @@ public class ProfessionalHome extends AppCompatActivity {
         if (!map.isEmpty()) {
             for (Map.Entry<String, Object> entry : map.entrySet()) {
 
-                HashMap<String, Object> hashMap = (HashMap<String, Object>) entry.getValue();
+                //HashMap<String, Object> hashMap = (HashMap<String, Object>) entry.getValue();
+                LinkedTreeMap<String, Object> hashMap = (LinkedTreeMap<String, Object>) entry.getValue();
 
                 Patient patient = new Patient();
                 patient.setPatient_uid(entry.getKey());
