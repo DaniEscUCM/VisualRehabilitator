@@ -74,13 +74,15 @@ public class ManualInputStainBothActivity extends AppCompatActivity {
     }
 
     private void next_test(View v) {
-        Intent i = new Intent( this, TestsResultsActivity.class );
+        Intent i = new Intent( this, MapTestLeftExplanationActivity.class );
         String value= actions.getResult_coor().toString();
         i.putExtra("manual_both",value);
         value= getIntent().getExtras().getString("manual_left");
         i.putExtra("manual_left",value);
         value= getIntent().getExtras().getString("manual_right");
         i.putExtra("manual_right",value);
+        value= getIntent().getExtras().getString("patient_id");
+        i.putExtra("patient_id",value);
         startActivity(i);
     }
 

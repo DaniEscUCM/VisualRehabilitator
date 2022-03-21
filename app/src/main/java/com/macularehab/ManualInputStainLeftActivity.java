@@ -77,6 +77,8 @@ public class ManualInputStainLeftActivity extends AppCompatActivity {
         Intent i = new Intent( this, ManualInputStainRightActivity.class );
         String value= actions.getResult_coor().toString();
         i.putExtra("manual_left",value);
+        value= getIntent().getExtras().getString("patient_id");
+        i.putExtra("patient_id",value);
         startActivity(i);
     }
 

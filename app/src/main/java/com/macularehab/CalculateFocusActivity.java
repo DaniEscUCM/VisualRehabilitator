@@ -2,6 +2,7 @@ package com.macularehab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -13,10 +14,15 @@ import android.util.Pair;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.draws.DrawDot;
+import com.macularehab.professional.ProfessionalHome;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,10 +34,13 @@ public class CalculateFocusActivity extends AppCompatActivity {
     private float centre_y;
     private int metric_unit;
     private int size;
-    //private final List<Pair<Float,Float>> coor = new ArrayList<>();
     private final List<Pair<Float,Float>> result_coor = new ArrayList<>();
     private Pair<Float,Float> calculated_focus;
     private ImageView focus;
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +48,18 @@ public class CalculateFocusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calculate_focus);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-       // init_coor();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        databaseReference = firebaseDatabase.getReference();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
 
         ImageButton repeat = findViewById(R.id.repeatButton);
         repeat.setOnClickListener(v->repeat());
+
+        Button next = findViewById(R.id.buttonEnd);
+        next.setOnClickListener(v->end());
 
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
@@ -70,17 +84,6 @@ public class CalculateFocusActivity extends AppCompatActivity {
 
 
     }
-
-    /*private void init_coor() {
-        int dot=(20/2);
-        for(int i=-dot;i<=dot;i++){
-            for(int j=-dot; j<=dot;j++){
-                if (i*i + j*j <= dot*dot && i!=0 && j!=0) {
-                    coor.add(new Pair<>((float)i,(float)j));
-                }
-            }
-        }
-    }*/
 
     void draw_stain(ImageView grid, int size, ImageView draw_dots, String value, int metric_unit){
         grid.getLayoutParams().width = size;
@@ -135,11 +138,14 @@ public class CalculateFocusActivity extends AppCompatActivity {
 
             draw_focus();
         }
+        else{
+
+        }
     }
 
     private Pair<Float,Float> valid_coor(float x, float y){
         Float x_about_centre = -(centre_x - x) / metric_unit;
-        Float y_about_centre = -(centre_y - y) / metric_unit ;
+        Float y_about_centre = -(centre_y - y) / metric_unit;
         return new Pair<>(x_about_centre,y_about_centre);
     }
 
@@ -170,6 +176,14 @@ public class CalculateFocusActivity extends AppCompatActivity {
         all_dots.draw(canvas);
         focus.setImageBitmap(btm);
         focus.setVisibility(View.VISIBLE);
+    }
+
+    public void end(){
+        String patient_id = getIntent().getExtras().getString("patient_id");
+        databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_id).
+                child("focus").setValue(result_coor.get(0));
+        Intent i = new Intent( this, ProfessionalHome.class );
+        startActivity(i);
     }
 
     public void Close(View view){

@@ -195,6 +195,7 @@
     <string name="tests_results">Resultados de las pruebas</string>
     <string name="calculated_focus">Foco calculado</string>
     <string name="view_resume">Ver Resumen</string>
+    <string name="finish">Finalizar</string>
 
     <string-array name="generos">
         <item>Masculino</item>

@@ -192,6 +192,7 @@
     <string name="tests_results">Tests Results</string>
     <string name="calculated_focus">Calculated Focus</string>
     <string name="view_resume">View Resume</string>
+    <string name="finish">Finish</string>
 
     <string-array name="generos">
         <item>Masculino</item>

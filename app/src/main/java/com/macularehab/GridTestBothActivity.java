@@ -92,6 +92,8 @@ public class GridTestBothActivity extends AppCompatActivity {
         i.putExtra("manual_right",value);
         value= getIntent().getExtras().getString("manual_both");
         i.putExtra("manual_both",value);
+        value= getIntent().getExtras().getString("patient_id");
+        i.putExtra("patient_id",value);
         startActivity(i);
     }
 
