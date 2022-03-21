@@ -56,7 +56,7 @@ public class GridTestRightActivity extends AppCompatActivity {
             actions.repeat();
         });
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_map_test);
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
     }
 
@@ -73,6 +73,24 @@ public class GridTestRightActivity extends AppCompatActivity {
 
     private void next_test(View v) {
         Intent i = new Intent( this, GridTestBothExplanationActivity.class );
+        String value = actions.getResult_coor().toString();
+        i.putExtra("grid_right",value);
+        value = getIntent().getExtras().getString("grid_left");
+        i.putExtra("grid_left",value);
+        value =  getIntent().getExtras().getString("map_both");
+        i.putExtra("map_both",value);
+        value = getIntent().getExtras().getString("map_right");
+        i.putExtra("map_right",value);
+        value = getIntent().getExtras().getString("map_left");
+        i.putExtra("map_left",value);
+        value = getIntent().getExtras().getString("manual_left");
+        i.putExtra("manual_left",value);
+        value= getIntent().getExtras().getString("manual_right");
+        i.putExtra("manual_right",value);
+        value= getIntent().getExtras().getString("manual_both");
+        i.putExtra("manual_both",value);
+        value= getIntent().getExtras().getString("patient_id");
+        i.putExtra("patient_id",value);
         startActivity(i);
     }
 

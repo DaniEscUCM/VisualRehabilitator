@@ -86,6 +86,7 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
     private void continueToNextActivity() {
 
         Intent i = new Intent( this, ManualInputStainLeftActivity.class);
+        i.putExtra("patient_id",String.valueOf(numericCode));
         startActivity(i);
     }
 }

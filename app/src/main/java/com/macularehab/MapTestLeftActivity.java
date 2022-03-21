@@ -29,7 +29,7 @@ public class MapTestLeftActivity extends AppCompatActivity{
         ImageView grid = findViewById(R.id.circle_grid);
         ImageView out = findViewById(R.id.multiple_dots);
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_map_test);
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
 
         //Calculate based on screen size
@@ -67,6 +67,16 @@ public class MapTestLeftActivity extends AppCompatActivity{
     }
     private void next_test(View v) {
         Intent i = new Intent( this, MapTestRightExplanationActivity.class );
+        String value= action.getCoor_result().toString();
+        i.putExtra("map_left",value);
+        value = getIntent().getExtras().getString("manual_left");
+        i.putExtra("manual_left",value);
+        value= getIntent().getExtras().getString("manual_right");
+        i.putExtra("manual_right",value);
+        value= getIntent().getExtras().getString("manual_both");
+        i.putExtra("manual_both",value);
+        value= getIntent().getExtras().getString("patient_id");
+        i.putExtra("patient_id",value);
         startActivity(i);
     }
 

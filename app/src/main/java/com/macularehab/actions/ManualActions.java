@@ -2,6 +2,7 @@ package com.macularehab.actions;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,8 +14,8 @@ import java.util.List;
 
 public class ManualActions {
 
-    private final List<Pair<Integer,Integer>> coor = new ArrayList<>();
-    private final List<Pair<Integer,Integer>> result_coor = new ArrayList<>();
+    private final List<Pair<Float,Float>> coor = new ArrayList<>();
+    private final List<Pair<Float,Float>> result_coor = new ArrayList<>();
     private int metric_unit;
     private float centre_x=0;
     private float centre_y=0;
@@ -40,14 +41,14 @@ public class ManualActions {
         for(int i=-dot;i<=dot;i++){
             for(int j=-dot; j<=dot;j++){
                 if (i*i + j*j <= dot*dot && i!=0 && j!=0) {
-                    coor.add(new Pair<>(i,j));
+                    coor.add(new Pair<>((float)i,(float)j));
                 }
             }
         }
     }
 
     public void touch_happened(float x, float y){
-        Pair<Integer, Integer> res = valid_coor(x, y);
+        Pair<Float, Float> res = valid_coor(x, y);
         if (!res.equals(new Pair<>(0, 0))) {
             if (result_coor.contains(res)) {
                 result_coor.remove(res);
@@ -61,13 +62,13 @@ public class ManualActions {
     private void draw(){
         Bitmap btm = Bitmap.createBitmap(draw_space.getWidth(), draw_space.getWidth(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(btm);
-        DrawDot draw = new DrawDot(draw_space.getWidth() / (float) 2, draw_space.getWidth() / (float) 2, result_coor, metric_unit / (float) 2, metric_unit);
+        DrawDot draw = new DrawDot(draw_space.getWidth() / (float) 2, draw_space.getWidth() / (float) 2, result_coor, metric_unit / (float) 2, metric_unit, Color.RED);
         draw.draw(canvas);
         draw_space.setImageBitmap(btm);
         draw_space.setVisibility(View.VISIBLE);
     }
 
-    private Pair<Integer,Integer> valid_coor(float x, float y){
+    private Pair<Float,Float> valid_coor(float x, float y){
         float ref_coor_x_minor,ref_coor_x_mayor;
         float ref_coor_y_minor,ref_coor_y_mayor;
         int i=0;
@@ -93,6 +94,10 @@ public class ManualActions {
         if(ref_coor_x_minor<=x && x<= ref_coor_x_mayor && ref_coor_y_minor<= y&& y<=ref_coor_y_mayor){
             return coor.get(i-1);
         }
-        return new Pair<>(0,0);
+        return new Pair<>((float)0,(float)0);
+    }
+
+    public List<Pair<Float, Float>> getResult_coor() {
+        return result_coor;
     }
 }

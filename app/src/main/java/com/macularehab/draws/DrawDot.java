@@ -3,6 +3,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.Pair;
+
+import androidx.annotation.ColorInt;
+
 import java.util.List;
 
 /**
@@ -11,7 +14,7 @@ import java.util.List;
 public class DrawDot {
 
     private Paint paint;
-    private List<Pair<Integer,Integer>> coor_resul;
+    private List<Pair<Float,Float>> coor_resul;
     private float x,y, radius, metric;
 
     /**
@@ -23,8 +26,9 @@ public class DrawDot {
      * @param _coor_resul List of Pair of relation coordinates with (x,y) reference
      * @param _radius dots radius, NOT ZERO
      * @param _metric metric unit to distance between dots, if no specific unit, use 1
+     * @param color dots color. E.g. Color.RED
      */
-    public DrawDot(float _x, float _y, List<Pair<Integer, Integer>> _coor_resul, float _radius, float _metric) {
+    public DrawDot(float _x, float _y, List<Pair<Float, Float>> _coor_resul, float _radius, float _metric, @ColorInt int color) {
         this.x=_x; //TODO error radio 0 ZERO
         this.y=_y;
         this.coor_resul=_coor_resul;
@@ -34,20 +38,22 @@ public class DrawDot {
         paint.setAntiAlias(true);
         paint.setDither(true);
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.RED);
+        paint.setColor(color);
     }
 
     /**
-     * Draw the given coordinates circles
+     * Draw the given coordinates circles in relation with the centre of the grid.
      * @param canvas - result canvas, then assign to a ImageView
      */
     public void draw(Canvas canvas) {
         for(int i=0;i<this.coor_resul.size();i++) {
-            float local_x = x + (metric * coor_resul.get(i).first)+ (coor_resul.get(i).first>=0? - (metric /2):(metric /2));
-            float local_y = y + (metric * coor_resul.get(i).second)+ (coor_resul.get(i).second>=0?- (metric /2):(metric /2));
+            float local_x = x + (metric * coor_resul.get(i).first) + (coor_resul.get(i).first>=0? - (metric /2):(metric /2));
+            float local_y = y + (metric * coor_resul.get(i).second) + (coor_resul.get(i).second>=0?- (metric /2):(metric /2));
             canvas.drawCircle(local_x,local_y, radius, paint);
         }
     }
+
+
 
     /* SIMPLIFIED WAY TO PRINT A CIRCLE
         ImageView out=findViewById(R.id.multiple_dots);

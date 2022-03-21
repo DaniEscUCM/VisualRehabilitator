@@ -190,6 +190,12 @@
     <string name="explain_manual">Tocar los espacios donde la mancha está. Puede ser mejor con un lápiz táctil, pero no es necesario. \n\n¡Rellenado por el profecional con datos previos! \n\nPara saltarse la actividad presione el botón del siguiente</string>
     <string name="explain_second">Tocar donde las líneas estén onduladas, borrosas, distorsionadas, zonas que faltan o se vean sombreadas. Puede ser mejor con un lápiz táctil, pero no es necesario. \n\nRellenado por el paciente \n\nPara continuar presione el botón del siguiente</string>
     <string name="short_explain_second">Tocar donde las líneas estén onduladas, borrosas, distorsionadas, zonas que faltan o se vean sombreadas.</string>
+    <string name="resume_stain">Resumen de Mancha</string>
+    <string name="skip">Skip</string>
+    <string name="tests_results">Resultados de las pruebas</string>
+    <string name="calculated_focus">Foco calculado</string>
+    <string name="view_resume">Ver Resumen</string>
+    <string name="finish">Finalizar</string>
 
     <string-array name="generos">
         <item>Masculino</item>
