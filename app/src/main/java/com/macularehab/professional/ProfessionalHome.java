@@ -78,6 +78,12 @@ public class ProfessionalHome extends AppCompatActivity {
         getPatientList();
 
         searchView = (SearchView) findViewById(R.id.professional_home_search_patient_searchView);
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchView.onActionViewExpanded();
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
