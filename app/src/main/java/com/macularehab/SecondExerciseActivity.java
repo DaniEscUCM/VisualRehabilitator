@@ -6,30 +6,44 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class SecondExerciseActivity extends AppCompatActivity {
-    protected int counter, counterCorrect,counterFailed;
+    protected int counter, counterCorrect,counterFailed, num_miliseconds;
     protected final int total = 10;
-    protected boolean triangle;
-    protected CountDownTimer timer = null;
+    protected boolean triangle, written;
+    protected CountDownTimer timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         counterCorrect = counterFailed = 0; counter = -1;
-        triangle = false;
+        triangle = written = false;
+        timer = null;
         //Aqui primero tendria que aparecer el foco
         //No seria image button, solo image, o image button sin que se pueda hacer click
         //Poner un temporizador de 5s antes de que aparezca la 1a figura
         //El foco se "Multiplica" por la posicion que toque y las figuras se dejan
         //donde estan, en el centro.
+        //leer bd si el foco esta encendido
+        //if encendido --
+        int w = 50, h = 50;
+        ImageView foco = findViewById(R.id.foco);
+        foco.getLayoutParams().width = w;
+        foco.getLayoutParams().height = h;
+        //falta meter tamaño del foco
+
         ImageButton button_dot = findViewById(R.id.dot_button);
-        move();
+        button_dot.setVisibility(View.INVISIBLE);
+        startTimerFoco(button_dot); //5s antes de que aparezca nada más
+
+        num_miliseconds = SecondExerciseDescriptionActivity.getNumSeconds() * 1000;
+
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,29 +71,50 @@ public class SecondExerciseActivity extends AppCompatActivity {
         });
     }
 
-    private void startTimer() {     //Start timer function
-        //10s (10000 mili segundos) para hacer click en el circulo
-        //Lo pongo a 3-6s para hacer pruebas
-        timer = new CountDownTimer(10000, 1000) {
+    private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
+        timer = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
+                button_dot.setVisibility(View.VISIBLE);
                 move();
             }
         };
         timer.start();
     }
 
+    private void startTimer() {
+        //10s (10000 mili segundos) para hacer click en el circulo
+        //Lo pongo a 3-6s para hacer pruebas
+        timer = new CountDownTimer(num_miliseconds, 1000) {
+            public void onTick(long millisUntilFinished) { }
+            public void onFinish() {
+                move();
+                timer.cancel();
+            }
+        };
+        timer.start();
+    }
+
     private void cancelTimer() {
-        if(timer!=null)
+        timer.cancel();
+        if(timer!=null) {
             timer.cancel();
+        }
             //cTimer.onFinish();
     }
 
     private void move(){
+        cancelTimer();
+        timer = null;
         if(++counter == total) {
-            System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
-            String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
-            Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+
+            System.out.println("counter==total");
+            if(!written) {
+                written = true;
+                System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
+                String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
+                Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            }
             finish();
         }
         else {
@@ -103,9 +138,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view){
-        System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
-        String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
-        Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
         finish();
     }
 

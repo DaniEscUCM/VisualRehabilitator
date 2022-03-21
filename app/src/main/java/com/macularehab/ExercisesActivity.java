@@ -16,6 +16,8 @@ public class ExercisesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_exercises);
+        //leer foco encendido o no de la bd
+        //leer posicion foco
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc_menu);
         button.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,28 @@ public class ExercisesActivity extends AppCompatActivity {
                 fifth_exercise(v);
             }
         });
+        Button sixth_exercise_button = (Button) findViewById(R.id.button_exercise6);
+        sixth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sixth_exercise(v);
+            }
+        });
+        Button seventh_exercise_button = (Button) findViewById(R.id.button_exercise7);
+        seventh_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seventh_exercise(v);
+            }
+        });
+
+        Button tenth_exercise_button = (Button) findViewById(R.id.button_exercise10);
+        tenth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tenth_exercise(v);
+            }
+        });
 
     }
     public void close(View view){
@@ -78,7 +102,6 @@ public class ExercisesActivity extends AppCompatActivity {
         Intent i = new Intent(this, SecondExerciseDescriptionActivity.class);
         startActivity(i);
     }
-
     public void third_exercise(View view){
         Intent i = new Intent( this, ThirdExerciseDescriptionActivity.class );
         startActivity(i);
@@ -91,4 +114,25 @@ public class ExercisesActivity extends AppCompatActivity {
         Intent i = new Intent( this, FifthExerciseDescriptionActivity.class );
         startActivity(i);
     }
+    public void sixth_exercise(View view){
+        Intent i = new Intent( this, SixthExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void seventh_exercise(View view){
+        Intent i = new Intent( this, SeventhExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void eighth_exercise(View view){
+        //Intent i = new Intent( this, SeventhExerciseDescriptionActivity.class );
+        //startActivity(i);
+    }
+    public void ninth_exercise(View view){
+        //Intent i = new Intent( this, SeventhExerciseDescriptionActivity.class );
+        //startActivity(i);
+    }
+    public void tenth_exercise(View view){
+        Intent i = new Intent( this, TenthExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    
 }

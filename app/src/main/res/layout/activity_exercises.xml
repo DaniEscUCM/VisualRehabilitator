@@ -36,6 +36,7 @@
         android:id="@+id/scrollView_Exercises"
         android:layout_width="1275dp"
         android:layout_height="1020dp"
+        android:layout_marginStart="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -148,9 +149,85 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
+                android:clickable="true"
                 android:contentDescription="@string/ninth_exercise"
                 android:focusable="true"
                 android:text="@string/ninth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_exercise10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:backgroundTint="@color/pink_dark"
+                android:clickable="true"
+                android:contentDescription="@string/tenth_exercise"
+                android:focusable="true"
+                android:text="@string/tenth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_exercise11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:clickable="true"
+                android:contentDescription="@string/eleventh_exercise"
+                android:focusable="true"
+                android:text="@string/eleventh_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_exercise12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:backgroundTint="@color/pink_dark"
+                android:clickable="true"
+                android:contentDescription="@string/twelfth_exercise"
+                android:focusable="true"
+                android:text="@string/twelfth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_exercise13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:clickable="true"
+                android:contentDescription="@string/thirteenth_exercise"
+                android:focusable="true"
+                android:text="@string/thirteenth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_exercise14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:backgroundTint="@color/pink_dark"
+                android:clickable="true"
+                android:contentDescription="@string/fourteenth_exercise"
+                android:focusable="true"
+                android:text="@string/fourteenth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_exercise15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:clickable="true"
+                android:contentDescription="@string/fifteenth_exercise"
+                android:focusable="true"
+                android:text="@string/fifteenth_exercise"
                 android:textAlignment="viewStart"
                 android:textSize="48sp" />
         </LinearLayout>
