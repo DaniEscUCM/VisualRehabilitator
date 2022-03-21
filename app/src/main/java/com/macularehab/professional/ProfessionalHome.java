@@ -57,11 +57,14 @@ public class ProfessionalHome extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_professional_home);
 
+        Log.w("Here" , "Inicio");
+
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
         professional_uid = mAuth.getUid();
+        Log.w("Here" , "Despues de getUid");
 
         professional_name_text = findViewById(R.id.text_professional_home_professional_name_text);
         setProfessionalNameText();
@@ -117,8 +120,11 @@ public class ProfessionalHome extends AppCompatActivity {
                 else {
 
                     HashMap<String, Object> map = (HashMap<String, Object>) task.getResult().getValue();
-                    Log.w("Here", "Aqui estamos");
-                    createPatientList(map);
+                    Log.w("Here", "Aqui estamos seeee");
+
+                    if (map != null) {
+                        createPatientList(map);
+                    }
                 }
             }
         });
@@ -128,17 +134,19 @@ public class ProfessionalHome extends AppCompatActivity {
 
         patientList = new ArrayList<Patient>();
 
-        for (Map.Entry<String, Object> entry : map.entrySet()) {
+        if (!map.isEmpty()) {
+            for (Map.Entry<String, Object> entry : map.entrySet()) {
 
-            HashMap<String, Object> hashMap = (HashMap<String, Object>) entry.getValue();
+                HashMap<String, Object> hashMap = (HashMap<String, Object>) entry.getValue();
 
-            Patient patient = new Patient();
-            patient.setPatient_uid(entry.getKey());
-            patient.setName((String) hashMap.get("name"));
-            patient.setFirst_lastName((String) hashMap.get("first_lastName"));
-            //patient.setSecond_lastName((String) hashMap.get("second_lastName"));
+                Patient patient = new Patient();
+                patient.setPatient_uid(entry.getKey());
+                patient.setName((String) hashMap.get("name"));
+                patient.setFirst_lastName((String) hashMap.get("first_lastName"));
+                //patient.setSecond_lastName((String) hashMap.get("second_lastName"));
 
-            patientList.add(patient);
+                patientList.add(patient);
+            }
         }
 
         updatePatientsList(patientList);
