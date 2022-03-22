@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
+import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
 import com.macularehab.patient.Patient;
 import com.macularehab.professional.patientList.PatientListAdapter;
@@ -43,6 +45,7 @@ import java.util.Map;
 public class ProfessionalHome extends AppCompatActivity {
 
     private Button createNewPatientButton;
+    private Button logoutButton;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -59,7 +62,8 @@ public class ProfessionalHome extends AppCompatActivity {
     private SearchView searchView;
 
     //Store Data
-    private final String filename = "ProfessionalPatientList.json";
+    private final String filenameProfessionalPatientList = "ProfessionalPatientList.json";
+    private final String filenameProfessionalInfo = "ProfessionalInfo.json";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -114,6 +118,14 @@ public class ProfessionalHome extends AppCompatActivity {
                 startActivityCreatePatient();
             }
         });
+
+        logoutButton = findViewById(R.id.professional_home_logout_button);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logOutProfessional();
+            }
+        });
     }
 
     public void updatePatientsList(List<Patient> patientList) {
@@ -138,22 +150,26 @@ public class ProfessionalHome extends AppCompatActivity {
                     HashMap<String, Object> map = (HashMap<String, Object>) task.getResult().getValue();
                     Log.w("Here", "Aqui estamos seeee");
 
-                    if (map != null) {
-                        writeInternalStorage(map);
-                        //createPatientList(map);
+                    if (map == null) {
+                        map = new HashMap<>();
                     }
+                    //if (map != null) {
+                        writeInternalStoragePatientList(map);
+                        //createPatientList(map);
+                    //}
                 }
             }
         });
     }
 
-    private void writeInternalStorage(HashMap<String, Object> map) {
+    private void writeInternalStoragePatientList(HashMap<String, Object> map) {
 
         Gson gson = new Gson();
         String data = gson.toJson(map);
-        File file = new File(ProfessionalHome.this.getFilesDir(), filename);
         try {
-            FileOutputStream fileOutputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalPatientList);
+            Toast.makeText(getApplicationContext(), getApplicationContext().getFilesDir().toString(), Toast.LENGTH_LONG).show();
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
             fileOutputStream.write(data.getBytes());
             fileOutputStream.flush();
             fileOutputStream.close();
@@ -168,7 +184,9 @@ public class ProfessionalHome extends AppCompatActivity {
     private void readInternalStorage() {
 
         try {
-            FileInputStream fileInputStream = openFileInput(filename);
+            File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalPatientList);
+            FileInputStream fileInputStream = new FileInputStream(file);
+                    //openFileInput(filenameProfessionalPatientList);
             int a;
             StringBuilder temp = new StringBuilder();
             while ((a = fileInputStream.read()) != -1) {
@@ -210,6 +228,50 @@ public class ProfessionalHome extends AppCompatActivity {
         }
 
         updatePatientsList(patientList);
+
+        getProfessionalInfo();
+    }
+
+    private void getProfessionalInfo() {
+
+        databaseReference.child(db_professional).child(professional_uid)
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+
+                    HashMap<String, Object> map = (HashMap<String, Object>) task.getResult().getValue();
+                    Log.w("Here", "Aqui estamos seeee");
+
+                    if (map != null) {
+                        writeInternalStorageProfessionalInfo(map);
+                        //createPatientList(map);
+                    }
+                }
+            }
+        });
+    }
+
+    private void writeInternalStorageProfessionalInfo(HashMap<String, Object> map) {
+
+        Gson gson = new Gson();
+        String data = gson.toJson(map);
+        try {
+            File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalInfo);
+            //Toast.makeText(getApplicationContext(), getApplicationContext().getFilesDir().toString(), Toast.LENGTH_LONG).show();
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            fileOutputStream.write(data.getBytes());
+            fileOutputStream.flush();
+            fileOutputStream.close();
+            readInternalStorage();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void setProfessionalNameText() {
@@ -241,6 +303,14 @@ public class ProfessionalHome extends AppCompatActivity {
     private void startActivityCreatePatient() {
         Intent new_patient_activity = new Intent(this, ProfessionalCreateNewPatient.class);
         startActivity(new_patient_activity);
+    }
+
+    private void logOutProfessional() {
+
+        mAuth.signOut();
+
+        Intent mainActivity = new Intent(this, IdentificationActivity.class);
+        startActivity(mainActivity);
     }
 
 }
