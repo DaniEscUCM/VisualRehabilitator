@@ -16,6 +16,7 @@ import android.widget.Toast;
 //Firebase Analytics
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.macularehab.login.LogIn;
+import com.macularehab.patient.PatientHome;
 
 public class PatientLogin extends AppCompatActivity  {
 

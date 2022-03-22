@@ -1,4 +1,4 @@
-package com.macularehab;
+package com.macularehab.patient;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -18,7 +18,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.macularehab.login.LogIn;
+import com.macularehab.IdentificationActivity;
+import com.macularehab.R;
 
 public class PatientHome extends AppCompatActivity {
 

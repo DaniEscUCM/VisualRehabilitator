@@ -1,10 +1,12 @@
 package com.macularehab.professional.patientList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +18,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.macularehab.R;
+import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
+import com.macularehab.professional.ProfessionalPatientHome;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -29,10 +41,12 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     private ArrayList<Patient> patientList;
     private ArrayList<Patient> patientListFull;
     private Context context;
+    private Context activityContext;
 
-    public PatientListAdapter(Context context, List<Patient> patientList) {
+    public PatientListAdapter(Context context, List<Patient> patientList, Context activityContext) {
 
         this.context = context;
+        this.activityContext = activityContext;
         mInflater = LayoutInflater.from(context);
         setPatientListData(patientList);
     }
@@ -151,6 +165,13 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         private ProgressBar card_patient_progress_bar;
         private PatientListAdapter patientListAdapter;
 
+        private FirebaseDatabase firebaseDatabase;
+        private DatabaseReference databaseReference;
+        private FirebaseAuth mAuth;
+        private final String db_professional = "Professional";
+        private final String db_patients = "Patients";
+        private final String filenameCurrentPatient = "CurrentPatient.json";
+
         public PatientViewHolder(@NonNull View itemView, PatientListAdapter patientListAdapter) {
             super(itemView);
 
@@ -165,7 +186,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    downloadPatientAndStartActivity(card_patient_uid.getText().toString());
                 }
             });
         }
@@ -173,6 +194,54 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         @Override
         public void onClick(View v) {
 
+        }
+
+        private void downloadPatientAndStartActivity(String patient_uid) {
+
+            firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+            databaseReference = firebaseDatabase.getReference();
+            mAuth = FirebaseAuth.getInstance();
+
+            donwloadPatient(patient_uid);
+        }
+
+        private void donwloadPatient(String patient_uid) {
+
+            databaseReference.child(db_professional).child(mAuth.getUid()).child(db_patients).child(patient_uid)
+                    .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    if (!task.isSuccessful()) {
+                        Log.e("firebase", "Error getting data", task.getException());
+                    }
+                    else {
+
+                        HashMap<String, Object> map = (HashMap<String, Object>) task.getResult().getValue();
+
+                        if (map == null) {
+                            map = new HashMap<>();
+                        }
+                        writeInternalStoragePatientInfo(map);
+                    }
+                }
+            });
+        }
+
+        private void writeInternalStoragePatientInfo(HashMap<String, Object> map) {
+
+            Gson gson = new Gson();
+            String data = gson.toJson(map);
+
+            WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+            writeInternalStorage.write(context, filenameCurrentPatient, data);
+
+            startNewActivity();
+        }
+
+        private void startNewActivity() {
+
+            Intent intent = new Intent(activityContext, ProfessionalPatientHome.class);
+            activityContext.startActivity(intent);
         }
     }
 }

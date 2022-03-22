@@ -21,10 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.macularehab.PatientHome;
-import com.macularehab.PatientSignUp;
 import com.macularehab.R;
-import com.macularehab.login.SignUp;
 
 import java.util.Map;
 

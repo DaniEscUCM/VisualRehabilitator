@@ -86,7 +86,7 @@ public class ProfessionalHome extends AppCompatActivity {
         setProfessionalNameText();
 
         recyclerView = findViewById(R.id.professional_patientList_recyclerView);
-        patientListAdapter = new PatientListAdapter(this, new ArrayList<Patient>());
+        patientListAdapter = new PatientListAdapter(getApplicationContext(), new ArrayList<Patient>(), this);
         recyclerView.setAdapter(patientListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
