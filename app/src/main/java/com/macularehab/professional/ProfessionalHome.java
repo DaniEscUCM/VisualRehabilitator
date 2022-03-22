@@ -29,6 +29,8 @@ import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
+import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
 import com.macularehab.professional.patientList.PatientListAdapter;
 
@@ -166,7 +168,11 @@ public class ProfessionalHome extends AppCompatActivity {
 
         Gson gson = new Gson();
         String data = gson.toJson(map);
-        try {
+
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameProfessionalPatientList, data);
+        readInternalStorage();
+        /*try {
             File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalPatientList);
             Toast.makeText(getApplicationContext(), getApplicationContext().getFilesDir().toString(), Toast.LENGTH_LONG).show();
             FileOutputStream fileOutputStream = new FileOutputStream(file);
@@ -178,12 +184,16 @@ public class ProfessionalHome extends AppCompatActivity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void readInternalStorage() {
 
-        try {
+        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+        HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameProfessionalPatientList);
+        createPatientList(map);
+
+        /*try {
             File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalPatientList);
             FileInputStream fileInputStream = new FileInputStream(file);
                     //openFileInput(filenameProfessionalPatientList);
@@ -204,7 +214,7 @@ public class ProfessionalHome extends AppCompatActivity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void createPatientList(HashMap<String, Object> map) {
@@ -259,7 +269,10 @@ public class ProfessionalHome extends AppCompatActivity {
 
         Gson gson = new Gson();
         String data = gson.toJson(map);
-        try {
+
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameProfessionalInfo, data);
+        /*try {
             File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalInfo);
             //Toast.makeText(getApplicationContext(), getApplicationContext().getFilesDir().toString(), Toast.LENGTH_LONG).show();
             FileOutputStream fileOutputStream = new FileOutputStream(file);
@@ -271,7 +284,7 @@ public class ProfessionalHome extends AppCompatActivity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void setProfessionalNameText() {
