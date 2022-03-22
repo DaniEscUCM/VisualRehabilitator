@@ -21,15 +21,17 @@
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
-        android:id="@+id/button_choose_signup_patient"
+        android:id="@+id/button_choose_login_patient"
         android:layout_width="450dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/blue"
-        android:text="@string/button_signup_patient"
+        android:text="@string/hint_patient_login_login_button"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/guideline5"
-        app:layout_constraintEnd_toStartOf="@id/button_choose_login_patient"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guideline6"
+        app:layout_constraintLeft_toRightOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <TextView
@@ -75,21 +77,21 @@
         android:textAlignment="center"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="703dp"
-        app:layout_constraintEnd_toEndOf="@+id/button_choose_login_patient"
-        app:layout_constraintStart_toStartOf="@+id/button_choose_login_patient"
+        app:layout_constraintEnd_toEndOf="@+id/button_choose_signup_patient"
+        app:layout_constraintStart_toStartOf="@+id/button_choose_signup_patient"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <Button
-        android:id="@+id/button_choose_login_patient"
+        android:id="@+id/button_choose_signup_patient"
         android:layout_width="450dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/pink_dark"
-        android:text="@string/button_login_patient"
+        android:text="@string/button_signup_patient"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_choose_signup_patient"
-        app:layout_constraintTop_toTopOf="@id/guideline4"/>
+        app:layout_constraintStart_toEndOf="@+id/button_choose_login_patient"
+        app:layout_constraintTop_toTopOf="@id/guideline4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
