@@ -7,7 +7,7 @@
 
     <!-- Apartado paciente .-->
     <string name="button_login_patient">LOGIN</string>
-    <string name="button_signup_patient">Register</string>
+    <string name="button_signup_patient">SIGNUP</string>
     <string name="text_patient_account">Patient Account</string>
     <string name="text_ask_patient_login">Already have an account</string>
     <string name="text_ask_patient_signup">Create an account</string>
@@ -26,7 +26,7 @@
     <string name="patient_signup_repeat_password">Repeat Numeric Code \n/ Password:</string>
     <string name="hint_patient_signup_welcome">Welcome</string>
     <string name="hint_patient_signup_signup">SignUp</string>
-    <string name="hint_patient_signup_signup_button">Register</string>
+    <string name="hint_patient_signup_signup_button">SignUp</string>
     <string name="hint_patient_signup_signup_button_continue">Continue SignUp</string>
     <string name="patient_signup_continue_explained">Press Continue Signup button to continue the sinning up process \nYou will have to enter the numeric code that the professional gave it to you</string>
     <string name="patient_signup_enter_username">Create an username, with no spaces, it could be your name (but without spaces)</string>
