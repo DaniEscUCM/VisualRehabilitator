@@ -6,63 +6,119 @@
     android:layout_height="match_parent"
     tools:context=".PatientLogin">
 
-    <TextView
-        android:id="@+id/text_login_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/hint_patient_login_welcome"
-        android:textSize="96sp"
+    <ImageButton
+        android:id="@+id/imageButton_back_pat_login"
+        android:contentDescription="@string/imagebutton_des_back"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
+        android:backgroundTint="@color/grey"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:srcCompat="?attr/actionModeCloseDrawable" />
     <TextView
         android:id="@+id/text_login"
+        android:text="@string/hint_patient_login_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/hint_patient_login_login"
         android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login_welcome" />
+        app:layout_constraintTop_toTopOf="@+id/guideline1"/>
 
-    <EditText
-        android:id="@+id/patient_email_login"
-        android:layout_width="1100dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="168dp"
-        android:ems="10"
-        android:hint="@string/hint_patient_login_email"
-        android:inputType="textEmailAddress"
-        android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/text_login">
 
-    <Button
-        android:id="@+id/patient_login_button"
-        android:layout_width="1100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/hint_patient_login_login_button"
-        android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_password_login" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/patient_password_login"
-        android:layout_width="1100dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="@string/hint_patient_login_password"
-        android:inputType="textPassword"
-        android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_email_login" />
+        <TextView
+            android:id="@+id/patient_email_logintv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/patient_email_login"
+            android:text="@string/hint_patient_login_email"
+            android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/patient_email_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:textSize="24sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/patient_password_logintv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/patient_password_login"
+                android:text="@string/hint_patient_login_password"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/patient_password_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textSize="24sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/patient_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="@string/hint_patient_login_login_button"/>
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

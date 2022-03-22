@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 //Firebase Analytics
@@ -49,6 +50,18 @@ public class PatientLogin extends AppCompatActivity  {
             }
         });
 
+        ImageButton buttonBack = (ImageButton) findViewById(R.id.imageButton_back_pat_login);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                close(v);
+            }
+        });
+
+    }
+
+    public void close(View view){
+        finish();
     }
 
     @Override

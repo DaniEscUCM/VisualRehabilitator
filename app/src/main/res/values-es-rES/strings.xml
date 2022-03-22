@@ -16,6 +16,7 @@
     <string name="text_patient_account">Patient Account</string>
     <string name="text_ask_patient_login">Already have an account</string>
     <string name="text_ask_patient_signup">Create an account</string>
+    <string name="text_patient_warning">Tienes que usar el código que te ha dado el profesional</string>
     <!-- Apartado LogIn .-->
     <string name="hint_patient_login_name">Name</string>
     <string name="hint_patient_login_email">Email Address / Username</string>
