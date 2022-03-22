@@ -7,7 +7,7 @@
 
     <!-- Apartado paciente .-->
     <string name="button_login_patient">LOGIN</string>
-    <string name="button_signup_patient">SIGNUP</string>
+    <string name="button_signup_patient">Register</string>
     <string name="text_patient_account">Patient Account</string>
     <string name="text_ask_patient_login">Already have an account</string>
     <string name="text_ask_patient_signup">Create an account</string>
