@@ -1,7 +1,10 @@
 package com.macularehab.professional;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -15,6 +18,8 @@ import java.util.HashMap;
 public class ProfessionalPatientHome extends AppCompatActivity {
 
     private TextView patientName_textView;
+    private Button dataButton;
+    private Button exercisesButton;
     private final String filenameCurrentPatient = "CurrentPatient.json";
 
     @Override
@@ -24,6 +29,22 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         setContentView(R.layout.activity_patient_home_choose_data_exercise);
 
         patientName_textView = findViewById(R.id.patient_home_patient_name_textView);
+
+        dataButton = findViewById(R.id.professional_patient_home_data_button);
+        dataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotToDataActivity();
+            }
+        });
+
+        exercisesButton = findViewById(R.id.professional_patient_home_exercises_button);
+        exercisesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToExercisesActivity();
+            }
+        });
 
         readPatientName();
     }
@@ -37,5 +58,15 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         String lastName = map.get("first_lastName").toString();
 
         patientName_textView.setText(name + " " + lastName);
+    }
+
+    private void gotToDataActivity() {
+
+        Intent intent = new Intent(this, ProfessionalPatientInfo.class);
+        startActivity(intent);
+    }
+
+    private void goToExercisesActivity() {
+        //Intent intent = new Intent(this,)
     }
 }

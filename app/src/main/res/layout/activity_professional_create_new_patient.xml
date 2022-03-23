@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:text="New Patient"
+        android:text="@string/professional_patientForm_new_patient"
         android:textSize="60sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
-        android:text="Continuar"
+        android:padding="10dp"
+        android:text="@string/professional_patientForm_continue_button"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -53,7 +55,7 @@
                     android:id="@+id/textView34"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fecha"
+                    android:text="@string/professional_patientForm_date"
                     android:textSize="40sp" />
 
                 <Space
@@ -64,7 +66,7 @@
                     android:id="@+id/textView35"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nombre"
+                    android:text="@string/professional_patientForm_name"
                     android:textSize="40sp" />
 
                 <Space
@@ -75,7 +77,7 @@
                     android:id="@+id/textView40"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1er Apellido"
+                    android:text="@string/professional_patientForm_first_lastName"
                     android:textSize="40sp" />
 
                 <Space
@@ -86,7 +88,7 @@
                     android:id="@+id/textView41"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2do Apellido"
+                    android:text="@string/professional_patientForm_second_lastName"
                     android:textSize="40sp" />
 
                 <Space
@@ -97,7 +99,7 @@
                     android:id="@+id/textView19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Genero"
+                    android:text="@string/professional_patientForm_gender"
                     android:textSize="40sp" />
 
                 <Space
@@ -108,7 +110,7 @@
                     android:id="@+id/textView42"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fecha de\nnacimiento"
+                    android:text="@string/professional_patientForm_date_of_birth"
                     android:textSize="40sp" />
 
                 <Space
@@ -119,7 +121,7 @@
                     android:id="@+id/textView43"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Diagnostico\nOftamologico   "
+                    android:text="@string/professional_patientForm_diagnostic"
                     android:textSize="40sp" />
 
                 <Space
@@ -130,7 +132,7 @@
                     android:id="@+id/textView44"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="AV"
+                    android:text="@string/professional_patientForm_av"
                     android:textSize="40sp" />
 
                 <Space
@@ -141,7 +143,7 @@
                     android:id="@+id/textView45"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CV"
+                    android:text="@string/professional_patientForm_cv"
                     android:textSize="40sp" />
 
                 <Space
@@ -152,7 +154,7 @@
                     android:id="@+id/textView46"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Observaciones"
+                    android:text="@string/professional_patientForm_observations"
                     android:textSize="40sp" />
             </LinearLayout>
 
@@ -166,7 +168,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Today Date"
+                    android:hint="@string/professional_patientForm_date"
                     android:inputType="date"
                     android:textSize="34sp" />
 
@@ -179,7 +181,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Nombre"
+                    android:hint="@string/professional_patientForm_name"
                     android:inputType="textPersonName"
                     android:textSize="34sp" />
 
@@ -192,7 +194,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="1er Apellido"
+                    android:hint="@string/professional_patientForm_first_lastName"
                     android:inputType="textPersonName"
                     android:textSize="34sp" />
 
@@ -205,7 +207,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="2do Apellido"
+                    android:hint="@string/professional_patientForm_second_lastName"
                     android:inputType="textPersonName"
                     android:textSize="34sp" />
 
@@ -217,7 +219,7 @@
                     android:id="@+id/spinner_input_create_patient_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="75dp"
-                    android:entries="@array/generos"
+                    android:entries="@array/professional_patientForm_genders"
                     android:textSize="60sp" />
 
                 <EditText
@@ -225,7 +227,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Fecha de Nacimiento"
+                    android:hint="@string/professional_patientForm_date_of_birth_hint"
                     android:inputType="date"
                     android:textSize="34sp" />
 
@@ -238,7 +240,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Diagnostico oftamologico"
+                    android:hint="@string/professional_patientForm_diagnostic_hint"
                     android:inputType="textPersonName"
                     android:textSize="34sp" />
 
@@ -251,7 +253,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="AV"
+                    android:hint="@string/professional_patientForm_av_hint"
                     android:inputType="numberDecimal"
                     android:textSize="34sp" />
 
@@ -264,7 +266,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="CV"
+                    android:hint="@string/professional_patientForm_cv_hint"
                     android:inputType="numberDecimal"
                     android:textSize="34sp" />
 
@@ -278,12 +280,21 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:hint="Escriba aqui si tiene alguna observacion"
+                    android:hint="@string/professional_patientForm_observations_hint"
                     android:inputType="textMultiLine"
                     android:textSize="34sp" />
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/professional_patient_form_patientName_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textSize="48sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
+        app:layout_constraintStart_toEndOf="@+id/textView13" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

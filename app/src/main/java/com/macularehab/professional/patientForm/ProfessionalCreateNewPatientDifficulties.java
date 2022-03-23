@@ -1,4 +1,4 @@
-package com.macularehab.professional;
+package com.macularehab.professional.patientForm;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -71,7 +71,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
 
     private void getCheckBoxesClicked() {
 
-        arrayList = new ArrayList<>(25);
+        arrayList = new ArrayList<>(33);
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.create_new_patient_linear_layout);
         int count = 0;

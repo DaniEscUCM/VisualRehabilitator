@@ -19,6 +19,7 @@ public class Patient {
     private String professional_uid;
     private boolean hasAccount;
     private String patient_uid;
+    private String patient_numeric_code;
     private int exercises_accomplished;
     private String date_last_test;
 
@@ -186,6 +187,14 @@ public class Patient {
 
     public void setPatient_uid(String patient_uid) {
         this.patient_uid = patient_uid;
+    }
+
+    public String getPatient_numeric_code() {
+        return patient_numeric_code;
+    }
+
+    public void setPatient_numeric_code(String patient_numeric_code) {
+        this.patient_numeric_code = patient_numeric_code;
     }
 
     public int getExercises_accomplished() {

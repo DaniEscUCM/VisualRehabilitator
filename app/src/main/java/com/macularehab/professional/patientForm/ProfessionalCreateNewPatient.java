@@ -1,4 +1,4 @@
-package com.macularehab.professional;
+package com.macularehab.professional.patientForm;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,7 +7,6 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -118,7 +116,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private void buttonContinueClicked() {
 
         readInputs();
-        validateInputs();
+        //validateInputs();
 
         if (!validateInputs()){
             showAlertMissingData();
@@ -139,6 +137,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         diagnostic = input_patient_diagnostic.getText().toString();
         av_text = input_patient_av.getText().toString();
         cv_text = input_patient_cv.getText().toString();
+        observations = input_patient_observations.getText().toString();
     }
 
     //TODO utilizar string.xml y tambien falta comprobar que no exista un usuario con el mismo nombre
@@ -210,6 +209,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         patient.setAv(av);
         patient.setCv(cv);
         patient.setObservations(observations);
+        patient.setPatient_numeric_code(String.valueOf(numericCode));
         patient.setProfessional_name(mAuth.getCurrentUser().getDisplayName());
         patient.setProfessional_uid(mAuth.getCurrentUser().getUid());
 

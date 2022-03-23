@@ -54,6 +54,29 @@
     <string name="professional_home_name_default">Professional</string>
 
     <!-- Apartado Professional - Patient Form .-->
+    <string name="professional_patientForm_new_patient">New Patient</string>
+    <string name="professional_patientForm_date">Date</string>
+    <string name="professional_patientForm_name">Name</string>
+    <string name="professional_patientForm_first_lastName">Last Name</string>
+    <string name="professional_patientForm_second_lastName">Last Name</string>
+    <string name="professional_patientForm_gender">Gender</string>
+    <string-array name="professional_patientForm_genders">
+        <item>Masculine</item>
+        <item>Feminine</item>
+        <item>Other</item>
+    </string-array>
+    <string name="professional_patientForm_date_of_birth">Date of\nbirth</string>
+    <string name="professional_patientForm_date_of_birth_hint">Date of birth</string>
+    <string name="professional_patientForm_diagnostic">Ophthalmologist\nDiagnostic</string>
+    <string name="professional_patientForm_diagnostic_hint">Ophthalmologist Diagnostic</string>
+    <string name="professional_patientForm_av">VA</string>
+    <string name="professional_patientForm_av_hint">visual acuity</string>
+    <string name="professional_patientForm_cv">VF</string>
+    <string name="professional_patientForm_cv_hint">Visual field</string>
+    <string name="professional_patientForm_observations">Observations</string>
+    <string name="professional_patientForm_observations_hint">Write here if you have an observation</string>
+    <string name="professional_patientForm_continue_button">Continue</string>
+
     <string name="professional_patientForm_section_1">Visual in children and adults</string>
     <string name="professional_patientForm_checkBox_1">Read</string>
     <string name="professional_patientForm_checkBox_1.1">Signs</string>
@@ -194,10 +217,4 @@
     <string name="calculated_focus">Calculated Focus</string>
     <string name="view_resume">View Resume</string>
     <string name="finish">Finish</string>
-
-    <string-array name="generos">
-        <item>Masculino</item>
-        <item>Femenino</item>
-        <item>Otro</item>
-    </string-array>
 </resources>

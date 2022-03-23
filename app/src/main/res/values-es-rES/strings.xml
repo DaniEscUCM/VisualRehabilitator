@@ -59,6 +59,29 @@
     <string name="professional_home_name_default">Professional</string>
 
         <!-- Apartado Professional - Patient Form .-->
+    <string name="professional_patientForm_new_patient">Nuevo Paciente</string>
+    <string name="professional_patientForm_date">Fecha</string>
+    <string name="professional_patientForm_name">Nombre</string>
+    <string name="professional_patientForm_first_lastName">1er Apellido</string>
+    <string name="professional_patientForm_second_lastName">2do Apellido</string>
+    <string name="professional_patientForm_gender">Género</string>
+    <string-array name="professional_patientForm_genders">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="professional_patientForm_date_of_birth">Fecha de\nnacimiento</string>
+    <string name="professional_patientForm_date_of_birth_hint">Fecha de nacimiento</string>
+    <string name="professional_patientForm_diagnostic">Diagnóstico\nOftamológico</string>
+    <string name="professional_patientForm_diagnostic_hint">DiagnósticoOftamólogico</string>
+    <string name="professional_patientForm_av">AV</string>
+    <string name="professional_patientForm_av_hint">Agudeza Visual</string>
+    <string name="professional_patientForm_cv">CV</string>
+    <string name="professional_patientForm_cv_hint">Campo Visual</string>
+    <string name="professional_patientForm_observations">Observaciones</string>
+    <string name="professional_patientForm_observations_hint">Escribe aquí si tienes alguna observación</string>
+    <string name="professional_patientForm_continue_button">Continuar</string>
+
     <string name="professional_patientForm_section_1">Dificultades funcionales visuales en niños y adultos</string>
     <string name="professional_patientForm_checkBox_1">Lee</string>
     <string name="professional_patientForm_checkBox_1.1">Rótulos</string>
@@ -197,10 +220,4 @@
     <string name="calculated_focus">Foco calculado</string>
     <string name="view_resume">Ver Resumen</string>
     <string name="finish">Finalizar</string>
-
-    <string-array name="generos">
-        <item>Masculino</item>
-        <item>Femenino</item>
-        <item>Otro</item>
-    </string-array>
 </resources>

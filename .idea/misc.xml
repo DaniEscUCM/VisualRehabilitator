@@ -92,6 +92,8 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_professional_page.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_tests_results.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.2635" />
+        <entry key="app/src/main/res/drawable/ic_arrow_back_small.xml" value="0.275" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
@@ -107,12 +109,14 @@
         <entry key="app/src/main/res/layout/activity_map_test.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_map_test_explanation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_map_test_right.xml" value="0.10911458333333333" />
+        <entry key="app/src/main/res/layout/activity_map_test_right_explanation.xml" value="0.1577970297029703" />
         <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.13854166666666667" />
-        <entry key="app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.10911458333333333" />
+        <entry key="app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.1318069306930693" />
         <entry key="app/src/main/res/layout/activity_professional_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.12911184210526316" />

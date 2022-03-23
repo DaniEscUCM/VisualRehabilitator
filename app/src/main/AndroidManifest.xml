@@ -76,13 +76,13 @@
             android:name=".ProfessionalIdentificationActivity"
             android:exported="false" />
         <activity
-            android:name=".professional.ProfessionalCreateNewPatient"
+            android:name=".professional.patientForm.ProfessionalCreateNewPatient"
             android:exported="false" />
         <activity
-            android:name=".professional.ProfessionalCreateNewPatientDifficulties"
+            android:name=".professional.patientForm.ProfessionalCreateNewPatientDifficulties"
             android:exported="false" />
         <activity
-            android:name=".professional.ProfessionalCreateNewPatientShowNumericCode"
+            android:name=".professional.patientForm.ProfessionalCreateNewPatientShowNumericCode"
             android:exported="false" />
         <activity
             android:name=".professional.ProfessionalHome"
@@ -92,6 +92,12 @@
             android:exported="false" />
         <activity
             android:name=".professional.ProfessionalPatientHome"
+            android:exported="false" />
+        <activity
+            android:name=".professional.patientForm.ProfessionalPatientEditInfo"
+            android:exported="false" />
+        <activity
+            android:name=".professional.patientForm.ProfessionalPatientEditInfoDifficulties"
             android:exported="false" />
         <!-- Apartado Paciente . -->
         <activity

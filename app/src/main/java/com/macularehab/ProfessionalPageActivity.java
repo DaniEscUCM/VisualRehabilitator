@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.macularehab.model.Patient;
 import com.macularehab.login.SignUp;
-import com.macularehab.professional.ProfessionalCreateNewPatient;
 import com.macularehab.professional.ProfessionalHome;
 
 import java.util.ArrayList;

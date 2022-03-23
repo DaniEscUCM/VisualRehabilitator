@@ -1,4 +1,4 @@
-package com.macularehab.professional;
+package com.macularehab.professional.patientForm;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -19,8 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.ManualInputStainLeftActivity;
 import com.macularehab.R;
-
-import java.util.Map;
+import com.macularehab.professional.patientForm.ProfessionalCreateNewPatientDifficulties;
 
 public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivity {
 
