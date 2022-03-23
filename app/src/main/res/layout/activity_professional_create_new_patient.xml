@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/professional_patient_form_newPatient_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -25,7 +25,7 @@
         android:layout_marginBottom="16dp"
         android:padding="10dp"
         android:text="@string/professional_patientForm_continue_button"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -39,7 +39,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_create_patient_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13">
+        app:layout_constraintTop_toBottomOf="@+id/professional_patient_form_newPatient_textView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -294,7 +294,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textSize="48sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-        app:layout_constraintStart_toEndOf="@+id/textView13" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/professional_patient_form_newPatient_textView"
+        app:layout_constraintStart_toEndOf="@+id/professional_patient_form_newPatient_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

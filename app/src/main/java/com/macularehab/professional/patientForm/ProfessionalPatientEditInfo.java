@@ -4,12 +4,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,6 +65,9 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
 
+    private TextView newPatientTextView;
+    private TextView patientNameTextView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +77,12 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        newPatientTextView = findViewById(R.id.professional_patient_form_newPatient_textView);
+        Resources resources = getApplicationContext().getResources();
+        newPatientTextView.setText(resources.getString(R.string.professional_patientForm_patient));
+
+        patientNameTextView = findViewById(R.id.professional_patient_form_patientName_textView);
 
         input_patient_date = findViewById(R.id.input_create_patient_todays_date);
         input_patient_name = findViewById(R.id.input_create_patient_name);
@@ -100,6 +111,8 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
         map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
 
+        patientNameTextView.setText(map.get("name").toString());
+
         input_patient_date.setText(map.get("date").toString());
         input_patient_name.setText(map.get("name").toString());
         input_patient_first_last_name.setText(map.get("first_lastName").toString());
@@ -124,6 +137,9 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
         }
 
         editPatient();
+
+        Resources resources = getApplicationContext().getResources();
+        newPatientTextView.setText(resources.getString(R.string.professional_patientForm_new_patient));
 
         Intent intent = new Intent(this, ProfessionalPatientEditInfoDifficulties.class);
         startActivity(intent);

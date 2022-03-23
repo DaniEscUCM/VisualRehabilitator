@@ -59,6 +59,7 @@
     <string name="professional_home_name_default">Professional</string>
 
         <!-- Apartado Professional - Patient Form .-->
+    <string name="professional_patientForm_patient">Paciente</string>
     <string name="professional_patientForm_new_patient">Nuevo Paciente</string>
     <string name="professional_patientForm_date">Fecha</string>
     <string name="professional_patientForm_name">Nombre</string>

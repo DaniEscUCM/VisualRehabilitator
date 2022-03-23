@@ -117,6 +117,7 @@
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.1318069306930693" />
+        <entry key="app/src/main/res/layout/activity_professional_create_new_patient_show_numeric_code.xml" value="0.17760416666666667" />
         <entry key="app/src/main/res/layout/activity_professional_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.12911184210526316" />

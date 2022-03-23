@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,8 +25,11 @@ import com.macularehab.professional.patientForm.ProfessionalCreateNewPatientDiff
 public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivity {
 
     private int numericCode;
+
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
+
     private final String db_patient = "Patient";
     private final String db_patients = "Patients";
     private final String db_professional = "Professional";
@@ -39,6 +43,7 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         Intent intent = getIntent();
         numericCode = intent.getIntExtra(ProfessionalCreateNewPatientDifficulties.numericCodeString, 0);
@@ -49,8 +54,6 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
         textView.setText(String.valueOf(numericCode));
 
         text_name = findViewById(R.id.create_new_patient_show_numeric_code_patient_name);
-
-        Log.w("Aqui", "Aqui");
 
         getPatientName();
 
@@ -65,7 +68,7 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
 
     private void getPatientName() {
 
-        databaseReference.child(db_professional).child(db_patients).child(String.valueOf(numericCode)).child("name")
+        databaseReference.child(db_professional).child(mAuth.getUid()).child(db_patients).child(String.valueOf(numericCode)).child("name")
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
