@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="@+id/guideline_back"
         app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
     <TextView

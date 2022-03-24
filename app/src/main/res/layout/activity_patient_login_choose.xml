@@ -13,10 +13,11 @@
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
