@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -30,6 +31,14 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         setContentView(R.layout.activity_patient_home_choose_data_exercise);
 
         patientName_textView = findViewById(R.id.patient_home_patient_name_textView);
+
+        ImageButton goBackButton = findViewById(R.id.patient_home_back_button);
+        goBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProfessionalPatientHome.this.finish();
+            }
+        });
 
         dataButton = findViewById(R.id.professional_patient_home_data_button);
         dataButton.setOnClickListener(new View.OnClickListener() {
