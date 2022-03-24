@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +49,13 @@ public class PatientSignUpUsername extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 buttonClicked();
+            }
+        });
+        ImageButton buttonBack = (ImageButton) findViewById(R.id.imageButton_back_ident);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
