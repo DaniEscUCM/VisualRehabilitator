@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.macularehab.ExercisesActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 
@@ -67,6 +68,7 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     }
 
     private void goToExercisesActivity() {
-        //Intent intent = new Intent(this,)
+        Intent intent = new Intent(this, ExercisesActivity.class);
+        startActivity(intent);
     }
 }

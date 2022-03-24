@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -80,6 +81,14 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         getProfessionalInfo();
+
+        ImageButton goBackButton = findViewById(R.id.professional_patient_patientForm_go_back_button);
+        goBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProfessionalCreateNewPatient.this.finish();
+            }
+        });
 
         input_patient_date = findViewById(R.id.input_create_patient_todays_date);
         input_patient_name = findViewById(R.id.input_create_patient_name);

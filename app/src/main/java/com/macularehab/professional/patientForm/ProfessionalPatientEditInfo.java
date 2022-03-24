@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -81,6 +82,14 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
         newPatientTextView = findViewById(R.id.professional_patient_form_newPatient_textView);
         Resources resources = getApplicationContext().getResources();
         newPatientTextView.setText(resources.getString(R.string.professional_patientForm_patient));
+
+        ImageButton goBackButton = findViewById(R.id.professional_patient_patientForm_go_back_button);
+        goBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProfessionalPatientEditInfo.this.finish();
+            }
+        });
 
         patientNameTextView = findViewById(R.id.professional_patient_form_patientName_textView);
 

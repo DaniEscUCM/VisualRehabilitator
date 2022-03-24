@@ -121,6 +121,21 @@
     <string name="professional_patientForm_checkBox_24">leía más antes de tener la pérdida de visión</string>
     <string name="professional_patientForm_checkBox_25">Le gustaría leer más de lo que lo hace actualmente</string>
         <!-- Fin Apartado Professional - Patient Form .-->
+
+    <!-- Apartado Professional - Patient Info .-->
+    <string name="professional_patientInfo_patient">Pacient</string>
+    <string name="professional_patientInfo_date">Fecha de alta</string>
+    <string name="professional_patientInfo_name">Nombre</string>
+    <string name="professional_patientInfo_first_lastName">1er Apellido</string>
+    <string name="professional_patientInfo_second_lastName">2do Apellido</string>
+    <string name="professional_patientInfo_gender">Género</string>
+    <string name="professional_patientInfo_date_of_birth">Fecha de\nnacimiento</string>
+    <string name="professional_patientInfo_diagnostic">DiagnósticoOftamólogico</string>
+    <string name="professional_patientInfo_av">AV</string>
+    <string name="professional_patientInfo_cv">CV</string>
+    <string name="professional_patientInfo_observations">Observaciones</string>
+
+    <!-- Fin Apartado Professional - Patient Info .-->
     <!-- Fin Apartado Professional .-->
 
     <string name="button_des_data">Datos</string>

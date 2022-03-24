@@ -116,6 +116,21 @@
     <string name="professional_patientForm_checkBox_24">Does the person used to read more before the vision loss?</string>
     <string name="professional_patientForm_checkBox_25">Would like to read more</string>
     <!-- Fin Apartado Professional - Patient Form .-->
+
+    <!-- Apartado Professional - Patient Info .-->
+    <string name="professional_patientInfo_patient">Patient</string>
+    <string name="professional_patientInfo_date">Admitted Date</string>
+    <string name="professional_patientInfo_name">Name</string>
+    <string name="professional_patientInfo_first_lastName">Last Name</string>
+    <string name="professional_patientInfo_second_lastName">Last Name</string>
+    <string name="professional_patientInfo_gender">Gender</string>
+    <string name="professional_patientInfo_date_of_birth">Date of\nbirth</string>
+    <string name="professional_patientInfo_diagnostic">Ophthalmology Diagnostic</string>
+    <string name="professional_patientInfo_av">VA</string>
+    <string name="professional_patientInfo_cv">VF</string>
+    <string name="professional_patientInfo_observations">Observations</string>
+
+    <!-- Fin Apartado Professional - Patient Info .-->
     <!-- Fin Apartado Professional .-->
 
     <string name="button_des_data">Data</string>
