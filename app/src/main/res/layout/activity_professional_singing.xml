@@ -101,14 +101,20 @@
                 android:text="@string/hint_professional_signup_password"
                 android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/editTextProfesionalPasword"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="24sp" />
+                app:boxBackgroundColor="#00FFFFFF"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextProfesionalPasword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textSize="24sp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -124,14 +130,19 @@
                 android:text="@string/hint_professional_signup_repeat_password"
                 android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/editTextProfesionalRepeatPasword"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="24sp" />
+                app:boxBackgroundColor="#00FFFFFF"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextProfesionalRepeatPasword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textSize="24sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 

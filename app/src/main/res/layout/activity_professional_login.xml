@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:textSize="24sp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -78,17 +78,23 @@
                 android:text="@string/textview_password"
                 android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/editTextTextProfessionalPassword"
-                android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:textSize="24sp"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                app:boxBackgroundColor="#00FFFFFF"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTextProfessionalPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textSize="24sp"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
 
 
         <Button
