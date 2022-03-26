@@ -155,9 +155,11 @@ public class CalculateFocusActivity extends AppCompatActivity {
             float x = event.getX();
             float y = event.getY();
             Pair<Float,Float> res = valid_coor(x,y);
-            result_coor.clear();
-            result_coor.add(res);
-            draw_focus();
+            if(res.first*res.first + res.second*res.second <= 100){
+                result_coor.clear();
+                result_coor.add(res);
+                draw_focus();
+            }
             return true;
         }
         return false;
