@@ -110,7 +110,7 @@
             android:name=".PatientSignUp"
             android:exported="false" />
         <activity
-            android:name=".PatientIdentificationActivity"
+            android:name=".patient.PatientIdentificationActivity"
             android:exported="false" />
         <activity
             android:name=".patient.PatientSignUpUsername"

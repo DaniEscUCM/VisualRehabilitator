@@ -33,6 +33,8 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
     private final String db_patient = "Patient";
     private final String db_patients = "Patients";
     private final String db_professional = "Professional";
+    private final String db_patientsNumericCode = "PatientsNumericCodes";
+
     private TextView text_name;
 
     @Override
@@ -48,7 +50,11 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
         Intent intent = getIntent();
         numericCode = intent.getIntExtra(ProfessionalCreateNewPatientDifficulties.numericCodeString, 0);
 
-        Log.w("Patient Code", String.valueOf(numericCode));
+        String st_numericCode = String.valueOf(numericCode);
+
+        Log.w("Patient Code", st_numericCode);
+
+        databaseReference.child(db_patientsNumericCode).child(st_numericCode).setValue(st_numericCode);
 
         TextView textView = findViewById(R.id.create_new_patient_show_numeric_code_numeric_code);
         textView.setText(String.valueOf(numericCode));

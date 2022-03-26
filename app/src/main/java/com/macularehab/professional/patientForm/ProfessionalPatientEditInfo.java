@@ -80,7 +80,7 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         newPatientTextView = findViewById(R.id.professional_patient_form_newPatient_textView);
-        Resources resources = getApplicationContext().getResources();
+        Resources resources = this.getResources();
         newPatientTextView.setText(resources.getString(R.string.professional_patientForm_patient));
 
         ImageButton goBackButton = findViewById(R.id.professional_patient_patientForm_go_back_button);
@@ -147,7 +147,7 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
 
         editPatient();
 
-        Resources resources = getApplicationContext().getResources();
+        Resources resources = this.getResources();
         newPatientTextView.setText(resources.getString(R.string.professional_patientForm_new_patient));
 
         Intent intent = new Intent(this, ProfessionalPatientEditInfoDifficulties.class);

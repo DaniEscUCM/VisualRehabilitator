@@ -10,6 +10,11 @@
     <string name="button_singin">Crear Cuenta</string>
     <string name="button_login">Iniciar Sesión</string>
 
+    <!-- Apartado general .-->
+    <string name="message_fill_fields">Te ha faltado rellenar campos</string>
+    <string name="message_error">¡Error! Intente de nuevo más tarde</string>
+    <!-- Fin Apartado general .-->
+
     <!-- Apartado paciente .-->
     <string name="button_login_patient">INICIAR SESIÓN</string>
     <string name="button_signup_patient">REGISTRARSE</string>
@@ -37,6 +42,14 @@
     <string name="patient_signup_continue_explained">Pulsa el botón Continua Registrandote para continuar el proceso de registro \nTendrás que introducir el código numérico que te dio el profesional</string>
     <string name="patient_signup_enter_username">Crea un nombre de usuario, sin espacios, puede ser tu nombre (pero sin espacios)</string>
     <string name="patient_signup_password_explained">Introduce el código numérico que te dió el profesional \ncomo contraseña</string>
+    <string name="patient_signup_passwords_doest_match">Los dos códigos introducidos no son iguales</string>
+    <string name="patient_signup_password_doest_exist">¡El código introducido no es válido! Vuelva a intentar o contacte su médico</string>
+    <string name="patient_signup_error_user_already_in_use">Usuario ya existe! Utiliza otro</string>
+    <string name="patient_signup_error_weak_password">¡Error! Contraseña débil. Contacte con su médico</string>
+    <string name="patient_signup_error_wrong_password">¡Error! Contraseña incorrecta. Contacte con su médico</string>
+    <string name="patient_signup_error_network_failed">¡Error! Fallo de Red</string>
+    <string name="patient_signup_error_operations_not_allowed">¡Error! Operación no permitida</string>
+
     <!-- Apartado Home .-->
     <string name="hint_patient_home_logout_button">Cerrar Sesión</string>
     <string name="patient_home_welcome_text">Bienvenido</string>

@@ -436,7 +436,7 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Realizar Test"
+                android:text="Ver Historial Test"
                 android:textSize="30sp" />
 
             <Space

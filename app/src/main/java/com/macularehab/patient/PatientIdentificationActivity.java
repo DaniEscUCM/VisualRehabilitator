@@ -1,4 +1,4 @@
-package com.macularehab;
+package com.macularehab.patient;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -13,6 +13,8 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.macularehab.PatientLogin;
+import com.macularehab.R;
 import com.macularehab.patient.PatientSignUpUsername;
 
 public class PatientIdentificationActivity extends AppCompatActivity {
@@ -73,7 +75,8 @@ public class PatientIdentificationActivity extends AppCompatActivity {
 
     private void patientSignUp() {
 
-        Intent patientSignUpView = new Intent(this, PatientSignUpUsername.class);
+        //Intent patientSignUpView = new Intent(this, PatientSignUpUsername.class);
+        Intent patientSignUpView = new Intent(this, PatientSignUpPassword.class);
         startActivity(patientSignUpView);
     }
 

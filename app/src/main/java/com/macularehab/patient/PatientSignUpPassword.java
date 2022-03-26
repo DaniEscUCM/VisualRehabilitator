@@ -1,9 +1,12 @@
 package com.macularehab.patient;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,12 +43,15 @@ public class PatientSignUpPassword extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
+    private final String db_patientsNumericCode = "PatientsNumericCodes";
     private String userID;
     private String professionalID;
 
     Map<String, Object> patientInfo;
 
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
+
+    public static final String extra_password = "com.macularehab.patient.extra_password";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +62,6 @@ public class PatientSignUpPassword extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
-
-        Intent intent = getIntent();
-        username = intent.getStringExtra(PatientSignUpUsername.extra_username);
 
         input_password_one = findViewById(R.id.editText_patient_password_one);
         input_password_two = findViewById(R.id.editText_patient_passworsd_two);
@@ -71,7 +74,7 @@ public class PatientSignUpPassword extends AppCompatActivity {
             }
         });
 
-        ImageButton buttonBack = (ImageButton) findViewById(R.id.imageButton_back_ident);
+        ImageButton buttonBack = findViewById(R.id.imageButton_back_ident);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,24 +91,31 @@ public class PatientSignUpPassword extends AppCompatActivity {
         validatePassword();
     }
 
-    //TODO colocar los errores tambien en espanhol
     private void validatePassword() {
 
         boolean all_correct = true;
 
+        Resources resources = this.getResources();
+        String st_needToFill = resources.getString(R.string.message_fill_fields);
+
         if (password_one.equals("")) {
-            input_password_one.setError("Need to fill");
+            input_password_one.setError(st_needToFill);
             all_correct = false;
         }
         if (password_two.equals("")) {
-            input_password_two.setError("Need to fill");
+            input_password_two.setError(st_needToFill);
             all_correct = false;
         }
         if (!password_one.equals(password_two)) {
-            input_password_one.setError("Passwords doesn't match");
-            input_password_two.setError("Passwords doesn't match");
+            String passwordsDoestMatch = resources.getString(R.string.patient_signup_passwords_doest_match);
+            input_password_one.setError(passwordsDoestMatch);
+            input_password_two.setError(passwordsDoestMatch);
             all_correct = false;
-            showAlertPasswordsDoesNotMatch();
+            showAlertPasswordsDoesNotMatch(passwordsDoestMatch);
+        }
+
+        if (password_one.equals("") || password_two.equals("")) {
+            showAlertPasswordsEmpty(st_needToFill);
         }
 
         if (all_correct) {
@@ -113,10 +123,24 @@ public class PatientSignUpPassword extends AppCompatActivity {
         }
     }
 
-    private void showAlertPasswordsDoesNotMatch() {
+    private void showAlertPasswordsEmpty(String st_needToFill) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Passwords doesn't match")
+        builder.setMessage(st_needToFill)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showAlertPasswordsDoesNotMatch(String passwordsDoestMatch) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(passwordsDoestMatch)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -131,12 +155,12 @@ public class PatientSignUpPassword extends AppCompatActivity {
 
     private void isPasswordCorrect() {
 
-        databaseReference.child("Patient").child(password_one)
+        databaseReference.child(db_patientsNumericCode).child(password_one)
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
-
+                    showAlertErrorRegister();
                 }
                 else {
                     String value = String.valueOf(task.getResult().getValue());
@@ -146,13 +170,18 @@ public class PatientSignUpPassword extends AppCompatActivity {
                         showAlertPasswordsDoesNotExist();
                     }
                     else {
-
-                        patientInfo = (Map<String, Object>) task.getResult().getValue();
-                        readEmail();
+                        goToSignUpUsername();
                     }
                 }
             }
         });
+    }
+
+    private void goToSignUpUsername() {
+
+        Intent intent = new Intent(this, PatientSignUpUsername.class);
+        intent.putExtra(extra_password, password_one);
+        startActivity(intent);
     }
 
     private void updatePatient() {
@@ -167,14 +196,15 @@ public class PatientSignUpPassword extends AppCompatActivity {
         professionalID = String.valueOf(patientInfo.get("professional_uid"));
 
         databaseReference.child("Professional").child(professionalID).child("Patients").child(password_one).setValue(patientInfo);
-
-        startPatientHomeActivity();
     }
 
     private void showAlertPasswordsDoesNotExist() {
 
+        Resources resources = this.getResources();
+        String st_passwordDoestExist = resources.getString(R.string.patient_signup_password_doest_exist);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Password Incorrect")
+        builder.setMessage(st_passwordDoestExist)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -187,56 +217,13 @@ public class PatientSignUpPassword extends AppCompatActivity {
         dialog.show();
     }
 
-    private void startPatientHomeActivity() {
-
-        Intent patient_home_intent = new Intent(this, PatientHome.class);
-        startActivity(patient_home_intent);
-    }
-
-    public void readEmail() {
-
-        int email_length = username.length();
-        boolean is_email = false;
-
-        for (int i = 0; i < email_length && !is_email; i++) {
-
-            if (username.charAt(i) == '@') {
-                is_email = true;
-            }
-        }
-
-        if (!is_email) {
-            username += GENERIC_EMAIL;
-        }
-
-        createAccount();
-    }
-
-    private void createAccount() {
-        // [START create_user_with_email]
-        mAuth.createUserWithEmailAndPassword(username, password_one)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.w("EMAIL", "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            userID = user.getUid();
-                            updatePatient();
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("EMAIL", "createUserWithEmail:failure", task.getException());
-                            showAlertErrorRegister();
-                        }
-                    }
-                });
-    }
-
     private void showAlertErrorRegister() {
 
+        Resources resources = this.getResources();
+        String st_error = resources.getString(R.string.message_error);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Error! Try Again Later")
+        builder.setMessage(st_error)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
