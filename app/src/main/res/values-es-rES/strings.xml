@@ -5,58 +5,58 @@
     <string name="textview_loginProfessional">Profesional</string>
 
     <string name="app_name">MaculaRehab</string>
-    <string name="button_data">Data</string>
-    <string name="button_create">Create</string>
+    <string name="button_data">Datos</string>
+    <string name="button_create">Crear</string>
     <string name="button_singin">Crear Cuenta</string>
     <string name="button_login">Iniciar Sesión</string>
 
     <!-- Apartado paciente .-->
-    <string name="button_login_patient">LOGIN</string>
-    <string name="button_signup_patient">SIGNUP</string>
-    <string name="text_patient_account">Patient Account</string>
-    <string name="text_ask_patient_login">Already have an account</string>
-    <string name="text_ask_patient_signup">Create an account</string>
+    <string name="button_login_patient">INICIAR SESIÓN</string>
+    <string name="button_signup_patient">REGISTRARSE</string>
+    <string name="text_patient_account">Cuenta de Paciente</string>
+    <string name="text_ask_patient_login">Ya tienes una cuenta</string>
+    <string name="text_ask_patient_signup">Crea una cuenta</string>
     <string name="text_patient_warning">Tienes que usar el código que te ha dado el profesional</string>
     <!-- Apartado LogIn .-->
-    <string name="hint_patient_login_name">Name</string>
-    <string name="hint_patient_login_email">Email Address / Username</string>
-    <string name="hint_patient_login_password">Password</string>
-    <string name="hint_patient_login_welcome">Welcome</string>
-    <string name="hint_patient_login_login">LogIn</string>
-    <string name="hint_patient_login_login_button">LogIn</string>
+    <string name="hint_patient_login_name">Nombre</string>
+    <string name="hint_patient_login_email">Dirección de correo / Usuario</string>
+    <string name="hint_patient_login_password">Contraseña</string>
+    <string name="hint_patient_login_welcome">Bienvenido</string>
+    <string name="hint_patient_login_login">Inicia Sesión</string>
+    <string name="hint_patient_login_login_button">Inicia Sesión</string>
     <!-- Apartado SignUp .-->
-    <string name="hint_patient_signup_name">Name</string>
-    <string name="hint_patient_signup_email">Email Address / Username:</string>
-    <string name="hint_patient_signup_password">Numeric Code / Password:</string>
-    <string name="hint_patient_signup_repeat_password">Repeat Numeric Code / Password:</string>
-    <string name="patient_signup_repeat_password">Repeat Numeric Code \n/ Password:</string>
-    <string name="hint_patient_signup_welcome">Welcome</string>
-    <string name="hint_patient_signup_signup">SignUp</string>
-    <string name="hint_patient_signup_signup_button">SignUp</string>
-    <string name="hint_patient_signup_signup_button_continue">Continue SignUp</string>
-    <string name="patient_signup_continue_explained">Press Continue Signup button to continue the sinning up process \nYou will have to enter the numeric code that the professional gave it to you</string>
-    <string name="patient_signup_enter_username">Create an username, with no spaces, it could be your name (but without spaces)</string>
-    <string name="patient_signup_password_explained">Enter the numeric code that the professional \ngave it to you as a password</string>
+    <string name="hint_patient_signup_name">Nombre</string>
+    <string name="hint_patient_signup_email">Dirección de correo / Usuario:</string>
+    <string name="hint_patient_signup_password">Código numérico / Contraseña:</string>
+    <string name="hint_patient_signup_repeat_password">Repite Código numérico / Contraseña:</string>
+    <string name="patient_signup_repeat_password">Repite Código numérico \n/ Contraseña:</string>
+    <string name="hint_patient_signup_welcome">Bienvenido</string>
+    <string name="hint_patient_signup_signup">Registrarse</string>
+    <string name="hint_patient_signup_signup_button">Registrarse</string>
+    <string name="hint_patient_signup_signup_button_continue">Continua Registrandote</string> Pulsa el botón Continua Registrandote para continuar el proceso de registro
+    <string name="patient_signup_continue_explained">Pulsa el botón Continua Registrandote para continuar el proceso de registro \nTendrás que introducir el código numérico que te dio el profesional</string>
+    <string name="patient_signup_enter_username">Crea un nombre de usuario, sin espacios, puede ser tu nombre (pero sin espacios)</string>
+    <string name="patient_signup_password_explained">Introduce el código numérico que te dió el profesional \ncomo contraseña</string>
     <!-- Apartado Home .-->
-    <string name="hint_patient_home_logout_button">LogOut</string>
-    <string name="patient_home_welcome_text">Welcome</string>
-    <string name="patient_home_name_default">Patient</string>
+    <string name="hint_patient_home_logout_button">Cerrar Sesión</string>
+    <string name="patient_home_welcome_text">Bienvenido</string>
+    <string name="patient_home_name_default">Paciente</string>
     <!-- Fin Apartado Paciente .-->
 
     <!-- Apartado depuración .-->
-    <string name="professional_newpatient_testOptico">Optical Tests</string>
-    <string name="professional_newpatient_formularioOptico">New patient</string>
+    <string name="professional_newpatient_testOptico">Tests Opticos</string>
+    <string name="professional_newpatient_formularioOptico">Nuevo Paciente</string>
     <!-- Fin Apartado depuración .-->
 
     <!-- Apartado Professional .-->
-    <string name="text_professional_singup_text">Professional Sing Up</string>
-    <string name="hint_professional_signup_name">Name</string>
-    <string name="hint_professional_signup_email">Email Address</string>
-    <string name="hint_professional_signup_password">Password</string>
-    <string name="hint_professional_signup_repeat_password">Repeat Password</string>
-    <string name="professional_home_welcome_text">Welcome</string>
-    <string name="hint_professional_home_logout_button">LogOut</string>
-    <string name="professional_home_name_default">Professional</string>
+    <string name="text_professional_singup_text">Registro de Profesional</string>
+    <string name="hint_professional_signup_name">Nombre</string>
+    <string name="hint_professional_signup_email">Dirección de correo</string>
+    <string name="hint_professional_signup_password">Contraseña</string>
+    <string name="hint_professional_signup_repeat_password">Repetir contraseña</string>
+    <string name="professional_home_welcome_text">Bienvenido</string>
+    <string name="hint_professional_home_logout_button">Cerrar sesión</string>
+    <string name="professional_home_name_default">Profesional</string>
 
         <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_patient">Paciente</string>
@@ -142,7 +142,7 @@
     <string name="button_exercises">Ejercicios</string>
     <string name="button_des_exercises">Ejercicios</string>
     <string name="imagebutton_des_settings">Ajustes</string>
-    <string name="textview_settings">Settings</string>
+    <string name="textview_settings">Ajustes</string>
     <string name="textview_exercises">Ejercicios</string>
     <string name="foco">Foco</string>
     <string name="seconds_description">Inserta los segundos que quieras para cada figura</string>
@@ -151,8 +151,8 @@
     <string name="textview_name">Nombre</string>
     <string name="textview_username">Nombre de usuario</string>
     <string name="textview_password">Constraseña</string>
-    <string name="textview_professional_singin">Professional Sing in</string>
-    <string name="textview_professional_loggin">Professional Log in</string>
+    <string name="textview_professional_singin">Registro de profesional</string>
+    <string name="textview_professional_loggin">Inicio de sesión de profesional</string>
     <string name="imagebutton_des_back">Retroceder</string>
     <string name="first_exercise">Ejercicio 1</string>
     <string name="second_exercise">Ejercicio 2</string>
@@ -170,8 +170,8 @@
     <string name="fourteenth_exercise">Ejercicio 14</string>
     <string name="fifteenth_exercise">Ejercicio 15</string>
     <string name="sixteenth_exercise">Ejercicio 16</string>
-    <string name="button_play">Play</string>
-    <string name="first_exercise_description">Here would be the description of the first exercise</string>
+    <string name="button_play">Empezar</string>
+    <string name="first_exercise_description">Aquí devería estar la descripción del primer ejercicio</string>
     <string name="second_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras. Haz click cuando aparezca un triángulo.</string>
     <string name="third_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras, más pequeñas y sin relleno. Haz click cuando aparezca un triángulo.</string>
     <string name="fourth_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de letras. Haz click cuando aparezca la E.</string>
@@ -188,9 +188,9 @@
     <string name="fifteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="sixteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="button_home">Home</string>
-    <string name="circle_for_click">Circle</string>
-    <string name="triangle_for_click">Triangle</string>
-    <string name="star_for_click">Star</string>
+    <string name="circle_for_click">Circulo</string>
+    <string name="triangle_for_click">Triangulo</string>
+    <string name="star_for_click">Estrella</string>
     <string name="letter_A">A</string>
     <string name="letter_E">E</string>
     <string name="letter_M">M</string>
@@ -199,15 +199,15 @@
     <string name="letter_L">L</string>
 
 
-    <string name="button_for_click">Button to click</string>
-    <string name="toast_user_created">User created</string>
-    <string name="toast_fill_fields">please fill all the fields</string>
+    <string name="button_for_click">Boton para hacer click</string>
+    <string name="toast_user_created">Usuario creado</string>
+    <string name="toast_fill_fields">Por favor, rellena todos los campos</string>
     <string name="textview_infoLogin">Ya tengo una cuenta</string>
     <string name="textview_infoSingin">Crear una cuenta</string>
     <string name="textview_professionalAccount">Cuenta Profesional</string>
-    <string name="textview_welcome">Welcome</string>
-    <string name="textview_patientlist">Patient list</string>
-    <string name="button_newPatient">New patient</string>
+    <string name="textview_welcome">Bienvenido</string>
+    <string name="textview_patientlist">Lista de pacientes</string>
+    <string name="button_newPatient">Nuevo paciente</string>
 
     <string name="distance_30cm">Coloque la pantalla a una distacia de 15cm</string>
     <string name="touch_instruction">Toque la pantalla al observar un punto</string>
