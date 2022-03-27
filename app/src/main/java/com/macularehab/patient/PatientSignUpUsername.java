@@ -1,5 +1,6 @@
 package com.macularehab.patient;
 
+import android.animation.Animator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,11 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseError;
@@ -34,6 +37,7 @@ public class PatientSignUpUsername extends AppCompatActivity {
     private Button button_continue_signup;
     private String username;
     private String password;
+    private LottieAnimationView loading_imageView;
 
     private final String db_patientsNumericCode = "PatientsNumericCodes";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
@@ -52,8 +56,13 @@ public class PatientSignUpUsername extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        //Get the password
         Intent intent = getIntent();
         password = intent.getStringExtra(PatientSignUpPassword.extra_password);
+
+        //Loading Image
+        loading_imageView = findViewById(R.id.patient_signup_loading_imageView);
+        loading_imageView.setVisibility(View.INVISIBLE);
 
         //EditText of username
         input_username = findViewById(R.id.editText_patient_signup_username);
@@ -109,7 +118,30 @@ public class PatientSignUpUsername extends AppCompatActivity {
 
         if (!is_email) username += GENERIC_EMAIL;
 
+        showLoadingImage();
         createAccount();
+    }
+
+    private void showLoadingImage() {
+        
+        loading_imageView.setVisibility(View.VISIBLE);
+        loading_imageView.setAnimation(R.raw.loading_rainbow);
+        loading_imageView.playAnimation();
+        loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                loading_imageView.playAnimation();
+            }
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
     }
 
     private void createAccount() {
@@ -118,6 +150,11 @@ public class PatientSignUpUsername extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        loading_imageView.cancelAnimation();
+                        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
+                        loading_imageView.setVisibility(View.INVISIBLE);
+
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.w("EMAIL", "createUserWithEmail:success");
@@ -158,6 +195,8 @@ public class PatientSignUpUsername extends AppCompatActivity {
                         }
                     }
                 });
+
+        loading_imageView.playAnimation();
     }
 
     private void showAlertErrorUser(String st_error) {

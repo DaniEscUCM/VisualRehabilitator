@@ -40,7 +40,7 @@
     <string name="hint_patient_signup_signup_button">Registrarse</string>
     <string name="hint_patient_signup_signup_button_continue">Continua Registrandote</string> Pulsa el botón Continua Registrandote para continuar el proceso de registro
     <string name="patient_signup_continue_explained">Pulsa el botón Continua Registrandote para continuar el proceso de registro \nTendrás que introducir el código numérico que te dio el profesional</string>
-    <string name="patient_signup_enter_username">Crea un nombre de usuario, sin espacios, puede ser tu nombre (pero sin espacios)</string>
+    <string name="patient_signup_enter_username">Crea un nombre de usuario, sin espacios, puede ser tu nombre</string>
     <string name="patient_signup_password_explained">Introduce el código numérico que te dió el profesional \ncomo contraseña</string>
     <string name="patient_signup_passwords_doest_match">Los dos códigos introducidos no son iguales</string>
     <string name="patient_signup_password_doest_exist">¡El código introducido no es válido! Vuelva a intentar o contacte su médico</string>

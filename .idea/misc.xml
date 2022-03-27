@@ -92,8 +92,10 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_professional_page.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_tests_results.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.2635" />
         <entry key="app/src/main/res/drawable/ic_arrow_back_small.xml" value="0.275" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />

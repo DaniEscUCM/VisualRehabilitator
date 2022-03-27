@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.macularehab.model.Professional;
+import com.macularehab.professional.ProfessionalHome;
 
 public class ProfessionalSingingActivity extends AppCompatActivity {
 
@@ -242,8 +243,9 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
     }
 
     public void goToMain(){
-        Intent i = new Intent( this, ProfessionalPageActivity.class);
-        i.putExtra("username",mailP.getText().toString()); //we pass the username to activity : Professional Page
+        //Intent i = new Intent( this, ProfessionalPageActivity.class);
+        //i.putExtra("username",mailP.getText().toString()); //we pass the username to activity : Professional Page
+        Intent i = new Intent( this, ProfessionalHome.class);
         startActivity(i);
     }
 
