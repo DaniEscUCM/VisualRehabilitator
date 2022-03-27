@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.macularehab.R;
+import com.macularehab.TestsHistoryActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.professional.patientForm.ProfessionalPatientEditInfo;
 
@@ -73,6 +74,14 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goToEditPatientActivity();
+            }
+        });
+
+        Button tests =findViewById(R.id.button_tests);
+        tests.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotTests();
             }
         });
 
@@ -149,6 +158,11 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
     private void goToEditPatientActivity() {
 
         Intent intent = new Intent(this, ProfessionalPatientEditInfo.class);
+        startActivity(intent);
+    }
+
+    private  void gotTests(){
+        Intent intent = new Intent(this, TestsHistoryActivity.class);
         startActivity(intent);
     }
 }

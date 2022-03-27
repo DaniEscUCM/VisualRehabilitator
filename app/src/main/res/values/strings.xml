@@ -254,4 +254,7 @@
     <string name="calculated_focus">Calculated Focus</string>
     <string name="view_resume">View Resume</string>
     <string name="finish">Finish</string>
+    <string name="show_tests">Tests info</string>
+    <string name="tests_history">Tests History</string>
+    <string name="new_test">New test</string>
 </resources>
