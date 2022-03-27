@@ -105,7 +105,8 @@ public class LogIn {
 
                         if (!value.equals("null")) {
                             is_professional = true;
-                            professionalLoginActivity.goToMain();
+                            //professionalLoginActivity.goToMain();
+                            professionalLoginActivity.goToProfessionalHome();
                         }
                         //LogIn.this.patientLogin.startHome(value);
                     }

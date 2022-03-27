@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.macularehab.login.LogIn;
 import com.macularehab.model.Professional;
+import com.macularehab.professional.ProfessionalHome;
 
 public class ProfessionalLoginActivity extends AppCompatActivity {
 
@@ -89,11 +90,11 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         paswP.setText("");
     }
 
-    public void goToMain(){
+    /*public void goToMain(){
         Intent i = new Intent( this, ProfessionalPageActivity.class);
         //i.putExtra("username",unameP.getText().toString()); //we pass the username to activity : Professional Page
         startActivity(i);
-    }
+    }*/
 
     public void login(View view){
         String mail = mailP.getText().toString();
@@ -113,7 +114,6 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     }
     private void loginAuth(String mail, String password) {
-        // [START login_user_with_email]
 
         firebaseAuth.signInWithEmailAndPassword(mail, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -122,7 +122,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "loginUserWithEmail:success");
-                            goToMain();
+                            //goToMain();
+                            goToProfessionalHome();
                             //updateUI(user);
 
                         } else {
@@ -135,7 +136,11 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-        // [END login_user_with_email]
+    }
+
+    public void goToProfessionalHome() {
+        Intent intent = new Intent(this, ProfessionalHome.class);
+        startActivity(intent);
     }
 
     public void correct(){ //to make provide correct error message
@@ -151,7 +156,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         }else{
             String toastmes = "Welcome "+ prof.getName();
             Toast.makeText(this, toastmes, Toast.LENGTH_LONG).show();
-            goToMain();
+            //goToMain();
+            goToProfessionalHome();
         }
     }
     public void validate(){ //to make sure everything is filled
