@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -33,7 +35,7 @@ public class PatientSignUpUsername extends AppCompatActivity {
     private String username;
     private String password;
 
-    public static final String extra_username = "com.macularehab.patient.extra_username";
+    private final String db_patientsNumericCode = "PatientsNumericCodes";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
 
     private FirebaseDatabase firebaseDatabase;
@@ -80,7 +82,6 @@ public class PatientSignUpUsername extends AppCompatActivity {
         validateUsername();
     }
 
-    //TODO Hacer que verifique que el nombre de usuario no exista ya
     private void validateUsername() {
 
         boolean all_correct = true;
@@ -101,7 +102,6 @@ public class PatientSignUpUsername extends AppCompatActivity {
         boolean is_email = false;
 
         for (int i = 0; i < email_length && !is_email; i++) {
-
             if (username.charAt(i) == '@') {
                 is_email = true;
             }
@@ -113,9 +113,7 @@ public class PatientSignUpUsername extends AppCompatActivity {
     }
 
     private void createAccount() {
-        // [START create_user_with_email]
 
-        //mAuth.signInAnonymously();
         mAuth.createUserWithEmailAndPassword(username, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -124,84 +122,60 @@ public class PatientSignUpUsername extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.w("EMAIL", "createUserWithEmail:success");
                             Toast.makeText(PatientSignUpUsername.this, "User Created!", Toast.LENGTH_LONG).show();
+                            startPatientHomeActivity();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("EMAIL", "createUserWithEmail:failure", task.getException());
                             Toast.makeText(PatientSignUpUsername.this, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
-                            FirebaseError firebaseError = new FirebaseError(task.getException().hashCode());
+                            FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
+                            Resources resources = PatientSignUpUsername.this.getResources();
+                            String st_error;
 
-                            switch (firebaseError.getErrorCode()) {
+                            switch (firebaseAuthException.getErrorCode()) {
 
-                                case FirebaseError.ERROR_EMAIL_ALREADY_IN_USE:
+                                case "ERROR_EMAIL_ALREADY_IN_USE":
+                                    st_error = resources.getString(R.string.patient_signup_error_user_already_in_use);
                                     break;
-                                case FirebaseError.ERROR_WEAK_PASSWORD:
+                                case "ERROR_WEAK_PASSWORD":
+                                    st_error = resources.getString(R.string.patient_signup_error_weak_password);
                                     break;
-                                case FirebaseError.ERROR_WRONG_PASSWORD:
+                                case "ERROR_WRONG_PASSWORD":
+                                    st_error = resources.getString(R.string.patient_signup_error_wrong_password);
                                     break;
-                                case FirebaseError.ERROR_NETWORK_REQUEST_FAILED:
+                                case "ERROR_NETWORK_REQUEST_FAILED":
+                                    st_error = resources.getString(R.string.patient_signup_error_network_failed);
                                     break;
-                                case FirebaseError.ERROR_OPERATION_NOT_ALLOWED:
+                                case "ERROR_OPERATION_NOT_ALLOWED":
+                                    st_error = resources.getString(R.string.patient_signup_error_operations_not_allowed);
+                                    break;
+                                default:
+                                    st_error = resources.getString(R.string.message_error);
                                     break;
                             }
+
+                            showAlertErrorUser(st_error);
                         }
                     }
                 });
     }
 
-    /*private void isUsernameAvailable() {
-
-        databaseReference.child("PatientsUsernames").child(username)
-                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.w("PatientsSignUp", task.getException());
-                }
-                else {
-                    String value = String.valueOf(task.getResult().getValue());
-                    Log.w("firebase", value);
-
-                    if (value.equals("null")) {
-                        addUsernameToDB();
-                        continueSignupProcess();
-                    }
-                    else {
-                        showAlertUsernameAlreadyExists();
-                    }
-                }
-            }
-        });
-    }*/
-
-    private void addUsernameToDB() {
-        databaseReference.child("PatientsUsername").child(username).setValue(username);
-    }
-
-    //TODO colocar desde @strings el mensaje
-    private void showAlertUsernameAlreadyExists() {
+    private void showAlertErrorUser(String st_error) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Username Already Exists")
+        builder.setMessage(st_error)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                        input_username.setError("Username already exists");
                     }
                 });
-
         AlertDialog dialog = builder.create();
         dialog.show();
     }
 
-    /*private void continueSignupProcess() {
-
-        Intent signup_password_intent = new Intent(this, PatientSignUpPassword.class);
-        signup_password_intent.putExtra(PatientSignUpUsername.extra_username, username);
-        startActivity(signup_password_intent);
-    }*/
-
     private void startPatientHomeActivity() {
+
+        databaseReference.child(db_patientsNumericCode).child(password).removeValue();
 
         Intent patient_home_intent = new Intent(this, PatientHome.class);
         startActivity(patient_home_intent);

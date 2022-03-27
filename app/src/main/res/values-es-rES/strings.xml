@@ -44,7 +44,7 @@
     <string name="patient_signup_password_explained">Introduce el código numérico que te dió el profesional \ncomo contraseña</string>
     <string name="patient_signup_passwords_doest_match">Los dos códigos introducidos no son iguales</string>
     <string name="patient_signup_password_doest_exist">¡El código introducido no es válido! Vuelva a intentar o contacte su médico</string>
-    <string name="patient_signup_error_user_already_in_use">Usuario ya existe! Utiliza otro</string>
+    <string name="patient_signup_error_user_already_in_use">¡Nombre de usuario o correo ya existe! Por favor utiliza otro</string>
     <string name="patient_signup_error_weak_password">¡Error! Contraseña débil. Contacte con su médico</string>
     <string name="patient_signup_error_wrong_password">¡Error! Contraseña incorrecta. Contacte con su médico</string>
     <string name="patient_signup_error_network_failed">¡Error! Fallo de Red</string>

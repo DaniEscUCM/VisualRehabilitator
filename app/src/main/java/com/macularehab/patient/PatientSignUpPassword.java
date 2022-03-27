@@ -49,8 +49,6 @@ public class PatientSignUpPassword extends AppCompatActivity {
 
     Map<String, Object> patientInfo;
 
-    private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
-
     public static final String extra_password = "com.macularehab.patient.extra_password";
 
     @Override
@@ -164,7 +162,6 @@ public class PatientSignUpPassword extends AppCompatActivity {
                 }
                 else {
                     String value = String.valueOf(task.getResult().getValue());
-                    Log.w("firebase", value);
 
                     if (value.equals("null")) {
                         showAlertPasswordsDoesNotExist();
