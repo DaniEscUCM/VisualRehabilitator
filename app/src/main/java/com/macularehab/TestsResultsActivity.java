@@ -37,6 +37,7 @@ import java.util.List;
 public class TestsResultsActivity extends AppCompatActivity {
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
+    private HashMap<String, Object> map;
 
     private HashSet<Pair<Float,Float>> dots = new LinkedHashSet<>();
     private ArrayList<Pair<Float,Float>> coor_resul = new ArrayList<>();
@@ -47,7 +48,6 @@ public class TestsResultsActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
 
-    private File file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,6 @@ public class TestsResultsActivity extends AppCompatActivity {
         Date date_aux = new Date();
         date=formatter.format(date_aux);
 
-        file  = new File(getApplicationContext().getFilesDir(), filenameCurrentPatient);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
@@ -72,16 +71,13 @@ public class TestsResultsActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
         firebaseAuth = FirebaseAuth.getInstance();
 
+
+        File file  = new File(getApplicationContext().getFilesDir(), filenameCurrentPatient);
         if(file.exists()) {
             ReadInternalStorage readInternalStorage = new ReadInternalStorage();
             HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
             if (map.get("patient_numeric_code").equals(patient_num_cod)) {
                 ((LinkedTreeMap)map.get("Tests")).put(date, new LinkedTreeMap<>());
-
-                Gson gson = new Gson();
-                String data = gson.toJson(map);
-                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
             }
         }
 
@@ -201,17 +197,8 @@ public class TestsResultsActivity extends AppCompatActivity {
         databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).
                 child("Tests").child(date).child(name_grid).setValue(coor_result);
 
-        if(file.exists()) {
-            ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-            HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-            if (map.get("patient_numeric_code").equals(patient_num_cod)) {
-                ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put(name_grid,coor_result);
-
-                Gson gson = new Gson();
-                String data = gson.toJson(map);
-                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
-            }
+        if(map != null) {
+            ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put(name_grid,coor_result);
         }
     }
     private void next(View v) {
@@ -222,17 +209,13 @@ public class TestsResultsActivity extends AppCompatActivity {
         i.putExtra("resume_stain",value);
         i.putExtra("patient_id",patient_num_cod);
 
-        if(file.exists()) {
-            ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-            HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-            if (map.get("patient_numeric_code").equals(patient_num_cod)) {
-                ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put("resume_stain",coor_resul);
+        if(map!=null) {
+            ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put("resume_stain",coor_resul);
 
-                Gson gson = new Gson();
-                String data = gson.toJson(map);
-                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
-            }
+            Gson gson = new Gson();
+            String data = gson.toJson(map);
+            WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+            writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
         }
         startActivity(i);
     }

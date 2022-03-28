@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".TestDisplayActivity"
+            android:exported="false" />
+        <activity
             android:name=".TestsHistoryActivity"
             android:exported="false" />
         <activity

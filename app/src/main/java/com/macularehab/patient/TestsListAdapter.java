@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.macularehab.R;
+import com.macularehab.TestDisplayActivity;
 import com.macularehab.professional.ProfessionalPatientHome;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,11 +81,18 @@ public class TestsListAdapter  extends RecyclerView.Adapter<TestsListAdapter.Tes
             adapter=testsListAdapter;
             date  = itemView.findViewById(R.id.date);
 
+            itemView.setOnClickListener(v->sig(v));
+
         }
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(activityContext, ProfessionalPatientHome.class); //TODO mostrar resultados de los tests
+
+        }
+
+        private void sig(View v){
+            Intent intent = new Intent(activityContext, TestDisplayActivity.class);
+            intent.putExtra("date",date.getText().toString());
             activityContext.startActivity(intent);
         }
     }
