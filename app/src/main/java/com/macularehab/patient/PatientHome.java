@@ -60,6 +60,8 @@ public class PatientHome extends AppCompatActivity {
         patientUID = mAuth.getUid();
 
         welcome_name_text = findViewById(R.id.patient_home_welcome_name);
+        String[] username = mAuth.getCurrentUser().getEmail().split("@");
+        welcome_name_text.setText(username[0]);
 
         Button logOut_button = findViewById(R.id.button_patient_home_logout);
         logOut_button.setOnClickListener(new View.OnClickListener() {
@@ -127,55 +129,6 @@ public class PatientHome extends AppCompatActivity {
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
     }
-
-    private void getPatientUserName() {
-
-        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-
-        //map.get("")
-
-    }
-
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-
-        getUsername();
-    }
-
-    private void getUsername() {
-
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
-
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        databaseReference.child("Patient").child(currentUser.getUid()).child("name")
-                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                }
-                else {
-                    String value = String.valueOf(task.getResult().getValue());
-                    Log.w("firebase", value);
-
-                    PatientHome.this.setUsername(value);
-                    //LogIn.this.patientLogin.startHome(value);
-                }
-            }
-        });
-    }
-
-    private void setUsername(String username) {
-
-        welcome_name_text.setText(username);
-    }*/
 
     private void logOut() {
 

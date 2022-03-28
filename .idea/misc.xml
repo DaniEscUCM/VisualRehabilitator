@@ -125,7 +125,7 @@
         <entry key="app/src/main/res/layout/activity_map_test_right_explanation.xml" value="0.1577970297029703" />
         <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.13854166666666667" />
         <entry key="app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />

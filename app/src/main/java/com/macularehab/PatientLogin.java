@@ -47,7 +47,7 @@ public class PatientLogin extends AppCompatActivity  {
             public void onClick(View v) {
 
                 Log.w("boton LogIn", " presionado");
-                //readEmail(); Se bloquea para hacerlo bien desde professional
+                readEmail(); //Se bloquea para hacerlo bien desde professional
             }
         });
 
@@ -86,9 +86,9 @@ public class PatientLogin extends AppCompatActivity  {
         Log.w("EMAIL: ", email_username);
         Log.w("PASSWORD: ", password);
 
-        validate_user_input();
-
-        this.logIn.readEmail(email_username, password, this);
+        if (validate_user_input()) {
+            this.logIn.readEmail(email_username, password, this);
+        }
     }
 
     public void user_loggedIn_successfully() {
@@ -98,7 +98,7 @@ public class PatientLogin extends AppCompatActivity  {
         clean();
     }
 
-    public void user_loggin_failed() {
+    public void user_login_failed() {
 
         Toast.makeText(PatientLogin.this, "Authentication failed.",
                 Toast.LENGTH_LONG).show();
@@ -106,24 +106,44 @@ public class PatientLogin extends AppCompatActivity  {
     }
 
 
-    public void validate_user_input(){
+    public boolean validate_user_input() {
+
+        boolean all_correct = true;
 
         if(this.email_username.equals("")){
             this.email_text.setError("required");
+            all_correct = false;
             showAlertEnterEmailAndPassword();
         }
         if(this.password.equals("")){
             this.password_text.setError("required");
+            all_correct = false;
             showAlertEnterEmailAndPassword();
         }
         if (this.password.length() < 6) {
             this.password_text.setError("Password must be at least 6 characters");
+            all_correct = false;
+            showAlertWeakPassword();
         }
+
+        return all_correct;
     }
 
     public void showAlertEnterEmailAndPassword() {
 
-        //FireMissilesDialogFragment dialog = new FireMissilesDialogFragment();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Name and/or Email and/or Password field is empty")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // FIRE ZE MISSILES!
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void showAlertWeakPassword() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Name and/or Email and/or Password field is empty")
@@ -139,8 +159,6 @@ public class PatientLogin extends AppCompatActivity  {
 
 
     public void showAlertFailToLogIn() {
-
-        //FireMissilesDialogFragment dialog = new FireMissilesDialogFragment();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Failed To LogIn. Email/Username and/or Password incorrect")

@@ -24,8 +24,8 @@
     <string name="text_patient_warning">Tienes que usar el código que te ha dado el profesional</string>
     <!-- Apartado LogIn .-->
     <string name="hint_patient_login_name">Nombre</string>
-    <string name="hint_patient_login_email">Dirección de correo / Usuario</string>
-    <string name="hint_patient_login_password">Contraseña</string>
+    <string name="hint_patient_login_email">Dirección de Correo / Usuario:</string>
+    <string name="hint_patient_login_password">Código Numérico:</string>
     <string name="hint_patient_login_welcome">Bienvenido</string>
     <string name="hint_patient_login_login">Inicia Sesión</string>
     <string name="hint_patient_login_login_button">Inicia Sesión</string>

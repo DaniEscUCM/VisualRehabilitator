@@ -125,10 +125,7 @@ public class LogIn {
         boolean is_email = false;
 
         for (int i = 0; i < email_length && !is_email; i++) {
-
-            if (email_username.charAt(i) == '@') {
-                is_email = true;
-            }
+            if (email_username.charAt(i) == '@')is_email = true;
         }
 
         if (!is_email) {
@@ -143,7 +140,7 @@ public class LogIn {
     }
 
     private void signIn(String email, String password) {
-        // [START sign_in_with_email]
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -154,17 +151,15 @@ public class LogIn {
                             FirebaseUser user = mAuth.getCurrentUser();
                             LogIn.this.user = user;
                             LogIn.this.user_signedIn_successfully = true;
-                            //TODO hacerlo generico
                             LogIn.this.patientLogin.user_loggedIn_successfully();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
 
                             LogIn.this.user_signedIn_successfully = false;
-                            LogIn.this.patientLogin.user_loggin_failed();
+                            LogIn.this.patientLogin.user_login_failed();
                         }
                     }
                 });
-        // [END sign_in_with_email]
     }
 }

@@ -19,8 +19,8 @@
     <string name="text_patient_warning">You have to use the code the professional that gave to you</string>
     <!-- Apartado LogIn .-->
     <string name="hint_patient_login_name">Name</string>
-    <string name="hint_patient_login_email">Email Address / Username</string>
-    <string name="hint_patient_login_password">Password</string>
+    <string name="hint_patient_login_email">Email Address / Username:</string>
+    <string name="hint_patient_login_password">Numeric Code:</string>
     <string name="hint_patient_login_welcome">Welcome</string>
     <string name="hint_patient_login_login">Patient LogIn</string>
     <string name="hint_patient_login_login_button">LogIn</string>
