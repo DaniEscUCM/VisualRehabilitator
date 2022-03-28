@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.gson.internal.LinkedTreeMap;
@@ -46,6 +47,10 @@ public class TestsHistoryActivity extends AppCompatActivity {
             dates = new ArrayList<>(linked.keySet());
         }
 
+
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
+        button.setOnClickListener(v -> Close(v));
+
         recyclerView = findViewById(R.id.testsList_recyclerView);
         testListAdapter = new TestsListAdapter(getApplicationContext(), new ArrayList<String>(), this);
         recyclerView.setAdapter(testListAdapter);
@@ -61,11 +66,15 @@ public class TestsHistoryActivity extends AppCompatActivity {
         testListAdapter.setTestsListData(testList);
         testListAdapter.notifyDataSetChanged();
     }
-T
-    private void add_test(){
 
+    private void add_test(){
         String patient_id = (String) map.get("patient_numeric_code");
         Intent i = new Intent( this, ManualInputStainLeftActivity.class );
+        i.putExtra("patient_id",patient_id);
         startActivity(i);
+    }
+
+    public void Close(View view){
+        finish();
     }
 }

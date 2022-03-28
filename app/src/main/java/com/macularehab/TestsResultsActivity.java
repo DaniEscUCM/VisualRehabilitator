@@ -18,17 +18,25 @@ import android.widget.ImageView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
+import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 
 public class TestsResultsActivity extends AppCompatActivity {
+
+    private final String filenameCurrentPatient = "CurrentPatient.json";
 
     private HashSet<Pair<Float,Float>> dots = new LinkedHashSet<>();
     private ArrayList<Pair<Float,Float>> coor_resul = new ArrayList<>();
@@ -38,6 +46,8 @@ public class TestsResultsActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
+
+    private File file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +60,8 @@ public class TestsResultsActivity extends AppCompatActivity {
         Date date_aux = new Date();
         date=formatter.format(date_aux);
 
+        file  = new File(getApplicationContext().getFilesDir(), filenameCurrentPatient);
+
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
 
@@ -59,6 +71,19 @@ public class TestsResultsActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         firebaseAuth = FirebaseAuth.getInstance();
+
+        if(file.exists()) {
+            ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+            HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+            if (map.get("patient_numeric_code").equals(patient_num_cod)) {
+                ((LinkedTreeMap)map.get("Tests")).put(date, new LinkedTreeMap<>());
+
+                Gson gson = new Gson();
+                String data = gson.toJson(map);
+                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
+            }
+        }
 
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
@@ -175,14 +200,40 @@ public class TestsResultsActivity extends AppCompatActivity {
         }
         databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).
                 child("Tests").child(date).child(name_grid).setValue(coor_result);
+
+        if(file.exists()) {
+            ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+            HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+            if (map.get("patient_numeric_code").equals(patient_num_cod)) {
+                ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put(name_grid,coor_result);
+
+                Gson gson = new Gson();
+                String data = gson.toJson(map);
+                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
+            }
+        }
     }
     private void next(View v) {
         Intent i = new Intent( this, CalculateFocusActivity.class );
-        databaseReference.child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).
+        databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).
                 child("Tests").child(date).child("resume_stain").setValue(coor_resul);
         String value= coor_resul.toString();
         i.putExtra("resume_stain",value);
         i.putExtra("patient_id",patient_num_cod);
+
+        if(file.exists()) {
+            ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+            HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+            if (map.get("patient_numeric_code").equals(patient_num_cod)) {
+                ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put("resume_stain",coor_resul);
+
+                Gson gson = new Gson();
+                String data = gson.toJson(map);
+                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
+            }
+        }
         startActivity(i);
     }
 

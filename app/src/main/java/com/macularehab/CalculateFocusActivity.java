@@ -21,15 +21,22 @@ import android.widget.ImageView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.macularehab.draws.DrawDot;
+import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.ProfessionalHome;
 import com.macularehab.professional.ProfessionalPatientHome;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class CalculateFocusActivity extends AppCompatActivity {
+
+    private final String filenameCurrentPatient = "CurrentPatient.json";
 
     private float centre_x;
     private float centre_y;
@@ -185,8 +192,30 @@ public class CalculateFocusActivity extends AppCompatActivity {
         String patient_id = getIntent().getExtras().getString("patient_id");
         databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_id).
                 child("focus").setValue(result_coor.get(0));
-        Intent i = new Intent( this, ProfessionalPatientHome.class );
-        startActivity(i);
+        File file = new File(getApplicationContext().getFilesDir(), filenameCurrentPatient);
+        if(file.exists()){
+            ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+            HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+            if(map.get("patient_numeric_code").equals(patient_id)){
+                map.put("focus",result_coor.get(0));
+
+                Gson gson = new Gson();
+                String data = gson.toJson(map);
+                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
+
+                Intent i = new Intent( this, TestsHistoryActivity.class );
+                startActivity(i);
+            }
+            else{
+                Intent i = new Intent( this, ProfessionalHome.class );
+                startActivity(i);
+            }
+        }
+        else{
+            Intent i = new Intent( this, ProfessionalHome.class );
+            startActivity(i);
+        }
     }
 
     public void Close(View view){

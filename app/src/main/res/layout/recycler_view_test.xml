@@ -17,22 +17,27 @@
         card_view:cardBackgroundColor="@color/purple_500">
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:padding="50dp">
+            android:padding="25dp">
 
             <TextView
                 android:id="@+id/test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test" />
+                android:text="@string/test"
+                android:textColor="#E1BEE7"
+                android:textSize="34sp" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test" />
+                android:text="@string/test"
+                android:textColor="#E1BEE7"
+                android:textSize="34sp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
