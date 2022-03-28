@@ -38,8 +38,9 @@ public class TestsHistoryActivity extends AppCompatActivity {
         HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
 
         //String id = map.get("id").toString();
-        dates = (ArrayList<String>) map.get("Tests");
-
+        if (map.containsKey("Tests")) {
+            dates = (ArrayList<String>) map.get("Tests");
+        }
         recyclerView = findViewById(R.id.testsList_recyclerView);
         testListAdapter = new TestsListAdapter(getApplicationContext(), new ArrayList<String>(), this);
         recyclerView.setAdapter(testListAdapter);
