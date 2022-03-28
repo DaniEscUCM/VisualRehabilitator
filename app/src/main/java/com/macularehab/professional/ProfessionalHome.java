@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -164,19 +165,6 @@ public class ProfessionalHome extends AppCompatActivity {
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(getApplicationContext(), filenameProfessionalPatientList, data);
         readInternalStorage();
-        /*try {
-            File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalPatientList);
-            Toast.makeText(getApplicationContext(), getApplicationContext().getFilesDir().toString(), Toast.LENGTH_LONG).show();
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            fileOutputStream.write(data.getBytes());
-            fileOutputStream.flush();
-            fileOutputStream.close();
-            readInternalStorage();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     private void readInternalStorage() {
@@ -184,29 +172,6 @@ public class ProfessionalHome extends AppCompatActivity {
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
         HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameProfessionalPatientList);
         createPatientList(map);
-
-        /*try {
-            File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalPatientList);
-            FileInputStream fileInputStream = new FileInputStream(file);
-                    //openFileInput(filenameProfessionalPatientList);
-            int a;
-            StringBuilder temp = new StringBuilder();
-            while ((a = fileInputStream.read()) != -1) {
-                temp.append((char) a);
-            }
-
-            String fin = temp.toString();
-            fileInputStream.close();
-
-            Gson gson = new Gson();
-            HashMap<String, Object> map = gson.fromJson(fin, HashMap.class);
-            createPatientList(map);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     private void createPatientList(HashMap<String, Object> map) {
@@ -250,7 +215,6 @@ public class ProfessionalHome extends AppCompatActivity {
 
                     if (map != null) {
                         writeInternalStorageProfessionalInfo(map);
-                        //createPatientList(map);
                     }
                 }
             }
@@ -264,45 +228,41 @@ public class ProfessionalHome extends AppCompatActivity {
 
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(getApplicationContext(), filenameProfessionalInfo, data);
-        /*try {
-            File file = new File(getApplicationContext().getFilesDir(), filenameProfessionalInfo);
-            //Toast.makeText(getApplicationContext(), getApplicationContext().getFilesDir().toString(), Toast.LENGTH_LONG).show();
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            fileOutputStream.write(data.getBytes());
-            fileOutputStream.flush();
-            fileOutputStream.close();
-            readInternalStorage();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     private void setProfessionalNameText() {
 
         String name = mAuth.getCurrentUser().getDisplayName();
-        Log.w("Professional Name", name);
-        if (!name.equals("")) {
+        String a = mAuth.getCurrentUser().getUid();
+        //Log.w("Professional Name", name);
+        if (name == null) {
+            getPatientNameFromDB();
+        }
+        else if (!name.equals("")) {
             professional_name_text.setText(mAuth.getCurrentUser().getDisplayName());
         }
         else {
-            databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid()).child("name")
-                    .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DataSnapshot> task) {
-
-                    if (!task.isSuccessful()) {
-                        Log.e("firebase", "Error getting data", task.getException());
-                    }
-                    else {
-                        String value = String.valueOf(task.getResult().getValue());
-                        Log.w("firebase", value);
-                        professional_name_text.setText(value);
-                    }
-                }
-            });
+            getPatientNameFromDB();
         }
+    }
+
+    private void getPatientNameFromDB() {
+
+        databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid()).child("name")
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                }
+                else {
+                    String value = String.valueOf(task.getResult().getValue());
+                    Log.w("firebase", value);
+                    professional_name_text.setText(value);
+                }
+            }
+        });
     }
 
     private void startActivityCreatePatient() {
