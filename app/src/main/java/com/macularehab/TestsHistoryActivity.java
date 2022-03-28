@@ -9,6 +9,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
+import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.patient.Patient;
 import com.macularehab.patient.TestsListAdapter;
@@ -28,6 +29,8 @@ public class TestsHistoryActivity extends AppCompatActivity {
 
     private ArrayList<String> dates;
 
+    private HashMap<String, Object> map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +38,14 @@ public class TestsHistoryActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+        map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
 
         //String id = map.get("id").toString();
         if (map.containsKey("Tests")) {
-            dates = (ArrayList<String>) map.get("Tests");
+            LinkedTreeMap<String, LinkedTreeMap<String, Object>> linked = (LinkedTreeMap<String, LinkedTreeMap<String, Object>>) map.get("Tests");
+            dates = new ArrayList<>(linked.keySet());
         }
+
         recyclerView = findViewById(R.id.testsList_recyclerView);
         testListAdapter = new TestsListAdapter(getApplicationContext(), new ArrayList<String>(), this);
         recyclerView.setAdapter(testListAdapter);
@@ -56,8 +61,10 @@ public class TestsHistoryActivity extends AppCompatActivity {
         testListAdapter.setTestsListData(testList);
         testListAdapter.notifyDataSetChanged();
     }
-
+T
     private void add_test(){
+
+        String patient_id = (String) map.get("patient_numeric_code");
         Intent i = new Intent( this, ManualInputStainLeftActivity.class );
         startActivity(i);
     }
