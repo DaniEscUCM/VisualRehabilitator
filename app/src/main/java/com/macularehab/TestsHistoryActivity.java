@@ -9,6 +9,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.internalStorage.ReadInternalStorage;
@@ -41,16 +42,15 @@ public class TestsHistoryActivity extends AppCompatActivity {
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
         map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
 
-        //String id = map.get("id").toString();
         if (map.containsKey("Tests")) {
             LinkedTreeMap<String, LinkedTreeMap<String, Object>> linked = (LinkedTreeMap<String, LinkedTreeMap<String, Object>>) map.get("Tests");
             dates = new ArrayList<>(linked.keySet());
         }
 
-
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
 
+        //Cards
         recyclerView = findViewById(R.id.testsList_recyclerView);
         testListAdapter = new TestsListAdapter(getApplicationContext(), new ArrayList<String>(), this);
         recyclerView.setAdapter(testListAdapter);
@@ -58,8 +58,30 @@ public class TestsHistoryActivity extends AppCompatActivity {
 
         updateTestsList(dates);
 
+        //new test
         ImageButton new_test = findViewById(R.id.new_test);
         new_test.setOnClickListener(v->add_test());
+
+        //Search
+        SearchView searchView = (SearchView) findViewById(R.id.search_test);
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchView.onActionViewExpanded();
+            }
+        });
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                testListAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
     }
 
     public void updateTestsList(List<String> testList) {

@@ -47,8 +47,40 @@ public class TestsListAdapter  extends RecyclerView.Adapter<TestsListAdapter.Tes
 
     @Override
     public Filter getFilter() {
-        return null;
+        return testListFiltered;
     }
+
+    private Filter testListFiltered = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<String> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(testsListFull);
+            }
+            else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (String date : testsListFull) {
+                    if (date.toLowerCase().contains(filterPattern)) {
+                        filteredList.add(date);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            testsList.clear();
+            testsList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
 
     @NonNull
     @Override
