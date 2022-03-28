@@ -19,22 +19,27 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.macularehab.R;
+import com.macularehab.patient.Patient;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-//TODO
 public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity {
 
     private ArrayList<Boolean> arrayList;
     private int numericCode;
+    private Patient patient;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
     public final static String numericCodeString = "numericCodeString";
     private final String db_patient = "Patient";
+    private final String db_patientS = "Patients";
+    private final String db_professionalUID = "ProfessionalUID";
+    private final String db_patientNumericCode = "PatientNumericCode";
     private final String db_professional = "Professional";
     private final String db_numberOfPatients = "numberOfPatients";
 
@@ -109,33 +114,24 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
         }
 
         Log.i("Difficulties", arrayList.toString());
-        //System.out.println(arrayList.toString());
 
         addPatientInformation();
     }
 
     private void addPatientInformation() {
 
-        Log.w("Patient Code", String.valueOf(numericCode));
-        databaseReference.child(db_patient).child(String.valueOf(numericCode))
-                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("Patient", "No se ha conseguido");
-                }
-                else {
-                    Map<String, Object> patientInfo = (Map<String, Object>) task.getResult().getValue();
-                    Log.i("Patient Info", patientInfo.toString());
-                    patientInfo.put("checkBox", arrayList);
-                    databaseReference.child(db_patient).child(String.valueOf(numericCode)).setValue(patientInfo);
-                    //TODO Aqui tengo que modificar no pacientes, sino aquel con el codigo numero
-                    databaseReference.child(db_professional).child(mAuth.getUid()).child("Patients").child(String.valueOf(numericCode)).setValue(patientInfo);
-                    addNumberOfPatients();
-                    ProfessionalCreateNewPatientDifficulties.this.continueWithNextActivity();
-                }
-            }
-        });
+        Intent intent = getIntent();
+        String json_patientInfointent = intent.getStringExtra(ProfessionalCreateNewPatient.patientInfoExtra);
+
+        Gson gson = new Gson();
+        patient = gson.fromJson(json_patientInfointent, Patient.class);
+        patient.setCheckBox(arrayList);
+
+        databaseReference.child(db_professional).child(mAuth.getUid()).child(db_patientS).child(String.valueOf(numericCode)).setValue(patient);
+        databaseReference.child(db_patient).child(patient.getPatient_numeric_code()).child(db_professionalUID).setValue(mAuth.getUid());
+        databaseReference.child(db_patient).child(patient.getPatient_numeric_code()).child(db_patientNumericCode).setValue(patient.getPatient_numeric_code());
+        addNumberOfPatients();
+        continueWithNextActivity();
     }
 
     private void addNumberOfPatients() {

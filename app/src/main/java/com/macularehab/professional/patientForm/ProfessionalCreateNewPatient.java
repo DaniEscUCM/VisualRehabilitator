@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.macularehab.R;
 import com.macularehab.patient.Patient;
 
@@ -64,6 +65,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private int numericCode;
     public final static String numericCodeString = "numericCodeString";
+    public final static String patientInfoExtra = "patientInfoExtra";
     private final String db_patient = "Patient";
     private final String db_professional = "Professional";
     private long professionalNumericCode;
@@ -74,7 +76,6 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_professional_create_new_patient);
-        //setContentView(R.layout.activity_professional_new_patient_difficulties);
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
@@ -110,7 +111,6 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         });
 
         setDate();
-        //generateNumericCode();
     }
 
     private void setDate() {
@@ -227,10 +227,11 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void addPatientToDataBase() {
 
-        databaseReference.child(db_patient)
-                .child(String.valueOf(numericCode)).setValue(patient);
+        Gson gson = new Gson();
+        String patientInfo = gson.toJson(patient);
 
         Intent continue_to_checkBoxes = new Intent(this, ProfessionalCreateNewPatientDifficulties.class);
+        continue_to_checkBoxes.putExtra(patientInfoExtra, patientInfo);
         continue_to_checkBoxes.putExtra(numericCodeString, numericCode);
         startActivity(continue_to_checkBoxes);
     }

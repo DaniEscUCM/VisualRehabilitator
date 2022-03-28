@@ -31,6 +31,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
 
+import java.util.Map;
+
 public class PatientSignUpUsername extends AppCompatActivity {
 
     private EditText input_username;
@@ -159,6 +161,7 @@ public class PatientSignUpUsername extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.w("EMAIL", "createUserWithEmail:success");
                             Toast.makeText(PatientSignUpUsername.this, "User Created!", Toast.LENGTH_LONG).show();
+                            updatePatientUID();
                             startPatientHomeActivity();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -197,6 +200,27 @@ public class PatientSignUpUsername extends AppCompatActivity {
                 });
 
         loading_imageView.playAnimation();
+    }
+
+    private void updatePatientUID() {
+
+        String patient_uid = mAuth.getUid();
+
+        databaseReference.child("Patient").child(password)
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("Patient", "No se ha conseguido");
+                }
+                else {
+
+                    Map<String, Object> patientInfo = (Map<String, Object>) task.getResult().getValue();
+                    databaseReference.child("Patient").child(password).removeValue();
+                    databaseReference.child("Patient").child(patient_uid).setValue(patientInfo);
+                }
+            }
+        });
     }
 
     private void showAlertErrorUser(String st_error) {
