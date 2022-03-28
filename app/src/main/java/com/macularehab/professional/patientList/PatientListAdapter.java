@@ -73,6 +73,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     @Override
     public void onBindViewHolder(@NonNull PatientViewHolder holder, int position) {
 
+        //TODO
         String patient_uid = "Patient: ";
         patient_uid = patientList.get(position).getPatient_uid();
         String patient_name = "Name: ";

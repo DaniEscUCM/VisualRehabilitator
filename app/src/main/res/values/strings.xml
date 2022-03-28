@@ -128,6 +128,10 @@
     <string name="professional_patientForm_section_4">Reading</string>
     <string name="professional_patientForm_checkBox_24">Does the person used to read more before the vision loss?</string>
     <string name="professional_patientForm_checkBox_25">Would like to read more</string>
+
+    <string name="professional_patientForm_show_numeric_code">Numeric Code:</string>
+    <string name="professional_patientForm_numeric_code_explanation">Give this numeric code to your patient and also the instructions to register. Remember him to keep this code safe</string>
+    <string name="professional_patientForm_continueToTest_button">Do the test (continue)</string>
     <!-- Fin Apartado Professional - Patient Form .-->
 
     <!-- Apartado Professional - Patient Info .-->

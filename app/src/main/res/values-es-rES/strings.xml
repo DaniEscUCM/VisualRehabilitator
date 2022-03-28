@@ -133,6 +133,10 @@
     <string name="professional_patientForm_section_4">Lectura</string>
     <string name="professional_patientForm_checkBox_24">leía más antes de tener la pérdida de visión</string>
     <string name="professional_patientForm_checkBox_25">Le gustaría leer más de lo que lo hace actualmente</string>
+
+    <string name="professional_patientForm_show_numeric_code">Código Numérico:</string>
+    <string name="professional_patientForm_numeric_code_explanation">Dale este código numérico a tu paciente y también las instrucciones para registrarse. Recuérdale guardar bien este código</string>
+    <string name="professional_patientForm_continueToTest_button">Realizar Test (Continuar)</string>
         <!-- Fin Apartado Professional - Patient Form .-->
 
     <!-- Apartado Professional - Patient Info .-->

@@ -148,10 +148,7 @@ public class ProfessionalHome extends AppCompatActivity {
                     if (map == null) {
                         map = new HashMap<>();
                     }
-                    //if (map != null) {
-                        writeInternalStoragePatientList(map);
-                        //createPatientList(map);
-                    //}
+                    writeInternalStoragePatientList(map);
                 }
             }
         });
