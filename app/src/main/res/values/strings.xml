@@ -257,4 +257,6 @@
     <string name="show_tests">Tests info</string>
     <string name="tests_history">Tests History</string>
     <string name="new_test">New test</string>
+    <string name="test">Test: </string>
+
 </resources>

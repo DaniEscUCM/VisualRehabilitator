@@ -260,4 +260,6 @@
     <string name="show_tests">Historial de tests</string>
     <string name="tests_history">Historial de Pruebas</string>
     <string name="new_test">Nueva prueba</string>
+    <string name="test">Prueba: </string>
+
 </resources>

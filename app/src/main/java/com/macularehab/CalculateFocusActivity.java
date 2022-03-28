@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.professional.ProfessionalHome;
+import com.macularehab.professional.ProfessionalPatientHome;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -184,7 +185,7 @@ public class CalculateFocusActivity extends AppCompatActivity {
         String patient_id = getIntent().getExtras().getString("patient_id");
         databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_id).
                 child("focus").setValue(result_coor.get(0));
-        Intent i = new Intent( this, ProfessionalHome.class );
+        Intent i = new Intent( this, ProfessionalPatientHome.class );
         startActivity(i);
     }
 
