@@ -91,7 +91,7 @@
     <string name="professional_patientForm_observations_hint">Write here if you have an observation</string>
     <string name="professional_patientForm_continue_button">Continue</string>
 
-    <string name="professional_patientForm_section_1">Visual in children and adults</string>
+    <string name="professional_patientForm_section_1">Visual difficulties in children and adults</string>
     <string name="professional_patientForm_checkBox_1">Read</string>
     <string name="professional_patientForm_checkBox_1.1">Signs</string>
     <string name="professional_patientForm_checkBox_1.2">Labels</string>
