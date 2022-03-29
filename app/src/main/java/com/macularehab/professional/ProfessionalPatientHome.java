@@ -56,6 +56,9 @@ public class ProfessionalPatientHome extends AppCompatActivity {
             }
         });
 
+        Button logoutButton = findViewById(R.id.professional_patient_home_logout_button);
+        logoutButton.setVisibility(View.INVISIBLE);
+
         //readPatientName();
     }
 
