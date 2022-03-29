@@ -90,6 +90,7 @@ public class PatientSignUpUsername extends AppCompatActivity {
     private void buttonClicked() {
 
         username = input_username.getText().toString().trim();
+        username = username.replaceAll(" ", "");
         validateUsername();
     }
 
@@ -223,15 +224,17 @@ public class PatientSignUpUsername extends AppCompatActivity {
     }
 
     private void updatePatient(Map<String, Object> patientInfo, String patient_uid) {
-        
+
         databaseReference.child("Patient").child(password).removeValue();
         databaseReference.child("Patient").child(patient_uid).setValue(patientInfo);
 
         String professionalUID = patientInfo.get("ProfessionalUID").toString();
         databaseReference.child("Professional").child(professionalUID)
-                .child("Patients").child(password).child("PatientUID").setValue(mAuth.getUid());
+                .child("Patients").child(password).child("patient_uid").setValue(mAuth.getUid());
         databaseReference.child("Professional").child(professionalUID)
                 .child("Patients").child(password).child("hasAccount").setValue(true);
+        databaseReference.child("Professional").child(professionalUID)
+                .child("Patients").child(password).child("patient_username").setValue(username);
     }
 
     private void showAlertErrorUser(String st_error) {
