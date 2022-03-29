@@ -19,6 +19,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
+import com.macularehab.ExercisesActivity;
 import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
@@ -173,5 +174,7 @@ public class PatientHome extends AppCompatActivity {
 
     private void goToExercises() {
 
+        Intent intent = new Intent(this, ExercisesActivity.class);
+        startActivity(intent);
     }
 }
