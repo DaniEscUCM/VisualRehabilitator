@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class PatientHome extends AppCompatActivity {
 
-    private TextView welcome_name_text;
+    private TextView patient_username_textView;
 
     private String patientUID;
     private String patientNumericCode;
@@ -51,7 +51,6 @@ public class PatientHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //setContentView(R.layout.activity_patient_home);
         setContentView(R.layout.activity_patient_home_choose_data_exercise);
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
@@ -60,17 +59,9 @@ public class PatientHome extends AppCompatActivity {
 
         patientUID = mAuth.getUid();
 
-        /*welcome_name_text = findViewById(R.id.patient_home_welcome_name);
-        String[] username = mAuth.getCurrentUser().getEmail().split("@");
-        welcome_name_text.setText(username[0]);*/
-
-        /*Button logOut_button = findViewById(R.id.button_patient_home_logout);
-        logOut_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logOut();
-            }
-        });*/
+        patient_username_textView = findViewById(R.id.patient_home_patient_name_textView);
+        String[] patient_username = mAuth.getCurrentUser().getEmail().split("@");
+        patient_username_textView.setText(patient_username[0]);
 
         getProfessionalUID();
     }
@@ -135,7 +126,7 @@ public class PatientHome extends AppCompatActivity {
 
         FirebaseAuth.getInstance().signOut();
 
-        welcome_name_text.setText("Patient");
+        patient_username_textView.setText("Patient");
 
         Intent mainActivity = new Intent(this, IdentificationActivity.class);
         startActivity(mainActivity);
