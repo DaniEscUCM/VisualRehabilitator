@@ -84,7 +84,7 @@ public class ProfessionalHome extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Log.w("Here" , "A ver aqui");
-        getPatientList();
+        //getPatientList();
 
         searchView = (SearchView) findViewById(R.id.professional_home_search_patient_searchView);
         searchView.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +121,14 @@ public class ProfessionalHome extends AppCompatActivity {
                 logOutProfessional();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        professional_uid = mAuth.getUid();
+        getPatientList();
     }
 
     public void updatePatientsList(List<Patient> patientList) {

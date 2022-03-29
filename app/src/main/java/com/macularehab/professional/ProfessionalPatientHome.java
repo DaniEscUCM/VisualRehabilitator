@@ -56,6 +56,13 @@ public class ProfessionalPatientHome extends AppCompatActivity {
             }
         });
 
+        //readPatientName();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
         readPatientName();
     }
 
