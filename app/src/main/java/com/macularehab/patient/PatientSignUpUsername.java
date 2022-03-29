@@ -216,11 +216,22 @@ public class PatientSignUpUsername extends AppCompatActivity {
                 else {
 
                     Map<String, Object> patientInfo = (Map<String, Object>) task.getResult().getValue();
-                    databaseReference.child("Patient").child(password).removeValue();
-                    databaseReference.child("Patient").child(patient_uid).setValue(patientInfo);
+                    updatePatient(patientInfo, patient_uid);
                 }
             }
         });
+    }
+
+    private void updatePatient(Map<String, Object> patientInfo, String patient_uid) {
+        
+        databaseReference.child("Patient").child(password).removeValue();
+        databaseReference.child("Patient").child(patient_uid).setValue(patientInfo);
+
+        String professionalUID = patientInfo.get("ProfessionalUID").toString();
+        databaseReference.child("Professional").child(professionalUID)
+                .child("Patients").child(password).child("PatientUID").setValue(mAuth.getUid());
+        databaseReference.child("Professional").child(professionalUID)
+                .child("Patients").child(password).child("hasAccount").setValue(true);
     }
 
     private void showAlertErrorUser(String st_error) {

@@ -167,6 +167,7 @@ public class PatientSignUpPassword extends AppCompatActivity {
                         showAlertPasswordsDoesNotExist();
                     }
                     else {
+
                         goToSignUpUsername();
                     }
                 }
