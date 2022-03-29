@@ -140,7 +140,7 @@
         <!-- Fin Apartado Professional - Patient Form .-->
 
     <!-- Apartado Professional - Patient Info .-->
-    <string name="professional_patientInfo_patient">Pacient</string>
+    <string name="professional_patientInfo_patient">Paciente</string>
     <string name="professional_patientInfo_date">Fecha de alta</string>
     <string name="professional_patientInfo_name">Nombre</string>
     <string name="professional_patientInfo_first_lastName">1er Apellido</string>
@@ -151,6 +151,10 @@
     <string name="professional_patientInfo_av">AV</string>
     <string name="professional_patientInfo_cv">CV</string>
     <string name="professional_patientInfo_observations">Observaciones</string>
+    <!-- Botones -->
+    <string name="professional_patientInfo_editPatient_button">Editar Paciente</string>
+    <string name="professional_patientInfo_seeTestHistory_button">Historial de Tests</string>
+    <string name="professional_patientInfo_exercisesHistory_button">Historial de Ejercicios</string>
 
     <!-- Fin Apartado Professional - Patient Info .-->
     <!-- Fin Apartado Professional .-->

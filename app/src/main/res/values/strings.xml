@@ -146,6 +146,10 @@
     <string name="professional_patientInfo_av">VA</string>
     <string name="professional_patientInfo_cv">VF</string>
     <string name="professional_patientInfo_observations">Observations</string>
+    <!-- Botones -->
+    <string name="professional_patientInfo_editPatient_button">Edit Patient</string>
+    <string name="professional_patientInfo_seeTestHistory_button">Patient\'s Test History</string>
+    <string name="professional_patientInfo_exercisesHistory_button">Exercises History</string>
 
     <!-- Fin Apartado Professional - Patient Info .-->
     <!-- Fin Apartado Professional .-->

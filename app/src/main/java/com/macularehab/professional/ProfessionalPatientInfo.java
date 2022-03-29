@@ -3,9 +3,12 @@ package com.macularehab.professional;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -15,6 +18,8 @@ import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.professional.patientForm.ProfessionalPatientEditInfo;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class ProfessionalPatientInfo extends AppCompatActivity {
@@ -102,6 +107,43 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         textView_av.setText(av);
         textView_cv.setText(cv);
         textView_observations.setText(observations);
+
+        ArrayList<Boolean> arrayList = new ArrayList<Boolean>((Collection<? extends Boolean>) map.get("checkBox"));
+        setCheckBoxesClicked(arrayList);
+    }
+
+    private void setCheckBoxesClicked(ArrayList<Boolean> arrayList) {
+
+        LinearLayout layout = (LinearLayout) findViewById(R.id.professional_patient_info_linearLayout);
+        int count = 0;
+        for (int i = 0; i < layout.getChildCount(); i++) {
+
+            View v = layout.getChildAt(i);
+            if (v instanceof CheckBox) {
+
+                ((CheckBox) v).setChecked(arrayList.get(count));
+                ((CheckBox) v).setClickable(false);
+                count++;
+            } else if (v instanceof LinearLayout) {
+
+                LinearLayout linearLayout = (LinearLayout) v;
+                for (int j = 0; j < linearLayout.getChildCount(); j++) {
+                    View view = linearLayout.getChildAt(j);
+                    if (view instanceof LinearLayout) {
+                        LinearLayout linearLayout2 = (LinearLayout) view;
+                        for (int k = 0; k < linearLayout2.getChildCount(); k++) {
+                            View view2 = linearLayout2.getChildAt(k);
+
+                            if (view2 instanceof CheckBox) {
+                                ((CheckBox) view2).setChecked(arrayList.get(count));
+                                ((CheckBox) view2).setClickable(false);
+                                count++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void goToEditPatientActivity() {
