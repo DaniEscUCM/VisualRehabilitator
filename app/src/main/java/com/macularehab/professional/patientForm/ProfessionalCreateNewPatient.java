@@ -24,10 +24,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.macularehab.R;
+import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.patient.Patient;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
@@ -62,6 +64,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
+    private String professionalName;
 
     private int numericCode;
     public final static String numericCodeString = "numericCodeString";
@@ -111,6 +114,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         });
 
         setDate();
+        getProfessionalName();
     }
 
     private void setDate() {
@@ -120,6 +124,14 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         input_patient_date.setText(formatter.format(date));
 
         Log.d("Date", "default date " + date.toString());
+    }
+
+    private void getProfessionalName() {
+
+        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+        HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), "ProfessionalInfo.json");
+
+        professionalName = map.get("name").toString();
     }
 
     private void buttonContinueClicked() {
@@ -219,7 +231,14 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         patient.setCv(cv);
         patient.setObservations(observations);
         patient.setPatient_numeric_code(String.valueOf(numericCode));
-        patient.setProfessional_name(mAuth.getCurrentUser().getDisplayName());
+        String professionalName = mAuth.getCurrentUser().getDisplayName();
+        if (professionalName == null) {
+            professionalName = this.professionalName;
+        }
+        else if (professionalName.equals("")) {
+            professionalName = this.professionalName;
+        }
+        patient.setProfessional_name(professionalName);
         patient.setProfessional_uid(mAuth.getCurrentUser().getUid());
 
         addPatientToDataBase();

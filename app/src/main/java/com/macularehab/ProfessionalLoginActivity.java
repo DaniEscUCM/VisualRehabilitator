@@ -139,8 +139,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     }
 
     public void goToProfessionalHome() {
-        Intent inte = new Intent(this, ProfessionalHome.class);
-        startActivity(inte);
+        Intent intent = new Intent(this, ProfessionalHome.class);
+        startActivity(intent);
     }
 
     public void correct(){ //to make provide correct error message
