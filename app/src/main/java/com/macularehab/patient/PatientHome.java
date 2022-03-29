@@ -23,6 +23,7 @@ import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
+import com.macularehab.patient.data.PatientDataInfoActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -63,6 +64,38 @@ public class PatientHome extends AppCompatActivity {
         String[] patient_username = mAuth.getCurrentUser().getEmail().split("@");
         patient_username_textView.setText(patient_username[0]);
 
+        //getProfessionalUID();
+
+        Button dataButton = findViewById(R.id.professional_patient_home_data_button);
+        dataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToPatientData();
+            }
+        });
+
+        Button exercisesButton = findViewById(R.id.professional_patient_home_exercises_button);
+        exercisesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToExercises();
+            }
+        });
+
+        Button logoutButton = findViewById(R.id.professional_patient_home_logout_button);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logOut();
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        patientUID = mAuth.getUid();
         getProfessionalUID();
     }
 
@@ -80,7 +113,7 @@ public class PatientHome extends AppCompatActivity {
 
                     Map<String, Object> patientInfo = (Map<String, Object>) task.getResult().getValue();
                     professionalUID = String.valueOf(patientInfo.get(db_professionalUID));
-                    patientNumericCode = String.valueOf(patientInfo.get(patientNumericCode));
+                    patientNumericCode = String.valueOf(patientInfo.get(db_patientNumericCode));
 
                     loadPatientInfoToInternalStorage();
                 }
@@ -130,5 +163,15 @@ public class PatientHome extends AppCompatActivity {
 
         Intent mainActivity = new Intent(this, IdentificationActivity.class);
         startActivity(mainActivity);
+    }
+
+    private void goToPatientData() {
+
+        Intent intent = new Intent(this, PatientDataInfoActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToExercises() {
+
     }
 }

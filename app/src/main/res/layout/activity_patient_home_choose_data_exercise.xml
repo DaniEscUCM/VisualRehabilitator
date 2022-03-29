@@ -9,10 +9,10 @@
         android:id="@+id/patient_home_patient_name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="NombrePaciente"
         android:textColor="@color/black"
-        android:textSize="60sp"
+        android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:backgroundTint="@color/blue"
         android:text="@string/button_data"
@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="@color/pink_dark"
         android:padding="20dp"
@@ -50,8 +50,8 @@
         android:id="@+id/patient_home_back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -68,4 +68,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_manage"
         app:tint="@color/black" />
+
+    <Button
+        android:id="@+id/professional_patient_home_logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/hint_patient_home_logout_button"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
