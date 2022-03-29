@@ -19,14 +19,14 @@
     <string name="text_patient_warning">You have to use the code the professional that gave to you</string>
     <!-- Apartado LogIn .-->
     <string name="hint_patient_login_name">Name</string>
-    <string name="hint_patient_login_email">Email Address / Username:</string>
+    <string name="hint_patient_login_email">Email Address /\nUsername:</string>
     <string name="hint_patient_login_password">Numeric Code:</string>
     <string name="hint_patient_login_welcome">Welcome</string>
     <string name="hint_patient_login_login">Patient LogIn</string>
     <string name="hint_patient_login_login_button">LogIn</string>
     <!-- Apartado SignUp .-->
     <string name="hint_patient_signup_name">Name</string>
-    <string name="hint_patient_signup_email">Email Address / Username:</string>
+    <string name="hint_patient_signup_email">Email Address /\nUsername:</string>
     <string name="hint_patient_signup_password">Numeric Code:</string>
     <string name="hint_patient_signup_repeat_password">Repeat Numeric Code:</string>
     <string name="patient_signup_repeat_password">Repeat Numeric Code:</string>

@@ -51,7 +51,8 @@ public class PatientHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_patient_home);
+        //setContentView(R.layout.activity_patient_home);
+        setContentView(R.layout.activity_patient_home_choose_data_exercise);
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
@@ -59,17 +60,17 @@ public class PatientHome extends AppCompatActivity {
 
         patientUID = mAuth.getUid();
 
-        welcome_name_text = findViewById(R.id.patient_home_welcome_name);
+        /*welcome_name_text = findViewById(R.id.patient_home_welcome_name);
         String[] username = mAuth.getCurrentUser().getEmail().split("@");
-        welcome_name_text.setText(username[0]);
+        welcome_name_text.setText(username[0]);*/
 
-        Button logOut_button = findViewById(R.id.button_patient_home_logout);
+        /*Button logOut_button = findViewById(R.id.button_patient_home_logout);
         logOut_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logOut();
             }
-        });
+        });*/
 
         getProfessionalUID();
     }

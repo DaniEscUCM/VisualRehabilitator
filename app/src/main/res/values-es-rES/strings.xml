@@ -24,15 +24,15 @@
     <string name="text_patient_warning">Tienes que usar el código que te ha dado el profesional</string>
     <!-- Apartado LogIn .-->
     <string name="hint_patient_login_name">Nombre</string>
-    <string name="hint_patient_login_email">Dirección de Correo / Usuario:</string>
+    <string name="hint_patient_login_email">Dirección de Correo /\nUsuario:</string>
     <string name="hint_patient_login_password">Código Numérico:</string>
     <string name="hint_patient_login_welcome">Bienvenido</string>
     <string name="hint_patient_login_login">Inicia Sesión</string>
     <string name="hint_patient_login_login_button">Inicia Sesión</string>
     <!-- Apartado SignUp .-->
     <string name="hint_patient_signup_name">Nombre</string>
-    <string name="hint_patient_signup_email">Dirección de correo / Usuario:</string>
-    <string name="hint_patient_signup_password">Código numérico / Contraseña:</string>
+    <string name="hint_patient_signup_email">Dirección de correo /\nUsuario:</string>
+    <string name="hint_patient_signup_password">Código numérico /\nContraseña:</string>
     <string name="hint_patient_signup_repeat_password">Repite Código numérico / Contraseña:</string>
     <string name="patient_signup_repeat_password">Repite Código numérico \n/ Contraseña:</string>
     <string name="hint_patient_signup_welcome">Bienvenido</string>
