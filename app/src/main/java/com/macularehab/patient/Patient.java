@@ -22,6 +22,7 @@ public class Patient {
     private String patient_numeric_code;
     private int exercises_accomplished;
     private String date_last_test;
+    private boolean focusIsOn;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -65,6 +66,7 @@ public class Patient {
 
         hasAccount = false;
         exercises_accomplished = 0;
+        focusIsOn = true;
     }
 
     /**** Getters And Setters ****/
@@ -211,6 +213,14 @@ public class Patient {
 
     public void setDate_last_test(String date_last_test) {
         this.date_last_test = date_last_test;
+    }
+
+    public boolean isFocusIsOn() {
+        return focusIsOn;
+    }
+
+    public void setFocusIsOn(boolean focusIsOn) {
+        this.focusIsOn = focusIsOn;
     }
 
     @Override
