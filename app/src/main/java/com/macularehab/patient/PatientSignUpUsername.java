@@ -163,7 +163,6 @@ public class PatientSignUpUsername extends AppCompatActivity {
                             Log.w("EMAIL", "createUserWithEmail:success");
                             Toast.makeText(PatientSignUpUsername.this, "User Created!", Toast.LENGTH_LONG).show();
                             updatePatientUID();
-                            startPatientHomeActivity();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("EMAIL", "createUserWithEmail:failure", task.getException());
@@ -235,6 +234,8 @@ public class PatientSignUpUsername extends AppCompatActivity {
                 .child("Patients").child(password).child("hasAccount").setValue(true);
         databaseReference.child("Professional").child(professionalUID)
                 .child("Patients").child(password).child("patient_username").setValue(username);
+
+        startPatientHomeActivity();
     }
 
     private void showAlertErrorUser(String st_error) {

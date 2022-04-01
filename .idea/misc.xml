@@ -106,6 +106,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_tests_results.xml" value="0.16" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/pruena.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/border_for_layout.xml" value="0.264" />
+        <entry key="app/src/main/res/drawable/border_rectangle_for_layout.xml" value="0.403" />
         <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.2635" />
         <entry key="app/src/main/res/drawable/ic_arrow_back_small.xml" value="0.275" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
@@ -141,6 +142,8 @@
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/activity_second_exercise.xml" value="0.15944719471947194" />
+        <entry key="app/src/main/res/layout/activity_second_exercise_description.xml" value="0.15944719471947194" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/recycler_view_test.xml" value="0.25" />
       </map>
