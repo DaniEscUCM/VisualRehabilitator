@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seventh_exercise_description"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".TenthExerciseDescriptionActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton_back_exerc"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="64dp"
+        android:backgroundTint="@color/grey"
+        android:clickable="true"
+        android:contentDescription="@string/imagebutton_des_back"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/conf_exercise_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/conf_exercise_button"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <TextView
+        android:id="@+id/textViewExerciseDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/tenth_exercise_description"
+        android:textSize="60sp"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button_play_ex"
+        android:layout_width="147dp"
+        android:layout_height="151dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/grey"
+        android:clickable="true"
+        android:contentDescription="@string/button_play"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_media_play"
+        app:tint="@color/black" />
+
+    <ImageButton
+        android:id="@+id/conf_exercise_button"
+        android:layout_width="112dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="@color/grey"
+        android:clickable="true"
+        android:contentDescription="@string/imagebutton_des_settings"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewExerciseDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewExerciseDescription"
+        app:srcCompat="@android:drawable/ic_menu_manage"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/textViewExercise"
+        android:layout_width="887dp"
+        android:layout_height="332dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/seventh_exercise_description"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExerciseDescription" />
+
+    <EditText
+        android:id="@+id/seconds"
+        android:layout_width="312dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="@strings/seconds"
+        android:hint="@string/seconds"
+        android:inputType="number"
+        android:text="@string/num_seconds"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@+id/textView_insertseconds"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExercise" />
+
+    <TextView
+        android:id="@+id/textView_insertseconds"
+        android:layout_width="681dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="36dp"
+        android:singleLine="true"
+        android:text="@string/seconds_description"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExercise" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
