@@ -111,6 +111,8 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         String observations = map.get("observations").toString();
 
         String lastTest = map.get("last_test").toString();
+        String[] lastTestAux = lastTest.split(" ");
+        lastTest = lastTestAux[0].replaceAll("_", "/");
 
         textView_nameTitle.setText(name);
 
