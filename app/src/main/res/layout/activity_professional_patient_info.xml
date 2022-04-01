@@ -835,7 +835,7 @@
                 android:textSize="34sp" />
 
             <TextView
-                android:id="@+id/textView81"
+                android:id="@+id/professional_patient_info_lastTest_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="99-99-99"

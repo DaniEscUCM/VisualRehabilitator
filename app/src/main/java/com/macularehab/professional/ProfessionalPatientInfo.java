@@ -26,6 +26,7 @@ import java.util.HashMap;
 public class ProfessionalPatientInfo extends AppCompatActivity {
 
     private Button editPatientButton;
+    private TextView textView_lastTest;
 
     private TextView textView_nameTitle;
 
@@ -61,6 +62,8 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         textView_cv = findViewById(R.id.textView_patientInfo_cv);
         textView_observations = findViewById(R.id.textView_patientInfo_observations);
 
+        textView_lastTest = findViewById(R.id.professional_patient_info_lastTest_text);
+
         ImageButton backButton = findViewById(R.id.professional_patient_info_go_back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +96,10 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
         HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
 
-        String date = map.get("date").toString();
+        String date = "";
+        if (map.containsKey("date") && map.get("map") != null) {
+            date = map.get("date").toString();
+        }
         String name = map.get("name").toString();
         String first_lastName = map.get("first_lastName").toString();
         String second_lastName = map.get("second_lastName").toString();
@@ -103,6 +109,8 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         String av = String.valueOf(map.get("av"));
         String cv = String.valueOf(map.get("cv"));
         String observations = map.get("observations").toString();
+
+        String lastTest = map.get("last_test").toString();
 
         textView_nameTitle.setText(name);
 
@@ -116,6 +124,8 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         textView_av.setText(av);
         textView_cv.setText(cv);
         textView_observations.setText(observations);
+
+        textView_lastTest.setText(lastTest);
 
         ArrayList<Boolean> arrayList = new ArrayList<Boolean>((Collection<? extends Boolean>) map.get("checkBox"));
         setCheckBoxesClicked(arrayList);
