@@ -33,7 +33,7 @@
                     android:id="@+id/textView32"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Patient: "
+                    android:text="@string/professional_patientInfo_cardView_text_patient"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="30dp"
                     card_view:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
                     android:id="@+id/textView38"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name: "
+                    android:text="@string/professional_patientInfo_cardView_text_name"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,7 @@
                     android:id="@+id/textView39"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Last Name: "
+                    android:text="@string/professional_patientInfo_cardView_text_lastName"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"
@@ -109,10 +109,19 @@
                     android:id="@+id/textView49"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date of last test:"
+                    android:text="@string/professional_patientInfo_cardView_text_dateLastText"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/professional_patient_info_card_view_patient_dateLastTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    card_view:layout_constraintStart_toEndOf="@+id/textView49"
                     card_view:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -125,7 +134,7 @@
                     android:id="@+id/textView50"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Progress: "
+                    android:text="@string/professional_patientInfo_cardView_text_progress"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"

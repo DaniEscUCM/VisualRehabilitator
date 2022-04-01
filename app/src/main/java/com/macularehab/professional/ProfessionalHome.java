@@ -79,7 +79,7 @@ public class ProfessionalHome extends AppCompatActivity {
         setProfessionalNameText();
 
         recyclerView = findViewById(R.id.professional_patientList_recyclerView);
-        patientListAdapter = new PatientListAdapter(getApplicationContext(), new ArrayList<Patient>(), this);
+        patientListAdapter = new PatientListAdapter(this, new ArrayList<Patient>());
         recyclerView.setAdapter(patientListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -193,6 +193,9 @@ public class ProfessionalHome extends AppCompatActivity {
                 patient.setPatient_uid(entry.getKey());
                 patient.setName((String) hashMap.get("name"));
                 patient.setFirst_lastName((String) hashMap.get("first_lastName"));
+                if (hashMap.containsKey("last_test")) {
+                    patient.setDate_last_test(hashMap.get("last_test").toString());
+                }
                 //patient.setSecond_lastName((String) hashMap.get("second_lastName"));
 
                 patientList.add(patient);

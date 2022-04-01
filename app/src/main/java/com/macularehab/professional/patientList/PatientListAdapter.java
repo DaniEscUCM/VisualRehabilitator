@@ -3,6 +3,7 @@ package com.macularehab.professional.patientList;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -28,12 +29,14 @@ import com.google.gson.Gson;
 import com.macularehab.R;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
+import com.macularehab.professional.ProfessionalHome;
 import com.macularehab.professional.ProfessionalPatientHome;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.TreeMap;
 
 public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.PatientViewHolder> implements View.OnClickListener, Filterable {
 
@@ -41,12 +44,10 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     private ArrayList<Patient> patientList;
     private ArrayList<Patient> patientListFull;
     private Context context;
-    private Context activityContext;
 
-    public PatientListAdapter(Context context, List<Patient> patientList, Context activityContext) {
+    public PatientListAdapter(Context context, List<Patient> patientList) {
 
         this.context = context;
-        this.activityContext = activityContext;
         mInflater = LayoutInflater.from(context);
         setPatientListData(patientList);
     }
@@ -74,12 +75,17 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     public void onBindViewHolder(@NonNull PatientViewHolder holder, int position) {
 
         //TODO
-        String patient_uid = "Patient: ";
-        patient_uid = patientList.get(position).getPatient_uid();
-        String patient_name = "Name: ";
-        patient_name = patientList.get(position).getName();
-        String patient_lastName = "Last Name: ";
-        patient_lastName = patientList.get(position).getName();
+        Resources resources = context.getResources();
+
+        String patient_uid = " ";
+        patient_uid += patientList.get(position).getPatient_uid();
+        String patient_name = " ";
+        patient_name += patientList.get(position).getName();
+        String patient_lastName = " ";
+        patient_lastName += patientList.get(position).getName();
+        String patient_dateLastTest = " ";
+        String[] patient_dateLastTest_aux = patientList.get(position).getDate_last_test().split(" ");
+        patient_dateLastTest = " " + patient_dateLastTest_aux[0].replaceAll("_", "/");
 
         Drawable progressDrawable = holder.card_patient_progress_bar.getProgressDrawable().mutate();
         holder.card_patient_progress_bar.setProgress((position*25) + 25);
@@ -102,6 +108,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         holder.card_patient_uid.setText(patient_uid);
         holder.card_patient_name.setText(patient_name);
         holder.card_patient_last_name.setText(patient_lastName);
+        holder.card_patient_last_name.setText(patient_dateLastTest);
     }
 
     @Override
@@ -163,6 +170,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         public TextView card_patient_uid;
         public TextView card_patient_name;
         public TextView card_patient_last_name;
+        public TextView card_patient_dateLastTest;
         private ProgressBar card_patient_progress_bar;
         private PatientListAdapter patientListAdapter;
 
@@ -179,6 +187,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
             card_patient_uid = itemView.findViewById(R.id.professional_patient_info_card_view_patient_uid);
             card_patient_name = itemView.findViewById(R.id.professional_patient_info_card_view_patient_name);
             card_patient_last_name = itemView.findViewById(R.id.professional_patient_info_card_view_patient_last_name);
+            card_patient_last_name = itemView.findViewById(R.id.professional_patient_info_card_view_patient_dateLastTest);
             card_patient_progress_bar = itemView.findViewById(R.id.professional_patient_info_card_view_patient_progress_bar);
 
             this.patientListAdapter = patientListAdapter;
@@ -241,8 +250,8 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
 
         private void startNewActivity() {
 
-            Intent intent = new Intent(activityContext, ProfessionalPatientHome.class);
-            activityContext.startActivity(intent);
+            Intent intent = new Intent(context, ProfessionalPatientHome.class);
+            context.startActivity(intent);
         }
     }
 }
