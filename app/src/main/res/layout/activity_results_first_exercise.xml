@@ -21,7 +21,8 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline25"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline26" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline26"
@@ -33,11 +34,14 @@
     <TextView
         android:id="@+id/congrats_first_ex"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_height="0dp"
+        android:text="@string/first_exercise_congrats"
+        android:gravity="center"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline26"
-        app:layout_constraintTop_toTopOf="@+id/guideline27"
-        tools:layout_editor_absoluteX="544dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline27" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline27"

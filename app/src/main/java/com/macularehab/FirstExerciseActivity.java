@@ -96,16 +96,16 @@ public class FirstExerciseActivity extends AppCompatActivity {
 
     }
 
-    public void Close(View view){
+    private void Close(View view){
         finish();
     }
 
     private void results(){
-        Intent i = new Intent( this, SettingsActivity.class );
+        Intent i = new Intent( this, ResultsFirstExerciseActivity.class );
         startActivity(i);
     }
 
-    public void Settings(View view){
+    private void Settings(View view){
         Intent i = new Intent( this, SettingsActivity.class );
         startActivity(i);
     }
