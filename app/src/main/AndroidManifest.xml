@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".ResultsFirstExerciseActivity"
+            android:exported="false" />
+        <activity
             android:name=".TestDisplayActivity"
             android:exported="false" />
         <activity
@@ -125,8 +128,7 @@
             android:exported="false" />
         <activity
             android:name=".patient.data.PatientDataInfoActivity"
-            android:exported="false" />
-        <!-- Fin Apartado Paciente . -->
+            android:exported="false" /> <!-- Fin Apartado Paciente . -->
         <activity
             android:name=".IdentificationActivity"
             android:exported="true">

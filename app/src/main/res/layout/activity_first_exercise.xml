@@ -41,11 +41,24 @@
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?android:attr/listChoiceIndicatorSingle" />
+        app:srcCompat="@drawable/circle_black" />
+
+    <ImageView
+        android:id="@+id/focus_point"
+        android:layout_width="545dp"
+        android:layout_height="545dp"
+        android:contentDescription="@string/foco"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/house_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
