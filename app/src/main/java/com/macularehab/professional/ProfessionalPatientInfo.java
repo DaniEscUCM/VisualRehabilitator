@@ -97,7 +97,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
 
         String date = "";
-        if (map.containsKey("date") && map.get("map") != null) {
+        if (map.containsKey("date") && map.get("date") != null) {
             date = map.get("date").toString();
         }
         String name = map.get("name").toString();
