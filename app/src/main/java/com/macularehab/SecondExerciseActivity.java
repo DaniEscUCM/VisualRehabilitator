@@ -11,8 +11,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class SecondExerciseActivity extends AppCompatActivity {
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
+
     protected int counter, counterCorrect,counterFailed, num_miliseconds;
     protected final int total = 10;
     protected boolean triangle, written;
@@ -22,6 +31,13 @@ public class SecondExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        //Database
+        firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        databaseReference = firebaseDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
+        //End database
+
         counterCorrect = counterFailed = 0; counter = -1;
         triangle = written = false;
         timer = null;
@@ -107,6 +123,9 @@ public class SecondExerciseActivity extends AppCompatActivity {
         cancelTimer();
         timer = null;
         if(++counter == total) {
+            
+            databaseReference.child("Pruebas").child("SecondExercise").child("counterCorrect").setValue(counterCorrect);
+            databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
 
             System.out.println("counter==total");
             if(!written) {
