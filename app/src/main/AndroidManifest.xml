@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".TestDisplayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestsHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".CalculateFocusActivity"
             android:exported="false" />
         <activity
@@ -98,8 +104,7 @@
             android:exported="false" />
         <activity
             android:name=".professional.patientForm.ProfessionalPatientEditInfoDifficulties"
-            android:exported="false" />
-        <!-- Apartado Paciente . -->
+            android:exported="false" /> <!-- Apartado Paciente . -->
         <activity
             android:name=".patient.PatientHome"
             android:exported="false" />

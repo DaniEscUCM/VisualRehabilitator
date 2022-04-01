@@ -82,12 +82,13 @@
 
     <Button
         android:id="@+id/buttonEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="108dp"
+        android:layout_width="171dp"
+        android:layout_height="84dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="52dp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="@string/finish" />
+        android:text="@string/finish" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

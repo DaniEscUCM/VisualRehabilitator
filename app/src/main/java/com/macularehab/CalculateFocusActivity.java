@@ -21,14 +21,23 @@ import android.widget.ImageView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
+import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.ProfessionalHome;
+import com.macularehab.professional.ProfessionalPatientHome;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class CalculateFocusActivity extends AppCompatActivity {
+
+    private final String filenameCurrentPatient = "CurrentPatient.json";
 
     private float centre_x;
     private float centre_y;
@@ -60,6 +69,11 @@ public class CalculateFocusActivity extends AppCompatActivity {
 
         Button next = findViewById(R.id.buttonEnd);
         next.setOnClickListener(v->end());
+
+        String cal_focus = getIntent().getExtras().getString("focus");
+        List<String> list_ =Arrays.asList(cal_focus.substring(1, cal_focus.length() - 1).split(", "));
+        calculated_focus = new Pair<>(Float.parseFloat(list_.get(0)),Float.parseFloat(list_.get(1)));
+        result_coor.add(calculated_focus);
 
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
@@ -125,8 +139,8 @@ public class CalculateFocusActivity extends AppCompatActivity {
 
                 }
             }
-            calculated_focus = new Pair<>(x/coor_result.size(),y/coor_result.size());
-            result_coor.add(calculated_focus);
+            //calculated_focus = new Pair<>(x/coor_result.size(),y/coor_result.size());
+            //result_coor.add(calculated_focus);
 
             Bitmap btm = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
 
@@ -137,9 +151,6 @@ public class CalculateFocusActivity extends AppCompatActivity {
             draw_dots.setVisibility(View.VISIBLE);
 
             draw_focus();
-        }
-        else{
-
         }
     }
 
@@ -155,9 +166,11 @@ public class CalculateFocusActivity extends AppCompatActivity {
             float x = event.getX();
             float y = event.getY();
             Pair<Float,Float> res = valid_coor(x,y);
-            result_coor.clear();
-            result_coor.add(res);
-            draw_focus();
+            if(res.first*res.first + res.second*res.second <= 100){
+                result_coor.clear();
+                result_coor.add(res);
+                draw_focus();
+            }
             return true;
         }
         return false;
@@ -182,8 +195,35 @@ public class CalculateFocusActivity extends AppCompatActivity {
         String patient_id = getIntent().getExtras().getString("patient_id");
         databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_id).
                 child("focus").setValue(result_coor.get(0));
-        Intent i = new Intent( this, ProfessionalHome.class );
-        startActivity(i);
+        String date = getIntent().getExtras().getString("date");
+
+        databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_id).
+                child("Tests").child(date).child("focus").setValue(result_coor.get(0));
+        File file = new File(getApplicationContext().getFilesDir(), filenameCurrentPatient);
+        if(file.exists()){
+            ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+            HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+            if(map.get("patient_numeric_code").equals(patient_id)){
+                map.put("focus",result_coor.get(0));
+                ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put("focus",result_coor.get(0));
+
+                Gson gson = new Gson();
+                String data = gson.toJson(map);
+                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
+
+                Intent i = new Intent( this, TestsHistoryActivity.class );
+                startActivity(i);
+            }
+            else{
+                Intent i = new Intent( this, ProfessionalHome.class );
+                startActivity(i);
+            }
+        }
+        else{
+            Intent i = new Intent( this, ProfessionalHome.class );
+            startActivity(i);
+        }
     }
 
     public void Close(View view){
