@@ -74,8 +74,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     @Override
     public void onBindViewHolder(@NonNull PatientViewHolder holder, int position) {
 
-        //TODO
-        Resources resources = context.getResources();
+        //TODO falta hacer el progreso
 
         String patient_uid = " ";
         patient_uid += patientList.get(position).getPatient_uid();
