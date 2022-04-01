@@ -9,6 +9,7 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +22,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class ThirdExerciseActivity extends AppCompatActivity {
-    private int counter, counterCorrect, counterFailed;
+    private int counter, counterCorrect, counterFailed, num_miliseconds;
     protected final int total = 12;
-    private boolean triangle;
+    private boolean triangle, focus_on;
     private CountDownTimer timer = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,24 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         counter = -1; counterCorrect = counterFailed = 0;
         triangle = false;
         ImageButton button_dot = findViewById(R.id.dot_button);
-        move();
+        button_dot.setVisibility(View.INVISIBLE);
+        num_miliseconds = ThirdExerciseDescriptionActivity.getNumSeconds() * 1000;
+        //num_miliseconds = 1000;
+        focus_on = true; //leer de la clase anterior como seconds
+        ImageView foco = findViewById(R.id.foco);
+        if(focus_on) {
+            int w = 50, h = 50;
+            foco.getLayoutParams().width = w;
+            foco.getLayoutParams().height = h;
+            //falta meter tamaño del foco
+            startTimerFoco(button_dot); //5s antes de que aparezca nada más
+        }
+        else{
+            foco.setVisibility(View.INVISIBLE);
+            move();
+        }
+
+
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,10 +78,20 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             }
         });
     }
+    private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
+        timer = new CountDownTimer(5000, 1000) {
+            public void onTick(long millisUntilFinished) { }
+            public void onFinish() {
+                button_dot.setVisibility(View.VISIBLE);
+                move();
+            }
+        };
+        timer.start();
+    }
 
     private void startTimer() {
         //10s (10000 mili segundos) para hacer click en la figura
-        timer = new CountDownTimer(10000, 1000) {
+        timer = new CountDownTimer(num_miliseconds, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
                 move();

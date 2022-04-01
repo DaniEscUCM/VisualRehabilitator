@@ -117,7 +117,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
                 move();
-                timer.cancel();
+                //timer.cancel();
             }
         };
         timer.start();
@@ -132,20 +132,15 @@ public class SecondExerciseActivity extends AppCompatActivity {
     }
 
     private void move(){
-        cancelTimer();
-        timer = null;
+        /*cancelTimer();
+        timer = null;*/
         if(++counter == total) {
-            
             databaseReference.child("Pruebas").child("SecondExercise").child("counterCorrect").setValue(counterCorrect);
             databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
 
-            System.out.println("counter==total");
-            if(!written) {
-                written = true;
-                System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
-                String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
-                Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
-            }
+            System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
+            String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
+            Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
             finish();
         }
         else {
