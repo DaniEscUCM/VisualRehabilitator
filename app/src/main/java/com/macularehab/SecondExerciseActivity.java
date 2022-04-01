@@ -14,13 +14,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.macularehab.internalStorage.ReadInternalStorage;
+
+import java.util.HashMap;
 
 
 public class SecondExerciseActivity extends AppCompatActivity {
 
+    //Database
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
+    private final String filenameCurrentUser = "CurrentPatient.json";
+
+    //Focus point
+    private boolean focoIsActivated;
 
     protected int counter, counterCorrect,counterFailed, num_miliseconds;
     protected final int total = 10;
@@ -36,6 +44,10 @@ public class SecondExerciseActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+
         //End database
 
         counterCorrect = counterFailed = 0; counter = -1;
