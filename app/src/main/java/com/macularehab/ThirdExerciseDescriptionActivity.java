@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
+    private static int num_seconds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +50,20 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void play_exercise(View v) {
+        EditText seconds = (EditText) findViewById(R.id.seconds);
+        String se = seconds.getText().toString();
+        num_seconds = 10;
+        if (se.equals("")) {
+            System.out.println("Hola, quieres estos segundos: " + se);
+        } else {
+            num_seconds = Integer.parseInt(se);
+            System.out.println("Hola, quieres estos segundos: " + se + " en int: " + num_seconds);
+        }
         Intent i = new Intent( this, ThirdExerciseActivity.class );
         startActivity(i);
     }
+
+    public static int getNumSeconds(){ return num_seconds; }
 
     public void Close(View view){
         finish();

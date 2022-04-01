@@ -67,10 +67,10 @@
         app:tint="@color/black" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewExercise"
         android:layout_width="887dp"
         android:layout_height="332dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="28dp"
         android:gravity="center"
         android:text="@string/third_exercise_description"
         android:textSize="34sp"
@@ -78,5 +78,36 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewThirdExerciseDescription" />
+
+    <EditText
+        android:id="@+id/seconds"
+        android:layout_width="110dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="@strings/seconds"
+        android:background="@drawable/border_seconds"
+        android:hint="@string/seconds"
+        android:inputType="number"
+        android:text="@string/num_seconds"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView_insertseconds"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExercise"
+        tools:textSize="48sp" />
+
+    <TextView
+        android:id="@+id/textView_insertseconds"
+        android:layout_width="681dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="36dp"
+        android:singleLine="true"
+        android:text="@string/seconds_description"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExercise" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
