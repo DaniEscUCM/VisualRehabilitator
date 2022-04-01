@@ -1,32 +1,45 @@
 package com.macularehab;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Point;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.Display;
+import android.util.DisplayMetrics;
+import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.gson.internal.LinkedTreeMap;
+import com.macularehab.draws.DrawDot;
+import com.macularehab.internalStorage.ReadInternalStorage;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class FirstExerciseActivity extends AppCompatActivity {
-    int counter = 0, counterCorrect, total = 7;
+
+    private final String filenameCurrentUser = "CurrentPatient.json";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        counterCorrect = 0;
+
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+
         ImageButton button_dot = findViewById(R.id.dot_button);
-        move(counter); //lo llamo una primera vez antes del OnClick para
-        //que empiece el temporatizador sin clickear.
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { counter = move(counter); }
+            public void onClick(View v) { results(); }
         });
 
         ImageButton button_setting = findViewById(R.id.first_exercise_settings);
@@ -44,73 +57,52 @@ public class FirstExerciseActivity extends AppCompatActivity {
                 Close(v);
             }
         });
-    }
 
-    //Declare timer
-    CountDownTimer cTimer = null;
+        //Calculate based on screen size
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+        int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
+        int size = metric_unit*20;//10cm
 
-    //Start timer function
-    void startTimer() {
-        //10s (10000 mili segundos) para hacer click en el circulo
-        //Lo pongo a 3s para hacer pruebas
-        cTimer = new CountDownTimer(3000, 10) {
-            public void onTick(long millisUntilFinished) { }
+        ImageView focus = findViewById(R.id.focus_point);
+        ArrayList<Pair<Float, Float>> coor_result;
+        LinkedTreeMap tree= (LinkedTreeMap)map.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+
+        focus.getLayoutParams().width = size;
+        focus.getLayoutParams().height = size;
+        focus.requestLayout();
+
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus.setImageBitmap(btm_manual_left);
+        focus.setVisibility(View.VISIBLE);
+
+        button_dot.getLayoutParams().width = metric_unit*6;
+        button_dot.getLayoutParams().height = metric_unit*6;
+        focus.requestLayout();
+
+        new CountDownTimer(3000, 1000) {
+
+            public void onTick(long millisUntilFinished) {}
+
             public void onFinish() {
-                move(++counter);
+                button_dot.setVisibility(View.VISIBLE);
             }
-        };
-        cTimer.start();
-    }
 
-    //cancel timer
-    /*void cancelTimer() {
-        if(cTimer!=null)
-            cTimer.cancel();
-    }*/
+        }.start();
 
-    private int move(int counter){
-        startTimer();
-        ImageButton button_dot = findViewById(R.id.dot_button);
-        Display disp_info = getWindowManager().getDefaultDisplay();
-        Point point_info = new Point();
-        disp_info.getSize(point_info);
-        int x, y;
-        if(counter == 0) {   //La primera vez aparece en el centro
-            x = button_dot.getWidth() + button_dot.getWidth();
-            y = button_dot.getHeight() + button_dot.getHeight();
-            button_dot.getPivotX();
-            button_dot.setX(x);
-            button_dot.setY(y);
-            ++counterCorrect;
-        }
-        else if(counter > 0 && counter < total) {
-            x = (int) (Math.random() * (point_info.x - (2 * button_dot.getWidth()))) + button_dot.getWidth();
-            y = (int) (Math.random() * (point_info.y - (2 * button_dot.getHeight()))) + button_dot.getHeight();
-            button_dot.getPivotX();
-            button_dot.setX(x);
-            button_dot.setY(y);
-            ++counterCorrect;
-        }
-        else {
-            System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect);
-            finish();
-        }
-        return ++counter;
     }
 
     public void Close(View view){
         finish();
-        if (counterCorrect*2 >= total) { //si ha acertado el doble o mas del total
-            String message_correct = "Well done, you hit " + counterCorrect + "out of" + total;
-            Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+    }
 
-            //se desbloquea el siguiente ejercicio
-        }
-        else {
-            String message_failed = "Sorry, try again";
-            Toast.makeText(this, message_failed, Toast.LENGTH_LONG).show();
-        }
-        System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect);
+    private void results(){
+        Intent i = new Intent( this, SettingsActivity.class );
+        startActivity(i);
     }
 
     public void Settings(View view){

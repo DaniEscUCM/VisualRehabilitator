@@ -200,7 +200,8 @@
     <string name="fifteenth_exercise">Ejercicio 15</string>
     <string name="sixteenth_exercise">Ejercicio 16</string>
     <string name="button_play">Empezar</string>
-    <string name="first_exercise_description">Aquí devería estar la descripción del primer ejercicio</string>
+    <string name="first_exercise_description">Encuentra el punto rojo(punto de foco) y da click a la figura.\n Primero aparece el punto de foco y después de unos segundos saldrá la figura \n Para otros ejercicios aparecerá el punto de foco para ayudarte a encontrar figuras/textos</string>
+    <string name="first_exercise_congrats"> ¡Enhorabuena! ¡Has terminado la demostración!</string>
     <string name="second_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras. Haz click cuando aparezca un triángulo.</string>
     <string name="third_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras, más pequeñas y sin relleno. Haz click cuando aparezca un triángulo.</string>
     <string name="fourth_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de letras. Haz click cuando aparezca la E.</string>
@@ -228,7 +229,7 @@
     <string name="letter_L">L</string>
 
 
-    <string name="button_for_click">Boton para hacer click</string>
+    <string name="button_for_click">encontrar botón</string>
     <string name="toast_user_created">Usuario creado</string>
     <string name="toast_fill_fields">Por favor, rellena todos los campos</string>
     <string name="textview_infoLogin">Ya tengo una cuenta</string>
