@@ -846,10 +846,10 @@
                 android:layout_height="20dp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button_tests"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/professional_patientInfo_seeTestHistory_button"
+                android:text="@string/tests_history"
                 android:textSize="30sp" />
 
             <Space
