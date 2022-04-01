@@ -83,6 +83,14 @@
                         android:visibility="invisible"
                         app:srcCompat="@drawable/house_icon" />
 
+                    <ImageView
+                        android:id="@+id/focus_display"
+                        android:layout_width="545dp"
+                        android:layout_height="545dp"
+                        android:contentDescription="@string/calculated_focus"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/house_icon" />
+
                 </FrameLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -43,6 +43,8 @@ public class TestsResultsActivity extends AppCompatActivity {
     private ArrayList<Pair<Float,Float>> coor_resul = new ArrayList<>();
     private String patient_num_cod="";
     private String date="";
+    private Float x= (float) 0,y= (float) 0;
+    private int cont = 0;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -75,9 +77,12 @@ public class TestsResultsActivity extends AppCompatActivity {
         File file  = new File(getApplicationContext().getFilesDir(), filenameCurrentPatient);
         if(file.exists()) {
             ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-            HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+            map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
             if (map.get("patient_numeric_code").equals(patient_num_cod)) {
                 ((LinkedTreeMap)map.get("Tests")).put(date, new LinkedTreeMap<>());
+            }
+            else{
+                map=null;
             }
         }
 
@@ -168,6 +173,9 @@ public class TestsResultsActivity extends AppCompatActivity {
                                 Pair<Float,Float> pair =new Pair<>(first, second);
                                 coor_result.add(pair);
                                 accumulate = "";
+                                x+=pair.first;
+                                y+= pair.second;
+                                cont++;
                                 if(!dots.contains(pair)){
                                     dots.add(pair);
                                     this.coor_resul.add(pair);
@@ -206,7 +214,12 @@ public class TestsResultsActivity extends AppCompatActivity {
         databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).
                 child("Tests").child(date).child("resume_stain").setValue(coor_resul);
         String value= coor_resul.toString();
+        x = x/cont;
+        y = y/cont;
+        String focus= "["+ x +", "+ y +"]";
+        i.putExtra("focus",focus);
         i.putExtra("resume_stain",value);
+        i.putExtra("date",date);
         i.putExtra("patient_id",patient_num_cod);
 
         if(map!=null) {

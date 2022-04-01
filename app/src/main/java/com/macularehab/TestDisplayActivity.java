@@ -60,6 +60,25 @@ public class TestDisplayActivity extends AppCompatActivity {
         }
         draw(size, coor_result, metric_unit, draw_dots_resume_stain, grid_resume_stain);
 
+
+        ImageView draw_focus=findViewById(R.id.focus_display);
+        LinkedTreeMap tree= (LinkedTreeMap)((LinkedTreeMap)((LinkedTreeMap) map.get("Tests")).get(date)).get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+        draw_focus.getLayoutParams().width = size;
+        draw_focus.getLayoutParams().height = size;
+        draw_focus.requestLayout();
+
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.BLUE);
+        all_dots.draw(canvas);
+        draw_focus.setImageBitmap(btm_manual_left);
+        draw_focus.setVisibility(View.VISIBLE);
+
+
+
         //Manual Grid Left
         ImageView grid_manual_left=findViewById(R.id.grid_manual_left);
         ImageView draw_dots_left=findViewById(R.id.draw_dots_manual_left);

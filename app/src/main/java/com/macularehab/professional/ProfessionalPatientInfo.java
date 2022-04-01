@@ -81,7 +81,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         tests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gotTests();
+                goToTests();
             }
         });
 
@@ -161,7 +161,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private  void gotTests(){
+    private  void goToTests(){
         Intent intent = new Intent(this, TestsHistoryActivity.class);
         startActivity(intent);
     }
