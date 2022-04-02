@@ -74,6 +74,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Settings(v);
+                finish();
             }
         });
 
@@ -82,6 +83,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Close(v);
+                finish();
             }
         });
     }
