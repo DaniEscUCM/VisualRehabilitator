@@ -149,7 +149,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
                     int number = Integer.valueOf(result);
                     number++;
 
-                    String newNumberOfPatienst = String.valueOf(number);
+                    String newNumberOfPatients = String.valueOf(number);
 
                     databaseReference.child(db_professional).child(mAuth.getUid()).child(db_numberOfPatients).setValue(number);
                 }
