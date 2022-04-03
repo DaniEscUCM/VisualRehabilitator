@@ -1,5 +1,7 @@
 package com.macularehab.patient;
 
+import com.macularehab.exercises.Exercise;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -23,6 +25,7 @@ public class Patient {
     private int exercises_accomplished;
     private String date_last_test;
     private boolean focusIsOn;
+    private Exercise exercise;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -68,6 +71,7 @@ public class Patient {
         exercises_accomplished = 0;
         focusIsOn = true;
         date_last_test = "01/01/01";
+        exercise = new Exercise();
     }
 
     /**** Getters And Setters ****/
@@ -222,6 +226,14 @@ public class Patient {
 
     public void setFocusIsOn(boolean focusIsOn) {
         this.focusIsOn = focusIsOn;
+    }
+
+    public Exercise getExercise() {
+        return exercise;
+    }
+
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
     }
 
     @Override
