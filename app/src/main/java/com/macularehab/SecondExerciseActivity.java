@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
+import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.exercises.ResultInfo;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
@@ -187,30 +188,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         databaseReference.child("Pruebas").child("SecondExercise").child("counterCorrect").setValue(counterCorrect);
         databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
 
-        if (patientHashMap.containsKey("exercise")) {
-            LinkedTreeMap<String, Object> exercise = (LinkedTreeMap<String, Object>) patientHashMap.get("exercise");
-            ArrayList<LinkedTreeMap<String, Object>> exercisesList = (ArrayList<LinkedTreeMap<String, Object>>) exercise.get("exerciseInfoList");
-            LinkedTreeMap<String, Object> exerciseTwo = exercisesList.get(exercise_id);
-            ArrayList<ResultInfo> resultsList = new ArrayList<ResultInfo>();
-            if (exerciseTwo.containsKey("resultsList")) {
-                //ArrayList<>
-            }
-
-            resultsList.add(new ResultInfo(correct, failed, 0));
-            exerciseTwo.put("resultsList", resultsList);
-            exercisesList.set(exercise_id, exerciseTwo);
-            exercise.put("exerciseInfoList", exercisesList);
-            patientHashMap.put("exercise", exercise);
-        }
-
-        Gson gson = new Gson();
-        String data = gson.toJson(patientHashMap);
-        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
-
-        String professional_uid = String.valueOf(patientHashMap.get("professional_uid"));
-        String patient_uid = String.valueOf(patientHashMap.get("patient_numeric_code"));
-
-        databaseReference.child("Professional").child(professional_uid).child("Patients").child(patient_uid).setValue(patientHashMap);
+        ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
+        exerciseWriteDB.writeResultInDataBase(getApplicationContext(), patientHashMap, correct, failed, 0);
     }
 }
