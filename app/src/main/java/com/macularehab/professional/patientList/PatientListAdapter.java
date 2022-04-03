@@ -2,7 +2,6 @@ package com.macularehab.professional.patientList;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -29,14 +28,11 @@ import com.google.gson.Gson;
 import com.macularehab.R;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
-import com.macularehab.professional.ProfessionalHome;
 import com.macularehab.professional.ProfessionalPatientHome;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.TreeMap;
 
 public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.PatientViewHolder> implements View.OnClickListener, Filterable {
 
@@ -196,7 +192,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    downloadPatientAndStartActivity(card_patient_uid.getText().toString());
+                    downloadPatientAndStartActivity(card_patient_uid.getText().toString().trim());
                 }
             });
         }
@@ -212,10 +208,10 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
             databaseReference = firebaseDatabase.getReference();
             mAuth = FirebaseAuth.getInstance();
 
-            donwloadPatient(patient_uid);
+            downloadPatient(patient_uid);
         }
 
-        private void donwloadPatient(String patient_uid) {
+        private void downloadPatient(String patient_uid) {
 
             databaseReference.child(db_professional).child(mAuth.getUid()).child(db_patients).child(patient_uid)
                     .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {

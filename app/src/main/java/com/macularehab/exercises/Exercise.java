@@ -9,5 +9,7 @@ public class Exercise {
 
     public Exercise() {
 
+        exercises_completed = 0;
+        exerciseInfoList = new ArrayList<ExerciseInfo>();
     }
 }
