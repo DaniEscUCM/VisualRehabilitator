@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
+import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.internalStorage.ReadInternalStorage;
 
 import java.util.ArrayList;
@@ -24,6 +25,10 @@ import java.util.HashMap;
 
 
 public class FirstExerciseActivity extends AppCompatActivity {
+
+    //Focus point
+    private boolean focusIsOn;
+    private final int exercise_id = 0;
 
     private final String filenameCurrentUser = "CurrentPatient.json";
 
@@ -108,5 +113,12 @@ public class FirstExerciseActivity extends AppCompatActivity {
     private void Settings(View view){
         Intent i = new Intent( this, SettingsActivity.class );
         startActivity(i);
+    }
+
+    //Database
+    private void writeResultInDataBase(int correct, int failed) {
+
+        ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
+        exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
     }
 }

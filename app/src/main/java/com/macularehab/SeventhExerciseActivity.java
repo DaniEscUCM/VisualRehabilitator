@@ -10,9 +10,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.macularehab.exercises.ExerciseWriteDB;
+
 import java.util.Random;
 
 public class SeventhExerciseActivity extends AppCompatActivity {
+
+    //Focus point
+    private boolean focusIsOn;
+    private final int exercise_id = 6;
+
     protected int counter, counterCorrect, counterFailed,previous_1,previous_2;
     protected final int total = 10;
     protected boolean triangle_1, triangle_2;
@@ -103,6 +110,9 @@ public class SeventhExerciseActivity extends AppCompatActivity {
 
     private void move() {
         if (++counter == total) {
+
+            writeResultInDataBase(counterCorrect, counterFailed);
+
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
@@ -196,5 +206,12 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
         Intent i = new Intent(this, SettingsActivity.class);
         startActivity(i);
+    }
+
+    //Database
+    private void writeResultInDataBase(int correct, int failed) {
+
+        ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
+        exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
     }
 }
