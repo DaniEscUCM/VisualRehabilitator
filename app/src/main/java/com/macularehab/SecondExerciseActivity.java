@@ -14,9 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
+import com.macularehab.exercises.ResultInfo;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class SecondExerciseActivity extends AppCompatActivity {
@@ -26,9 +32,11 @@ public class SecondExerciseActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
     private final String filenameCurrentUser = "CurrentPatient.json";
+    private HashMap<String, Object> patientHashMap;
 
     //Focus point
-    private boolean focoIsActivated;
+    private boolean focusIsOn;
+    private final int exercise_id = 1;
 
     protected int counter, counterCorrect,counterFailed, num_miliseconds;
     protected final int total = 10;
@@ -46,7 +54,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         ReadInternalStorage readIS = new ReadInternalStorage();
-        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
 
         //End database
 
@@ -135,8 +143,8 @@ public class SecondExerciseActivity extends AppCompatActivity {
         /*cancelTimer();
         timer = null;*/
         if(++counter == total) {
-            databaseReference.child("Pruebas").child("SecondExercise").child("counterCorrect").setValue(counterCorrect);
-            databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
+
+            writeResultInDataBase(counterCorrect, counterFailed);
 
             System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
@@ -171,5 +179,38 @@ public class SecondExerciseActivity extends AppCompatActivity {
         finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
         Intent i = new Intent( this, SettingsActivity.class );
         startActivity(i);
+    }
+
+    //Database
+    private void writeResultInDataBase(int correct, int failed) {
+
+        databaseReference.child("Pruebas").child("SecondExercise").child("counterCorrect").setValue(counterCorrect);
+        databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
+
+        if (patientHashMap.containsKey("exercise")) {
+            LinkedTreeMap<String, Object> exercise = (LinkedTreeMap<String, Object>) patientHashMap.get("exercise");
+            ArrayList<LinkedTreeMap<String, Object>> exercisesList = (ArrayList<LinkedTreeMap<String, Object>>) exercise.get("exerciseInfoList");
+            LinkedTreeMap<String, Object> exerciseTwo = exercisesList.get(exercise_id);
+            ArrayList<ResultInfo> resultsList = new ArrayList<ResultInfo>();
+            if (exerciseTwo.containsKey("resultsList")) {
+                //ArrayList<>
+            }
+
+            resultsList.add(new ResultInfo(correct, failed, 0));
+            exerciseTwo.put("resultsList", resultsList);
+            exercisesList.set(exercise_id, exerciseTwo);
+            exercise.put("exerciseInfoList", exercisesList);
+            patientHashMap.put("exercise", exercise);
+        }
+
+        Gson gson = new Gson();
+        String data = gson.toJson(patientHashMap);
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
+
+        String professional_uid = String.valueOf(patientHashMap.get("professional_uid"));
+        String patient_uid = String.valueOf(patientHashMap.get("patient_numeric_code"));
+
+        databaseReference.child("Professional").child(professional_uid).child("Patients").child(patient_uid).setValue(patientHashMap);
     }
 }

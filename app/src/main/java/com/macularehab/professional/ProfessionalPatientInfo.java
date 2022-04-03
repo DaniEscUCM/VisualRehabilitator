@@ -110,7 +110,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         String cv = String.valueOf(map.get("cv"));
         String observations = map.get("observations").toString();
 
-        String lastTest = map.get("last_test").toString();
+        String lastTest = map.get("date_last_test").toString();
         String[] lastTestAux = lastTest.split(" ");
         lastTest = lastTestAux[0].replaceAll("_", "/");
 
