@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class ExerciseInfo {
 
     private int times_completed;
-    private ArrayList<ResultInfo> results;
+    private ArrayList<ResultInfo> resultsList;
 
     public ExerciseInfo() {
 
         times_completed = 0;
-        results = new ArrayList<>();
+        resultsList = new ArrayList<ResultInfo>();
     }
 
     public int getTimes_completed() {
@@ -21,11 +21,11 @@ public class ExerciseInfo {
         this.times_completed = times_completed;
     }
 
-    public ArrayList<ResultInfo> getResults() {
-        return results;
+    public ArrayList<ResultInfo> getResultsList() {
+        return resultsList;
     }
 
-    public void setResults(ArrayList<ResultInfo> results) {
-        this.results = results;
+    public void setResultsList(ArrayList<ResultInfo> results) {
+        this.resultsList = results;
     }
 }
