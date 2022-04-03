@@ -40,6 +40,10 @@ public class ExerciseWriteDB {
             }
 
             resultsList.add(new ResultInfo(correct, failed, notClicked));
+
+            Double times_completed = (Double) exerciseTwo.get("times_completed");
+            exerciseTwo.put("times_completed", times_completed + 1);
+
             exerciseTwo.put("resultsList", resultsList);
             exercisesList.set(exercise_id, exerciseTwo);
             exercise.put("exerciseInfoList", exercisesList);
