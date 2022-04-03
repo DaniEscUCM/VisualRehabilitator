@@ -189,6 +189,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
         databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
 
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
-        exerciseWriteDB.writeResultInDataBase(getApplicationContext(), patientHashMap, correct, failed, 0);
+        exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
     }
 }

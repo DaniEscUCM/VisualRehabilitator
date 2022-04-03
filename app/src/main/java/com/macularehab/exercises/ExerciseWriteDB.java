@@ -6,6 +6,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
+import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
@@ -28,7 +29,10 @@ public class ExerciseWriteDB {
         this.exercise_id = exercise_id;
     }
 
-    public void writeResultInDataBase(Context context, HashMap<String, Object> patientHashMap, int correct, int failed, int notClicked) {
+    public void writeResultInDataBase(Context context, int correct, int failed, int notClicked) {
+
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> patientHashMap = readIS.read(context, filenameCurrentUser);
 
         if (patientHashMap.containsKey("exercise")) {
             LinkedTreeMap<String, Object> exercise = (LinkedTreeMap<String, Object>) patientHashMap.get("exercise");
