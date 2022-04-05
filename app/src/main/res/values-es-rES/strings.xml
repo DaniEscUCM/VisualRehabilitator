@@ -105,8 +105,8 @@
     <string name="professional_patientForm_checkBox_1.4">Libros</string>
     <string name="professional_patientForm_checkBox_1.5">Periodicos</string>
     <string name="professional_patientForm_checkBox_1.6">Revistas</string>
-    <string name="professional_patientForm_checkBox_1.7">Teléfono Móvil</string>
-    <string name="professional_patientForm_checkBox_1.8">Recetas de Medicamentos</string>
+    <string name="professional_patientForm_checkBox_1.7">Teléfono móvil</string>
+    <string name="professional_patientForm_checkBox_1.8">Recetas de medicamentos</string>
     <string name="professional_patientForm_checkBox_2">Escribir</string>
     <string name="professional_patientForm_checkBox_3">Usa móbil, tableta, ordenador, otros</string>
     <string name="professional_patientForm_checkBox_4">Ver la pizarra en la escuela (niños)</string>
@@ -115,15 +115,15 @@
     <string name="professional_patientForm_checkBox_7">Ver televisión</string>
     <string name="professional_patientForm_checkBox_8">Movilizarse o  jugar en interiores</string>
     <string name="professional_patientForm_checkBox_9">Movilizarse o jugar en exteriores</string>
-    <string name="professional_patientForm_checkBox_10">Movilizarse de un lugar exteior a uno interior o viceversa</string>
+    <string name="professional_patientForm_checkBox_10">Movilizarse de un lugar exterior a uno interior o viceversa</string>
     <string name="professional_patientForm_checkBox_11">Manejo del dinero</string>
-    <string name="professional_patientForm_checkBox_12">Alimentacion</string>
+    <string name="professional_patientForm_checkBox_12">Alimentación</string>
     <string name="professional_patientForm_checkBox_13">Realizar actividades del hogar</string>
     <string name="professional_patientForm_checkBox_14">Ir de compras</string>
     <string name="professional_patientForm_checkBox_15">Comer</string>
     <string name="professional_patientForm_checkBox_16">Realizar actividades de aseo y cuidado personal</string>
     <string name="professional_patientForm_section_2">Conductas visuales</string>
-    <string name="professional_patientForm_checkBox_17">Realiza algún movimientos de cabeza para ver mejor</string>
+    <string name="professional_patientForm_checkBox_17">Realiza movimientos de cabeza para ver mejor</string>
     <string name="professional_patientForm_checkBox_18">Se acerca al material que quiere ver, por ejemplo a la televisión</string>
     <string name="professional_patientForm_checkBox_19">Prefiere algún tipo de iluminación específica</string>
     <string name="professional_patientForm_checkBox_20">Le molesta el sol o la luz</string>
@@ -132,7 +132,7 @@
     <string name="professional_patientForm_checkBox_22">Usa gafas de sol</string>
     <string name="professional_patientForm_checkBox_23">Las gafas le son útiles</string>
     <string name="professional_patientForm_section_4">Lectura</string>
-    <string name="professional_patientForm_checkBox_24">leía más antes de tener la pérdida de visión</string>
+    <string name="professional_patientForm_checkBox_24">Leía más antes de tener la pérdida de visión</string>
     <string name="professional_patientForm_checkBox_25">Le gustaría leer más de lo que lo hace actualmente</string>
 
     <string name="professional_patientForm_show_numeric_code">Código Numérico:</string>
