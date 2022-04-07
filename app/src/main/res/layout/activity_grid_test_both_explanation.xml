@@ -9,49 +9,52 @@
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
-        android:layout_height="466dp"
-        android:baselineAligned="false"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondTestBoth">
+        app:layout_constraintTop_toBottomOf="@+id/secondTestBoth"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton_play"
+        android:baselineAligned="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
             android:layout_weight="1">
 
             <TextView
                 android:id="@+id/distance_instruction"
-                android:layout_width="295dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/distance_30cm"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="213dp"
-                android:layout_height="194dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
                 android:contentDescription="@string/distance_30cm"
                 android:scaleX="-1"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/imageFilterView3"
                 app:layout_constraintEnd_toStartOf="@+id/imageFilterView3"
                 app:srcCompat="@drawable/perfil" />
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/imageFilterView3"
-                android:layout_width="207dp"
-                android:layout_height="177dp"
-                android:layout_marginEnd="25dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/pantalla" />
 
@@ -65,26 +68,29 @@
 
             <ImageView
                 android:id="@+id/coverLeftBothImage"
-                android:layout_width="349dp"
-                android:layout_height="330dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintDimensionRatio="1:1"
                 android:contentDescription="@string/both_eye"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textView17"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.158"
                 app:srcCompat="@drawable/non_cover" />
 
             <TextView
                 android:id="@+id/textView17"
-                android:layout_width="252dp"
-                android:layout_height="33dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/both_eye"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/coverLeftBothImage" />
 
@@ -98,54 +104,55 @@
 
             <TextView
                 android:id="@+id/textView15"
-                android:layout_width="338dp"
-                android:layout_height="95dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/short_explain_second"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageFilterView5" />
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/imageFilterView5"
-                android:layout_width="266dp"
-                android:layout_height="216dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/touch_instruction"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textView15"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.404"
                 app:srcCompat="@drawable/touch_sin_fondo" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <TextView
         android:id="@+id/secondTestBoth"
-        android:layout_width="620dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/second_test_both"
         android:textAlignment="viewStart"
         android:textSize="48sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_results"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton_play"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="162dp"
+        app:layout_constraintDimensionRatio="1:1"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/button_play"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
         app:srcCompat="@android:drawable/ic_media_play"
@@ -153,14 +160,25 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="72dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:srcCompat="?attr/actionModeCloseDrawable" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10 " />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15 " />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,14 +7,13 @@
     tools:context=".GridTestLeftActivity">
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="72dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageView
@@ -45,46 +44,41 @@
         android:id="@+id/nextButton"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/next_test"
         android:scaleType="fitCenter"
         android:src="@android:drawable/ic_media_ff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
         app:tint="#000000" />
 
     <ImageButton
         android:id="@+id/repeatButton"
         android:layout_width="118dp"
         android:layout_height="102dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="52dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/repeat_test"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
         app:srcCompat="@android:drawable/stat_notify_sync"
-        app:tint="#429A37" />
+        app:tint="#429A37"/>
 
     <TextView
         android:id="@+id/gridTittleBoth"
-        android:layout_width="585dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/second_test_left"
         android:textAlignment="viewStart"
         android:textSize="48sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_results"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/ManualLeftInstructions"
-        android:layout_width="300dp"
-        android:layout_height="228dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/explain_second"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -104,5 +98,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/red_dot" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10 " />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15 " />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9 " />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9 " />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

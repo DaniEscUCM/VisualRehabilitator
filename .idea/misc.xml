@@ -6,11 +6,14 @@
         <entry key="../../../../../../../../layout/custom_preview.xml" value="0.22864583333333333" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27666666666666667" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27666666666666667" />
-        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_calculate_focus.xml" value="0.14453125" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_calculate_focus.xml" value="0.1" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_exercises.xml" value="0.271875" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise.xml" value="0.215625" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise_description.xml" value="0.22" />
-        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_both.xml" value="0.14" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_both.xml" value="0.1" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_both_explanation.xml" value="0.15" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_left.xml" value="0.1" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_left_explanation.xml" value="0.1" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_identification.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_login.xml" value="0.14453125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_login_professional.xml" value="0.18125" />
@@ -161,7 +164,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.17" />
+        <option name="scale" value="0.1" />
       </ProjectState>
     </option>
   </component>
