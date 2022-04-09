@@ -6,14 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.macularehab.ExercisesActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.HashMap;
 
@@ -23,6 +29,8 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     private Button dataButton;
     private Button exercisesButton;
     private final String filenameCurrentPatient = "CurrentPatient.json";
+    private final String isFocus = "focusIsOn";
+    private boolean isOn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +44,7 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         goBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                saveInfo();
                 ProfessionalPatientHome.this.finish();
             }
         });
@@ -60,6 +69,18 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         logoutButton.setVisibility(View.INVISIBLE);
 
         //readPatientName();
+
+        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+
+        Switch focus_switch = findViewById(R.id.focus_switch);
+        focus_switch.setChecked((Boolean) map.get(isFocus));
+        isOn=(Boolean) map.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
+            isOn=!(Boolean)mapS.get(isFocus);
+        });
     }
 
     @Override
@@ -81,13 +102,31 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     }
 
     private void gotToDataActivity() {
-
+        saveInfo();
         Intent intent = new Intent(this, ProfessionalPatientInfo.class);
         startActivity(intent);
     }
 
     private void goToExercisesActivity() {
+        saveInfo();
         Intent intent = new Intent(this, ExercisesActivity.class);
         startActivity(intent);
+    }
+
+    private void saveInfo(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
+
+        mapS.put(isFocus, isOn);
+
+        Gson gson = new Gson();
+        String data = gson.toJson(mapS);
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
+        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
+                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
     }
 }

@@ -51,22 +51,6 @@
         app:srcCompat="@android:drawable/ic_media_play"
         app:tint="@color/black" />
 
-    <ImageButton
-        android:id="@+id/conf_first_exercise_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/grey"
-        android:clickable="true"
-        android:contentDescription="@string/imagebutton_des_settings"
-        android:focusable="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toStartOf="@+id/guideline24"
-        app:layout_constraintStart_toStartOf="@+id/guideline21"
-        app:layout_constraintTop_toTopOf="@+id/guideline22"
-        app:srcCompat="@android:drawable/ic_menu_manage"
-        app:tint="#000000" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
@@ -149,5 +133,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.91484374" />
+
+    <Switch
+        android:id="@+id/focus_switch"
+        android:layout_width="394dp"
+        android:layout_height="73dp"
+        android:text="@string/focus_switch"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toStartOf="@+id/guideline24"
+        app:layout_constraintTop_toTopOf="@+id/guideline22" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

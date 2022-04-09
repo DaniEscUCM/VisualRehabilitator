@@ -302,5 +302,6 @@
     <string name="tests_history">Tests History</string>
     <string name="new_test">New test</string>
     <string name="test">Test:</string>
+    <string name="focus_switch">Focus Switch</string>
 
 </resources>
