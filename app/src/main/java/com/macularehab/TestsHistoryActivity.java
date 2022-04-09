@@ -57,7 +57,9 @@ public class TestsHistoryActivity extends AppCompatActivity {
         recyclerView.setAdapter(testListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        updateTestsList(dates);
+        if (dates != null) {
+            updateTestsList(dates);
+        }
 
         //new test
         ImageButton new_test = findViewById(R.id.new_test);
