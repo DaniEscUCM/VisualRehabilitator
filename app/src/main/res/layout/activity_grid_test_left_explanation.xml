@@ -12,6 +12,7 @@
         android:layout_height="466dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondTestBoth"
         app:layout_constraintBottom_toTopOf="@+id/imageButton_play"
         android:baselineAligned="false">
