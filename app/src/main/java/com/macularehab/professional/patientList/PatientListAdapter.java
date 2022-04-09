@@ -25,7 +25,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
+import com.macularehab.exercises.Exercise;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
 import com.macularehab.professional.ProfessionalPatientHome;
@@ -84,8 +86,14 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         patient_dateLastTest = " " + patient_dateLastTest_aux[0].replaceAll("_", "/");
 
         Drawable progressDrawable = holder.card_patient_progress_bar.getProgressDrawable().mutate();
-        holder.card_patient_progress_bar.setProgress((position*25) + 25);
-        int progress = holder.card_patient_progress_bar.getProgress();
+
+        Exercise exercise = patientList.get(position).getExercise();
+        int exercises_completed = exercise.getExercises_completed();
+        int num_exercises = exercise.getNum_exercises();
+
+        int progress = exercises_completed*100/num_exercises;
+
+        holder.card_patient_progress_bar.setProgress(progress);
         if (progress <= 30) {
             progressDrawable.setColorFilter(Color.parseColor("#FFA500"), PorterDuff.Mode.SRC_IN);
         }
