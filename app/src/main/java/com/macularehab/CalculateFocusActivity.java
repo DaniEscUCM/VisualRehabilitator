@@ -155,8 +155,10 @@ public class CalculateFocusActivity extends AppCompatActivity {
     }
 
     private Pair<Float,Float> valid_coor(float x, float y){
-        Float x_about_centre = -(centre_x - x) / metric_unit;
-        Float y_about_centre = -(centre_y - y) / metric_unit;
+        Float x_about_centre = -((centre_x - x) / metric_unit);
+        Float y_about_centre = -((centre_y - y) / metric_unit);
+        if(x_about_centre<0) x_about_centre-=1;
+        if(y_about_centre<0) y_about_centre-=1;
         return new Pair<>(x_about_centre,y_about_centre);
     }
 

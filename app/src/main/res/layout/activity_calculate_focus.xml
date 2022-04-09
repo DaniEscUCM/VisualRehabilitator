@@ -34,10 +34,10 @@
         android:layout_width="545dp"
         android:layout_height="545dp"
         android:contentDescription="@string/circular_grid"
-        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tencmgrid" />
 
     <ImageView
@@ -46,10 +46,11 @@
         android:layout_height="545dp"
         android:contentDescription="@string/circular_grid"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculated_spot"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toTopOf="@+id/grid"
         app:srcCompat="@drawable/house_icon" />
 
     <ImageView
@@ -58,10 +59,12 @@
         android:layout_height="545dp"
         android:contentDescription="@string/circular_grid"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculated_spot"
+        app:layout_constraintBottom_toBottomOf="@+id/grid"
+        app:layout_constraintEnd_toEndOf="@+id/stain"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/grid"
+        app:layout_constraintTop_toTopOf="@+id/grid"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/non_cover" />
 
     <ImageButton
