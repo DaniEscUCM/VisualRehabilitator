@@ -16,6 +16,7 @@ import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.patient.Patient;
 import com.macularehab.patient.TestsListAdapter;
 import com.macularehab.professional.ProfessionalPatientHome;
+import com.macularehab.professional.ProfessionalPatientInfo;
 import com.macularehab.professional.patientList.PatientListAdapter;
 
 import java.util.ArrayList;
@@ -83,7 +84,11 @@ public class TestsHistoryActivity extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    public void finish(){
+        Intent i = new Intent( this, ProfessionalPatientInfo.class );
+        startActivity(i);
+    }
     public void updateTestsList(List<String> testList) {
         testListAdapter.setTestsListData(testList);
         testListAdapter.notifyDataSetChanged();
