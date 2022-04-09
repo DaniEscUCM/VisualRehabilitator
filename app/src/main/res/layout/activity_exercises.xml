@@ -36,7 +36,8 @@
         android:id="@+id/scrollView_Exercises"
         android:layout_width="1275dp"
         android:layout_height="1020dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="164dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -49,7 +50,6 @@
                 android:id="@+id/button_exercise1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="224dp"
                 android:clickable="true"
                 android:contentDescription="@string/first_exercise"
                 android:focusable="true"
