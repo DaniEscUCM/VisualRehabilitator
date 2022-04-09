@@ -78,7 +78,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         String patient_name = " ";
         patient_name += patientList.get(position).getName();
         String patient_lastName = " ";
-        patient_lastName += patientList.get(position).getName();
+        patient_lastName += patientList.get(position).getFirst_lastName();
         String patient_dateLastTest = " ";
         String[] patient_dateLastTest_aux = patientList.get(position).getDate_last_test().split(" ");
         patient_dateLastTest = " " + patient_dateLastTest_aux[0].replaceAll("_", "/");
@@ -104,7 +104,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         holder.card_patient_uid.setText(patient_uid);
         holder.card_patient_name.setText(patient_name);
         holder.card_patient_last_name.setText(patient_lastName);
-        holder.card_patient_last_name.setText(patient_dateLastTest);
+        holder.card_patient_dateLastTest.setText(patient_dateLastTest);
     }
 
     @Override
@@ -183,7 +183,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
             card_patient_uid = itemView.findViewById(R.id.professional_patient_info_card_view_patient_uid);
             card_patient_name = itemView.findViewById(R.id.professional_patient_info_card_view_patient_name);
             card_patient_last_name = itemView.findViewById(R.id.professional_patient_info_card_view_patient_last_name);
-            card_patient_last_name = itemView.findViewById(R.id.professional_patient_info_card_view_patient_dateLastTest);
+            card_patient_dateLastTest = itemView.findViewById(R.id.professional_patient_info_card_view_patient_dateLastTest);
             card_patient_progress_bar = itemView.findViewById(R.id.professional_patient_info_card_view_patient_progress_bar);
 
             this.patientListAdapter = patientListAdapter;
