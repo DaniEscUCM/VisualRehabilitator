@@ -51,6 +51,10 @@ public class ExerciseWriteDB {
             exerciseTwo.put("resultsList", resultsList);
             exercisesList.set(exercise_id, exerciseTwo);
             exercise.put("exerciseInfoList", exercisesList);
+
+            Integer exercises_completed = (Integer) exercise.get("exercises_completed");
+            exercise.put("exercises_completed", exercises_completed + 1);
+
             patientHashMap.put("exercise", exercise);
         }
 
