@@ -38,12 +38,12 @@
                 android:id="@+id/imageView"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="1:1"
                 android:contentDescription="@string/distance_30cm"
                 android:scaleX="-1"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/imageFilterView3"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/imageFilterView3"
+                app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/perfil" />
 
             <androidx.constraintlayout.utils.widget.ImageFilterView

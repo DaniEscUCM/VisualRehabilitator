@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FirstExerciseDescriptionActivity extends AppCompatActivity {
 
+    private final String filenameCurrentUser = "CurrentPatient.json";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
