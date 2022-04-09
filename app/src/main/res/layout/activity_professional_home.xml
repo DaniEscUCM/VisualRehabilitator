@@ -62,25 +62,24 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@+id/guideline_mid"
         app:layout_constraintTop_toBottomOf="@+id/professional_home_logout_button">
 
         <Button
             android:id="@+id/professional_home_create_new_patient_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="Crear Paciente"
             android:backgroundTint="@color/blue"
+            android:padding="20dp"
+            android:text="@string/professional_home_create_patient_button"
             android:textSize="34sp" />
     </LinearLayout>
 
@@ -100,19 +99,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.05" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.95" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_mid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6"/>
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
