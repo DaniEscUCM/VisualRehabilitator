@@ -1,7 +1,10 @@
 package com.macularehab.professional;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,9 +17,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
 import com.macularehab.TestsHistoryActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.patientForm.ProfessionalPatientEditInfo;
 
 import java.util.ArrayList;
@@ -43,11 +50,19 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
 
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_professional_patient_info);
+
+        firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        databaseReference = firebaseDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         textView_nameTitle = findViewById(R.id.textView_patientInfo_nameTitle);
 
@@ -80,11 +95,19 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
             }
         });
 
-        Button tests =findViewById(R.id.button_tests);
+        Button tests = findViewById(R.id.button_tests);
         tests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToTests();
+            }
+        });
+
+        Button deletePatientButton = findViewById(R.id.professional_patient_info_deletePatient_button);
+        deletePatientButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deletePatient();
             }
         });
 
@@ -176,5 +199,54 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
     private  void goToTests(){
         Intent intent = new Intent(this, TestsHistoryActivity.class);
         startActivity(intent);
+    }
+
+    private void deletePatient() {
+
+        confirmDeletePatient();
+    }
+
+    private void confirmDeletePatient() {
+
+        Resources resources = this.getResources();
+        String confirm = resources.getString(R.string.professional_patientInfo_confirmDeletePatient);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(confirm)
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        deletePatientFromDataBase();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void deletePatientFromDataBase() {
+
+        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+        HashMap<String, Object> map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+
+        String patientCode = String.valueOf(map.get("patient_numeric_code"));
+        String patientUid = "";
+        if (map.containsKey("patient_uid")) {
+            patientUid = String.valueOf(map.get("patient_uid"));
+        }
+
+        databaseReference.child("Professional").child(mAuth.getUid()).child("Patients").child(patientCode).removeValue();
+        databaseReference.child("PatientsNumericCodes").child(patientCode).removeValue();
+        databaseReference.child("Patient").child(patientCode).removeValue();
+        databaseReference.child("Patient").child(patientUid).removeValue();
+
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, "");
+
+        this.finish();
     }
 }

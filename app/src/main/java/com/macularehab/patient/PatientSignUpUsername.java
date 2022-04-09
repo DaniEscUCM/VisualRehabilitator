@@ -234,6 +234,8 @@ public class PatientSignUpUsername extends AppCompatActivity {
                 .child("Patients").child(password).child("hasAccount").setValue(true);
         databaseReference.child("Professional").child(professionalUID)
                 .child("Patients").child(password).child("patient_username").setValue(username);
+        databaseReference.child("Professional").child(professionalUID)
+                .child("Patients").child(password).child("patient_uid").setValue(mAuth.getUid());
 
         startPatientHomeActivity();
     }

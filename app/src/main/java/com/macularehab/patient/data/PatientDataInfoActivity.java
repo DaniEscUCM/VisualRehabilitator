@@ -72,8 +72,10 @@ public class PatientDataInfoActivity extends AppCompatActivity {
             }
         });
 
-        Button editPatientButton = findViewById(R.id.professional_patient_info_editInfo_button);
-        editPatientButton.setVisibility(View.INVISIBLE);
+        LinearLayout editAndDeleteLinearLayot = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
+        editAndDeleteLinearLayot.setVisibility(View.INVISIBLE);
+        //Button editPatientButton = findViewById(R.id.professional_patient_info_editInfo_button);
+        //editPatientButton.setVisibility(View.INVISIBLE);
 
         fillFields();
     }

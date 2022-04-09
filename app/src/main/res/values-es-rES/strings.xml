@@ -152,8 +152,14 @@
     <string name="professional_patientInfo_av">AV</string>
     <string name="professional_patientInfo_cv">CV</string>
     <string name="professional_patientInfo_observations">Observaciones</string>
+
+    <string name="professional_patientInfo_lastTest">Último Test</string>
+    <string name="professional_patientInfo_exercises">Ejercicios</string>
+    <string name="professional_patientInfo_exercisesProgress">Progreso Ejercicios</string>
+    <string name="professional_patientInfo_confirmDeletePatient">¿Seguro que quieres eliminar este paciente?</string>
     <!-- Botones -->
-    <string name="professional_patientInfo_editPatient_button">Editar Paciente</string>
+    <string name="professional_patientInfo_editPatient_button">Editar\nPaciente</string>
+    <string name="professional_patientInfo_deletePatient_button">Eliminar\nPatient</string>
     <string name="professional_patientInfo_seeTestHistory_button">Historial de Tests</string>
     <string name="professional_patientInfo_exercisesHistory_button">Historial de Ejercicios</string>
 

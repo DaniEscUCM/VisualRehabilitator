@@ -816,12 +816,32 @@
             android:background="@drawable/border_for_layout"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/professional_patient_info_editInfo_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/professional_patientInfo_editPatient_button"
-                android:textSize="30sp" />
+            <LinearLayout
+                android:id="@+id/professional_patient_info_editAndDelete_linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/professional_patient_info_editInfo_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/professional_patientInfo_editPatient_button"
+                    android:textSize="30sp" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/professional_patient_info_deletePatient_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/professional_patientInfo_deletePatient_button"
+                    android:textSize="30sp" />
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
@@ -831,7 +851,7 @@
                 android:id="@+id/textView80"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Último Test:"
+                android:text="@string/professional_patientInfo_lastTest"
                 android:textSize="34sp" />
 
             <TextView
@@ -839,6 +859,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="99-99-99"
+                android:textColor="@color/black"
                 android:textSize="40sp" />
 
             <Space
@@ -860,7 +881,7 @@
                 android:id="@+id/textView82"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ejercicios"
+                android:text="@string/professional_patientInfo_exercises"
                 android:textSize="34sp" />
 
             <Space
@@ -871,7 +892,7 @@
                 android:id="@+id/textView83"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Progreso Ejercicios:"
+                android:text="@string/professional_patientInfo_exercisesProgress"
                 android:textSize="34sp" />
 
             <Space
@@ -880,10 +901,11 @@
 
             <ProgressBar
                 android:id="@+id/progressBar3"
-                style="?android:attr/progressBarStyleHorizontal"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:progress="35" />
+                android:layout_height="40dp"
+                android:progress="35"
+                android:scaleY="5" />
 
             <Space
                 android:layout_width="match_parent"

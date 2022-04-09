@@ -147,8 +147,14 @@
     <string name="professional_patientInfo_av">VA</string>
     <string name="professional_patientInfo_cv">VF</string>
     <string name="professional_patientInfo_observations">Observations</string>
+
+    <string name="professional_patientInfo_lastTest">Last Test</string>
+    <string name="professional_patientInfo_exercises">Exercises</string>
+    <string name="professional_patientInfo_exercisesProgress">Exercises Progress</string>
+    <string name="professional_patientInfo_confirmDeletePatient">Are you sure you want to delete this patient?</string>
         <!-- Buttons -->
-    <string name="professional_patientInfo_editPatient_button">Edit Patient</string>
+    <string name="professional_patientInfo_editPatient_button">Edit\nPatient</string>
+    <string name="professional_patientInfo_deletePatient_button">Delete\nPatient</string>
     <string name="professional_patientInfo_seeTestHistory_button">Patient\'s Test History</string>
     <string name="professional_patientInfo_exercisesHistory_button">Exercises History</string>
         <!-- End Buttons -->
