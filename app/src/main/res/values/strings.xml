@@ -260,13 +260,13 @@
     <string name="short_explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas.</string>
     <string name="resume_stain">Resume Stain</string>
     <string name="skip">Skip</string>
-    <string name="tests_results">Tests Results</string>
+    <string name="tests_results">Tests Results:</string>
     <string name="calculated_focus">Calculated Focus</string>
     <string name="view_resume">View Resume</string>
     <string name="finish">Finish</string>
     <string name="show_tests">Tests info</string>
     <string name="tests_history">Tests History</string>
     <string name="new_test">New test</string>
-    <string name="test">Test: </string>
+    <string name="test">Test:</string>
 
 </resources>

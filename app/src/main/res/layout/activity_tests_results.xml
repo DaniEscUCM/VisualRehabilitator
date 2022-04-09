@@ -8,27 +8,25 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="72dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:srcCompat="?attr/actionModeCloseDrawable"  />
 
     <TextView
         android:id="@+id/calculated_spot"
-        android:layout_width="658dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:text="@string/tests_results"
         android:textAlignment="viewStart"
         android:textSize="48sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_results"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -440,13 +438,27 @@
 
     <Button
         android:id="@+id/next_view"
-        android:layout_width="188dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/view_resume"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10 " />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15 " />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

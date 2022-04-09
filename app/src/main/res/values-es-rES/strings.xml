@@ -262,13 +262,13 @@
     <string name="short_explain_second">Tocar donde las líneas estén onduladas, borrosas, distorsionadas, zonas que faltan o se vean sombreadas.</string>
     <string name="resume_stain">Resumen de Mancha</string>
     <string name="skip">Skip</string>
-    <string name="tests_results">Resultados de las pruebas</string>
+    <string name="tests_results">Resultados de las pruebas:</string>
     <string name="calculated_focus">Foco calculado</string>
     <string name="view_resume">Ver Resumen</string>
     <string name="finish">Finalizar</string>
     <string name="show_tests">Historial de tests</string>
     <string name="tests_history">Historial de Pruebas</string>
     <string name="new_test">Nueva prueba</string>
-    <string name="test">Prueba: </string>
+    <string name="test">Prueba:</string>
 
 </resources>
