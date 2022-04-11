@@ -6,11 +6,14 @@
         <entry key="../../../../../../../../layout/custom_preview.xml" value="0.22864583333333333" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27666666666666667" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27666666666666667" />
-        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_exercises.xml" value="0.16" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_calculate_focus.xml" value="0.18125" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_eighth_exercise.xml" value="0.16" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_exercises.xml" value="0.18" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_fifth_exercise.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_fifth_exercise_description.xml" value="0.18125" />
-        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise.xml" value="0.215625" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise.xml" value="0.15" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise_description.xml" value="0.22" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_fourth_exercise.xml" value="0.16" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_both.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_both_explanation.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_grid_test_left.xml" value="0.18125" />
@@ -25,6 +28,7 @@
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_map_test_both_explanation.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_map_test_left.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_map_test_right.xml" value="0.18125" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_ninth_exercise.xml" value="0.14" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_patient_home.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_patient_login.xml" value="0.16" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_patient_login_choose.xml" value="0.18125" />
@@ -39,9 +43,12 @@
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_professional_page.xml" value="0.190625" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_professional_patient_info.xml" value="0.13802083333333334" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_professional_singing.xml" value="0.18" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_second_exercise.xml" value="0.14" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_second_exercise_description.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_settings.xml" value="0.25" />
-        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_third_exercise.xml" value="0.18125" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_seventh_exercise.xml" value="0.16" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_sixth_exercise.xml" value="0.14" />
+        <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_third_exercise.xml" value="0.14" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/activity_third_exercise_description.xml" value="0.18125" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/fragment_second.xml" value="0.33" />
         <entry key="..\:/Descargas/GitHub/VisualRehabilitator/app/src/main/res/layout/pruena.xml" value="0.18125" />
