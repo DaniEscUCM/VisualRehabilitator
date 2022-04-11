@@ -68,10 +68,11 @@
         android:id="@+id/gridTittleBoth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:text="@string/second_test_both"
         android:textAlignment="viewStart"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintBottom_toTopOf="@+id/dotsPainting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
