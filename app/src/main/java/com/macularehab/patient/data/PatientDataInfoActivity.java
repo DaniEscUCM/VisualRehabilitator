@@ -89,7 +89,14 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         setInvisibleButtons();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setInvisibleButtons();
+    }
+
     private void setInvisibleButtons() {
+
         LinearLayout editAndDeleteLinearLayot = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
         editAndDeleteLinearLayot.setVisibility(View.INVISIBLE);
     }
