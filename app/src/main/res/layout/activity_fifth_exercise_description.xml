@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/first_exercise_description"
+    android:id="@+id/fifth_exercise_description"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
@@ -11,7 +11,7 @@
     <ImageButton
         android:id="@+id/imageButton_back_exerc"
         android:layout_width="100dp"
-        android:layout_height="101dp"
+        android:layout_height="100dp"
         android:layout_marginStart="64dp"
         android:backgroundTint="@color/grey"
         android:clickable="true"
@@ -24,7 +24,7 @@
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
-        android:id="@+id/textViewExerciseDescription"
+        android:id="@+id/exerciseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
@@ -36,8 +36,8 @@
 
     <ImageButton
         android:id="@+id/button_play_ex"
-        android:layout_width="147dp"
-        android:layout_height="151dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="48dp"
         android:backgroundTint="@color/grey"
         android:clickable="true"
@@ -60,23 +60,54 @@
         android:contentDescription="@string/imagebutton_des_settings"
         android:focusable="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewExerciseDescription"
+        app:layout_constraintBottom_toBottomOf="@+id/exerciseTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewExerciseDescription"
+        app:layout_constraintTop_toTopOf="@+id/exerciseTitle"
         app:srcCompat="@android:drawable/ic_menu_manage"
-        app:tint="#000000" />
+        app:tint="@color/black" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="887dp"
-        android:layout_height="332dp"
-        android:layout_marginTop="128dp"
+        android:id="@+id/descriptionExercise"
+        android:layout_width="910dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/fifth_exercise_description"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseTitle" />
+
+    <EditText
+        android:id="@+id/seconds"
+        android:layout_width="170dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="@strings/seconds"
+        android:background="@drawable/border_seconds"
+        android:hint="@string/seconds"
+        android:inputType="number"
+        android:text="@string/num_seconds"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView_insertseconds"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionExercise"
+        tools:textSize="48sp" />
+
+    <TextView
+        android:id="@+id/textView_insertseconds"
+        android:layout_width="776dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:singleLine="true"
+        android:text="@string/seconds_description_letter"
+        android:textAlignment="textEnd"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExerciseDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionExercise" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

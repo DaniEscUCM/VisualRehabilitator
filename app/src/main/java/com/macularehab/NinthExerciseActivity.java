@@ -1,5 +1,6 @@
 package com.macularehab;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -25,37 +27,35 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public class SeventhExerciseActivity extends AppCompatActivity {
+public class NinthExerciseActivity extends AppCompatActivity {
 
-    private final int exercise_id = 6, total = 22, num_shapes = 4;
+    private final int exercise_id = 8, total = 22, num_shapes = 5;
     private int counter, counterCorrect, counterFailed, num_miliseconds, previous_1,previous_2;
-    private boolean circle_1, circle_2;
+    private boolean letter_M_1, letter_M_2;
     private CountDownTimer timer_1 = null, timer_2 = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seventh_exercise);
+        setContentView(R.layout.activity_ninth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         String filenameCurrentUser = "CurrentPatient.json";
         ReadInternalStorage readIS = new ReadInternalStorage();
         HashMap<String, Object> patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
         counterCorrect = counterFailed = 0;
         counter = previous_1 = previous_2 = -1;
-        circle_1 =  circle_2 = false;
-        num_miliseconds = SeventhExerciseDescriptionActivity.getNumSeconds() * 1000;
+        letter_M_1 =  letter_M_2 = false;
+        num_miliseconds = NinthExerciseDescriptionActivity.getNumSeconds() * 1000;
         boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
-        ImageButton button_1 = findViewById(R.id.button_1);
-        ImageButton button_2 = findViewById(R.id.button_2);
+
+        Button button_1 = findViewById(R.id.button_1);
+        Button button_2 = findViewById(R.id.button_2);
         button_1.setVisibility(View.INVISIBLE);
         button_2.setVisibility(View.INVISIBLE);
+
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit*20;//10cm
-        button_1.getLayoutParams().width = metric_unit*3;//1.5cm diametro de las figuras
-        button_1.getLayoutParams().height = metric_unit*3;
-        button_2.getLayoutParams().width = metric_unit*3;
-        button_2.getLayoutParams().height = metric_unit*3;
 
         ImageView focus_1 = findViewById(R.id.focus_1);
         ImageView focus_2 = findViewById(R.id.focus_2);
@@ -80,7 +80,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
             focus_2.requestLayout();
             Bitmap btm_manual_left_2 = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
             Canvas canvas_2 = new Canvas(btm_manual_left_2);
-            DrawDot all_dots_2 = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
+            DrawDot all_dots_2 = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.BLUE);
             all_dots_2.draw(canvas_2);
             focus_2.setImageBitmap(btm_manual_left);
 
@@ -96,22 +96,23 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (circle_1) {
+                if (letter_M_1) {
                     ++counterCorrect;
                 } else {
-                    ++counterFailed;
+                    ++counterFailed; //they clicked when they shouldn't have
                 }
                 cancelTimer_1();
                 move_button_1();
             }
         });
+
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (circle_2) {
+                if (letter_M_2) {
                     ++counterCorrect;
                 } else {
-                    ++counterFailed;
+                    ++counterFailed; //they clicked when they shouldn't have
                 }
                 cancelTimer_2();
                 move_button_2();
@@ -135,7 +136,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         });
     }
 
-    private void startTimerFoco(ImageButton button_1, ImageButton button_2) {
+    private void startTimerFoco(Button button_1, Button button_2) {
         timer_1 = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
@@ -152,7 +153,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         timer_1 = new CountDownTimer(num_miliseconds, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
-                if(circle_1) {++counterFailed;} //they didn't touch when they should have.
+                if(letter_M_1) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
                 move_button_1();
             }
@@ -164,7 +165,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         timer_2 = new CountDownTimer(num_miliseconds, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
-                if(circle_2) {++counterFailed;} //they didn't touch when they should have.
+                if(letter_M_2) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
                 move_button_2();
             }
@@ -202,24 +203,23 @@ public class SeventhExerciseActivity extends AppCompatActivity {
             previous_1 = rand1;
             System.out.println("previous_1: " + previous_1 + ". rand1: " + rand1);
 
-            ImageButton button_1 = findViewById(R.id.button_1);
+            Button button_1 = findViewById(R.id.button_1);
             startTimer();
             if(previous_1 == 0) {
-                button_1.setImageResource(R.drawable.circle_line);
-                circle_1 = true;
-                System.out.println("counter: " + counter + ". circulo1");
+                button_1.setText("T");
+                letter_M_1 = false;
             } else if (previous_1 == 1) {
-                button_1.setImageResource(R.drawable.triangle_line);
-                circle_1 = false;
-                System.out.println("counter: " + counter + ". triang1");
-            } else if (previous_1 == 2) {
-                button_1.setImageResource(R.drawable.semi_square_line);
-                circle_1 = false;
-                System.out.println("counter: " + counter + ". semi_square_line1");
-            } else{
-                button_1.setImageResource(R.drawable.star_line);
-                circle_1 = false;
-                System.out.println("counter: " + counter + ". estrella1");
+                button_1.setText("M");
+                letter_M_1 = true;
+            } else if(previous_1 == 2){
+                button_1.setText("E");
+                letter_M_1 = false;
+            } else if(previous_1 == 3){
+                button_1.setText("L");
+                letter_M_1 = false;
+            } else {
+                button_1.setText("A");
+                letter_M_1 = false;
             }
         }
     }
@@ -241,25 +241,23 @@ public class SeventhExerciseActivity extends AppCompatActivity {
             previous_2 = rand2;
             System.out.println("previous_2: " + previous_2);
 
-            ImageButton button_2 = findViewById(R.id.button_2);
+            Button button_2 = findViewById(R.id.button_2);
             startTimer_button2();
-
-            if (previous_2 == 0) {
-                button_2.setImageResource(R.drawable.circle_line);
-                circle_2 = true;
-                System.out.println("counter: " + counter + ". circulo2");
-            } else if (previous_2 == 1) {
-                button_2.setImageResource(R.drawable.triangle_line);
-                circle_2 = false;
-                System.out.println("counter: " + counter + ". triang2");
-            } else if (previous_2 == 2) {
-                button_2.setImageResource(R.drawable.semi_square_line);
-                circle_2 = false;
-                System.out.println("counter: " + counter + ". semi_square_line2");
+            if(previous_1 == 0) {
+                button_2.setText("T");
+                letter_M_2 = false;
+            } else if (previous_1 == 1) {
+                button_2.setText("M");
+                letter_M_2 = true;
+            } else if(previous_1 == 2){
+                button_2.setText("E");
+                letter_M_2 = false;
+            } else if(previous_1 == 3){
+                button_2.setText("L");
+                letter_M_2 = false;
             } else {
-                button_2.setImageResource(R.drawable.star_line);
-                circle_2 = false;
-                System.out.println("counter: " + counter + ". estrella2");
+                button_2.setText("A");
+                letter_M_2 = false;
             }
         }
     }

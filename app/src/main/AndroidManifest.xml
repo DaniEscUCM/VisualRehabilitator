@@ -181,6 +181,18 @@
             android:name=".SeventhExerciseDescriptionActivity"
             android:exported="false" />
         <activity
+            android:name=".EighthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EighthExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NinthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NinthExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ExercisesActivity"
             android:exported="false" />
         <activity

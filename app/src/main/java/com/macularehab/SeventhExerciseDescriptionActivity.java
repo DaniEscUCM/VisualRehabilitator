@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class SeventhExerciseDescriptionActivity extends AppCompatActivity {
-
+    private static int num_seconds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,20 +52,18 @@ public class SeventhExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void play_exercise(View v) {
-        //
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
-        int num_seconds = 10;
-        if (se.equals("")) {
-            System.out.println("Hola, quieres estos segundos: " + se);
-
-        } else {
+        num_seconds = 10;
+        if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
-            System.out.println("Hola, quieres estos segundos: " + se + "en int: " + num_seconds);
         }
-
-        Intent i = new Intent( this, SecondExerciseActivity.class );
+        Intent i = new Intent( this, SeventhExerciseActivity.class );
         startActivity(i);
+    }
+
+    public static int getNumSeconds(){
+        return num_seconds;
     }
 
     public void Close(View view){

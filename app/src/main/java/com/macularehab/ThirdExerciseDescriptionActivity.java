@@ -19,7 +19,7 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_third_exercise_description);
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc3);
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,7 +27,7 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex3);
+        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex);
         button_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +35,7 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_settings = (ImageButton) findViewById(R.id.conf_third_exercise_button);
+        ImageButton button_settings = (ImageButton) findViewById(R.id.conf_exercise_button);
         button_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

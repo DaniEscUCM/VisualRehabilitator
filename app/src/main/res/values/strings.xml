@@ -177,7 +177,8 @@
     <string name="textview_settings">Settings</string>
     <string name="textview_exercises">Exercises</string>
     <string name="foco">Focus</string>
-    <string name="seconds_description">Insert the seconds you want for each figure</string>
+    <string name="seconds_description_shape">Insert the seconds you want for each figure:</string>
+    <string name="seconds_description_letter">Insert the seconds you want for each letter:</string>
     <string name="seconds">seconds</string>
     <string name="num_seconds">10</string>
     <string name="textview_name">Name</string>
@@ -203,16 +204,16 @@
     <string name="fifteenth_exercise">Exercise 15</string>
     <string name="sixteenth_exercise">Exercise 16</string>
     <string name="button_play">Play</string>
-    <string name="first_exercise_description">Find the focus point (the red dot) then click on the shape. \n The focus point will always appear first, after a few seconds the shape will appear. \n In other exercises the focus point will help you find the shape./text</string>
+    <string name="first_exercise_description">Find the red dot (the focus point) then click on the shape. \n The focus point will always appear first, after a few seconds the shape will appear. \n In other exercises the focus point will help you find the shape./text</string>
     <string name="first_exercise_congrats">Congrats! You finished the demo!</string>
-    <string name="second_exercise_description">Find the focus (the red dot) and look at it. After 5 seconds, a series of shapes will appear. Touch the triangle.</string>
-    <string name="third_exercise_description">Find the focus (the red dot) and look at it. After 5 seconds, a series of shapes will appear, this time smaller and unfilled. Touch the triangle.</string>
-    <string name="fourth_exercise_description">Find the focus (the red dot) and look at it. After 5 seconds, a series of letters will appear. Touch the E.</string>
-    <string name="fifth_exercise_description">Find the focus (the red dot) and look at it. After 5 seconds, a series of letters will appear, they are smaller than before. Touch the E.</string>
-    <string name="sixth_exercise_description">The description of the sixth exercise will be displayed here</string>
-    <string name="seventh_exercise_description">Here would be the description of the seventh exercise</string>
-    <string name="eighth_exercise_description">Here would be the description of the eighth exercise</string>
-    <string name="ninth_exercise_description">Here would be the description of the ninth exercise</string>
+    <string name="second_exercise_description">Find the red dot and look at it. After 5 seconds, a series of shapes will appear. Touch the triangles.</string>
+    <string name="third_exercise_description">Find the red dot and look at it. After 5 seconds, a series of shapes will appear, this time smaller and unfilled. Touch the triangles.</string>
+    <string name="fourth_exercise_description">Find the red dot and look at it. After 5 seconds, a series of letters will appear. Touch the E.</string>
+    <string name="fifth_exercise_description">Find the red dot and look at it. After 5 seconds, a series of letters will appear, they are smaller than before. Touch the E.</string>
+    <string name="sixth_exercise_description">Find the the red dot and look at it. After 5 seconds, two shapes will appear. Touch the circles.</string>
+    <string name="seventh_exercise_description">Find the the red dot and look at it. After 5 seconds, two shapes will appear, this time smaller and unfilled. Touch the circles.</string>
+    <string name="eighth_exercise_description">Find the the red dot and look at it. After 5 seconds, two letters will appear. Touch the M.</string>
+    <string name="ninth_exercise_description">Find the the red dot and look at it. After 5 seconds, two letters will appear, they are smaller than before. Touch the M.</string>
     <string name="tenth_exercise_description">Here would be the description of the exercise</string>
     <string name="eleventh_exercise_description">Here would be the description of the exercise</string>
     <string name="twelfth_exercise_description">Here would be the description of the exercise</string>
@@ -224,15 +225,9 @@
     <string name="circle_for_click">Circle</string>
     <string name="triangle_for_click">Triangle</string>
     <string name="star_for_click">Star</string>
-    <string name="letter_A">A</string>
-    <string name="letter_E">E</string>
-    <string name="letter_M">M</string>
-    <string name="letter_T">T</string>
-    <string name="letter_F">F</string>
-    <string name="letter_L">L</string>
+    <string name="letter">A</string>
+    <string name="button_for_click">What you need to find</string>
 
-
-    <string name="button_for_click">Find button</string>
     <string name="toast_user_created">User created</string>
     <string name="toast_fill_fields">Please fill all the fields</string>
     <string name="textview_loginPatient">Patient</string>
