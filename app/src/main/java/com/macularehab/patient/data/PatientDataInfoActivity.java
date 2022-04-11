@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.macularehab.R;
-import com.macularehab.TestsHistoryActivity;
+import com.macularehab.professional.ProfessionalTestsHistoryActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 
 import java.util.ArrayList;
@@ -169,7 +169,7 @@ public class PatientDataInfoActivity extends AppCompatActivity {
     }
 
     private  void goToTests(){
-        Intent intent = new Intent(this, TestsHistoryActivity.class);
+        Intent intent = new Intent(this, PatientTestHistoryActivity.class);
         startActivity(intent);
     }
 }

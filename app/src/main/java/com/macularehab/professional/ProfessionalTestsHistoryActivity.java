@@ -1,4 +1,4 @@
-package com.macularehab;
+package com.macularehab.professional;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,18 +12,16 @@ import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import com.google.gson.internal.LinkedTreeMap;
+import com.macularehab.ManualInputStainLeftActivity;
+import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
-import com.macularehab.patient.Patient;
 import com.macularehab.patient.TestsListAdapter;
-import com.macularehab.professional.ProfessionalPatientHome;
-import com.macularehab.professional.ProfessionalPatientInfo;
-import com.macularehab.professional.patientList.PatientListAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class TestsHistoryActivity extends AppCompatActivity {
+public class ProfessionalTestsHistoryActivity extends AppCompatActivity {
 
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
@@ -37,7 +35,7 @@ public class TestsHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tests_history);
+        setContentView(R.layout.activity_professional_tests_history);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();

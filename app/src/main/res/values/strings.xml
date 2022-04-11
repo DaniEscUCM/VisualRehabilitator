@@ -177,20 +177,20 @@
     <string name="professional_patientInfo_exercises">Exercises</string>
     <string name="professional_patientInfo_exercisesProgress">Exercises Progress</string>
     <string name="professional_patientInfo_confirmDeletePatient">Are you sure you want to delete this patient?</string>
-        <!-- Buttons -->
+    <!-- Buttons -->
     <string name="professional_patientInfo_editPatient_button">Edit\nPatient</string>
     <string name="professional_patientInfo_deletePatient_button">Delete\nPatient</string>
     <string name="professional_patientInfo_seeTestHistory_button">Patient\'s Test History</string>
     <string name="professional_patientInfo_exercisesHistory_button">Exercises History</string>
-        <!-- End Buttons -->
+    <!-- End Buttons -->
 
-        <!-- Section Professional - Patient Info - CardsView -->
+    <!-- Section Professional - Patient Info - CardsView -->
     <string name="professional_patientInfo_cardView_text_patient">Patient:</string>
     <string name="professional_patientInfo_cardView_text_name">Name:</string>
     <string name="professional_patientInfo_cardView_text_lastName">Last Name:</string>
     <string name="professional_patientInfo_cardView_text_dateLastText">Date of last test:</string>
     <string name="professional_patientInfo_cardView_text_progress">Progress:</string>
-        <!-- End Section Professional - Patient Info - CardsView -->
+    <!-- End Section Professional - Patient Info - CardsView -->
 
     <!-- Fin Apartado Professional - Patient Info .-->
     <!-- Fin Apartado Professional .-->
