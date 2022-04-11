@@ -105,8 +105,8 @@
     <string name="professional_patientForm_checkBox_1.4">Libros</string>
     <string name="professional_patientForm_checkBox_1.5">Periodicos</string>
     <string name="professional_patientForm_checkBox_1.6">Revistas</string>
-    <string name="professional_patientForm_checkBox_1.7">Teléfono Móvil</string>
-    <string name="professional_patientForm_checkBox_1.8">Recetas de Medicamentos</string>
+    <string name="professional_patientForm_checkBox_1.7">Teléfono móvil</string>
+    <string name="professional_patientForm_checkBox_1.8">Recetas de medicamentos</string>
     <string name="professional_patientForm_checkBox_2">Escribir</string>
     <string name="professional_patientForm_checkBox_3">Usa móbil, tableta, ordenador, otros</string>
     <string name="professional_patientForm_checkBox_4">Ver la pizarra en la escuela (niños)</string>
@@ -115,15 +115,15 @@
     <string name="professional_patientForm_checkBox_7">Ver televisión</string>
     <string name="professional_patientForm_checkBox_8">Movilizarse o  jugar en interiores</string>
     <string name="professional_patientForm_checkBox_9">Movilizarse o jugar en exteriores</string>
-    <string name="professional_patientForm_checkBox_10">Movilizarse de un lugar exteior a uno interior o viceversa</string>
+    <string name="professional_patientForm_checkBox_10">Movilizarse de un lugar exterior a uno interior o viceversa</string>
     <string name="professional_patientForm_checkBox_11">Manejo del dinero</string>
-    <string name="professional_patientForm_checkBox_12">Alimentacion</string>
+    <string name="professional_patientForm_checkBox_12">Alimentación</string>
     <string name="professional_patientForm_checkBox_13">Realizar actividades del hogar</string>
     <string name="professional_patientForm_checkBox_14">Ir de compras</string>
     <string name="professional_patientForm_checkBox_15">Comer</string>
     <string name="professional_patientForm_checkBox_16">Realizar actividades de aseo y cuidado personal</string>
     <string name="professional_patientForm_section_2">Conductas visuales</string>
-    <string name="professional_patientForm_checkBox_17">Realiza algún movimientos de cabeza para ver mejor</string>
+    <string name="professional_patientForm_checkBox_17">Realiza movimientos de cabeza para ver mejor</string>
     <string name="professional_patientForm_checkBox_18">Se acerca al material que quiere ver, por ejemplo a la televisión</string>
     <string name="professional_patientForm_checkBox_19">Prefiere algún tipo de iluminación específica</string>
     <string name="professional_patientForm_checkBox_20">Le molesta el sol o la luz</string>
@@ -132,7 +132,7 @@
     <string name="professional_patientForm_checkBox_22">Usa gafas de sol</string>
     <string name="professional_patientForm_checkBox_23">Las gafas le son útiles</string>
     <string name="professional_patientForm_section_4">Lectura</string>
-    <string name="professional_patientForm_checkBox_24">leía más antes de tener la pérdida de visión</string>
+    <string name="professional_patientForm_checkBox_24">Leía más antes de tener la pérdida de visión</string>
     <string name="professional_patientForm_checkBox_25">Le gustaría leer más de lo que lo hace actualmente</string>
 
     <string name="professional_patientForm_show_numeric_code">Código Numérico:</string>
@@ -181,7 +181,8 @@
     <string name="textview_settings">Ajustes</string>
     <string name="textview_exercises">Ejercicios</string>
     <string name="foco">Foco</string>
-    <string name="seconds_description">Inserta los segundos que quieras para cada figura</string>
+    <string name="seconds_description_shape">Inserta los segundos que quieras para cada figura:</string>
+    <string name="seconds_description_letter">Inserta los segundos que quieras para cada letra:</string>
     <string name="seconds">segundos</string>
     <string name="num_seconds">10</string>
     <string name="textview_name">Nombre</string>
@@ -207,16 +208,16 @@
     <string name="fifteenth_exercise">Ejercicio 15</string>
     <string name="sixteenth_exercise">Ejercicio 16</string>
     <string name="button_play">Empezar</string>
-    <string name="first_exercise_description">Encuentra el punto rojo(punto de foco) y da click a la figura.\n Primero aparece el punto de foco y después de unos segundos saldrá la figura \n Para otros ejercicios aparecerá el punto de foco para ayudarte a encontrar figuras/textos</string>
+    <string name="first_exercise_description">Encuentra el punto rojo (punto de foco) y da click a la figura.\n Primero aparece el punto de foco y después de unos segundos saldrá la figura \n Para otros ejercicios aparecerá el punto de foco para ayudarte a encontrar figuras/textos</string>
     <string name="first_exercise_congrats"> ¡Enhorabuena! ¡Has terminado la demostración!</string>
-    <string name="second_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras. Haz click cuando aparezca un triángulo.</string>
-    <string name="third_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de figuras, más pequeñas y sin relleno. Haz click cuando aparezca un triángulo.</string>
-    <string name="fourth_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de letras. Haz click cuando aparezca la E.</string>
-    <string name="fifth_exercise_description">Tienes 5 segundos para encontrar el foco. A continuación aparecerán una serie de letras más pequeñas que en el ejercicio anterior. Haz click cuando aparezca la E.</string>
-    <string name="sixth_exercise_description">Here would be the description of the sixth exercise</string>
-    <string name="seventh_exercise_description">Here would be the description of the seventh exercise</string>
-    <string name="eighth_exercise_description">Here would be the description of the eighth exercise</string>
-    <string name="ninth_exercise_description">Here would be the description of the ninth exercise</string>
+    <string name="second_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán una serie de figuras. Encuentra los triángulos.</string>
+    <string name="third_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán una serie de figuras, más pequeñas y sin relleno. Encuentra los triángulos.</string>
+    <string name="fourth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán una serie de letras. Encuentra las letras E.</string>
+    <string name="fifth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán una serie de letras más pequeñas que en el ejercicio anterior. Encuentra las letras E.</string>
+    <string name="sixth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán figuras de dos en dos. Encuentra los círculos.</string>
+    <string name="seventh_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán figuras de dos en dos, más pequeñas y sin relleno. Encuentra los círculos</string>
+    <string name="eighth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán letras de dos en dos. Encuentra las M.</string>
+    <string name="ninth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán letras de dos en dos, más pequeñas que antes. Encuentra las M.</string>
     <string name="tenth_exercise_description">Here would be the description of the exercise</string>
     <string name="eleventh_exercise_description">Here would be the description of the exercise</string>
     <string name="twelfth_exercise_description">Here would be the description of the exercise</string>
@@ -228,15 +229,9 @@
     <string name="circle_for_click">Circulo</string>
     <string name="triangle_for_click">Triangulo</string>
     <string name="star_for_click">Estrella</string>
-    <string name="letter_A">A</string>
-    <string name="letter_E">E</string>
-    <string name="letter_M">M</string>
-    <string name="letter_T">T</string>
-    <string name="letter_F">F</string>
-    <string name="letter_L">L</string>
+    <string name="letter">A</string>
+    <string name="button_for_click">Lo que hay que encontrar</string>
 
-
-    <string name="button_for_click">encontrar botón</string>
     <string name="toast_user_created">Usuario creado</string>
     <string name="toast_fill_fields">Por favor, rellena todos los campos</string>
     <string name="textview_infoLogin">Ya tengo una cuenta</string>

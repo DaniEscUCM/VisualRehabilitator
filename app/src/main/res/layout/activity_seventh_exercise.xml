@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/house_icon"
-        app:tint="#5C5757" />
+        app:tint="@color/grey_dark" />
 
     <ImageButton
         android:id="@+id/exercise_settings"
@@ -32,14 +32,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_manage"
-        app:tint="#000000" />
+        app:tint="@color/black" />
 
     <ImageButton
         android:id="@+id/button_1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -49,14 +47,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.323"
-        app:srcCompat="@drawable/circle_black" />
+        app:srcCompat="@drawable/circle_line" />
+
+    <ImageView
+        android:id="@+id/focus_1"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/button_1"
+        app:layout_constraintEnd_toEndOf="@+id/button_1"
+        app:layout_constraintStart_toStartOf="@+id/button_1"
+        app:layout_constraintTop_toTopOf="@+id/button_1"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
 
     <ImageButton
         android:id="@+id/button_2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -66,6 +75,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.773"
-        app:srcCompat="@drawable/triangle" />
+        app:srcCompat="@drawable/semi_square_line" />
+
+    <ImageView
+        android:id="@+id/focus_2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/button_2"
+        app:layout_constraintEnd_toEndOf="@+id/button_2"
+        app:layout_constraintStart_toStartOf="@+id/button_2"
+        app:layout_constraintTop_toTopOf="@+id/button_2"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

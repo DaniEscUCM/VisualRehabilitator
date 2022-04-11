@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".FifthExerciseActivity">
 
-
     <ImageButton
         android:id="@+id/home_button"
         android:layout_width="117dp"
@@ -19,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/house_icon"
-        app:tint="#5C5757" />
+        app:tint="@color/grey_dark" />
 
     <ImageButton
         android:id="@+id/exercise_settings"
@@ -39,16 +38,30 @@
         android:id="@+id/button"
         android:layout_width="57dp"
         android:layout_height="57dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
         android:clickable="true"
         android:focusable="true"
-        android:text="@string/letter_M"
+        android:scaleType="fitCenter"
+        android:text="@string/letter"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/foco"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,14 +9,14 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SixthExerciseDescriptionActivity extends AppCompatActivity {
+public class NinthExerciseDescriptionActivity extends AppCompatActivity {
     private static int num_seconds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        setContentView(R.layout.activity_sixth_exercise_description);
+        setContentView(R.layout.activity_ninth_exercise_description);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc);
         button.setOnClickListener(new View.OnClickListener() {
@@ -49,13 +49,13 @@ public class SixthExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void play_exercise(View v) {
-            EditText seconds = (EditText) findViewById(R.id.seconds);
-            String se = seconds.getText().toString();
-            num_seconds = 10;
-            if (!se.equals("")) {
-                num_seconds = Integer.parseInt(se);
-            }
-        Intent i = new Intent( this, SixthExerciseActivity.class );
+        EditText seconds = (EditText) findViewById(R.id.seconds);
+        String se = seconds.getText().toString();
+        num_seconds = 10;
+        if (!se.equals("")) {
+            num_seconds = Integer.parseInt(se);
+        }
+        Intent i = new Intent( this, NinthExerciseActivity.class );
         startActivity(i);
     }
 

@@ -23,7 +23,7 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_second_exercise_description);
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc2);
+        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +31,7 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex2);
+        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex);
         button_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

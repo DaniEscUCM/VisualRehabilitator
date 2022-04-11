@@ -2,56 +2,87 @@ package com.macularehab;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Point;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
-import android.view.Display;
+import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
-
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.internal.LinkedTreeMap;
+import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
+import com.macularehab.internalStorage.ReadInternalStorage;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ThirdExerciseActivity extends AppCompatActivity {
 
-    //Focus point
-    private boolean focusIsOn;
-    private final int exercise_id = 2;
-
+    private final int exercise_id = 2, total = 12;
     private int counter, counterCorrect, counterFailed, num_miliseconds;
-    protected final int total = 12;
-    private boolean triangle, focus_on;
+    private boolean triangle;
     private CountDownTimer timer = null;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
+    private final String filenameCurrentUser = "CurrentPatient.json";
+    private HashMap<String, Object> patientHashMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        databaseReference = firebaseDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
         counter = -1; counterCorrect = counterFailed = 0;
         triangle = false;
+        num_miliseconds = ThirdExerciseDescriptionActivity.getNumSeconds() * 1000;
+        boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
         ImageButton button_dot = findViewById(R.id.dot_button);
         button_dot.setVisibility(View.INVISIBLE);
-        num_miliseconds = ThirdExerciseDescriptionActivity.getNumSeconds() * 1000;
-        //num_miliseconds = 1000;
-        focus_on = true; //leer de la clase anterior como seconds
+        //Calculate based on screen size
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+        int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
+        int size = metric_unit*20;//10cm
+        button_dot.getLayoutParams().width = metric_unit*3;//1.5cm diametro de las figuras
+        button_dot.getLayoutParams().height = metric_unit*3;
+
         ImageView foco = findViewById(R.id.foco);
         if(focus_on) {
-            int w = 50, h = 50;
+            //una forma mas facil seria simplemente poniendo el focus en la posicion correcta
+            /*int w = 50, h = 50;
             foco.getLayoutParams().width = w;
-            foco.getLayoutParams().height = h;
-            //falta meter tamaño del foco
-            startTimerFoco(button_dot); //5s antes de que aparezca nada más
+            foco.getLayoutParams().height = h;*/
+            //ReadInternalStorage readIS = new ReadInternalStorage();
+            //HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+
+            ArrayList<Pair<Float, Float>> coor_result;
+            LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
+            coor_result = new ArrayList<>();
+            coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+
+            foco.getLayoutParams().width = size;
+            foco.getLayoutParams().height = size;
+            foco.requestLayout();
+            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(btm_manual_left);
+            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
+            all_dots.draw(canvas);
+            foco.setImageBitmap(btm_manual_left);
+
+            startTimerFoco(button_dot); //Durante 5s solo se ve el foco
         }
         else{
             foco.setVisibility(View.INVISIBLE);
@@ -74,6 +105,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Settings(v);
+                finish();
             }
         });
 
@@ -82,10 +114,11 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Close(v);
+                finish();
             }
         });
     }
-    private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
+    private void startTimerFoco(ImageButton button_dot) {  //Timer para que aparezca el foco solo 5s
         timer = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
@@ -101,6 +134,8 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         timer = new CountDownTimer(num_miliseconds, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
+                if(triangle) {++counterFailed;} //they didn't touch when they should have.
+                else{++counterCorrect;}
                 move();
             }
         };
@@ -110,12 +145,10 @@ public class ThirdExerciseActivity extends AppCompatActivity {
     private void cancelTimer() {
         if(timer!=null)
             timer.cancel();
-            //timer.onFinish();
     }
 
     private void move(){
         if(++counter == total) {
-
             writeResultInDataBase(counterCorrect, counterFailed);
             System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
@@ -157,26 +190,14 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public int getNumCorrect(){
+        return counterCorrect;
+    }
+    public int getNumFailed(){ return counterFailed; }
+
     //Database
     private void writeResultInDataBase(int correct, int failed) {
-
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
         exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
     }
 }
-
-
-/*
-    public void Close(View view){
-        if (counterCorrect*2 >= total) { //si ha acertado el doble o mas del total
-            String message_correct = "Well done, you hit " + counterCorrect + "out of" + total;
-            Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
-
-            //se desbloquea el siguiente ejercicio
-        }
-        else {
-            String message_failed = "Sorry, try again";
-            Toast.makeText(this, message_failed, Toast.LENGTH_LONG).show();
-        }
-        finish();
-    }*/
