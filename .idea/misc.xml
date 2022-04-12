@@ -162,7 +162,15 @@
         <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.17966171617161716" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
+<<<<<<< Updated upstream
         <entry key="app/src/main/res/layout/pruena.xml" value="0.10807291666666667" />
+=======
+        <entry key="app/src/main/res/layout/activity_tenth_exercise_description.xml" value="0.15222772277227722" />
+        <entry key="app/src/main/res/layout/activity_tests_history.xml" value="0.11041666666666666" />
+        <entry key="app/src/main/res/layout/activity_tests_results.xml" value="0.11041666666666666" />
+        <entry key="app/src/main/res/layout/pruena.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/recycler_view_patient_information.xml" value="0.25" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

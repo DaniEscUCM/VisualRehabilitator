@@ -88,6 +88,8 @@
     <string name="professional_login_restorePassword_error_userDisabled">Usuario deshabilitado</string>
 
     <!-- Apartado Professional - Home -->
+    <string name="professional_home_professional_text">Profesional</string>
+    <string name="professional_home_patientName_text">Nombre Paciente</string>
     <string name="professional_home_welcome_text">Bienvenido</string>
     <string name="hint_professional_home_logout_button">Cerrar sesión</string>
     <string name="professional_home_create_patient_button">Crear Paciente</string>
