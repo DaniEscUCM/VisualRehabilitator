@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EleventhExerciseActivity">
+
+    <ImageButton
+        android:id="@+id/home_button"
+        android:layout_width="117dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_home"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/house_icon"
+        app:tint="@color/grey_dark" />
+
+    <ImageButton
+        android:id="@+id/exercise_settings"
+        android:layout_width="99dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/imagebutton_des_settings"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_manage"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/image_background"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:contentDescription="@string/image_background"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81"
+        app:srcCompat="@drawable/woman_image" />
+
+    <ImageButton
+        android:id="@+id/dot_button_nose"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="252dp"
+        android:alpha="0"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="@+id/image_background"
+        app:layout_constraintTop_toTopOf="@+id/image_background"
+        app:srcCompat="@drawable/circle_line" />
+
+    <ImageView
+        android:id="@+id/focus_nose"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_nose"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_nose"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_nose"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_nose"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
+
+    <ImageButton
+        android:id="@+id/dot_button_left_eye"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:alpha="0"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:foregroundTint="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/image_background"
+        app:layout_constraintEnd_toEndOf="@+id/image_background"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="@+id/image_background"
+        app:layout_constraintTop_toTopOf="@+id/image_background"
+        app:layout_constraintVertical_bias="0.474"
+        app:srcCompat="@drawable/circle_line" />
+
+    <ImageView
+        android:id="@+id/focus_left_eye"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_left_eye"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_left_eye"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_left_eye"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_left_eye"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
+
+    <ImageButton
+        android:id="@+id/dot_button_right_eye"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="148dp"
+        android:alpha="0"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/image_background"
+        app:layout_constraintTop_toTopOf="@+id/image_background"
+        app:srcCompat="@drawable/circle_line" />
+
+    <ImageView
+        android:id="@+id/focus_right_eye"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_right_eye"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_right_eye"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_right_eye"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_right_eye"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
+
+    <ImageButton
+        android:id="@+id/dot_button_mouth"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="336dp"
+        android:alpha="0"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="@+id/image_background"
+        app:layout_constraintTop_toTopOf="@+id/image_background"
+        app:srcCompat="@drawable/border_rectangle_for_layout" />
+
+    <ImageView
+        android:id="@+id/focus_mouth"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_mouth"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_mouth"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_mouth"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_mouth"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
+
+    <TextView
+        android:id="@+id/text_findX"
+        android:layout_width="1112dp"
+        android:layout_height="123dp"
+        android:gravity="center"
+        android:text="@string/eleventh_exercise_find_nose"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/image_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

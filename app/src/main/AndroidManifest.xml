@@ -203,6 +203,37 @@
             android:name=".NinthExerciseDescriptionActivity"
             android:exported="false" />
         <activity
+            android:name=".TenthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TenthExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EleventhExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EleventhExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TwelfthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TwelfthExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThirteenthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ThirteenthExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FourteenthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FourteenthExerciseDescriptionActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ExercisesActivity"
             android:exported="false" />
         <activity

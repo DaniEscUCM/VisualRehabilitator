@@ -222,6 +222,7 @@ public class SixthExerciseActivity extends AppCompatActivity {
 
     private void move_button_2() {
         if (++counter == total) {
+            writeResultInDataBase(counterCorrect, counterFailed);
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();

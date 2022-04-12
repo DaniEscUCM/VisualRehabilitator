@@ -202,6 +202,7 @@
     <string name="textview_settings">Ajustes</string>
     <string name="textview_exercises">Ejercicios</string>
     <string name="foco">Foco</string>
+    <string name="image_background">Imagen</string>
     <string name="seconds_description_shape">Inserta los segundos que quieras para cada figura:</string>
     <string name="seconds_description_letter">Inserta los segundos que quieras para cada letra:</string>
     <string name="seconds">segundos</string>
@@ -252,6 +253,11 @@
     <string name="star_for_click">Estrella</string>
     <string name="letter">A</string>
     <string name="button_for_click">Lo que hay que encontrar</string>
+    <string name="eleventh_exercise_find_nose">Encuentra la nariz</string>
+    <string name="eleventh_exercise_find_mouth">Encuentra la boca</string>
+    <string name="eleventh_exercise_find_left_eye">Encuentra el ojo izquiero</string>
+    <string name="eleventh_exercise_find_rigth_eye">Encuentra el ojo derecho</string>
+
 
     <string name="toast_user_created">Usuario creado</string>
     <string name="toast_fill_fields">Por favor, rellena todos los campos</string>

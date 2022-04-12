@@ -18,6 +18,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
@@ -28,7 +31,12 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class NinthExerciseActivity extends AppCompatActivity {
-
+    //Database
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
+    private final String filenameCurrentUser = "CurrentPatient.json";
+    private HashMap<String, Object> patientHashMap;
     private final int exercise_id = 8, total = 22, num_shapes = 5;
     private int counter, counterCorrect, counterFailed, num_miliseconds, previous_1,previous_2;
     private boolean letter_M_1, letter_M_2;
@@ -39,6 +47,8 @@ public class NinthExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ninth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        databaseReference = firebaseDatabase.getReference();
         String filenameCurrentUser = "CurrentPatient.json";
         ReadInternalStorage readIS = new ReadInternalStorage();
         HashMap<String, Object> patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
@@ -226,6 +236,7 @@ public class NinthExerciseActivity extends AppCompatActivity {
 
     private void move_button_2() {
         if (++counter == total) {
+            writeResultInDataBase(counterCorrect, counterFailed);
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
@@ -282,6 +293,8 @@ public class NinthExerciseActivity extends AppCompatActivity {
 
     //Database
     private void writeResultInDataBase(int correct, int failed) {
+        databaseReference.child("Pruebas").child("SecondExercise").child("counterCorrect").setValue(counterCorrect);
+        databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
         exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
     }

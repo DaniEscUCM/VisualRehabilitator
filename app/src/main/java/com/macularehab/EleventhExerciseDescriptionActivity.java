@@ -1,5 +1,6 @@
 package com.macularehab;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -9,14 +10,14 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class TenthExerciseDescriptionActivity extends AppCompatActivity {
+public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
     private static int num_seconds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        setContentView(R.layout.activity_tenth_exercise_description);
+        setContentView(R.layout.activity_eleventh_exercise_description);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc);
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +56,7 @@ public class TenthExerciseDescriptionActivity extends AppCompatActivity {
         if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
         }
-        Intent i = new Intent( this, TenthExerciseActivity.class );
+        Intent i = new Intent( this, EleventhExerciseActivity.class );
         startActivity(i);
     }
 
