@@ -139,6 +139,7 @@ public class LogIn {
         signIn(email_username, password);
     }
 
+
     private void signIn(String email, String password) {
 
         mAuth.signInWithEmailAndPassword(email, password)

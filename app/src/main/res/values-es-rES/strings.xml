@@ -72,6 +72,7 @@
     <string name="hint_professional_signup_password">Contraseña</string>
     <string name="hint_professional_signup_repeat_password">Repetir contraseña</string>
     <string name="professional_login_forgot_password">¿Has olvidado tu contraseña?</string>
+    <string name="professional_login_notAProfessionalAccount">Esta no es una cuenta de profesional.\nPor favor inicia sesión en el apartado de Paciente</string>
 
     <!-- Professional Section - Restore Password -->
     <string name="professional_login_restorePassword_help">te enviaremos un correo electrónico con un enlace\npara que puedas restablecer tu contraseña</string>

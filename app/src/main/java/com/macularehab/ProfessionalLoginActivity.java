@@ -3,8 +3,11 @@ package com.macularehab;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.macularehab.login.LogIn;
@@ -126,8 +130,9 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "loginUserWithEmail:success");
                             //goToMain();
-                            goToProfessionalHome();
+                            //goToProfessionalHome();
                             //updateUI(user);
+                            checkIfIsProfessional();
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -141,9 +146,57 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                 });
     }
 
+    private void checkIfIsProfessional() {
+
+        databaseReference.child("Professional").child(firebaseAuth.getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                if (!task.isSuccessful()) {
+                    isNotAProfessional();
+                }
+                else {
+
+                    String value = String.valueOf(task.getResult().getValue());
+
+                    if (value.equals("null")) {
+                        isNotAProfessional();
+                    }
+                    else {
+                        goToProfessionalHome();
+                    }
+                }
+            }
+        });
+    }
+
+    private void isNotAProfessional() {
+
+        firebaseAuth.signOut();
+        showAlertYouAreNotAProfessional();
+    }
+
     public void goToProfessionalHome() {
+
         Intent intent = new Intent(this, ProfessionalHome.class);
         startActivity(intent);
+    }
+
+    private void showAlertYouAreNotAProfessional() {
+
+        Resources resources = this.getResources();
+        String st_passwordDoestExist = resources.getString(R.string.professional_login_notAProfessionalAccount);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_passwordDoestExist)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     public void correct(){ //to make provide correct error message

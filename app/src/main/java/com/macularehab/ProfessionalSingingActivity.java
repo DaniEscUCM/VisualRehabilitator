@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -99,9 +100,13 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
             int email_length = mail.length();
             boolean is_email = false;
             for (int i = 0; i < email_length && !is_email; i++) if (mail.charAt(i) == '@') is_email = true;
-            if (!is_email) mail += GENERIC_EMAIL;
-
-            createAccount(name, mail, pasw);
+            //if (!is_email) mail += GENERIC_EMAIL;
+            if (!is_email) {
+                showAlertBadFormatEmail();
+            }
+            else {
+                createAccount(name, mail, pasw);
+            }
         }
     }
 
@@ -247,6 +252,22 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         //i.putExtra("username",mailP.getText().toString()); //we pass the username to activity : Professional Page
         Intent i = new Intent( this, ProfessionalHome.class);
         startActivity(i);
+    }
+
+    private void showAlertBadFormatEmail() {
+
+        Resources resources = this.getResources();
+        String st_passwordDoestExist = resources.getString(R.string.professional_login_restorePassword_error_emailNotValid);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_passwordDoestExist)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }
