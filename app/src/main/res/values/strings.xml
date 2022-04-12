@@ -67,6 +67,12 @@
     <string name="hint_professional_signup_repeat_password">Repeat Password</string>
     <string name="professional_login_forgot_password">Forgot Password?</string>
 
+    <!-- Professional Section - Restore Password -->
+    <string name="professional_login_restorePassword_help">We will send you an email with a link\nto restore your password</string>
+    <string name="professional_login_restorePassword_insertYourEmail">Insert Your Email Address</string>
+    <string name="professional_login_restorePassword_hint_email">Email Address</string>
+    <string name="professional_login_restorePassword_sendEmailButton">Restore Password</string>
+    <string name="professional_login_restorePassword_emailSuccessfullyText">An email was sent correctly to you email address\nCheck your inbox</string>
 
     <!-- Apartado Professional - Home -->
     <string name="professional_home_welcome_text">Welcome</string>
