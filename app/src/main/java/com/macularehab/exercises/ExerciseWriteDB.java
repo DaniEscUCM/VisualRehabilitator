@@ -53,7 +53,7 @@ public class ExerciseWriteDB {
             exercise.put("exerciseInfoList", exercisesList);
 
             if (correct > failed) {
-                Integer exercises_completed = (Integer) exercise.get("exercises_completed");
+                Double exercises_completed = (Double) exercise.get("exercises_completed");
                 exercise.put("exercises_completed", exercises_completed + 1);
             }
 

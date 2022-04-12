@@ -99,12 +99,6 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         paswP.setText("");
     }
 
-    /*public void goToMain(){
-        Intent i = new Intent( this, ProfessionalPageActivity.class);
-        //i.putExtra("username",unameP.getText().toString()); //we pass the username to activity : Professional Page
-        startActivity(i);
-    }*/
-
     public void login(View view){
         String mail = mailP.getText().toString();
         String pasword = paswP.getText().toString();
