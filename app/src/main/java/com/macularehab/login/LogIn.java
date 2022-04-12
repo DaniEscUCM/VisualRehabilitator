@@ -150,9 +150,10 @@ public class LogIn {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            LogIn.this.user = user;
+                            /*LogIn.this.user = user;
                             LogIn.this.user_signedIn_successfully = true;
-                            LogIn.this.patientLogin.user_loggedIn_successfully();
+                            LogIn.this.patientLogin.user_loggedIn_successfully();*/
+                            checkIfIsProfessional();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -162,5 +163,35 @@ public class LogIn {
                         }
                     }
                 });
+    }
+
+    private void checkIfIsProfessional() {
+
+        databaseReference.child("Professional").child(mAuth.getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                if (!task.isSuccessful()) {
+                    LogIn.this.user = user;
+                    LogIn.this.user_signedIn_successfully = true;
+                    LogIn.this.patientLogin.user_loggedIn_successfully();
+                }
+                else {
+
+                    String value = String.valueOf(task.getResult().getValue());
+
+                    if (value.equals("null")) {
+                        LogIn.this.user = user;
+                        LogIn.this.user_signedIn_successfully = true;
+                        LogIn.this.patientLogin.user_loggedIn_successfully();
+                    }
+                    else {
+                        mAuth.signOut();
+                        LogIn.this.patientLogin.showAlertYouAreAProfessional();
+                    }
+                }
+            }
+        });
     }
 }

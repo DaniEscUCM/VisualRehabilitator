@@ -32,6 +32,7 @@
     <string name="hint_patient_login_welcome">Bienvenido</string>
     <string name="hint_patient_login_login">Inicia Sesión</string>
     <string name="hint_patient_login_login_button">Inicia Sesión</string>
+    <string name="patient_login_youAreAProfessional">Esta es una cuenta de Profesional.\nPor favor inicia sesión en el Apartado de Profesional</string>
     <!-- Apartado SignUp .-->
     <string name="hint_patient_signup_name">Nombre</string>
     <string name="hint_patient_signup_email">Dirección de correo /\nUsuario:</string>

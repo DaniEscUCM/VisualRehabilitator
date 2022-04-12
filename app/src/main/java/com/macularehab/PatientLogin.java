@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -181,5 +182,21 @@ public class PatientLogin extends AppCompatActivity  {
 
         Intent intent = new Intent( this, PatientHome.class);
         startActivity(intent);
+    }
+
+    public void showAlertYouAreAProfessional() {
+
+        Resources resources = this.getResources();
+        String st_passwordDoestExist = resources.getString(R.string.patient_login_youAreAProfessional);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_passwordDoestExist)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

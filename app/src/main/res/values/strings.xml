@@ -27,6 +27,7 @@
     <string name="hint_patient_login_welcome">Welcome</string>
     <string name="hint_patient_login_login">Patient LogIn</string>
     <string name="hint_patient_login_login_button">LogIn</string>
+    <string name="patient_login_youAreAProfessional">This is a Professional Account.\nPlease LogIn in the Professional Section</string>
     <!-- Apartado SignUp .-->
     <string name="hint_patient_signup_name">Name</string>
     <string name="hint_patient_signup_email">Email Address /\nUsername:</string>
