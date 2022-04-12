@@ -72,6 +72,8 @@
         <activity
             android:name=".MapTestLeftExplanationActivity"
             android:exported="false" />
+
+        <!-- Professional Section . -->
         <activity
             android:name=".ProfessionalPageActivity"
             android:exported="false" />
@@ -107,7 +109,13 @@
             android:exported="false" />
         <activity
             android:name=".professional.patientForm.ProfessionalPatientEditInfoDifficulties"
-            android:exported="false" /> <!-- Apartado Paciente . -->
+            android:exported="false" />
+        <activity
+            android:name=".professional.account.RestorePassword"
+            android:exported="false" />
+        <!-- Professional Section Ends . -->
+
+        <!-- Patient Section . -->
         <activity
             android:name=".patient.PatientHome"
             android:exported="false" />
@@ -128,7 +136,9 @@
             android:exported="false" />
         <activity
             android:name=".patient.data.PatientDataInfoActivity"
-            android:exported="false" /> <!-- Fin Apartado Paciente . -->
+            android:exported="false" />
+        <!-- Patient Section End . -->
+
         <activity
             android:name=".IdentificationActivity"
             android:exported="true">

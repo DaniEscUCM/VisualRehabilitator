@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.macularehab.login.LogIn;
 import com.macularehab.model.Professional;
 import com.macularehab.professional.ProfessionalHome;
+import com.macularehab.professional.account.RestorePassword;
 
 public class ProfessionalLoginActivity extends AppCompatActivity {
 
@@ -59,11 +60,19 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             }
         });
 
-        Button loginButton =(Button) findViewById(R.id.button_professional_login2);
+        Button loginButton = (Button) findViewById(R.id.button_professional_login2);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login(v);
+            }
+        });
+
+        Button forgotPasswordButton = findViewById(R.id.professional_logIn_forgotPassword_button);
+        forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToRestorePasswordActivity();
             }
         });
     }
@@ -160,6 +169,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             goToProfessionalHome();
         }
     }
+
     public void validate(){ //to make sure everything is filled
         String mail = mailP.getText().toString();
         String pasw = paswP.getText().toString();
@@ -169,6 +179,12 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         if(pasw.equals("")){
             paswP.setError("required");
         }
+    }
+
+    private void goToRestorePasswordActivity() {
+
+        Intent forgotPasswordIntent = new Intent(this, RestorePassword.class);
+        startActivity(forgotPasswordIntent);
     }
 
 }
