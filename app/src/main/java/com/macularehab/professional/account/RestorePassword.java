@@ -67,13 +67,16 @@ public class RestorePassword extends AppCompatActivity {
     private void readEmailAddress() {
 
         result_imageView.setVisibility(View.INVISIBLE);
-        showLoadingImage();
 
         emailAddress = String.valueOf(emailAddressTextInput.getText());
-
-        Toast.makeText(this, emailAddress, Toast.LENGTH_LONG).show();
-
-        sendEmail();
+        if (!emailAddress.equals("")) {
+            showLoadingImage();
+            sendEmail();
+        }
+        else {
+            Resources resources = RestorePassword.this.getResources();
+            showAlertErrorUser(resources.getString(R.string.emptyField));
+        }
     }
 
     private void sendEmail() {
@@ -95,7 +98,7 @@ public class RestorePassword extends AppCompatActivity {
                         else {
 
                             showErrorImage();
-                            Toast.makeText(RestorePassword.this, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(RestorePassword.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
                             FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
                             Resources resources = RestorePassword.this.getResources();

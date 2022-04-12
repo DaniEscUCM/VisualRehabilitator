@@ -15,6 +15,7 @@
     <string name="message_error">¡Error! Intente de nuevo más tarde</string>
     <string name="email">Dirección de Correo Electrónico</string>
     <string name="password">Contraseña</string>
+    <string name="emptyField">Casilla sin rellenar. Es obligatorio rellenar la(s) casilla(s)</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->
