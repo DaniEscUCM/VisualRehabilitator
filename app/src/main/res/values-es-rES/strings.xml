@@ -78,6 +78,10 @@
     <string name="professional_login_restorePassword_hint_email">Correo Electrónico</string>
     <string name="professional_login_restorePassword_sendEmailButton">Restablecer Contraseña</string>
     <string name="professional_login_restorePassword_emailSuccessfullyText">Se ha enviado correctamente un email a tu dirección de correo\nRevisa tu bandeja de entrada</string>
+    <string name="professional_login_restorePassword_error_userNotFound">Usuario no existe</string>
+    <string name="professional_login_restorePassword_error_emailNotValid">Correo no válido o formato érroneo</string>
+    <string name="professional_login_restorePassword_error_userMismatch">Usuario no corresponde</string>
+    <string name="professional_login_restorePassword_error_userDisabled">Usuario deshabilitado</string>
 
     <!-- Apartado Professional - Home -->
     <string name="professional_home_welcome_text">Bienvenido</string>

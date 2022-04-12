@@ -98,7 +98,6 @@ public class RestorePassword extends AppCompatActivity {
                             Toast.makeText(RestorePassword.this, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
                             FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
-                            FirebaseError.
                             Resources resources = RestorePassword.this.getResources();
                             String st_error;
 
@@ -119,11 +118,17 @@ public class RestorePassword extends AppCompatActivity {
                                 case "ERROR_OPERATION_NOT_ALLOWED":
                                     st_error = resources.getString(R.string.patient_signup_error_operations_not_allowed);
                                     break;
-                                case "USER_NOT_FOUND":
-                                    st_error = resources.getString(R.string.patient_signup_error_operations_not_allowed);
+                                case "ERROR_USER_NOT_FOUND":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userNotFound);
                                     break;
                                 case "ERROR_INVALID_EMAIL":
-                                    st_error = resources.getString(R.string.patient_signup_error_operations_not_allowed);
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_emailNotValid);
+                                    break;
+                                case "ERROR_USER_MISMATCH":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userMismatch);
+                                    break;
+                                case "USER_DISABLED":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userDisabled);
                                     break;
                                 default:
                                     st_error = resources.getString(R.string.message_error);

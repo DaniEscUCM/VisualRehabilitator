@@ -73,6 +73,11 @@
     <string name="professional_login_restorePassword_hint_email">Email Address</string>
     <string name="professional_login_restorePassword_sendEmailButton">Restore Password</string>
     <string name="professional_login_restorePassword_emailSuccessfullyText">An email was sent correctly to you email address\nCheck your inbox</string>
+    <string name="professional_login_restorePassword_error_userNotFound">User Not Found</string>
+    <string name="professional_login_restorePassword_error_emailNotValid">Email is not valid or in wrong format</string>
+    <string name="professional_login_restorePassword_error_userMismatch">User Mismatch</string>
+    <string name="professional_login_restorePassword_error_userDisabled">User Disabled</string>
+
 
     <!-- Apartado Professional - Home -->
     <string name="professional_home_welcome_text">Welcome</string>
