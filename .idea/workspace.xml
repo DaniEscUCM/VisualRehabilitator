@@ -27,9 +27,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb63ed4-9bb7-49fe-9523-941012296234" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/error.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/loading_rainbow_small.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/ready.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_restore_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_restore_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-es-rES/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-es-rES/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +123,7 @@
     <property name="android-custom-viewC:/Users/Mapo/AppData/Local/Android/Sdk/sources/android-31/android/view/View.java_View_DIMENSIONS" value="1080&#10;1920" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/raw" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -133,6 +139,7 @@
       <recent name="com.macularehab" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
       <recent name="C:\Users\Alba\Desktop\Uni\TFG\VisualRehabilitator\app\src\main\res\layout" />
       <recent name="D:\Descargas\GitHub\VisualRehabilitator\app" />
       <recent name="D:\Descargas\GitHub\VisualRehabilitator\app\src\main\res\drawable" />
@@ -145,6 +152,7 @@
       <recent name="com.macularehab" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
       <recent name="C:\Users\Alba\Desktop\Uni\TFG\VisualRehabilitator\app\src\main\res\layout" />
       <recent name="C:\Users\Alba\Desktop\Uni\TFG\VisualRehabilitator\app\src\main\res\drawable" />
     </key>
