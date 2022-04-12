@@ -69,7 +69,7 @@
     <string name="hint_professional_signup_repeat_password">Repetir contraseña</string>
     <string name="professional_home_welcome_text">Bienvenido</string>
     <string name="hint_professional_home_logout_button">Cerrar sesión</string>
-    <string name="professional_home_create_patient_button">Crear Patient</string>
+    <string name="professional_home_create_patient_button">Crear Paciente</string>
     <string name="professional_home_name_default">Profesional</string>
 
         <!-- Apartado Professional - Patient Form .-->

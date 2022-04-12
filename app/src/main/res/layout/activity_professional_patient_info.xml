@@ -10,11 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:text="@string/professional_patientInfo_patient"
         android:textSize="80sp"
-        app:layout_constraintStart_toEndOf="@+id/professional_patient_info_go_back_button"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"/>
 
     <TextView
         android:id="@+id/textView_patientInfo_nameTitle"
@@ -30,14 +30,13 @@
     <ImageButton
         android:id="@+id/professional_patient_info_go_back_button"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/white"
+        android:layout_height="101dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back_small" />
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -50,7 +49,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/scrollView4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_patientInfo_nameTitle">
+        app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
         <LinearLayout
             android:id="@+id/professional_patient_info_linearLayout"
@@ -807,7 +806,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_patientInfo_nameTitle">
+        app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
         <LinearLayout
             android:id="@+id/linearLayout6"
@@ -921,4 +920,17 @@
         </LinearLayout>
     </ScrollView>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10 " />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15 " />
 </androidx.constraintlayout.widget.ConstraintLayout>
