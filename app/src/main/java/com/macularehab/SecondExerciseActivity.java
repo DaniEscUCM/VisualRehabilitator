@@ -66,7 +66,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         num_miliseconds = SecondExerciseDescriptionActivity.getNumSeconds() * 1000;
         boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
         ImageButton button_dot = findViewById(R.id.dot_button);
-        button_dot.setVisibility(View.INVISIBLE);
+        button_dot.setVisibility(View.VISIBLE);
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm

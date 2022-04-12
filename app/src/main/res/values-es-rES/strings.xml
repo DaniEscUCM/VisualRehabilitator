@@ -232,7 +232,7 @@
     <string name="fifteenth_exercise">Ejercicio 15</string>
     <string name="sixteenth_exercise">Ejercicio 16</string>
     <string name="button_play">Empezar</string>
-    <string name="first_exercise_description">Encuentra el punto rojo (punto de foco) y da click a la figura.\n Primero aparece el punto de foco y después de unos segundos saldrá la figura \n Para otros ejercicios aparecerá el punto de foco para ayudarte a encontrar figuras/textos</string>
+    <string name="first_exercise_description">Encuentra el punto rojo (punto de foco) y da click a la figura.\n Primero aparece el punto de foco y después de unos segundos saldrá la figura \n Para otros ejercicios aparecerá el punto de foco para ayudarte a encontrar figuras.</string>
     <string name="first_exercise_congrats"> ¡Enhorabuena! ¡Has terminado la demostración!</string>
     <string name="second_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán una serie de figuras. Encuentra los triángulos.</string>
     <string name="third_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán una serie de figuras, más pequeñas y sin relleno. Encuentra los triángulos.</string>
@@ -302,5 +302,9 @@
     <string name="new_test">Nueva prueba</string>
     <string name="test">Prueba:</string>
     <string name="focus_switch">Interruptor Foco</string>
+    <string name="pause_button">Pausa</string>
+    <string name="continue_exercise">Continua con el ejercicio</string>
+    <string name="tuto_pause">Pausa el ejercicio</string>
+    <string name="tuto_resume">Vuelve al ejercicio</string>
 
 </resources>

@@ -12,13 +12,20 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,11 +33,14 @@ import java.util.HashMap;
 
 public class FirstExerciseActivity extends AppCompatActivity {
 
-    //Focus point
-    private boolean focusIsOn;
-    private final int exercise_id = 0;
+
+    private CountDownTimer timer;
 
     private final String filenameCurrentUser = "CurrentPatient.json";
+    private long time_left = 3000;
+    private ImageButton button_dot;
+    private final String isFocus = "focusIsOn";
+    private boolean isOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,26 +51,30 @@ public class FirstExerciseActivity extends AppCompatActivity {
         ReadInternalStorage readIS = new ReadInternalStorage();
         HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
 
-        ImageButton button_dot = findViewById(R.id.dot_button);
+        button_dot = findViewById(R.id.dot_button);
         button_dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { results(); }
         });
 
-        ImageButton button_setting = findViewById(R.id.first_exercise_settings);
-        button_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Settings(v);
-            }
-        });
-
         ImageButton button_home = findViewById(R.id.home_button);
-        button_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Close(v);
-            }
+        button_home.setOnClickListener(v -> finish());
+
+
+
+        ImageButton button_pause = findViewById(R.id.pause_button);
+        button_pause.setOnClickListener(v -> pause_menu());
+
+        ImageButton button_resume = findViewById(R.id.return_button);
+        button_resume.setOnClickListener(v->resume());
+
+        Switch focus_switch = findViewById(R.id.focus_switch1);
+        focus_switch.setChecked((Boolean) map.get(isFocus));
+        isOn=(Boolean) map.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
+            isOn=!(Boolean)mapS.get(isFocus);
         });
 
         //Calculate based on screen size
@@ -89,9 +103,40 @@ public class FirstExerciseActivity extends AppCompatActivity {
         button_dot.getLayoutParams().height = metric_unit*6;
         focus.requestLayout();
 
-        new CountDownTimer(3000, 1000) {
+         start();
 
-            public void onTick(long millisUntilFinished) {}
+    }
+
+    private void pause_menu(){
+        timer.cancel();
+        ImageView gone_image = findViewById(R.id.pause);
+        gone_image.setVisibility(View.GONE);
+        TextView txt_gone=findViewById(R.id.textoPause);
+        txt_gone.setVisibility(View.GONE);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.VISIBLE);
+        ImageView inst = findViewById(R.id.volver);
+        inst.setVisibility(View.VISIBLE);
+        TextView txt=findViewById(R.id.textoVolver);
+        txt.setVisibility(View.VISIBLE);
+    }
+
+    private void resume(){
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);
+        ImageView inst = findViewById(R.id.volver);
+        inst.setVisibility(View.GONE);
+        TextView txt=findViewById(R.id.textoVolver);
+        txt.setVisibility(View.GONE);
+        start();
+    }
+
+    public void start() {
+        timer = new CountDownTimer(time_left, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                time_left=millisUntilFinished;
+            }
 
             public void onFinish() {
                 button_dot.setVisibility(View.VISIBLE);
@@ -101,24 +146,27 @@ public class FirstExerciseActivity extends AppCompatActivity {
 
     }
 
-    private void Close(View view){
-        finish();
-    }
-
     private void results(){
+        saveFocusOn();
         Intent i = new Intent( this, ResultsFirstExerciseActivity.class );
         startActivity(i);
     }
 
-    private void Settings(View view){
-        Intent i = new Intent( this, SettingsActivity.class );
-        startActivity(i);
+    private void saveFocusOn(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
+
+        mapS.put(isFocus, isOn);
+
+        Gson gson = new Gson();
+        String data = gson.toJson(mapS);
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
+        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
+                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
     }
 
-    //Database
-    private void writeResultInDataBase(int correct, int failed) {
-
-        ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
-        exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
-    }
 }
