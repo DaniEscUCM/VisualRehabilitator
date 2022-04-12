@@ -87,9 +87,9 @@
         android:id="@+id/professional_home_logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/pink_dark"
         android:padding="20dp"
         android:text="@string/hint_professional_home_logout_button"
-        android:backgroundTint="@color/blue"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintTop_toBottomOf="@+id/guideline_top2" />
