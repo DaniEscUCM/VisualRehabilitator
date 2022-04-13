@@ -24,6 +24,7 @@ import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.exercises.ResultInfo;
+import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 
@@ -40,6 +41,8 @@ public class SecondExerciseActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private final String filenameCurrentUser = "CurrentPatient.json";
     private HashMap<String, Object> patientHashMap;
+    private final String NUM_CORRECT = "numCorrect";
+    private final String NUM_FAILED = "numFailed";
 
     protected int counter, counterCorrect,counterFailed, num_miliseconds;
     protected final int exercise_id = 1, total = 10;
@@ -209,9 +212,17 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
     //Database
     private void writeResultInDataBase(int correct, int failed) {
+
         databaseReference.child("Pruebas").child("SecondExercise").child("counterCorrect").setValue(counterCorrect);
         databaseReference.child("Pruebas").child("SecondExercise").child("counterFailed").setValue(counterFailed);
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
         exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
+
+        Intent resultIntent = new Intent(this, ShowResultActivity.class);
+        resultIntent.putExtra(NUM_CORRECT, correct);
+        resultIntent.putExtra(NUM_FAILED, failed);
+        startActivity(resultIntent);
+
+        this.finish();
     }
 }

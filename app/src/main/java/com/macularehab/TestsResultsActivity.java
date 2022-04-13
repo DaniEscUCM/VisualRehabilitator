@@ -79,6 +79,7 @@ public class TestsResultsActivity extends AppCompatActivity {
         if(file.exists()) {
             ReadInternalStorage readInternalStorage = new ReadInternalStorage();
             map = readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+
             if (map.get("patient_numeric_code").equals(patient_num_cod)) {
                 ((LinkedTreeMap)map.get("Tests")).put(date, new LinkedTreeMap<>());
                 map.put("last_test",date);

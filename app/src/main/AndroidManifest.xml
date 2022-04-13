@@ -232,6 +232,9 @@
         <activity
             android:name=".FourteenthExerciseDescriptionActivity"
             android:exported="false" />
+        <activity
+            android:name=".exercises.ShowResultActivity"
+            android:exported="false" />
 
         <activity
             android:name=".ExercisesActivity"
