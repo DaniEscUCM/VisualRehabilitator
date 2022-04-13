@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.macularehab.PatientLogin;
+import com.macularehab.patient.logIn.PatientLogin;
 import com.macularehab.R;
 import com.macularehab.patient.signUp.PatientSignUpPassword;
 

@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.macularehab.PatientLogin;
+import com.macularehab.patient.logIn.PatientLogin;
 import com.macularehab.ProfessionalLoginActivity;
 
 public class LogIn {

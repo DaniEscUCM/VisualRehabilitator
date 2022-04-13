@@ -1,4 +1,4 @@
-package com.macularehab;
+package com.macularehab.patient.logIn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 //Firebase Analytics
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.macularehab.R;
 import com.macularehab.login.LogIn;
 import com.macularehab.patient.PatientHome;
 
