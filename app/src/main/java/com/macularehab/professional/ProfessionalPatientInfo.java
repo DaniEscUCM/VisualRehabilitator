@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
-import com.macularehab.TestsHistoryActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.patientForm.ProfessionalPatientEditInfo;
@@ -197,7 +195,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
     }
 
     private  void goToTests(){
-        Intent intent = new Intent(this, TestsHistoryActivity.class);
+        Intent intent = new Intent(this, ProfessionalTestsHistoryActivity.class);
         startActivity(intent);
     }
 

@@ -177,20 +177,20 @@
     <string name="professional_patientInfo_exercises">Exercises</string>
     <string name="professional_patientInfo_exercisesProgress">Exercises Progress</string>
     <string name="professional_patientInfo_confirmDeletePatient">Are you sure you want to delete this patient?</string>
-        <!-- Buttons -->
+    <!-- Buttons -->
     <string name="professional_patientInfo_editPatient_button">Edit\nPatient</string>
     <string name="professional_patientInfo_deletePatient_button">Delete\nPatient</string>
     <string name="professional_patientInfo_seeTestHistory_button">Patient\'s Test History</string>
     <string name="professional_patientInfo_exercisesHistory_button">Exercises History</string>
-        <!-- End Buttons -->
+    <!-- End Buttons -->
 
-        <!-- Section Professional - Patient Info - CardsView -->
+    <!-- Section Professional - Patient Info - CardsView -->
     <string name="professional_patientInfo_cardView_text_patient">Patient:</string>
     <string name="professional_patientInfo_cardView_text_name">Name:</string>
     <string name="professional_patientInfo_cardView_text_lastName">Last Name:</string>
     <string name="professional_patientInfo_cardView_text_dateLastText">Date of last test:</string>
     <string name="professional_patientInfo_cardView_text_progress">Progress:</string>
-        <!-- End Section Professional - Patient Info - CardsView -->
+    <!-- End Section Professional - Patient Info - CardsView -->
 
     <!-- Fin Apartado Professional - Patient Info .-->
     <!-- Fin Apartado Professional .-->
@@ -230,7 +230,7 @@
     <string name="fifteenth_exercise">Exercise 15</string>
     <string name="sixteenth_exercise">Exercise 16</string>
     <string name="button_play">Play</string>
-    <string name="first_exercise_description">Find the red dot (the focus point) then click on the shape. \n The focus point will always appear first, after a few seconds the shape will appear. \n In other exercises the focus point will help you find the shape./text</string>
+    <string name="first_exercise_description">Find the red dot (the focus point) then click on the shape. \n The focus point will always appear first, after a few seconds the shape will appear. \n In other exercises the focus point will help you find the shape.</string>
     <string name="first_exercise_congrats">Congrats! You finished the demo!</string>
     <string name="second_exercise_description">Find the red dot and look at it. After 5 seconds, a series of shapes will appear. Touch the triangles.</string>
     <string name="third_exercise_description">Find the red dot and look at it. After 5 seconds, a series of shapes will appear, this time smaller and unfilled. Touch the triangles.</string>
@@ -302,5 +302,10 @@
     <string name="tests_history">Tests History</string>
     <string name="new_test">New test</string>
     <string name="test">Test:</string>
+    <string name="focus_switch">Focus Switch</string>
+    <string name="pause_button">Pause</string>
+    <string name="continue_exercise">Continue exercise</string>
+    <string name="tuto_pause">Pause the exercise</string>
+    <string name="tuto_resume">Return to the exercise</string>
 
 </resources>

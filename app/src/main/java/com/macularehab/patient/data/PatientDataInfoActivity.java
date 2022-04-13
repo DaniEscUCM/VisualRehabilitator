@@ -13,7 +13,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.macularehab.R;
-import com.macularehab.TestsHistoryActivity;
+import com.macularehab.patient.PatientHome;
+import com.macularehab.professional.ProfessionalTestsHistoryActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                close();
             }
         });
 
@@ -75,6 +76,11 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         setInvisibleButtons();
 
         fillFields();
+    }
+
+    private void close(){
+        Intent intent = new Intent(this, PatientHome.class);
+        startActivity(intent);
     }
 
     @Override
@@ -169,7 +175,7 @@ public class PatientDataInfoActivity extends AppCompatActivity {
     }
 
     private  void goToTests(){
-        Intent intent = new Intent(this, TestsHistoryActivity.class);
+        Intent intent = new Intent(this, PatientTestHistoryActivity.class);
         startActivity(intent);
     }
 }

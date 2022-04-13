@@ -27,7 +27,7 @@ import com.macularehab.draws.DrawDot;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.ProfessionalHome;
-import com.macularehab.professional.ProfessionalPatientHome;
+import com.macularehab.professional.ProfessionalTestsHistoryActivity;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -214,7 +214,7 @@ public class CalculateFocusActivity extends AppCompatActivity {
                 WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
                 writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
 
-                Intent i = new Intent( this, TestsHistoryActivity.class );
+                Intent i = new Intent( this, ProfessionalTestsHistoryActivity.class );
                 startActivity(i);
             }
             else{

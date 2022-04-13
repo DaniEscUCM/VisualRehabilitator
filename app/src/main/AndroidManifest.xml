@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.macularehab">
+    package="com.macularehab" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaculaRehab">
+        android:theme="@style/Theme.MaculaRehab" >
+        <activity
+            android:name=".patient.data.PatientTestHistoryActivity"
+            android:exported="false" />
         <activity
             android:name=".ResultsFirstExerciseActivity"
             android:exported="false" />
@@ -19,7 +22,7 @@
             android:name=".TestDisplayActivity"
             android:exported="false" />
         <activity
-            android:name=".TestsHistoryActivity"
+            android:name=".professional.ProfessionalTestsHistoryActivity"
             android:exported="false" />
         <activity
             android:name=".CalculateFocusActivity"
@@ -141,7 +144,7 @@
 
         <activity
             android:name=".IdentificationActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
