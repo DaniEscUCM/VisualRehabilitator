@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -69,6 +70,9 @@ public class PatientHome extends AppCompatActivity {
         String[] patient_username = mAuth.getCurrentUser().getEmail().split("@");
         patient_username_textView.setText(patient_username[0]);
 
+
+        ImageButton goBackButton = findViewById(R.id.patient_home_back_button);
+        goBackButton.setVisibility(View.GONE);
 
         //getProfessionalUID();
 

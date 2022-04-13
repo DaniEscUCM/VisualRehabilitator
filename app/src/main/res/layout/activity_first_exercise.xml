@@ -75,7 +75,7 @@
         android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/white"
+        android:background="#2A2D35"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,14 +86,14 @@
             android:id="@+id/home_button"
             android:layout_width="117dp"
             android:layout_height="107dp"
-            android:backgroundTint="@color/grey"
+            android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/button_home"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline34"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/house_icon"
-            app:tint="#000000" />
+            app:tint="#D3D1D1" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline34"
@@ -114,6 +114,7 @@
             android:layout_width="394dp"
             android:layout_height="73dp"
             android:text="@string/focus_switch"
+            android:textColor="#D3D1D1"
             android:textSize="48sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
@@ -125,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
-            android:textColor="@android:color/black"
+            android:textColor="#D3D1D1"
             android:textSize="60sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline36"
             app:layout_constraintEnd_toEndOf="parent"
@@ -144,7 +145,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline36"
             app:srcCompat="@android:drawable/ic_media_play"
-            app:tint="#000000" />
+            app:tint="#D3D1D1" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline36"
@@ -158,18 +159,20 @@
             android:layout_width="110dp"
             android:layout_height="103dp"
             android:contentDescription="@string/pause_button"
-            android:rotation="-95"
+            android:rotation="-90"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/return_button"
             app:layout_constraintStart_toEndOf="@+id/return_button"
             app:layout_constraintTop_toTopOf="@+id/return_button"
-            app:srcCompat="@drawable/touch_sin_fondo" />
+            app:srcCompat="@drawable/touch_sin_fondo"
+            app:tint="#D3D1D1" />
 
         <TextView
             android:id="@+id/textoVolver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tuto_resume"
+            android:textColor="#D3D1D1"
             android:textSize="48sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/volver"
