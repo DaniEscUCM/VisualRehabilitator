@@ -56,6 +56,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
     private final String isFocus = "focusIsOn";
     private boolean isOn;
     private ImageView foco;
+    private ImageButton button_dot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +99,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         num_miliseconds = SecondExerciseDescriptionActivity.getNumSeconds() * 1000;
         time_left=num_miliseconds;
 
-        ImageButton button_dot = findViewById(R.id.dot_button);
+        button_dot = findViewById(R.id.dot_button);
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
@@ -107,22 +108,22 @@ public class SecondExerciseActivity extends AppCompatActivity {
         button_dot.getLayoutParams().height = metric_unit*6;
 
         foco = findViewById(R.id.foco);
+        ArrayList<Pair<Float, Float>> coor_result;
+        LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+
+        foco.getLayoutParams().width = size;
+        foco.getLayoutParams().height = size;
+        foco.requestLayout();
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        foco.setImageBitmap(btm_manual_left);
+
         if(isOn){
             button_dot.setVisibility(View.INVISIBLE);
-            ArrayList<Pair<Float, Float>> coor_result;
-            LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
-            coor_result = new ArrayList<>();
-            coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-
-            foco.getLayoutParams().width = size;
-            foco.getLayoutParams().height = size;
-            foco.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            foco.setImageBitmap(btm_manual_left);
-
             startTimerFoco(button_dot); //Durante 5s solo se ve el foco
         }
         else{
@@ -220,6 +221,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
 
     private void resume(){
+        button_dot.setClickable(true);
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.GONE);
         startTimer();
@@ -234,6 +236,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
     private void pause_menu(){
         timer.cancel();
+        button_dot.setClickable(false);
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);
     }

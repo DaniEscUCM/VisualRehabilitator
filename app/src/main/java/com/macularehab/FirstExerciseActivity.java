@@ -107,6 +107,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
 
     private void pause_menu(){
         timer.cancel();
+        button_dot.setClickable(false);
         ImageView gone_image = findViewById(R.id.pause);
         gone_image.setVisibility(View.GONE);
         TextView txt_gone=findViewById(R.id.textoPause);
@@ -120,6 +121,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
     }
 
     private void resume(){
+        button_dot.setClickable(true);
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.GONE);
         ImageView inst = findViewById(R.id.volver);
