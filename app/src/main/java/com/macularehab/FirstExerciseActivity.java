@@ -154,7 +154,6 @@ public class FirstExerciseActivity extends AppCompatActivity {
     }
 
     public void close(){
-        saveFocusOn();
         Intent i = new Intent( this, FirstExerciseDescriptionActivity.class );
         startActivity(i);
         finish();
