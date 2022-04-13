@@ -238,7 +238,7 @@ public class NinthExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer_button2() { // counter of shape 2
-        timer_2 = new CountDownTimer(num_miliseconds, 1000) {
+        timer_2 = new CountDownTimer(time_left_2, 1000) {
             public void onTick(long millisUntilFinished) {time_left_2=millisUntilFinished; }
             public void onFinish() {
                 if(letter_M_2) {++counterFailed;} //they didn't touch when they should have.

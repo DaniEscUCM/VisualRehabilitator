@@ -220,7 +220,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer() { //counter of shape 1
-        timer_1 = new CountDownTimer(num_miliseconds, 1000) {
+        timer_1 = new CountDownTimer(time_left_1, 1000) {
             public void onTick(long millisUntilFinished) {time_left_1=millisUntilFinished; }
             public void onFinish() {
                 if(circle_1) {++counterFailed;} //they didn't touch when they should have.
@@ -232,7 +232,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer_button2() { // counter of shape 2
-        timer_2 = new CountDownTimer(num_miliseconds, 1000) {
+        timer_2 = new CountDownTimer(time_left_2, 1000) {
             public void onTick(long millisUntilFinished) { time_left_2=millisUntilFinished;}
             public void onFinish() {
                 if(circle_2) {++counterFailed;} //they didn't touch when they should have.
