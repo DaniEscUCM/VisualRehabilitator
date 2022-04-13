@@ -17,15 +17,8 @@ public class ResultsFirstExerciseActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         Button button_dot = findViewById(R.id.finish_first_ex);
-        button_dot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { exmenu(); }
-        });
+        button_dot.setOnClickListener(v -> finish());
     }
 
-    private void exmenu(){
-        Intent i = new Intent( this, ExercisesActivity.class );
-        startActivity(i);
-    }
 
 }

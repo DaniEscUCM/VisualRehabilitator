@@ -58,9 +58,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
         });
 
         ImageButton button_home = findViewById(R.id.home_button);
-        button_home.setOnClickListener(v -> finish());
-
-
+        button_home.setOnClickListener(v -> close());
 
         ImageButton button_pause = findViewById(R.id.pause_button);
         button_pause.setOnClickListener(v -> pause_menu());
@@ -150,6 +148,13 @@ public class FirstExerciseActivity extends AppCompatActivity {
         saveFocusOn();
         Intent i = new Intent( this, ResultsFirstExerciseActivity.class );
         startActivity(i);
+        finish();
+    }
+
+    public void close(){
+        Intent i = new Intent( this, FirstExerciseDescriptionActivity.class );
+        startActivity(i);
+        finish();
     }
 
     private void saveFocusOn(){
