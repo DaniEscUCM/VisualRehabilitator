@@ -210,7 +210,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
     public void close(){
         counter = total + 1;
-        saveFocusOn();
         finish();
     }
 
