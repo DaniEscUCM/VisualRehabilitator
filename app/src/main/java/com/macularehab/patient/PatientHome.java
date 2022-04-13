@@ -71,8 +71,8 @@ public class PatientHome extends AppCompatActivity {
         patient_username_textView.setText(patient_username[0]);
 
 
-        //ImageButton goBackButton = findViewById(R.id.patient_home_back_button);
-        //goBackButton.setVisibility(View.GONE);
+        ImageButton goBackButton = findViewById(R.id.patient_home_back_button);
+        goBackButton.setVisibility(View.GONE);
 
         //getProfessionalUID();
 
@@ -99,6 +99,8 @@ public class PatientHome extends AppCompatActivity {
                 logOut();
             }
         });
+
+        readFocusSwitch();
     }
 
     @Override
