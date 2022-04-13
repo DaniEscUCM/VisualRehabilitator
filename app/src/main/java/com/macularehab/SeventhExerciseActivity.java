@@ -177,7 +177,6 @@ public class SeventhExerciseActivity extends AppCompatActivity {
             focus_1.setVisibility(View.INVISIBLE);
             focus_2.setVisibility(View.INVISIBLE);
         }
-        saveFocusOn();
     }
 
     private void pause_menu(){
@@ -222,7 +221,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
 
     private void startTimer() { //counter of shape 1
         timer_1 = new CountDownTimer(num_miliseconds, 1000) {
-            public void onTick(long millisUntilFinished) { }
+            public void onTick(long millisUntilFinished) {time_left_1=millisUntilFinished; }
             public void onFinish() {
                 if(circle_1) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
@@ -234,7 +233,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
 
     private void startTimer_button2() { // counter of shape 2
         timer_2 = new CountDownTimer(num_miliseconds, 1000) {
-            public void onTick(long millisUntilFinished) { }
+            public void onTick(long millisUntilFinished) { time_left_2=millisUntilFinished;}
             public void onFinish() {
                 if(circle_2) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
@@ -260,6 +259,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         } else {
             System.out.println("counter: " + counter);
@@ -303,6 +303,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         } else {
             System.out.println("counter: " + counter + ". previous_2: " + previous_2);

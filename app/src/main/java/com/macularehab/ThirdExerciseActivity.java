@@ -168,6 +168,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
             System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         }
         else {
@@ -211,7 +212,6 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         else{
             foco.setVisibility(View.INVISIBLE);
         }
-        saveFocusOn();
     }
 
     private void pause_menu(){

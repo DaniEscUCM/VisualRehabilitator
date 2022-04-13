@@ -182,7 +182,6 @@ public class SixthExerciseActivity extends AppCompatActivity {
             focus_1.setVisibility(View.INVISIBLE);
             focus_2.setVisibility(View.INVISIBLE);
         }
-        saveFocusOn();
     }
 
     private void pause_menu(){
@@ -265,6 +264,7 @@ public class SixthExerciseActivity extends AppCompatActivity {
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         } else {
             System.out.println("counter: " + counter);
@@ -304,6 +304,7 @@ public class SixthExerciseActivity extends AppCompatActivity {
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         } else {
             System.out.println("counter: " + counter + ". previous_2: " + previous_2);

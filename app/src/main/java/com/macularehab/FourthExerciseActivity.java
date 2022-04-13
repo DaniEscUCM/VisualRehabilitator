@@ -165,7 +165,6 @@ public class FourthExerciseActivity extends AppCompatActivity {
         else{
             focus.setVisibility(View.INVISIBLE);
         }
-        saveFocusOn();
     }
 
     private void pause_menu(){
@@ -200,6 +199,7 @@ public class FourthExerciseActivity extends AppCompatActivity {
             System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         }
         else {

@@ -138,7 +138,6 @@ public class FifthExerciseActivity extends AppCompatActivity {
         else{
             focus.setVisibility(View.INVISIBLE);
         }
-        saveFocusOn();
     }
 
     private void pause_menu(){
@@ -199,6 +198,7 @@ public class FifthExerciseActivity extends AppCompatActivity {
             System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         }
         else {
@@ -233,13 +233,6 @@ public class FifthExerciseActivity extends AppCompatActivity {
         String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
         Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
         finish();
-    }
-
-    public void Settings(View view){
-        counter = total + 1;
-        finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
-        Intent i = new Intent( this, SettingsActivity.class );
-        startActivity(i);
     }
 
     public int getNumCorrect(){
