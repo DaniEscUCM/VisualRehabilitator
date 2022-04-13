@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class PatientTestHistoryActivity extends AppCompatActivity {
+public class  PatientTestHistoryActivity extends AppCompatActivity {
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
     private RecyclerView recyclerView;
@@ -80,8 +80,8 @@ public class PatientTestHistoryActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public void finish(){
+
+    public void Close(){
         Intent i = new Intent( this, PatientDataInfoActivity.class );
         startActivity(i);
     }

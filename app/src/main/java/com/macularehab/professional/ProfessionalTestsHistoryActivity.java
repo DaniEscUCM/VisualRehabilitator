@@ -47,7 +47,7 @@ public class ProfessionalTestsHistoryActivity extends AppCompatActivity {
         }
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
-        button.setOnClickListener(v -> Close(v));
+        button.setOnClickListener(v -> Close());
 
         //Cards
         recyclerView = findViewById(R.id.testsList_recyclerView);
@@ -84,8 +84,8 @@ public class ProfessionalTestsHistoryActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public void finish(){
+
+    public void Close(){
         Intent i = new Intent( this, ProfessionalPatientInfo.class );
         startActivity(i);
     }
@@ -101,7 +101,4 @@ public class ProfessionalTestsHistoryActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void Close(View view){
-        finish();
-    }
 }

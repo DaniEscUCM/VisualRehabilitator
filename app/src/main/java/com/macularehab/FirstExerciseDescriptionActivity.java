@@ -65,6 +65,7 @@ public class FirstExerciseDescriptionActivity extends AppCompatActivity {
         saveInfo();
         Intent i = new Intent( this, FirstExerciseActivity.class );
         startActivity(i);
+        finish();
     }
 
     public void Close(View view){
