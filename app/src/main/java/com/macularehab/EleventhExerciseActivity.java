@@ -33,7 +33,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     private int counter, counterCorrect, counterFailed, num_miliseconds, previous, metric_unit, size;
     private boolean focus_on;
     private CountDownTimer timer_1 = null;
-    private ArrayList<Pair<Float, Float>> coor_result;
     private HashMap<String, Object> patientHashMap;
 
     @Override
@@ -57,6 +56,14 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
         size = metric_unit * 20;//10cm
         move();
+
+        /*
+         * 0 left eye
+         * 1 right eye
+         * 2 nose
+         * 3 mouth
+         *
+         * */
 
         button_button_left_eye.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,7 +205,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
 
     }
 
-    private void startTimer() { //counter of
+    private void startTimer() {
         timer_1 = new CountDownTimer(num_miliseconds, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
@@ -214,13 +221,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             timer_1.cancel();
     }
 
-    /*
-    * 0 left eye
-    * 1 right eye
-    * 2 nose
-    * 3 mouth
-    *
-    * */
     private void move() {
         if (++counter == total) {
             writeResultInDataBase(counterCorrect, counterFailed);
@@ -252,7 +252,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
                 text.setText(res.getString(R.string.eleventh_exercise_find_left_eye));
             }
             else if(previous == 1) {
-                text.setText(res.getString(R.string.eleventh_exercise_find_rigth_eye));
+                text.setText(res.getString(R.string.eleventh_exercise_find_right_eye));
             }
             else if(previous == 2) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_nose));
@@ -270,6 +270,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view) {
+        counter = total + 1;
         System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
         String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
         Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
@@ -277,6 +278,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     }
 
     public void Settings(View view) {
+        counter = total + 1;
         finish();
         Intent i = new Intent(this, SettingsActivity.class);
         startActivity(i);

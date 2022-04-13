@@ -47,9 +47,7 @@ public class FourthExerciseActivity extends AppCompatActivity {
         is_letter_E = false;
         num_miliseconds = FourthExerciseDescriptionActivity.getNumSeconds() * 1000;
         boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
-
         Button button_dot = findViewById(R.id.button);
-        button_dot.setVisibility(View.INVISIBLE);
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
@@ -57,6 +55,7 @@ public class FourthExerciseActivity extends AppCompatActivity {
         ImageView focus = findViewById(R.id.foco);
 
         if(focus_on){
+            button_dot.setVisibility(View.INVISIBLE);
             ArrayList<Pair<Float, Float>> coor_result;
             LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
             coor_result = new ArrayList<>();
@@ -166,6 +165,7 @@ public class FourthExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view){
+        counter = total + 1;
         System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
         String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
         Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
@@ -173,6 +173,7 @@ public class FourthExerciseActivity extends AppCompatActivity {
     }
 
     public void Settings(View view){
+        counter = total + 1;
         finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
         Intent i = new Intent( this, SettingsActivity.class );
         startActivity(i);

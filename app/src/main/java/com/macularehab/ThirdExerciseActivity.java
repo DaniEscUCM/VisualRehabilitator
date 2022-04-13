@@ -51,7 +51,6 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         num_miliseconds = ThirdExerciseDescriptionActivity.getNumSeconds() * 1000;
         boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
         ImageButton button_dot = findViewById(R.id.dot_button);
-        button_dot.setVisibility(View.INVISIBLE);
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
@@ -61,13 +60,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
 
         ImageView foco = findViewById(R.id.foco);
         if(focus_on) {
-            //una forma mas facil seria simplemente poniendo el focus en la posicion correcta
-            /*int w = 50, h = 50;
-            foco.getLayoutParams().width = w;
-            foco.getLayoutParams().height = h;*/
-            //ReadInternalStorage readIS = new ReadInternalStorage();
-            //HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
-
+            button_dot.setVisibility(View.INVISIBLE);
             ArrayList<Pair<Float, Float>> coor_result;
             LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
             coor_result = new ArrayList<>();
@@ -178,6 +171,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view){
+        counter = total + 1;
         System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
         String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
         Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
@@ -185,6 +179,7 @@ public class ThirdExerciseActivity extends AppCompatActivity {
     }
 
     public void Settings(View view){
+        counter = total + 1;
         finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
         Intent i = new Intent( this, SettingsActivity.class );
         startActivity(i);
