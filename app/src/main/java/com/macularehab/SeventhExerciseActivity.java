@@ -47,8 +47,6 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
         ImageButton button_1 = findViewById(R.id.button_1);
         ImageButton button_2 = findViewById(R.id.button_2);
-        button_1.setVisibility(View.INVISIBLE);
-        button_2.setVisibility(View.INVISIBLE);
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit*20;//10cm
@@ -61,6 +59,8 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         ImageView focus_2 = findViewById(R.id.focus_2);
 
         if(focus_on){
+            button_1.setVisibility(View.INVISIBLE);
+            button_2.setVisibility(View.INVISIBLE);
             ArrayList<Pair<Float, Float>> coor_result;
             LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
             coor_result = new ArrayList<>();
@@ -266,6 +266,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view) {
+        counter = total + 1;
         System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
         String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
         Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
@@ -273,6 +274,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     }
 
     public void Settings(View view) {
+        counter = total + 1;
         finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
         Intent i = new Intent(this, SettingsActivity.class);
         startActivity(i);

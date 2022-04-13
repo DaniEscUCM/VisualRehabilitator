@@ -44,7 +44,6 @@ public class TenthExerciseActivity extends AppCompatActivity {
         num_miliseconds = TenthExerciseDescriptionActivity.getNumSeconds() * 1000;
         boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
         ImageButton button_dot = findViewById(R.id.dot_button);
-        button_dot.setVisibility(View.INVISIBLE);
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
@@ -54,6 +53,7 @@ public class TenthExerciseActivity extends AppCompatActivity {
 
         ImageView focus = findViewById(R.id.focus);
         if (focus_on) {
+            button_dot.setVisibility(View.INVISIBLE);
             ArrayList<Pair<Float, Float>> coor_result;
             LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
             coor_result = new ArrayList<>();
@@ -184,11 +184,13 @@ public class TenthExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view) {
+        counter = total + 1;
         finish();
     }
 
     public void Settings(View view) {
-        finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
+        counter = total + 1;
+        finish();
         Intent i = new Intent(this, SettingsActivity.class);
         startActivity(i);
     }

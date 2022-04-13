@@ -258,7 +258,7 @@
     <string name="eleventh_exercise_find_nose">Encuentra la nariz</string>
     <string name="eleventh_exercise_find_mouth">Encuentra la boca</string>
     <string name="eleventh_exercise_find_left_eye">Encuentra el ojo izquiero</string>
-    <string name="eleventh_exercise_find_rigth_eye">Encuentra el ojo derecho</string>
+    <string name="eleventh_exercise_find_right_eye">Encuentra el ojo derecho</string>
 
 
     <string name="toast_user_created">Usuario creado</string>
