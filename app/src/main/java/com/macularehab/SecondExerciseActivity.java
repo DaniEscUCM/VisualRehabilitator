@@ -12,9 +12,12 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -48,6 +51,12 @@ public class SecondExerciseActivity extends AppCompatActivity {
     protected final int exercise_id = 1, total = 10;
     protected boolean triangle;
     protected CountDownTimer timer;
+    private long time_left=3000;
+
+    private final String isFocus = "focusIsOn";
+    private boolean isOn;
+    private ImageView foco;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +70,27 @@ public class SecondExerciseActivity extends AppCompatActivity {
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
         //End database
+
+
+        ImageButton button_home = findViewById(R.id.home_button);
+        button_home.setOnClickListener(v -> close());
+
+        ImageButton button_pause = findViewById(R.id.pause_button);
+        button_pause.setOnClickListener(v -> pause_menu());
+
+        ImageButton button_resume = findViewById(R.id.return_button);
+        button_resume.setOnClickListener(v->resume());
+
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+
+        Switch focus_switch = findViewById(R.id.focus_switch1);
+        focus_switch.setChecked((Boolean) map.get(isFocus));
+        isOn=(Boolean) map.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
+            isOn=!(Boolean)mapS.get(isFocus);
+        });
 
         counterCorrect = counterFailed = 0; counter = -1;
         triangle = false;
@@ -76,7 +106,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         button_dot.getLayoutParams().width = metric_unit*6;//3cm diametro de las figuras
         button_dot.getLayoutParams().height = metric_unit*6;
 
-        ImageView foco = findViewById(R.id.foco);
+        foco = findViewById(R.id.foco);
         if(focus_on){
             button_dot.setVisibility(View.INVISIBLE);
             ArrayList<Pair<Float, Float>> coor_result;
@@ -110,26 +140,12 @@ public class SecondExerciseActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_setting = findViewById(R.id.exercise_settings);
-        button_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Settings(v);
-            }
-        });
 
-        ImageButton button_home = findViewById(R.id.home_button);
-        button_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Close(v);
-            }
-        });
     }
 
     private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
         timer = new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) { }
+            public void onTick(long millisUntilFinished) {time_left=millisUntilFinished; }
             public void onFinish() {
                 button_dot.setVisibility(View.VISIBLE);
                 move();
@@ -141,7 +157,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
     private void startTimer() {
         //10s (10000 mili segundos) para hacer click en el circulo
         //Lo pongo a 3-6s para hacer pruebas
-        timer = new CountDownTimer(num_miliseconds, 1000) {
+        timer = new CountDownTimer(time_left, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
                 if(triangle) {++counterFailed;} //they didn't touch when they should have.
@@ -154,9 +170,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
     private void cancelTimer() {
         timer.cancel();
-        if(timer!=null) {
-            timer.cancel();
-        }
     }
 
     private void move(){
@@ -176,6 +189,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         else {
             ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
             System.out.println("counter: " + counter);
+            time_left=num_miliseconds;
             startTimer();
             if (counter == 0 || counter == 5 || counter == 7 || counter == 9) {
                 button_dot.setImageResource(R.drawable.circle_black);
@@ -193,22 +207,56 @@ public class SecondExerciseActivity extends AppCompatActivity {
         }
     }
 
-    public void Close(View view){
+    public void close(){
         counter = total + 1;
+        Intent i = new Intent( this, SecondExerciseDescriptionActivity.class );
+        startActivity(i);
         finish();
     }
 
-    public void Settings(View view) {
-        counter = total + 1;
-        finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
-        Intent i = new Intent( this, SettingsActivity.class );
-        startActivity(i);
-    }
 
     public int getNumCorrect(){
         return counterCorrect;
     }
     public int getNumFailed(){ return counterFailed; }
+
+
+    private void resume(){
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);
+        startTimer();
+        if(isOn){
+            foco.setVisibility(View.VISIBLE);
+        }
+        else{
+            foco.setVisibility(View.INVISIBLE);
+        }
+        saveFocusOn();
+    }
+
+    private void pause_menu(){
+        timer.cancel();
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.VISIBLE);
+    }
+
+
+    private void saveFocusOn(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
+
+        mapS.put(isFocus, isOn);
+
+        Gson gson = new Gson();
+        String data = gson.toJson(mapS);
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
+        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
+                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
+    }
 
     //Database
     private void writeResultInDataBase(int correct, int failed) {
