@@ -1,4 +1,4 @@
-package com.macularehab.patient;
+package com.macularehab.patient.signUp;
 
 import android.animation.Animator;
 import android.app.AlertDialog;
@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,15 +20,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
+import com.macularehab.patient.PatientHome;
 
 import java.util.Map;
 
@@ -224,7 +222,6 @@ public class PatientSignUpUsername extends AppCompatActivity {
 
     private void updatePatient(Map<String, Object> patientInfo, String patient_uid) {
 
-        databaseReference.child("Patient").child(password).removeValue();
         databaseReference.child("Patient").child(patient_uid).setValue(patientInfo);
 
         String professionalUID = patientInfo.get("ProfessionalUID").toString();
@@ -236,6 +233,8 @@ public class PatientSignUpUsername extends AppCompatActivity {
                 .child("Patients").child(password).child("patient_username").setValue(username);
         databaseReference.child("Professional").child(professionalUID)
                 .child("Patients").child(password).child("patient_uid").setValue(mAuth.getUid());
+
+        databaseReference.child("Patient").child(password).removeValue();
 
         startPatientHomeActivity();
     }

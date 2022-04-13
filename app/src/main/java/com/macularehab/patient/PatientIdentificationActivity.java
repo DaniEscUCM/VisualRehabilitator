@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.macularehab.PatientLogin;
 import com.macularehab.R;
-import com.macularehab.patient.PatientSignUpUsername;
+import com.macularehab.patient.signUp.PatientSignUpPassword;
 
 public class PatientIdentificationActivity extends AppCompatActivity {
 

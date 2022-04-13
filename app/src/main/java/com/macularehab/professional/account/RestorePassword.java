@@ -20,11 +20,9 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.macularehab.R;
-import com.macularehab.patient.PatientSignUpUsername;
 
 public class RestorePassword extends AppCompatActivity {
 

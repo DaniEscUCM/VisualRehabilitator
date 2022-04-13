@@ -132,10 +132,10 @@
             android:name=".patient.PatientIdentificationActivity"
             android:exported="false" />
         <activity
-            android:name=".patient.PatientSignUpUsername"
+            android:name=".patient.signUp.PatientSignUpUsername"
             android:exported="false" />
         <activity
-            android:name=".patient.PatientSignUpPassword"
+            android:name=".patient.signUp.PatientSignUpPassword"
             android:exported="false" />
         <activity
             android:name=".patient.data.PatientDataInfoActivity"
