@@ -104,11 +104,6 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
         //System.out.println(num_seconds);
     }
 
-    private void setting(View v) {
-        Intent i = new Intent( this, SettingsActivity.class );
-        startActivity(i);
-    }
-
     private void play_exercise(View v) {
 
         saveInfo();
@@ -133,7 +128,6 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     public void Close(View view){
-
         saveInfo();
         finish();
     }

@@ -81,11 +81,10 @@ public class SecondExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
 
         Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) map.get(isFocus));
-        isOn=(Boolean) map.get(isFocus);
+        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        isOn=(Boolean) patientHashMap.get(isFocus);
         focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
             HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
@@ -97,7 +96,8 @@ public class SecondExerciseActivity extends AppCompatActivity {
         timer = null;
 
         num_miliseconds = SecondExerciseDescriptionActivity.getNumSeconds() * 1000;
-        boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
+        time_left=num_miliseconds;
+
         ImageButton button_dot = findViewById(R.id.dot_button);
         //Calculate based on screen size
         DisplayMetrics display = this.getResources().getDisplayMetrics();
@@ -107,7 +107,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         button_dot.getLayoutParams().height = metric_unit*6;
 
         foco = findViewById(R.id.foco);
-        if(focus_on){
+        if(isOn){
             button_dot.setVisibility(View.INVISIBLE);
             ArrayList<Pair<Float, Float>> coor_result;
             LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
@@ -145,7 +145,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
     private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
         timer = new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) {time_left=millisUntilFinished; }
+            public void onTick(long millisUntilFinished) { }
             public void onFinish() {
                 button_dot.setVisibility(View.VISIBLE);
                 move();
@@ -158,7 +158,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         //10s (10000 mili segundos) para hacer click en el circulo
         //Lo pongo a 3-6s para hacer pruebas
         timer = new CountDownTimer(time_left, 1000) {
-            public void onTick(long millisUntilFinished) { }
+            public void onTick(long millisUntilFinished) {time_left=millisUntilFinished; }
             public void onFinish() {
                 if(triangle) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
@@ -209,8 +209,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
     public void close(){
         counter = total + 1;
-        Intent i = new Intent( this, SecondExerciseDescriptionActivity.class );
-        startActivity(i);
         finish();
     }
 
