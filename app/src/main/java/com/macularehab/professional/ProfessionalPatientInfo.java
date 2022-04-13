@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
+import com.macularehab.patient.PatientHome;
 import com.macularehab.professional.patientForm.ProfessionalPatientEditInfo;
 
 import java.util.ArrayList;
@@ -81,7 +82,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProfessionalPatientInfo.this.finish();
+                close();
             }
         });
 
@@ -245,6 +246,14 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, "");
 
-        this.finish();
+        Intent intent = new Intent(this, ProfessionalHome.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+    private void close(){
+        Intent intent = new Intent(this, ProfessionalPatientHome.class);
+        startActivity(intent);
     }
 }

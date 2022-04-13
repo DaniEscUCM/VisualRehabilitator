@@ -49,7 +49,7 @@ public class ManualActions {
 
     public void touch_happened(float x, float y){
         Pair<Float, Float> res = valid_coor(x, y);
-        if (!res.equals(new Pair<>(0, 0))) {
+        if (!res.equals(new Pair<>((float)0,(float)0))) {
             if (result_coor.contains(res)) {
                 result_coor.remove(res);
             } else {
@@ -69,33 +69,35 @@ public class ManualActions {
     }
 
     private Pair<Float,Float> valid_coor(float x, float y){
-        float ref_coor_x_minor,ref_coor_x_mayor;
-        float ref_coor_y_minor,ref_coor_y_mayor;
-        int i=0;
-        do{
+        float ref_coor_x_minor, ref_coor_x_mayor;
+        float ref_coor_y_minor, ref_coor_y_mayor;
+        int i = 0;
+        do {
             ref_coor_x_minor = centre_x + (metric_unit * coor.get(i).first) +
-                    (coor.get(i).first >= 0 ? -(metric_unit /(float) 2) : (metric_unit/ (float)2)) -
-                    (metric_unit/ (float)2);
+                    (coor.get(i).first >= 0 ? -(metric_unit / (float) 2) : (metric_unit / (float) 2)) -
+                    (metric_unit / (float) 2);
             ref_coor_x_mayor = centre_x + (metric_unit * coor.get(i).first) +
-                    (coor.get(i).first >= 0 ? -(metric_unit /(float) 2) : (metric_unit/ (float)2)) +
-                    (metric_unit/ (float)2);
+                    (coor.get(i).first >= 0 ? -(metric_unit / (float) 2) : (metric_unit / (float) 2)) +
+                    (metric_unit / (float) 2);
 
             ref_coor_y_minor = centre_y + (metric_unit * coor.get(i).second) +
-                    (coor.get(i).second >= 0 ? -(metric_unit /(float) 2) : (metric_unit/(float) 2)) -
-                    (metric_unit/ (float)2);
+                    (coor.get(i).second >= 0 ? -(metric_unit / (float) 2) : (metric_unit / (float) 2)) -
+                    (metric_unit / (float) 2);
 
             ref_coor_y_mayor = centre_y + (metric_unit * coor.get(i).second) +
-                    (coor.get(i).second >= 0 ? -(metric_unit /(float) 2) : (metric_unit/(float) 2)) +
-                    (metric_unit/ (float)2);
+                    (coor.get(i).second >= 0 ? -(metric_unit / (float) 2) : (metric_unit / (float) 2)) +
+                    (metric_unit / (float) 2);
             i++;
         }
-        while (!(ref_coor_x_minor<=x && x<= ref_coor_x_mayor && ref_coor_y_minor<= y&& y<=ref_coor_y_mayor) && i!=coor.size());
+        while (!(ref_coor_x_minor <= x && x <= ref_coor_x_mayor && ref_coor_y_minor <= y && y <= ref_coor_y_mayor) && i != coor.size());
 
-        if(ref_coor_x_minor<=x && x<= ref_coor_x_mayor && ref_coor_y_minor<= y&& y<=ref_coor_y_mayor){
-            return coor.get(i-1);
+        if (ref_coor_x_minor <= x && x <= ref_coor_x_mayor && ref_coor_y_minor <= y && y <= ref_coor_y_mayor) {
+            return coor.get(i - 1);
         }
+
         return new Pair<>((float)0,(float)0);
     }
+
 
     public List<Pair<Float, Float>> getResult_coor() {
         return result_coor;

@@ -45,7 +45,7 @@ public class ProfessionalPatientHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveInfo();
-                ProfessionalPatientHome.this.finish();
+                Close();
             }
         });
 
@@ -110,6 +110,12 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     private void goToExercisesActivity() {
         saveInfo();
         Intent intent = new Intent(this, ExercisesActivity.class);
+        startActivity(intent);
+    }
+
+    private void Close(){
+        saveInfo();
+        Intent intent = new Intent(this, ProfessionalHome.class);
         startActivity(intent);
     }
 
