@@ -126,9 +126,6 @@
             android:name=".patient.logIn.PatientLogin"
             android:exported="false" />
         <activity
-            android:name=".PatientSignUp"
-            android:exported="false" />
-        <activity
             android:name=".patient.PatientIdentificationActivity"
             android:exported="false" />
         <activity

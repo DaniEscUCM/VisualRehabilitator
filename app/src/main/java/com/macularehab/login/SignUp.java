@@ -1,8 +1,6 @@
 package com.macularehab.login;
 
 import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -13,14 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.macularehab.PatientSignUp;
-import com.macularehab.ProfessionalSingingActivity;
-import com.macularehab.R;
-import com.macularehab.model.Patient;
-import com.macularehab.model.Professional;
 
-import java.util.concurrent.Executor;
-
+@Deprecated
 public class SignUp {
 
     private FirebaseAuth mAuth;
@@ -30,7 +22,7 @@ public class SignUp {
     private String email_username;
     private String password;
 
-    private PatientSignUp patientSignUp;
+    //private PatientSignUp patientSignUp;
 
     private static final String TAG = "EmailPassword";
 
@@ -58,9 +50,9 @@ public class SignUp {
         return false;
     }
 
-    public void readEmail( String email_username, String password, PatientSignUp patientSignUp) {
+    public void readEmail( String email_username, String password/*, PatientSignUp patientSignUp*/) {
 
-        this.patientSignUp = patientSignUp;
+        /*this.patientSignUp = patientSignUp;*/
 
         int email_length = email_username.length();
         boolean is_email = false;
@@ -100,15 +92,15 @@ public class SignUp {
                             SignUp.this.user = user;
                             SignUp.this.user_created_successfully = true;
                            // createUserDB(user.getUid());
-                            SignUp.this.patientSignUp.patient_signed_successfully();
+                            //SignUp.this.patientSignUp.patient_signed_successfully();
                             //updateUI(user);
-                            SignUp.this.patientSignUp.addDB();
+                            //SignUp.this.patientSignUp.addDB();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
 
                             SignUp.this.user_created_successfully = false;
-                            SignUp.this.patientSignUp.patient_signingUp_failed();
+                            //SignUp.this.patientSignUp.patient_signingUp_failed();
 
                         }
                     }
