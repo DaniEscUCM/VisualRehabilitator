@@ -223,6 +223,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
         resultIntent.putExtra(NUM_FAILED, failed);
         startActivity(resultIntent);
 
-        this.finish();
+        //this.finish();
     }
 }

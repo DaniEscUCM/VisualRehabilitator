@@ -44,8 +44,8 @@ public class ShowResultActivity extends AppCompatActivity {
         numCorrect = getIntent().getIntExtra("numCorrect", 0);
         numFailed = getIntent().getIntExtra("numFailed", 0);
 
-        numCorrectText.setText(numCorrect);
-        numFailedText.setText(numFailed);
+        numCorrectText.setText(String.valueOf(numCorrect));
+        numFailedText.setText(String.valueOf(numFailed));
     }
 
     private void returnToExercises() {
