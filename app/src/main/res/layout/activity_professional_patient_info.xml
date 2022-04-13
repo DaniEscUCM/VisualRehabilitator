@@ -911,7 +911,7 @@
                 android:layout_height="20dp" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/professional_patient_info_exercisesHistory_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientInfo_exercisesHistory_button"

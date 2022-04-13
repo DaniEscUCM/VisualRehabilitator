@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
+import com.macularehab.exercises.ExerciseResultHistory;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.PatientHome;
@@ -107,6 +108,14 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deletePatient();
+            }
+        });
+
+        Button exercisesHistoryButton = findViewById(R.id.professional_patient_info_exercisesHistory_button);
+        exercisesHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToExercisesHistory();
             }
         });
 
@@ -254,6 +263,12 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
     private void close(){
         Intent intent = new Intent(this, ProfessionalPatientHome.class);
+        startActivity(intent);
+    }
+
+    private void goToExercisesHistory() {
+
+        Intent intent = new Intent(this, ExerciseResultHistory.class);
         startActivity(intent);
     }
 }
