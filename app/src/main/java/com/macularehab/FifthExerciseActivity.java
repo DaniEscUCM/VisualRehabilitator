@@ -47,6 +47,7 @@ public class FifthExerciseActivity extends AppCompatActivity {
     private boolean isOn;
     private ImageView focus;
     private Button button_dot;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -228,6 +229,7 @@ public class FifthExerciseActivity extends AppCompatActivity {
 
     public void Close(View view){
         counter = total + 1;
+        saveFocusOn();
         System.out.println("counter: "+ counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
         String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
         Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
