@@ -138,7 +138,7 @@ public class FourthExerciseActivity extends AppCompatActivity {
 
     private void startTimer() {
         timer = new CountDownTimer(time_left, 1000) {
-            public void onTick(long millisUntilFinished) { }
+            public void onTick(long millisUntilFinished) {time_left=millisUntilFinished;  }
             public void onFinish() {
                 if(is_letter_E) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
