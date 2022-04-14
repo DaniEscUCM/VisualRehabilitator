@@ -40,7 +40,7 @@ public class ExerciseResultHistory extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_exercise_results_history);
 
-        exercise_id = 1;
+        exercise_id = getIntent().getIntExtra("exercise_id", 1);
 
         barChart = findViewById(R.id.exercise_results_history_barChart);
 

@@ -237,6 +237,9 @@
             android:name=".exercises.ShowResultActivity"
             android:exported="false" />
         <activity
+            android:name=".exercises.ChooseExerciseActivity"
+            android:exported="false" />
+        <activity
             android:name=".exercises.ExerciseResultHistory"
             android:exported="false" />
 

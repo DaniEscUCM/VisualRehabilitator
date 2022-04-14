@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
+import com.macularehab.exercises.ChooseExerciseActivity;
 import com.macularehab.exercises.ExerciseResultHistory;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
@@ -268,7 +269,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
     private void goToExercisesHistory() {
 
-        Intent intent = new Intent(this, ExerciseResultHistory.class);
+        Intent intent = new Intent(this, ChooseExerciseActivity.class);
         startActivity(intent);
     }
 }
