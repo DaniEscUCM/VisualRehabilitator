@@ -12,6 +12,7 @@
     <string name="password">Password</string>
     <string name="emptyField">Field is empty. Is required to fill out</string>
     <string name="required">* Required</string>
+    <string name="noInternetConnection">No Internet Connection.\nPlease make sure you are connected to internet</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->

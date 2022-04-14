@@ -17,6 +17,7 @@
     <string name="password">Contraseña</string>
     <string name="emptyField">Casilla sin rellenar. Es obligatorio rellenar la(s) casilla(s)</string>
     <string name="required">* Obligatorio</string>
+    <string name="noInternetConnection">Sin conexión a Internet.\nPor favor asegúrate de que estás conectado a Internet</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->

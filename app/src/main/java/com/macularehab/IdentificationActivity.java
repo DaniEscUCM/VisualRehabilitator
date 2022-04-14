@@ -2,11 +2,15 @@ package com.macularehab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +33,8 @@ public class IdentificationActivity extends AppCompatActivity {
     private TextView whosIsUsing;
     private Button buttonPatient;
     private Button buttonProfessional;
+
+    private boolean isConnected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,14 +112,58 @@ public class IdentificationActivity extends AppCompatActivity {
         }
     }
 
-    public void patient(View view){
-        Intent patientView = new Intent(this, PatientIdentificationActivity.class);
-        //Intent patientView = new Intent(this, PatientLogin.class);
-        startActivity(patientView);
+    public void patient(View view) {
+
+        checkInternetConnection();
+
+        if (isConnected) {
+
+            Intent patientIntent = new Intent(this, PatientIdentificationActivity.class);
+            startActivity(patientIntent);
+        }
+        else {
+            showAlertNotInternetConnection();
+        }
     }
 
-    public void professional(View view){
-        Intent i = new Intent( this, ProfessionalIdentificationActivity.class);
-        startActivity(i);
+    public void professional(View view) {
+
+        checkInternetConnection();
+
+        if (isConnected) {
+
+            Intent professionalIntent = new Intent( this, ProfessionalIdentificationActivity.class);
+            startActivity(professionalIntent);
+        }
+        else {
+            showAlertNotInternetConnection();
+        }
+    }
+
+    private void checkInternetConnection() {
+
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();//activeNetwork.isConnectedOrConnecting();
+
+    }
+
+    private void showAlertNotInternetConnection() {
+
+        Resources resources = this.getResources();
+        String st_error = resources.getString(R.string.noInternetConnection);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
