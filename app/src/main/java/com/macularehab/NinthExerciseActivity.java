@@ -14,17 +14,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,12 +39,21 @@ public class NinthExerciseActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
-    private final String filenameCurrentUser = "CurrentPatient.json";
     private HashMap<String, Object> patientHashMap;
     private final int exercise_id = 8, total = 22, num_shapes = 5;
     private int counter, counterCorrect, counterFailed, num_miliseconds, previous_1,previous_2;
     private boolean letter_M_1, letter_M_2;
     private CountDownTimer timer_1 = null, timer_2 = null;
+    private long time_left_1=3000;
+    private long time_left_2=3000;
+    private String filenameCurrentUser = "CurrentPatient.json";
+
+    private final String isFocus = "focusIsOn";
+    private boolean isOn;
+    private ImageView focus_1;
+    private ImageView focus_2;
+    private Button button_1;
+    private Button button_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,50 +62,67 @@ public class NinthExerciseActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
-        String filenameCurrentUser = "CurrentPatient.json";
+
         ReadInternalStorage readIS = new ReadInternalStorage();
         HashMap<String, Object> patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
+
+        ImageButton button_pause = findViewById(R.id.pause_button);
+        button_pause.setOnClickListener(v -> pause_menu());
+
+        ImageButton button_resume = findViewById(R.id.return_button);
+        button_resume.setOnClickListener(v->resume());
+
+        Switch focus_switch = findViewById(R.id.focus_switch1);
+        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        isOn=(Boolean) patientHashMap.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
+            isOn=!(Boolean)mapS.get(isFocus);
+        });
+
         counterCorrect = counterFailed = 0;
         counter = previous_1 = previous_2 = -1;
         letter_M_1 =  letter_M_2 = false;
         num_miliseconds = NinthExerciseDescriptionActivity.getNumSeconds() * 1000;
-        boolean focus_on = (boolean) patientHashMap.get("focusIsOn");
+        time_left_1=num_miliseconds;
+        time_left_2=num_miliseconds;
 
-        Button button_1 = findViewById(R.id.button_1);
-        Button button_2 = findViewById(R.id.button_2);
+        button_1 = findViewById(R.id.button_1);
+        button_2 = findViewById(R.id.button_2);
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit*20;//10cm
 
-        ImageView focus_1 = findViewById(R.id.focus_1);
-        ImageView focus_2 = findViewById(R.id.focus_2);
+        focus_1 = findViewById(R.id.focus_1);
+        focus_2 = findViewById(R.id.focus_2);
 
-        if(focus_on){
+        ArrayList<Pair<Float, Float>> coor_result;
+        LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+
+        focus_1.getLayoutParams().width = size;
+        focus_1.getLayoutParams().height = size;
+        focus_1.requestLayout();
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus_1.setImageBitmap(btm_manual_left);
+
+        focus_2.getLayoutParams().width = size;
+        focus_2.getLayoutParams().height = size;
+        focus_2.requestLayout();
+        Bitmap btm_manual_left_2 = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas_2 = new Canvas(btm_manual_left_2);
+        DrawDot all_dots_2 = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.BLUE);
+        all_dots_2.draw(canvas_2);
+        focus_2.setImageBitmap(btm_manual_left);
+
+        if(isOn){
             button_1.setVisibility(View.INVISIBLE);
             button_2.setVisibility(View.INVISIBLE);
-            ArrayList<Pair<Float, Float>> coor_result;
-            LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
-            coor_result = new ArrayList<>();
-            coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-
-            focus_1.getLayoutParams().width = size;
-            focus_1.getLayoutParams().height = size;
-            focus_1.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus_1.setImageBitmap(btm_manual_left);
-
-            focus_2.getLayoutParams().width = size;
-            focus_2.getLayoutParams().height = size;
-            focus_2.requestLayout();
-            Bitmap btm_manual_left_2 = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas_2 = new Canvas(btm_manual_left_2);
-            DrawDot all_dots_2 = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.BLUE);
-            all_dots_2.draw(canvas_2);
-            focus_2.setImageBitmap(btm_manual_left);
-
             startTimerFoco(button_1, button_2); //Durante 5s solo se ve el foco
         }
         else{
@@ -128,13 +158,6 @@ public class NinthExerciseActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_setting = findViewById(R.id.exercise_settings);
-        button_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Settings(v);
-            }
-        });
 
         ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +166,50 @@ public class NinthExerciseActivity extends AppCompatActivity {
                 Close(v);
             }
         });
+    }
+    private void resume(){
+        button_1.setClickable(true);
+        button_2.setClickable(true);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);
+        startTimer();
+        startTimer_button2();
+        if(isOn){
+            focus_1.setVisibility(View.VISIBLE);
+            focus_2.setVisibility(View.VISIBLE);
+        }
+        else{
+            focus_1.setVisibility(View.INVISIBLE);
+            focus_2.setVisibility(View.INVISIBLE);
+        }
+        saveFocusOn();
+    }
+
+    private void pause_menu(){
+        button_1.setClickable(false);
+        button_2.setClickable(false);
+        timer_1.cancel();
+        timer_2.cancel();
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.VISIBLE);
+    }
+
+
+    private void saveFocusOn(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
+
+        mapS.put(isFocus, isOn);
+
+        Gson gson = new Gson();
+        String data = gson.toJson(mapS);
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
+        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
+                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
     }
 
     private void startTimerFoco(Button button_1, Button button_2) {
@@ -159,8 +226,8 @@ public class NinthExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer() { //counter of shape 1
-        timer_1 = new CountDownTimer(num_miliseconds, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        timer_1 = new CountDownTimer(time_left_1, 1000) {
+            public void onTick(long millisUntilFinished) {time_left_1=millisUntilFinished;  }
             public void onFinish() {
                 if(letter_M_1) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
@@ -171,8 +238,8 @@ public class NinthExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer_button2() { // counter of shape 2
-        timer_2 = new CountDownTimer(num_miliseconds, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        timer_2 = new CountDownTimer(time_left_2, 1000) {
+            public void onTick(long millisUntilFinished) {time_left_2=millisUntilFinished; }
             public void onFinish() {
                 if(letter_M_2) {++counterFailed;} //they didn't touch when they should have.
                 else{++counterCorrect;}
@@ -213,6 +280,7 @@ public class NinthExerciseActivity extends AppCompatActivity {
             System.out.println("previous_1: " + previous_1 + ". rand1: " + rand1);
 
             Button button_1 = findViewById(R.id.button_1);
+            time_left_1=num_miliseconds;
             startTimer();
             if(previous_1 == 0) {
                 button_1.setText("T");
@@ -252,6 +320,7 @@ public class NinthExerciseActivity extends AppCompatActivity {
             System.out.println("previous_2: " + previous_2);
 
             Button button_2 = findViewById(R.id.button_2);
+            time_left_2=num_miliseconds;
             startTimer_button2();
             if(previous_1 == 0) {
                 button_2.setText("T");
@@ -280,12 +349,6 @@ public class NinthExerciseActivity extends AppCompatActivity {
         finish();
     }
 
-    public void Settings(View view) {
-        counter = total + 1;
-        finish(); //para que termine el ejercicio y no siga funcionando mientras esta en settings
-        Intent i = new Intent(this, SettingsActivity.class);
-        startActivity(i);
-    }
 
     public int getNumCorrect(){
         return counterCorrect;
