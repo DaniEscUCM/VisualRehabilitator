@@ -49,11 +49,11 @@
 
     <ImageButton
         android:id="@+id/dot_button_nose"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="252dp"
-        android:alpha="0"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="264dp"
+        android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -76,20 +76,18 @@
 
     <ImageButton
         android:id="@+id/dot_button_left_eye"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:alpha="0"
-        android:background="@android:color/transparent"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
-        android:foregroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/image_background"
         app:layout_constraintEnd_toEndOf="@+id/image_background"
-        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintHorizontal_bias="0.329"
         app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
-        app:layout_constraintVertical_bias="0.474"
+        app:layout_constraintVertical_bias="0.449"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
@@ -107,16 +105,19 @@
 
     <ImageButton
         android:id="@+id/dot_button_right_eye"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginTop="192dp"
-        android:layout_marginEnd="148dp"
-        android:alpha="0"
+        android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/image_background"
         app:layout_constraintEnd_toEndOf="@+id/image_background"
+        app:layout_constraintHorizontal_bias="0.654"
+        app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
@@ -138,7 +139,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="160dp"
         android:layout_marginTop="336dp"
-        android:alpha="0"
+        android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
