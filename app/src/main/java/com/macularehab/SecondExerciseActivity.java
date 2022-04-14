@@ -267,11 +267,14 @@ public class SecondExerciseActivity extends AppCompatActivity {
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
         exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
 
+        showResults(correct, failed);
+    }
+
+    private void showResults(int correct, int failed) {
+
         Intent resultIntent = new Intent(this, ShowResultActivity.class);
         resultIntent.putExtra(NUM_CORRECT, correct);
         resultIntent.putExtra(NUM_FAILED, failed);
         startActivity(resultIntent);
-
-        //this.finish();
     }
 }

@@ -24,6 +24,7 @@ import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
+import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 
@@ -255,17 +256,44 @@ public class TenthExerciseActivity extends AppCompatActivity {
         finish();
     }
 
-    public int getNumCorrect() {
-        return counterCorrect;
-    }
-
-    public int getNumFailed() {
-        return counterFailed;
-    }
-
     //Database
+    /**
+     * [EN] Writes the result of the exercise in the database and in internal storage
+     * [ES] Escribe el resultado del ejercicio en la base de datos y en el almacenamiento interno
+     *
+     * @param correct
+     *          [En] Number of corrects
+     *          [ES] Número de aciertos
+     * @param failed
+     *          [En] Number of failures
+     *          [ES] Número de fallos
+     */
     private void writeResultInDataBase(int correct, int failed) {
-       ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
-       exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
+
+        ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
+        exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
+
+        showResults(correct, failed);
+    }
+
+    /**
+     * [EN] Starts ShowResultActivity,
+     *      and passes two intents, the number of corrects and number of failures
+     * [ES] Comienza nueva actividad,
+     *      y pasa dos intents, el número de aciertos y el número de fallos
+     *
+     * @param correct
+     *          [En] Number of corrects
+     *          [ES] Número de aciertos
+     * @param failed
+     *          [En] Number of failures
+     *          [ES] Número de fallos
+     */
+    private void showResults(int correct, int failed) {
+
+        Intent resultIntent = new Intent(this, ShowResultActivity.class);
+        resultIntent.putExtra("numCorrect", correct);
+        resultIntent.putExtra("numFailed", failed);
+        startActivity(resultIntent);
     }
 }
