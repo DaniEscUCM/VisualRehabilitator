@@ -197,35 +197,17 @@ public class PatientHome extends AppCompatActivity {
         Switch focus_switch = findViewById(R.id.focus_switch);
         if (map.containsKey(isFocus)) {
             focus_switch.setChecked((Boolean) map.get(isFocus));
+            //Listener
             focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                if (isChecked) {
-                    ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-                    HashMap<String, Object> mapS = readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
-                    if (!(Boolean) mapS.get(isFocus)) {
-                        mapS.put(isFocus, true);
-
-                        Gson gson = new Gson();
-                        String data = gson.toJson(mapS);
-                        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                        writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
-                        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(true);
-                    }
-                }
-                {
-                    ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-                    HashMap<String, Object> mapS = readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
-                    if ((Boolean) mapS.get(isFocus)) {
-                        mapS.put(isFocus, false);
-
-                        Gson gson = new Gson();
-                        String data = gson.toJson(mapS);
-                        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                        writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
-                        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(true);
-                    }
-                }
+                ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+                HashMap<String, Object> mapS = readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
+                mapS.put(isFocus, isChecked);
+                Gson gson = new Gson();
+                String data = gson.toJson(mapS);
+                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+                writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
+                databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
+                        child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isChecked);
             });
         }
     }

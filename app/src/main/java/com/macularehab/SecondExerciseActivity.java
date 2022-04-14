@@ -50,13 +50,14 @@ public class SecondExerciseActivity extends AppCompatActivity {
     protected int counter, counterCorrect,counterFailed, num_miliseconds;
     protected final int exercise_id = 1, total = 10;
     protected boolean triangle;
-    protected CountDownTimer timer;
-    private long time_left=3000;
+    protected CountDownTimer timer = null,timer_focus = null;
+    private long time_left=3000,time_left_focus=5000;
 
     private final String isFocus = "focusIsOn";
     private boolean isOn;
     private ImageView foco;
     private ImageButton button_dot;
+    private boolean hiden=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,9 +88,7 @@ public class SecondExerciseActivity extends AppCompatActivity {
         focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
         isOn=(Boolean) patientHashMap.get(isFocus);
         focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
-            isOn=!(Boolean)mapS.get(isFocus);
+            isOn=!isOn;
         });
 
         counterCorrect = counterFailed = 0; counter = -1;
@@ -145,14 +144,16 @@ public class SecondExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
-        timer = new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        hiden=true;
+        timer_focus = new CountDownTimer(time_left_focus, 1000) {
+            public void onTick(long millisUntilFinished) { time_left_focus=millisUntilFinished; }
             public void onFinish() {
+                hiden=false;
                 button_dot.setVisibility(View.VISIBLE);
                 move();
             }
         };
-        timer.start();
+        timer_focus.start();
     }
 
     private void startTimer() {
@@ -222,20 +223,37 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
 
     private void resume(){
-        button_dot.setClickable(true);
-        ConstraintLayout menu=findViewById(R.id.menu);
-        menu.setVisibility(View.GONE);
-        startTimer();
         if(isOn){
-            foco.setVisibility(View.VISIBLE);
+            if(hiden){
+                startTimerFoco(button_dot);
+            }
+            else{
+                foco.setVisibility(View.VISIBLE);
+                startTimer();
+            }
         }
         else{
             foco.setVisibility(View.INVISIBLE);
+            if(hiden){
+                hiden=false;
+                button_dot.setVisibility(View.VISIBLE);
+                move();
+            }
+            startTimer();
         }
+
+        button_dot.setClickable(true);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);
+
     }
 
     private void pause_menu(){
-        timer.cancel();
+        if(hiden){
+            timer_focus.cancel();
+        }else {
+            timer.cancel();
+        }
         button_dot.setClickable(false);
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);

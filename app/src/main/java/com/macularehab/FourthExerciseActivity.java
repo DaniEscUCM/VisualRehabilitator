@@ -39,15 +39,16 @@ public class FourthExerciseActivity extends AppCompatActivity {
     private final int exercise_id = 3,total = 13;
     private int counter, counterCorrect, counterFailed, num_miliseconds;
     private boolean is_letter_E;
-    protected CountDownTimer timer = null;
+    protected CountDownTimer timer = null,timer_focus = null;
     private final String filenameCurrentUser = "CurrentPatient.json";
     private HashMap<String, Object> patientHashMap;
-    private long time_left=3000;
+    private long time_left=3000,time_left_focus=5000;
 
     private final String isFocus = "focusIsOn";
     private boolean isOn;
     private ImageView focus;
     private Button button_dot;
+    private boolean hiden=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +71,7 @@ public class FourthExerciseActivity extends AppCompatActivity {
         focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
         isOn=(Boolean) patientHashMap.get(isFocus);
         focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
-            isOn=!(Boolean)mapS.get(isFocus);
+            isOn=!isOn;
         });
 
         counterCorrect = counterFailed = 0; counter = -1;
@@ -127,14 +126,16 @@ public class FourthExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimerFoco(Button button_dot) {     //Timer para que aparezca el foco solo 5s
-        timer = new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        hiden=true;
+        timer_focus = new CountDownTimer(time_left_focus, 1000) {
+            public void onTick(long millisUntilFinished) {  time_left_focus=millisUntilFinished;}
             public void onFinish() {
+                hiden=false;
                 button_dot.setVisibility(View.VISIBLE);
                 move();
             }
         };
-        timer.start();
+        timer_focus.start();
     }
 
     private void startTimer() {
@@ -156,21 +157,37 @@ public class FourthExerciseActivity extends AppCompatActivity {
     }
 
     private void resume(){
-        button_dot.setClickable(true);
-        ConstraintLayout menu=findViewById(R.id.menu);
-        menu.setVisibility(View.GONE);
-        startTimer();
         if(isOn){
-            focus.setVisibility(View.VISIBLE);
+            if(hiden){
+                startTimerFoco(button_dot);
+            }
+            else{
+                focus.setVisibility(View.VISIBLE);
+                startTimer();
+            }
         }
         else{
             focus.setVisibility(View.INVISIBLE);
+            if(hiden){
+                hiden=false;
+                button_dot.setVisibility(View.VISIBLE);
+                move();
+            }
+            startTimer();
         }
+
+        button_dot.setClickable(true);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);
     }
 
     private void pause_menu(){
+        if(hiden){
+            timer_focus.cancel();
+        }else {
+            timer.cancel();
+        }
         button_dot.setClickable(false);
-        timer.cancel();
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);
     }
