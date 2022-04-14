@@ -38,9 +38,10 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     private final int exercise_id = 6, total = 22, num_shapes = 4;
     private int counter, counterCorrect, counterFailed, num_miliseconds, previous_1,previous_2;
     private boolean circle_1, circle_2;
-    private CountDownTimer timer_1 = null, timer_2 = null;
+    private CountDownTimer timer_1 = null, timer_2 = null, timer_focus=null;
     private long time_left_1=3000;
     private long time_left_2=3000;
+    private long time_left_focus=5000;
     private String filenameCurrentUser = "CurrentPatient.json";
 
     private final String isFocus = "focusIsOn";
@@ -49,6 +50,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     private ImageView focus_2;
     private ImageButton button_1;
     private ImageButton button_2;
+    private boolean hiden=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +72,7 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
         isOn=(Boolean) patientHashMap.get(isFocus);
         focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
-            isOn=!(Boolean)mapS.get(isFocus);
+            isOn=!isOn;
         });
 
         counterCorrect = counterFailed = 0;
@@ -164,27 +164,45 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     }
 
     private void resume(){
-        button_1.setClickable(true);
-        button_2.setClickable(true);
-        ConstraintLayout menu=findViewById(R.id.menu);
-        menu.setVisibility(View.GONE);
-        startTimer();
-        startTimer_button2();
         if(isOn){
-            focus_1.setVisibility(View.VISIBLE);
-            focus_2.setVisibility(View.VISIBLE);
+            if(hiden){
+                startTimerFoco(button_1,button_2);
+            }
+            else{
+                focus_1.setVisibility(View.VISIBLE);
+                focus_2.setVisibility(View.VISIBLE);
+                startTimer();
+                startTimer_button2();
+            }
         }
         else{
             focus_1.setVisibility(View.INVISIBLE);
             focus_2.setVisibility(View.INVISIBLE);
+            if(hiden){
+                hiden=false;
+                button_1.setVisibility(View.VISIBLE);
+                button_2.setVisibility(View.VISIBLE);
+                move_button_1();
+                move_button_2();
+            }
+            startTimer();
+            startTimer_button2();
         }
+        button_1.setClickable(true);
+        button_2.setClickable(true);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);
     }
 
     private void pause_menu(){
+        if(hiden){
+            timer_focus.cancel();
+        }else{
+            timer_1.cancel();
+            timer_2.cancel();
+        }
         button_1.setClickable(false);
         button_2.setClickable(false);
-        timer_1.cancel();
-        timer_2.cancel();
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);
     }
@@ -208,16 +226,18 @@ public class SeventhExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimerFoco(ImageButton button_1, ImageButton button_2) {
-        timer_1 = new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        hiden=true;
+        timer_focus = new CountDownTimer(time_left_focus, 1000) {
+            public void onTick(long millisUntilFinished) {time_left_focus=millisUntilFinished; }
             public void onFinish() {
+                hiden=false;
                 button_1.setVisibility(View.VISIBLE);
                 button_2.setVisibility(View.VISIBLE);
                 move_button_1();
                 move_button_2();
             }
         };
-        timer_1.start();
+        timer_focus.start();
     }
 
     private void startTimer() { //counter of shape 1

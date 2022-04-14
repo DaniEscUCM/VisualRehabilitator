@@ -59,9 +59,7 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
         focus_switch.setChecked((Boolean) map.get(isFocus));
         isOn=(Boolean) map.get(isFocus);
         focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-            HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
-            isOn=!(Boolean)mapS.get(isFocus);
+            isOn=!isOn;
         });
 
         EditText seconds = (EditText) findViewById(R.id.seconds);
