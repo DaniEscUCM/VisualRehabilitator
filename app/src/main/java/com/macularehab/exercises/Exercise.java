@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Exercise {
 
-    private final int num_exercises = 13;
+    private final int num_exercises = 17;
     private int exercises_completed;
     private ArrayList<ExerciseInfo> exerciseInfoList;
 
