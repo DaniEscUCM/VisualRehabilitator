@@ -62,6 +62,7 @@ public class NinthExerciseDescriptionActivity extends AppCompatActivity {
 
 
     private void play_exercise(View v) {
+
         saveInfo();
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
@@ -69,6 +70,9 @@ public class NinthExerciseDescriptionActivity extends AppCompatActivity {
         if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
         }
+
+        finish();
+
         Intent i = new Intent( this, NinthExerciseActivity.class );
         startActivity(i);
     }

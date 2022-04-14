@@ -60,6 +60,7 @@ public class FourthExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void play_exercise(View v) {
+
         saveInfo();
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
@@ -67,6 +68,9 @@ public class FourthExerciseDescriptionActivity extends AppCompatActivity {
         if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
         }
+
+        finish();
+
         Intent i = new Intent(this, FourthExerciseActivity.class);
         startActivity(i);
     }
@@ -78,6 +82,7 @@ public class FourthExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void saveInfo(){
+
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         DatabaseReference databaseReference = firebaseDatabase.getReference();
 

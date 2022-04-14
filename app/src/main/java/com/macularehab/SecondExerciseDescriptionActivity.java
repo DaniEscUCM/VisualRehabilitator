@@ -119,6 +119,8 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
             System.out.println("Hola, quieres estos segundos: " + se + "en int: " + num_seconds);
         }
 
+        finish();
+
         Intent i = new Intent( this, SecondExerciseActivity.class );
         startActivity(i);
     }
