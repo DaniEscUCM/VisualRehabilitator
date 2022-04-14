@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
+import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 
@@ -84,20 +85,7 @@ public class SixthExerciseDescriptionActivity extends AppCompatActivity {
 
     private void saveInfo() {
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
-
-        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
-
-        mapS.put(isFocus, isOn);
-
-        Gson gson = new Gson();
-        String data = gson.toJson(mapS);
-        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
-        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
+        new SaveFocusInfo(getApplicationContext(), isOn);
     }
 
 }
