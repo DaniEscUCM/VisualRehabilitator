@@ -129,7 +129,7 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_exercises_show_results.xml" value="0.12644389438943895" />
+        <entry key="app/src/main/res/layout/activity_exercises_show_results.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise_description.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_grid_test_left.xml" value="0.12623762376237624" />
