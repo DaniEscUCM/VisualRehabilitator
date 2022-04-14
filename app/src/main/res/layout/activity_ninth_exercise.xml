@@ -9,15 +9,14 @@
 
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="89dp"
-        android:layout_height="86dp"
+        android:layout_width="61dp"
+        android:layout_height="81dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toStartOf="@+id/guideline38"
-        app:srcCompat="@android:drawable/ic_media_pause"
-        app:tint="#000000" />
+        app:srcCompat="@drawable/pausa"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline37"
