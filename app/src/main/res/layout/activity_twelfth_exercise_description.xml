@@ -69,7 +69,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/thirteenth_exercise_description"
+        android:text="@string/twelfth_exercise_description"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"

@@ -226,7 +226,6 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
             finish();
         } else {
-            System.out.println("counter: " + counter);
             ImageView focus_left_eye = findViewById(R.id.focus_left_eye);
             ImageView focus_right_eye = findViewById(R.id.focus_right_eye);
             ImageView focus_mouth = findViewById(R.id.focus_mouth);
@@ -237,9 +236,7 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             focus_mouth.setVisibility(View.INVISIBLE);
             int rand1;
             do {
-                System.out.println("current: " + current);
                 rand1 = new Random().nextInt(num_shapes);
-                System.out.println("rand1: " + rand1);
 
             } while (current==rand1);
             current = rand1;
