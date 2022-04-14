@@ -13,8 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="449e0eae-42aa-4c83-8cc8-bee60fc49d99" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/exercises/ChooseExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/exercises/ChooseExerciseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercises_show_results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercises_show_results.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
