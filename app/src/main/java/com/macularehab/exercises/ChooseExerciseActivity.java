@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -152,6 +153,14 @@ public class ChooseExerciseActivity extends AppCompatActivity {
             public void onClick(View v) {
                 exercise_id = 14;
                 showResults();
+            }
+        });
+
+        ImageButton back_button = findViewById(R.id.imageButton_back_exerc_menu);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
