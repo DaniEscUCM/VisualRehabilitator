@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:text="Result"
+        android:text="@string/exercises_show_results_results"
         android:textSize="96sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="Return To Exercises"
+        android:text="@string/exercises_show_results_returnToExercises_button"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/border_for_layout"
-        android:gravity="center_horizontal"
+        android:gravity="center|center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/exercises_showResult_returnExercises_button"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
@@ -50,7 +50,8 @@
             android:id="@+id/textView53"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Number of hits"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/exercises_show_results_numCorrectText"
             android:textSize="60sp" />
 
         <Space
@@ -63,7 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="16dp"
-            android:text="NumCorrect"
+            android:background="@drawable/border_for_layout_yellow"
+            android:gravity="center"
+            android:text="@string/exercises_show_results_numCorrect"
             android:textColor="@color/black"
             android:textSize="90sp" />
 
@@ -75,6 +78,7 @@
             android:id="@+id/imageView4"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/exercise_correct_check" />
 
     </LinearLayout>
@@ -99,7 +103,8 @@
             android:id="@+id/textView54"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Number of failures"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/exercises_show_results_numFailedText"
             android:textSize="60sp" />
 
         <Space
@@ -110,9 +115,11 @@
             android:id="@+id/exercises_showResult_numFailed_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="32dp"
-            android:text="NumFailed"
+            android:background="@drawable/border_for_layout_yellow"
+            android:text="@string/exercises_show_results_numFailed"
             android:textColor="@color/black"
             android:textSize="90sp" />
 
@@ -124,6 +131,7 @@
             android:id="@+id/imageView5"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/exercise_failed_x" />
     </LinearLayout>
 

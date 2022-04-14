@@ -122,7 +122,9 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/menu/exercises_pause.xml" value="0.18125" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/menu/pause_exercises.xml" value="0.18125" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.289" />
+        <entry key="app/src/main/res/drawable/border_for_layout_yellow.xml" value="0.387" />
         <entry key="app/src/main/res/drawable/border_rectangle_for_layout.xml" value="0.266" />
+        <entry key="app/src/main/res/drawable/border_seconds.xml" value="0.387" />
         <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.2635" />
         <entry key="app/src/main/res/drawable/ic_arrow_back_small.xml" value="0.275" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.289" />
@@ -161,6 +163,8 @@
         <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_professional_restore_password.xml" value="0.12644389438943895" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/activity_second_exercise.xml" value="0.15903465346534654" />
+        <entry key="app/src/main/res/layout/activity_second_exercise_description.xml" value="0.15903465346534654" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_tenth_exercise_description.xml" value="0.15222772277227722" />
         <entry key="app/src/main/res/layout/activity_tests_history.xml" value="0.11041666666666666" />

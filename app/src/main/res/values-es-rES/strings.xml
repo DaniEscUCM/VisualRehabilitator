@@ -197,6 +197,14 @@
     <!-- Fin Apartado Professional - Patient Info .-->
     <!-- Fin Apartado Professional .-->
 
+    <!-- Exercises Section -->
+    <string name="exercises_show_results_results">Resultados</string>
+    <string name="exercises_show_results_numCorrectText">Número de Aciertos</string>
+    <string name="exercises_show_results_numFailedText">Número de Fallos</string>
+    <string name="exercises_show_results_numCorrect">Correct</string>
+    <string name="exercises_show_results_numFailed">Failed</string>
+    <string name="exercises_show_results_returnToExercises_button">Regresar a Ejercicios</string>
+
     <string name="button_des_data">Datos</string>
     <string name="button_exercises">Ejercicios</string>
     <string name="button_des_exercises">Ejercicios</string>
