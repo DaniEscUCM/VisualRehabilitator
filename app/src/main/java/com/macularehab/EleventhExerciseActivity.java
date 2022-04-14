@@ -30,7 +30,7 @@ import java.util.Random;
 public class EleventhExerciseActivity extends AppCompatActivity {
 
     private final int exercise_id = 10, total = 10, num_shapes = 4;
-    private int counter, counterCorrect, counterFailed, num_miliseconds, previous, metric_unit, size;
+    private int counter, counterCorrect, counterFailed, num_miliseconds, current, metric_unit, size;
     private boolean focus_on;
     private CountDownTimer timer_1 = null;
     private HashMap<String, Object> patientHashMap;
@@ -44,7 +44,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
         counterCorrect = counterFailed = 0;
-        counter = previous = -1;
+        counter = current = -1;
         num_miliseconds = EleventhExerciseDescriptionActivity.getNumSeconds() * 1000;
         focus_on = (boolean) patientHashMap.get("focusIsOn");
         ImageButton button_button_left_eye = findViewById(R.id.dot_button_left_eye);
@@ -68,7 +68,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         button_button_left_eye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (previous == 0) {
+                if (current == 0) {
                     ++counterCorrect;
                 } else {
                     ++counterFailed;
@@ -80,7 +80,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         button_right_eye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (previous == 1) {
+                if (current == 1) {
                     ++counterCorrect;
                 } else {
                     ++counterFailed;
@@ -92,7 +92,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         button_nose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (previous == 2) {
+                if (current == 2) {
                     ++counterCorrect;
                 } else {
                     ++counterFailed;
@@ -104,7 +104,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         button_mouth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (previous == 3) {
+                if (current == 3) {
                     ++counterCorrect;
                 } else {
                     ++counterFailed;
@@ -147,7 +147,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         coor_result = new ArrayList<>();
         coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
 
-        if (previous == 0) {
+        if (current == 0) {
             ImageView focus = findViewById(R.id.focus_left_eye);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
@@ -160,7 +160,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             focus.setVisibility(View.VISIBLE);
             startTimerFoco();
         }
-        else if (previous == 1) {
+        else if (current == 1) {
             //focus = findViewById(R.id.focus_right_eye);
             ImageView focus = findViewById(R.id.focus_right_eye);
             focus.getLayoutParams().width = size;
@@ -174,7 +174,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             focus.setVisibility(View.VISIBLE);
             startTimerFoco();
         }
-        else if (previous == 2) {
+        else if (current == 2) {
             //focus = findViewById(R.id.focus_nose);
             ImageView focus = findViewById(R.id.focus_nose);
             focus.getLayoutParams().width = size;
@@ -240,21 +240,21 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             focus_mouth.setVisibility(View.INVISIBLE);
             int rand1;
             do {
-                System.out.println("previous_1: " + previous);
+                System.out.println("current: " + current);
                 rand1 = new Random().nextInt(num_shapes);
                 System.out.println("rand1: " + rand1);
 
-            } while (previous==rand1);
-            previous = rand1;
+            } while (current==rand1);
+            current = rand1;
             TextView text = findViewById(R.id.text_findX);
             Resources res = EleventhExerciseActivity.this.getResources();
-            if(previous == 0) {
+            if(current == 0) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_left_eye));
             }
-            else if(previous == 1) {
+            else if(current == 1) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_right_eye));
             }
-            else if(previous == 2) {
+            else if(current == 2) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_nose));
             }
             else {

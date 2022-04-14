@@ -317,13 +317,13 @@ public class EighthExerciseActivity  extends AppCompatActivity {
             Button button_2 = findViewById(R.id.button_2);
             time_left_2=num_miliseconds;
             startTimer_button2();
-            if(previous_1 == 0) {
+            if(previous_2 == 0) {
                 button_2.setText("T");
                 letter_M_2 = false;
-            } else if (previous_1 == 1) {
+            } else if (previous_2 == 1) {
                 button_2.setText("M");
                 letter_M_2 = true;
-            } else if(previous_1 == 2){
+            } else if(previous_2 == 2){
                 button_2.setText("E");
                 letter_M_2 = false;
             } else {
