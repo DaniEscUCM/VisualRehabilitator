@@ -250,9 +250,9 @@
     <string name="seventh_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán figuras de dos en dos, más pequeñas y sin relleno. Encuentra los círculos</string>
     <string name="eighth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán letras de dos en dos. Encuentra las M.</string>
     <string name="ninth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán letras de dos en dos, más pequeñas que antes. Encuentra las M.</string>
-    <string name="tenth_exercise_description">Here would be the description of the exercise</string>
-    <string name="eleventh_exercise_description">Here would be the description of the exercise</string>
-    <string name="twelfth_exercise_description">Here would be the description of the exercise</string>
+    <string name="tenth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán imágenes de bebias. Encuentra la taza de café.</string>
+    <string name="eleventh_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
+    <string name="twelfth_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
     <string name="thirteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="fourteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="fifteenth_exercise_description">Here would be the description of the exercise</string>
@@ -265,7 +265,7 @@
     <string name="button_for_click">Lo que hay que encontrar</string>
     <string name="eleventh_exercise_find_nose">Encuentra la nariz</string>
     <string name="eleventh_exercise_find_mouth">Encuentra la boca</string>
-    <string name="eleventh_exercise_find_left_eye">Encuentra el ojo izquiero</string>
+    <string name="eleventh_exercise_find_left_eye">Encuentra el ojo izquierdo</string>
     <string name="eleventh_exercise_find_right_eye">Encuentra el ojo derecho</string>
 
 
