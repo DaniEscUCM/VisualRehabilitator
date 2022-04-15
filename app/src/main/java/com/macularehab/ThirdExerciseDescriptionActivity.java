@@ -60,7 +60,6 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void play_exercise(View v) {
-
         saveInfo();
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
@@ -85,7 +84,6 @@ public class ThirdExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void saveInfo() {
-
         new SaveFocusInfo(getApplicationContext(), isOn);
     }
 

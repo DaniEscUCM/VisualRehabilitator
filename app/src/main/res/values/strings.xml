@@ -252,7 +252,7 @@
     <string name="tenth_exercise_description">Find the red dot and look at it. After 5 seconds, images of drinks will appear. Find the coffee cup.</string>
     <string name="eleventh_exercise_description">The image of a face will appear. Find the specified parts of the face.</string>
     <string name="twelfth_exercise_description">The image of a face will appear. Find the specified parts of the face.</string>
-    <string name="thirteenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="thirteenth_exercise_description">The image of a living room will appear. Find the specified parts of it.</string>
     <string name="fourteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="fifteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="sixteenth_exercise_description">Here would be the description of the exercise</string>
@@ -266,6 +266,14 @@
     <string name="eleventh_exercise_find_mouth">Find the mouth</string>
     <string name="eleventh_exercise_find_left_eye">Find the left eye</string>
     <string name="eleventh_exercise_find_right_eye">Find the right eye</string>
+    <string name="thirteenth_exercise_find_lamp">Find the lamp</string>
+    <string name="thirteenth_exercise_find_plant">Find the plant</string>
+    <string name="thirteenth_exercise_find_carpet">Find the carpet</string>
+    <string name="thirteenth_exercise_find_left_window">Find the left window</string>
+    <string name="thirteenth_exercise_find_right_window">Find the right window</string>
+    <string name="thirteenth_exercise_find_pot">Find the pot</string>
+    <string name="thirteenth_exercise_find_sofa">Find the sofa</string>
+
 
 
 
