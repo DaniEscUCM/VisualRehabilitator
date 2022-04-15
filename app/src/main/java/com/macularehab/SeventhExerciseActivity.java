@@ -58,7 +58,6 @@ public class SeventhExerciseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_seventh_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-
         ReadInternalStorage readIS = new ReadInternalStorage();
         HashMap<String, Object> patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
 

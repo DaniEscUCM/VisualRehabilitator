@@ -254,7 +254,7 @@
     <string name="tenth_exercise_description">Tienes 5 segundos para encontrar el punto rojo. A continuación aparecerán imágenes de bebias. Encuentra la taza de café.</string>
     <string name="eleventh_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
     <string name="twelfth_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
-    <string name="thirteenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="thirteenth_exercise_description">Aparecerá la imagen de un salon. Encuentra las diferentes partes que se irán indicando arriba.</string>
     <string name="fourteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="fifteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="sixteenth_exercise_description">Here would be the description of the exercise</string>
@@ -268,6 +268,15 @@
     <string name="eleventh_exercise_find_mouth">Encuentra la boca</string>
     <string name="eleventh_exercise_find_left_eye">Encuentra el ojo izquierdo</string>
     <string name="eleventh_exercise_find_right_eye">Encuentra el ojo derecho</string>
+    <string name="thirteenth_exercise_find_lamp">Encuentra la lámpara</string>
+    <string name="thirteenth_exercise_find_plant">Encuentra la planta</string>
+    <string name="thirteenth_exercise_find_carpet">Encuentra la alfombra</string>
+    <string name="thirteenth_exercise_find_left_window">Encuentra la ventana izquierda</string>
+    <string name="thirteenth_exercise_find_right_window">Encuentra la ventana derecha</string>
+    <string name="thirteenth_exercise_find_pot">Encuentra la maceta</string>
+    <string name="thirteenth_exercise_find_sofa">Encuentra el sofá</string>
+
+
 
 
     <string name="toast_user_created">Usuario creado</string>
