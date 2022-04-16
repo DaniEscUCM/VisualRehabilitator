@@ -1,6 +1,7 @@
 package com.macularehab.exercises;
 
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -34,11 +36,15 @@ public class ExerciseResultHistory extends AppCompatActivity {
     private final String filenameCurrentPatient = "CurrentPatient.json";
     private int exercise_id;
 
+    private Resources resources;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_exercise_results_history);
+
+        resources = ExerciseResultHistory.this.getResources();
 
         exercise_id = getIntent().getIntExtra("exercise_id", 1);
 
@@ -50,33 +56,45 @@ public class ExerciseResultHistory extends AppCompatActivity {
         readExercisesResults();
         fillBarChart();
 
-        BarDataSet barDataSetCorrects = new BarDataSet(barEntryArrayListCorrects, "Corrects");
-        BarDataSet barDataSetFailed = new BarDataSet(barEntryArrayListFailed, "Failed");
+        BarDataSet barDataSetCorrects = new BarDataSet(barEntryArrayListCorrects, resources.getString(R.string.exercises_resultHistory_correct));
+        BarDataSet barDataSetFailed = new BarDataSet(barEntryArrayListFailed, resources.getString(R.string.exercises_resultHistory_failed));
 
         barDataSetCorrects.setColors(Color.BLUE);
         barDataSetFailed.setColors(Color.RED);
         Description description = new Description();
-        description.setText("Trials");
+        description.setText(resources.getString(R.string.exercises_resultHistory_trials));
+        description.setTextSize(20f);
+        description.setTextColor(Color.BLACK);
+        barChart.setDescription(description);
 
         BarData barData = new BarData(barDataSetCorrects, barDataSetFailed);
 
         barChart.setData(barData);
-        float groupSpace = 0.3f;
+        float groupSpace = 0.5f;
         float barSpace = 0.05f;
         float barWidth = 0.3f;
 
         barData.setBarWidth(barWidth);
         barChart.groupBars(-0.5f, groupSpace, barSpace);
 
+        Legend legend = barChart.getLegend();
+        legend.setTextSize(20f);
+        legend.setTextColor(Color.BLACK);
+        legend.setForm(Legend.LegendForm.SQUARE);
+
         //Axis
         XAxis xAxis = barChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labelNames));
         xAxis.setPosition(XAxis.XAxisPosition.TOP);
         xAxis.setDrawGridLines(false);
-        xAxis.setDrawAxisLine(false);
+        xAxis.setDrawAxisLine(true);
         xAxis.setGranularity(1f);
         xAxis.setLabelCount(labelNames.size());
         xAxis.setLabelRotationAngle(0);
+        //xAxis.setTextSize(20f);
+        //xAxis.setAxisMinimum(1f);
+
+        barChart.setDrawBorders(true);
         barChart.animateY(2000);
         barChart.invalidate();
     }
@@ -111,7 +129,7 @@ public class ExerciseResultHistory extends AppCompatActivity {
             barEntryArrayListCorrects.add(new BarEntry(i, counterCorrect));
             barEntryArrayListFailed.add(new BarEntry(i, counterFailed));
             //barEntryArrayList.add(new BarEntry(i, counterFailed));
-            labelNames.add("Try #" + i);
+            labelNames.add(resources.getString(R.string.exercises_resultHistory_trialsNumber) + i);
         }
     }
 }
