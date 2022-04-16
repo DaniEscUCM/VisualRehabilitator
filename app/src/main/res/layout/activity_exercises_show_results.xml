@@ -37,47 +37,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout"
-        android:gravity="center|center_horizontal"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline41"
+        app:layout_constraintBottom_toTopOf="@+id/exercises_showResult_returnExercises_button"
         app:layout_constraintEnd_toStartOf="@+id/guideline1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline43">
+        app:layout_constraintTop_toBottomOf="@+id/textView48">
 
-        <TextView
-            android:id="@+id/textView53"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/exercises_show_results_numCorrectText"
-            android:textSize="60sp" />
+            android:layout_weight="1">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/exercises_show_results_numCorrectText"
+                android:textSize="48sp"
+                app:layout_constraintBottom_toTopOf="@id/exercises_showResult_numCorrect_textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/exercises_showResult_numCorrect_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/border_for_layout_yellow"
-            android:gravity="center"
-            android:text="@string/exercises_show_results_numCorrect"
-            android:textColor="@color/black"
-            android:textSize="90sp" />
+            <TextView
+                android:id="@+id/exercises_showResult_numCorrect_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/border_for_layout_yellow"
+                android:gravity="center"
+                android:text="@string/exercises_show_results_numCorrect"
+                android:textColor="@color/black"
+                android:textSize="60sp"
+                app:layout_constraintBottom_toTopOf="@id/imageView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView53" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/exercise_correct_check" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/exercises_showResult_numCorrect_textView"
+                app:srcCompat="@drawable/exercise_correct_check" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
@@ -86,47 +96,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout"
-        android:gravity="center|center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline41"
+        app:layout_constraintBottom_toTopOf="@+id/exercises_showResult_returnExercises_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline43">
+        app:layout_constraintTop_toBottomOf="@+id/textView48">
 
-        <TextView
-            android:id="@+id/textView54"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/exercises_show_results_numFailedText"
-            android:textSize="60sp" />
+            android:layout_weight="1">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/exercises_show_results_numFailedText"
+                android:textSize="48sp"
+                app:layout_constraintBottom_toTopOf="@id/exercises_showResult_numFailed_textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/exercises_showResult_numFailed_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/border_for_layout_yellow"
-            android:text="@string/exercises_show_results_numFailed"
-            android:textColor="@color/black"
-            android:textSize="90sp" />
+            <TextView
+                android:id="@+id/exercises_showResult_numFailed_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_for_layout_yellow"
+                android:text="@string/exercises_show_results_numFailed"
+                android:textColor="@color/black"
+                android:textSize="60sp"
+                app:layout_constraintBottom_toTopOf="@id/imageView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView54" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/exercise_failed_x" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/exercises_showResult_numFailed_textView"
+                app:srcCompat="@drawable/exercise_failed_x" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -138,8 +158,8 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
