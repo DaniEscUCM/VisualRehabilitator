@@ -87,10 +87,10 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
 
     public void singInProfessional (View view){
         //validate
-        String name = nameP.getText().toString();
-        String mail = mailP.getText().toString();
-        String pasw = paswP.getText().toString();
-        String rep_pasw = repPasw.getText().toString();
+        String name = nameP.getText().toString().trim();
+        String mail = mailP.getText().toString().trim();
+        String pasw = paswP.getText().toString().trim();
+        String rep_pasw = repPasw.getText().toString().trim();
 
         if(name.equals("")||mail.equals("")||pasw.equals("") || (pasw.length() < 6) || (!pasw.equals(rep_pasw))) {
             validate();

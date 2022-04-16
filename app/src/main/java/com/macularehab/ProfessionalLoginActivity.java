@@ -103,9 +103,10 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         paswP.setText("");
     }
 
-    public void login(View view){
-        String mail = mailP.getText().toString();
-        String pasword = paswP.getText().toString();
+    public void login(View view) {
+
+        String mail = mailP.getText().toString().trim();
+        String pasword = paswP.getText().toString().trim();
 
         if(mail.equals("")||pasword.equals("")){
             validate();
