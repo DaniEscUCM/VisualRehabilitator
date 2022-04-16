@@ -1,4 +1,6 @@
 package com.macularehab;
 
-public class FifteenthExerciseActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FifteenthExerciseActivity  extends AppCompatActivity {
 }
