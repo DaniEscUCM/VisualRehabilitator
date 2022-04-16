@@ -34,8 +34,8 @@
 
     <ImageView
         android:id="@+id/image_background"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
         android:contentDescription="@string/image_background"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,10 +46,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_nose"
-        android:layout_width="67dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="220dp"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="272dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -73,18 +73,16 @@
 
     <ImageButton
         android:id="@+id/dot_button_left_eye"
-        android:layout_width="68dp"
-        android:layout_height="64dp"
+        android:layout_width="72dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="200dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/image_background"
-        app:layout_constraintEnd_toEndOf="@+id/image_background"
-        app:layout_constraintHorizontal_bias="0.354"
         app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
-        app:layout_constraintVertical_bias="0.477"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
@@ -102,18 +100,16 @@
 
     <ImageButton
         android:id="@+id/dot_button_right_eye"
-        android:layout_width="62dp"
-        android:layout_height="63dp"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="200dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/image_background"
-        app:layout_constraintEnd_toEndOf="@+id/image_background"
-        app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
-        app:layout_constraintVertical_bias="0.474"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
@@ -131,10 +127,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_mouth"
-        android:layout_width="119dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="280dp"
+        android:layout_width="129dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="340dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -166,8 +162,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -217,8 +212,7 @@
             android:textSize="48sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.501" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/textView13"

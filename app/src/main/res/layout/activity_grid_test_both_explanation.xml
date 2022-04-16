@@ -124,7 +124,6 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView15"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/touch_sin_fondo" />

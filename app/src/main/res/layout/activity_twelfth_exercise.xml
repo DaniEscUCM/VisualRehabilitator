@@ -44,7 +44,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81"
         app:srcCompat="@drawable/man_image" />
 
     <ImageButton
@@ -78,18 +77,16 @@
         android:id="@+id/dot_button_left_eye"
         android:layout_width="75dp"
         android:layout_height="70dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="200dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:foregroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/image_background"
-        app:layout_constraintEnd_toEndOf="@+id/image_background"
-        app:layout_constraintHorizontal_bias="0.334"
         app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
-        app:layout_constraintVertical_bias="0.451"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
@@ -169,8 +166,7 @@
         app:layout_constraintBottom_toTopOf="@+id/image_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
