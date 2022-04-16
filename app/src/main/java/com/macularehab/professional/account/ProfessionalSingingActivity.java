@@ -1,4 +1,4 @@
-package com.macularehab;
+package com.macularehab.professional.account;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +26,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.macularehab.R;
 import com.macularehab.model.Professional;
 import com.macularehab.professional.ProfessionalHome;
 

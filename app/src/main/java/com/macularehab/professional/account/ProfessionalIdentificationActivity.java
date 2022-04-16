@@ -1,4 +1,4 @@
-package com.macularehab;
+package com.macularehab.professional.account;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.macularehab.R;
+import com.macularehab.professional.account.ProfessionalLoginActivity;
+import com.macularehab.professional.account.ProfessionalSingingActivity;
 
 public class ProfessionalIdentificationActivity extends AppCompatActivity {
 

@@ -82,13 +82,13 @@
             android:name=".ProfessionalPageActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfessionalLoginActivity"
+            android:name=".professional.account.ProfessionalLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfessionalSingingActivity"
+            android:name=".professional.account.ProfessionalSingingActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfessionalIdentificationActivity"
+            android:name=".professional.account.ProfessionalIdentificationActivity"
             android:exported="false" />
         <activity
             android:name=".professional.patientForm.ProfessionalCreateNewPatient"

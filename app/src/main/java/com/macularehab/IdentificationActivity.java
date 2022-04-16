@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.macularehab.language.LocaleHelper;
 import com.macularehab.patient.PatientIdentificationActivity;
+import com.macularehab.professional.account.ProfessionalIdentificationActivity;
 
 import java.util.Locale;
 
