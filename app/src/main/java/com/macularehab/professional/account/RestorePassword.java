@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,14 @@ public class RestorePassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 readEmailAddress();
+            }
+        });
+
+        ImageButton backButton = findViewById(R.id.professional_logIn_restorePassword_backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
