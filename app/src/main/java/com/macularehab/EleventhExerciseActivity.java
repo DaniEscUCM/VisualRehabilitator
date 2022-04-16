@@ -13,15 +13,21 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,9 +37,19 @@ public class EleventhExerciseActivity extends AppCompatActivity {
 
     private final int exercise_id = 10, total = 10, num_shapes = 4;
     private int counter, counterCorrect, counterFailed, num_miliseconds, current, metric_unit, size;
-    private boolean focus_on;
-    private CountDownTimer timer_1 = null;
+    private CountDownTimer timer=null,timer_focus = null;
+    private long time_left=3000,time_left_focus=5000;
     private HashMap<String, Object> patientHashMap;
+    private String filenameCurrentUser = "CurrentPatient.json";
+
+    private final String isFocus = "focusIsOn";
+    private boolean isOn;
+    private ImageView focus;
+    private ImageButton button_button_left_eye;
+    private ImageButton button_right_eye;
+    private ImageButton button_mouth;
+    private ImageButton button_nose;
+    private boolean hiden=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +57,31 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eleventh_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         String filenameCurrentUser = "CurrentPatient.json";
+
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
+
+        ImageButton button_pause = findViewById(R.id.pause_button);
+        button_pause.setOnClickListener(v -> pause_menu());
+
+        ImageButton button_resume = findViewById(R.id.return_button);
+        button_resume.setOnClickListener(v->resume());
+
+        Switch focus_switch = findViewById(R.id.focus_switch1);
+        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        isOn=(Boolean) patientHashMap.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            isOn=!isOn;
+        });
+
         counterCorrect = counterFailed = 0;
         counter = current = -1;
         num_miliseconds = EleventhExerciseDescriptionActivity.getNumSeconds() * 1000;
-        focus_on = (boolean) patientHashMap.get("focusIsOn");
-        ImageButton button_button_left_eye = findViewById(R.id.dot_button_left_eye);
-        ImageButton button_right_eye = findViewById(R.id.dot_button_right_eye);
-        ImageButton button_mouth = findViewById(R.id.dot_button_mouth);
-        ImageButton button_nose = findViewById(R.id.dot_button_nose);
+        time_left=num_miliseconds;
+        button_button_left_eye = findViewById(R.id.dot_button_left_eye);
+        button_right_eye = findViewById(R.id.dot_button_right_eye);
+        button_mouth = findViewById(R.id.dot_button_mouth);
+        button_nose = findViewById(R.id.dot_button_nose);
         ImageView photo = findViewById(R.id.image_background);
 
         DisplayMetrics display = this.getResources().getDisplayMetrics();
@@ -115,13 +146,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton button_setting = findViewById(R.id.exercise_settings);
-        button_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Settings(v);
-            }
-        });
 
         ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(new View.OnClickListener() {
@@ -133,13 +157,15 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimerFoco() {
-        timer_1 = new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        hiden=true;
+        timer_focus = new CountDownTimer(time_left_focus, 1000) {
+            public void onTick(long millisUntilFinished) { time_left_focus=millisUntilFinished;}
             public void onFinish() {
+                hiden=false;
                 startTimer();
             }
         };
-        timer_1.start();
+        timer_focus.start();
     }
 
     private void focus_function () {
@@ -149,7 +175,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
 
         if (current == 0) {
-            ImageView focus = findViewById(R.id.focus_left_eye);
+            focus = findViewById(R.id.focus_left_eye);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -163,7 +189,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         }
         else if (current == 1) {
             //focus = findViewById(R.id.focus_right_eye);
-            ImageView focus = findViewById(R.id.focus_right_eye);
+            focus = findViewById(R.id.focus_right_eye);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -177,7 +203,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         }
         else if (current == 2) {
             //focus = findViewById(R.id.focus_nose);
-            ImageView focus = findViewById(R.id.focus_nose);
+            focus = findViewById(R.id.focus_nose);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -191,7 +217,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         }
         else{
             //focus = findViewById(R.id.focus_mouth);
-            ImageView focus = findViewById(R.id.focus_mouth);
+            focus = findViewById(R.id.focus_mouth);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -207,19 +233,75 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer() {
-        timer_1 = new CountDownTimer(num_miliseconds, 1000) {
+        timer = new CountDownTimer(time_left, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
                 ++counterFailed; //they didn't touch when they should have.
                 move();
             }
         };
-        timer_1.start();
+        timer.start();
     }
 
     private void cancelTimer_1() {
-        if (timer_1 != null)
-            timer_1.cancel();
+        if (timer != null)
+            timer.cancel();
+    }
+
+    private void resume(){
+        if(isOn){
+            if(hiden){
+                focus_function();
+            }
+            else{
+                focus.setVisibility(View.VISIBLE);
+                startTimer();
+            }
+        }
+        else{
+            focus.setVisibility(View.INVISIBLE);
+            if(hiden){
+                hiden=false;
+            }
+            startTimer();
+        }
+        button_button_left_eye.setClickable(true);
+        button_right_eye.setClickable(true);
+        button_mouth.setClickable(true);
+        button_nose.setClickable(true);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);
+    }
+
+    private void pause_menu(){
+        if(hiden){
+            timer_focus.cancel();
+        }else {
+            timer.cancel();
+        }
+        button_button_left_eye.setClickable(false);
+        button_right_eye.setClickable(false);
+        button_mouth.setClickable(false);
+        button_nose.setClickable(false);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.VISIBLE);
+    }
+
+    private void saveFocusOn(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
+        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
+
+        mapS.put(isFocus, isOn);
+
+        Gson gson = new Gson();
+        String data = gson.toJson(mapS);
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
+        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
+                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
     }
 
     private void move() {
@@ -228,6 +310,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
             String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+            saveFocusOn();
             finish();
         } else {
             ImageView focus_left_eye = findViewById(R.id.focus_left_eye);
@@ -238,6 +321,8 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             focus_right_eye.setVisibility(View.INVISIBLE);
             focus_nose.setVisibility(View.INVISIBLE);
             focus_mouth.setVisibility(View.INVISIBLE);
+            time_left=num_miliseconds;
+            time_left_focus=5000;
             int rand1;
             do {
                 rand1 = new Random().nextInt(num_shapes);
@@ -258,7 +343,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             else {
                 text.setText(res.getString(R.string.eleventh_exercise_find_mouth));
             }
-            if(focus_on) {
+            if(isOn) {
                 focus_function();
             }
             else {

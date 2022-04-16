@@ -215,7 +215,6 @@ public class TenthExerciseActivity extends AppCompatActivity {
     }
 
     private void cancelTimer() {
-        timer.cancel();
         if (timer != null) {
             timer.cancel();
         }
