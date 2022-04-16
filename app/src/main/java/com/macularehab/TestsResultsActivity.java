@@ -219,6 +219,7 @@ public class TestsResultsActivity extends AppCompatActivity {
         String value= coor_resul.toString();
         x = x/cont;
         y = y/cont;
+
         String focus= "["+ x +", "+ y +"]";
         i.putExtra("focus",focus);
         i.putExtra("resume_stain",value);

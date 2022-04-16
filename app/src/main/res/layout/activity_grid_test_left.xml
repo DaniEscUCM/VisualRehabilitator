@@ -23,7 +23,6 @@
         android:contentDescription="@string/circular_grid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tencmgrid" />
@@ -86,10 +85,8 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/repeatButton"
         app:layout_constraintEnd_toStartOf="@+id/circleGrid"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_back_results"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_back_results" />
 
     <ImageView
         android:id="@+id/imageView2"

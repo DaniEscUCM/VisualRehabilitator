@@ -10,20 +10,21 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc1"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#FFFFFF"
-        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/textViewFirstExerciseDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:text="@string/first_exercise"
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -39,13 +40,13 @@
         android:contentDescription="@string/button_play"
         android:focusable="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline18"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
         app:layout_constraintTop_toTopOf="@+id/guideline17"
         app:srcCompat="@drawable/tocar"
-        app:tint="@color/grey_dark"/>
+        app:tint="@color/grey_dark" />
 
     <TextView
         android:id="@+id/textView3"
@@ -56,10 +57,8 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
@@ -83,20 +82,6 @@
         app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,15 +94,9 @@
         android:layout_height="73dp"
         android:text="@string/focus_switch"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
-        app:layout_constraintTop_toTopOf="@+id/guideline22" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline39"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.50" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

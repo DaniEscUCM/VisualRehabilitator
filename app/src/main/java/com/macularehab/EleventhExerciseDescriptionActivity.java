@@ -7,11 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
+import com.macularehab.exercises.SaveFocusInfo;
+import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.WriteInternalStorage;
+
+import java.util.HashMap;
+
 public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
     private static int num_seconds;
+    private final String filenameCurrentUser = "CurrentPatient.json";
+    private final String isFocus = "focusIsOn";
+    private boolean isOn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,22 +47,19 @@ public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
                 play_exercise(v);
             }
         });
+        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentUser);
 
-        ImageButton button_settings = (ImageButton) findViewById(R.id.conf_exercise_button);
-        button_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setting(v);
-            }
+        Switch focus_switch = findViewById(R.id.focus_switch);
+        focus_switch.setChecked((Boolean) map.get(isFocus));
+        isOn=(Boolean) map.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            isOn=!isOn;
         });
     }
 
-    private void setting(View v) {
-        Intent i = new Intent( this, SettingsActivity.class );
-        startActivity(i);
-    }
-
     private void play_exercise(View v) {
+        saveInfo();
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
         num_seconds = 10;
@@ -67,4 +77,10 @@ public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
     public void Close(View view){
         finish();
     }
+
+    private void saveInfo() {
+
+        new SaveFocusInfo(getApplicationContext(), isOn);
+    }
+
 }

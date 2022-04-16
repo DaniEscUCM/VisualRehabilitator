@@ -46,9 +46,20 @@ public class DrawDot {
      * @param canvas - result canvas, then assign to a ImageView
      */
     public void draw(Canvas canvas) {
+        float local_x,local_y ;
         for(int i=0;i<this.coor_resul.size();i++) {
-            float local_x = x + (metric * coor_resul.get(i).first) + (coor_resul.get(i).first>=0? - (metric /2):(metric /2));
-            float local_y = y + (metric * coor_resul.get(i).second) + (coor_resul.get(i).second>=0?- (metric /2):(metric /2));
+            if(coor_resul.get(i).first==0){
+                local_x =x;
+            }
+            else {
+                local_x = x + (metric * coor_resul.get(i).first) + (coor_resul.get(i).first >= 0 ? -(metric / 2) : (metric / 2));
+            }
+            if(coor_resul.get(i).second==0){
+                local_y =y;
+            }
+            else {
+                local_y = y + (metric * coor_resul.get(i).second) + (coor_resul.get(i).second >= 0 ? -(metric / 2) : (metric / 2));
+            }
             canvas.drawCircle(local_x,local_y, radius, paint);
         }
     }

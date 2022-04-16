@@ -10,23 +10,24 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#FFFFFF"
-        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:srcCompat="?attr/actionModeCloseDrawable"/>
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/exerciseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:text="@string/fourteenth_exercise"
         android:textAlignment="viewStart"
-        android:textSize="48sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,13 +41,13 @@
         android:contentDescription="@string/button_play"
         android:focusable="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline18"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
         app:layout_constraintTop_toTopOf="@+id/guideline17"
         app:srcCompat="@drawable/tocar"
-        app:tint="@color/grey_dark"  />
+        app:tint="@color/grey_dark" />
 
     <TextView
         android:id="@+id/descriptionExercise"
@@ -82,16 +83,15 @@
 
     <TextView
         android:id="@+id/textView_insertseconds"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:text="@string/seconds_description_whole_exercise"
+        android:text="@string/seconds_description_letter"
         android:textAlignment="textEnd"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintEnd_toStartOf="@id/seconds"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline39"
-        app:layout_constraintEnd_toStartOf="@id/seconds" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
@@ -114,21 +114,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline24"
@@ -145,7 +130,7 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
-        app:layout_constraintTop_toTopOf="@+id/guideline22" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline39"
