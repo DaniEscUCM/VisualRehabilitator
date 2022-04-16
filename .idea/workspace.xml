@@ -3,7 +3,8 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
-        <option name="nonWearDeviceLastStateName" value="Landscape" />
+        <device id="_device_class_tablet" />
+        <option name="nonWearDeviceLastStateName" value="landscape" />
       </config>
     </shared>
   </component>
@@ -12,20 +13,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb63ed4-9bb7-49fe-9523-941012296234" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FourteenthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FourteenthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourteenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourteenth_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourteenth_exercise_description.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourteenth_exercise_description.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-es-rES/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-es-rES/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_change_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_change_password.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[0e3bfc761ff1dbef]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-R52R40HY3QX-d9lduf._adb-tls-connect._tcp.]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -34,9 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,6 +49,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-view/Users/diegoalrp/Library/Android/sdk/sources/android-31/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-view/Users/diegoalrp/Library/Android/sdk/sources/android-31/android/view/View.java_View_DIMENSIONS" value="1080&#10;1920" />
     <property name="cidr.known.project.marker" value="true" />
   </component>
   <component name="RecentsManager">

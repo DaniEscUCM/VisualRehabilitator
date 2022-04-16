@@ -62,12 +62,34 @@ public class RestorePassword extends AppCompatActivity {
         });
 
         loading_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect);
-        loading_imageView.setVisibility(View.INVISIBLE);
-
         result_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect_result);
-        result_imageView.setVisibility(View.INVISIBLE);
-
         successTextView = findViewById(R.id.professional_logIn_restorePassword_successTextView);
+
+        setImagesInvisible();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setImagesInvisible();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setImagesInvisible();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setImagesInvisible();
+    }
+
+    private void setImagesInvisible() {
+
+        loading_imageView.setVisibility(View.INVISIBLE);
+        result_imageView.setVisibility(View.INVISIBLE);
         successTextView.setVisibility(View.INVISIBLE);
     }
 
