@@ -39,24 +39,27 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     private final int exercise_id = 12, total = 10, num_shapes = 7;
     private int counter, counterCorrect, counterFailed, num_miliseconds, current, metric_unit, size;
     private boolean focus_on;
-    private CountDownTimer timer_1 = null;
+    private CountDownTimer timer=null,timer_focus = null;
+    private long time_left=3000,time_left_focus=5000;
     private HashMap<String, Object> patientHashMap;
     private final String filenameCurrentUser = "CurrentPatient.json";
     private final String isFocus = "focusIsOn";
+    private ImageView focus;
     private ImageButton button_lamp,button_plant,button_carpet,button_left_window, button_right_window,button_pot,button_sofa;
+    private boolean hiden=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thirteenth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //String filenameCurrentUser = "CurrentPatient.json";
+
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
         counterCorrect = counterFailed = 0;
         counter = current = -1;
         num_miliseconds = ThirteenthExerciseDescriptionActivity.getNumSeconds() * 1000;
-        //focus_on = (boolean) patientHashMap.get("focusIsOn");
+        time_left=num_miliseconds;
         button_lamp = findViewById(R.id.dot_button_lamp);
         button_plant = findViewById(R.id.dot_button_plant);
         button_carpet = findViewById(R.id.dot_button_carpet);
@@ -189,13 +192,15 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimerFoco() {
-        timer_1 = new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        hiden=true;
+        timer_focus = new CountDownTimer(time_left_focus, 1000) {
+            public void onTick(long millisUntilFinished) {time_left_focus=millisUntilFinished; }
             public void onFinish() {
+                hiden=false;
                 startTimer();
             }
         };
-        timer_1.start();
+        timer_focus.start();
     }
 
     private void focus_function () {
@@ -205,7 +210,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
 
         if (current == 0) { //lamp
-            ImageView focus = findViewById(R.id.focus_lamp);
+            focus = findViewById(R.id.focus_lamp);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -218,7 +223,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             startTimerFoco();
         }
         else if (current == 1) { //plant
-            ImageView focus = findViewById(R.id.focus_plant);
+            focus = findViewById(R.id.focus_plant);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -231,7 +236,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             startTimerFoco();
         }
         else if (current == 2) { //carpet
-            ImageView focus = findViewById(R.id.focus_carpet);
+            focus = findViewById(R.id.focus_carpet);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -244,7 +249,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             startTimerFoco();
         }
         else if (current == 3) { //left window
-            ImageView focus = findViewById(R.id.focus_left_window);
+            focus = findViewById(R.id.focus_left_window);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -257,7 +262,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             startTimerFoco();
         }
         else if (current == 4) { //right window
-            ImageView focus = findViewById(R.id.focus_right_window);
+            focus = findViewById(R.id.focus_right_window);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -270,7 +275,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             startTimerFoco();
         }
         else if (current == 5) { //5 pot
-            ImageView focus = findViewById(R.id.focus_pot);
+            focus = findViewById(R.id.focus_pot);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -283,7 +288,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             startTimerFoco();
         }
         else{ //5 sofa
-            ImageView focus = findViewById(R.id.focus_sofa);
+            focus = findViewById(R.id.focus_sofa);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
             focus.requestLayout();
@@ -298,19 +303,19 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer() {
-        timer_1 = new CountDownTimer(num_miliseconds, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        timer = new CountDownTimer(time_left, 1000) {
+            public void onTick(long millisUntilFinished) {time_left=millisUntilFinished; }
             public void onFinish() {
                 ++counterFailed; //they didn't touch when they should have.
                 move();
             }
         };
-        timer_1.start();
+        timer.start();
     }
 
     private void cancelTimer_1() {
-        if (timer_1 != null)
-            timer_1.cancel();
+        if (timer != null)
+            timer.cancel();
     }
 
     private void move() {
@@ -338,6 +343,8 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             focus_pot.setVisibility(View.INVISIBLE);
             focus_sofa.setVisibility(View.INVISIBLE);
 
+            time_left=num_miliseconds;
+            time_left_focus=5000;
             int rand1;
             do {
                 rand1 = new Random().nextInt(num_shapes);
@@ -378,14 +385,27 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
 
     public void Close(View view) {
         counter = total + 1;
-        System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
-        String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
-        Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
         finish();
     }
 
     private void resume(){
-        move();
+        if(focus_on){
+            if(hiden){
+                startTimerFoco();
+            }
+            else{
+                focus_function();
+            }
+        }
+        else{
+            if(focus!=null) {
+                focus.setVisibility(View.INVISIBLE);
+                if (hiden) {
+                    hiden = false;
+                }
+            }
+            startTimer();
+        }
         button_lamp.setClickable(true);
         button_plant.setClickable(true);
         button_carpet.setClickable(true);
@@ -398,7 +418,11 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     }
 
     private void pause_menu(){
-        timer_1.cancel();
+        if(hiden){
+            timer_focus.cancel();
+        }else {
+            timer.cancel();
+        }
         button_lamp.setClickable(false);
         button_plant.setClickable(false);
         button_carpet.setClickable(false);
