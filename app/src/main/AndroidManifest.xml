@@ -79,9 +79,6 @@
 
         <!-- Professional Section . -->
         <activity
-            android:name=".ProfessionalPageActivity"
-            android:exported="false" />
-        <activity
             android:name=".professional.account.ProfessionalLoginActivity"
             android:exported="false" />
         <activity
