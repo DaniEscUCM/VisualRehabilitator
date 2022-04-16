@@ -78,7 +78,8 @@
     <string name="professional_login_notAProfessionalAccount">Esta no es una cuenta de profesional.\nPor favor inicia sesión en el apartado de Paciente</string>
 
     <!-- Professional Section - Restore Password -->
-    <string name="professional_login_restorePassword_help">te enviaremos un correo electrónico con un enlace\npara que puedas restablecer tu contraseña</string>
+    <string name="professional_login_restorePassword_text">Restaurar Contraseña</string>
+    <string name="professional_login_restorePassword_help">Te enviaremos un correo electrónico con un enlace\npara que puedas restablecer tu contraseña</string>
     <string name="professional_login_restorePassword_insertYourEmail">Introduce tu Correo Electrónico</string>
     <string name="professional_login_restorePassword_hint_email">Correo Electrónico</string>
     <string name="professional_login_restorePassword_sendEmailButton">Restablecer Contraseña</string>
@@ -95,6 +96,7 @@
     <string name="hint_professional_home_logout_button">Cerrar sesión</string>
     <string name="professional_home_create_patient_button">Crear Paciente</string>
     <string name="professional_home_name_default">Profesional</string>
+    <string name="professional_home_changePassword_button_hint">Cambiar mi contraseña</string>
 
         <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_patient">Paciente</string>
