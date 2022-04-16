@@ -59,8 +59,7 @@
         android:contentDescription="@string/circular_grid"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/grid"
-        app:layout_constraintEnd_toEndOf="@+id/stain"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/grid"
         app:layout_constraintStart_toStartOf="@+id/grid"
         app:layout_constraintTop_toTopOf="@+id/grid"
         app:srcCompat="@drawable/non_cover" />
