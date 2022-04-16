@@ -243,6 +243,7 @@
     <string name="seconds_description_whole_exercise">Inserta los segundos para completar el ejercicio entero:</string>
     <string name="seconds">segundos</string>
     <string name="num_seconds">10</string>
+    <string name="num_seconds_whole_exercise">60</string>
     <string name="textview_name">Nombre</string>
     <string name="textview_username">Nombre de usuario</string>
     <string name="textview_password">Constraseña</string>

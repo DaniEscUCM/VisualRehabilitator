@@ -279,11 +279,12 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         timer_1 = new CountDownTimer(num_miliseconds, 1000) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
-                counterFailed = maxCorrect - counterCorrect;
-                writeResultInDataBase(counterCorrect, counterFailed);
-                showResults(counterCorrect, counterFailed);
-                System.out.println("counterCorrect: "+counterCorrect + ", counterFailed: " + counterFailed + ", total: "+maxCorrect);
-                finish();
+                if(counterCorrect != 0 ) {
+                    counterFailed = maxCorrect - counterCorrect;
+                    writeResultInDataBase(counterCorrect, counterFailed);
+                    showResults(counterCorrect, counterFailed);
+                    finish();
+                }
             }
         };
         timer_1.start();
@@ -303,6 +304,7 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
         exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
     }
+
     private void showResults(int correct, int failed) {
         Intent resultIntent = new Intent(this, ShowResultActivity.class);
         resultIntent.putExtra("numCorrect", correct);
