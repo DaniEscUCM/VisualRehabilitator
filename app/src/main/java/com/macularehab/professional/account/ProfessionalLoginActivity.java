@@ -235,6 +235,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     public void goToProfessionalHome() {
 
+        Log.e("ProfName", firebaseAuth.getCurrentUser().getDisplayName());
+
         Resources resources = ProfessionalLoginActivity.this.getResources();
         Toast.makeText(this,
                 resources.getString(R.string.professional_login_logInSuccessfully) + " " + firebaseAuth.getCurrentUser().getDisplayName(),

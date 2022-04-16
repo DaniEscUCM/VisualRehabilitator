@@ -1,5 +1,6 @@
 package com.macularehab.professional.account;
 
+import android.animation.Animator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -48,6 +50,7 @@ public class ChangePassword extends AppCompatActivity {
     private String repeatNewPassword;
 
     private Resources resources;
+    private LottieAnimationView lottieAnimationView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -96,10 +99,17 @@ public class ChangePassword extends AppCompatActivity {
             }
         });
 
+        oldPasswordLayout.setErrorIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oldPasswordLayout.setError(null);
+            }
+        });
+
         newPasswordInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                newPasswordLayout.setError(null);
             }
 
             @Override
@@ -110,6 +120,13 @@ public class ChangePassword extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+            }
+        });
+
+        newPasswordLayout.setErrorIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newPasswordLayout.setError(null);
             }
         });
 
@@ -130,6 +147,13 @@ public class ChangePassword extends AppCompatActivity {
             }
         });
 
+        repeatNewPasswordLayout.setErrorIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                repeatNewPasswordLayout.setError(null);
+            }
+        });
+
         ImageButton backButton = findViewById(R.id.professional_home_changePassword_backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +162,31 @@ public class ChangePassword extends AppCompatActivity {
             }
         });
 
+        lottieAnimationView = findViewById(R.id.professional_home_change_password_imageSuccess);
+        setImageInvisible();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setImageInvisible();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setImageInvisible();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setImageInvisible();
+    }
+
+    private void setImageInvisible() {
+
+        lottieAnimationView.setVisibility(View.INVISIBLE);
     }
 
     private void readInputs() {
@@ -266,6 +315,7 @@ public class ChangePassword extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
+                            showSuccessImage();
                             Toast.makeText(ChangePassword.this, resources.getString(R.string.professional_home_changePassword_successMessage), Toast.LENGTH_LONG).show();
                         }
                         else {
@@ -315,5 +365,25 @@ public class ChangePassword extends AppCompatActivity {
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void showSuccessImage() {
+
+        lottieAnimationView.setAnimation(R.raw.ready);
+        lottieAnimationView.setVisibility(View.VISIBLE);
+        lottieAnimationView.playAnimation();
+        lottieAnimationView.addAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) { }
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                lottieAnimationView.setVisibility(View.INVISIBLE);
+                ChangePassword.this.finish();
+            }
+            @Override
+            public void onAnimationCancel(Animator animation) { }
+            @Override
+            public void onAnimationRepeat(Animator animation) { }
+        });
     }
 }
