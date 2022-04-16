@@ -91,8 +91,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toStartOf="@id/seconds"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline39"
-        app:layout_constraintVertical_bias="0.522" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
