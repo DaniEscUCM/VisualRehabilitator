@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
@@ -130,15 +131,65 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(ProfessionalSingingActivity.this, "Authentication failed. " + task.getException().toString(),
+                            Toast.makeText(ProfessionalSingingActivity.this,
+                                    task.getException().getLocalizedMessage(),
                                     Toast.LENGTH_LONG).show();
-                            showAlertAuthenticationFailed(task.getException().toString());
-                            //updateUI(null);
 
-                            //showAlertFailToSignUp();
+                            FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
+                            Resources resources = ProfessionalSingingActivity.this.getResources();
+                            String st_error;
+
+                            switch (firebaseAuthException.getErrorCode()) {
+
+                                case "ERROR_EMAIL_ALREADY_IN_USE":
+                                    st_error = resources.getString(R.string.patient_signup_error_user_already_in_use);
+                                    break;
+                                case "ERROR_WEAK_PASSWORD":
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
+                                    break;
+                                case "ERROR_WRONG_PASSWORD":
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_wrongPassword);
+                                    break;
+                                case "ERROR_NETWORK_REQUEST_FAILED":
+                                    st_error = resources.getString(R.string.patient_signup_error_network_failed);
+                                    break;
+                                case "ERROR_OPERATION_NOT_ALLOWED":
+                                    st_error = resources.getString(R.string.patient_signup_error_operations_not_allowed);
+                                    break;
+                                case "ERROR_USER_NOT_FOUND":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userNotFound);
+                                    break;
+                                case "ERROR_INVALID_EMAIL":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_emailNotValid);
+                                    break;
+                                case "ERROR_USER_MISMATCH":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userMismatch);
+                                    break;
+                                case "USER_DISABLED":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userDisabled);
+                                    break;
+                                default:
+                                    st_error = resources.getString(R.string.message_error);
+                                    break;
+                            }
+
+                            showAlertErrorUser(st_error);
                         }
                     }
                 });
+    }
+
+    private void showAlertErrorUser(String st_error) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void setUserName() {
@@ -148,12 +199,16 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                 .setDisplayName(name)
                 .build();
 
+        Resources resources = ProfessionalSingingActivity.this.getResources();
         user.updateProfile(profileUpdates)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "User profile updated.");
+                            Toast.makeText(ProfessionalSingingActivity.this,
+                                    resources.getString(R.string.professional_login_logInSuccessfully) + " " + name,
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 });

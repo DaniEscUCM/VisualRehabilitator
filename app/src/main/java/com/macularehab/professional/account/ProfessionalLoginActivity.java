@@ -19,14 +19,17 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.macularehab.R;
 import com.macularehab.login.LogIn;
 import com.macularehab.model.Professional;
+import com.macularehab.patient.signUp.PatientSignUpUsername;
 import com.macularehab.professional.ProfessionalHome;
 
 public class ProfessionalLoginActivity extends AppCompatActivity {
@@ -138,13 +141,65 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "loginUserWithEmail:failure", task.getException());
-                            Toast.makeText(ProfessionalLoginActivity.this, "Login failed.",
+                            Toast.makeText(ProfessionalLoginActivity.this,
+                                    task.getException().getLocalizedMessage(),
                                     Toast.LENGTH_LONG).show();
-                            //updateUI(null);
 
+                            FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
+                            Resources resources = ProfessionalLoginActivity.this.getResources();
+                            String st_error;
+
+                            switch (firebaseAuthException.getErrorCode()) {
+
+                                case "ERROR_EMAIL_ALREADY_IN_USE":
+                                    st_error = resources.getString(R.string.patient_signup_error_user_already_in_use);
+                                    break;
+                                case "ERROR_WEAK_PASSWORD":
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
+                                    break;
+                                case "ERROR_WRONG_PASSWORD":
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_wrongPassword);
+                                    break;
+                                case "ERROR_NETWORK_REQUEST_FAILED":
+                                    st_error = resources.getString(R.string.patient_signup_error_network_failed);
+                                    break;
+                                case "ERROR_OPERATION_NOT_ALLOWED":
+                                    st_error = resources.getString(R.string.patient_signup_error_operations_not_allowed);
+                                    break;
+                                case "ERROR_USER_NOT_FOUND":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userNotFound);
+                                    break;
+                                case "ERROR_INVALID_EMAIL":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_emailNotValid);
+                                    break;
+                                case "ERROR_USER_MISMATCH":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userMismatch);
+                                    break;
+                                case "USER_DISABLED":
+                                    st_error = resources.getString(R.string.professional_login_restorePassword_error_userDisabled);
+                                    break;
+                                default:
+                                    st_error = resources.getString(R.string.message_error);
+                                    break;
+                            }
+
+                            showAlertErrorUser(st_error);
                         }
                     }
                 });
+    }
+
+    private void showAlertErrorUser(String st_error) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void checkIfIsProfessional() {
@@ -179,6 +234,11 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     }
 
     public void goToProfessionalHome() {
+
+        Resources resources = ProfessionalLoginActivity.this.getResources();
+        Toast.makeText(this,
+                resources.getString(R.string.professional_login_logInSuccessfully) + " " + firebaseAuth.getCurrentUser().getDisplayName(),
+                Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(this, ProfessionalHome.class);
         startActivity(intent);

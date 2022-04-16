@@ -117,10 +117,10 @@ public class RestorePassword extends AppCompatActivity {
                                     st_error = resources.getString(R.string.patient_signup_error_user_already_in_use);
                                     break;
                                 case "ERROR_WEAK_PASSWORD":
-                                    st_error = resources.getString(R.string.patient_signup_error_weak_password);
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
                                     break;
                                 case "ERROR_WRONG_PASSWORD":
-                                    st_error = resources.getString(R.string.patient_signup_error_wrong_password);
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_wrongPassword);
                                     break;
                                 case "ERROR_NETWORK_REQUEST_FAILED":
                                     st_error = resources.getString(R.string.patient_signup_error_network_failed);

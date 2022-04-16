@@ -138,8 +138,8 @@ public class PatientSignUpPassword extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                        input_password_one.setText("");
-                        input_password_two.setText("");
+                        //input_password_one.setText("");
+                        //input_password_two.setText("");
                     }
                 });
 
