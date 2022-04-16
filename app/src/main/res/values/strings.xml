@@ -95,6 +95,7 @@
     <string name="professional_home_changePassword_button_text">Change Password</string>
     <string name="professional_home_changePassword_error_fillFields">Error: Fill Field</string>
     <string name="professional_home_changePassword_error_passwordWeak">Error: password must be at least 6 characters</string>
+    <string name="professional_home_changePassword_error_wrongPassword">Error: old password is not correct!</string>
     <string name="professional_home_changePassword_error_passwordsDoesNotMatch">Error: passwords does not match</string>
     <string name="professional_home_changePassword_successMessage">Password Changed Successfully</string>
     <string name="professional_home_changePassword_errorMessage">Password could not be changed</string>

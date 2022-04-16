@@ -82,8 +82,8 @@ public class PatientLogin extends AppCompatActivity  {
 
     private void readEmail() {
 
-        this.email_username = this.email_text.getText().toString();
-        this.password = this.password_text.getText().toString();
+        this.email_username = this.email_text.getText().toString().trim();
+        this.password = this.password_text.getText().toString().trim();
 
         Log.w("EMAIL: ", email_username);
         Log.w("PASSWORD: ", password);

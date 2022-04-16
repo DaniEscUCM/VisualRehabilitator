@@ -5,8 +5,11 @@ import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -75,6 +78,66 @@ public class ChangePassword extends AppCompatActivity {
                 readInputs();
             }
         });
+
+        oldPasswordInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                oldPasswordLayout.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        newPasswordInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                newPasswordLayout.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        repeatNewPasswordInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                repeatNewPasswordLayout.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        ImageButton backButton = findViewById(R.id.professional_home_changePassword_backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     private void readInputs() {
@@ -172,10 +235,10 @@ public class ChangePassword extends AppCompatActivity {
                                     st_error = resources.getString(R.string.patient_signup_error_user_already_in_use);
                                     break;
                                 case "ERROR_WEAK_PASSWORD":
-                                    st_error = resources.getString(R.string.patient_signup_error_weak_password);
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
                                     break;
                                 case "ERROR_WRONG_PASSWORD":
-                                    st_error = resources.getString(R.string.patient_signup_error_wrong_password);
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_wrongPassword);
                                     break;
                                 case "ERROR_NETWORK_REQUEST_FAILED":
                                     st_error = resources.getString(R.string.patient_signup_error_network_failed);
@@ -219,10 +282,10 @@ public class ChangePassword extends AppCompatActivity {
                                     st_error = resources.getString(R.string.patient_signup_error_user_already_in_use);
                                     break;
                                 case "ERROR_WEAK_PASSWORD":
-                                    st_error = resources.getString(R.string.patient_signup_error_weak_password);
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
                                     break;
                                 case "ERROR_WRONG_PASSWORD":
-                                    st_error = resources.getString(R.string.patient_signup_error_wrong_password);
+                                    st_error = resources.getString(R.string.professional_home_changePassword_error_wrongPassword);
                                     break;
                                 case "ERROR_NETWORK_REQUEST_FAILED":
                                     st_error = resources.getString(R.string.patient_signup_error_network_failed);

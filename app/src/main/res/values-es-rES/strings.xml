@@ -100,6 +100,7 @@
     <string name="professional_home_changePassword_button_text">Cambiar Contraseña</string>
     <string name="professional_home_changePassword_error_fillFields">Error: Rellena Campo</string>
     <string name="professional_home_changePassword_error_passwordWeak">Error: contraseña debe de tener al menos 6 carácteres</string>
+    <string name="professional_home_changePassword_error_wrongPassword">Error: contraseña actual no es correcta</string>
     <string name="professional_home_changePassword_error_passwordsDoesNotMatch">Error: las contraseñas no son iguales</string>
     <string name="professional_home_changePassword_successMessage">Contraseña cambiada con éxito</string>
     <string name="professional_home_changePassword_errorMessage">La contraseña no se ha podido cambiar</string>

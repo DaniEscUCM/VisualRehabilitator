@@ -79,8 +79,8 @@ public class PatientSignUpPassword extends AppCompatActivity {
 
     private void buttonClicked() {
 
-        password_one = input_password_one.getText().toString();
-        password_two = input_password_two.getText().toString();
+        password_one = input_password_one.getText().toString().trim();
+        password_two = input_password_two.getText().toString().trim();
 
         validatePassword();
     }
