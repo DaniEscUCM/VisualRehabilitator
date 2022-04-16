@@ -239,6 +239,7 @@
     <string name="image_background">Image</string>
     <string name="seconds_description_shape">Insert the seconds you want for each figure:</string>
     <string name="seconds_description_letter">Insert the seconds you want for each letter:</string>
+    <string name="seconds_description_whole_exercise">Insert the seconds to complete the whole exercise:</string>
     <string name="seconds">seconds</string>
     <string name="num_seconds">10</string>
     <string name="textview_name">Name</string>
@@ -278,7 +279,7 @@
     <string name="eleventh_exercise_description">The image of a face will appear. Find the specified parts of the face.</string>
     <string name="twelfth_exercise_description">The image of a face will appear. Find the specified parts of the face.</string>
     <string name="thirteenth_exercise_description">The image of a living room will appear. Find the specified parts of it.</string>
-    <string name="fourteenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="fourteenth_exercise_description">Some circles and red crosses will appear. Find all the crosses.</string>
     <string name="fifteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="sixteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="button_home">Home</string>
@@ -286,6 +287,7 @@
     <string name="triangle_for_click">Triangle</string>
     <string name="star_for_click">Star</string>
     <string name="letter">A</string>
+    <string name="circle">Circle</string>
     <string name="button_for_click">What you need to find</string>
     <string name="eleventh_exercise_find_nose">Find the nose</string>
     <string name="eleventh_exercise_find_mouth">Find the mouth</string>

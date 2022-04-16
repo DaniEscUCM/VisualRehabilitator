@@ -240,6 +240,7 @@
     <string name="image_background">Imagen</string>
     <string name="seconds_description_shape">Inserta los segundos que quieras para cada figura:</string>
     <string name="seconds_description_letter">Inserta los segundos que quieras para cada letra:</string>
+    <string name="seconds_description_whole_exercise">Inserta los segundos para completar el ejercicio entero:</string>
     <string name="seconds">segundos</string>
     <string name="num_seconds">10</string>
     <string name="textview_name">Nombre</string>
@@ -279,7 +280,7 @@
     <string name="eleventh_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
     <string name="twelfth_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
     <string name="thirteenth_exercise_description">Aparecerá la imagen de un salon. Encuentra las diferentes partes que se irán indicando arriba.</string>
-    <string name="fourteenth_exercise_description">Here would be the description of the exercise</string>
+    <string name="fourteenth_exercise_description">Aparecerán varios círculos y cruces rojas. Encuentra todas las cruces.</string>
     <string name="fifteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="sixteenth_exercise_description">Here would be the description of the exercise</string>
     <string name="button_home">Home</string>
@@ -287,6 +288,7 @@
     <string name="triangle_for_click">Triangulo</string>
     <string name="star_for_click">Estrella</string>
     <string name="letter">A</string>
+    <string name="circle">Círculo</string>
     <string name="button_for_click">Lo que hay que encontrar</string>
     <string name="eleventh_exercise_find_nose">Encuentra la nariz</string>
     <string name="eleventh_exercise_find_mouth">Encuentra la boca</string>
