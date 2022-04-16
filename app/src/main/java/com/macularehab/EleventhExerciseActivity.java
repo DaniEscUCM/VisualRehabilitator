@@ -40,7 +40,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     private CountDownTimer timer=null,timer_focus = null;
     private long time_left=3000,time_left_focus=5000;
     private HashMap<String, Object> patientHashMap;
-    private String filenameCurrentUser = "CurrentPatient.json";
+    private final String filenameCurrentUser = "CurrentPatient.json";
 
     private final String isFocus = "focusIsOn";
     private boolean isOn;
@@ -56,7 +56,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eleventh_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        String filenameCurrentUser = "CurrentPatient.json";
 
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
@@ -78,6 +77,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         counter = current = -1;
         num_miliseconds = EleventhExerciseDescriptionActivity.getNumSeconds() * 1000;
         time_left=num_miliseconds;
+
         button_button_left_eye = findViewById(R.id.dot_button_left_eye);
         button_right_eye = findViewById(R.id.dot_button_right_eye);
         button_mouth = findViewById(R.id.dot_button_mouth);
@@ -234,7 +234,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
 
     private void startTimer() {
         timer = new CountDownTimer(time_left, 1000) {
-            public void onTick(long millisUntilFinished) { }
+            public void onTick(long millisUntilFinished) { time_left=millisUntilFinished;}
             public void onFinish() {
                 ++counterFailed; //they didn't touch when they should have.
                 move();
@@ -251,17 +251,18 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     private void resume(){
         if(isOn){
             if(hiden){
-                focus_function();
+                startTimerFoco();
             }
             else{
-                focus.setVisibility(View.VISIBLE);
-                startTimer();
+                focus_function();
             }
         }
         else{
-            focus.setVisibility(View.INVISIBLE);
-            if(hiden){
-                hiden=false;
+            if(focus!=null) {
+                focus.setVisibility(View.INVISIBLE);
+                if (hiden) {
+                    hiden = false;
+                }
             }
             startTimer();
         }
@@ -360,12 +361,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         finish();
     }
 
-    public void Settings(View view) {
-        counter = total + 1;
-        finish();
-        Intent i = new Intent(this, SettingsActivity.class);
-        startActivity(i);
-    }
 
 
     //Database
