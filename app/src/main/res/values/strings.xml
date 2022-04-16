@@ -84,6 +84,21 @@
     <string name="professional_login_restorePassword_error_userMismatch">User Mismatch</string>
     <string name="professional_login_restorePassword_error_userDisabled">User Disabled</string>
 
+    <!-- Professional Section - Change Password -->
+    <string name="professional_home_changePassword_text">Change Password</string>
+    <string name="professional_home_changePassword_oldPassword_text">Insert Old Password</string>
+    <string name="professional_home_changePassword_newPassword_text">Insert New Password</string>
+    <string name="professional_home_changePassword_repeatNewPassword_text">Insert Again New Password</string>
+    <string name="professional_home_changePassword_oldPassword_hint">Old Password</string>
+    <string name="professional_home_changePassword_newPassword_hint">New Password</string>
+    <string name="professional_home_changePassword_repeatNewPassword_hint">Repeat New Password</string>
+    <string name="professional_home_changePassword_button_text">Change Password</string>
+    <string name="professional_home_changePassword_error_fillFields">Error: Fill Field</string>
+    <string name="professional_home_changePassword_error_passwordWeak">Error: password must be at least 6 characters</string>
+    <string name="professional_home_changePassword_error_passwordsDoesNotMatch">Error: passwords does not match</string>
+    <string name="professional_home_changePassword_successMessage">Password Changed Successfully</string>
+    <string name="professional_home_changePassword_errorMessage">Password could not be changed</string>
+
 
     <!-- Apartado Professional - Home -->
     <string name="professional_home_professional_text">Professional</string>

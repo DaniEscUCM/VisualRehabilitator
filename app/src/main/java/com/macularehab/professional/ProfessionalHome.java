@@ -29,6 +29,7 @@ import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
+import com.macularehab.professional.account.ChangePassword;
 import com.macularehab.professional.patientForm.ProfessionalCreateNewPatient;
 import com.macularehab.professional.patientList.PatientListAdapter;
 
@@ -119,6 +120,14 @@ public class ProfessionalHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logOutProfessional();
+            }
+        });
+
+        Button changePasswordButton = findViewById(R.id.professional_home_changePassword_button);
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToChangePasswordActivity();
             }
         });
     }
@@ -284,6 +293,12 @@ public class ProfessionalHome extends AppCompatActivity {
 
         Intent mainActivity = new Intent(this, IdentificationActivity.class);
         startActivity(mainActivity);
+    }
+
+    private void goToChangePasswordActivity() {
+
+        Intent changePasswordIntent = new Intent(this, ChangePassword.class);
+        startActivity(changePasswordIntent);
     }
 
 }

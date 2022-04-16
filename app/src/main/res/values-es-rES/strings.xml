@@ -89,6 +89,21 @@
     <string name="professional_login_restorePassword_error_userMismatch">Usuario no corresponde</string>
     <string name="professional_login_restorePassword_error_userDisabled">Usuario deshabilitado</string>
 
+    <!-- Professional Section - Change Password -->
+    <string name="professional_home_changePassword_text">Cambiar Contraseña</string>
+    <string name="professional_home_changePassword_oldPassword_text">Introduce Contraseña Actual</string>
+    <string name="professional_home_changePassword_newPassword_text">Introduce Nueva Contraseña</string>
+    <string name="professional_home_changePassword_repeatNewPassword_text">Introduce Nuevamente Nueva Contraseña</string>
+    <string name="professional_home_changePassword_oldPassword_hint">Contraseña Actual</string>
+    <string name="professional_home_changePassword_newPassword_hint">Nueva Contraseña</string>
+    <string name="professional_home_changePassword_repeatNewPassword_hint">Repite Nueva Contraseña</string>
+    <string name="professional_home_changePassword_button_text">Cambiar Contraseña</string>
+    <string name="professional_home_changePassword_error_fillFields">Error: Rellena Campo</string>
+    <string name="professional_home_changePassword_error_passwordWeak">Error: contraseña debe de tener al menos 6 carácteres</string>
+    <string name="professional_home_changePassword_error_passwordsDoesNotMatch">Error: las contraseñas no son iguales</string>
+    <string name="professional_home_changePassword_successMessage">Contraseña cambiada con éxito</string>
+    <string name="professional_home_changePassword_errorMessage">La contraseña no se ha podido cambiar</string>
+
     <!-- Apartado Professional - Home -->
     <string name="professional_home_professional_text">Profesional</string>
     <string name="professional_home_patientName_text">Nombre Paciente</string>

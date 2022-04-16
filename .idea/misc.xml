@@ -170,7 +170,7 @@
         <entry key="app/src/main/res/layout/activity_patient_signup_password.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_patient_signup_username.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_patient_test_history.xml" value="0.10911458333333333" />
-        <entry key="app/src/main/res/layout/activity_professional_change_password.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/activity_professional_change_password.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.1318069306930693" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_show_numeric_code.xml" value="0.17760416666666667" />
@@ -179,7 +179,7 @@
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_professional_restore_password.xml" value="0.12644389438943895" />
+        <entry key="app/src/main/res/layout/activity_professional_restore_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_tests_history.xml" value="0.10911458333333333" />
         <entry key="app/src/main/res/layout/activity_results_first_exercise.xml" value="0.10911458333333333" />
