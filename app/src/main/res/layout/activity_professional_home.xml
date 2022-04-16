@@ -41,6 +41,7 @@
             android:id="@+id/textView37"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="20dp"
             android:text="Lista de Pacientes"
             android:textSize="48sp" />
 
@@ -66,9 +67,9 @@
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
+        android:background="@drawable/border_for_layout"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top3"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@+id/guideline_mid"
         app:layout_constraintTop_toBottomOf="@+id/professional_home_logout_button">
@@ -81,6 +82,20 @@
             android:padding="20dp"
             android:text="@string/professional_home_create_patient_button"
             android:textSize="34sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:padding="10dp"
+            android:text="@string/professional_home_changePassword_button_hint"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <Button
@@ -88,7 +103,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/pink_dark"
-        android:padding="20dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="7dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="7dp"
         android:text="@string/hint_professional_home_logout_button"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
