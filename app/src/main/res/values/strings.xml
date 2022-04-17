@@ -243,6 +243,7 @@
     <string name="seconds">seconds</string>
     <string name="num_seconds">10</string>
     <string name="num_seconds_whole_exercise">60</string>
+    <string name="num_seconds_whole_exercise_90s">90</string>
     <string name="textview_name">Name</string>
     <string name="textview_username">Username</string>
     <string name="textview_password">Password</string>

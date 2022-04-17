@@ -56,7 +56,7 @@ public class FifteenthExerciseDescriptionActivity extends AppCompatActivity {
         saveInfo();
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
-        num_seconds = 10;
+        num_seconds = 90;
         if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
         }

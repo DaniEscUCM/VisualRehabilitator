@@ -92,6 +92,7 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         }
         else {
             focus.setVisibility(View.INVISIBLE);
+            startTimer();
         }
 
         cross1_1 = cross1_2 = cross1_3 = cross1_4 = true;
@@ -101,7 +102,6 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         cross5_1 = cross5_2 = cross5_3 = cross5_4 = true;
         cross6_1 = cross6_2 = cross6_3 = cross6_4 = true;
 
-        startTimer();
         //circle 1:
         button_cross1_1.setOnClickListener(v -> {
             if (cross1_1) {
