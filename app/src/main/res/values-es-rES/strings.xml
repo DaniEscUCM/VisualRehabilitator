@@ -231,6 +231,7 @@
     <string name="exercises_show_results_numCorrect">Correct</string>
     <string name="exercises_show_results_numFailed">Failed</string>
     <string name="exercises_show_results_returnToExercises_button">Regresar a Ejercicios</string>
+    <string name="exercises_show_results_exerciseOneDoesNotHaveResults">El Ejercicio 1 no tiene evaluación.\nEs un ejercicio de demostración</string>
     <!-- Exercises History -->
     <string name="exercises_resultHistory_correct">Aciertos</string>
     <string name="exercises_resultHistory_failed">Fallos</string>

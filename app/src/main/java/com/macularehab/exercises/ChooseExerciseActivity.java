@@ -1,7 +1,10 @@
 package com.macularehab.exercises;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -170,5 +173,21 @@ public class ChooseExerciseActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ExerciseResultHistory.class);
         intent.putExtra("exercise_id", exercise_id);
         startActivity(intent);
+    }
+
+    private void showAlertExerciseOneDoesNotHaveResults() {
+
+        Resources resources = ChooseExerciseActivity.this.getResources();
+        String st_error = resources.getString(R.string.exercises_show_results_exerciseOneDoesNotHaveResults);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
