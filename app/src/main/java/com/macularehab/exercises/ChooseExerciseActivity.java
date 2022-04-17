@@ -28,8 +28,7 @@ public class ChooseExerciseActivity extends AppCompatActivity {
         button_exercise_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                exercise_id = 0;
-                showResults();
+                showAlertExerciseOneDoesNotHaveResults();
             }
         });
 

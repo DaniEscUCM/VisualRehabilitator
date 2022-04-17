@@ -1,5 +1,7 @@
 package com.macularehab.exercises;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -97,6 +99,10 @@ public class ExerciseResultHistory extends AppCompatActivity {
         barChart.setDrawBorders(true);
         barChart.animateY(2000);
         barChart.invalidate();
+
+        if (barEntryArrayListCorrects.isEmpty() && barEntryArrayListFailed.isEmpty()) {
+            showAlertExerciseDoesNotHaveResults();
+        }
     }
 
     private void readExercisesResults() {
@@ -131,5 +137,21 @@ public class ExerciseResultHistory extends AppCompatActivity {
             //barEntryArrayList.add(new BarEntry(i, counterFailed));
             labelNames.add(resources.getString(R.string.exercises_resultHistory_trialsNumber) + i);
         }
+    }
+
+    private void showAlertExerciseDoesNotHaveResults() {
+
+        Resources resources = ExerciseResultHistory.this.getResources();
+        String st_error = resources.getString(R.string.exercises_show_results_exercisesWithOutResults);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

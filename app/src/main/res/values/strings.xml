@@ -231,7 +231,8 @@
     <string name="exercises_show_results_numCorrect">Corrects</string>
     <string name="exercises_show_results_numFailed">Failed</string>
     <string name="exercises_show_results_returnToExercises_button">Return To Exercises</string>
-    <string name="exercises_show_results_exerciseOneDoesNotHaveResults">The Exercise 1 does not have results (evaluation).\nIt is a Demo Exercise</string>
+    <string name="exercises_show_results_exerciseOneDoesNotHaveResults">The Exercise 1 does not have results (evaluation).\nIt is a Demo Exercise.</string>
+    <string name="exercises_show_results_exercisesWithOutResults">This Exercise does not have any results yet.\nYou have to complete the exercise first to see the history of the results.</string>
     <!-- Exercises History Section -->
     <string name="exercises_resultHistory_correct">Corrects</string>
     <string name="exercises_resultHistory_failed">Failed</string>
