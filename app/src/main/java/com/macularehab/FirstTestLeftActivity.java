@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.macularehab.actions.MapTestActions;
 
-public class MapTestLeftActivity extends AppCompatActivity{
+public class FirstTestLeftActivity extends AppCompatActivity{
 
     MapTestActions action;
 
@@ -22,7 +22,7 @@ public class MapTestLeftActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_map_test_left);
+        setContentView(R.layout.activity_first_test_left);
 
         TextView instruction = findViewById(R.id.textInstruction);
         ImageView centre_dot = findViewById(R.id.centre_dot);
@@ -66,7 +66,7 @@ public class MapTestLeftActivity extends AppCompatActivity{
         return true;
     }
     private void next_test(View v) {
-        Intent i = new Intent( this, MapTestRightExplanationActivity.class );
+        Intent i = new Intent( this, FirstTestRightExplanationActivity.class );
         String value= action.getCoor_result().toString();
         i.putExtra("map_left",value);
         value = getIntent().getExtras().getString("manual_left");

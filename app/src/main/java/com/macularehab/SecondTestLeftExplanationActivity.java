@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class GridTestLeftExplanationActivity extends AppCompatActivity {
+public class SecondTestLeftExplanationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_grid_test_left_explanation);
+        setContentView(R.layout.activity_second_test_left_explanation);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
@@ -24,7 +24,7 @@ public class GridTestLeftExplanationActivity extends AppCompatActivity {
     }
 
     private void play_test(View v) {
-        Intent i = new Intent( this, GridTestLeftActivity.class );
+        Intent i = new Intent( this, SecondTestLeftActivity.class );
         String value =  getIntent().getExtras().getString("map_both");
         i.putExtra("map_both",value);
         value = getIntent().getExtras().getString("map_right");

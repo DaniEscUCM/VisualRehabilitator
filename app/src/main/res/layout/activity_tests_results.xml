@@ -32,8 +32,9 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:contentDescription="@string/tests_results"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
@@ -48,41 +49,45 @@
 
                 <TextView
                     android:id="@+id/manual_left"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_left"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline19"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                <ImageView
+                    android:id="@+id/grid_manual_left"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline19"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_manual_left"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_manual_left"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_manual_left"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_manual_left"
+                    app:layout_constraintStart_toStartOf="@+id/grid_manual_left"
+                    app:layout_constraintTop_toTopOf="@+id/grid_manual_left"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_manual_left"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
-
-                </FrameLayout>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,41 +96,46 @@
 
                 <TextView
                     android:id="@+id/manual_right"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_right"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline20"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                <ImageView
+                    android:id="@+id/grid_manual_right"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline20"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_manual_right"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_manual_right"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_manual_right"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_manual_right"
+                    app:layout_constraintStart_toStartOf="@+id/grid_manual_right"
+                    app:layout_constraintTop_toTopOf="@+id/grid_manual_right"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_manual_right"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
 
-                </FrameLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -134,52 +144,56 @@
 
                 <TextView
                     android:id="@+id/manual_both"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_both"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline23"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:id="@+id/frameLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                <ImageView
+                    android:id="@+id/draw_dots_manual_both"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_manual_both"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_manual_both"
+                    app:layout_constraintStart_toStartOf="@+id/grid_manual_both"
+                    app:layout_constraintTop_toTopOf="@+id/grid_manual_both"
+                    app:srcCompat="@drawable/house_icon" />
+
+                <ImageView
+                    android:id="@+id/grid_manual_both"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline23"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_manual_both"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_manual_both"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
-
-                </FrameLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/first_test_left"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/first_test_left"
                     android:textAlignment="textStart"
@@ -187,251 +201,281 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+
+                <ImageView
+                    android:id="@+id/grid_first_left"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline24"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_first_left"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_first_left"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_first_left"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_first_left"
+                    app:layout_constraintStart_toStartOf="@+id/grid_first_left"
+                    app:layout_constraintTop_toTopOf="@+id/grid_first_left"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_first_left"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
 
-                </FrameLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/first_test_right"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/first_test_right"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline25"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+
+                <ImageView
+                    android:id="@+id/grid_first_right"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline25"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_first_right"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_first_right"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_first_right"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_first_right"
+                    app:layout_constraintStart_toStartOf="@+id/grid_first_right"
+                    app:layout_constraintTop_toTopOf="@+id/grid_first_right"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_first_right"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
-
-                </FrameLayout>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/first_test_both"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/first_test_both"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline26"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:id="@+id/frameLayout3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+
+                <ImageView
+                    android:id="@+id/grid_first_both"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline26"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_first_both"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_first_both"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_first_both"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_first_both"
+                    app:layout_constraintStart_toStartOf="@+id/grid_first_both"
+                    app:layout_constraintTop_toTopOf="@+id/grid_first_both"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_first_both"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="1122dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_percent="0.1380531" />
 
-                </FrameLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/second_test_left"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_left"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline27"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:id="@+id/frameLayout4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+
+                <ImageView
+                    android:id="@+id/grid_second_left"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline27"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_second_left"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_second_left"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_second_left"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_second_left"
+                    app:layout_constraintStart_toStartOf="@+id/grid_second_left"
+                    app:layout_constraintTop_toTopOf="@+id/grid_second_left"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_second_left"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
-
-                </FrameLayout>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/second_test_right"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_right"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline28"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:id="@+id/frameLayout5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                <ImageView
+                    android:id="@+id/grid_second_right"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline28"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_second_right"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_second_right"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_second_right"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_second_right"
+                    app:layout_constraintStart_toStartOf="@+id/grid_second_right"
+                    app:layout_constraintTop_toTopOf="@+id/grid_second_right"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_second_right"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
-
-                </FrameLayout>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/second_test_both"
-                    android:layout_width="734dp"
-                    android:layout_height="87dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_both"
                     android:textAlignment="textStart"
                     android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline29"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <FrameLayout
-                    android:id="@+id/frameLayout6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
+                <ImageView
+                    android:id="@+id/grid_second_both"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:layout_marginBottom="1dp"
+                    android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="@+id/guideline29"
+                    app:srcCompat="@drawable/tencmgrid" />
 
-                    <ImageView
-                        android:id="@+id/grid_second_both"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        app:srcCompat="@drawable/tencmgrid" />
+                <ImageView
+                    android:id="@+id/draw_dots_second_both"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_second_both"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_second_both"
+                    app:layout_constraintStart_toStartOf="@+id/grid_second_both"
+                    app:layout_constraintTop_toTopOf="@+id/grid_second_both"
+                    app:srcCompat="@drawable/house_icon" />
 
-                    <ImageView
-                        android:id="@+id/draw_dots_second_both"
-                        android:layout_width="545dp"
-                        android:layout_height="545dp"
-                        android:contentDescription="@string/circular_grid"
-                        android:visibility="invisible"
-                        app:srcCompat="@drawable/house_icon" />
 
-                </FrameLayout>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

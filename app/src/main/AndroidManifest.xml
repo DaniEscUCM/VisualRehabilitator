@@ -32,22 +32,22 @@
             android:name=".TestsResultsActivity"
             android:exported="false" />
         <activity
-            android:name=".GridTestBothActivity"
+            android:name=".SecondTestBothActivity"
             android:exported="false" />
         <activity
-            android:name=".GridTestBothExplanationActivity"
+            android:name=".SecondTestBothExplanationActivity"
             android:exported="false" />
         <activity
-            android:name=".GridTestRightActivity"
+            android:name=".SecondTestRightActivity"
             android:exported="false" />
         <activity
-            android:name=".GridTestRightExplanationActivity"
+            android:name=".SecondTestRightExplanationActivity"
             android:exported="false" />
         <activity
-            android:name=".GridTestLeftExplanationActivity"
+            android:name=".SecondTestLeftExplanationActivity"
             android:exported="false" />
         <activity
-            android:name=".GridTestLeftActivity"
+            android:name=".SecondTestLeftActivity"
             android:exported="false" />
         <activity
             android:name=".ManualInputStainBothActivity"
@@ -59,22 +59,22 @@
             android:name=".ManualInputStainLeftActivity"
             android:exported="false" />
         <activity
-            android:name=".MapTestBothActivity"
+            android:name=".FirstTestBothActivity"
             android:exported="false" />
         <activity
-            android:name=".MapTestBothExplanationActivity"
+            android:name=".FirstTestBothExplanationActivity"
             android:exported="false" />
         <activity
-            android:name=".MapTestRightExplanationActivity"
+            android:name=".FirstTestRightExplanationActivity"
             android:exported="false" />
         <activity
-            android:name=".MapTestRightActivity"
+            android:name=".FirstTestRightActivity"
             android:exported="false" />
         <activity
-            android:name=".MapTestLeftActivity"
+            android:name=".FirstTestLeftActivity"
             android:exported="false" />
         <activity
-            android:name=".MapTestLeftExplanationActivity"
+            android:name=".FirstTestLeftExplanationActivity"
             android:exported="false" />
 
         <!-- Professional Section . -->
