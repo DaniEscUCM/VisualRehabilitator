@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -74,6 +75,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private long professionalNumericCode;
     private long patientNumericCode;
 
+    private Resources resources;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +96,8 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
                 ProfessionalCreateNewPatient.this.finish();
             }
         });
+
+        resources = ProfessionalCreateNewPatient.this.getResources();
 
         input_patient_date = findViewById(R.id.input_create_patient_todays_date);
         input_patient_name = findViewById(R.id.input_create_patient_name);
@@ -161,43 +166,44 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         observations = input_patient_observations.getText().toString();
     }
 
-    //TODO utilizar string.xml y tambien falta comprobar que no exista un usuario con el mismo nombre
     private boolean validateInputs() {
 
         boolean all_correct = true;
 
+        String required = resources.getString(R.string.error_required_field);
+
         if (date.equals("")) {
-            input_patient_date.setError("required");
+            input_patient_date.setError(required);
             all_correct = false;
         }
         if (name.equals("")) {
-            input_patient_name.setError("required");
+            input_patient_name.setError(required);
             all_correct = false;
         }
         if (first_last_name.equals("")) {
-            input_patient_first_last_name.setError("required");
+            input_patient_first_last_name.setError(required);
             all_correct = false;
         }
         if (second_last_name.equals("")) {
-            input_patient_second_last_name.setError("required");
+            input_patient_second_last_name.setError(required);
             all_correct = false;
         }
         if (date_of_birth.equals("")) {
-            input_patient_date_of_birth.setError("required");
+            input_patient_date_of_birth.setError(required);
             all_correct = false;
         }
         if (diagnostic.equals("")) {
-            input_patient_diagnostic.setError("required");
+            input_patient_diagnostic.setError(required);
             all_correct = false;
         }
 
         if (av_text.equals("")) {
-            input_patient_av.setError("required");
+            input_patient_av.setError(required);
             all_correct = false;
         } else av = Float.parseFloat(av_text);
 
         if (cv_text.equals("")) {
-            input_patient_cv.setError("required");
+            input_patient_cv.setError(required);
             all_correct = false;
         } else cv = Float.parseFloat(cv_text);
 
@@ -206,8 +212,9 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void showAlertMissingData() {
 
+        String st_error = resources.getString(R.string.error_fields_empty);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("There are some fields that ar not filled up")
+        builder.setMessage(st_error)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
