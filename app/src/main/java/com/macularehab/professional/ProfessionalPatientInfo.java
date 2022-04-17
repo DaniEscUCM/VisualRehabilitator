@@ -219,16 +219,18 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
         Resources resources = this.getResources();
         String confirm = resources.getString(R.string.professional_patientInfo_confirmDeletePatient);
+        String yesText = resources.getString(R.string.professional_patientInfo_delete_yes);
+        String notText = resources.getString(R.string.professional_patientInfo_delete_no);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(confirm)
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton(notText, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
                 })
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton(yesText, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         deletePatientFromDataBase();
                     }

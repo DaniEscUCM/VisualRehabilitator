@@ -204,6 +204,8 @@
     <string name="professional_patientInfo_exercises">Exercises</string>
     <string name="professional_patientInfo_exercisesProgress">Exercises Progress</string>
     <string name="professional_patientInfo_confirmDeletePatient">Are you sure you want to delete this patient?</string>
+    <string name="professional_patientInfo_delete_yes">Yes, Delete</string>
+    <string name="professional_patientInfo_delete_no">No, Cancel</string>
     <!-- Buttons -->
     <string name="professional_patientInfo_editPatient_button">Edit\nPatient</string>
     <string name="professional_patientInfo_deletePatient_button">Delete\nPatient</string>
