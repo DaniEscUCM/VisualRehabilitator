@@ -26,6 +26,8 @@ import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
+import com.macularehab.exercises.SaveFocusInfo;
+import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 
@@ -286,22 +288,11 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
         menu.setVisibility(View.VISIBLE);
     }
 
-    private void saveFocusOn(){
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
+    private void saveFocusOn() {
 
-        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
-
-        mapS.put(isFocus, isOn);
-
-        Gson gson = new Gson();
-        String data = gson.toJson(mapS);
-        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
-        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
+        new SaveFocusInfo(getApplicationContext(), isOn);
     }
+
     private void move() {
         if (++counter == total) {
             writeResultInDataBase(counterCorrect, counterFailed);
@@ -355,11 +346,44 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
         finish();
     }
 
-
-
     //Database
+    /**
+     * [EN] Writes the result of the exercise in the database and in internal storage
+     * [ES] Escribe el resultado del ejercicio en la base de datos y en el almacenamiento interno
+     *
+     * @param correct
+     *          [En] Number of corrects
+     *          [ES] Número de aciertos
+     * @param failed
+     *          [En] Number of failures
+     *          [ES] Número de fallos
+     */
     private void writeResultInDataBase(int correct, int failed) {
+
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
         exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
+
+        showResults(correct, failed);
+    }
+
+    /**
+     * [EN] Starts ShowResultActivity,
+     *      and passes two intents, the number of corrects and number of failures
+     * [ES] Comienza nueva actividad,
+     *      y pasa dos intents, el número de aciertos y el número de fallos
+     *
+     * @param correct
+     *          [En] Number of corrects
+     *          [ES] Número de aciertos
+     * @param failed
+     *          [En] Number of failures
+     *          [ES] Número de fallos
+     */
+    private void showResults(int correct, int failed) {
+
+        Intent resultIntent = new Intent(this, ShowResultActivity.class);
+        resultIntent.putExtra("numCorrect", correct);
+        resultIntent.putExtra("numFailed", failed);
+        startActivity(resultIntent);
     }
 }

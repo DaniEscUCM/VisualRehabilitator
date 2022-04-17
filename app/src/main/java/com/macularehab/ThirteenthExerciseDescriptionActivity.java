@@ -60,6 +60,8 @@ public class ThirteenthExerciseDescriptionActivity extends AppCompatActivity {
         if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
         }
+
+        finish();
         Intent i = new Intent( this, ThirteenthExerciseActivity.class );
         startActivity(i);
     }
