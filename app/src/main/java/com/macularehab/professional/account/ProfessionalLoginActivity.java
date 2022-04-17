@@ -237,12 +237,16 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
         if (firebaseAuth.getCurrentUser() != null) {
 
-            Log.e("ProfName", firebaseAuth.getCurrentUser().getDisplayName());
+            String name = firebaseAuth.getCurrentUser().getDisplayName();
 
-            Resources resources = ProfessionalLoginActivity.this.getResources();
-            Toast.makeText(this,
-                    resources.getString(R.string.professional_login_logInSuccessfully) + " " + firebaseAuth.getCurrentUser().getDisplayName(),
-                    Toast.LENGTH_LONG).show();
+            if (name != null) {
+                Log.e("ProfName", firebaseAuth.getCurrentUser().getDisplayName());
+
+                Resources resources = ProfessionalLoginActivity.this.getResources();
+                Toast.makeText(this,
+                        resources.getString(R.string.professional_login_logInSuccessfully) + " " + firebaseAuth.getCurrentUser().getDisplayName(),
+                        Toast.LENGTH_LONG).show();
+            }
         }
 
         Intent intent = new Intent(this, ProfessionalHome.class);

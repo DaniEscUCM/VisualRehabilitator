@@ -46,6 +46,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
     private String name;
     private String email;
     private String password;
+    private String repeatPassword;
 
     private Resources resources;
 
@@ -93,27 +94,27 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
 
     public void singInProfessional (View view) {
         //validate
-        String name = nameP.getText().toString().trim();
-        String mail = mailP.getText().toString().trim();
-        String pasw = paswP.getText().toString().trim();
-        String rep_pasw = repPasw.getText().toString().trim();
+        name = nameP.getText().toString().trim();
+        email = mailP.getText().toString().trim();
+        password = paswP.getText().toString().trim();
+        repeatPassword = repPasw.getText().toString().trim();
 
-        if(name.equals("")||mail.equals("")||pasw.equals("") || (pasw.length() < 6) || (!pasw.equals(rep_pasw))) {
+        if(name.equals("") || email.equals("") || password.equals("") || (password.length() < 6) || (!password.equals(repeatPassword))) {
             validate();
 
         }else{
 
-            int email_length = mail.length();
+            int email_length = email.length();
             boolean is_email = false;
             for (int i = 0; i < email_length && !is_email; i++) {
-                if (mail.charAt(i) == '@') is_email = true;
+                if (email.charAt(i) == '@') is_email = true;
             }
             //if (!is_email) mail += GENERIC_EMAIL;
             if (!is_email) {
                 showAlertBadFormatEmail();
             }
             else {
-                createAccount(name, mail, pasw);
+                createAccount(name, email, password);
             }
         }
     }
