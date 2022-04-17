@@ -34,11 +34,11 @@
     <TextView
         android:id="@+id/text_find_n"
         android:layout_width="800dp"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_n"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -112,6 +112,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect1"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct3"
         android:layout_width="45dp"
@@ -124,6 +125,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_correct2"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_incorrect2"
         android:layout_width="40dp"
@@ -136,6 +138,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_correct3"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct4"
         android:layout_width="37dp"
@@ -148,6 +151,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect2"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_incorrect3"
         android:layout_width="40dp"
@@ -173,6 +177,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect3"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct5"
         android:layout_width="40dp"
@@ -185,6 +190,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect4"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct6"
         android:layout_width="45dp"
@@ -197,6 +203,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_correct5"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_incorrect5"
         android:layout_width="40dp"
@@ -209,6 +216,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_correct6"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct7"
         android:layout_width="40dp"
@@ -221,6 +229,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect5"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_incorrect6"
         android:layout_width="40dp"
@@ -233,6 +242,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_correct7"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct8"
         android:layout_width="45dp"
@@ -245,6 +255,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect6"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct9"
         android:layout_width="42dp"
@@ -257,6 +268,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_correct8"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_correct10"
         android:layout_width="32dp"
@@ -269,6 +281,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_n_correct9"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageButton
         android:id="@+id/button_n_incorrect7"
         android:layout_width="90dp"
@@ -286,15 +299,16 @@
     <TextView
         android:id="@+id/text_find_o"
         android:layout_width="800dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="75dp"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_o"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_sequence_n"
+        app:layout_constraintTop_toTopOf="@+id/text_find_n"
+        app:layout_constraintVertical_bias="0.413"
         tools:textStyle="bold" />
 
     <TextView
@@ -324,6 +338,162 @@
         app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
+    <ImageButton
+        android:id="@+id/button_o_incorrect1"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct1"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_correct2"
+        android:layout_width="35dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_incorrect1"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_incorrect2"
+        android:layout_width="35dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct2"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_correct3"
+        android:layout_width="47dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_incorrect2"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_incorrect3"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct3"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_correct4"
+        android:layout_width="47dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_incorrect3"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_incorrect4"
+        android:layout_width="92dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct4"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_correct5"
+        android:layout_width="47dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_incorrect4"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_correct6"
+        android:layout_width="47dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct5"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_incorrect5"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct6"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_correct7"
+        android:layout_width="43dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_incorrect5"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_o_incorrect6"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct7"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
     <ImageView
         android:id="@+id/focus_o"
         android:layout_width="10dp"
@@ -336,18 +506,20 @@
         app:layout_constraintTop_toTopOf="@+id/button_o_correct1"
         app:srcCompat="@drawable/circle_black"
         app:tint="@color/red" />
+
     <TextView
         android:id="@+id/text_find_v"
         android:layout_width="800dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="75dp"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_v"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_sequence_o"
+        app:layout_constraintTop_toTopOf="@+id/text_find_n"
+        app:layout_constraintVertical_bias="0.788"
         tools:textStyle="bold" />
 
     <TextView
@@ -362,6 +534,255 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct1"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="63dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toStartOf="@+id/text_sequence_v"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect1"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct1"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct2"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_incorrect1"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct3"
+        android:layout_width="43dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct2"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect2"
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct3"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct4"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_incorrect2"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect3"
+        android:layout_width="45dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct4"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct5"
+        android:layout_width="45dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_incorrect3"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect4"
+        android:layout_width="38dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct5"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct6"
+        android:layout_width="33dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_incorrect4"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct7"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct6"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect5"
+        android:layout_width="35dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct7"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct8"
+        android:layout_width="35dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_incorrect5"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect6"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct8"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct9"
+        android:layout_width="45dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_incorrect6"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect7"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct9"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_correct10"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_incorrect7"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageButton
+        android:id="@+id/button_v_incorrect8"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:alpha="0.01"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/button_for_click"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sequence_v"
+        app:layout_constraintStart_toEndOf="@+id/button_v_correct10"
+        app:layout_constraintTop_toTopOf="@+id/text_sequence_v"
+        app:srcCompat="@drawable/border_rectangle_v2" />
+
+    <ImageView
+        android:id="@+id/focus_v"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/button_v_correct1"
+        app:layout_constraintEnd_toEndOf="@+id/button_v_correct1"
+        app:layout_constraintStart_toStartOf="@+id/button_v_correct1"
+        app:layout_constraintTop_toTopOf="@+id/button_v_correct1"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu"
