@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.macularehab.R;
+import com.macularehab.exercises.ChooseExerciseActivity;
 import com.macularehab.patient.PatientHome;
 import com.macularehab.professional.ProfessionalTestsHistoryActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
@@ -70,6 +71,14 @@ public class PatientDataInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goToTests();
+            }
+        });
+
+        Button patientExercisesHistoryButton = findViewById(R.id.professional_patient_info_exercisesHistory_button);
+        patientExercisesHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToExercisesHistory();
             }
         });
 
@@ -174,8 +183,15 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         }
     }
 
-    private  void goToTests(){
+    private  void goToTests() {
+
         Intent intent = new Intent(this, PatientTestHistoryActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToExercisesHistory() {
+
+        Intent intent = new Intent(this, ChooseExerciseActivity.class);
         startActivity(intent);
     }
 }
