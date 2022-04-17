@@ -229,11 +229,13 @@
     <string name="exercises_show_results_numCorrect">Corrects</string>
     <string name="exercises_show_results_numFailed">Failed</string>
     <string name="exercises_show_results_returnToExercises_button">Return To Exercises</string>
-    <!-- Exercises History -->
+    <!-- Exercises History Section -->
     <string name="exercises_resultHistory_correct">Corrects</string>
     <string name="exercises_resultHistory_failed">Failed</string>
     <string name="exercises_resultHistory_trials">Trials</string>
     <string name="exercises_resultHistory_trialsNumber">Trial #</string>
+    <!-- Test History Section -->
+    <string name="tests_testHistory_queryHint">Test Date</string>
 
 
     <string name="button_des_data">Data</string>
