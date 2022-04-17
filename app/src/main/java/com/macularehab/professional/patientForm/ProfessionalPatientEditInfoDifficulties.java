@@ -18,7 +18,7 @@ import com.google.gson.Gson;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
-import com.macularehab.professional.ProfessionalPatientInfo;
+import com.macularehab.professional.patient.ProfessionalPatientInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;

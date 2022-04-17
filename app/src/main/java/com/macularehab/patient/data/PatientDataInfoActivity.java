@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
 import com.macularehab.patient.PatientHome;
-import com.macularehab.professional.ProfessionalTestsHistoryActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 
 import java.util.ArrayList;

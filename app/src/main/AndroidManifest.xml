@@ -23,7 +23,7 @@
             android:name=".TestDisplayActivity"
             android:exported="false" />
         <activity
-            android:name=".professional.ProfessionalTestsHistoryActivity"
+            android:name=".professional.patient.ProfessionalTestsHistoryActivity"
             android:exported="false" />
         <activity
             android:name=".CalculateFocusActivity"
@@ -100,10 +100,10 @@
             android:name=".professional.ProfessionalHome"
             android:exported="false" />
         <activity
-            android:name=".professional.ProfessionalPatientInfo"
+            android:name=".professional.patient.ProfessionalPatientInfo"
             android:exported="false" />
         <activity
-            android:name=".professional.ProfessionalPatientHome"
+            android:name=".professional.patient.ProfessionalPatientHome"
             android:exported="false" />
         <activity
             android:name=".professional.patientForm.ProfessionalPatientEditInfo"

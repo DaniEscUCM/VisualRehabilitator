@@ -25,12 +25,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
 import com.macularehab.exercises.Exercise;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
-import com.macularehab.professional.ProfessionalPatientHome;
+import com.macularehab.professional.patient.ProfessionalPatientHome;
 
 import java.util.ArrayList;
 import java.util.HashMap;

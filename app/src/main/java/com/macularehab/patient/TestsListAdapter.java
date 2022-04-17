@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.macularehab.R;
 import com.macularehab.TestDisplayActivity;
-import com.macularehab.professional.ProfessionalPatientHome;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.macularehab.professional;
+package com.macularehab.professional.patient;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
@@ -20,6 +19,7 @@ import com.macularehab.ExercisesActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
+import com.macularehab.professional.ProfessionalHome;
 
 import java.util.HashMap;
 

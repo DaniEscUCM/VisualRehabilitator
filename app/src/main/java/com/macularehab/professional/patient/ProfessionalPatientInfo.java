@@ -1,4 +1,4 @@
-package com.macularehab.professional;
+package com.macularehab.professional.patient;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -21,10 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
-import com.macularehab.exercises.ExerciseResultHistory;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
-import com.macularehab.patient.PatientHome;
+import com.macularehab.professional.ProfessionalHome;
 import com.macularehab.professional.patientForm.ProfessionalPatientEditInfo;
 
 import java.util.ArrayList;

@@ -27,7 +27,7 @@ import com.macularehab.draws.DrawDot;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.ProfessionalHome;
-import com.macularehab.professional.ProfessionalTestsHistoryActivity;
+import com.macularehab.professional.patient.ProfessionalTestsHistoryActivity;
 
 import java.io.File;
 import java.util.ArrayList;

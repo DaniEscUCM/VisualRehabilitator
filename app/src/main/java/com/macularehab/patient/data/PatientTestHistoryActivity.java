@@ -12,11 +12,9 @@ import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import com.google.gson.internal.LinkedTreeMap;
-import com.macularehab.ManualInputStainLeftActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.patient.TestsListAdapter;
-import com.macularehab.professional.ProfessionalPatientInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.macularehab.professional;
+package com.macularehab.professional.patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +16,7 @@ import com.macularehab.ManualInputStainLeftActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.patient.TestsListAdapter;
+import com.macularehab.professional.patient.ProfessionalPatientInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
