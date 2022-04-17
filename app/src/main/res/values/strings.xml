@@ -10,11 +10,14 @@
     <string name="message_error">Error! Try Again Later</string>
     <string name="email">Email Address</string>
     <string name="password">Password</string>
+    <!-- General Section - Errors -->
     <string name="emptyField">Field is empty. Is required to fill out</string>
     <string name="required">* Required</string>
     <string name="noInternetConnection">No Internet Connection.\nPlease make sure you are connected to internet</string>
     <string name="error_fields_empty">There are some fields that are not filled up</string>
     <string name="error_required_field">Required</string>
+    <string name="error_weak_password">Error: password must be at least 6 characters</string>
+    <string name="error_passwords_not_match">Error: passwords does not match</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->

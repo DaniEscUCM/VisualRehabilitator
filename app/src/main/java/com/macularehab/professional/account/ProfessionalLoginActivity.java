@@ -158,7 +158,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                                     st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
                                     break;
                                 case "ERROR_WRONG_PASSWORD":
-                                    st_error = resources.getString(R.string.professional_home_changePassword_error_wrongPassword);
+                                    st_error = resources.getString(R.string.professional_login_wrongPassword);
                                     break;
                                 case "ERROR_NETWORK_REQUEST_FAILED":
                                     st_error = resources.getString(R.string.patient_signup_error_network_failed);

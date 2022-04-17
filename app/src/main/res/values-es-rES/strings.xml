@@ -15,11 +15,14 @@
     <string name="message_error">¡Error! Intente de nuevo más tarde</string>
     <string name="email">Dirección de Correo Electrónico</string>
     <string name="password">Contraseña</string>
+    <!-- Apartado general - Errores -->
     <string name="emptyField">Casilla sin rellenar. Es obligatorio rellenar la(s) casilla(s)</string>
     <string name="required">* Obligatorio</string>
     <string name="noInternetConnection">Sin conexión a Internet.\nPor favor asegúrate de que estás conectado a Internet</string>
     <string name="error_fields_empty">Hay algunos campos que faltan por rellenar</string>
     <string name="error_required_field">Obligatorio</string>
+    <string name="error_weak_password">Error: contraseña debe de contener al menos 6 carácteres</string>
+    <string name="error_passwords_not_match">Error: las contraseñas no coinciden</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->
@@ -104,7 +107,7 @@
     <string name="professional_home_changePassword_repeatNewPassword_hint">Repite Nueva Contraseña</string>
     <string name="professional_home_changePassword_button_text">Cambiar Contraseña</string>
     <string name="professional_home_changePassword_error_fillFields">Error: Rellena Campo</string>
-    <string name="professional_home_changePassword_error_passwordWeak">Error: contraseña debe de tener al menos 6 carácteres</string>
+    <string name="professional_home_changePassword_error_passwordWeak">Error: contraseña debe de contener al menos 6 carácteres</string>
     <string name="professional_home_changePassword_error_wrongPassword">Error: contraseña actual no es correcta</string>
     <string name="professional_home_changePassword_error_passwordsDoesNotMatch">Error: las contraseñas no son iguales</string>
     <string name="professional_home_changePassword_successMessage">Contraseña cambiada con éxito</string>

@@ -47,6 +47,8 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
     private String email;
     private String password;
 
+    private Resources resources;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +61,8 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        resources = ProfessionalSignUpActivity.this.getResources();
 
         nameP = findViewById(R.id.editTextProfesionalName);
         mailP = findViewById(R.id.editTextProfesionalMail);
@@ -87,7 +91,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
         finish();
     }
 
-    public void singInProfessional (View view){
+    public void singInProfessional (View view) {
         //validate
         String name = nameP.getText().toString().trim();
         String mail = mailP.getText().toString().trim();
@@ -101,7 +105,9 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
 
             int email_length = mail.length();
             boolean is_email = false;
-            for (int i = 0; i < email_length && !is_email; i++) if (mail.charAt(i) == '@') is_email = true;
+            for (int i = 0; i < email_length && !is_email; i++) {
+                if (mail.charAt(i) == '@') is_email = true;
+            }
             //if (!is_email) mail += GENERIC_EMAIL;
             if (!is_email) {
                 showAlertBadFormatEmail();
@@ -123,7 +129,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
-                            setUserName();
+                            setUserName(currentUser);
                             ProfessionalSignUpActivity.this.currentUserID = currentUser.getUid();
                             addDB(name,mail,password);
 
@@ -191,15 +197,14 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    private void setUserName() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private void setUserName(FirebaseUser firebaseUser) {
 
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(name)
                 .build();
 
         Resources resources = ProfessionalSignUpActivity.this.getResources();
-        user.updateProfile(profileUpdates)
+        firebaseUser.updateProfile(profileUpdates)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -269,29 +274,35 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
         goToMain();
     }
 
-    public void validate(){
+    public void validate() {
+
         String name = nameP.getText().toString();
         String mail = mailP.getText().toString();
         String pasw = paswP.getText().toString();
         String rep_pasw = repPasw.getText().toString();
 
+        String required = resources.getString(R.string.error_required_field);
+
         if(name.equals("")){
-            nameP.setError("required");
+            nameP.setError(required);
         }
         if(mail.equals("")){
-            mailP.setError("required");
+            mailP.setError(required);
         }
         if(pasw.equals("")){
-            paswP.setError("required");
+            paswP.setError(required);
         }
         if (pasw.length() < 6) {
-            paswP.setError("Password must be at least 6 characters");
+            paswP.setError(resources.getString(R.string.error_weak_password));
         }
         if (!pasw.equals(rep_pasw)) {
-            paswP.setError("Passwords Doesn't Match");
-            repPasw.setError("Passwords Doesn't Match");
-            paswP.setText("");
-            repPasw.setText("");
+
+            String pass_not_match = resources.getString(R.string.error_passwords_not_match);
+
+            paswP.setError(pass_not_match);
+            repPasw.setError(pass_not_match);
+            /*paswP.setText("");
+            repPasw.setText("");*/
         }
     }
 
@@ -303,8 +314,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
     }
 
     public void goToMain(){
-        //Intent i = new Intent( this, ProfessionalPageActivity.class);
-        //i.putExtra("username",mailP.getText().toString()); //we pass the username to activity : Professional Page
+
         Intent i = new Intent( this, ProfessionalHome.class);
         startActivity(i);
     }

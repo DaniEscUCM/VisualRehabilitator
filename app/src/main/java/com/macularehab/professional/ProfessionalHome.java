@@ -249,14 +249,17 @@ public class ProfessionalHome extends AppCompatActivity {
 
     private void setProfessionalNameText() {
 
-        String name = mAuth.getCurrentUser().getDisplayName();
-        String a = mAuth.getCurrentUser().getUid();
-        //Log.w("Professional Name", name);
-        if (name == null) {
-            getPatientNameFromDB();
-        }
-        else if (!name.equals("")) {
-            professional_name_text.setText(mAuth.getCurrentUser().getDisplayName());
+        if (mAuth.getCurrentUser() != null) {
+
+            String name = mAuth.getCurrentUser().getDisplayName();
+
+            if (name == null) {
+                getPatientNameFromDB();
+            } else if (!name.equals("")) {
+                professional_name_text.setText(mAuth.getCurrentUser().getDisplayName());
+            } else {
+                getPatientNameFromDB();
+            }
         }
         else {
             getPatientNameFromDB();
