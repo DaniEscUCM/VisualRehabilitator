@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".professional.account.ProfessionalSingingActivity">
+    tools:context=".professional.account.ProfessionalSignUpActivity">
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc_prof"

@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.macularehab.R;
-import com.macularehab.professional.account.ProfessionalLoginActivity;
-import com.macularehab.professional.account.ProfessionalSingingActivity;
 
 public class ProfessionalIdentificationActivity extends AppCompatActivity {
 
@@ -56,7 +54,7 @@ public class ProfessionalIdentificationActivity extends AppCompatActivity {
     }
 
     public void singin(View view){
-        Intent i = new Intent(this, ProfessionalSingingActivity.class);
+        Intent i = new Intent(this, ProfessionalSignUpActivity.class);
         startActivity(i);
     }
 }

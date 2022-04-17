@@ -82,7 +82,7 @@
             android:name=".professional.account.ProfessionalLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".professional.account.ProfessionalSingingActivity"
+            android:name=".professional.account.ProfessionalSignUpActivity"
             android:exported="false" />
         <activity
             android:name=".professional.account.ProfessionalIdentificationActivity"

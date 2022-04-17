@@ -31,7 +31,7 @@ import com.macularehab.R;
 import com.macularehab.model.Professional;
 import com.macularehab.professional.ProfessionalHome;
 
-public class ProfessionalSingingActivity extends AppCompatActivity {
+public class ProfessionalSignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "EmailPassword";
@@ -124,18 +124,18 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                             FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
                             setUserName();
-                            ProfessionalSingingActivity.this.currentUserID = currentUser.getUid();
+                            ProfessionalSignUpActivity.this.currentUserID = currentUser.getUid();
                             addDB(name,mail,password);
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(ProfessionalSingingActivity.this,
+                            Toast.makeText(ProfessionalSignUpActivity.this,
                                     task.getException().getLocalizedMessage(),
                                     Toast.LENGTH_LONG).show();
 
                             FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
-                            Resources resources = ProfessionalSingingActivity.this.getResources();
+                            Resources resources = ProfessionalSignUpActivity.this.getResources();
                             String st_error;
 
                             switch (firebaseAuthException.getErrorCode()) {
@@ -198,14 +198,14 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                 .setDisplayName(name)
                 .build();
 
-        Resources resources = ProfessionalSingingActivity.this.getResources();
+        Resources resources = ProfessionalSignUpActivity.this.getResources();
         user.updateProfile(profileUpdates)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "User profile updated.");
-                            Toast.makeText(ProfessionalSingingActivity.this,
+                            Toast.makeText(ProfessionalSignUpActivity.this,
                                     resources.getString(R.string.professional_login_logInSuccessfully) + " " + name,
                                     Toast.LENGTH_LONG).show();
                         }
@@ -264,7 +264,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
         databaseReference.child("NumberOfProfessionals").setValue(professionalNumericCode + 1);
         databaseReference.child("Professional").child(currentUserID).setValue(p);
 
-        Toast.makeText(ProfessionalSingingActivity.this, "User created", Toast.LENGTH_LONG).show();
+        Toast.makeText(ProfessionalSignUpActivity.this, "User created", Toast.LENGTH_LONG).show();
         clean();
         goToMain();
     }
