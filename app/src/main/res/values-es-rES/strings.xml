@@ -243,6 +243,7 @@
     <string name="seconds_description_whole_exercise">Inserta los segundos para completar el ejercicio entero:</string>
     <string name="seconds">segundos</string>
     <string name="num_seconds">10</string>
+    <string name="num_seconds_whole_exercise">60</string>
     <string name="textview_name">Nombre</string>
     <string name="textview_username">Nombre de usuario</string>
     <string name="textview_password">Constraseña</string>
@@ -301,8 +302,10 @@
     <string name="thirteenth_exercise_find_right_window">Encuentra la ventana derecha</string>
     <string name="thirteenth_exercise_find_pot">Encuentra la maceta</string>
     <string name="thirteenth_exercise_find_sofa">Encuentra el sofá</string>
-
-
+    <string name="fifteenth_exercise_find_n">Encuentra la letra n</string>
+    <string name="fifteenth_exercise_find_o">Encuentra la letra o</string>
+    <string name="fifteenth_exercise_find_v">Encuentra la letra v</string>
+    <string name="sequence_n">n m m n   n m n m   m m n n   m n m n   n n m m</string>
 
 
     <string name="toast_user_created">Usuario creado</string>
