@@ -70,7 +70,7 @@
         android:background="@drawable/border_seconds"
         android:hint="@string/seconds"
         android:inputType="number"
-        android:text="@string/num_seconds"
+        android:text="@string/num_seconds_whole_exercise"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"

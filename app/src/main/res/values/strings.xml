@@ -301,6 +301,13 @@
     <string name="thirteenth_exercise_find_right_window">Find the right window</string>
     <string name="thirteenth_exercise_find_pot">Find the pot</string>
     <string name="thirteenth_exercise_find_sofa">Find the sofa</string>
+    <string name="fifteenth_exercise_find_n">Find the letter n</string>
+    <string name="fifteenth_exercise_find_o">Find the letter o</string>
+    <string name="fifteenth_exercise_find_v">Find the letter v</string>
+    <string name="sequence_n" translatable="false">n m m n &#160; n m n m &#160; m m n n &#160; m n m n &#160; n n m m</string>
+    <string name="sequence_o" translatable="false">o u o u &#160; o u c o &#160; u u u o &#160; o u c u &#160; u c o u</string>
+    <string name="sequence_v" translatable="false">v y v v &#160; w y v w &#160; v w v v &#160; y v w w &#160; v y v w</string>
+
 
 
 

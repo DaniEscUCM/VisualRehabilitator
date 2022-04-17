@@ -302,8 +302,10 @@
     <string name="thirteenth_exercise_find_right_window">Encuentra la ventana derecha</string>
     <string name="thirteenth_exercise_find_pot">Encuentra la maceta</string>
     <string name="thirteenth_exercise_find_sofa">Encuentra el sofá</string>
-
-
+    <string name="fifteenth_exercise_find_n">Encuentra la letra n</string>
+    <string name="fifteenth_exercise_find_o">Encuentra la letra o</string>
+    <string name="fifteenth_exercise_find_v">Encuentra la letra v</string>
+    <string name="sequence_n">n m m n   n m n m   m m n n   m n m n   n n m m</string>
 
 
     <string name="toast_user_created">Usuario creado</string>
