@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 import com.macularehab.actions.ManualActions;
 
-public class GridTestRightActivity extends AppCompatActivity {
+public class SecondTestBothActivity extends AppCompatActivity {
 
     private ManualActions actions;
 
@@ -23,7 +23,8 @@ public class GridTestRightActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_grid_test_right); DisplayMetrics display = this.getResources().getDisplayMetrics();
+        setContentView(R.layout.activity_second_test_both);
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit*20;//10cm
 
@@ -72,8 +73,10 @@ public class GridTestRightActivity extends AppCompatActivity {
     }
 
     private void next_test(View v) {
-        Intent i = new Intent( this, GridTestBothExplanationActivity.class );
+        Intent i = new Intent( this, TestsResultsActivity.class );
         String value = actions.getResult_coor().toString();
+        i.putExtra("grid_both",value);
+        value= getIntent().getExtras().getString("grid_right");
         i.putExtra("grid_right",value);
         value = getIntent().getExtras().getString("grid_left");
         i.putExtra("grid_left",value);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GridTestRightExplanationActivity">
+    tools:context=".SecondTestRightExplanationActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout6"
@@ -158,10 +158,11 @@
         android:layout_width="100dp"
         android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

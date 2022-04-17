@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GridTestBothActivity">
+    tools:context=".SecondTestRightActivity">
+
     <ImageButton
         android:id="@+id/imageButton_back_results"
         android:layout_width="100dp"
         android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageView
@@ -33,10 +35,10 @@
         android:layout_height="545dp"
         android:contentDescription="@string/circular_grid"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/circleGrid"
+        app:layout_constraintEnd_toEndOf="@+id/circleGrid"
+        app:layout_constraintStart_toStartOf="@+id/circleGrid"
+        app:layout_constraintTop_toTopOf="@+id/circleGrid"
         app:srcCompat="@drawable/house_icon" />
 
     <ImageButton
@@ -67,13 +69,12 @@
         android:id="@+id/gridTittleBoth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="@string/second_test_both"
+        android:text="@string/second_test_right"
         android:textAlignment="viewStart"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/dotsPainting"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/ManualLeftInstructions"
@@ -81,8 +82,8 @@
         android:layout_height="wrap_content"
         android:text="@string/explain_second"
         android:textAlignment="center"
-        android:layout_marginStart="24dp"
         android:textSize="20sp"
+        android:layout_marginStart="24dp"
         app:layout_constraintBottom_toTopOf="@+id/repeatButton"
         app:layout_constraintEnd_toStartOf="@+id/circleGrid"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,12 +94,11 @@
         android:layout_width="20dp"
         android:layout_height="41dp"
         android:contentDescription="@string/dot_instruction"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/circleGrid"
+        app:layout_constraintEnd_toEndOf="@+id/circleGrid"
+        app:layout_constraintStart_toStartOf="@+id/circleGrid"
+        app:layout_constraintTop_toTopOf="@+id/circleGrid"
         app:srcCompat="@drawable/red_dot" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
@@ -126,6 +126,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9 " />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

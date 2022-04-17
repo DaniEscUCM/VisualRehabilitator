@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.macularehab.actions.MapTestActions;
 
-public class MapTestBothActivity extends AppCompatActivity {
+public class FirstTestBothActivity extends AppCompatActivity {
 
     MapTestActions action;
 
@@ -22,7 +22,7 @@ public class MapTestBothActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_map_test_both);
+        setContentView(R.layout.activity_first_test_both);
 
         TextView instruction = findViewById(R.id.textInstruction);
         ImageView centre_dot = findViewById(R.id.centre_dot);
@@ -67,7 +67,7 @@ public class MapTestBothActivity extends AppCompatActivity {
         return true;
     }
     private void next_test(View v) {
-        Intent i = new Intent( this, GridTestLeftExplanationActivity.class );
+        Intent i = new Intent( this, SecondTestLeftExplanationActivity.class );
         String value = action.getCoor_result().toString();
         i.putExtra("map_both",value);
         value = getIntent().getExtras().getString("map_right");

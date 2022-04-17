@@ -9,13 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MapTestRightExplanationActivity extends AppCompatActivity {
+public class FirstTestLeftExplanationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_map_test_right_explanation);
+        setContentView(R.layout.activity_first_test_left_explanation);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
@@ -28,10 +28,8 @@ public class MapTestRightExplanationActivity extends AppCompatActivity {
     }
 
     private void play_test(View v) {
-        Intent i = new Intent( this, MapTestRightActivity.class );
-        String value = getIntent().getExtras().getString("map_left");
-        i.putExtra("map_left",value);
-        value = getIntent().getExtras().getString("manual_left");
+        Intent i = new Intent( this, FirstTestLeftActivity.class );
+        String value = getIntent().getExtras().getString("manual_left");
         i.putExtra("manual_left",value);
         value= getIntent().getExtras().getString("manual_right");
         i.putExtra("manual_right",value);
@@ -43,10 +41,8 @@ public class MapTestRightExplanationActivity extends AppCompatActivity {
     }
 
     private void skip(View v) {
-        Intent i = new Intent( this, MapTestBothExplanationActivity.class );
-        String value = getIntent().getExtras().getString("map_left");
-        i.putExtra("map_left",value);
-        value = getIntent().getExtras().getString("manual_left");
+        Intent i = new Intent( this, FirstTestRightExplanationActivity.class );
+        String value = getIntent().getExtras().getString("manual_left");
         i.putExtra("manual_left",value);
         value= getIntent().getExtras().getString("manual_right");
         i.putExtra("manual_right",value);
@@ -60,5 +56,4 @@ public class MapTestRightExplanationActivity extends AppCompatActivity {
     public void Close(View view){
         finish();
     }
-
 }
