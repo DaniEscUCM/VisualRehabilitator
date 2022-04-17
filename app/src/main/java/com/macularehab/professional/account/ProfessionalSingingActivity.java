@@ -113,7 +113,6 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
     }
 
     private void createAccount(String name,String mail, String password) {
-        // [START create_user_with_email]
 
         firebaseAuth.createUserWithEmailAndPassword(mail, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -123,7 +122,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-                            //updateUI(user);
+
                             setUserName();
                             ProfessionalSingingActivity.this.currentUserID = currentUser.getUid();
                             addDB(name,mail,password);
@@ -148,7 +147,7 @@ public class ProfessionalSingingActivity extends AppCompatActivity {
                                     st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
                                     break;
                                 case "ERROR_WRONG_PASSWORD":
-                                    st_error = resources.getString(R.string.professional_home_changePassword_error_wrongPassword);
+                                    st_error = resources.getString(R.string.professional_signup_wrongPassword);
                                     break;
                                 case "ERROR_NETWORK_REQUEST_FAILED":
                                     st_error = resources.getString(R.string.patient_signup_error_network_failed);

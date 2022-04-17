@@ -70,10 +70,12 @@
     <string name="hint_professional_signup_name">Name</string>
     <string name="hint_professional_signup_email">Email Address</string>
     <string name="hint_professional_signup_password">Password</string>
+    <string name="professional_signup_wrongPassword">Wrong Password!</string>
     <string name="hint_professional_signup_repeat_password">Repeat Password</string>
     <string name="professional_login_forgot_password">Forgot Password?</string>
     <string name="professional_login_notAProfessionalAccount">This is not a Professional Account.\nLogIn in Patient Section</string>
     <string name="professional_login_logInSuccessfully">Welcome!</string>
+    <string name="professional_login_wrongPassword">Wrong Password!</string>
 
     <!-- Professional Section - Restore Password -->
     <string name="professional_login_restorePassword_text">Restore Password</string>

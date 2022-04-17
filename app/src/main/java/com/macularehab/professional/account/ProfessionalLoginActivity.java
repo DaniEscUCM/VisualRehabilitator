@@ -235,12 +235,15 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     public void goToProfessionalHome() {
 
-        Log.e("ProfName", firebaseAuth.getCurrentUser().getDisplayName());
+        if (firebaseAuth.getCurrentUser() != null) {
 
-        Resources resources = ProfessionalLoginActivity.this.getResources();
-        Toast.makeText(this,
-                resources.getString(R.string.professional_login_logInSuccessfully) + " " + firebaseAuth.getCurrentUser().getDisplayName(),
-                Toast.LENGTH_LONG).show();
+            Log.e("ProfName", firebaseAuth.getCurrentUser().getDisplayName());
+
+            Resources resources = ProfessionalLoginActivity.this.getResources();
+            Toast.makeText(this,
+                    resources.getString(R.string.professional_login_logInSuccessfully) + " " + firebaseAuth.getCurrentUser().getDisplayName(),
+                    Toast.LENGTH_LONG).show();
+        }
 
         Intent intent = new Intent(this, ProfessionalHome.class);
         startActivity(intent);
