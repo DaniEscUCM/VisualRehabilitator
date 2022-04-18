@@ -7,7 +7,7 @@
     tools:context=".SecondTestLeftExplanationActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/constainLayoutCreatePatientNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
@@ -150,7 +150,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/constainLayoutCreatePatientNo"
         app:srcCompat="@android:drawable/ic_media_play"
         app:tint="#FD1F4C02" />
 
