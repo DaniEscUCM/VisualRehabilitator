@@ -12,12 +12,14 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
+import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 
@@ -34,6 +36,9 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
     private boolean n_correct1,n_correct2,n_correct3,n_correct4,n_correct5,n_correct6,n_correct7,n_correct8,n_correct9,n_correct10;
     private boolean o_correct1,o_correct2,o_correct3,o_correct4,o_correct5,o_correct6,o_correct7;
     private boolean v_correct1,v_correct2,v_correct3,v_correct4,v_correct5,v_correct6,v_correct7,v_correct8,v_correct9,v_correct10;
+    private String filenameCurrentUser = "CurrentPatient.json";
+
+    private final String isFocus = "focusIsOn";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +46,23 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_fifteenth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         String filenameCurrentUser = "CurrentPatient.json";
+
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
+
+        ImageButton button_pause = findViewById(R.id.pause_button);
+        button_pause.setOnClickListener(v -> pause_menu());
+
+        ImageButton button_resume = findViewById(R.id.return_button);
+        button_resume.setOnClickListener(v->resume());
+
+        Switch focus_switch = findViewById(R.id.focus_switch1);
+        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        focus_on=(Boolean) patientHashMap.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            focus_on=!focus_on;
+        });
+
         counterCorrect = counterFailed = 0;
         num_miliseconds = FifteenthExerciseDescriptionActivity.getNumSeconds() * 1000;
         focus_on = (boolean) patientHashMap.get("focusIsOn");
@@ -380,7 +400,55 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
             ++counterFailed;
         });
     }
+    private void resume(){
+        /*if(isOn){
+            if(hiden){
+                startTimerFoco(button_1,button_2);
+            }
+            else{
+                focus_1.setVisibility(View.VISIBLE);
+                focus_2.setVisibility(View.VISIBLE);
+                startTimer();
+                startTimer_button2();
+            }
+        }
+        else{
+            focus_1.setVisibility(View.INVISIBLE);
+            focus_2.setVisibility(View.INVISIBLE);
+            if(hiden){
+                hiden=false;
+                button_1.setVisibility(View.VISIBLE);
+                button_2.setVisibility(View.VISIBLE);
+                move_button_1();
+                move_button_2();
+            }
+            startTimer();
+            startTimer_button2();
+        }
+        button_1.setClickable(true);
+        button_2.setClickable(true);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);*/
+    }
 
+    private void pause_menu(){
+        /*if(hiden){
+            timer_focus.cancel();
+        }else{
+            timer_1.cancel();
+            timer_2.cancel();
+        }
+        button_1.setClickable(false);
+        button_2.setClickable(false);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.VISIBLE);*/
+    }
+
+
+    private void saveFocusOn(){
+
+        new SaveFocusInfo(getApplicationContext(), focus_on);
+    }
     private void startTimerFoco() {
         timer_1 = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) { }

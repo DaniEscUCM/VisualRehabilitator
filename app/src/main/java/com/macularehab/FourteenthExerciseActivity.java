@@ -12,10 +12,15 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
+import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import java.util.ArrayList;
@@ -31,18 +36,34 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
     private boolean cross1_1,cross1_2,cross1_3,cross1_4,cross2_1,cross2_2,cross2_3,cross2_4;
     private boolean cross3_1,cross3_2,cross3_3,cross3_4,cross4_1,cross4_2,cross4_3,cross4_4;
     private boolean cross5_1,cross5_2,cross5_3,cross5_4,cross6_1,cross6_2,cross6_3,cross6_4;
+    private String filenameCurrentUser = "CurrentPatient.json";
+
+    private final String isFocus = "focusIsOn";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourteenth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        String filenameCurrentUser = "CurrentPatient.json";
+
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
+
+        ImageButton button_pause = findViewById(R.id.pause_button);
+        button_pause.setOnClickListener(v -> pause_menu());
+
+        ImageButton button_resume = findViewById(R.id.return_button);
+        button_resume.setOnClickListener(v->resume());
+
+        Switch focus_switch = findViewById(R.id.focus_switch1);
+        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        focus_on=(Boolean) patientHashMap.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            focus_on=!focus_on;
+        });
+
         counterCorrect = counterFailed = 0;
         num_miliseconds = FourteenthExerciseDescriptionActivity.getNumSeconds() * 1000;
-        focus_on = (boolean) patientHashMap.get("focusIsOn");
         ImageButton button_cross1_1 = findViewById(R.id.cross1_1);
         ImageButton button_cross1_2 = findViewById(R.id.cross1_2);
         ImageButton button_cross1_3 = findViewById(R.id.cross1_3);
@@ -258,7 +279,55 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
             }
         });
     }
+    private void resume(){
+        /*if(isOn){
+            if(hiden){
+                startTimerFoco(button_1,button_2);
+            }
+            else{
+                focus_1.setVisibility(View.VISIBLE);
+                focus_2.setVisibility(View.VISIBLE);
+                startTimer();
+                startTimer_button2();
+            }
+        }
+        else{
+            focus_1.setVisibility(View.INVISIBLE);
+            focus_2.setVisibility(View.INVISIBLE);
+            if(hiden){
+                hiden=false;
+                button_1.setVisibility(View.VISIBLE);
+                button_2.setVisibility(View.VISIBLE);
+                move_button_1();
+                move_button_2();
+            }
+            startTimer();
+            startTimer_button2();
+        }
+        button_1.setClickable(true);
+        button_2.setClickable(true);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.GONE);*/
+    }
 
+    private void pause_menu(){
+        /*if(hiden){
+            timer_focus.cancel();
+        }else{
+            timer_1.cancel();
+            timer_2.cancel();
+        }
+        button_1.setClickable(false);
+        button_2.setClickable(false);
+        ConstraintLayout menu=findViewById(R.id.menu);
+        menu.setVisibility(View.VISIBLE);*/
+    }
+
+
+    private void saveFocusOn(){
+
+        new SaveFocusInfo(getApplicationContext(), focus_on);
+    }
     private void startTimerFoco() {
         timer_1 = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) { }
