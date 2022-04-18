@@ -32,6 +32,7 @@ import com.macularehab.patient.Patient;
 import com.macularehab.professional.account.ChangePassword;
 import com.macularehab.professional.patientForm.ProfessionalCreateNewPatient;
 import com.macularehab.professional.patientList.PatientListAdapter;
+import com.macularehab.profiles.ProfessionalEditProfile;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -300,7 +301,8 @@ public class ProfessionalHome extends AppCompatActivity {
 
     private void goToChangePasswordActivity() {
 
-        Intent changePasswordIntent = new Intent(this, ChangePassword.class);
+        //Intent changePasswordIntent = new Intent(this, ChangePassword.class);
+        Intent changePasswordIntent = new Intent(this, ProfessionalEditProfile.class);
         startActivity(changePasswordIntent);
     }
 

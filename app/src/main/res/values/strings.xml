@@ -222,6 +222,19 @@
     <!-- End Section Professional - Patient Info - CardsView -->
 
     <!-- Fin Apartado Professional - Patient Info .-->
+
+    <!-- Professional Profile -->
+    <string name="professional_profile_nameText">Name:</string>
+    <string name="professional_profile_emailText">Email:</string>
+    <string name="professional_profile_phoneText">Phone:</string>
+    <string name="professional_profile_defaultPhoneText">No Phone Number</string>
+    <string name="professional_profile_changePhoto_button">Change profile picture</string>
+    <string name="professional_profile_changeName_button">Change name</string>
+    <string name="professional_profile_changeEmail_button">Change email</string>
+    <string name="professional_profile_changePhone_button">Change phone</string>
+
+
+
     <!-- Fin Apartado Professional .-->
 
     <!-- Exercises Section -->

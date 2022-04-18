@@ -52,4 +52,9 @@ dependencies {
     implementation 'com.airbnb.android:lottie:5.0.3'
     //MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
