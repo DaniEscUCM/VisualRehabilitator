@@ -202,8 +202,8 @@ public class ProfessionalHome extends AppCompatActivity {
                 patient.setPatient_uid(entry.getKey());
                 patient.setName((String) hashMap.get("name"));
                 patient.setFirst_lastName((String) hashMap.get("first_lastName"));
-                if (hashMap.containsKey("last_test")) {
-                    patient.setDate_last_test(hashMap.get("last_test").toString());
+                if (hashMap.containsKey("date_last_test")) {
+                    patient.setDate_last_test(hashMap.get("date_last_test").toString());
                 }
                 //patient.setSecond_lastName((String) hashMap.get("second_lastName"));
 

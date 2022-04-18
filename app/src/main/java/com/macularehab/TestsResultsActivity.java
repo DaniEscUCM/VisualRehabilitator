@@ -73,7 +73,7 @@ public class TestsResultsActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).child("last_test").setValue(date);
+        databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).child("date_last_test").setValue(date);
 
         File file  = new File(getApplicationContext().getFilesDir(), filenameCurrentPatient);
         if(file.exists()) {
@@ -82,7 +82,7 @@ public class TestsResultsActivity extends AppCompatActivity {
 
             if (map.get("patient_numeric_code").equals(patient_num_cod)) {
                 ((LinkedTreeMap)map.get("Tests")).put(date, new LinkedTreeMap<>());
-                map.put("last_test",date);
+                map.put("date_last_test",date);
             }
             else{
                 map=null;
