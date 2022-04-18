@@ -37,8 +37,7 @@
         android:text="@string/first_test_both"
         android:textAlignment="viewStart"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/textInstruction"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
