@@ -117,6 +117,7 @@
     <string name="professional_home_create_patient_button">Create Patient</string>
     <string name="professional_home_name_default">Professional</string>
     <string name="professional_home_changePassword_button_hint">Change My Password</string>
+    <string name="professional_home_editAccount_button_hint">My Account</string>
 
 
     <!-- Apartado Professional - Patient Form .-->
@@ -231,6 +232,7 @@
     <string name="professional_profile_changePhoto_button">Change profile picture</string>
     <string name="professional_profile_changeName_button">Change name</string>
     <string name="professional_profile_changeEmail_button">Change email</string>
+    <string name="professional_profile_changePassword_button">Change password</string>
     <string name="professional_profile_changePhone_button">Change phone</string>
 
 

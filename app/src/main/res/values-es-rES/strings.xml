@@ -121,6 +121,7 @@
     <string name="professional_home_create_patient_button">Crear Paciente</string>
     <string name="professional_home_name_default">Profesional</string>
     <string name="professional_home_changePassword_button_hint">Cambiar mi contraseña</string>
+    <string name="professional_home_editAccount_button_hint">Mi Cuenta</string>
 
         <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_patient">Paciente</string>
@@ -224,6 +225,18 @@
     <!-- End Section Professional - Patient Info - CardsView -->
 
     <!-- Fin Apartado Professional - Patient Info .-->
+
+    <!-- Professional Profile -->
+    <string name="professional_profile_nameText">Nombre:</string>
+    <string name="professional_profile_emailText">Correo:</string>
+    <string name="professional_profile_phoneText">Teléfono:</string>
+    <string name="professional_profile_defaultPhoneText">Sin número</string>
+    <string name="professional_profile_changePhoto_button">Cambiar foto de perfil</string>
+    <string name="professional_profile_changeName_button">Cambiar nombre</string>
+    <string name="professional_profile_changeEmail_button">Cambiar correo</string>
+    <string name="professional_profile_changePassword_button">Cambiar contraseña</string>
+    <string name="professional_profile_changePhone_button">Cambiar número</string>
+
     <!-- Fin Apartado Professional .-->
 
     <!-- Exercises Section -->

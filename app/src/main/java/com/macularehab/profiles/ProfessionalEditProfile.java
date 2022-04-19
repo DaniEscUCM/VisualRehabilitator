@@ -62,6 +62,17 @@ public class ProfessionalEditProfile extends AppCompatActivity {
 
         profileImageView = findViewById(R.id.professional_profile_editProfile_profileImage);
 
+        Button changePasswordButton = findViewById(R.id.professional_profile_editProfile_changePassword_button);
+        //changePasswordButton.setBackgroundResource(R.drawable.border_for_layout_blue);
+        /*changePasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //changePasswordButton.setSelected(!changePasswordButton.isSelected());
+                //changePasswordButton.setBackground(R.drawable.border_for_layout_yellow);
+                changePasswordButton.setBackgroundResource(R.drawable.border_for_layout_yellow);
+            }
+        });*/
+
         /*closeButton = findViewById(R.id.button_close);
         saveButton = findViewById(R.id.button_save);
 
