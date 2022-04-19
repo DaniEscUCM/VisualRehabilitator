@@ -255,6 +255,22 @@
     <string name="professional_profile_changeEmail_helpText">Your actual email address will be changed to the new email you enter</string>
     <string name="professional_profile_changeEmail_successMessage">Email Changed successfully</string>
 
+    <!-- Professional Profile - Change Name -->
+    <string name="professional_profile_changeName_title">Change Name</string>
+    <string name="professional_profile_changeName_insertEmailText">Insert your new Name</string>
+    <string name="professional_profile_changeName_name_hint">Name</string>
+    <string name="professional_profile_changeName_change_button">Change Name</string>
+    <string name="professional_profile_changeName_helpText">Your actual name will be changed to the new name you enter</string>
+    <string name="professional_profile_changeName_successMessage">Name Changed successfully</string>
+
+    <!-- Professional Profile - Change Phone -->
+    <string name="professional_profile_changePhone_title">Change Phone Number</string>
+    <string name="professional_profile_changePhone_insertEmailText">Insert your new Phone Number</string>
+    <string name="professional_profile_changePhone_phone_hint">Phone Number</string>
+    <string name="professional_profile_changePhone_change_button">Change Phone Number</string>
+    <string name="professional_profile_changePhone_helpText">Your actual Phone Number will be changed to the new Number you enter</string>
+    <string name="professional_profile_changePhone_successMessage">Phone Number Changed successfully</string>
+
 
     <!-- Fin Apartado Professional .-->
 

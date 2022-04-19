@@ -31,7 +31,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.macularehab.R;
 import com.macularehab.professional.account.ChangeEmail;
+import com.macularehab.professional.account.ChangeName;
 import com.macularehab.professional.account.ChangePassword;
+import com.macularehab.professional.account.ChangePhone;
 import com.macularehab.professional.account.ProfessionalSignUpActivity;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -100,6 +102,22 @@ public class ProfessionalEditProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goToChangeEmailActivity();
+            }
+        });
+
+        Button changeNameButton = findViewById(R.id.professional_profile_editProfile_changeName_button);
+        changeNameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToChangeNameActivity();
+            }
+        });
+
+        Button changePhoneButton = findViewById(R.id.professional_profile_editProfile_changePhone_button);
+        changePhoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToChangePhoneActivity();
             }
         });
 
@@ -248,5 +266,17 @@ public class ProfessionalEditProfile extends AppCompatActivity {
 
         Intent changeEmailIntent = new Intent(this, ChangeEmail.class);
         startActivity(changeEmailIntent);
+    }
+
+    private void goToChangeNameActivity() {
+
+        Intent changeNameIntent = new Intent(this, ChangeName.class);
+        startActivity(changeNameIntent);
+    }
+
+    private void goToChangePhoneActivity() {
+
+        Intent changePhoneIntent = new Intent(this, ChangePhone.class);
+        startActivity(changePhoneIntent);
     }
 }

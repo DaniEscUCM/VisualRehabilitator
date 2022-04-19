@@ -257,6 +257,22 @@
     <string name="professional_profile_changeEmail_helpText">Tu actual dirección de correo va a ser cambiada por la nueva dirección que intruduzcas</string>
     <string name="professional_profile_changeEmail_successMessage">Correo cambiado con éxito</string>
 
+    <!-- Professional Profile - Change Name -->
+    <string name="professional_profile_changeName_title">Cambiar Nombre</string>
+    <string name="professional_profile_changeName_insertEmailText">Introduce Nuevo Nombre</string>
+    <string name="professional_profile_changeName_name_hint">Nombre</string>
+    <string name="professional_profile_changeName_change_button">Cambiar Nombre</string>
+    <string name="professional_profile_changeName_helpText">Tu actual nombre va a ser cambiado por el nuevo nombre que intruduzcas</string>
+    <string name="professional_profile_changeName_successMessage">Nombre cambiado con éxito</string>
+
+    <!-- Professional Profile - Change Phone -->
+    <string name="professional_profile_changePhone_title">Cambiar Número De Teléfono</string>
+    <string name="professional_profile_changePhone_insertEmailText">Introduce Nuevo Número de Teléfono</string>
+    <string name="professional_profile_changePhone_phone_hint">Número De Teléfono</string>
+    <string name="professional_profile_changePhone_change_button">Cambiar teléfono</string>
+    <string name="professional_profile_changePhone_helpText">Tu actual número de teléfono va a ser cambiado por el nuevo número que intruduzcas</string>
+    <string name="professional_profile_changePhone_successMessage">Teléfono cambiado con éxito</string>
+
     <!-- Fin Apartado Professional .-->
 
     <!-- Exercises Section -->

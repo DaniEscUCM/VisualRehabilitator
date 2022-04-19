@@ -122,6 +122,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
         //TODO
         professionalProfileButton = findViewById(R.id.professional_patient_info_professionalProfile_button);
+        professionalProfileButton.setVisibility(View.INVISIBLE);
 
         fillFields();
     }

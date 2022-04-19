@@ -123,6 +123,12 @@
         <activity
             android:name=".professional.account.ChangeEmail"
             android:exported="false" />
+        <activity
+            android:name=".professional.account.ChangeName"
+            android:exported="false" />
+        <activity
+            android:name=".professional.account.ChangePhone"
+            android:exported="false" />
         <!-- Professional Section Ends . -->
 
         <!-- Patient Section . -->
