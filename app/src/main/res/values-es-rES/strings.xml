@@ -23,6 +23,7 @@
     <string name="error_required_field">Obligatorio</string>
     <string name="error_weak_password">Error: contraseña debe de contener al menos 6 carácteres</string>
     <string name="error_passwords_not_match">Error: las contraseñas no coinciden</string>
+    <string name="error_no_valid_phoneNumber">Error: El número de teléfono no es válido</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->
@@ -69,6 +70,12 @@
     <!-- Patient - Professional Section -->
     <string name="patient_professional_profile_nameText">Nombre del\nProfesional:</string>
     <string name="patient_professional_profile_contactButton">Contactar con profesional</string>
+    <string name="patient_professional_profile_emailText">Correo:</string>
+    <string name="patient_professional_profile_phoneText">Teléfono:</string>
+    <string name="patient_professional_profile_phoneTextDefault">No Disponible</string>
+    <string name="patient_professional_profile_email_sendEmailText_button">Enviar Correo</string>
+    <string name="patient_professional_profile_email_callText_button">Llamar</string>
+    <string name="patient_professional_profile_returnHome_button">Regresar</string>
     <!-- Fin Apartado Paciente .-->
 
     <!-- Apartado depuración .-->

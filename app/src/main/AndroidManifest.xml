@@ -144,6 +144,9 @@
         <activity
             android:name=".patient.professional.ProfessionalProfile"
             android:exported="false" />
+        <activity
+            android:name=".patient.professional.ContactProfessional"
+            android:exported="false" />
         <!-- Patient Section End . -->
 
         <activity

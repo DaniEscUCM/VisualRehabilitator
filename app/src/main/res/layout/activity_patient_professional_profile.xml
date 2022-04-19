@@ -76,7 +76,7 @@
         app:layout_constraintGuide_percent="0.2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/patient_professional_profile_contactProfessional_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

@@ -1,9 +1,11 @@
 package com.macularehab.patient.professional;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,6 +39,14 @@ public class ProfessionalProfile extends AppCompatActivity {
 
         professionalNameTextView = findViewById(R.id.patient_professional_profile_name);
         profileImageView = findViewById(R.id.patient_professional_profile_profileImage);
+
+        Button contactProfessionalButton = findViewById(R.id.patient_professional_profile_contactProfessional_button);
+        contactProfessionalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToContactProfessionalActivity();
+            }
+        });
 
         ImageButton backButton = findViewById(R.id.patient_professional_profile_back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -80,5 +90,11 @@ public class ProfessionalProfile extends AppCompatActivity {
                 Picasso.get().load(uri).into(profileImageView);
             }
         });
+    }
+
+    private void goToContactProfessionalActivity() {
+
+        Intent intent = new Intent(this, ContactProfessional.class);
+        startActivity(intent);
     }
 }
