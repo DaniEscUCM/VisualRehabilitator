@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -67,57 +68,57 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
         num_miliseconds = FifteenthExerciseDescriptionActivity.getNumSeconds() * 1000;
         focus_on = (boolean) patientHashMap.get("focusIsOn");
         //SEQUENCE N:
-        ImageButton button_n_correct1 = findViewById(R.id.button_n_correct1);
-        ImageButton button_n_correct2 = findViewById(R.id.button_n_correct2);
-        ImageButton button_n_correct3 = findViewById(R.id.button_n_correct3);
-        ImageButton button_n_correct4 = findViewById(R.id.button_n_correct4);
-        ImageButton button_n_correct5 = findViewById(R.id.button_n_correct5);
-        ImageButton button_n_correct6 = findViewById(R.id.button_n_correct6);
-        ImageButton button_n_correct7 = findViewById(R.id.button_n_correct7);
-        ImageButton button_n_correct8 = findViewById(R.id.button_n_correct8);
-        ImageButton button_n_correct9 = findViewById(R.id.button_n_correct9);
-        ImageButton button_n_correct10 = findViewById(R.id.button_n_correct10);
-        ImageButton button_n_incorrect1 = findViewById(R.id.button_n_incorrect1);
-        ImageButton button_n_incorrect2 = findViewById(R.id.button_n_incorrect2);
-        ImageButton button_n_incorrect3 = findViewById(R.id.button_n_incorrect3);
-        ImageButton button_n_incorrect4 = findViewById(R.id.button_n_incorrect4);
-        ImageButton button_n_incorrect5 = findViewById(R.id.button_n_incorrect5);
-        ImageButton button_n_incorrect6 = findViewById(R.id.button_n_incorrect6);
-        ImageButton button_n_incorrect7 = findViewById(R.id.button_n_incorrect7);
+        Button button_n_correct1 = (Button)findViewById(R.id.button_n_correct1);
+        Button button_n_correct2 = (Button)findViewById(R.id.button_n_correct2);
+        Button button_n_correct3 = (Button)findViewById(R.id.button_n_correct3);
+        Button button_n_correct4 = (Button)findViewById(R.id.button_n_correct4);
+        Button button_n_correct5 = (Button)findViewById(R.id.button_n_correct5);
+        Button button_n_correct6 = (Button)findViewById(R.id.button_n_correct6);
+        Button button_n_correct7 = (Button)findViewById(R.id.button_n_correct7);
+        Button button_n_correct8 = (Button)findViewById(R.id.button_n_correct8);
+        Button button_n_correct9 = (Button)findViewById(R.id.button_n_correct9);
+        Button button_n_correct10 = (Button)findViewById(R.id.button_n_correct10);
+        Button button_n_incorrect1 = (Button)findViewById(R.id.button_n_incorrect1);
+        Button button_n_incorrect2 = (Button)findViewById(R.id.button_n_incorrect2);
+        Button button_n_incorrect3 = (Button)findViewById(R.id.button_n_incorrect3);
+        Button button_n_incorrect4 = (Button)findViewById(R.id.button_n_incorrect4);
+        Button button_n_incorrect5 = (Button)findViewById(R.id.button_n_incorrect5);
+        Button button_n_incorrect6 = (Button)findViewById(R.id.button_n_incorrect6);
 
         //SEQUENCE O:
-        ImageButton button_o_correct1 = findViewById(R.id.button_o_correct1);
-        ImageButton button_o_correct2 = findViewById(R.id.button_o_correct2);
-        ImageButton button_o_correct3 = findViewById(R.id.button_o_correct3);
-        ImageButton button_o_correct4 = findViewById(R.id.button_o_correct4);
-        ImageButton button_o_correct5 = findViewById(R.id.button_o_correct5);
-        ImageButton button_o_correct6 = findViewById(R.id.button_o_correct6);
-        ImageButton button_o_correct7 = findViewById(R.id.button_o_correct7);
-        ImageButton button_o_incorrect1 = findViewById(R.id.button_o_incorrect1);
-        ImageButton button_o_incorrect2 = findViewById(R.id.button_o_incorrect2);
-        ImageButton button_o_incorrect3 = findViewById(R.id.button_o_incorrect3);
-        ImageButton button_o_incorrect4 = findViewById(R.id.button_o_incorrect4);
-        ImageButton button_o_incorrect5 = findViewById(R.id.button_o_incorrect5);
-        ImageButton button_o_incorrect6 = findViewById(R.id.button_o_incorrect6);
+        Button button_o_correct1 = (Button)findViewById(R.id.button_o_correct1);
+        Button button_o_correct2 = (Button)findViewById(R.id.button_o_correct2);
+        Button button_o_correct3 = (Button)findViewById(R.id.button_o_correct3);
+        Button button_o_correct5 = (Button)findViewById(R.id.button_o_correct5);
+        Button button_o_correct7 = (Button)findViewById(R.id.button_o_correct7);
+        Button button_o_incorrect1 = (Button)findViewById(R.id.button_o_incorrect1);
+        Button button_o_incorrect2 = (Button)findViewById(R.id.button_o_incorrect2);
+        Button button_o_incorrect3 = (Button)findViewById(R.id.button_o_incorrect3);
+        Button button_o_incorrect4 = (Button)findViewById(R.id.button_o_incorrect4);
+        Button button_o_incorrect5 = (Button)findViewById(R.id.button_o_incorrect5);
+        Button button_o_incorrect6 = (Button)findViewById(R.id.button_o_incorrect6);
+        Button button_o_incorrect7 = (Button)findViewById(R.id.button_o_incorrect7);
+        Button button_o_incorrect8 = (Button)findViewById(R.id.button_o_incorrect8);
+        Button button_o_incorrect9 = (Button)findViewById(R.id.button_o_incorrect9);
+        Button button_o_incorrect10 = (Button)findViewById(R.id.button_o_incorrect10);
 
         //SEQUENCE V:
-        ImageButton button_v_correct1 = findViewById(R.id.button_v_correct1);
-        ImageButton button_v_correct2 = findViewById(R.id.button_v_correct2);
-        ImageButton button_v_correct3 = findViewById(R.id.button_v_correct3);
-        ImageButton button_v_correct4 = findViewById(R.id.button_v_correct4);
-        ImageButton button_v_correct5 = findViewById(R.id.button_v_correct5);
-        ImageButton button_v_correct6 = findViewById(R.id.button_v_correct6);
-        ImageButton button_v_correct7 = findViewById(R.id.button_v_correct7);
-        ImageButton button_v_correct8 = findViewById(R.id.button_v_correct8);
-        ImageButton button_v_correct9 = findViewById(R.id.button_v_correct9);
-        ImageButton button_v_correct10 = findViewById(R.id.button_v_correct10);
-        ImageButton button_v_incorrect1 = findViewById(R.id.button_v_incorrect1);
-        ImageButton button_v_incorrect2 = findViewById(R.id.button_v_incorrect2);
-        ImageButton button_v_incorrect3 = findViewById(R.id.button_v_incorrect3);
-        ImageButton button_v_incorrect4 = findViewById(R.id.button_v_incorrect4);
-        ImageButton button_v_incorrect5 = findViewById(R.id.button_v_incorrect5);
-        ImageButton button_v_incorrect6 = findViewById(R.id.button_v_incorrect6);
-        ImageButton button_v_incorrect7 = findViewById(R.id.button_v_incorrect7);
+
+        Button button_v_correct1 = (Button)findViewById(R.id.button_v_correct1);
+        Button button_v_correct2 = (Button)findViewById(R.id.button_v_correct2);
+        Button button_v_correct3 = (Button)findViewById(R.id.button_v_correct3);
+        Button button_v_correct4 = (Button)findViewById(R.id.button_v_correct4);
+        Button button_v_correct5 = (Button)findViewById(R.id.button_v_correct5);
+        Button button_v_correct6 = (Button)findViewById(R.id.button_v_correct6);
+        Button button_v_correct7 = (Button)findViewById(R.id.button_v_correct7);
+        Button button_v_correct9 = (Button)findViewById(R.id.button_v_correct9);
+        Button button_v_correct10 = (Button)findViewById(R.id.button_v_correct10);
+        Button button_v_incorrect1 = (Button)findViewById(R.id.button_v_incorrect1);
+        Button button_v_incorrect2 = (Button)findViewById(R.id.button_v_incorrect2);
+        Button button_v_incorrect3 = (Button)findViewById(R.id.button_v_incorrect3);
+        Button button_v_incorrect4 = (Button)findViewById(R.id.button_v_incorrect4);
+        Button button_v_incorrect5 = (Button)findViewById(R.id.button_v_incorrect5);
+        Button button_v_incorrect6 = (Button)findViewById(R.id.button_v_incorrect6);
 
 
         ArrayList<Pair<Float, Float>> coor_result;
@@ -159,9 +160,9 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
 
         n_correct1 = n_correct2 = n_correct3 = n_correct4 = n_correct5 = true;
         n_correct6 = n_correct7 = n_correct8 = n_correct9 = n_correct10 = true;
-        o_correct1 = o_correct2 = o_correct3 = o_correct4 = o_correct5 = o_correct6 = o_correct7 = true;
+        o_correct1 = o_correct2 = o_correct3 = o_correct5 = o_correct7 = true;
         v_correct1 = v_correct2 = v_correct3 = v_correct4 = v_correct5 = true;
-        v_correct6 = v_correct7 = v_correct8 = v_correct9 = v_correct10 = true;
+        v_correct6 = v_correct7 = v_correct9 = v_correct10 = true;
 
         //SEQUENCE N:
         //corrects:
@@ -245,9 +246,6 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
         button_n_incorrect6.setOnClickListener(v -> {
             ++counterFailed;
         });
-        button_n_incorrect7.setOnClickListener(v -> {
-            ++counterFailed;
-        });
 
         //SEQUENCE O:
         button_o_correct1.setOnClickListener(v -> {
@@ -268,21 +266,9 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
                 ++counterCorrect;
             }
         });
-        button_o_correct4.setOnClickListener(v -> {
-            if (o_correct4) {
-                o_correct4 = false;
-                ++counterCorrect;
-            }
-        });
         button_o_correct5.setOnClickListener(v -> {
             if (o_correct5) {
                 o_correct5 = false;
-                ++counterCorrect;
-            }
-        });
-        button_o_correct6.setOnClickListener(v -> {
-            if (o_correct6) {
-                o_correct6 = false;
                 ++counterCorrect;
             }
         });
@@ -310,6 +296,18 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
             ++counterFailed;
         });
         button_o_incorrect6.setOnClickListener(v -> {
+            ++counterFailed;
+        });
+        button_o_incorrect7.setOnClickListener(v -> {
+            ++counterFailed;
+        });
+        button_o_incorrect8.setOnClickListener(v -> {
+            ++counterFailed;
+        });
+        button_o_incorrect9.setOnClickListener(v -> {
+            ++counterFailed;
+        });
+        button_o_incorrect10.setOnClickListener(v -> {
             ++counterFailed;
         });
 
@@ -358,12 +356,6 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
                 ++counterCorrect;
             }
         });
-        button_v_correct8.setOnClickListener(v -> {
-            if (v_correct8) {
-                v_correct8 = false;
-                ++counterCorrect;
-            }
-        });
         button_v_correct9.setOnClickListener(v -> {
             if (v_correct9) {
                 v_correct9 = false;
@@ -394,9 +386,6 @@ public class FifteenthExerciseActivity  extends AppCompatActivity {
             ++counterFailed;
         });
         button_v_incorrect6.setOnClickListener(v -> {
-            ++counterFailed;
-        });
-        button_v_incorrect7.setOnClickListener(v -> {
             ++counterFailed;
         });
     }
