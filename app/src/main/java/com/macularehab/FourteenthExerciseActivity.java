@@ -283,8 +283,8 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
-                    finish();
                 }
+                finish();
             }
         };
         timer_1.start();
