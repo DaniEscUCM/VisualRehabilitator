@@ -88,6 +88,20 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         readPatientName();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
+        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
+
+        Switch focus_switch = findViewById(R.id.focus_switch);
+        focus_switch.setChecked((Boolean) map.get(isFocus));
+        isOn=(Boolean) map.get(isFocus);
+        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            isOn=!isOn;
+        });
+    }
+
     private void readPatientName() {
 
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();

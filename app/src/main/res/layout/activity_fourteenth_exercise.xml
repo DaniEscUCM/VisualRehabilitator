@@ -38,12 +38,10 @@
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
@@ -115,12 +113,10 @@
         android:layout_height="150dp"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageButton
@@ -181,11 +177,9 @@
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageButton
@@ -211,8 +205,6 @@
         app:layout_constraintEnd_toEndOf="@+id/circle_3"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/circle_3"
-        app:layout_constraintTop_toTopOf="@+id/guideline33"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/cross_thinner" />
 
     <ImageButton
@@ -248,17 +240,14 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageButton
         android:id="@+id/cross4.1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="241dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -278,8 +267,6 @@
         app:layout_constraintEnd_toEndOf="@+id/circle_4"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/circle_4"
-        app:layout_constraintTop_toTopOf="@+id/guideline33"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/cross_thinner" />
 
     <ImageButton
@@ -312,12 +299,9 @@
         android:layout_height="65dp"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
+        app:layout_constraintEnd_toStartOf="@+id/cross5.3"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageButton
@@ -343,8 +327,6 @@
         app:layout_constraintEnd_toEndOf="@+id/circle_5"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/circle_5"
-        app:layout_constraintTop_toBottomOf="@+id/cross3.4"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/cross_super_thin" />
 
     <ImageButton
@@ -355,7 +337,7 @@
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_5"
-        app:layout_constraintStart_toEndOf="@+id/circle_5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/circle_5"
         app:srcCompat="@drawable/cross_super_thin" />
 
@@ -379,12 +361,9 @@
         android:layout_height="65dp"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.66"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
+        app:layout_constraintStart_toEndOf="@+id/cross6.1"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageButton
@@ -395,9 +374,7 @@
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_6"
-        app:layout_constraintEnd_toStartOf="@+id/circle_6"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/cross5.3"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/circle_6"
         app:srcCompat="@drawable/cross_super_thin" />
 
@@ -412,8 +389,6 @@
         app:layout_constraintEnd_toEndOf="@+id/circle_6"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/circle_6"
-        app:layout_constraintTop_toBottomOf="@+id/cross4.4"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/cross_super_thin" />
 
     <ImageButton
@@ -530,5 +505,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
