@@ -19,6 +19,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.DefaultAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
@@ -45,10 +46,10 @@ public class ExerciseResultHistory extends AppCompatActivity {
     private final Float BOTTOM_TEXT_SIZE = 20f;
     private final Float LABEL_TEXT_SIZE = 20f;
     private final Float TOP_TEXT_SIZE = 10f;
-    private final Float GROUP_SPACE = 0.5f;
-    private final Float BAR_SPACE = 0.05f;
-    private final Float BAR_WIDTH = 0.3f;
-    private final Float FROM_X = -0.5f;
+    private final Float GROUP_SPACE = 0.16f;
+    private final Float BAR_SPACE = 0.02f;
+    private final Float BAR_WIDTH = 0.4f;
+    private final Float FROM_X = -0.8f;
     private final Float GRANULARITY = 1f;
     private final int DURATION_MILLIS = 2000;
     private final int ROTATION_ANGLE = 0;
@@ -83,7 +84,9 @@ public class ExerciseResultHistory extends AppCompatActivity {
         BarDataSet barDataSetFailed = new BarDataSet(barEntryArrayListFailed, resources.getString(R.string.exercises_resultHistory_failed));
 
         barDataSetCorrects.setColors(Color.BLUE);
+        barDataSetCorrects.setValueTextSize(10f);
         barDataSetFailed.setColors(Color.RED);
+        barDataSetFailed.setValueTextSize(10f);
         Description description = new Description();
         description.setText(resources.getString(R.string.exercises_resultHistory_trials));
         description.setTextSize(BOTTOM_TEXT_SIZE);
@@ -98,7 +101,11 @@ public class ExerciseResultHistory extends AppCompatActivity {
         float barWidth = BAR_WIDTH;
 
         barData.setBarWidth(barWidth);
-        barChart.groupBars(FROM_X, groupSpace, barSpace);
+        barChart.groupBars(0, groupSpace, barSpace);
+        //barChart.announceForAccessibility();
+        barChart.canScrollHorizontally(1);
+        barChart.setDragEnabled(true);
+        barChart.setVisibleXRangeMaximum(10);
 
         Legend legend = barChart.getLegend();
         legend.setTextSize(LABEL_TEXT_SIZE);
@@ -108,15 +115,18 @@ public class ExerciseResultHistory extends AppCompatActivity {
         //Axis
         XAxis xAxis = barChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labelNames));
-        xAxis.setPosition(XAxis.XAxisPosition.TOP);
+        xAxis.setPosition(XAxis.XAxisPosition.TOP_INSIDE);
+        xAxis.setDrawLabels(true);
         xAxis.setDrawGridLines(false);
         xAxis.setDrawAxisLine(true);
         xAxis.setGranularity(GRANULARITY);
         xAxis.setLabelCount(labelNames.size());
         xAxis.setLabelRotationAngle(ROTATION_ANGLE);
-        xAxis.setTextSize(TOP_TEXT_SIZE);
-        //xAxis.setTextSize(20f);
-        //xAxis.setAxisMinimum(1f);
+        xAxis.calculate(0, barEntryArrayListCorrects.size());
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setAxisMinimum(0f);
+        xAxis.setAxisMaximum(barEntryArrayListCorrects.size());
+        xAxis.setTextSize(20f);
 
         barChart.setDrawBorders(true);
         barChart.animateY(DURATION_MILLIS);
@@ -147,7 +157,7 @@ public class ExerciseResultHistory extends AppCompatActivity {
 
     private void fillBarChart() {
 
-        for (int i = 0; i < resultsList.size(); i++) {
+        /*for (int i = 0; i < resultsList.size(); i++) {
 
             Gson gson = new Gson();
             String res_aux = gson.toJson(resultsList.get(i));
@@ -158,6 +168,20 @@ public class ExerciseResultHistory extends AppCompatActivity {
             barEntryArrayListFailed.add(new BarEntry(i, counterFailed));
             //barEntryArrayList.add(new BarEntry(i, counterFailed));
             labelNames.add(resources.getString(R.string.exercises_resultHistory_trialsNumber) + " " + i);
+            //labelNames.add(String.valueOf(i));
+        }*/
+        for (int i = resultsList.size() - 1; i >= 0; i--) {
+
+            Gson gson = new Gson();
+            String res_aux = gson.toJson(resultsList.get(i));
+            ResultInfo resultInfo = gson.fromJson(res_aux, ResultInfo.class);
+            int counterCorrect = resultInfo.getCounterCorrect();
+            int counterFailed = resultInfo.getCounterFailed();
+            barEntryArrayListCorrects.add(new BarEntry(i, counterCorrect));
+            barEntryArrayListFailed.add(new BarEntry(i, counterFailed));
+            //barEntryArrayList.add(new BarEntry(i, counterFailed));
+            labelNames.add(resources.getString(R.string.exercises_resultHistory_trialsNumber) + " " + (i+1));
+            //labelNames.add(String.valueOf(i));
         }
     }
 
