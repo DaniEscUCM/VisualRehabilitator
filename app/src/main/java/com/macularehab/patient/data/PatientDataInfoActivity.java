@@ -24,6 +24,7 @@ import java.util.HashMap;
 public class PatientDataInfoActivity extends AppCompatActivity {
 
     private TextView textView_nameTitle;
+    private TextView textView_lastTest;
 
     private TextView textView_date;
     private TextView textView_name;
@@ -56,6 +57,8 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         textView_av = findViewById(R.id.textView_patientInfo_av);
         textView_cv = findViewById(R.id.textView_patientInfo_cv);
         textView_observations = findViewById(R.id.textView_patientInfo_observations);
+
+        textView_lastTest = findViewById(R.id.professional_patient_info_lastTest_text);
 
         ImageButton backButton = findViewById(R.id.professional_patient_info_go_back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -111,8 +114,12 @@ public class PatientDataInfoActivity extends AppCompatActivity {
 
     private void setInvisibleButtons() {
 
-        LinearLayout editAndDeleteLinearLayot = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
-        editAndDeleteLinearLayot.setVisibility(View.INVISIBLE);
+        //LinearLayout editAndDeleteLinearLayot = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
+        //editAndDeleteLinearLayot.setVisibility(View.INVISIBLE);
+
+        LinearLayout editAndDeleteLinearLayot = findViewById(R.id.linearLayoutPatientInfo);
+        LinearLayout deleteView = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
+        editAndDeleteLinearLayot.removeView(deleteView);
     }
 
     private void fillFields() {
@@ -131,6 +138,10 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         String cv = String.valueOf(map.get("cv"));
         String observations = map.get("observations").toString();
 
+        String lastTest = map.get("date_last_test").toString();
+        String[] lastTestAux = lastTest.split(" ");
+        lastTest = lastTestAux[0].replaceAll("_", "/");
+
         textView_nameTitle.setText(name);
 
         textView_date.setText(date);
@@ -143,6 +154,8 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         textView_av.setText(av);
         textView_cv.setText(cv);
         textView_observations.setText(observations);
+
+        textView_lastTest.setText(lastTest);
 
         ArrayList<Boolean> arrayList = new ArrayList<Boolean>((Collection<? extends Boolean>) map.get("checkBox"));
         setCheckBoxesClicked(arrayList);

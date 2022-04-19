@@ -123,6 +123,8 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/menu/pause_exercises.xml" value="0.18125" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/border_for_layout.xml" value="0.241" />
+        <entry key="app/src/main/res/drawable/border_for_layout_blue.xml" value="0.362" />
+        <entry key="app/src/main/res/drawable/border_for_layout_profile.xml" value="0.187" />
         <entry key="app/src/main/res/drawable/border_for_layout_yellow.xml" value="0.387" />
         <entry key="app/src/main/res/drawable/border_rectangle_for_layout.xml" value="0.266" />
         <entry key="app/src/main/res/drawable/border_seconds.xml" value="0.387" />
@@ -166,6 +168,7 @@
         <entry key="app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout/activity_patient_professional_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_patient_signup_password.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_patient_signup_username.xml" value="0.146875" />
@@ -178,7 +181,7 @@
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />
-        <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_professional_profile_edit_profile.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_professional_restore_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
@@ -187,6 +190,7 @@
         <entry key="app/src/main/res/layout/activity_second_exercise.xml" value="0.15903465346534654" />
         <entry key="app/src/main/res/layout/activity_second_exercise_description.xml" value="0.15903465346534654" />
         <entry key="app/src/main/res/layout/activity_second_test_left_explanation.xml" value="0.1353135313531353" />
+        <entry key="app/src/main/res/layout/activity_second_test_right_explanation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_seventh_exercise.xml" value="0.10911458333333333" />
         <entry key="app/src/main/res/layout/activity_seventh_exercise_description.xml" value="0.10911458333333333" />

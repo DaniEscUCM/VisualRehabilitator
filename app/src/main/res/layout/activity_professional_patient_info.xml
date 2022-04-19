@@ -810,7 +810,7 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
         <LinearLayout
-            android:id="@+id/linearLayout6"
+            android:id="@+id/linearLayoutPatientInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
