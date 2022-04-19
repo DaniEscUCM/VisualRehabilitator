@@ -42,6 +42,17 @@ public class ExerciseResultHistory extends AppCompatActivity {
 
     private Resources resources;
 
+    private final Float BOTTOM_TEXT_SIZE = 20f;
+    private final Float LABEL_TEXT_SIZE = 20f;
+    private final Float TOP_TEXT_SIZE = 10f;
+    private final Float GROUP_SPACE = 0.5f;
+    private final Float BAR_SPACE = 0.05f;
+    private final Float BAR_WIDTH = 0.3f;
+    private final Float FROM_X = -0.5f;
+    private final Float GRANULARITY = 1f;
+    private final int DURATION_MILLIS = 2000;
+    private final int ROTATION_ANGLE = 0;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,22 +86,22 @@ public class ExerciseResultHistory extends AppCompatActivity {
         barDataSetFailed.setColors(Color.RED);
         Description description = new Description();
         description.setText(resources.getString(R.string.exercises_resultHistory_trials));
-        description.setTextSize(20f);
+        description.setTextSize(BOTTOM_TEXT_SIZE);
         description.setTextColor(Color.BLACK);
         barChart.setDescription(description);
 
         BarData barData = new BarData(barDataSetCorrects, barDataSetFailed);
 
         barChart.setData(barData);
-        float groupSpace = 0.5f;
-        float barSpace = 0.05f;
-        float barWidth = 0.3f;
+        float groupSpace = GROUP_SPACE;
+        float barSpace = BAR_SPACE;
+        float barWidth = BAR_WIDTH;
 
         barData.setBarWidth(barWidth);
-        barChart.groupBars(-0.5f, groupSpace, barSpace);
+        barChart.groupBars(FROM_X, groupSpace, barSpace);
 
         Legend legend = barChart.getLegend();
-        legend.setTextSize(20f);
+        legend.setTextSize(LABEL_TEXT_SIZE);
         legend.setTextColor(Color.BLACK);
         legend.setForm(Legend.LegendForm.SQUARE);
 
@@ -100,15 +111,15 @@ public class ExerciseResultHistory extends AppCompatActivity {
         xAxis.setPosition(XAxis.XAxisPosition.TOP);
         xAxis.setDrawGridLines(false);
         xAxis.setDrawAxisLine(true);
-        xAxis.setGranularity(1f);
+        xAxis.setGranularity(GRANULARITY);
         xAxis.setLabelCount(labelNames.size());
-        xAxis.setLabelRotationAngle(0);
-        xAxis.setTextSize(10f);
+        xAxis.setLabelRotationAngle(ROTATION_ANGLE);
+        xAxis.setTextSize(TOP_TEXT_SIZE);
         //xAxis.setTextSize(20f);
         //xAxis.setAxisMinimum(1f);
 
         barChart.setDrawBorders(true);
-        barChart.animateY(2000);
+        barChart.animateY(DURATION_MILLIS);
         barChart.invalidate();
 
         if (barEntryArrayListCorrects.isEmpty() && barEntryArrayListFailed.isEmpty()) {
