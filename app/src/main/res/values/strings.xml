@@ -237,7 +237,7 @@
     <string name="exercises_resultHistory_correct">Corrects</string>
     <string name="exercises_resultHistory_failed">Failed</string>
     <string name="exercises_resultHistory_trials">Trials</string>
-    <string name="exercises_resultHistory_trialsNumber">Trial #</string>
+    <string name="exercises_resultHistory_trialsNumber">Attempt</string>
     <!-- Test History Section -->
     <string name="tests_testHistory_queryHint">Test Date</string>
 

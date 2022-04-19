@@ -239,7 +239,7 @@
     <string name="exercises_resultHistory_correct">Aciertos</string>
     <string name="exercises_resultHistory_failed">Fallos</string>
     <string name="exercises_resultHistory_trials">Intentos</string>
-    <string name="exercises_resultHistory_trialsNumber">Intento #</string>
+    <string name="exercises_resultHistory_trialsNumber">Intento</string>
     <!-- Apartado Historial de Tests -->
     <string name="tests_testHistory_queryHint">Fecha Test</string>
 

@@ -103,6 +103,7 @@ public class ExerciseResultHistory extends AppCompatActivity {
         xAxis.setGranularity(1f);
         xAxis.setLabelCount(labelNames.size());
         xAxis.setLabelRotationAngle(0);
+        xAxis.setTextSize(10f);
         //xAxis.setTextSize(20f);
         //xAxis.setAxisMinimum(1f);
 
@@ -145,7 +146,7 @@ public class ExerciseResultHistory extends AppCompatActivity {
             barEntryArrayListCorrects.add(new BarEntry(i, counterCorrect));
             barEntryArrayListFailed.add(new BarEntry(i, counterFailed));
             //barEntryArrayList.add(new BarEntry(i, counterFailed));
-            labelNames.add(resources.getString(R.string.exercises_resultHistory_trialsNumber) + i);
+            labelNames.add(resources.getString(R.string.exercises_resultHistory_trialsNumber) + " " + i);
         }
     }
 
