@@ -30,6 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.macularehab.R;
+import com.macularehab.professional.account.ChangeEmail;
 import com.macularehab.professional.account.ChangePassword;
 import com.macularehab.professional.account.ProfessionalSignUpActivity;
 import com.squareup.picasso.Picasso;
@@ -93,6 +94,14 @@ public class ProfessionalEditProfile extends AppCompatActivity {
         });
 
         getProfessionalPhoto();
+
+        Button changeEmailButton = findViewById(R.id.professional_profile_editProfile_changeEmail_button);
+        changeEmailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToChangeEmailActivity();
+            }
+        });
 
         ImageButton backButton = findViewById(R.id.professional_profile_editProfile_back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -233,5 +242,11 @@ public class ProfessionalEditProfile extends AppCompatActivity {
 
         Intent changePasswordIntent = new Intent(this, ChangePassword.class);
         startActivity(changePasswordIntent);
+    }
+
+    private void goToChangeEmailActivity() {
+
+        Intent changeEmailIntent = new Intent(this, ChangeEmail.class);
+        startActivity(changeEmailIntent);
     }
 }

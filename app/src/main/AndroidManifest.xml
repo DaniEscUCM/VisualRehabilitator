@@ -120,6 +120,9 @@
         <activity
             android:name=".professional.account.ChangePassword"
             android:exported="false" />
+        <activity
+            android:name=".professional.account.ChangeEmail"
+            android:exported="false" />
         <!-- Professional Section Ends . -->
 
         <!-- Patient Section . -->

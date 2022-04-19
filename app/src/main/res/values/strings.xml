@@ -247,6 +247,13 @@
     <string name="professional_profile_changePassword_button">Change password</string>
     <string name="professional_profile_changePhone_button">Change phone</string>
 
+    <!-- Professional Profile - Change Email -->
+    <string name="professional_profile_changeEmail_title">Change Email Address</string>
+    <string name="professional_profile_changeEmail_insertEmailText">Insert your NEW Email Address</string>
+    <string name="professional_profile_changeEmail_email_hint">Email Address</string>
+    <string name="professional_profile_changeEmail_change_button">Change Email</string>
+    <string name="professional_profile_changeEmail_helpText">Your actual email address will be changed to the new email you enter</string>
+    <string name="professional_profile_changeEmail_successMessage">Email Changed successfully</string>
 
 
     <!-- Fin Apartado Professional .-->

@@ -249,6 +249,14 @@
     <string name="professional_profile_changePassword_button">Cambiar contraseña</string>
     <string name="professional_profile_changePhone_button">Cambiar número</string>
 
+    <!-- Professional Profile - Change Email -->
+    <string name="professional_profile_changeEmail_title">Cambiar Correo Electrónico</string>
+    <string name="professional_profile_changeEmail_insertEmailText">Introduce Nuevo Correo Electrónico</string>
+    <string name="professional_profile_changeEmail_email_hint">Correo Electrónico</string>
+    <string name="professional_profile_changeEmail_change_button">Cambiar Correo</string>
+    <string name="professional_profile_changeEmail_helpText">Tu actual dirección de correo va a ser cambiada por la nueva dirección que intruduzcas</string>
+    <string name="professional_profile_changeEmail_successMessage">Correo cambiado con éxito</string>
+
     <!-- Fin Apartado Professional .-->
 
     <!-- Exercises Section -->
