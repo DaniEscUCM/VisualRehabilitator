@@ -176,8 +176,9 @@
         android:layout_height="100dp"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
-        app:layout_constraintEnd_toStartOf="@+id/cross3.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
@@ -214,7 +215,7 @@
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toEndOf="@+id/circle_3"
         app:layout_constraintTop_toTopOf="@+id/circle_3"
         app:srcCompat="@drawable/cross_thinner" />
 
@@ -237,8 +238,9 @@
         android:layout_height="100dp"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
-        app:layout_constraintStart_toEndOf="@+id/cross4.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
@@ -250,7 +252,7 @@
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_4"
-        app:layout_constraintStart_toStartOf="@+id/guideline18"
+        app:layout_constraintEnd_toStartOf="@+id/circle_4"
         app:layout_constraintTop_toTopOf="@+id/circle_4"
         app:srcCompat="@drawable/cross_thinner" />
 
@@ -297,9 +299,8 @@
         android:layout_height="65dp"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline18"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
+        app:layout_constraintEnd_toStartOf="@+id/cross5.3"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
@@ -336,7 +337,7 @@
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_5"
-        app:layout_constraintStart_toEndOf="@+id/circle_5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/circle_5"
         app:srcCompat="@drawable/cross_super_thin" />
 
@@ -360,9 +361,8 @@
         android:layout_height="65dp"
         android:contentDescription="@string/circle"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline18"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
+        app:layout_constraintStart_toEndOf="@+id/cross6.1"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
@@ -374,9 +374,7 @@
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_6"
-        app:layout_constraintEnd_toStartOf="@+id/circle_6"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/cross5.3"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/circle_6"
         app:srcCompat="@drawable/cross_super_thin" />
 
