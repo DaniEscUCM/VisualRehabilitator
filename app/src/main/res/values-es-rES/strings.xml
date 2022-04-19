@@ -253,6 +253,7 @@
     <string name="image_background">Imagen</string>
     <string name="seconds_description_shape">Inserta los segundos que quieras para cada figura:</string>
     <string name="seconds_description_letter">Inserta los segundos que quieras para cada letra:</string>
+    <string name="seconds_description_instructions">Inserta los segundos que quieras para cada instrucción:</string>
     <string name="seconds_description_whole_exercise">Inserta los segundos para completar el ejercicio entero:</string>
     <string name="seconds">segundos</string>
     <string name="num_seconds">10</string>
