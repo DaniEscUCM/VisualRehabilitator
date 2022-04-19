@@ -16,6 +16,7 @@ import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
 import com.macularehab.patient.PatientHome;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.patient.ProfessionalProfile;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -81,6 +82,14 @@ public class PatientDataInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goToExercisesHistory();
+            }
+        });
+
+        Button professionalProfileButton = findViewById(R.id.professional_patient_info_professionalProfile_button);
+        professionalProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToProfessionalProfile();
             }
         });
 
@@ -204,6 +213,12 @@ public class PatientDataInfoActivity extends AppCompatActivity {
     private void goToExercisesHistory() {
 
         Intent intent = new Intent(this, ChooseExerciseActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToProfessionalProfile() {
+
+        Intent intent = new Intent(this, ProfessionalProfile.class);
         startActivity(intent);
     }
 }

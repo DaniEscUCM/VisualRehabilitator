@@ -60,6 +60,10 @@
     <string name="hint_patient_home_logout_button">LogOut</string>
     <string name="patient_home_welcome_text">Welcome</string>
     <string name="patient_home_name_default">Patient</string>
+
+    <!-- Patient - Professional Section -->
+    <string name="patient_professional_profile_nameText">Professional\nName:</string>
+    <string name="patient_professional_profile_contactButton">Contact Professional</string>
     <!-- Fin Apartado Paciente .-->
 
     <!-- Apartado depuración .-->
