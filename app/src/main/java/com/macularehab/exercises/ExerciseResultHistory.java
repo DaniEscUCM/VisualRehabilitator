@@ -6,6 +6,8 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,6 +53,14 @@ public class ExerciseResultHistory extends AppCompatActivity {
         exercise_id = getIntent().getIntExtra("exercise_id", 1);
 
         barChart = findViewById(R.id.exercise_results_history_barChart);
+
+        ImageButton backButton = findViewById(R.id.exercise_results_history_backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         barEntryArrayListCorrects = new ArrayList<BarEntry>();
         barEntryArrayListFailed = new ArrayList<BarEntry>();
