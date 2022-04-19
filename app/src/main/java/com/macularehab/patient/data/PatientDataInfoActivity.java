@@ -16,7 +16,7 @@ import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
 import com.macularehab.patient.PatientHome;
 import com.macularehab.internalStorage.ReadInternalStorage;
-import com.macularehab.patient.ProfessionalProfile;
+import com.macularehab.patient.professional.ProfessionalProfile;
 
 import java.util.ArrayList;
 import java.util.Collection;

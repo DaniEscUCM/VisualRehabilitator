@@ -180,6 +180,7 @@
         <entry key="app/src/main/res/layout/activity_map_test_explanation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_map_test_right.xml" value="0.10911458333333333" />
         <entry key="app/src/main/res/layout/activity_map_test_right_explanation.xml" value="0.1577970297029703" />
+        <entry key="app/src/main/res/layout/activity_patient_contact_professional.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.13854166666666667" />
         <entry key="app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.25" />

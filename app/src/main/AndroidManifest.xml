@@ -142,7 +142,7 @@
             android:name=".patient.data.PatientDataInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".patient.ProfessionalProfile"
+            android:name=".patient.professional.ProfessionalProfile"
             android:exported="false" />
         <!-- Patient Section End . -->
 

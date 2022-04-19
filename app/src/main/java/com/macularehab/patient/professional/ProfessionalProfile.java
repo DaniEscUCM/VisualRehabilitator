@@ -1,22 +1,31 @@
-package com.macularehab.patient;
+package com.macularehab.patient.professional;
 
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
 public class ProfessionalProfile extends AppCompatActivity {
 
     private TextView professionalNameTextView;
+    private ImageView profileImageView;
+
+    private String professionalUID;
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
 
@@ -27,6 +36,7 @@ public class ProfessionalProfile extends AppCompatActivity {
         setContentView(R.layout.activity_patient_professional_profile);
 
         professionalNameTextView = findViewById(R.id.patient_professional_profile_name);
+        profileImageView = findViewById(R.id.patient_professional_profile_profileImage);
 
         ImageButton backButton = findViewById(R.id.patient_professional_profile_back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +47,7 @@ public class ProfessionalProfile extends AppCompatActivity {
         });
 
         readProfessionalName();
+        loadProfessionalPhoto();
     }
 
     private void readProfessionalName() {
@@ -50,6 +61,24 @@ public class ProfessionalProfile extends AppCompatActivity {
             name = String.valueOf(map.get("professional_name"));
         }
 
+        professionalUID = String.valueOf(map.get("professional_uid"));
+
         professionalNameTextView.setText(name);
+    }
+
+    private void loadProfessionalPhoto() {
+
+        String imagePath = professionalUID + ".jpg";
+        final String[] imageURL = {""};
+
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("ProfilePics").child(imagePath);
+        storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Uri imageUri = uri;
+                imageURL[0] = imageUri.toString();
+                Picasso.get().load(uri).into(profileImageView);
+            }
+        });
     }
 }
