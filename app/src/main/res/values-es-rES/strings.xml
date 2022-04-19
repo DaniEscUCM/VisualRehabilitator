@@ -215,6 +215,7 @@
     <string name="professional_patientInfo_deletePatient_button">Eliminar\nPatient</string>
     <string name="professional_patientInfo_seeTestHistory_button">Historial de Tests</string>
     <string name="professional_patientInfo_exercisesHistory_button">Historial de Ejercicios</string>
+    <string name="professional_patientInfo_professionalProfile_button">Perfil Profesional</string>
 
     <!-- Section Professional - Patient Info - CardsView -->
     <string name="professional_patientInfo_cardView_text_patient">Paciente:</string>

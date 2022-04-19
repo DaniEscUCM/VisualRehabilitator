@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +30,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.macularehab.R;
+import com.macularehab.professional.account.ChangePassword;
+import com.macularehab.professional.account.ProfessionalSignUpActivity;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
@@ -37,9 +42,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfessionalEditProfile extends AppCompatActivity {
 
+    private static final String TAG = "EditProfile";
+
     private CircleImageView profileImageView;
-    private Button closeButton, saveButton;
     private Button profileChangeButton;
+    private TextView nameTextView;
+    private TextView emailTextView;
+    private TextView phoneTextView;
 
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
@@ -57,38 +66,21 @@ public class ProfessionalEditProfile extends AppCompatActivity {
 
         //init
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
-        storageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
-
+        databaseReference = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app").getReference();
+        storageReference = FirebaseStorage.getInstance().getReference().child("ProfilePics");
+        
         profileImageView = findViewById(R.id.professional_profile_editProfile_profileImage);
+        nameTextView = findViewById(R.id.professional_profile_editProfile_name);
+        emailTextView = findViewById(R.id.professional_profile_editProfile_email);
+        phoneTextView = findViewById(R.id.professional_profile_editProfile_phone);
 
         Button changePasswordButton = findViewById(R.id.professional_profile_editProfile_changePassword_button);
-        //changePasswordButton.setBackgroundResource(R.drawable.border_for_layout_blue);
-        /*changePasswordButton.setOnClickListener(new View.OnClickListener() {
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //changePasswordButton.setSelected(!changePasswordButton.isSelected());
-                //changePasswordButton.setBackground(R.drawable.border_for_layout_yellow);
-                changePasswordButton.setBackgroundResource(R.drawable.border_for_layout_yellow);
-            }
-        });*/
-
-        /*closeButton = findViewById(R.id.button_close);
-        saveButton = findViewById(R.id.button_save);
-
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //startActivity(new Intent());
+                goToChangePasswordActivity();
             }
         });
-
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadProfileImage();
-            }
-        });*/
 
         profileChangeButton = findViewById(R.id.professional_profile_editProfile_changeImage_button);
         profileChangeButton.setOnClickListener(new View.OnClickListener() {
@@ -100,25 +92,60 @@ public class ProfessionalEditProfile extends AppCompatActivity {
             }
         });
 
-        getUserInfo();
+        getProfessionalPhoto();
+
+        ImageButton backButton = findViewById(R.id.professional_profile_editProfile_back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    private void getUserInfo() {
+    private void getProfessionalPhoto() {
 
-        databaseReference.child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+        if (mAuth.getCurrentUser().getPhotoUrl() != null) {
+
+            String imageUri = String.valueOf(mAuth.getCurrentUser().getPhotoUrl());
+            Picasso.get().load(imageUri).into(profileImageView);
+        }
+
+        readProfessionalInfo();
+    }
+
+    private void readProfessionalInfo() {
+
+        databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
-                    if (snapshot.hasChild("image")) {
-                        String image = snapshot.child("image").getValue().toString();
-                        Picasso.get().load(image).into(profileImageView);
-                    }
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
                 }
-            }
+                else {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                    String name = "";
+                    String email = "";
+                    String phone = "";
 
+                    HashMap<String, Object> profMap = (HashMap<String, Object>) task.getResult().getValue();
+
+                    name = String.valueOf(profMap.get("name"));
+
+                    if (profMap.containsKey("contact_info")) {
+
+                        HashMap<String, Object> contactMap = (HashMap<String, Object>) profMap.get("contact_info");
+
+                        email = String.valueOf(contactMap.get("email_address"));
+                        phone = String.valueOf(contactMap.get("phone_number"));
+                    }
+
+                    nameTextView.setText(name);
+                    emailTextView.setText(email);
+                    phoneTextView.setText(phone);
+
+                }
             }
         });
     }
@@ -134,6 +161,8 @@ public class ProfessionalEditProfile extends AppCompatActivity {
 
                 imageUri = result.getUri();
                 profileImageView.setImageURI(imageUri);
+
+                uploadProfileImage();
             }
             else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
 
@@ -173,10 +202,21 @@ public class ProfessionalEditProfile extends AppCompatActivity {
                         Uri downloadUri = (Uri) task.getResult();
                         myUri = downloadUri.toString();
 
-                        HashMap<String, Object> userMap = new HashMap<>();
-                        userMap.put("image", myUri);
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setPhotoUri(Uri.parse(myUri))
+                                .build();
+                        mAuth.getCurrentUser().updateProfile(profileUpdates)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Log.d(TAG, "User profile updated.");
+                                        }
+                                    }
+                                });
 
-                        databaseReference.child(mAuth.getCurrentUser().getUid()).updateChildren(userMap);
+                        /*databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid())
+                                .child("contact_info").child("profilePic_url")*/
 
                         progressDialog.dismiss();
                     }
@@ -187,5 +227,11 @@ public class ProfessionalEditProfile extends AppCompatActivity {
             progressDialog.dismiss();
             Toast.makeText(this, "image not selected", Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void goToChangePasswordActivity() {
+
+        Intent changePasswordIntent = new Intent(this, ChangePassword.class);
+        startActivity(changePasswordIntent);
     }
 }

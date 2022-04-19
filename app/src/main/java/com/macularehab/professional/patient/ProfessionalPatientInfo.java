@@ -33,6 +33,7 @@ import java.util.HashMap;
 public class ProfessionalPatientInfo extends AppCompatActivity {
 
     private Button editPatientButton;
+    private Button professionalProfileButton;
     private TextView textView_lastTest;
 
     private TextView textView_nameTitle;
@@ -119,7 +120,33 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
             }
         });
 
+        professionalProfileButton = findViewById(R.id.professional_patient_info_professionalProfile_button);
+
         fillFields();
+        setInvisibleProfessionalProfileButton();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setInvisibleProfessionalProfileButton();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setInvisibleProfessionalProfileButton();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setInvisibleProfessionalProfileButton();
+    }
+
+    private void setInvisibleProfessionalProfileButton() {
+
+        professionalProfileButton.setVisibility(View.INVISIBLE);
     }
 
     private void fillFields() {

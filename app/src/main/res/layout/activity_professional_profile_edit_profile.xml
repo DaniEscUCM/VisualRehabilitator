@@ -37,11 +37,12 @@
         android:id="@+id/professional_profile_editProfile_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_for_layout"
+        android:background="@drawable/border_for_layout_profile"
         android:text="Nombre"
         android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
         app:layout_constraintEnd_toStartOf="@+id/guideline49"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline50" />
 
     <TextView
@@ -51,6 +52,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:text="@string/professional_profile_nameText"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline21" />
@@ -109,7 +111,7 @@
         android:padding="10dp"
         android:text="@string/professional_profile_changePhone_button"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView62"
+        app:layout_constraintBaseline_toBaselineOf="@+id/professional_profile_editProfile_phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline48" />
 
@@ -120,6 +122,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/professional_profile_emailText"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -135,7 +138,7 @@
         android:id="@+id/professional_profile_editProfile_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_for_layout"
+        android:background="@drawable/border_for_layout_profile"
         android:text="email"
         android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView24"
@@ -149,15 +152,16 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/professional_profile_phoneText"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/professional_profile_editProfile_changePassword_button" />
 
     <TextView
-        android:id="@+id/textView62"
+        android:id="@+id/professional_profile_editProfile_phone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_for_layout"
+        android:background="@drawable/border_for_layout_profile"
         android:text="@string/professional_profile_defaultPhoneText"
         android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView60"

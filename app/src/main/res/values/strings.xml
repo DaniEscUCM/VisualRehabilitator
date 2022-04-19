@@ -212,6 +212,7 @@
     <string name="professional_patientInfo_deletePatient_button">Delete\nPatient</string>
     <string name="professional_patientInfo_seeTestHistory_button">Patient\'s Test History</string>
     <string name="professional_patientInfo_exercisesHistory_button">Exercises History</string>
+    <string name="professional_patientInfo_professionalProfile_button">Professional Profile</string>
     <!-- End Buttons -->
 
     <!-- Section Professional - Patient Info - CardsView -->
