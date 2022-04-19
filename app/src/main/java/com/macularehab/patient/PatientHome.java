@@ -111,6 +111,12 @@ public class PatientHome extends AppCompatActivity {
         getProfessionalUID();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        readFocusSwitch();
+    }
+
     private void getProfessionalUID() {
 
         databaseReference.child(db_patient).child(patientUID)
