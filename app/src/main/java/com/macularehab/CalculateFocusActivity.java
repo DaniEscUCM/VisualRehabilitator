@@ -205,17 +205,24 @@ public class CalculateFocusActivity extends AppCompatActivity {
         if(file.exists()){
             ReadInternalStorage readInternalStorage = new ReadInternalStorage();
             HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-            if(map.get("patient_numeric_code").equals(patient_id)){
-                map.put("focus",result_coor.get(0));
-                ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put("focus",result_coor.get(0));
 
-                Gson gson = new Gson();
-                String data = gson.toJson(map);
-                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
+            if (map != null) {
 
-                Intent i = new Intent( this, ProfessionalTestsHistoryActivity.class );
-                startActivity(i);
+                if (map.get("patient_numeric_code").equals(patient_id)) {
+                    map.put("focus", result_coor.get(0));
+                    ((LinkedTreeMap) ((LinkedTreeMap) map.get("Tests")).get(date)).put("focus", result_coor.get(0));
+
+                    Gson gson = new Gson();
+                    String data = gson.toJson(map);
+                    WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+                    writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
+
+                    Intent i = new Intent(this, ProfessionalTestsHistoryActivity.class);
+                    startActivity(i);
+                } else {
+                    Intent i = new Intent(this, ProfessionalHome.class);
+                    startActivity(i);
+                }
             }
             else{
                 Intent i = new Intent( this, ProfessionalHome.class );

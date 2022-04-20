@@ -33,6 +33,7 @@ import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.ProfessionalHome;
 import com.macularehab.professional.patientForm.ProfessionalPatientEditInfo;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -306,6 +307,9 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, "");
+
+        File file = new File(filenameCurrentPatient);
+        file.delete();
 
         Intent intent = new Intent(this, ProfessionalHome.class);
         startActivity(intent);

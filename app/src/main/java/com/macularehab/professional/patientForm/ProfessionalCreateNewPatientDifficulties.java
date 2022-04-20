@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.macularehab.R;
+import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.Patient;
 
 import java.util.ArrayList;
@@ -42,6 +43,8 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
     private final String db_patientNumericCode = "PatientNumericCode";
     private final String db_professional = "Professional";
     private final String db_numberOfPatients = "numberOfPatients";
+
+    private final String filenameCurrentPatient = "CurrentPatient.json";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -130,6 +133,12 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
         databaseReference.child(db_professional).child(mAuth.getUid()).child(db_patientS).child(String.valueOf(numericCode)).setValue(patient);
         databaseReference.child(db_patient).child(patient.getPatient_numeric_code()).child(db_professionalUID).setValue(mAuth.getUid());
         databaseReference.child(db_patient).child(patient.getPatient_numeric_code()).child(db_patientNumericCode).setValue(patient.getPatient_numeric_code());
+
+        /*String data = gson.toJson(patient);
+
+        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
+        writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);*/
+
         addNumberOfPatients();
         continueWithNextActivity();
     }
