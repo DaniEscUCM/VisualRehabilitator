@@ -89,6 +89,10 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
 
         int progress = exercises_completed*100/num_exercises;
 
+        if (progress > 100) {
+            progress = 100;
+        }
+
         holder.card_patient_progress_bar.setProgress(progress);
         if (progress <= 30) {
             progressDrawable.setColorFilter(Color.parseColor("#FFA500"), PorterDuff.Mode.SRC_IN);

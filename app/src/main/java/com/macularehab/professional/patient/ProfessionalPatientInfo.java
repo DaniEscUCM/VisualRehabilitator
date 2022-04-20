@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -26,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
+import com.macularehab.exercises.Exercise;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.ProfessionalHome;
@@ -172,8 +174,6 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
         textView_lastTest.setText(lastTest);
 
-        Drawable progressDrawable = progressBar.getProgressDrawable().mutate();
-
         LinkedTreeMap<String, Object> exercise = (LinkedTreeMap<String, Object>) map.get("exercise");
         ArrayList<LinkedTreeMap<String, Object>> exercisesList = (ArrayList<LinkedTreeMap<String, Object>>) exercise.get("exerciseInfoList");
 
@@ -181,20 +181,32 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         Double num_completed1 = (Double) exercise.get("exercises_completed");
 
         int num_completed = num_completed1.intValue();
-        int progress = num_completed*100/num_exercises;
+        int progress = num_completed*100/17;
+
+        if (progress > 100) {
+            progress = 100;
+        }
+
+        Drawable progressDrawable = progressBar.getProgressDrawable();
 
         progressBar.setProgress(progress);
         if (progress <= 30) {
-            progressDrawable.setColorFilter(Color.parseColor("#FFA500"), PorterDuff.Mode.SRC_IN);
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.orange), PorterDuff.Mode.SRC_IN);
+            progressBar.setProgressTintList(ColorStateList.valueOf(this.getResources().getColor(R.color.orange)));
+            //progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#FFA500")));
         }
         else if (progress < 60) {
             progressDrawable.setColorFilter(Color.parseColor("#ADD8E6"), PorterDuff.Mode.SRC_IN);
+            //progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#ADD8E6")));
+            //progressBar.setProgressTintList(ColorStateList.valueOf(this.getResources().getColor(R.color.blue_light)));
         }
         else if (progress < 80) {
-            progressDrawable.setColorFilter(Color.parseColor("#90EE90"), PorterDuff.Mode.SRC_IN);
+            //progressDrawable.setColorFilter(Color.parseColor("#90EE90"), PorterDuff.Mode.SRC_IN);
+            progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#90EE90")));
         }
         else {
-            progressDrawable.setColorFilter(Color.parseColor("#00FF00"), PorterDuff.Mode.SRC_IN);
+            //progressDrawable.setColorFilter(Color.parseColor("#00FF00"), PorterDuff.Mode.SRC_IN);
+            progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#00FF00")));
         }
         progressBar.setProgressDrawable(progressDrawable);
 

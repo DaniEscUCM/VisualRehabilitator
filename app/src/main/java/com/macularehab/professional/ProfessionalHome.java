@@ -195,7 +195,7 @@ public class ProfessionalHome extends AppCompatActivity {
 
         if (!map.isEmpty()) {
             for (Map.Entry<String, Object> entry : map.entrySet()) {
-                
+
                 LinkedTreeMap<String, Object> hashMap = (LinkedTreeMap<String, Object>) entry.getValue();
 
                 Patient patient = new Patient();

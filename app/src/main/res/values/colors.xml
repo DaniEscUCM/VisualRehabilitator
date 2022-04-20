@@ -13,6 +13,8 @@
     <color name="grey_dark">#5C5757</color>
     <color name="red">#CA2020</color>
     <color name="yellow">#FFEB3B</color>
+    <color name="orange">#FFA500</color>
+    <color name="blue_light">#40afe3</color>
 
 
 </resources>
