@@ -138,7 +138,20 @@ public class ExercisesActivity extends AppCompatActivity {
                 fifteenth_exercise(v);
             }
         });
-
+        Button sixteenth_exercise_button = (Button) findViewById(R.id.button_exercise16);
+        sixteenth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sixteenth_exercise(v);
+            }
+        });
+        Button seventeenth_exercise_button = (Button) findViewById(R.id.button_exercise17);
+        seventeenth_exercise_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seventeenth_exercise(v);
+            }
+        });
 
     }
     public void close(View view){
@@ -203,6 +216,14 @@ public class ExercisesActivity extends AppCompatActivity {
     }
     public void fifteenth_exercise(View view){
         Intent i = new Intent( this, SixteenthExerciseDescriptionActivity.class );
+        startActivity(i);
+    }
+    public void sixteenth_exercise(View view){
+        //Intent i = new Intent( this, SixteenthExerciseDescriptionActivity.class );
+        //startActivity(i);
+    }
+    public void seventeenth_exercise(View view){
+        Intent i = new Intent( this, SeventeenthExerciseDescriptionActivity.class );
         startActivity(i);
     }
     
