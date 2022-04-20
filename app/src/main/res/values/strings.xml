@@ -380,7 +380,6 @@
     <string name="v_letter" translatable="false">v</string>
     <string name="y_letter" translatable="false">y</string>
     <string name="w_letter" translatable="false">w</string>
-    <string name="seconds_description_instructions">Insert the seconds you want for each instruction:</string>
 
 
     <string name="toast_user_created">User created</string>

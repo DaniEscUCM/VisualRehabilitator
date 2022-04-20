@@ -105,7 +105,7 @@ public class ExerciseResultHistory extends AppCompatActivity {
         //barChart.announceForAccessibility();
         barChart.canScrollHorizontally(1);
         barChart.setDragEnabled(true);
-        barChart.setVisibleXRangeMaximum(10);
+        barChart.setVisibleXRangeMaximum(5);
 
         Legend legend = barChart.getLegend();
         legend.setTextSize(LABEL_TEXT_SIZE);
