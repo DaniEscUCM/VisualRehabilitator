@@ -270,6 +270,7 @@
     <string name="professional_profile_changePhone_change_button">Change Phone Number</string>
     <string name="professional_profile_changePhone_helpText">Your actual Phone Number will be changed to the new Number you enter</string>
     <string name="professional_profile_changePhone_successMessage">Phone Number Changed successfully</string>
+    <string name="professional_profile_changePhone_errorFormat">Phone must contain 9 numbers</string>
 
 
     <!-- Fin Apartado Professional .-->

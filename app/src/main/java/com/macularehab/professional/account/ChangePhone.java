@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,6 +30,7 @@ public class ChangePhone extends AppCompatActivity {
 
     private final String TAG = "ProfessChangePhone";
 
+    private TextInputLayout changePhoneLayout;
     private TextInputEditText phoneAddressTextInput;
     private String phoneAddress;
 
@@ -49,6 +51,7 @@ public class ChangePhone extends AppCompatActivity {
 
         resources = ChangePhone.this.getResources();
 
+        changePhoneLayout = findViewById(R.id.professional_profile_changePhone_textInputLayout);
         phoneAddressTextInput = findViewById(R.id.professional_profile_changePhone_textInputLayout_textInput);
 
         loading_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect);
@@ -102,12 +105,19 @@ public class ChangePhone extends AppCompatActivity {
         result_imageView.setVisibility(View.INVISIBLE);
 
         phoneAddress = String.valueOf(phoneAddressTextInput.getText());
-        if (!phoneAddress.equals("")) {
-            changePhone();
+
+        Resources resources = ChangePhone.this.getResources();
+
+        if (phoneAddress.equals("")) {
+            changePhoneLayout.setError(resources.getString(R.string.emptyField));
+            showAlertErrorUser(resources.getString(R.string.emptyField));
+        }
+        else if (phoneAddress.length() != 9) {
+            changePhoneLayout.setError(resources.getString(R.string.professional_profile_changePhone_errorFormat));
+            showAlertErrorUser(resources.getString(R.string.professional_profile_changePhone_errorFormat));
         }
         else {
-            Resources resources = ChangePhone.this.getResources();
-            showAlertErrorUser(resources.getString(R.string.emptyField));
+            changePhone();
         }
     }
 

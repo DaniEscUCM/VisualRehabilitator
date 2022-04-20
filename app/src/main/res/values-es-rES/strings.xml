@@ -272,6 +272,7 @@
     <string name="professional_profile_changePhone_change_button">Cambiar teléfono</string>
     <string name="professional_profile_changePhone_helpText">Tu actual número de teléfono va a ser cambiado por el nuevo número que intruduzcas</string>
     <string name="professional_profile_changePhone_successMessage">Teléfono cambiado con éxito</string>
+    <string name="professional_profile_changePhone_errorFormat">Número telefónico debe de contener 9 dígitos</string>
 
     <!-- Fin Apartado Professional .-->
 
