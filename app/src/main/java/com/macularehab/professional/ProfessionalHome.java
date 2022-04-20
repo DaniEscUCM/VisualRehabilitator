@@ -164,7 +164,7 @@ public class ProfessionalHome extends AppCompatActivity {
     public void updatePatientsList(List<Patient> patientList) {
 
         stopLoadingImage();
-        
+
         patientListAdapter.setPatientListData(patientList);
         patientListAdapter.notifyDataSetChanged();
     }
