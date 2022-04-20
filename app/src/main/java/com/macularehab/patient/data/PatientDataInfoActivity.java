@@ -2,16 +2,20 @@ package com.macularehab.patient.data;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
 import com.macularehab.patient.PatientHome;
@@ -37,6 +41,7 @@ public class PatientDataInfoActivity extends AppCompatActivity {
     private TextView textView_av;
     private TextView textView_cv;
     private TextView textView_observations;
+    private ProgressBar progressBar;
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
 
@@ -60,6 +65,7 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         textView_observations = findViewById(R.id.textView_patientInfo_observations);
 
         textView_lastTest = findViewById(R.id.professional_patient_info_lastTest_text);
+        progressBar = findViewById(R.id.professional_patient_info_exercisesHistory_progressBar);
 
         ImageButton backButton = findViewById(R.id.professional_patient_info_go_back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -165,6 +171,43 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         textView_observations.setText(observations);
 
         textView_lastTest.setText(lastTest);
+
+        LinkedTreeMap<String, Object> exercise = (LinkedTreeMap<String, Object>) map.get("exercise");
+        ArrayList<LinkedTreeMap<String, Object>> exercisesList = (ArrayList<LinkedTreeMap<String, Object>>) exercise.get("exerciseInfoList");
+
+        int num_exercises = exercisesList.size();
+        Double num_completed1 = (Double) exercise.get("exercises_completed");
+
+        int num_completed = num_completed1.intValue();
+        int progress = num_completed*100/num_exercises;
+
+        if (progress > 100) {
+            progress = 100;
+        }
+
+        Drawable progressDrawable = progressBar.getProgressDrawable();
+
+        progressBar.setProgress(progress);
+        if (progress < 20) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.orange_dark), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 40) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.orange), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 55) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.blue_light), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 65) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.blue_dark), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 80) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.green_light), PorterDuff.Mode.SRC_IN);
+        }
+        else {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.green), PorterDuff.Mode.SRC_IN);
+        }
+        progressBar.setProgressDrawable(progressDrawable);
+
 
         ArrayList<Boolean> arrayList = new ArrayList<Boolean>((Collection<? extends Boolean>) map.get("checkBox"));
         setCheckBoxesClicked(arrayList);

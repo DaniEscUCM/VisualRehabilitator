@@ -190,9 +190,12 @@
         <entry key="app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout/activity_patient_professional_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_patient_signup_password.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_patient_signup_username.xml" value="0.146875" />
+        <entry key="app/src/main/res/layout/activity_patient_test_history.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_professional_change_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.1318069306930693" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_show_numeric_code.xml" value="0.17760416666666667" />
@@ -201,7 +204,14 @@
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_professional_profile_change_email.xml" value="0.10334158415841584" />
+        <entry key="app/src/main/res/layout/activity_professional_profile_change_name.xml" value="0.10334158415841584" />
+        <entry key="app/src/main/res/layout/activity_professional_profile_change_phone.xml" value="0.10334158415841584" />
+        <entry key="app/src/main/res/layout/activity_professional_profile_edit_profile.xml" value="0.10334158415841584" />
+        <entry key="app/src/main/res/layout/activity_professional_restore_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/activity_professional_tests_history.xml" value="0.10334158415841584" />
+        <entry key="app/src/main/res/layout/activity_results_first_exercise.xml" value="0.10334158415841584" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_tenth_exercise_description.xml" value="0.15222772277227722" />
         <entry key="app/src/main/res/layout/activity_tests_history.xml" value="0.11041666666666666" />
