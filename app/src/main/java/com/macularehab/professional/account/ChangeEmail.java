@@ -55,6 +55,8 @@ public class ChangeEmail extends AppCompatActivity {
 
         resources = ChangeEmail.this.getResources();
 
+        mAuth.updateCurrentUser(mAuth.getCurrentUser());
+
         emailAddressTextInput = findViewById(R.id.professional_profile_changeEmail_textInputLayout_textInput);
 
         loading_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect);
