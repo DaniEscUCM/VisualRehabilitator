@@ -62,6 +62,8 @@ public class ChangePassword extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        mAuth.updateCurrentUser(mAuth.getCurrentUser());
+
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
         email = firebaseUser.getEmail();
 
