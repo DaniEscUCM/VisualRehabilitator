@@ -46,10 +46,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_sofa"
-        android:layout_width="192dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="260dp"
+        android:layout_width="231dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="212dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -74,9 +74,9 @@
     <ImageButton
         android:id="@+id/dot_button_lamp"
         android:layout_width="65dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="188dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="136dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -102,9 +102,9 @@
 
     <ImageButton
         android:id="@+id/dot_button_plant"
-        android:layout_width="81dp"
-        android:layout_height="185dp"
-        android:layout_marginTop="108dp"
+        android:layout_width="104dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
@@ -129,10 +129,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_carpet"
-        android:layout_width="344dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="344dp"
+        android:layout_width="442dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="324dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -167,10 +167,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_left_window"
-        android:layout_width="63dp"
-        android:layout_height="165dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="108dp"
+        android:layout_width="67dp"
+        android:layout_height="196dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="32dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -196,10 +196,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_right_window"
-        android:layout_width="87dp"
-        android:layout_height="129dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="112dp"
+        android:layout_width="110dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="128dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -225,10 +225,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_pot"
-        android:layout_width="48dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="60dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="36dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
