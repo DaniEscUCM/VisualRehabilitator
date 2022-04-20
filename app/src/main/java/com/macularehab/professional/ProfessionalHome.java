@@ -1,5 +1,6 @@
 package com.macularehab.professional;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,6 +60,8 @@ public class ProfessionalHome extends AppCompatActivity {
     private TextView professional_name_text;
     private SearchView searchView;
 
+    private LottieAnimationView loading_imageView;
+
     //Store Data
     private final String filenameProfessionalPatientList = "ProfessionalPatientList.json";
     private final String filenameProfessionalInfo = "ProfessionalInfo.json";
@@ -87,6 +91,9 @@ public class ProfessionalHome extends AppCompatActivity {
 
         Log.w("Here" , "A ver aqui");
         //getPatientList();
+
+        loading_imageView = findViewById(R.id.professional_home_loading_image);
+        loading_imageView.setVisibility(View.INVISIBLE);
 
         searchView = (SearchView) findViewById(R.id.professional_home_search_patient_searchView);
         searchView.setOnClickListener(new View.OnClickListener() {
@@ -139,10 +146,25 @@ public class ProfessionalHome extends AppCompatActivity {
 
         professional_uid = mAuth.getUid();
         getPatientList();
+        stopLoadingImage();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        stopLoadingImage();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        stopLoadingImage();
     }
 
     public void updatePatientsList(List<Patient> patientList) {
 
+        stopLoadingImage();
+        
         patientListAdapter.setPatientListData(patientList);
         patientListAdapter.notifyDataSetChanged();
     }
@@ -150,6 +172,8 @@ public class ProfessionalHome extends AppCompatActivity {
     //TODO Result
 
     private void getPatientList() {
+
+        showLoadingImage();
 
         databaseReference.child(db_professional).child(professional_uid).child(db_patients)
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -307,6 +331,35 @@ public class ProfessionalHome extends AppCompatActivity {
         //Intent changePasswordIntent = new Intent(this, ChangePassword.class);
         Intent changePasswordIntent = new Intent(this, ProfessionalEditProfile.class);
         startActivity(changePasswordIntent);
+    }
+
+    private void showLoadingImage() {
+
+        loading_imageView.setVisibility(View.VISIBLE);
+        loading_imageView.setAnimation(R.raw.loading_rainbow);
+        loading_imageView.playAnimation();
+        loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                loading_imageView.playAnimation();
+            }
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
+    }
+
+    private void stopLoadingImage() {
+
+        loading_imageView.cancelAnimation();
+        loading_imageView.setVisibility(View.INVISIBLE);
+        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
     }
 
 }

@@ -16,6 +16,7 @@
     <string name="email">Dirección de Correo Electrónico</string>
     <string name="password">Contraseña</string>
     <string name="change_language_hint_button">Cambiar Idioma</string>
+    <string name="loading_contentDescription">Cargando</string>
     <!-- Apartado general - Errores -->
     <string name="emptyField">Casilla sin rellenar. Es obligatorio rellenar la(s) casilla(s)</string>
     <string name="required">* Obligatorio</string>
