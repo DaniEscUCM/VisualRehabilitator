@@ -61,8 +61,6 @@
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/drawable/cross_thinner.xml" value="0.152" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/drawable/edit_button.xml" value="0.1635" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eighth_exercise.xml" value="0.1" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eighth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eleventh_exercise.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eleventh_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_exercises.xml" value="0.16666666666666666" />
@@ -195,6 +193,7 @@
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_patient_signup_password.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_patient_signup_username.xml" value="0.146875" />
+        <entry key="app/src/main/res/layout/activity_professional_change_password.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.1318069306930693" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_show_numeric_code.xml" value="0.17760416666666667" />
@@ -203,6 +202,9 @@
         <entry key="app/src/main/res/layout/activity_professional_login.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_professional_page.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_professional_patient_info.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_professional_profile_change_email.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_professional_profile_change_name.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_professional_profile_change_phone.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_professional_singing.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_tenth_exercise_description.xml" value="0.15222772277227722" />

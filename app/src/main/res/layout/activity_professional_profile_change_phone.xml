@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/professional_profile_changePhone_phone_hint"
-            android:inputType="textEmailAddress"
+            android:inputType="phone"
             android:textSize="24sp" />
 
         <androidx.constraintlayout.widget.Guideline

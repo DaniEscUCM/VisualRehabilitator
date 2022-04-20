@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/professional_profile_changeName_name_hint"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:textSize="24sp" />
 
         <androidx.constraintlayout.widget.Guideline
