@@ -207,7 +207,7 @@
     <string name="professional_patientInfo_second_lastName">Last Name</string>
     <string name="professional_patientInfo_gender">Gender</string>
     <string name="professional_patientInfo_date_of_birth">Date of\nbirth</string>
-    <string name="professional_patientInfo_diagnostic">Ophthalmology Diagnostic</string>
+    <string name="professional_patientInfo_diagnostic">Ophthalmology\nDiagnostic</string>
     <string name="professional_patientInfo_av">VA</string>
     <string name="professional_patientInfo_cv">VF</string>
     <string name="professional_patientInfo_observations">Observations</string>

@@ -210,7 +210,7 @@
     <string name="professional_patientInfo_second_lastName">2do Apellido</string>
     <string name="professional_patientInfo_gender">Género</string>
     <string name="professional_patientInfo_date_of_birth">Fecha de\nnacimiento</string>
-    <string name="professional_patientInfo_diagnostic">DiagnósticoOftamólogico</string>
+    <string name="professional_patientInfo_diagnostic">Diagnóstico\nOftamólogico</string>
     <string name="professional_patientInfo_av">AV</string>
     <string name="professional_patientInfo_cv">CV</string>
     <string name="professional_patientInfo_observations">Observaciones</string>

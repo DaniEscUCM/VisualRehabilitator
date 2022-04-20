@@ -25,7 +25,7 @@ public class Patient {
     private int exercises_accomplished;
     private String date_last_test;
     private boolean focusIsOn;
-    private Exercise exercise;
+    private Exercise exercises;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -68,10 +68,9 @@ public class Patient {
         for (int i = 0; i < 33; i++) checkBox.add(false);
 
         hasAccount = false;
-        exercises_accomplished = 0;
         focusIsOn = true;
         date_last_test = "01/01/01";
-        exercise = new Exercise();
+        exercises = new Exercise();
     }
 
     /**** Getters And Setters ****/
@@ -229,11 +228,11 @@ public class Patient {
     }
 
     public Exercise getExercise() {
-        return exercise;
+        return exercises;
     }
 
     public void setExercise(Exercise exercise) {
-        this.exercise = exercise;
+        this.exercises = exercise;
     }
 
     @Override
