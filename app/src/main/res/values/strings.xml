@@ -347,9 +347,9 @@
     <string name="twelfth_exercise_description">The image of a face will appear. Find the specified parts of the face.</string>
     <string name="thirteenth_exercise_description">The image of a living room will appear. Find the specified parts of it.</string>
     <string name="fourteenth_exercise_description">Some circles and red crosses will appear. Find all the crosses. They will turn green when pressed.</string>
-    <string name="fifteenth_exercise_description">Some circles and red crosses will appear. Find all the circles.</string>
-    <string name="sixteenth_exercise_description">Three sentences will appear. Find the specified letters. They will turn green when they are found.</string>
-    <string name="seventeenth_exercise_description">Three sentences will appear. Find the specified letters. The sentences are longer and will not turn green when found.</string>
+    <string name="fifteenth_exercise_description">Some circles and red crosses will appear. Find all the circles. They will turn green when they are touched.</string>
+    <string name="sixteenth_exercise_description">Three sentences will appear. Find the specified letters. They will turn green when they are touched.</string>
+    <string name="seventeenth_exercise_description">Three sentences will appear. Find the specified letters. The sentences are longer and will turn green when they are touched.</string>
     <string name="button_home">Home</string>
     <string name="circle_for_click">Circle</string>
     <string name="triangle_for_click">Triangle</string>
