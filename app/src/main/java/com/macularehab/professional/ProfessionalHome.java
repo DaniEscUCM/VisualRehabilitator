@@ -258,19 +258,19 @@ public class ProfessionalHome extends AppCompatActivity {
             String name = mAuth.getCurrentUser().getDisplayName();
 
             if (name == null) {
-                getPatientNameFromDB();
+                getProfessionalNameFromDB();
             } else if (!name.equals("")) {
                 professional_name_text.setText(mAuth.getCurrentUser().getDisplayName());
             } else {
-                getPatientNameFromDB();
+                getProfessionalNameFromDB();
             }
         }
         else {
-            getPatientNameFromDB();
+            getProfessionalNameFromDB();
         }
     }
 
-    private void getPatientNameFromDB() {
+    private void getProfessionalNameFromDB() {
 
         databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid()).child("name")
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
