@@ -158,6 +158,24 @@ public class ChooseExerciseActivity extends AppCompatActivity {
             }
         });
 
+        Button button_exercise_16 = findViewById(R.id.button_exercise16);
+        button_exercise_16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exercise_id = 15;
+                showResults();
+            }
+        });
+
+        Button button_exercise_17 = findViewById(R.id.button_exercise17);
+        button_exercise_17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exercise_id = 16;
+                showResults();
+            }
+        });
+
         ImageButton back_button = findViewById(R.id.imageButton_back_exerc_menu);
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
