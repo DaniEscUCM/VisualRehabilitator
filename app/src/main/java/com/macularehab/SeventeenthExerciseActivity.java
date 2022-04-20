@@ -2,12 +2,14 @@ package com.macularehab;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageButton;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.exercises.ShowResultActivity;
 
@@ -20,6 +22,11 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
     private boolean o_correct1,o_correct2,o_correct3,o_correct4,o_correct5,o_correct6,o_correct7;
     private boolean v_correct1,v_correct2,v_correct3,v_correct4,v_correct5,v_correct6,v_correct7,v_correct8,v_correct9,v_correct10;
 
+    private ImageButton button_n_correct1,button_n_correct2,button_n_correct3,button_n_correct4,button_n_correct5,button_n_correct6,button_n_correct7,button_n_correct8,button_n_correct9,button_n_correct10;
+    private ImageButton button_o_correct1,button_o_correct2,button_o_correct3,button_o_correct4,button_o_correct5,button_o_correct6,button_o_correct7;
+    private ImageButton button_v_correct1,button_v_correct2,button_v_correct3,button_v_correct4,button_v_correct5,button_v_correct6,button_v_correct7,button_v_correct8,button_v_correct9,button_v_correct10;
+
+    private long time_left;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +40,22 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
+        ImageButton button_home = findViewById(R.id.home_button);
+        button_home.setOnClickListener(v -> Close(v));
+
         counterCorrect = counterFailed = 0;
         num_miliseconds = SeventeenthExerciseDescriptionActivity.getNumSeconds() * 1000;
         //SEQUENCE N:
-        ImageButton button_n_correct1 = findViewById(R.id.button_n_correct1);
-        ImageButton button_n_correct2 = findViewById(R.id.button_n_correct2);
-        ImageButton button_n_correct3 = findViewById(R.id.button_n_correct3);
-        ImageButton button_n_correct4 = findViewById(R.id.button_n_correct4);
-        ImageButton button_n_correct5 = findViewById(R.id.button_n_correct5);
-        ImageButton button_n_correct6 = findViewById(R.id.button_n_correct6);
-        ImageButton button_n_correct7 = findViewById(R.id.button_n_correct7);
-        ImageButton button_n_correct8 = findViewById(R.id.button_n_correct8);
-        ImageButton button_n_correct9 = findViewById(R.id.button_n_correct9);
-        ImageButton button_n_correct10 = findViewById(R.id.button_n_correct10);
+         button_n_correct1 = findViewById(R.id.button_n_correct1);
+         button_n_correct2 = findViewById(R.id.button_n_correct2);
+         button_n_correct3 = findViewById(R.id.button_n_correct3);
+         button_n_correct4 = findViewById(R.id.button_n_correct4);
+         button_n_correct5 = findViewById(R.id.button_n_correct5);
+         button_n_correct6 = findViewById(R.id.button_n_correct6);
+         button_n_correct7 = findViewById(R.id.button_n_correct7);
+         button_n_correct8 = findViewById(R.id.button_n_correct8);
+         button_n_correct9 = findViewById(R.id.button_n_correct9);
+         button_n_correct10 = findViewById(R.id.button_n_correct10);
         ImageButton button_n_incorrect1 = findViewById(R.id.button_n_incorrect1);
         ImageButton button_n_incorrect2 = findViewById(R.id.button_n_incorrect2);
         ImageButton button_n_incorrect3 = findViewById(R.id.button_n_incorrect3);
@@ -55,13 +65,13 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         ImageButton button_n_incorrect7 = findViewById(R.id.button_n_incorrect7);
 
         //SEQUENCE O:
-        ImageButton button_o_correct1 = findViewById(R.id.button_o_correct1);
-        ImageButton button_o_correct2 = findViewById(R.id.button_o_correct2);
-        ImageButton button_o_correct3 = findViewById(R.id.button_o_correct3);
-        ImageButton button_o_correct4 = findViewById(R.id.button_o_correct4);
-        ImageButton button_o_correct5 = findViewById(R.id.button_o_correct5);
-        ImageButton button_o_correct6 = findViewById(R.id.button_o_correct6);
-        ImageButton button_o_correct7 = findViewById(R.id.button_o_correct7);
+         button_o_correct1 = findViewById(R.id.button_o_correct1);
+         button_o_correct2 = findViewById(R.id.button_o_correct2);
+         button_o_correct3 = findViewById(R.id.button_o_correct3);
+         button_o_correct4 = findViewById(R.id.button_o_correct4);
+         button_o_correct5 = findViewById(R.id.button_o_correct5);
+         button_o_correct6 = findViewById(R.id.button_o_correct6);
+         button_o_correct7 = findViewById(R.id.button_o_correct7);
         ImageButton button_o_incorrect1 = findViewById(R.id.button_o_incorrect1);
         ImageButton button_o_incorrect2 = findViewById(R.id.button_o_incorrect2);
         ImageButton button_o_incorrect3 = findViewById(R.id.button_o_incorrect3);
@@ -70,16 +80,16 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         ImageButton button_o_incorrect6 = findViewById(R.id.button_o_incorrect6);
 
         //SEQUENCE V:
-        ImageButton button_v_correct1 = findViewById(R.id.button_v_correct1);
-        ImageButton button_v_correct2 = findViewById(R.id.button_v_correct2);
-        ImageButton button_v_correct3 = findViewById(R.id.button_v_correct3);
-        ImageButton button_v_correct4 = findViewById(R.id.button_v_correct4);
-        ImageButton button_v_correct5 = findViewById(R.id.button_v_correct5);
-        ImageButton button_v_correct6 = findViewById(R.id.button_v_correct6);
-        ImageButton button_v_correct7 = findViewById(R.id.button_v_correct7);
-        ImageButton button_v_correct8 = findViewById(R.id.button_v_correct8);
-        ImageButton button_v_correct9 = findViewById(R.id.button_v_correct9);
-        ImageButton button_v_correct10 = findViewById(R.id.button_v_correct10);
+         button_v_correct1 = findViewById(R.id.button_v_correct1);
+         button_v_correct2 = findViewById(R.id.button_v_correct2);
+         button_v_correct3 = findViewById(R.id.button_v_correct3);
+         button_v_correct4 = findViewById(R.id.button_v_correct4);
+         button_v_correct5 = findViewById(R.id.button_v_correct5);
+         button_v_correct6 = findViewById(R.id.button_v_correct6);
+         button_v_correct7 = findViewById(R.id.button_v_correct7);
+         button_v_correct8 = findViewById(R.id.button_v_correct8);
+         button_v_correct9 = findViewById(R.id.button_v_correct9);
+         button_v_correct10 = findViewById(R.id.button_v_correct10);
         ImageButton button_v_incorrect1 = findViewById(R.id.button_v_incorrect1);
         ImageButton button_v_incorrect2 = findViewById(R.id.button_v_incorrect2);
         ImageButton button_v_incorrect3 = findViewById(R.id.button_v_incorrect3);
@@ -94,6 +104,7 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         v_correct1 = v_correct2 = v_correct3 = v_correct4 = v_correct5 = true;
         v_correct6 = v_correct7 = v_correct8 = v_correct9 = v_correct10 = true;
 
+        time_left=num_miliseconds;
         startTimer();
 
         //SEQUENCE N:
@@ -504,52 +515,79 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         finish();
     }
     private void resume(){
-        /*if(isOn){
-            if(hiden){
-                startTimerFoco(button_1,button_2);
-            }
-            else{
-                focus_1.setVisibility(View.VISIBLE);
-                focus_2.setVisibility(View.VISIBLE);
-                startTimer();
-                startTimer_button2();
-            }
-        }
-        else{
-            focus_1.setVisibility(View.INVISIBLE);
-            focus_2.setVisibility(View.INVISIBLE);
-            if(hiden){
-                hiden=false;
-                button_1.setVisibility(View.VISIBLE);
-                button_2.setVisibility(View.VISIBLE);
-                move_button_1();
-                move_button_2();
-            }
-            startTimer();
-            startTimer_button2();
-        }
-        button_1.setClickable(true);
-        button_2.setClickable(true);
+        startTimer();
+        unblock_buttons();
         ConstraintLayout menu=findViewById(R.id.menu);
-        menu.setVisibility(View.GONE);*/
+        menu.setVisibility(View.GONE);
+    }
+
+    private void unblock_buttons() {
+        button_n_correct1.setClickable(true);
+        button_n_correct2.setClickable(true);
+        button_n_correct3.setClickable(true);
+        button_n_correct4.setClickable(true);
+        button_n_correct5.setClickable(true);
+        button_n_correct6.setClickable(true);
+        button_n_correct7.setClickable(true);
+        button_n_correct8.setClickable(true);
+        button_n_correct9.setClickable(true);
+        button_n_correct10.setClickable(true);
+        button_o_correct1.setClickable(true);
+        button_o_correct2.setClickable(true);
+        button_o_correct3.setClickable(true);
+        button_o_correct4.setClickable(true);
+        button_o_correct5.setClickable(true);
+        button_o_correct6.setClickable(true);
+        button_o_correct7.setClickable(true);
+        button_v_correct1.setClickable(true);
+        button_v_correct2.setClickable(true);
+        button_v_correct3.setClickable(true);
+        button_v_correct4.setClickable(true);
+        button_v_correct5.setClickable(true);
+        button_v_correct6.setClickable(true);
+        button_v_correct7.setClickable(true);
+        button_v_correct9.setClickable(true);
+        button_v_correct10.setClickable(true);
     }
 
     private void pause_menu(){
-        /*if(hiden){
-            timer_focus.cancel();
-        }else{
-            timer_1.cancel();
-            timer_2.cancel();
-        }
-        button_1.setClickable(false);
-        button_2.setClickable(false);
+        timer_1.cancel();
+        block_buttons();
         ConstraintLayout menu=findViewById(R.id.menu);
-        menu.setVisibility(View.VISIBLE);*/
+        menu.setVisibility(View.VISIBLE);
     }
 
+    private void block_buttons() {
+        button_n_correct1.setClickable(false);
+        button_n_correct2.setClickable(false);
+        button_n_correct3.setClickable(false);
+        button_n_correct4.setClickable(false);
+        button_n_correct5.setClickable(false);
+        button_n_correct6.setClickable(false);
+        button_n_correct7.setClickable(false);
+        button_n_correct8.setClickable(false);
+        button_n_correct9.setClickable(false);
+        button_n_correct10.setClickable(false);
+        button_o_correct1.setClickable(false);
+        button_o_correct2.setClickable(false);
+        button_o_correct3.setClickable(false);
+        button_o_correct4.setClickable(false);
+        button_o_correct5.setClickable(false);
+        button_o_correct6.setClickable(false);
+        button_o_correct7.setClickable(false);
+        button_v_correct1.setClickable(false);
+        button_v_correct2.setClickable(false);
+        button_v_correct3.setClickable(false);
+        button_v_correct4.setClickable(false);
+        button_v_correct5.setClickable(false);
+        button_v_correct6.setClickable(false);
+        button_v_correct7.setClickable(false);
+        button_v_correct9.setClickable(false);
+        button_v_correct10.setClickable(false);
+    }
     private void startTimer() {
-        timer_1 = new CountDownTimer(num_miliseconds, 1000) {
-            public void onTick(long millisUntilFinished) { }
+        timer_1 = new CountDownTimer(time_left, 1000) {
+            public void onTick(long millisUntilFinished) {time_left=millisUntilFinished; }
             public void onFinish() {
                 if(counterCorrect != 0 || counterFailed != 0) {
                     counterFailed = counterFailed + maxCorrect - counterCorrect;
@@ -568,6 +606,7 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
     }
 
     public void Close(View view) {
+        timer_1.cancel();
         finish();
     }
 

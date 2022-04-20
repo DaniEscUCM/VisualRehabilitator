@@ -44,7 +44,6 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
             button_v_correct1, button_v_correct2, button_v_correct3, button_v_correct4, button_v_correct5, button_v_correct6,
             button_v_correct7, button_v_correct9, button_v_correct10;
 
-    private boolean dot=false;
     private long time_left=5000;
 
     @Override
@@ -52,10 +51,6 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sixteenth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
-        String filenameCurrentUser = "CurrentPatient.json";
-        ReadInternalStorage readIS = new ReadInternalStorage();
-        patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
 
         ImageButton button_pause = findViewById(R.id.pause_button);
         button_pause.setOnClickListener(v -> pause_menu());
