@@ -85,7 +85,7 @@
         android:id="@+id/textView_insertseconds"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/seconds_description_letter"
+        android:text="@string/seconds_description_instructions"
         android:textAlignment="textEnd"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"

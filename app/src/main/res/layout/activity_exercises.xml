@@ -231,6 +231,29 @@
                 android:text="@string/fifteenth_exercise"
                 android:textAlignment="viewStart"
                 android:textSize="48sp" />
+            <Button
+                android:id="@+id/button_exercise16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:backgroundTint="@color/pink_dark"
+                android:clickable="true"
+                android:contentDescription="@string/sixteenth_exercise"
+                android:focusable="true"
+                android:text="@string/sixteenth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
+            <Button
+                android:id="@+id/button_exercise17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:clickable="true"
+                android:contentDescription="@string/seventeenth_exercise"
+                android:focusable="true"
+                android:text="@string/seventeenth_exercise"
+                android:textAlignment="viewStart"
+                android:textSize="48sp" />
         </LinearLayout>
     </ScrollView>
     <androidx.constraintlayout.widget.Guideline

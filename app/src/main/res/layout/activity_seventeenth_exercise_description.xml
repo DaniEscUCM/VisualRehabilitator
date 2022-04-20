@@ -2,45 +2,33 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/twelfth_exercise_description"
+    android:id="@+id/seventeenth_exercise_description"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".TwelfthExerciseDescriptionActivity">
-
-
-    <Switch
-        android:id="@+id/focus_switch"
-        android:layout_width="394dp"
-        android:layout_height="73dp"
-        android:text="@string/focus_switch"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline24"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".SeventeenthExerciseDescriptionActivity">
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#FFFFFF"
-        android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        android:contentDescription="@string/imagebutton_des_back"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:srcCompat="?attr/actionModeCloseDrawable"/>
 
     <TextView
         android:id="@+id/exerciseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/twelfth_exercise"
+        android:layout_marginStart="40dp"
+        android:text="@string/seventeenth_exercise"
         android:textAlignment="viewStart"
-        android:textSize="60sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -65,24 +53,25 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/twelfth_exercise_description"
+        android:text="@string/seventeenth_exercise_description"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <EditText
         android:id="@+id/seconds"
-        android:layout_width="170dp"
-        android:layout_height="102dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
         android:autofillHints="@strings/seconds"
         android:background="@drawable/border_seconds"
         android:hint="@string/seconds"
         android:inputType="number"
-        android:text="@string/num_seconds"
+        android:text="@string/num_seconds_whole_exercise_90s"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView_insertseconds"
@@ -95,7 +84,7 @@
         android:id="@+id/textView_insertseconds"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/seconds_description_instructions"
+        android:text="@string/seconds_description_whole_exercise"
         android:textAlignment="textEnd"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
@@ -130,13 +119,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.90" />
+
+    <Switch
+        android:id="@+id/focus_switch"
+        android:layout_width="394dp"
+        android:layout_height="73dp"
+        android:text="@string/focus_switch"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline24"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.50" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"

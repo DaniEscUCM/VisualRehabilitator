@@ -31,15 +31,13 @@ import java.util.HashMap;
 public class SixteenthExerciseActivity extends AppCompatActivity {
 
     private final int exercise_id = 15, maxCorrect = 21;
-    private int counterCorrect, counterFailed, num_miliseconds, metric_unit, size, total=0;
+    private int counterCorrect, counterFailed, num_miliseconds, total=0;
     private CountDownTimer timer_1 = null;
     private HashMap<String, Object> patientHashMap;
     private boolean n_correct1,n_correct2,n_correct3,n_correct4,n_correct5,n_correct6,n_correct7;
     private boolean o_correct1,o_correct2,o_correct3,o_correct4,o_correct5,o_correct6;
     private boolean v_correct1,v_correct2,v_correct3,v_correct4,v_correct5,v_correct6,v_correct7,v_correct9,v_correct10;
-    private String filenameCurrentUser = "CurrentPatient.json";
 
-    private final String isFocus = "focusIsOn";
     private Button button_n_correct1, button_n_correct2, button_n_correct3, button_n_correct4, button_n_correct5,
             button_n_correct6, button_n_correct7,
             button_o_correct1, button_o_correct2, button_o_correct3, button_o_correct4, button_o_correct5, button_o_correct6,
@@ -55,6 +53,7 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sixteenth_exercise);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        String filenameCurrentUser = "CurrentPatient.json";
         ReadInternalStorage readIS = new ReadInternalStorage();
         patientHashMap = readIS.read(getApplicationContext(), filenameCurrentUser);
 
@@ -117,14 +116,6 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
         Button button_v_incorrect4 = findViewById(R.id.button_v_incorrect4);
         Button button_v_incorrect5 = findViewById(R.id.button_v_incorrect5);
         Button button_v_incorrect6 = findViewById(R.id.button_v_incorrect6);
-
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-        DisplayMetrics display = this.getResources().getDisplayMetrics();
-        metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
-        size = metric_unit * 20;//10cm
 
 
         //start exercise

@@ -258,6 +258,12 @@
             android:name=".SixteenthExerciseDescriptionActivity"
             android:exported="false" />
         <activity
+            android:name=".SeventeenthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SeventeenthExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".exercises.ShowResultActivity"
             android:exported="false" />
         <activity
