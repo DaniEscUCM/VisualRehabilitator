@@ -13,8 +13,11 @@
     <color name="grey_dark">#5C5757</color>
     <color name="red">#CA2020</color>
     <color name="yellow">#FFEB3B</color>
+    <color name="orange_dark">#ff6200</color>
     <color name="orange">#FFA500</color>
-    <color name="blue_light">#40afe3</color>
-
+    <color name="blue_light">#00fff2</color>
+    <color name="blue_dark">#004cff</color>
+    <color name="green_light">#5eeb5e</color>
+    <color name="green">#00FF00</color>
 
 </resources>

@@ -71,6 +71,8 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     @Override
     public void onBindViewHolder(@NonNull PatientViewHolder holder, int position) {
 
+        Resources resources = context.getResources();
+
         String patient_uid = " ";
         patient_uid += patientList.get(position).getPatient_uid();
         String patient_name = " ";
@@ -94,17 +96,23 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         }
 
         holder.card_patient_progress_bar.setProgress(progress);
-        if (progress <= 30) {
-            progressDrawable.setColorFilter(Color.parseColor("#FFA500"), PorterDuff.Mode.SRC_IN);
+        if (progress < 20) {
+            progressDrawable.setColorFilter(resources.getColor(R.color.orange_dark), PorterDuff.Mode.SRC_IN);
         }
-        else if (progress < 60) {
-            progressDrawable.setColorFilter(Color.parseColor("#ADD8E6"), PorterDuff.Mode.SRC_IN);
+        else if (progress < 40) {
+            progressDrawable.setColorFilter(resources.getColor(R.color.orange), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 55) {
+            progressDrawable.setColorFilter(resources.getColor(R.color.blue_light), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 65) {
+            progressDrawable.setColorFilter(resources.getColor(R.color.blue_dark), PorterDuff.Mode.SRC_IN);
         }
         else if (progress < 80) {
-            progressDrawable.setColorFilter(Color.parseColor("#90EE90"), PorterDuff.Mode.SRC_IN);
+            progressDrawable.setColorFilter(resources.getColor(R.color.green_light), PorterDuff.Mode.SRC_IN);
         }
         else {
-            progressDrawable.setColorFilter(Color.parseColor("#00FF00"), PorterDuff.Mode.SRC_IN);
+            progressDrawable.setColorFilter(resources.getColor(R.color.green), PorterDuff.Mode.SRC_IN);
         }
 
         holder.card_patient_progress_bar.setProgressDrawable(progressDrawable);

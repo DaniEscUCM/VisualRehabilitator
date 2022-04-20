@@ -181,7 +181,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         Double num_completed1 = (Double) exercise.get("exercises_completed");
 
         int num_completed = num_completed1.intValue();
-        int progress = num_completed*100/17;
+        int progress = num_completed*100/num_exercises;
 
         if (progress > 100) {
             progress = 100;
@@ -190,23 +190,23 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
         Drawable progressDrawable = progressBar.getProgressDrawable();
 
         progressBar.setProgress(progress);
-        if (progress <= 30) {
-            progressDrawable.setColorFilter(this.getResources().getColor(R.color.orange), PorterDuff.Mode.SRC_IN);
-            progressBar.setProgressTintList(ColorStateList.valueOf(this.getResources().getColor(R.color.orange)));
-            //progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#FFA500")));
+        if (progress < 20) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.orange_dark), PorterDuff.Mode.SRC_IN);
         }
-        else if (progress < 60) {
-            progressDrawable.setColorFilter(Color.parseColor("#ADD8E6"), PorterDuff.Mode.SRC_IN);
-            //progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#ADD8E6")));
-            //progressBar.setProgressTintList(ColorStateList.valueOf(this.getResources().getColor(R.color.blue_light)));
+        else if (progress < 40) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.orange), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 55) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.blue_light), PorterDuff.Mode.SRC_IN);
+        }
+        else if (progress < 65) {
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.blue_dark), PorterDuff.Mode.SRC_IN);
         }
         else if (progress < 80) {
-            //progressDrawable.setColorFilter(Color.parseColor("#90EE90"), PorterDuff.Mode.SRC_IN);
-            progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#90EE90")));
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.green_light), PorterDuff.Mode.SRC_IN);
         }
         else {
-            //progressDrawable.setColorFilter(Color.parseColor("#00FF00"), PorterDuff.Mode.SRC_IN);
-            progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#00FF00")));
+            progressDrawable.setColorFilter(this.getResources().getColor(R.color.green), PorterDuff.Mode.SRC_IN);
         }
         progressBar.setProgressDrawable(progressDrawable);
 
