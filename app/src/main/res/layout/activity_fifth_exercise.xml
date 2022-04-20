@@ -36,8 +36,8 @@
         android:layout_width="57dp"
         android:layout_height="57dp"
         android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
         android:clickable="true"
+        android:contentDescription="@string/button_for_click"
         android:focusable="true"
         android:scaleType="fitCenter"
         android:text="@string/letter"
@@ -46,7 +46,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:contentDescription="find" />
 
     <ImageView
         android:id="@+id/foco"
