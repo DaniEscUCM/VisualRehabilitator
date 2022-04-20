@@ -10,6 +10,7 @@
     <string name="message_error">Error! Try Again Later</string>
     <string name="email">Email Address</string>
     <string name="password">Password</string>
+    <string name="change_language_hint_button">Change Language</string>
     <!-- General Section - Errors -->
     <string name="emptyField">Field is empty. Is required to fill out</string>
     <string name="required">* Required</string>
