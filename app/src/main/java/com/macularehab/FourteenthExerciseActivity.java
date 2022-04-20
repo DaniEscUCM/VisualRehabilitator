@@ -7,8 +7,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.DisplayMetrics;
-import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -16,14 +14,9 @@ import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
-import com.google.gson.internal.LinkedTreeMap;
-import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
-import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class FourteenthExerciseActivity extends AppCompatActivity {
@@ -102,31 +95,8 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         button_cross6_3 = findViewById(R.id.cross6_3);
         button_cross6_4 = findViewById(R.id.cross6_4);
 
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-        DisplayMetrics display = this.getResources().getDisplayMetrics();
-        metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
-        size = metric_unit * 20;//10cm
-        focus = findViewById(R.id.foco);
-        focus.getLayoutParams().width = size;
-        focus.getLayoutParams().height = size;
-        focus.requestLayout();
-        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(btm_manual_left);
-        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-        all_dots.draw(canvas);
-        focus.setImageBitmap(btm_manual_left);
-
-        if(focus_on) {
-            focus_function();
-        }
-        else {
-            time_left=num_miliseconds;
-            focus.setVisibility(View.INVISIBLE);
-            startTimer();
-        }
+        time_left=num_miliseconds;
+        startTimer();
 
         cross1_1 = cross1_2 = cross1_3 = cross1_4 = true;
         cross2_1 = cross2_2 = cross2_3 = cross2_4 = true;
@@ -482,26 +452,10 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
+
     private void resume(){
-        if(focus_on){
-            if(dot){
-                startTimerFoco();
-            }
-            else{
-                focus.setVisibility(View.VISIBLE);
-                startTimer();
-            }
-        }
-        else{
-            focus.setVisibility(View.INVISIBLE);
-            if(dot){
-                dot=false;
-            }
-            startTimer();
-        }
+        startTimer();
         unblock_buttons();
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.GONE);
@@ -512,29 +466,6 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         block_buttons();
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);
-    }
-
-
-    private void saveFocusOn(){
-        new SaveFocusInfo(getApplicationContext(), focus_on);
-    }
-    private void startTimerFoco() {
-        dot=true;
-        timer_1 = new CountDownTimer(time_left, 1000) {
-            public void onTick(long millisUntilFinished) {time_left=millisUntilFinished; }
-            public void onFinish() {
-                dot=false;
-                time_left=num_miliseconds;
-                startTimer();
-            }
-        };
-        timer_1.start();
-    }
-
-    private void focus_function () {
-        ImageView focus = findViewById(R.id.foco);
-        focus.setVisibility(View.VISIBLE);
-        startTimerFoco();
     }
 
     private void block_buttons(){
@@ -612,6 +543,7 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
     }
 
     public void Close() {
+        counterCorrect = 0;
         timer_1.cancel();
         finish();
     }
@@ -623,7 +555,6 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
     }
 
     private void showResults(int correct, int failed) {
-        saveFocusOn();
         Intent resultIntent = new Intent(this, ShowResultActivity.class);
         resultIntent.putExtra("numCorrect", correct);
         resultIntent.putExtra("numFailed", failed);

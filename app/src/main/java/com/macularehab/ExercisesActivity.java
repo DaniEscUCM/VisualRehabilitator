@@ -215,7 +215,7 @@ public class ExercisesActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void fifteenth_exercise(View view){
-        Intent i = new Intent( this, SixteenthExerciseDescriptionActivity.class );
+        Intent i = new Intent( this, FifteenthExerciseDescriptionActivity.class );
         startActivity(i);
     }
     public void sixteenth_exercise(View view){
