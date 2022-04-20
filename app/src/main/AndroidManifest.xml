@@ -252,6 +252,12 @@
             android:name=".FourteenthExerciseDescriptionActivity"
             android:exported="false" />
         <activity
+            android:name=".FifteenthExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FifteenthExerciseDescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".SixteenthExerciseActivity"
             android:exported="true" />
         <activity

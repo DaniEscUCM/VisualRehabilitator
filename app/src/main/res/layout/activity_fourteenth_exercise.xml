@@ -44,20 +44,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/circle_line" />
 
-    <ImageView
-        android:id="@+id/foco"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:contentDescription="@string/foco"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/circle_1"
-        app:layout_constraintEnd_toEndOf="@+id/circle_1"
-        app:layout_constraintStart_toStartOf="@+id/circle_1"
-        app:layout_constraintTop_toTopOf="@+id/circle_1"
-        app:srcCompat="@drawable/circle_black"
-        app:tint="@color/red" />
-
-
     <ImageButton
         android:id="@+id/cross1.1"
         android:layout_width="65dp"
