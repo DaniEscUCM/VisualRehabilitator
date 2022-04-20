@@ -3,6 +3,7 @@ package com.macularehab.professional.account;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -43,6 +45,9 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     Professional prof;
     final boolean[] encontrado = {false,false}; //[0]name in db [1]pasw correct
+
+    private LottieAnimationView loading_imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +87,11 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                 goToRestorePasswordActivity();
             }
         });
+
+        loading_imageView = findViewById(R.id.professional_logIn_loading_image);
+
+        showLoadingImage();
+        //setImagesInvisible();
     }
 
     @Override
@@ -304,4 +314,37 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         startActivity(forgotPasswordIntent);
     }
 
+    private void setImagesInvisible() {
+
+        loading_imageView.setVisibility(View.INVISIBLE);
+    }
+
+    private void showLoadingImage() {
+
+        loading_imageView.setVisibility(View.VISIBLE);
+        loading_imageView.setAnimation(R.raw.loading_rainbow);
+        loading_imageView.playAnimation();
+        loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                loading_imageView.playAnimation();
+            }
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
+    }
+
+    public void stopLoadingImage() {
+
+        loading_imageView.cancelAnimation();
+        loading_imageView.setVisibility(View.INVISIBLE);
+        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
+    }
 }

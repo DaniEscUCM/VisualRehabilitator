@@ -93,6 +93,8 @@ public class LogIn {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
 
+                    professionalLoginActivity.stopLoadingImage();
+
                     //task.getResult()
                     if (!task.isSuccessful()) {
                         Log.e("firebase", "Error getting data", task.getException());
@@ -112,8 +114,12 @@ public class LogIn {
                     }
                 }
             });
+
             return false;
         }
+
+        professionalLoginActivity.stopLoadingImage();
+
         return false;
     }
 
