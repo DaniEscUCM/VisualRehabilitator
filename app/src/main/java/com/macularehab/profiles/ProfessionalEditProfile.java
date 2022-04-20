@@ -130,6 +130,24 @@ public class ProfessionalEditProfile extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getProfessionalPhoto();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getProfessionalPhoto();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        getProfessionalPhoto();
+    }
+
     private void getProfessionalPhoto() {
 
         if (mAuth.getCurrentUser().getPhotoUrl() != null) {
