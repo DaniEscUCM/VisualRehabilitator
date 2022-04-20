@@ -31,17 +31,25 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.12109375" />
 
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
     <TextView
         android:id="@+id/text_find_n"
-        android:layout_width="800dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_n"
         android:textColor="@color/black"
         android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:textStyle="bold" />
 
     <TextView
@@ -303,17 +311,15 @@
 
     <TextView
         android:id="@+id/text_find_o"
-        android:layout_width="800dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_o"
         android:textColor="@color/black"
         android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_find_n"
-        app:layout_constraintVertical_bias="0.413"
         tools:textStyle="bold" />
 
     <TextView
@@ -515,17 +521,16 @@
 
     <TextView
         android:id="@+id/text_find_v"
-        android:layout_width="800dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_v"
         android:textColor="@color/black"
         android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_find_n"
-        app:layout_constraintVertical_bias="0.788"
         tools:textStyle="bold" />
 
     <TextView
@@ -803,6 +808,7 @@
         app:layout_constraintBottom_toTopOf="@+id/text_sequence_n"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -810,6 +816,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_sequence_n" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -817,6 +824,7 @@
         app:layout_constraintBottom_toTopOf="@+id/text_sequence_o"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -933,7 +941,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
