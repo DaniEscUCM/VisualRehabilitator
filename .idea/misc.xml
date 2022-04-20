@@ -165,6 +165,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
+        <entry key="app/src/main/res/layout/activity_exercise_results_history.xml" value="0.1018976897689769" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise_description.xml" value="0.12911184210526316" />

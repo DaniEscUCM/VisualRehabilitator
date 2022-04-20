@@ -44,15 +44,22 @@ public class ExerciseResultHistory extends AppCompatActivity {
     private Resources resources;
 
     private final Float BOTTOM_TEXT_SIZE = 20f;
-    private final Float LABEL_TEXT_SIZE = 20f;
-    private final Float TOP_TEXT_SIZE = 10f;
+    private final Float LABEL_TEXT_SIZE = 40f;
+    private final Float TOP_TEXT_SIZE = 30f;
     private final Float GROUP_SPACE = 0.16f;
     private final Float BAR_SPACE = 0.02f;
     private final Float BAR_WIDTH = 0.4f;
-    private final Float FROM_X = -0.8f;
+    private final Float FROM_X = 0f;
     private final Float GRANULARITY = 1f;
+    private final Float AXIS_MINIMUM = 0f;
+    private final Float BAR_LABEL_TEXT_SIZE = 20f;
+    private final Float DESCRIPTION_TEXT_SIZE = 50f;
+    private final Float SPACE_BETWEEN_LEGENDS = 50f;
+    private final int DATA_MIN = 0;
     private final int DURATION_MILLIS = 2000;
     private final int ROTATION_ANGLE = 0;
+    private final int DIRECTION = 1;
+    private final int NUM_MAX_VISIBLE = 5;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,13 +91,14 @@ public class ExerciseResultHistory extends AppCompatActivity {
         BarDataSet barDataSetFailed = new BarDataSet(barEntryArrayListFailed, resources.getString(R.string.exercises_resultHistory_failed));
 
         barDataSetCorrects.setColors(Color.BLUE);
-        barDataSetCorrects.setValueTextSize(10f);
+        barDataSetCorrects.setValueTextSize(BAR_LABEL_TEXT_SIZE);
         barDataSetFailed.setColors(Color.RED);
-        barDataSetFailed.setValueTextSize(10f);
+        barDataSetFailed.setValueTextSize(BAR_LABEL_TEXT_SIZE);
         Description description = new Description();
         description.setText(resources.getString(R.string.exercises_resultHistory_trials));
-        description.setTextSize(BOTTOM_TEXT_SIZE);
+        //description.setTextSize(BOTTOM_TEXT_SIZE);
         description.setTextColor(Color.BLACK);
+        description.setTextSize(DESCRIPTION_TEXT_SIZE);
         barChart.setDescription(description);
 
         BarData barData = new BarData(barDataSetCorrects, barDataSetFailed);
@@ -101,16 +109,17 @@ public class ExerciseResultHistory extends AppCompatActivity {
         float barWidth = BAR_WIDTH;
 
         barData.setBarWidth(barWidth);
-        barChart.groupBars(0, groupSpace, barSpace);
+        barChart.groupBars(FROM_X, groupSpace, barSpace);
         //barChart.announceForAccessibility();
-        barChart.canScrollHorizontally(1);
+        barChart.canScrollHorizontally(DIRECTION);
         barChart.setDragEnabled(true);
-        barChart.setVisibleXRangeMaximum(5);
+        barChart.setVisibleXRangeMaximum(NUM_MAX_VISIBLE);
 
         Legend legend = barChart.getLegend();
         legend.setTextSize(LABEL_TEXT_SIZE);
         legend.setTextColor(Color.BLACK);
         legend.setForm(Legend.LegendForm.SQUARE);
+        legend.setXEntrySpace(SPACE_BETWEEN_LEGENDS);
 
         //Axis
         XAxis xAxis = barChart.getXAxis();
@@ -122,11 +131,11 @@ public class ExerciseResultHistory extends AppCompatActivity {
         xAxis.setGranularity(GRANULARITY);
         xAxis.setLabelCount(labelNames.size());
         xAxis.setLabelRotationAngle(ROTATION_ANGLE);
-        xAxis.calculate(0, barEntryArrayListCorrects.size());
+        xAxis.calculate(DATA_MIN, barEntryArrayListCorrects.size());
         xAxis.setCenterAxisLabels(true);
-        xAxis.setAxisMinimum(0f);
+        xAxis.setAxisMinimum(AXIS_MINIMUM);
         xAxis.setAxisMaximum(barEntryArrayListCorrects.size());
-        xAxis.setTextSize(20f);
+        xAxis.setTextSize(TOP_TEXT_SIZE);
 
         barChart.setDrawBorders(true);
         barChart.animateY(DURATION_MILLIS);
