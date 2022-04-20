@@ -195,17 +195,20 @@ public class ProfessionalHome extends AppCompatActivity {
 
         if (!map.isEmpty()) {
             for (Map.Entry<String, Object> entry : map.entrySet()) {
-
-                //HashMap<String, Object> hashMap = (HashMap<String, Object>) entry.getValue();
+                
                 LinkedTreeMap<String, Object> hashMap = (LinkedTreeMap<String, Object>) entry.getValue();
 
                 Patient patient = new Patient();
-                patient.setPatient_uid(entry.getKey());
+                /*patient.setPatient_uid(entry.getKey());
                 patient.setName((String) hashMap.get("name"));
                 patient.setFirst_lastName((String) hashMap.get("first_lastName"));
                 if (hashMap.containsKey("date_last_test")) {
                     patient.setDate_last_test(hashMap.get("date_last_test").toString());
-                }
+                }*/
+                Gson gson = new Gson();
+                String data = gson.toJson(hashMap);
+                patient = gson.fromJson(data, Patient.class);
+                patient.setPatient_uid(entry.getKey());
                 //patient.setSecond_lastName((String) hashMap.get("second_lastName"));
 
                 patientList.add(patient);
