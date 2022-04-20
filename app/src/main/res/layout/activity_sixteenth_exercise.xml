@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FifteenthExerciseActivity">
+    tools:context=".SixteenthExerciseActivity">
 
     <ImageButton
         android:id="@+id/pause_button"
@@ -33,36 +33,16 @@
 
     <TextView
         android:id="@+id/text_find_n"
-        android:layout_width="800dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_n"
         android:textColor="@color/black"
         android:textSize="30dp"
-        app:layout_constraintBaseline_toTopOf="@id/guideline37"
+        app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:textStyle="bold" />
-
-
-    <Button
-        android:id="@+id/button_n_incorrect6"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:minWidth="0dp"
-        android:scaleType="fitCenter"
-        android:text="@string/m_letter"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        app:layout_constraintStart_toEndOf="@+id/button_n_correct7"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"
-        app:srcCompat="@drawable/border_rectangle_v2" />
 
     <Button
         android:id="@+id/button_n_incorrect2"
@@ -78,8 +58,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_correct4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct3"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_correct4"
@@ -94,8 +76,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect2"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_incorrect1"
@@ -111,8 +95,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct1"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"/>
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_correct6"
@@ -128,8 +114,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect5"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct5"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_incorrect5"
@@ -145,26 +133,11 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_correct7"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct6"
         app:layout_constraintTop_toBottomOf="@+id/text_find_n"
         app:srcCompat="@drawable/border_rectangle_v2" />
-
-    <Button
-        android:id="@+id/button_n_correct10"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:minWidth="0dp"
-        android:scaleType="fitCenter"
-        android:text="@string/n_letter"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        app:layout_constraintStart_toEndOf="@+id/button_n_correct9"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"/>
 
     <Button
         android:id="@+id/button_n_correct2"
@@ -179,8 +152,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_correct3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect4"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_correct7"
@@ -188,6 +163,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
@@ -196,6 +172,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect5"
         app:layout_constraintTop_toBottomOf="@+id/text_find_n"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -203,8 +181,9 @@
     <Button
         android:id="@+id/button_n_correct1"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/button_for_click"
@@ -213,8 +192,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline38"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
+        app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_correct3"
@@ -230,23 +211,11 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct2"
         app:layout_constraintTop_toBottomOf="@+id/text_find_n"
         app:srcCompat="@drawable/border_rectangle_v2" />
-
-    <ImageView
-        android:id="@+id/focus_n"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:contentDescription="@string/foco"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/button_n_correct1"
-        app:layout_constraintEnd_toEndOf="@+id/button_n_correct1"
-        app:layout_constraintStart_toStartOf="@+id/button_n_correct1"
-        app:layout_constraintTop_toTopOf="@+id/button_n_correct1"
-        app:layout_constraintVertical_bias="0.523"
-        app:srcCompat="@drawable/circle_black"
-        app:tint="@color/red" />
 
     <Button
         android:id="@+id/button_n_incorrect3"
@@ -262,26 +231,11 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_correct5"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct4"
         app:layout_constraintTop_toBottomOf="@+id/text_find_n"
         app:srcCompat="@drawable/border_rectangle_v2" />
-
-    <Button
-        android:id="@+id/button_n_correct9"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:minWidth="0dp"
-        android:scaleType="fitCenter"
-        android:text="@string/n_letter"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        app:layout_constraintStart_toEndOf="@+id/button_n_correct8"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"/>
 
     <Button
         android:id="@+id/button_n_incorrect4"
@@ -297,8 +251,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_correct2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect1"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"/>
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_correct5"
@@ -315,40 +271,73 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_n_correct6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect3"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
-
-    <Button
-        android:id="@+id/button_n_correct8"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:minWidth="0dp"
-        android:scaleType="fitCenter"
-        android:text="@string/n_letter"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        app:layout_constraintStart_toEndOf="@+id/button_n_incorrect6"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
 
 
     <TextView
         android:id="@+id/text_find_o"
-        android:layout_width="800dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_o"
         android:textColor="@color/black"
         android:textSize="30dp"
-        app:layout_constraintBaseline_toTopOf="@id/guideline33"
+        app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_n_incorrect2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toTopOf="@+id/button_n_incorrect2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toTopOf="@+id/button_o_incorrect4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_o_incorrect4" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_v_correct4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_v_correct4" />
 
     <Button
         android:id="@+id/button_o_incorrect1"
@@ -364,11 +353,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_correct2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct1"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o" />
 
     <Button
-        android:id="@+id/button_o_correct7"
+        android:id="@+id/button_o_correct5"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -382,6 +373,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect7"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -400,6 +393,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect10"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect6"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -410,6 +405,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
@@ -418,6 +414,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect9"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -436,6 +434,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_correct3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct2"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -454,7 +454,9 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
-        app:layout_constraintStart_toEndOf="@+id/button_o_correct5"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct4"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
@@ -463,6 +465,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -472,12 +475,14 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline38"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
     <Button
-        android:id="@+id/button_o_correct8"
+        android:id="@+id/button_o_correct6"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -490,6 +495,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_correct4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect4"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -508,6 +515,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect7"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect8"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -526,6 +535,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_correct5"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect5"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -544,6 +555,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct3"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -562,7 +575,9 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
-        app:layout_constraintStart_toEndOf="@+id/button_o_correct7"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct5"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
@@ -580,27 +595,14 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_correct6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect3"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
-    <ImageView
-        android:id="@+id/focus_o"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:contentDescription="@string/foco"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/button_o_correct1"
-        app:layout_constraintEnd_toEndOf="@+id/button_o_correct1"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/button_o_correct1"
-        app:layout_constraintTop_toTopOf="@+id/button_o_correct1"
-        app:layout_constraintVertical_bias="0.523"
-        app:srcCompat="@drawable/circle_black"
-        app:tint="@color/red" />
-
     <Button
-        android:id="@+id/button_o_correct5"
+        android:id="@+id/button_o_correct4"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -614,7 +616,9 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
-        app:layout_constraintStart_toEndOf="@+id/button_o_correct8"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_o_correct6"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
@@ -633,6 +637,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect2"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -651,18 +657,20 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect1"
         app:layout_constraintTop_toBottomOf="@+id/text_find_o" />
 
     <TextView
         android:id="@+id/text_find_v"
-        android:layout_width="800dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_v"
         android:textColor="@color/black"
         android:textSize="30dp"
-        app:layout_constraintBaseline_toTopOf="@id/guideline39"
+        app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:textStyle="bold" />
@@ -672,6 +680,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -681,7 +690,9 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline38"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
@@ -699,6 +710,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct1"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -717,6 +730,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect1"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -735,6 +750,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct2"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -754,6 +771,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct3"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -772,6 +791,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect2"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -790,6 +811,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect8"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct4"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -809,6 +832,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect8"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -827,6 +852,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct5"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -845,6 +872,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct7"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect4"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -863,6 +892,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect5"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct6"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -882,6 +913,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct7"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -900,6 +933,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct9"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect5"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -918,6 +953,8 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct10"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect6"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
@@ -928,6 +965,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
@@ -936,8 +974,10 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct9"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_find_v" />
 
     <Button
         android:id="@+id/button_v_incorrect8"
@@ -953,22 +993,11 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_v_correct5"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect3"
         app:layout_constraintTop_toBottomOf="@+id/text_find_v"
         app:srcCompat="@drawable/border_rectangle_v2" />
-
-    <ImageView
-        android:id="@+id/focus_v"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:contentDescription="@string/foco"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/button_v_correct1"
-        app:layout_constraintEnd_toEndOf="@+id/button_v_correct1"
-        app:layout_constraintStart_toStartOf="@+id/button_v_correct1"
-        app:layout_constraintTop_toTopOf="@+id/button_v_correct1"
-        app:srcCompat="@drawable/circle_black"
-        app:tint="@color/red" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

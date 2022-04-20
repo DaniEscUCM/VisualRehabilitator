@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".FifteenthExerciseDescriptionActivity">
+    tools:context=".SixteenthExerciseDescriptionActivity">
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc"
