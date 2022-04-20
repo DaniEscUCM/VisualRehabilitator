@@ -2,6 +2,7 @@ package com.macularehab;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -9,13 +10,11 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.exercises.ShowResultActivity;
-import com.macularehab.internalStorage.ReadInternalStorage;
-import java.util.HashMap;
 
 public class SeventeenthExerciseActivity  extends AppCompatActivity {
 
     private final int exercise_id = 16, maxCorrect = 27;
-    private int counterCorrect, counterFailed, num_miliseconds;
+    private int counterCorrect, counterFailed, num_miliseconds,total=0;
     private CountDownTimer timer_1 = null;
     private boolean n_correct1,n_correct2,n_correct3,n_correct4,n_correct5,n_correct6,n_correct7,n_correct8,n_correct9,n_correct10;
     private boolean o_correct1,o_correct2,o_correct3,o_correct4,o_correct5,o_correct6,o_correct7;
@@ -103,60 +102,120 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
             if (n_correct1) {
                 n_correct1 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct1.getBackground().setAlpha(200);
+                button_n_correct1.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct2.setOnClickListener(v -> {
             if (n_correct2) {
                 n_correct2 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct2.getBackground().setAlpha(200);
+                button_n_correct2.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct3.setOnClickListener(v -> {
             if (n_correct3) {
                 n_correct3 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct3.getBackground().setAlpha(200);
+                button_n_correct3.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct4.setOnClickListener(v -> {
             if (n_correct4) {
                 n_correct4 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct4.getBackground().setAlpha(200);
+                button_n_correct4.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct5.setOnClickListener(v -> {
             if (n_correct5) {
                 n_correct5 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct5.getBackground().setAlpha(200);
+                button_n_correct5.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct6.setOnClickListener(v -> {
             if (n_correct6) {
                 n_correct6 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct6.getBackground().setAlpha(200);
+                button_n_correct6.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct7.setOnClickListener(v -> {
             if (n_correct7) {
                 n_correct7 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct7.getBackground().setAlpha(200);
+                button_n_correct7.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct8.setOnClickListener(v -> {
             if (n_correct8) {
                 n_correct8 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct8.getBackground().setAlpha(200);
+                button_n_correct8.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct9.setOnClickListener(v -> {
             if (n_correct9) {
                 n_correct9 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct9.getBackground().setAlpha(200);
+                button_n_correct9.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_n_correct10.setOnClickListener(v -> {
             if (n_correct10) {
                 n_correct10 = false;
                 ++counterCorrect;
+                ++total;
+                button_n_correct10.getBackground().setAlpha(200);
+                button_n_correct10.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
 
@@ -188,42 +247,84 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
             if (o_correct1) {
                 o_correct1 = false;
                 ++counterCorrect;
+                ++total;
+                button_o_correct1.getBackground().setAlpha(200);
+                button_o_correct1.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_o_correct2.setOnClickListener(v -> {
             if (o_correct2) {
                 o_correct2 = false;
                 ++counterCorrect;
+                ++total;
+                button_o_correct2.getBackground().setAlpha(200);
+                button_o_correct2.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_o_correct3.setOnClickListener(v -> {
             if (o_correct3) {
                 o_correct3 = false;
                 ++counterCorrect;
+                ++total;
+                button_o_correct3.getBackground().setAlpha(200);
+                button_o_correct3.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_o_correct4.setOnClickListener(v -> {
             if (o_correct4) {
                 o_correct4 = false;
                 ++counterCorrect;
+                ++total;
+                button_o_correct4.getBackground().setAlpha(200);
+                button_o_correct4.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_o_correct5.setOnClickListener(v -> {
             if (o_correct5) {
                 o_correct5 = false;
                 ++counterCorrect;
+                ++total;
+                button_o_correct5.getBackground().setAlpha(200);
+                button_o_correct5.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_o_correct6.setOnClickListener(v -> {
             if (o_correct6) {
                 o_correct6 = false;
                 ++counterCorrect;
+                ++total;
+                button_o_correct6.getBackground().setAlpha(200);
+                button_o_correct6.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_o_correct7.setOnClickListener(v -> {
             if (o_correct7) {
                 o_correct7 = false;
                 ++counterCorrect;
+                ++total;
+                button_o_correct7.getBackground().setAlpha(200);
+                button_o_correct7.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
 
@@ -254,60 +355,120 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
             if (v_correct1) {
                 v_correct1 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct1.getBackground().setAlpha(200);
+                button_v_correct1.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct2.setOnClickListener(v -> {
             if (v_correct2) {
                 v_correct2 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct2.getBackground().setAlpha(200);
+                button_v_correct2.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct3.setOnClickListener(v -> {
             if (v_correct3) {
                 v_correct3 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct3.getBackground().setAlpha(200);
+                button_v_correct3.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct4.setOnClickListener(v -> {
             if (v_correct4) {
                 v_correct4 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct4.getBackground().setAlpha(200);
+                button_v_correct4.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct5.setOnClickListener(v -> {
             if (v_correct5) {
                 v_correct5 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct5.getBackground().setAlpha(200);
+                button_v_correct5.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct6.setOnClickListener(v -> {
             if (v_correct6) {
                 v_correct6 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct6.getBackground().setAlpha(200);
+                button_v_correct6.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct7.setOnClickListener(v -> {
             if (v_correct7) {
                 v_correct7 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct7.getBackground().setAlpha(200);
+                button_v_correct7.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct8.setOnClickListener(v -> {
             if (v_correct8) {
                 v_correct8 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct8.getBackground().setAlpha(200);
+                button_v_correct8.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct9.setOnClickListener(v -> {
             if (v_correct9) {
                 v_correct9 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct9.getBackground().setAlpha(200);
+                button_v_correct9.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
         button_v_correct10.setOnClickListener(v -> {
             if (v_correct10) {
                 v_correct10 = false;
                 ++counterCorrect;
+                ++total;
+                button_v_correct10.getBackground().setAlpha(200);
+                button_v_correct10.setAlpha((float)1.0);
+                if(total==maxCorrect){
+                    finish_exercise();
+                }
             }
         });
 
@@ -333,6 +494,14 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         button_v_incorrect7.setOnClickListener(v -> {
             ++counterFailed;
         });
+    }
+
+    private void finish_exercise(){
+        timer_1.cancel();
+        counterFailed = counterFailed + maxCorrect - counterCorrect;
+        writeResultInDataBase(counterCorrect, counterFailed);
+        showResults(counterCorrect, counterFailed);
+        finish();
     }
     private void resume(){
         /*if(isOn){
