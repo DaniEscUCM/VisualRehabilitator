@@ -15,7 +15,7 @@ import com.macularehab.internalStorage.ReadInternalStorage;
 
 import java.util.HashMap;
 
-public class FifteenthExerciseDescriptionActivity extends AppCompatActivity {
+public class SixteenthExerciseDescriptionActivity extends AppCompatActivity {
     private static int num_seconds;
     private final String filenameCurrentUser = "CurrentPatient.json";
     private final String isFocus = "focusIsOn";
@@ -24,7 +24,7 @@ public class FifteenthExerciseDescriptionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_fifteenth_exercise_description);
+        setContentView(R.layout.activity_sixteenth_exercise_description);
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc);
         button.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +62,7 @@ public class FifteenthExerciseDescriptionActivity extends AppCompatActivity {
         }
 
         finish();
-        Intent i = new Intent( this, FifteenthExerciseActivity.class );
+        Intent i = new Intent( this, SixteenthExerciseActivity.class );
         startActivity(i);
     }
 

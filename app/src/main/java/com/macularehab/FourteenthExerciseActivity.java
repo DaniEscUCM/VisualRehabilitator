@@ -70,6 +70,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
             focus_on=!focus_on;
         });
 
+        ImageButton button_home = findViewById(R.id.home_button);
+        button_home.setOnClickListener(v -> Close());
+
         counterCorrect = counterFailed = 0;
         num_miliseconds = FourteenthExerciseDescriptionActivity.getNumSeconds() * 1000;
         button_cross1_1 = findViewById(R.id.cross1_1);
@@ -140,6 +143,7 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 button_cross1_1.setColorFilter(Color.GREEN);
                 total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -151,7 +155,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross1_2 = false;
                 ++counterCorrect;
                 button_cross1_2.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -163,7 +169,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross1_3 = false;
                 ++counterCorrect;
                 button_cross1_3.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -175,7 +183,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross1_4 = false;
                 ++counterCorrect;
                 button_cross1_4.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -189,7 +199,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross2_1 = false;
                 ++counterCorrect;
                 button_cross2_1.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -201,7 +213,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross2_2 = false;
                 ++counterCorrect;
                 button_cross2_2.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -213,7 +227,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross2_3 = false;
                 ++counterCorrect;
                 button_cross2_3.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -225,7 +241,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross2_4 = false;
                 ++counterCorrect;
                 button_cross2_4.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -239,7 +257,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross3_1 = false;
                 ++counterCorrect;
                 button_cross3_1.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -251,7 +271,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross3_2 = false;
                 ++counterCorrect;
                 button_cross3_2.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -263,7 +285,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross3_3 = false;
                 ++counterCorrect;
                 button_cross3_3.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -275,7 +299,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross3_4 = false;
                 ++counterCorrect;
                 button_cross3_4.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -289,7 +315,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross4_1 = false;
                 ++counterCorrect;
                 button_cross4_1.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -301,7 +329,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross4_2 = false;
                 ++counterCorrect;
                 button_cross4_2.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -313,7 +343,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross4_3 = false;
                 ++counterCorrect;
                 button_cross4_3.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -325,7 +357,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross4_4 = false;
                 ++counterCorrect;
                 button_cross4_4.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -339,7 +373,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross5_1 = false;
                 ++counterCorrect;
                 button_cross5_1.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -351,7 +387,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross5_2 = false;
                 ++counterCorrect;
                 button_cross5_2.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -363,7 +401,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross5_3 = false;
                 ++counterCorrect;
                 button_cross5_3.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -375,7 +415,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross5_4 = false;
                 ++counterCorrect;
                 button_cross5_4.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -389,7 +431,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross6_1 = false;
                 ++counterCorrect;
                 button_cross6_1.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -401,7 +445,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross6_2 = false;
                 ++counterCorrect;
                 button_cross6_2.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -413,7 +459,9 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross6_3 = false;
                 ++counterCorrect;
                 button_cross6_3.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
@@ -425,13 +473,17 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
                 cross6_4 = false;
                 ++counterCorrect;
                 button_cross6_4.setColorFilter(Color.GREEN);
+                total++;
                 if(total==24){
+                    timer_1.cancel();
                     counterFailed = maxCorrect - counterCorrect;
                     writeResultInDataBase(counterCorrect, counterFailed);
                     showResults(counterCorrect, counterFailed);
                 }
             }
         });
+
+
     }
     private void resume(){
         if(focus_on){
@@ -464,7 +516,6 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
 
 
     private void saveFocusOn(){
-
         new SaveFocusInfo(getApplicationContext(), focus_on);
     }
     private void startTimerFoco() {
@@ -560,7 +611,8 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
             timer_1.cancel();
     }
 
-    public void Close(View view) {
+    public void Close() {
+        timer_1.cancel();
         finish();
     }
 
@@ -576,5 +628,6 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         resultIntent.putExtra("numCorrect", correct);
         resultIntent.putExtra("numFailed", failed);
         startActivity(resultIntent);
+        Close();
     }
 }

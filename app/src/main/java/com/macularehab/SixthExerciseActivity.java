@@ -349,9 +349,6 @@ public class SixthExerciseActivity extends AppCompatActivity {
 
     public void Close(View view) {
         counter = total + 1;
-        System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
-        String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
-        Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
         finish();
     }
 
