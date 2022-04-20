@@ -25,7 +25,7 @@ public class Patient {
     private int exercises_accomplished;
     private String date_last_test;
     private boolean focusIsOn;
-    private Exercise exercises;
+    private Exercise exercise;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -70,7 +70,7 @@ public class Patient {
         hasAccount = false;
         focusIsOn = true;
         date_last_test = "01/01/01";
-        exercises = new Exercise();
+        exercise = new Exercise();
     }
 
     /**** Getters And Setters ****/
@@ -228,11 +228,11 @@ public class Patient {
     }
 
     public Exercise getExercise() {
-        return exercises;
+        return exercise;
     }
 
     public void setExercise(Exercise exercise) {
-        this.exercises = exercise;
+        this.exercise = exercise;
     }
 
     @Override

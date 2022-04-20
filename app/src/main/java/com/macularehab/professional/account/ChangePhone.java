@@ -109,14 +109,17 @@ public class ChangePhone extends AppCompatActivity {
         Resources resources = ChangePhone.this.getResources();
 
         if (phoneAddress.equals("")) {
+
             changePhoneLayout.setError(resources.getString(R.string.emptyField));
             showAlertErrorUser(resources.getString(R.string.emptyField));
         }
         else if (phoneAddress.length() != 9) {
+
             changePhoneLayout.setError(resources.getString(R.string.professional_profile_changePhone_errorFormat));
             showAlertErrorUser(resources.getString(R.string.professional_profile_changePhone_errorFormat));
         }
         else {
+
             changePhone();
         }
     }
