@@ -272,7 +272,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
         databaseReference.child("Professional").child(currentUserID).child("contact_info").child("email_address").setValue(email);
         databaseReference.child("Professional").child(currentUserID).child("contact_info").child("phone_number").setValue("none");
 
-        Toast.makeText(ProfessionalSignUpActivity.this, "User created", Toast.LENGTH_LONG).show();
+        Toast.makeText(ProfessionalSignUpActivity.this, resources.getString(R.string.user_created_text), Toast.LENGTH_LONG).show();
         clean();
         goToMain();
     }

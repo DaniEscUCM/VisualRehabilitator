@@ -251,6 +251,8 @@
     <string name="professional_profile_changeEmail_button">Change email</string>
     <string name="professional_profile_changePassword_button">Change password</string>
     <string name="professional_profile_changePhone_button">Change phone</string>
+    <string name="professional_profile_error_imageNotSelected">Image Not Selected</string>
+    <string name="professional_profile_error_activityResult">Error activity for image</string>
 
     <!-- Professional Profile - Change Email -->
     <string name="professional_profile_changeEmail_title">Change Email Address</string>

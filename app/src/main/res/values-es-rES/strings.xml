@@ -253,6 +253,8 @@
     <string name="professional_profile_changeEmail_button">Cambiar correo</string>
     <string name="professional_profile_changePassword_button">Cambiar contraseña</string>
     <string name="professional_profile_changePhone_button">Cambiar número</string>
+    <string name="professional_profile_error_imageNotSelected">Imagen no seleccionada</string>
+    <string name="professional_profile_error_activityResult">Error en actividad para imagen</string>
 
     <!-- Professional Profile - Change Email -->
     <string name="professional_profile_changeEmail_title">Cambiar Correo Electrónico</string>

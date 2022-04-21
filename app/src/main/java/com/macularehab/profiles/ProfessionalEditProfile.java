@@ -3,6 +3,7 @@ package com.macularehab.profiles;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +48,8 @@ public class ProfessionalEditProfile extends AppCompatActivity {
 
     private static final String TAG = "EditProfile";
 
+    private Resources resources;
+
     private CircleImageView profileImageView;
     private Button profileChangeButton;
     private TextView nameTextView;
@@ -71,6 +74,8 @@ public class ProfessionalEditProfile extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app").getReference();
         storageReference = FirebaseStorage.getInstance().getReference().child("ProfilePics");
+
+        resources = ProfessionalEditProfile.this.getResources();
         
         profileImageView = findViewById(R.id.professional_profile_editProfile_profileImage);
         nameTextView = findViewById(R.id.professional_profile_editProfile_name);
@@ -212,7 +217,7 @@ public class ProfessionalEditProfile extends AppCompatActivity {
             else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
 
                 Exception error = result.getError();
-                Toast.makeText(this, "Error OnActivityResul", Toast.LENGTH_LONG);
+                Toast.makeText(this, resources.getString(R.string.professional_profile_error_activityResult), Toast.LENGTH_LONG);
             }
         }
     }
@@ -270,7 +275,7 @@ public class ProfessionalEditProfile extends AppCompatActivity {
         }
         else {
             progressDialog.dismiss();
-            Toast.makeText(this, "image not selected", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, resources.getString(R.string.professional_profile_error_imageNotSelected), Toast.LENGTH_LONG).show();
         }
     }
 
