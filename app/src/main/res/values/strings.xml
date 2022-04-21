@@ -1,0 +1,448 @@
+<resources>
+    <string name="app_name">MaculaRehab</string>
+    <string name="button_data">Data</string>
+    <string name="button_create">Create</string>
+    <string name="button_singin">Register</string>
+    <string name="button_login">Log In</string>
+
+    <!-- Apartado general .-->
+    <string name="message_fill_fields">You have to fill the fields</string>
+    <string name="message_error">Error! Try Again Later</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="change_language_hint_button">Change Language</string>
+    <string name="loading_contentDescription">Loading</string>
+    <string name="user_created_text">User created</string>
+    <string name="user_loggedIn_text">User logged in</string>
+    <string name="do_not_use_camera">Select image from gallery, not from camera.\nSorry for the inconvenience</string>
+    <!-- General Section - Errors -->
+    <string name="emptyField">Field is empty. Is required to fill out</string>
+    <string name="required">* Required</string>
+    <string name="noInternetConnection">No Internet Connection.\nPlease make sure you are connected to internet</string>
+    <string name="error_fields_empty">There are some fields that are not filled up</string>
+    <string name="error_required_field">Required</string>
+    <string name="error_weak_password">Error: password must be at least 6 characters</string>
+    <string name="error_passwords_not_match">Error: passwords does not match</string>
+    <string name="error_no_valid_phoneNumber">Error: phone number is not valid</string>
+    <string name="error_authentication_failed">Error: Authentication Failed</string>
+    <!-- Fin Apartado general .-->
+
+    <!-- Apartado paciente .-->
+    <string name="button_login_patient">LOGIN</string>
+    <string name="button_signup_patient">Register</string>
+    <string name="text_patient_account">Patient Account</string>
+    <string name="text_ask_patient_login">Already have an account</string>
+    <string name="text_ask_patient_signup">Create an account</string>
+    <string name="text_patient_warning">You have to use the code the professional that gave to you</string>
+    <!-- Apartado LogIn .-->
+    <string name="hint_patient_login_name">Name</string>
+    <string name="hint_patient_login_email">Email Address /\nUsername:</string>
+    <string name="hint_patient_login_password">Numeric Code:</string>
+    <string name="hint_patient_login_welcome">Welcome</string>
+    <string name="hint_patient_login_login">Patient LogIn</string>
+    <string name="hint_patient_login_login_button">LogIn</string>
+    <string name="patient_login_youAreAProfessional">This is a Professional Account.\nPlease LogIn in the Professional Section</string>
+    <!-- Apartado SignUp .-->
+    <string name="hint_patient_signup_name">Name</string>
+    <string name="hint_patient_signup_email">Email Address /\nUsername:</string>
+    <string name="hint_patient_signup_password">Numeric Code:</string>
+    <string name="hint_patient_signup_repeat_password">Repeat Numeric Code:</string>
+    <string name="patient_signup_repeat_password">Repeat Numeric Code:</string>
+    <string name="hint_patient_signup_welcome">Welcome</string>
+    <string name="hint_patient_signup_signup">SignUp</string>
+    <string name="hint_patient_signup_signup_button">SignUp</string>
+    <string name="hint_patient_signup_signup_button_continue">Continue SignUp</string>
+    <string name="patient_signup_continue_explained">Press Continue Signup button to continue the sinning up process \nYou will have to enter the numeric code that the professional gave it to you</string>
+    <string name="patient_signup_enter_username">Create an username, with no spaces, it could be your name</string>
+    <string name="patient_signup_password_explained">Enter the numeric code that the professional \ngave it to you as a password</string>
+    <string name="patient_signup_passwords_doest_match">Passwords doesn\'t match</string>
+    <string name="patient_signup_password_doest_exist">The code that you entered is not valid! Try again or contact your doctor</string>
+    <string name="patient_signup_error_user_already_in_use">Error! User already exist</string>
+    <string name="patient_signup_error_weak_password">Error! Weak Password. Contact your doctor</string>
+    <string name="patient_signup_error_wrong_password">Error! Wrong Password. Contact your doctor</string>
+    <string name="patient_signup_error_network_failed">Error! Network Failed</string>
+    <string name="patient_signup_error_operations_not_allowed">Error! Operation Not Allowed</string>
+
+    <!-- Apartado Home .-->
+    <string name="hint_patient_home_logout_button">LogOut</string>
+    <string name="patient_home_welcome_text">Welcome</string>
+    <string name="patient_home_name_default">Patient</string>
+
+    <!-- Patient - Professional Section -->
+    <string name="patient_professional_profile_nameText">Professional\nName:</string>
+    <string name="patient_professional_profile_contactButton">Contact Professional</string>
+    <string name="patient_professional_profile_emailText">Email:</string>
+    <string name="patient_professional_profile_phoneText">Phone:</string>
+    <string name="patient_professional_profile_phoneTextDefault">Not Available</string>
+    <string name="patient_professional_profile_email_sendEmailText_button">Send Email</string>
+    <string name="patient_professional_profile_email_callText_button">Call</string>
+    <string name="patient_professional_profile_returnHome_button">Return Back</string>
+    <!-- Fin Apartado Paciente .-->
+
+    <!-- Apartado depuración .-->
+    <string name="professional_newpatient_testOptico">Optical Tests</string>
+    <string name="professional_newpatient_formularioOptico">New patient</string>
+    <!-- Fin Apartado depuración .-->
+
+    <!-- Apartado Professional .-->
+    <!-- Login and SignUp -->
+    <string name="text_professional_singup_text">Professional Sing Up</string>
+    <string name="hint_professional_signup_name">Name</string>
+    <string name="hint_professional_signup_email">Email Address</string>
+    <string name="hint_professional_signup_password">Password</string>
+    <string name="professional_signup_wrongPassword">Wrong Password!</string>
+    <string name="hint_professional_signup_repeat_password">Repeat Password</string>
+    <string name="professional_login_forgot_password">Forgot Password?</string>
+    <string name="professional_login_notAProfessionalAccount">This is not a Professional Account.\nLogIn in Patient Section</string>
+    <string name="professional_login_logInSuccessfully">Welcome!</string>
+    <string name="professional_login_wrongPassword">Wrong Password!</string>
+
+    <!-- Professional Section - Restore Password -->
+    <string name="professional_login_restorePassword_text">Restore Password</string>
+    <string name="professional_login_restorePassword_help">We will send you an email with a link\nto restore your password</string>
+    <string name="professional_login_restorePassword_insertYourEmail">Insert Your Email Address</string>
+    <string name="professional_login_restorePassword_hint_email">Email Address</string>
+    <string name="professional_login_restorePassword_sendEmailButton">Restore Password</string>
+    <string name="professional_login_restorePassword_emailSuccessfullyText">An email was sent correctly to you email address\nCheck your inbox</string>
+    <string name="professional_login_restorePassword_error_userNotFound">User Not Found</string>
+    <string name="professional_login_restorePassword_error_emailNotValid">Email is not valid or in wrong format</string>
+    <string name="professional_login_restorePassword_error_userMismatch">User Mismatch</string>
+    <string name="professional_login_restorePassword_error_userDisabled">User Disabled</string>
+
+    <!-- Professional Section - Change Password -->
+    <string name="professional_home_changePassword_text">Change Password</string>
+    <string name="professional_home_changePassword_oldPassword_text">Insert Old Password</string>
+    <string name="professional_home_changePassword_newPassword_text">Insert New Password</string>
+    <string name="professional_home_changePassword_repeatNewPassword_text">Insert Again New Password</string>
+    <string name="professional_home_changePassword_oldPassword_hint">Old Password</string>
+    <string name="professional_home_changePassword_newPassword_hint">New Password</string>
+    <string name="professional_home_changePassword_repeatNewPassword_hint">Repeat New Password</string>
+    <string name="professional_home_changePassword_button_text">Change Password</string>
+    <string name="professional_home_changePassword_error_fillFields">Error: Fill Field</string>
+    <string name="professional_home_changePassword_error_passwordWeak">Error: password must be at least 6 characters</string>
+    <string name="professional_home_changePassword_error_wrongPassword">Error: old password is not correct!</string>
+    <string name="professional_home_changePassword_error_passwordsDoesNotMatch">Error: passwords does not match</string>
+    <string name="professional_home_changePassword_successMessage">Password Changed Successfully</string>
+    <string name="professional_home_changePassword_errorMessage">Password could not be changed</string>
+
+
+    <!-- Apartado Professional - Home -->
+    <string name="professional_home_professional_text">Professional</string>
+    <string name="professional_home_patientName_text">Patient Name</string>
+    <string name="professional_home_welcome_text">Welcome</string>
+    <string name="hint_professional_home_logout_button">LogOut</string>
+    <string name="professional_home_create_patient_button">Create Patient</string>
+    <string name="professional_home_name_default">Professional</string>
+    <string name="professional_home_changePassword_button_hint">Change My Password</string>
+    <string name="professional_home_editAccount_button_hint">My Account</string>
+
+
+    <!-- Apartado Professional - Patient Form .-->
+    <string name="professional_patientForm_patient">Patient</string>
+    <string name="professional_patientForm_new_patient">New Patient</string>
+    <string name="professional_patientForm_date">Date</string>
+    <string name="professional_patientForm_name">Name</string>
+    <string name="professional_patientForm_first_lastName">Last Name</string>
+    <string name="professional_patientForm_second_lastName">Last Name</string>
+    <string name="professional_patientForm_gender">Gender</string>
+    <string-array name="professional_patientForm_genders">
+        <item>Masculine</item>
+        <item>Feminine</item>
+        <item>Other</item>
+    </string-array>
+    <string name="professional_patientForm_date_of_birth">Date of\nbirth</string>
+    <string name="professional_patientForm_date_of_birth_hint">Date of birth</string>
+    <string name="professional_patientForm_diagnostic">Ophthalmologist\nDiagnostic</string>
+    <string name="professional_patientForm_diagnostic_hint">Ophthalmologist Diagnostic</string>
+    <string name="professional_patientForm_av">VA</string>
+    <string name="professional_patientForm_av_hint">visual acuity</string>
+    <string name="professional_patientForm_cv">VF</string>
+    <string name="professional_patientForm_cv_hint">Visual field</string>
+    <string name="professional_patientForm_observations">Observations</string>
+    <string name="professional_patientForm_observations_hint">Write here if you have an observation</string>
+    <string name="professional_patientForm_continue_button">Continue</string>
+
+    <string name="professional_patientForm_section_1">Visual difficulties in children and adults</string>
+    <string name="professional_patientForm_checkBox_1">Read</string>
+    <string name="professional_patientForm_checkBox_1.1">Signs</string>
+    <string name="professional_patientForm_checkBox_1.2">Labels</string>
+    <string name="professional_patientForm_checkBox_1.3">Faces</string>
+    <string name="professional_patientForm_checkBox_1.4">Books</string>
+    <string name="professional_patientForm_checkBox_1.5">Newspaper</string>
+    <string name="professional_patientForm_checkBox_1.6">Magazines</string>
+    <string name="professional_patientForm_checkBox_1.7">Mobile phone</string>
+    <string name="professional_patientForm_checkBox_1.8">Prescriptions</string>
+    <string name="professional_patientForm_checkBox_2">Write</string>
+    <string name="professional_patientForm_checkBox_3">Use phone, tablet, computer, others</string>
+    <string name="professional_patientForm_checkBox_4">See whiteboard (children)</string>
+    <string name="professional_patientForm_checkBox_5">Work related problems (adults)</string>
+    <string name="professional_patientForm_checkBox_6">Facial recognition</string>
+    <string name="professional_patientForm_checkBox_7">Watch television</string>
+    <string name="professional_patientForm_checkBox_8">Move or play indoors</string>
+    <string name="professional_patientForm_checkBox_9">Move or play outdoors</string>
+    <string name="professional_patientForm_checkBox_10">Move from indoors to outdoors or vice versa</string>
+    <string name="professional_patientForm_checkBox_11">Money management</string>
+    <string name="professional_patientForm_checkBox_12">Feeding</string>
+    <string name="professional_patientForm_checkBox_13">Home activities</string>
+    <string name="professional_patientForm_checkBox_14">Go shopping</string>
+    <string name="professional_patientForm_checkBox_15">Eating</string>
+    <string name="professional_patientForm_checkBox_16">Personal care activities</string>
+    <string name="professional_patientForm_section_2">Visual behaviour</string>
+    <string name="professional_patientForm_checkBox_17">Do they need to move their head to see better?</string>
+    <string name="professional_patientForm_checkBox_18">Do they need to be near what they are at looking at in order to see it?</string>
+    <string name="professional_patientForm_checkBox_19">Prefers a specific set of illumination</string>
+    <string name="professional_patientForm_checkBox_20">Does the sun or the light bother him/her?</string>
+    <string name="professional_patientForm_section_3">Use of optical assistance</string>
+    <string name="professional_patientForm_checkBox_21">Uses conventional glasses</string>
+    <string name="professional_patientForm_checkBox_22">Uses sunglasses</string>
+    <string name="professional_patientForm_checkBox_23">Are the glasses helpful?</string>
+    <string name="professional_patientForm_section_4">Reading</string>
+    <string name="professional_patientForm_checkBox_24">Did the person use to read more before the vision loss?</string>
+    <string name="professional_patientForm_checkBox_25">Would like to read more</string>
+
+    <string name="professional_patientForm_show_numeric_code">Numeric Code:</string>
+    <string name="professional_patientForm_numeric_code_explanation">Give this numeric code and the instructions to your patient so that they can register. Remind them to keep this code safe</string>
+    <string name="professional_patientForm_continueToTest_button">Take the test (continue)</string>
+    <!-- Fin Apartado Professional - Patient Form .-->
+
+    <!-- Apartado Professional - Patient Info .-->
+    <string name="professional_patientInfo_patient">Patient</string>
+    <string name="professional_patientInfo_date">Admitted Date</string>
+    <string name="professional_patientInfo_name">Name</string>
+    <string name="professional_patientInfo_first_lastName">Last Name</string>
+    <string name="professional_patientInfo_second_lastName">Last Name</string>
+    <string name="professional_patientInfo_gender">Gender</string>
+    <string name="professional_patientInfo_date_of_birth">Date of\nbirth</string>
+    <string name="professional_patientInfo_diagnostic">Ophthalmology\nDiagnostic</string>
+    <string name="professional_patientInfo_av">VA</string>
+    <string name="professional_patientInfo_cv">VF</string>
+    <string name="professional_patientInfo_observations">Observations</string>
+
+    <string name="professional_patientInfo_lastTest">Last Test</string>
+    <string name="professional_patientInfo_exercises">Exercises</string>
+    <string name="professional_patientInfo_exercisesProgress">Exercises Progress</string>
+    <string name="professional_patientInfo_confirmDeletePatient">Are you sure you want to delete this patient?</string>
+    <string name="professional_patientInfo_delete_yes">Yes, Delete</string>
+    <string name="professional_patientInfo_delete_no">No, Cancel</string>
+    <!-- Buttons -->
+    <string name="professional_patientInfo_editPatient_button">Edit\nPatient</string>
+    <string name="professional_patientInfo_deletePatient_button">Delete\nPatient</string>
+    <string name="professional_patientInfo_seeTestHistory_button">Patient\'s Test History</string>
+    <string name="professional_patientInfo_exercisesHistory_button">Exercises History</string>
+    <string name="professional_patientInfo_professionalProfile_button">Professional Profile</string>
+    <!-- End Buttons -->
+
+    <!-- Section Professional - Patient Info - CardsView -->
+    <string name="professional_patientInfo_cardView_text_patient">Patient:</string>
+    <string name="professional_patientInfo_cardView_text_name">Name:</string>
+    <string name="professional_patientInfo_cardView_text_lastName">Last Name:</string>
+    <string name="professional_patientInfo_cardView_text_dateLastText">Date of last test:</string>
+    <string name="professional_patientInfo_cardView_text_progress">Progress:</string>
+    <!-- End Section Professional - Patient Info - CardsView -->
+
+    <!-- Fin Apartado Professional - Patient Info .-->
+
+    <!-- Professional Profile -->
+    <string name="professional_profile_nameText">Name:</string>
+    <string name="professional_profile_emailText">Email:</string>
+    <string name="professional_profile_phoneText">Phone:</string>
+    <string name="professional_profile_defaultPhoneText">No Phone Number</string>
+    <string name="professional_profile_changePhoto_button">Change profile picture</string>
+    <string name="professional_profile_changeName_button">Change name</string>
+    <string name="professional_profile_changeEmail_button">Change email</string>
+    <string name="professional_profile_changePassword_button">Change password</string>
+    <string name="professional_profile_changePhone_button">Change phone</string>
+    <string name="professional_profile_error_imageNotSelected">Image Not Selected</string>
+    <string name="professional_profile_error_activityResult">Error activity for image</string>
+
+    <!-- Professional Profile - Change Email -->
+    <string name="professional_profile_changeEmail_title">Change Email Address</string>
+    <string name="professional_profile_changeEmail_insertEmailText">Insert your NEW Email Address</string>
+    <string name="professional_profile_changeEmail_email_hint">Email Address</string>
+    <string name="professional_profile_changeEmail_change_button">Change Email</string>
+    <string name="professional_profile_changeEmail_helpText">Your actual email address will be changed to the new email you enter</string>
+    <string name="professional_profile_changeEmail_successMessage">Email Changed successfully</string>
+
+    <!-- Professional Profile - Change Name -->
+    <string name="professional_profile_changeName_title">Change Name</string>
+    <string name="professional_profile_changeName_insertEmailText">Insert your new Name</string>
+    <string name="professional_profile_changeName_name_hint">Name</string>
+    <string name="professional_profile_changeName_change_button">Change Name</string>
+    <string name="professional_profile_changeName_helpText">Your actual name will be changed to the new name you enter</string>
+    <string name="professional_profile_changeName_successMessage">Name Changed successfully</string>
+
+    <!-- Professional Profile - Change Phone -->
+    <string name="professional_profile_changePhone_title">Change Phone Number</string>
+    <string name="professional_profile_changePhone_insertEmailText">Insert your new Phone Number</string>
+    <string name="professional_profile_changePhone_phone_hint">Phone Number</string>
+    <string name="professional_profile_changePhone_change_button">Change Phone Number</string>
+    <string name="professional_profile_changePhone_helpText">Your actual Phone Number will be changed to the new Number you enter</string>
+    <string name="professional_profile_changePhone_successMessage">Phone Number Changed successfully</string>
+    <string name="professional_profile_changePhone_errorFormat">Phone must contain 9 numbers</string>
+
+
+    <!-- Fin Apartado Professional .-->
+
+    <!-- Exercises Section -->
+    <string name="exercises_show_results_results">Results</string>
+    <string name="exercises_show_results_numCorrectText">Number of Corrects</string>
+    <string name="exercises_show_results_numFailedText">Number of Failures</string>
+    <string name="exercises_show_results_numCorrect">Corrects</string>
+    <string name="exercises_show_results_numFailed">Failed</string>
+    <string name="exercises_show_results_returnToExercises_button">Return To Exercises</string>
+    <string name="exercises_show_results_exerciseOneDoesNotHaveResults">The Exercise 1 does not have results (evaluation).\nIt is a Demo Exercise.</string>
+    <string name="exercises_show_results_exercisesWithOutResults">This Exercise does not have any results yet.\nYou have to complete the exercise first to see the history of the results.</string>
+    <!-- Exercises History Section -->
+    <string name="exercises_resultHistory_correct">Corrects</string>
+    <string name="exercises_resultHistory_failed">Failed</string>
+    <string name="exercises_resultHistory_trials">Trials</string>
+    <string name="exercises_resultHistory_trialsNumber">Attempt</string>
+    <!-- Test History Section -->
+    <string name="tests_testHistory_queryHint">Test Date</string>
+    <!-- Exercises Section - Toast Messages -->
+    <string name="exercises_results_toast_message_correctText">Correct:</string>
+    <string name="exercises_results_toast_message_incorrectText">Incorrect:</string>
+    <string name="exercises_results_toast_message_ofTotalText">out of:</string>
+
+
+    <string name="button_des_data">Data</string>
+    <string name="button_exercises">Exercises</string>
+    <string name="button_des_exercises">Exercises</string>
+    <string name="imagebutton_des_settings">Change settings</string>
+    <string name="textview_settings">Settings</string>
+    <string name="textview_exercises">Exercises</string>
+    <string name="foco">Focus</string>
+    <string name="image_background">Image</string>
+    <string name="seconds_description_shape">Insert the seconds you want for each figure:</string>
+    <string name="seconds_description_letter">Insert the seconds you want for each letter:</string>
+    <string name="seconds_description_instructions">Insert the seconds you want for each instruction:</string>
+    <string name="seconds_description_whole_exercise">Insert the seconds to complete the whole exercise:</string>
+    <string name="seconds">seconds</string>
+    <string name="num_seconds">10</string>
+    <string name="num_seconds_whole_exercise">60</string>
+    <string name="num_seconds_whole_exercise_90s">90</string>
+    <string name="textview_name">Name</string>
+    <string name="textview_username">Username</string>
+    <string name="textview_password">Password</string>
+    <string name="textview_professional_singin">Professional Sign in</string>
+    <string name="textview_professional_loggin">Professional Log in</string>
+    <string name="imagebutton_des_back">Go back</string>
+    <string name="first_exercise">Exercise 1</string>
+    <string name="second_exercise">Exercise 2</string>
+    <string name="third_exercise">Exercise 3</string>
+    <string name="fourth_exercise">Exercise 4</string>
+    <string name="fifth_exercise">Exercise 5</string>
+    <string name="sixth_exercise">Exercise 6</string>
+    <string name="seventh_exercise">Exercise 7</string>
+    <string name="eighth_exercise">Exercise 8</string>
+    <string name="ninth_exercise">Exercise 9</string>
+    <string name="tenth_exercise">Exercise 10</string>
+    <string name="eleventh_exercise">Exercise 11</string>
+    <string name="twelfth_exercise">Exercise 12</string>
+    <string name="thirteenth_exercise">Exercise 13</string>
+    <string name="fourteenth_exercise">Exercise 14</string>
+    <string name="fifteenth_exercise">Exercise 15</string>
+    <string name="sixteenth_exercise">Exercise 16</string>
+    <string name="seventeenth_exercise">Exercise 17</string>
+    <string name="button_play">Play</string>
+    <string name="first_exercise_description">Find the red dot (the focus point) then click on the shape. \n The focus point will always appear first, after a few seconds the shape will appear. \n In other exercises the focus point will help you find the shape.</string>
+    <string name="first_exercise_congrats">Congrats! You finished the demo!</string>
+    <string name="second_exercise_description">A series of shapes will appear. Touch the triangles.</string>
+    <string name="third_exercise_description">A series of shapes will appear, this time smaller and unfilled. Touch the triangles.</string>
+    <string name="fourth_exercise_description">A series of letters will appear. Touch the E.</string>
+    <string name="fifth_exercise_description">A series of letters will appear, they are smaller than before. Touch the E.</string>
+    <string name="sixth_exercise_description">Two shapes will appear. Touch the circles.</string>
+    <string name="seventh_exercise_description">Two shapes will appear, this time smaller and unfilled. Touch the circles.</string>
+    <string name="eighth_exercise_description">Two letters will appear. Touch the M.</string>
+    <string name="ninth_exercise_description">Two letters will appear, they are smaller than before. Touch the M.</string>
+    <string name="tenth_exercise_description">Images of drinks will appear. Find the coffee cup.</string>
+    <string name="eleventh_exercise_description">The image of a face will appear. Find the specified parts of the face.</string>
+    <string name="twelfth_exercise_description">The image of a face will appear. Find the specified parts of the face.</string>
+    <string name="thirteenth_exercise_description">The image of a living room will appear. Find the specified parts of it.</string>
+    <string name="fourteenth_exercise_description">Some circles and red crosses will appear. Find all the crosses. They will turn green when pressed.</string>
+    <string name="fifteenth_exercise_description">Some circles and red crosses will appear. Find all the circles. They will turn green when they are touched.</string>
+    <string name="sixteenth_exercise_description">Three sentences will appear. Find the specified letters. They will turn green when they are touched.</string>
+    <string name="seventeenth_exercise_description">Three sentences will appear. Find the specified letters. The sentences are longer and will turn green when they are touched.</string>
+    <string name="button_home">Home</string>
+    <string name="circle_for_click">Circle</string>
+    <string name="triangle_for_click">Triangle</string>
+    <string name="star_for_click">Star</string>
+    <string name="letter">A</string>
+    <string name="circle">Circle</string>
+    <string name="button_for_click">What you need to find</string>
+    <string name="eleventh_exercise_find_nose">Find the nose</string>
+    <string name="eleventh_exercise_find_mouth">Find the mouth</string>
+    <string name="eleventh_exercise_find_left_eye">Find the left eye</string>
+    <string name="eleventh_exercise_find_right_eye">Find the right eye</string>
+    <string name="thirteenth_exercise_find_lamp">Find the lamp</string>
+    <string name="thirteenth_exercise_find_plant">Find the plant</string>
+    <string name="thirteenth_exercise_find_carpet">Find the carpet</string>
+    <string name="thirteenth_exercise_find_left_window">Find the left window</string>
+    <string name="thirteenth_exercise_find_right_window">Find the right window</string>
+    <string name="thirteenth_exercise_find_pot">Find the pot</string>
+    <string name="thirteenth_exercise_find_sofa">Find the sofa</string>
+    <string name="fifteenth_exercise_find_n">Find the letter n</string>
+    <string name="fifteenth_exercise_find_o">Find the letter o</string>
+    <string name="fifteenth_exercise_find_v">Find the letter v</string>
+    <string name="sequence_n" translatable="false">n m m n &#160; n m n m &#160; m m n n &#160; m n m n &#160; n n m m</string>
+    <string name="sequence_o" translatable="false">o u o u &#160; o u c o &#160; u u u o &#160; o u c u &#160; u c o u</string>
+    <string name="sequence_v" translatable="false">v y v v &#160; w y v w &#160; v w v v &#160; y v w w &#160; v y v w</string>
+    <string name="n_letter" translatable="false">n</string>
+    <string name="m_letter" translatable="false">m</string>
+    <string name="o_letter" translatable="false">o</string>
+    <string name="u_letter" translatable="false">u</string>
+    <string name="c_letter" translatable="false">c</string>
+    <string name="v_letter" translatable="false">v</string>
+    <string name="y_letter" translatable="false">y</string>
+    <string name="w_letter" translatable="false">w</string>
+
+
+    <string name="toast_user_created">User created</string>
+    <string name="toast_fill_fields">Please fill all the fields</string>
+    <string name="textview_loginPatient">Patient</string>
+    <string name="textview_loginProfessional">Professional</string>
+    <string name="textview_whoIsUsing">Who is using this app?</string>
+    <string name="textview_infoLogin">Already have an account</string>
+    <string name="textview_infoSingin">Create an account</string>
+    <string name="textview_professionalAccount">Professional account</string>
+    <string name="textview_welcome">Welcome</string>
+    <string name="textview_patientlist">Patient list</string>
+    <string name="button_newPatient">New patient</string>
+    <string name="distance_30cm">Face the screen with a 15cm distance</string>
+    <string name="touch_instruction">Touch the screen when you see the new dot</string>
+    <string name="cover_right_eye">Without pressing, cover right eye</string>
+    <string name="cover_left_eye">Without pressing, cover left eye</string>
+    <string name="both_eye">Use both eyes!</string>
+    <string name="circular_grid">Circular grid</string>
+    <string name="dot_instruction">Don`t move your head and look at the centre dot</string>
+    <string name="next_test">Press to go to next test</string>
+    <string name="repeat_test">Press to repeat test</string>
+    <string name="first_test_left">First Test Left Eye</string>
+    <string name="first_test_right">First Test Right Eye</string>
+    <string name="first_test_both">First Test Both Eyes</string>
+    <string name="manual_stain_left">Manual Left Eye</string>
+    <string name="manual_stain_right">Manual Right Eye</string>
+    <string name="manual_stain_both">Manual Both Eyes</string>
+    <string name="second_test_left">Second Test Left Eye</string>
+    <string name="second_test_right">Second Test Right Eye</string>
+    <string name="second_test_both">Second Test Both Eyes</string>
+    <string name="explain_manual">Touch the spaces where the stain is. It may be better with a touchpen, but not necessary. \n\nFilled by professional previus information! \n\nTo skip press next button</string>
+    <string name="explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas. It may be better with a touchpen, but not necessary. \n\nFilled by patient \n\nTo continue press next button</string>
+    <string name="short_explain_second">Touch the spaces where it\'s wavy, blurry, distorted lines, missing or shadowed areas.</string>
+    <string name="resume_stain">Resume Stain</string>
+    <string name="skip">Skip</string>
+    <string name="tests_results">Tests Results:</string>
+    <string name="calculated_focus">Calculated Focus</string>
+    <string name="view_resume">View Resume</string>
+    <string name="finish">Finish</string>
+    <string name="show_tests">Tests info</string>
+    <string name="tests_history">Tests History</string>
+    <string name="new_test">New test</string>
+    <string name="test">Test:</string>
+    <string name="focus_switch">Focus Switch</string>
+    <string name="pause_button">Pause</string>
+    <string name="continue_exercise">Continue exercise</string>
+    <string name="tuto_pause">Pause the exercise</string>
+    <string name="tuto_resume">Return to the exercise</string>
+
+</resources>
