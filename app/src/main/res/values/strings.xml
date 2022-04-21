@@ -12,6 +12,8 @@
     <string name="password">Password</string>
     <string name="change_language_hint_button">Change Language</string>
     <string name="loading_contentDescription">Loading</string>
+    <string name="user_created_text">User created</string>
+    <string name="user_loggedIn_text">User logged in</string>
     <!-- General Section - Errors -->
     <string name="emptyField">Field is empty. Is required to fill out</string>
     <string name="required">* Required</string>
@@ -21,6 +23,7 @@
     <string name="error_weak_password">Error: password must be at least 6 characters</string>
     <string name="error_passwords_not_match">Error: passwords does not match</string>
     <string name="error_no_valid_phoneNumber">Error: phone number is not valid</string>
+    <string name="error_authentication_failed">Error: Authentication Failed</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->
@@ -293,6 +296,10 @@
     <string name="exercises_resultHistory_trialsNumber">Attempt</string>
     <!-- Test History Section -->
     <string name="tests_testHistory_queryHint">Test Date</string>
+    <!-- Exercises Section - Toast Messages -->
+    <string name="exercises_results_toast_message_correctText">Correct:</string>
+    <string name="exercises_results_toast_message_incorrectText">Incorrect:</string>
+    <string name="exercises_results_toast_message_ofTotalText">out of:</string>
 
 
     <string name="button_des_data">Data</string>

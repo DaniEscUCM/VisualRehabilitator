@@ -155,7 +155,7 @@ public class PatientSignUpPassword extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     showAlertErrorRegister();
-                    Toast.makeText(PatientSignUpPassword.this, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(PatientSignUpPassword.this, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 }
                 else {
                     String value = String.valueOf(task.getResult().getValue());

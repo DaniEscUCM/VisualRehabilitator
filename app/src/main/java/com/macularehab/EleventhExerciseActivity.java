@@ -299,8 +299,16 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         if (++counter == total) {
             writeResultInDataBase(counterCorrect, counterFailed);
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
-            String message_correct = "counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed + " out of " + total;
+
+            //Toast Message
+            Resources resources = this.getResources();
+            String correctsString = resources.getString(R.string.exercises_results_toast_message_correctText);
+            String incorrectsString = resources.getString(R.string.exercises_results_toast_message_incorrectText);
+            String ofTotalString = resources.getString(R.string.exercises_results_toast_message_ofTotalText);
+
+            String message_correct = correctsString + " " + counterCorrect + " " + incorrectsString + " " + counterFailed + " " + ofTotalString + " " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+
             saveFocusOn();
             finish();
         } else {

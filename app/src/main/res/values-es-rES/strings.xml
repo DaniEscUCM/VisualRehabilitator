@@ -17,6 +17,8 @@
     <string name="password">Contraseña</string>
     <string name="change_language_hint_button">Cambiar Idioma</string>
     <string name="loading_contentDescription">Cargando</string>
+    <string name="user_created_text">Usuario Creado</string>
+    <string name="user_loggedIn_text">Has iniciado sesión</string>
     <!-- Apartado general - Errores -->
     <string name="emptyField">Casilla sin rellenar. Es obligatorio rellenar la(s) casilla(s)</string>
     <string name="required">* Obligatorio</string>
@@ -26,6 +28,7 @@
     <string name="error_weak_password">Error: contraseña debe de contener al menos 6 carácteres</string>
     <string name="error_passwords_not_match">Error: las contraseñas no coinciden</string>
     <string name="error_no_valid_phoneNumber">Error: El número de teléfono no es válido</string>
+    <string name="error_authentication_failed">Error: Autenticación fallida</string>
     <!-- Fin Apartado general .-->
 
     <!-- Apartado paciente .-->
@@ -294,6 +297,10 @@
     <string name="exercises_resultHistory_trialsNumber">Intento</string>
     <!-- Apartado Historial de Tests -->
     <string name="tests_testHistory_queryHint">Fecha Test</string>
+    <!-- Exercises Section - Toast Messages -->
+    <string name="exercises_results_toast_message_correctText">Correctos:</string>
+    <string name="exercises_results_toast_message_incorrectText">Incorrectos:</string>
+    <string name="exercises_results_toast_message_ofTotalText">de un total de:</string>
 
     <string name="button_des_data">Datos</string>
     <string name="button_exercises">Ejercicios</string>

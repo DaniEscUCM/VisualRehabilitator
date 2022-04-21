@@ -147,6 +147,8 @@ public class PatientSignUpUsername extends AppCompatActivity {
 
     private void createAccount() {
 
+        Resources resources = PatientSignUpUsername.this.getResources();
+
         mAuth.createUserWithEmailAndPassword(username, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -159,12 +161,13 @@ public class PatientSignUpUsername extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.w("EMAIL", "createUserWithEmail:success");
-                            Toast.makeText(PatientSignUpUsername.this, "User Created!", Toast.LENGTH_LONG).show();
+
+                            Toast.makeText(PatientSignUpUsername.this, resources.getString(R.string.user_created_text), Toast.LENGTH_LONG).show();
                             updatePatientUID();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("EMAIL", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(PatientSignUpUsername.this, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                            //Toast.makeText(PatientSignUpUsername.this, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
                             FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
                             Resources resources = PatientSignUpUsername.this.getResources();

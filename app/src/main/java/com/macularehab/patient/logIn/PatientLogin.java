@@ -95,14 +95,16 @@ public class PatientLogin extends AppCompatActivity  {
 
     public void user_loggedIn_successfully() {
 
-        Toast.makeText(PatientLogin.this, "User LoggedIn", Toast.LENGTH_LONG).show();
+        Resources resources = PatientLogin.this.getResources();
+        Toast.makeText(PatientLogin.this, resources.getString(R.string.user_loggedIn_text), Toast.LENGTH_LONG).show();
         reload();
         clean();
     }
 
     public void user_login_failed() {
 
-        Toast.makeText(PatientLogin.this, "Authentication failed.",
+        Resources resources = PatientLogin.this.getResources();
+        Toast.makeText(PatientLogin.this, resources.getString(R.string.error_authentication_failed),
                 Toast.LENGTH_LONG).show();
         showAlertFailToLogIn();
     }

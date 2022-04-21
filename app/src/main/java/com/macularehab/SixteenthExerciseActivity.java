@@ -2,6 +2,7 @@ package com.macularehab;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -625,6 +627,16 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
 
     //Database
     private void writeResultInDataBase(int correct, int failed) {
+
+        //Toast Message
+        Resources resources = this.getResources();
+        String correctsString = resources.getString(R.string.exercises_results_toast_message_correctText);
+        String incorrectsString = resources.getString(R.string.exercises_results_toast_message_incorrectText);
+        String ofTotalString = resources.getString(R.string.exercises_results_toast_message_ofTotalText);
+
+        String message_correct = correctsString + " " + counterCorrect + " " + incorrectsString + " " + counterFailed + " " + ofTotalString + " " + total;
+        Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
+
         ExerciseWriteDB exerciseWriteDB = new ExerciseWriteDB(exercise_id);
         exerciseWriteDB.writeResultInDataBase(getApplicationContext(), correct, failed, 0);
     }
