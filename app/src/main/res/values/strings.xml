@@ -14,6 +14,7 @@
     <string name="loading_contentDescription">Loading</string>
     <string name="user_created_text">User created</string>
     <string name="user_loggedIn_text">User logged in</string>
+    <string name="do_not_use_camera">Select image from gallery, not from camera.\nSorry for the inconvenience</string>
     <!-- General Section - Errors -->
     <string name="emptyField">Field is empty. Is required to fill out</string>
     <string name="required">* Required</string>

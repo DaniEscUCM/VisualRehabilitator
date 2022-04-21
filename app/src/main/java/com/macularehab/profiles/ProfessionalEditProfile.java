@@ -1,6 +1,8 @@
 package com.macularehab.profiles;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
@@ -204,20 +206,29 @@ public class ProfessionalEditProfile extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+        if (requestCode == CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE) {
 
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
+            int p = 0;
+            p++;
+        }
+        else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
 
-                imageUri = result.getUri();
-                profileImageView.setImageURI(imageUri);
-
-                uploadProfileImage();
+            if (data == null) {
+                showAlertErrorUser();
             }
-            else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+            else {
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                if (resultCode == RESULT_OK) {
 
-                Exception error = result.getError();
-                Toast.makeText(this, resources.getString(R.string.professional_profile_error_activityResult), Toast.LENGTH_LONG);
+                    imageUri = result.getUri();
+                    profileImageView.setImageURI(imageUri);
+
+                    uploadProfileImage();
+                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+
+                    Exception error = result.getError();
+                    Toast.makeText(this, resources.getString(R.string.professional_profile_error_activityResult), Toast.LENGTH_LONG);
+                }
             }
         }
     }
@@ -301,5 +312,20 @@ public class ProfessionalEditProfile extends AppCompatActivity {
 
         Intent changePhoneIntent = new Intent(this, ChangePhone.class);
         startActivity(changePhoneIntent);
+    }
+
+    private void showAlertErrorUser() {
+
+        String st_error = resources.getString(R.string.do_not_use_camera);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

@@ -19,6 +19,7 @@
     <string name="loading_contentDescription">Cargando</string>
     <string name="user_created_text">Usuario Creado</string>
     <string name="user_loggedIn_text">Has iniciado sesión</string>
+    <string name="do_not_use_camera">Selecciona una foto de la galería, no de la cámara.\nDisculpa las molestias.</string>
     <!-- Apartado general - Errores -->
     <string name="emptyField">Casilla sin rellenar. Es obligatorio rellenar la(s) casilla(s)</string>
     <string name="required">* Obligatorio</string>
