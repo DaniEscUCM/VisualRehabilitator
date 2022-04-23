@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -321,30 +322,37 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     private void showLoadingImage() {
 
-        loading_imageView.setVisibility(View.VISIBLE);
-        loading_imageView.setAnimation(R.raw.loading_rainbow);
-        loading_imageView.playAnimation();
-        loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-            }
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                loading_imageView.playAnimation();
-            }
-            @Override
-            public void onAnimationCancel(Animator animation) {
-            }
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-            }
-        });
+        if (Build.VERSION.SDK_INT > 21) {
+            loading_imageView.setVisibility(View.VISIBLE);
+            loading_imageView.setAnimation(R.raw.loading_rainbow);
+            loading_imageView.playAnimation();
+            loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    loading_imageView.playAnimation();
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+                }
+            });
+        }
     }
 
     public void stopLoadingImage() {
 
-        loading_imageView.cancelAnimation();
-        loading_imageView.setVisibility(View.INVISIBLE);
-        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
+        if (Build.VERSION.SDK_INT > 21) {
+            loading_imageView.cancelAnimation();
+            loading_imageView.setVisibility(View.INVISIBLE);
+            loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
+        }
     }
 }
