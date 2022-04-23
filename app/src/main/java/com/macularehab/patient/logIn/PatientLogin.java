@@ -15,14 +15,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 //Firebase Analytics
-import com.google.firebase.analytics.FirebaseAnalytics;
+//import com.google.firebase.analytics.FirebaseAnalytics;
 import com.macularehab.R;
 import com.macularehab.login.LogIn;
 import com.macularehab.patient.PatientHome;
 
 public class PatientLogin extends AppCompatActivity  {
 
-    private FirebaseAnalytics mFirebaseAnalytics;
+    //private FirebaseAnalytics mFirebaseAnalytics;
     private LogIn logIn;
     private TextView email_text;
     private TextView password_text;

@@ -12,14 +12,14 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
+//import com.google.firebase.analytics.FirebaseAnalytics;
 import com.macularehab.patient.logIn.PatientLogin;
 import com.macularehab.R;
 import com.macularehab.patient.signUp.PatientSignUpPassword;
 
 public class PatientIdentificationActivity extends AppCompatActivity {
 
-    private FirebaseAnalytics mFirebaseAnalytics;
+    //private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class PatientIdentificationActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_patient_login_choose);
 
-        startAnalytics();
+        //startAnalytics();
 
         Button signUpButton = findViewById(R.id.button_choose_signup_patient);
         signUpButton.setOnClickListener(new View.OnClickListener() {
@@ -64,14 +64,14 @@ public class PatientIdentificationActivity extends AppCompatActivity {
         //TODO hacer que verifique si hay algun usuario con la sesion iniciada
     }
 
-    public void startAnalytics() {
+    /*public void startAnalytics() {
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         Bundle bundle = new Bundle();
         bundle.putString("message", "El usuario ha entrado a login de paciente");
         mFirebaseAnalytics.logEvent("PatientScreen", bundle);
-    }
+    }*/
 
     private void patientSignUp() {
 
