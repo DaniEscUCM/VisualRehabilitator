@@ -2,9 +2,11 @@ package com.macularehab.professional.account;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.animation.Animator;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -35,6 +37,9 @@ import com.macularehab.model.Professional;
 import com.macularehab.patient.signUp.PatientSignUpUsername;
 import com.macularehab.professional.ProfessionalHome;
 
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+
 public class ProfessionalLoginActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
@@ -48,6 +53,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     final boolean[] encontrado = {false,false}; //[0]name in db [1]pasw correct
 
     private LottieAnimationView loading_imageView;
+    private ProgressDialog progressDialog;
+    private View layout_loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +96,18 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             }
         });
 
-        loading_imageView = findViewById(R.id.professional_logIn_loading_image);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
+
+            ConstraintLayout constraintLayout = findViewById(R.id.professional_logIn_constrainLayout);
+            layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+            constraintLayout.addView(layout_loading);
+
+            loading_imageView = findViewById(R.id.general_loading_image);
+        }
+        else {
+
+            progressDialog = new ProgressDialog(this);
+        }
 
         showLoadingImage();
         //setImagesInvisible();
@@ -322,7 +340,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     private void showLoadingImage() {
 
-        if (Build.VERSION.SDK_INT > 21) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
             loading_imageView.setVisibility(View.VISIBLE);
             loading_imageView.setAnimation(R.raw.loading_rainbow);
             loading_imageView.playAnimation();
@@ -345,6 +363,14 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                 }
             });
         }
+        else {
+
+            //TODO for spanish
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle("Loading");
+            progressDialog.setMessage("Please Wait");
+            progressDialog.show();
+        }
     }
 
     public void stopLoadingImage() {
@@ -353,6 +379,9 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             loading_imageView.cancelAnimation();
             loading_imageView.setVisibility(View.INVISIBLE);
             loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
+        }
+        else {
+            progressDialog.dismiss();
         }
     }
 }

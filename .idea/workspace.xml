@@ -23,11 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb63ed4-9bb7-49fe-9523-941012296234" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_loading.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/internalStorage/ReadInternalStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/internalStorage/ReadInternalStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/internalStorage/WriteInternalStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/internalStorage/WriteInternalStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ProfessionalLoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ProfessionalLoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_login.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,6 +229,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/profiles/ProfessionalEditProfile.java</url>
           <line>208</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ProfessionalLoginActivity.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
