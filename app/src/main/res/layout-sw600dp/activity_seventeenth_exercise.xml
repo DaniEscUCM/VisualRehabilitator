@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="61dp"
+        android:layout_height="81dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_percent="0.15125" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline38"
@@ -37,13 +37,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <TextView
         android:id="@+id/text_find_n"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_n"
         android:textColor="@color/black"
@@ -142,7 +141,7 @@
     <ImageButton
         android:id="@+id/button_n_correct4"
         android:layout_width="37dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:background="@color/green"
         android:backgroundTint="@color/grey"
@@ -157,7 +156,7 @@
     <ImageButton
         android:id="@+id/button_n_incorrect3"
         android:layout_width="40dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -170,7 +169,7 @@
     <ImageButton
         android:id="@+id/button_n_incorrect4"
         android:layout_width="110dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -183,7 +182,7 @@
     <ImageButton
         android:id="@+id/button_n_correct5"
         android:layout_width="38dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:background="@color/green"
         android:backgroundTint="@color/grey"
@@ -198,7 +197,7 @@
     <ImageButton
         android:id="@+id/button_n_correct6"
         android:layout_width="45dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:background="@color/green"
         android:backgroundTint="@color/grey"
@@ -213,7 +212,7 @@
     <ImageButton
         android:id="@+id/button_n_incorrect5"
         android:layout_width="40dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -226,7 +225,7 @@
     <ImageButton
         android:id="@+id/button_n_correct7"
         android:layout_width="40dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:background="@color/green"
         android:backgroundTint="@color/grey"
@@ -314,7 +313,6 @@
         android:id="@+id/text_find_o"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
         android:gravity="center"
         android:text="@string/fifteenth_exercise_find_o"
         android:textColor="@color/black"
@@ -412,7 +410,7 @@
     <ImageButton
         android:id="@+id/button_o_incorrect3"
         android:layout_width="70dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -425,7 +423,7 @@
     <ImageButton
         android:id="@+id/button_o_correct4"
         android:layout_width="47dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:background="@color/green"
         android:backgroundTint="@color/grey"
@@ -440,7 +438,7 @@
     <ImageButton
         android:id="@+id/button_o_incorrect4"
         android:layout_width="92dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -453,7 +451,7 @@
     <ImageButton
         android:id="@+id/button_o_correct5"
         android:layout_width="47dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:background="@color/green"
         android:backgroundTint="@color/grey"
@@ -468,7 +466,7 @@
     <ImageButton
         android:id="@+id/button_o_correct6"
         android:layout_width="47dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:background="@color/green"
         android:backgroundTint="@color/grey"
@@ -483,7 +481,7 @@
     <ImageButton
         android:id="@+id/button_o_incorrect5"
         android:layout_width="170dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -531,6 +529,7 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         tools:textStyle="bold" />
 
@@ -941,7 +940,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51121653" />
+        app:layout_constraintGuide_percent="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
