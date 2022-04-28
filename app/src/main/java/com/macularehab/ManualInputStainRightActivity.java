@@ -34,6 +34,11 @@ public class ManualInputStainRightActivity extends AppCompatActivity {
         float centre_x=point.x/(float)2;
         float centre_y=point.y/(float)2;
 
+        if(size>point.y){
+            size= (int) Math.round(point.y);
+            metric_unit =  Math.round(size/(float)20);
+        }
+
         ImageView grid=findViewById(R.id.circleGrid);
         grid.getLayoutParams().width = size;
         grid.getLayoutParams().height = size;

@@ -18,6 +18,7 @@ import com.macularehab.actions.ManualActions;
 public class ManualInputStainBothActivity extends AppCompatActivity {
 
     private ManualActions actions;
+    private Boolean is_size=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,11 @@ public class ManualInputStainBothActivity extends AppCompatActivity {
         float centre_x=point.x/(float)2;
         float centre_y=point.y/(float)2;
 
+        if(size>point.y){
+            size= (int) Math.round(point.y);
+            metric_unit =  Math.round(size/(float)20);
+            is_size=false;
+        }
         ImageView grid=findViewById(R.id.circleGrid);
         grid.getLayoutParams().width = size;
         grid.getLayoutParams().height = size;
@@ -75,6 +81,9 @@ public class ManualInputStainBothActivity extends AppCompatActivity {
 
     private void next_test(View v) {
         Intent i = new Intent( this, FirstTestLeftExplanationActivity.class );
+        if(!is_size){
+            i = new Intent( this, TestsResultsActivity.class );
+        }
         String value= actions.getResult_coor().toString();
         i.putExtra("manual_both",value);
         value= getIntent().getExtras().getString("manual_left");
