@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FifteenthExerciseActivity">
-
+    tools:context=".FourteenthExerciseActivity">
 
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="61dp"
+        android:layout_height="81dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
@@ -32,23 +31,23 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.12" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/circle_1"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:scaleType="centerCrop"
+        android:contentDescription="@string/circle"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/circle_line" />
-    <ImageView
+
+    <ImageButton
         android:id="@+id/cross1.1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -57,11 +56,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_1"
         app:srcCompat="@drawable/cross_thinner" />
 
-
-    <ImageView
+    <ImageButton
         android:id="@+id/cross1.2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -70,10 +68,10 @@
         app:layout_constraintStart_toStartOf="@+id/circle_1"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross1.3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -82,10 +80,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_1"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross1.4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -95,24 +93,22 @@
         app:srcCompat="@drawable/cross_thinner" />
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/circle_2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:contentDescription="@string/circle"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/circle_line" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross2.1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -123,10 +119,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_2"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross2.2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -135,10 +131,10 @@
         app:layout_constraintStart_toStartOf="@+id/circle_2"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross2.3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -147,10 +143,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_2"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross2.4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -160,23 +156,22 @@
         app:srcCompat="@drawable/cross_thinner" />
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/circle_3"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/circle"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross3.1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -185,10 +180,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_3"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross3.2"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -198,10 +193,10 @@
         app:layout_constraintStart_toStartOf="@+id/circle_3"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross3.3"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -211,10 +206,10 @@
         app:srcCompat="@drawable/cross_thinner" />
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross3.4"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -223,23 +218,22 @@
         app:layout_constraintTop_toBottomOf="@+id/circle_3"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/circle_4"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/circle"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross4.1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -248,10 +242,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_4"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross4.2"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -261,10 +255,10 @@
         app:layout_constraintStart_toStartOf="@+id/circle_4"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross4.3"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -273,10 +267,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_4"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross4.4"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -285,22 +279,21 @@
         app:layout_constraintTop_toBottomOf="@+id/circle_4"
         app:srcCompat="@drawable/cross_thinner" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/circle_5"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:contentDescription="@string/circle"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toStartOf="@+id/cross5.3"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross5.1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -309,10 +302,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_5"
         app:srcCompat="@drawable/cross_super_thin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross5.2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -322,10 +315,10 @@
         app:layout_constraintStart_toStartOf="@+id/circle_5"
         app:srcCompat="@drawable/cross_super_thin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross5.3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -335,10 +328,10 @@
         app:srcCompat="@drawable/cross_super_thin" />
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross5.4"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -348,22 +341,21 @@
         app:srcCompat="@drawable/cross_super_thin" />
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/circle_6"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:contentDescription="@string/circle"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/cross6.1"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/circle_line" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross6.1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -372,10 +364,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_6"
         app:srcCompat="@drawable/cross_super_thin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross6.2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -385,10 +377,10 @@
         app:layout_constraintStart_toStartOf="@+id/circle_6"
         app:srcCompat="@drawable/cross_super_thin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross6.3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -397,10 +389,10 @@
         app:layout_constraintTop_toTopOf="@+id/circle_6"
         app:srcCompat="@drawable/cross_super_thin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/cross6.4"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
@@ -507,5 +499,4 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

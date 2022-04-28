@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".EleventhExerciseActivity">
 
+
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="61dp"
+        android:layout_height="81dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toStartOf="@+id/guideline38"
-        app:srcCompat="@drawable/pausa"/>
+        app:srcCompat="@drawable/pausa" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline37"
@@ -33,24 +34,23 @@
 
     <ImageView
         android:id="@+id/image_background"
-        android:layout_width="330dp"
-        android:layout_height="300dp"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
         android:contentDescription="@string/image_background"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/man_image" />
+        app:layout_constraintVertical_bias="0.262"
+        app:srcCompat="@drawable/woman_image" />
 
     <ImageButton
         android:id="@+id/dot_button_nose"
-        android:layout_width="68dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="160dp"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="272dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -74,15 +74,13 @@
 
     <ImageButton
         android:id="@+id/dot_button_left_eye"
-        android:layout_width="55dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="72dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="200dp"
         android:alpha="0.01"
-        android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
-        android:foregroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
@@ -103,15 +101,15 @@
 
     <ImageButton
         android:id="@+id/dot_button_right_eye"
-        android:layout_width="55dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="100dp"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="200dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="@+id/image_background"
+        app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
         app:srcCompat="@drawable/circle_line" />
 
@@ -130,10 +128,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_mouth"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="129dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="340dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -159,14 +157,14 @@
         android:id="@+id/text_findX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
         android:gravity="center"
         android:text="@string/eleventh_exercise_find_nose"
-        android:textSize="24sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu"
@@ -215,7 +213,7 @@
             android:textSize="48sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/textView13"

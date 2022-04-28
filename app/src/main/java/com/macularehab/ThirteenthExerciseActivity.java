@@ -6,10 +6,12 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -82,9 +84,18 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             focus_on=!focus_on;
         });
 
+        Display display_measure = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display_measure.getSize(point);
+
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
         size = metric_unit * 20;//10cm
+        if(size>point.y){
+            size= (int) Math.round(point.y);
+            metric_unit =  Math.round(size/(float)20);
+        }
+
         move();
 
         /*
