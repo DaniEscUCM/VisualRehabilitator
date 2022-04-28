@@ -8,14 +8,14 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutPatientInfoNotHere"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculated_spot"
-        app:layout_constraintBottom_toTopOf="@id/imageButton_play">
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -26,12 +26,12 @@
                 android:id="@+id/imageView"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="1:1"
                 android:contentDescription="@string/distance_30cm"
                 android:scaleX="-1"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/imageFilterView3"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/imageFilterView3"
+                app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/perfil" />
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -39,10 +39,10 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginEnd="32dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/pantalla" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/distance_30cm"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,9 +71,9 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                app:layout_constraintDimensionRatio="1:1"
                 android:contentDescription="@string/cover_left_eye"
                 app:layout_constraintBottom_toTopOf="@+id/textView17"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cover_left_eye"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/short_explain_second"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -116,9 +116,9 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                app:layout_constraintDimensionRatio="1:1"
                 android:contentDescription="@string/touch_instruction"
                 app:layout_constraintBottom_toTopOf="@+id/textView15"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -132,7 +132,7 @@
         android:layout_height="wrap_content"
         android:text="@string/second_test_right"
         android:textAlignment="viewStart"
-        android:textSize="48sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,29 +141,32 @@
     <ImageButton
         android:id="@+id/imageButton_play"
         android:layout_width="0dp"
-        android:layout_height="162dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/button_play"
         android:scaleType="fitCenter"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutPatientInfoNotHere"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="@android:drawable/ic_media_play"
         app:tint="#FD1F4C02" />
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
@@ -177,5 +180,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15 " />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
