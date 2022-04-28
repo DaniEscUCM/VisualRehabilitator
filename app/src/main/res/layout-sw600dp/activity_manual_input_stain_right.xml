@@ -9,19 +9,20 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageView
         android:id="@+id/circleGrid"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="545dp"
+        android:layout_height="545dp"
         android:contentDescription="@string/circular_grid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,8 +32,8 @@
 
     <ImageView
         android:id="@+id/dotsPainting"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="545dp"
+        android:layout_height="545dp"
         android:contentDescription="@string/circular_grid"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/circleGrid"
@@ -43,38 +44,39 @@
 
     <ImageButton
         android:id="@+id/nextButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/next_test"
         android:scaleType="fitCenter"
         android:src="@android:drawable/ic_media_ff"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
         app:tint="#000000" />
 
     <ImageButton
         android:id="@+id/repeatButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="118dp"
+        android:layout_height="102dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/repeat_test"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
         app:srcCompat="@android:drawable/stat_notify_sync"
         app:tint="#429A37" />
 
     <TextView
         android:id="@+id/gridTittleBoth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:text="@string/manual_stain_right"
-        android:textAlignment="viewStart"
-        android:textSize="24sp"
+        android:textSize="48sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/ManualLeftInstructions"
         app:layout_constraintEnd_toEndOf="@+id/ManualLeftInstructions"
-        app:layout_constraintStart_toStartOf="@+id/ManualLeftInstructions" />
+        app:layout_constraintStart_toStartOf="@+id/ManualLeftInstructions"
+        tools:textAlignment="center" />
 
     <TextView
         android:id="@+id/ManualLeftInstructions"
@@ -82,7 +84,8 @@
         android:layout_height="wrap_content"
         android:text="@string/explain_manual"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:layout_marginStart="24dp"
         app:layout_constraintBottom_toTopOf="@+id/repeatButton"
         app:layout_constraintEnd_toStartOf="@+id/circleGrid"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,21 +96,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.15 " />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.9 " />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
