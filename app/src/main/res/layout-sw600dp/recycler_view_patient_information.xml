@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientInfo_cardView_text_patient"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="16sp"
+                    android:textSize="30dp"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toTopOf="parent" />
 
@@ -42,8 +42,9 @@
                     android:id="@+id/professional_patient_info_card_view_patient_uid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="30sp"
                     card_view:layout_constraintStart_toEndOf="@+id/textView32"
                     card_view:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -58,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientInfo_cardView_text_name"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="14sp"
+                    android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toTopOf="parent" />
 
@@ -66,8 +67,9 @@
                     android:id="@+id/professional_patient_info_card_view_patient_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="24sp"
                     card_view:layout_constraintStart_toEndOf="@+id/textView38"
                     card_view:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -75,7 +77,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="0dp">
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/textView39"
@@ -83,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientInfo_cardView_text_lastName"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="14sp"
+                    android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toTopOf="parent" />
 
@@ -92,14 +94,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="24sp"
                     card_view:layout_constraintStart_toEndOf="@+id/textView39"
                     card_view:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/textView49"
@@ -107,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientInfo_cardView_text_dateLastText"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="14sp"
+                    android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toTopOf="parent" />
 
@@ -116,14 +119,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="24sp"
                     card_view:layout_constraintStart_toEndOf="@+id/textView49"
                     card_view:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/textView50"
@@ -131,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientInfo_cardView_text_progress"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="14sp"
+                    android:textSize="24dp"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toTopOf="parent" />
 
