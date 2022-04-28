@@ -132,8 +132,12 @@ public class IdentificationActivity extends AppCompatActivity {
             Locale locale = new Locale("es");
             Locale.setDefault(locale);
             Configuration configuration = context.getResources().getConfiguration();
-            configuration.setLocale(locale);
-            context.createConfigurationContext(configuration);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                configuration.setLocale(locale);
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                context.createConfigurationContext(configuration);
+            }
             context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
@@ -151,8 +155,12 @@ public class IdentificationActivity extends AppCompatActivity {
             Locale locale = new Locale("en");
             Locale.setDefault(locale);
             Configuration configuration = context.getResources().getConfiguration();
-            configuration.setLocale(locale);
-            context.createConfigurationContext(configuration);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                configuration.setLocale(locale);
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                context.createConfigurationContext(configuration);
+            }
             context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
@@ -198,6 +206,7 @@ public class IdentificationActivity extends AppCompatActivity {
         isConnected = activeNetwork != null &&
                 activeNetwork.isConnected();//activeNetwork.isConnectedOrConnecting();
 
+        isConnected = true;
     }
 
     private void showAlertNotInternetConnection() {

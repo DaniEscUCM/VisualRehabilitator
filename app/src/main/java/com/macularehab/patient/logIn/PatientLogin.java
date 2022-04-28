@@ -3,10 +3,14 @@ package com.macularehab.patient.logIn;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -31,6 +35,8 @@ public class PatientLogin extends AppCompatActivity  {
     private String email_username;
     private String password;
     public static final String getUserName = "com.macularehab.getUserName";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PATIENT_USER_LOGGED_KEY = "patient_user_logged";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,10 +118,23 @@ public class PatientLogin extends AppCompatActivity  {
         // Check if user is signed in (non-null) and update UI accordingly.
 
         Log.w("actividad LogIn", " empezada");
-        boolean signedIn = this.logIn.patient_is_signed_in(this);
-        if(signedIn){
-            Log.w("actividad LogIn", " paciente conectado");
-            reload();
+
+        if (isConnected()) {
+            boolean signedIn = this.logIn.patient_is_signed_in(this);
+            if (signedIn) {
+                Log.w("actividad LogIn", " paciente conectado");
+                reload();
+            }
+        }
+        else {
+
+            boolean isLogged = false;
+            SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+            isLogged = sharedPreferences.getBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, isLogged);
+
+            if (isLogged) {
+                reload();
+            }
         }
     }
 
@@ -262,5 +281,19 @@ public class PatientLogin extends AppCompatActivity  {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private boolean isConnected() {
+
+        boolean isConnected = false;
+
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();//activeNetwork.isConnectedOrConnecting();
+
+        return isConnected;
     }
 }

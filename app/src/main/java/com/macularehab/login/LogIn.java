@@ -36,6 +36,7 @@ public class LogIn {
     private String username;
 
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
 
     public LogIn() {
 

@@ -38,6 +38,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "EmailPassword";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
 
     public String currentUserID;
 

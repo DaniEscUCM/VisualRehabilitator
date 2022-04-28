@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -41,6 +42,8 @@ public class PatientSignUpUsername extends AppCompatActivity {
 
     private final String db_patientsNumericCode = "PatientsNumericCodes";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PATIENT_USER_LOGGED_KEY = "patient_user_logged";
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -257,10 +260,21 @@ public class PatientSignUpUsername extends AppCompatActivity {
 
     private void startPatientHomeActivity() {
 
+        saveLoggedUser();
+
         databaseReference.child(db_patientsNumericCode).child(password).removeValue();
 
         Intent patient_home_intent = new Intent(this, PatientHome.class);
         startActivity(patient_home_intent);
     }
 
+    private void saveLoggedUser() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, true);
+
+        editor.apply();
+    }
 }
