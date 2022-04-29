@@ -8,18 +8,17 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc_prof"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:contentDescription="@string/imagebutton_des_back"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="@color/grey"
         android:clickable="true"
-        android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="@+id/guideline_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
@@ -28,7 +27,7 @@
         android:text="@string/text_professional_singup_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@+id/editTextProfesionalName"
                 android:text="@string/hint_professional_signup_name"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextProfesionalName"
@@ -61,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="textPersonName"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
         </LinearLayout>
 
@@ -75,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@+id/editTextProfesionalMail"
                 android:text="@string/hint_professional_signup_email"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextProfesionalMail"
@@ -83,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="textPersonName"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
         </LinearLayout>
 
@@ -97,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@+id/editTextProfesionalPasword"
                 android:text="@string/hint_professional_signup_password"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -110,7 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:textSize="16sp" />
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -125,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@+id/editTextProfesionalRepeatPasword"
                 android:text="@string/hint_professional_signup_repeat_password"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -138,7 +137,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:textSize="16sp" />
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -148,8 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/blue"
-            android:text="@string/button_singin"
-            android:textSize="16sp" />
+            android:text="@string/button_singin" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -164,7 +162,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

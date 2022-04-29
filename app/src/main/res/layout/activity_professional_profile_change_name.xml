@@ -7,8 +7,9 @@
 
     <ImageButton
         android:id="@+id/professional_profile_changeName_backButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
         android:backgroundTint="@color/grey"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/professional_profile_changeName_title"
-        android:textSize="60sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline40"
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +37,6 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         app:helperText="@string/required"
         app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/professional_profile_changeName_name_hint"
             android:inputType="textPersonName"
-            android:textSize="24sp" />
+            android:textSize="16sp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline45"
@@ -64,9 +64,9 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="10dp"
         android:text="@string/professional_profile_changeName_insertEmailText"
-        android:textSize="34sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toBottomOf="@+id/textView47" />
 
@@ -77,7 +77,7 @@
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/blue"
         android:text="@string/professional_profile_changeName_change_button"
-        android:textSize="34sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
         app:layout_constraintStart_toStartOf="@+id/guideline44" />
@@ -86,43 +86,37 @@
         android:id="@+id/textView47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:gravity="center"
         android:text="@string/professional_profile_changeName_helpText"
-        android:textSize="24sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toTopOf="@+id/guideline40" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/professional_logIn_restorePassword_loadingEffect"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changeName_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintTop_toBottomOf="@+id/professional_profile_changeName_textInputLayout"
-        app:layout_goneMarginStart="10dp"
-        app:layout_goneMarginTop="1dp"
         app:lottie_autoPlay="false"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/professional_logIn_restorePassword_loadingEffect_result"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:scaleType="center"
+        app:layout_constraintDimensionRatio="1:1"
         android:scaleX="1"
         android:scaleY="1"
+        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changeName_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/professional_profile_changeName_textInputLayout"
-        app:layout_goneMarginStart="10dp"
-        app:layout_goneMarginTop="1dp"
         app:lottie_autoPlay="false"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 

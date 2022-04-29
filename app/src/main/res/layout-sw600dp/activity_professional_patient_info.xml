@@ -9,8 +9,10 @@
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:text="@string/professional_patientInfo_patient"
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintStart_toEndOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,19 +21,18 @@
         android:id="@+id/textView_patientInfo_nameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:text="AquiElNombreDelPaciente"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView31"
         app:layout_constraintStart_toEndOf="@+id/textView31" />
 
     <ImageButton
         android:id="@+id/professional_patient_info_go_back_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
@@ -45,8 +46,8 @@
         android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_date"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_date"
@@ -83,7 +84,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -97,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_name"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_name"
@@ -106,7 +107,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -120,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_first_lastName"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_first_lastName"
@@ -129,7 +130,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -143,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_second_lastName"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_second_lastName"
@@ -152,7 +153,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -166,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_gender"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_gender"
@@ -175,7 +176,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -189,7 +190,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_date_of_birth"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_date_of_birth"
@@ -198,7 +199,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -212,7 +213,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_diagnostic"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_diagnostic"
@@ -221,7 +222,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -235,7 +236,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_av"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_av"
@@ -244,7 +245,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -258,7 +259,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_cv"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_cv"
@@ -267,7 +268,7 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -281,7 +282,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/professional_patientInfo_observations"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView_patientInfo_observations"
@@ -290,19 +291,19 @@
                     android:layout_weight="1"
                     android:text="TextView"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="100dp" />
 
             <TextView
                 android:id="@+id/textView30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_section_1"
-                android:textSize="20sp" />
+                android:textSize="48sp" />
 
             <View
                 android:id="@+id/view"
@@ -316,7 +317,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="false"
                 android:text="@string/professional_patientForm_checkBox_1"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view2"
@@ -328,7 +329,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingStart="50dp">
+                android:paddingStart="200dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -342,7 +343,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.1"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
 
                     <CheckBox
                         android:id="@+id/check_create_patient_1.2"
@@ -350,7 +351,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.2"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
 
                     <CheckBox
                         android:id="@+id/check_create_patient_1.3"
@@ -358,7 +359,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.3"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -373,7 +374,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.4"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
 
                     <CheckBox
                         android:id="@+id/check_create_patient_1.5"
@@ -381,7 +382,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.5"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
 
                     <CheckBox
                         android:id="@+id/check_create_patient_1.6"
@@ -389,7 +390,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.6"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -404,7 +405,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.7"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
 
                     <CheckBox
                         android:id="@+id/check_create_patient_1.8"
@@ -412,7 +413,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/professional_patientForm_checkBox_1.8"
-                        android:textSize="16sp" />
+                        android:textSize="34sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -429,7 +430,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_2"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view4"
@@ -442,7 +443,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_3"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view6"
@@ -455,7 +456,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_4"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view7"
@@ -468,7 +469,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_5"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view8"
@@ -481,7 +482,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_6"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view9"
@@ -494,7 +495,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_7"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view11"
@@ -507,7 +508,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_8"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view12"
@@ -520,7 +521,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_9"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view13"
@@ -533,7 +534,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_10"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view14"
@@ -546,7 +547,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_11"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view15"
@@ -559,7 +560,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_12"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view16"
@@ -572,7 +573,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_13"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view17"
@@ -585,7 +586,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_14"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view18"
@@ -598,7 +599,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_15"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view19"
@@ -611,7 +612,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_16"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view20"
@@ -628,7 +629,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_section_2"
-                android:textSize="20sp" />
+                android:textSize="48sp" />
 
             <View
                 android:id="@+id/view21"
@@ -641,7 +642,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_17"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view22"
@@ -654,7 +655,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_18"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view23"
@@ -667,7 +668,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_19"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view24"
@@ -680,7 +681,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_20"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view25"
@@ -697,7 +698,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_section_3"
-                android:textSize="16sp" />
+                android:textSize="48sp" />
 
             <View
                 android:id="@+id/view26"
@@ -710,7 +711,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_21"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view27"
@@ -723,7 +724,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_22"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view28"
@@ -736,7 +737,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_23"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view29"
@@ -753,7 +754,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_section_4"
-                android:textSize="20sp" />
+                android:textSize="48sp" />
 
             <View
                 android:id="@+id/view30"
@@ -766,7 +767,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_24"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view31"
@@ -779,7 +780,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientForm_checkBox_25"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <View
                 android:id="@+id/view32"
@@ -804,7 +805,7 @@
         android:id="@+id/scrollView4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/border_for_layout"
@@ -830,7 +831,7 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/blue"
                     android:text="@string/professional_patientInfo_editPatient_button"
-                    android:textSize="20sp" />
+                    android:textSize="30sp" />
 
                 <Space
                     android:layout_width="10dp"
@@ -844,7 +845,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/pink_dark"
                     android:text="@string/professional_patientInfo_deletePatient_button"
-                    android:textSize="20sp" />
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <Space
@@ -856,7 +857,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientInfo_lastTest"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <TextView
                 android:id="@+id/professional_patient_info_lastTest_text"
@@ -864,11 +865,11 @@
                 android:layout_height="wrap_content"
                 android:text="99-99-99"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="20dp" />
 
             <Button
                 android:id="@+id/button_tests"
@@ -876,29 +877,29 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@android:color/holo_blue_dark"
                 android:text="@string/tests_history"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="30dp" />
 
             <TextView
                 android:id="@+id/textView82"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientInfo_exercises"
-                android:textSize="20sp" />
+                android:textSize="34sp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="20dp" />
 
             <TextView
                 android:id="@+id/textView83"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/professional_patientInfo_exercisesProgress"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -923,10 +924,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@android:color/holo_red_dark"
                 android:text="@string/professional_patientInfo_exercisesHistory_button"
-                android:textSize="20sp" />
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:textSize="30sp" />
 
         </LinearLayout>
     </ScrollView>
@@ -954,7 +952,7 @@
         android:layout_marginBottom="8dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/professional_patientInfo_professionalProfile_button"
-        android:textSize="20sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/scrollView4" />

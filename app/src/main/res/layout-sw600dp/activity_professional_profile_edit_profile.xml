@@ -7,16 +7,13 @@
 
     <ImageButton
         android:id="@+id/professional_profile_editProfile_back_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:backgroundTint="@color/grey"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/guideline52"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
@@ -26,8 +23,8 @@
         android:id="@+id/professional_profile_editProfile_profileImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/app_icon"
         app:civ_border_color="@color/black"
         app:civ_border_width="3dp"
@@ -42,7 +39,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout_profile"
         android:text="Nombre"
-        android:textSize="16sp"
+        android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
         app:layout_constraintEnd_toStartOf="@+id/guideline49"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,7 +54,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/professional_profile_nameText"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline21" />
 
@@ -70,7 +67,7 @@
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_profile_changeName_button"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/professional_profile_editProfile_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,7 +82,7 @@
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_profile_changeEmail_button"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/professional_profile_editProfile_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline48" />
@@ -100,7 +97,7 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:padding="10dp"
         android:text="@string/professional_profile_changePassword_button"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline48"
         app:layout_constraintTop_toBottomOf="@+id/professional_profile_editProfile_changeEmail_button" />
@@ -114,7 +111,7 @@
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_profile_changePhone_button"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/professional_profile_editProfile_phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline48" />
@@ -128,7 +125,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/professional_profile_emailText"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -137,7 +134,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <TextView
         android:id="@+id/professional_profile_editProfile_email"
@@ -145,7 +142,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout_profile"
         android:text="email"
-        android:textSize="16sp"
+        android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView24"
         app:layout_constraintEnd_toStartOf="@+id/guideline49"
         app:layout_constraintStart_toStartOf="@+id/guideline50" />
@@ -159,7 +156,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/professional_profile_phoneText"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/professional_profile_editProfile_changePassword_button" />
 
@@ -169,7 +166,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout_profile"
         android:text="@string/professional_profile_defaultPhoneText"
-        android:textSize="16sp"
+        android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView60"
         app:layout_constraintEnd_toStartOf="@+id/guideline49"
         app:layout_constraintStart_toStartOf="@+id/guideline50" />
@@ -178,7 +175,10 @@
         android:id="@+id/professional_profile_editProfile_changeImage_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/border_for_layout"
         android:text="@string/professional_profile_changePhoto_button"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline21"
@@ -213,18 +213,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.17" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline51"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline52"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
