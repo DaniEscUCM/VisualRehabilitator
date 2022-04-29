@@ -61,7 +61,28 @@
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/drawable/cross_thinner.xml" value="0.152" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/drawable/edit_button.xml" value="0.1635" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eleventh_exercise.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-land/activity_eleventh_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-normal/activity_eleventh_exercise.xml" value="0.1796875" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_eighth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_eleventh_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_fifteenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_fifth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_first_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_fourteenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_fourth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_ninth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_second_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_seventeenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_seventh_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_sixteenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_sixth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_tenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_third_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_third_exercise_description.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_thirteenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_twelfth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eighth_exercise.xml" value="0.10652765185856754" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eleventh_exercise.xml" value="0.22" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_eleventh_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_exercises.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_fifteenth_exercise.xml" value="0.13333333333333333" />
@@ -70,7 +91,7 @@
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_fifth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise.xml" value="0.10224780701754387" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_first_exercise_description.xml" value="0.1" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_fourteenth_exercise.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_fourteenth_exercise.xml" value="0.12" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_fourteenth_exercise_description.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_fourth_exercise.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_fourth_exercise_description.xml" value="0.1" />
@@ -90,19 +111,19 @@
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_second_exercise.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_second_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_settings.xml" value="0.10224780701754387" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_seventeenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_seventeenth_exercise.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_seventeenth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_seventh_exercise.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_seventh_exercise_description.xml" value="0.1" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_sixteenth_exercise.xml" value="0.1" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_sixteenth_exercise.xml" value="0.12" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_sixth_exercise.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_sixth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_tenth_exercise.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_third_exercise.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_third_exercise_description.xml" value="0.1" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_thirteenth_exercise.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_thirteenth_exercise.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_thirteenth_exercise_description.xml" value="0.15211640211640212" />
-        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_twelfth_exercise.xml" value="0.1796875" />
+        <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_twelfth_exercise.xml" value="0.22" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/activity_twelfth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/Alba/Desktop/Uni/TFG/VisualRehabilitator/app/src/main/res/layout/holahola.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.262" />
@@ -169,8 +190,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
-        <entry key="app/src/main/res/layout-sw600dp/activity_identification.xml" value="0.1" />
-        <entry key="app/src/main/res/layout-sw800dp/activity_patient_home_choose_data_exercise.xml" value="0.1140625" />
+        <entry key="app/src/main/res/layout-sw600dp/activity_identification.xml" value="0.16527942925089179" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise_description.xml" value="0.12911184210526316" />
@@ -212,7 +232,6 @@
         <entry key="app/src/main/res/layout/activity_tenth_exercise_description.xml" value="0.15222772277227722" />
         <entry key="app/src/main/res/layout/activity_tests_history.xml" value="0.11041666666666666" />
         <entry key="app/src/main/res/layout/activity_tests_results.xml" value="0.11041666666666666" />
-        <entry key="app/src/main/res/layout/layout_loading.xml" value="0.31233000906618313" />
         <entry key="app/src/main/res/layout/pruena.xml" value="0.10807291666666667" />
         <entry key="app/src/main/res/layout/recycler_view_patient_information.xml" value="0.25" />
       </map>

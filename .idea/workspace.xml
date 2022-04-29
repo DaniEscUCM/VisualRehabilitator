@@ -3,8 +3,8 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
-        <device id="_device_class_tablet" />
         <device id="_device_class_phone" />
+        <device id="_device_class_tablet" />
         <device id="_device_class_foldable" />
         <device id="pixel_4" />
         <device id="Nexus 7 2013" />
@@ -15,7 +15,6 @@
         <device id="Nexus 5X" />
         <locale>es-rES</locale>
         <option name="nonWearDeviceLastStateName" value="landscape" />
-        <target>android-31</target>
       </config>
     </shared>
   </component>
@@ -24,18 +23,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb63ed4-9bb7-49fe-9523-941012296234" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw800dp/activity_patient_home_choose_data_exercise.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_exercises.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_first_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/patient/ProfessionalPatientHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/patient/ProfessionalPatientHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercises.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercises.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_first_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_first_exercise.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R52R40HY3QX]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Alba\.android\avd\Pixel_3a_XL_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -73,8 +74,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -186,7 +187,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Alba" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -198,53 +211,43 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ProfessionalSignUpActivity.java</url>
-          <line>174</line>
+          <line>130</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ProfessionalSignUpActivity.java</url>
-          <line>246</line>
+          <line>202</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/patientForm/ProfessionalCreateNewPatient.java</url>
-          <line>201</line>
+          <line>157</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/patientForm/ProfessionalCreateNewPatient.java</url>
-          <line>300</line>
+          <line>256</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/patientForm/ProfessionalCreateNewPatientDifficulties.java</url>
-          <line>170</line>
+          <line>126</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/profiles/ProfessionalEditProfile.java</url>
-          <line>239</line>
+          <line>210</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/profiles/ProfessionalEditProfile.java</url>
-          <line>237</line>
+          <line>208</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ProfessionalLoginActivity.java</url>
-          <line>100</line>
+          <line>98</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/IdentificationActivity.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/internalStorage/UploadPatientData.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
