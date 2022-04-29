@@ -22,13 +22,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/calculated_focus"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/repeatButton"
         app:layout_constraintEnd_toStartOf="@+id/grid"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_back_results"
-        tools:textAlignment="center" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_back_results" />
 
     <ImageView
         android:id="@+id/grid"

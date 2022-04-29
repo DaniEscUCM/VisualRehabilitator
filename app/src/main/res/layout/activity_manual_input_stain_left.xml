@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/circleGrid"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:contentDescription="@string/circular_grid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,8 +30,8 @@
 
     <ImageView
         android:id="@+id/dotsPainting"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:contentDescription="@string/circular_grid"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/circleGrid"
@@ -66,14 +66,16 @@
 
     <TextView
         android:id="@+id/gridTittleBoth"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/manual_stain_left"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/ManualLeftInstructions"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ManualLeftInstructions"
-        app:layout_constraintStart_toStartOf="@+id/ManualLeftInstructions" />
+        app:layout_constraintEnd_toStartOf="@+id/dotsPainting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/ManualLeftInstructions"
@@ -82,10 +84,10 @@
         android:text="@string/explain_manual"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/repeatButton"
-        app:layout_constraintEnd_toStartOf="@+id/circleGrid"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_back_results" />
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dotsPainting"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

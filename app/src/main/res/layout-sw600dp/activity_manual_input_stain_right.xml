@@ -68,15 +68,15 @@
 
     <TextView
         android:id="@+id/gridTittleBoth"
-        android:layout_marginStart="24dp"
-        android:text="@string/manual_stain_right"
-        android:textSize="48sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/ManualLeftInstructions"
-        app:layout_constraintEnd_toEndOf="@+id/ManualLeftInstructions"
-        app:layout_constraintStart_toStartOf="@+id/ManualLeftInstructions"
-        tools:textAlignment="center" />
+        android:text="@string/manual_stain_right"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/circleGrid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/ManualLeftInstructions"
@@ -85,11 +85,10 @@
         android:text="@string/explain_manual"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/repeatButton"
-        app:layout_constraintEnd_toStartOf="@+id/circleGrid"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_back_results" />
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/circleGrid"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

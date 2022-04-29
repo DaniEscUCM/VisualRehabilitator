@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ManualInputStainBothActivity">
-
+    tools:context=".SecondTestBothActivity">
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
@@ -70,32 +69,43 @@
         android:id="@+id/gridTittleBoth"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/manual_stain_both"
+        android:text="@string/second_test_both"
         android:textAlignment="center"
         android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/dotsPainting"
+        app:layout_constraintEnd_toStartOf="@+id/circleGrid"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/ManualLeftInstructions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/explain_manual"
+        android:layout_marginStart="24dp"
+        android:text="@string/short_explain_second"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/nextButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dotsPainting"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/repeatButton"
+        app:layout_constraintEnd_toStartOf="@+id/circleGrid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridTittleBoth" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="41dp"
+        android:contentDescription="@string/dot_instruction"
+        app:layout_constraintBottom_toBottomOf="@+id/circleGrid"
+        app:layout_constraintEnd_toEndOf="@+id/circleGrid"
+        app:layout_constraintStart_toStartOf="@+id/circleGrid"
+        app:layout_constraintTop_toTopOf="@+id/circleGrid"
+        app:srcCompat="@drawable/red_dot" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.10 " />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -117,4 +127,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9 " />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
