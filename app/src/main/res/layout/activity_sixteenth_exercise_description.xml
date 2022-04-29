@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="@string/seconds_description_whole_exercise"
         android:textAlignment="textEnd"
-        android:textSize="25sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toStartOf="@id/seconds"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
