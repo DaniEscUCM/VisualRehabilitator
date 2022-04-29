@@ -2,21 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/eleventh_exercise_description"
+    android:id="@+id/ninth_exercise_description"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".EleventhExerciseDescriptionActivity">
-
-    <Switch
-        android:id="@+id/focus_switch"
-        android:layout_width="394dp"
-        android:layout_height="73dp"
-        android:text="@string/focus_switch"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline24"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".NinthExerciseDescriptionActivity">
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc"
@@ -35,9 +25,9 @@
         android:id="@+id/exerciseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/eleventh_exercise"
+        android:text="@string/ninth_exercise"
         android:textAlignment="viewStart"
-        android:textSize="48sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,12 +54,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/eleventh_exercise_description"
-        android:textSize="30sp"
+        android:text="@string/ninth_exercise_description"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"  />
 
     <EditText
         android:id="@+id/seconds"
@@ -82,24 +72,27 @@
         android:inputType="number"
         android:text="@string/num_seconds"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView_insertseconds"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toEndOf="@+id/textView_insertseconds"
-        app:layout_constraintTop_toTopOf="@+id/textView_insertseconds" />
+        app:layout_constraintTop_toTopOf="@+id/textView_insertseconds"
+        tools:textSize="48sp"/>
 
     <TextView
         android:id="@+id/textView_insertseconds"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/seconds_description_instructions"
+        android:text="@string/seconds_description_letter"
         android:textAlignment="textEnd"
-        android:textSize="25sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toStartOf="@id/seconds"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="@+id/guideline39" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
         android:layout_width="wrap_content"
@@ -127,13 +120,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.90" />
+
+    <Switch
+        android:id="@+id/focus_switch"
+        android:layout_width="394dp"
+        android:layout_height="73dp"
+        android:text="@string/focus_switch"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline24"
+        app:layout_constraintTop_toTopOf="parent" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.50" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
@@ -147,5 +151,4 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15 " />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
