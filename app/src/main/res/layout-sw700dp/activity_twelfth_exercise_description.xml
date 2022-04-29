@@ -88,8 +88,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView_insertseconds"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toEndOf="@+id/textView_insertseconds"
-        app:layout_constraintTop_toTopOf="@+id/textView_insertseconds"
-        tools:textSize="48sp" />
+        app:layout_constraintTop_toTopOf="@+id/textView_insertseconds" />
 
     <TextView
         android:id="@+id/textView_insertseconds"
