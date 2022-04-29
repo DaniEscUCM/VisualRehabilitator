@@ -176,6 +176,7 @@
         <entry key="app/src/main/res/layout-sw600dp/activity_identification.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw600dp/activity_professional_profile_edit_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_test_history.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw700dp/recycler_view_patient_information.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw800dp/activity_patient_home_choose_data_exercise.xml" value="0.1140625" />
         <entry key="app/src/main/res/layout-sw800dp/activity_professional_profile_edit_profile.xml" value="0.15859375" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />

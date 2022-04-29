@@ -297,7 +297,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private boolean isProfessionalLogged() {
 
         if (hasInternetConnection()) {
-            
+
             SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
             boolean logged = false;
 
