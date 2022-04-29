@@ -2,8 +2,12 @@ package com.macularehab.professional;
 
 import android.animation.Animator;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -71,6 +75,8 @@ public class ProfessionalHome extends AppCompatActivity {
     //Store Data
     private final String filenameProfessionalPatientList = "ProfessionalPatientList.json";
     private final String filenameProfessionalInfo = "ProfessionalInfo.json";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY = "professional_user_logged";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -369,7 +375,11 @@ public class ProfessionalHome extends AppCompatActivity {
 
     private void logOutProfessional() {
 
-        mAuth.signOut();
+        if (hasInternetConnection()) {
+            mAuth.signOut();
+        }
+
+        logOutAux();
 
         Intent mainActivity = new Intent(this, IdentificationActivity.class);
         startActivity(mainActivity);
@@ -449,5 +459,33 @@ public class ProfessionalHome extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    /**
+     * Auxiliary function to change the SharedPreference
+     * boolean that indicates if a patient is logged, to
+     * false
+     *
+     */
+    private void logOutAux() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY, false);
+        editor.apply();
+    }
+
+    private boolean hasInternetConnection() {
+
+        boolean isConnected = false;
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+
+        return isConnected;
     }
 }

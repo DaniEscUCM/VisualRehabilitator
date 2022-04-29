@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
     private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY = "professional_user_logged";
 
     public String currentUserID;
 
@@ -177,6 +179,7 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
                             setUserName(currentUser);
                             ProfessionalSignUpActivity.this.currentUserID = currentUser.getUid();
                             addDB(name,mail,password);
+                            saveLoggedUser();
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -402,5 +405,15 @@ public class ProfessionalSignUpActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void saveLoggedUser() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY, true);
+
+        editor.apply();
     }
 }

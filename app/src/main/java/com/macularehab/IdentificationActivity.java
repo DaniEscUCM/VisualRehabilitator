@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.macularehab.language.LocaleHelper;
 import com.macularehab.patient.PatientHome;
 import com.macularehab.patient.PatientIdentificationActivity;
+import com.macularehab.professional.ProfessionalHome;
 import com.macularehab.professional.account.ProfessionalIdentificationActivity;
 
 import java.util.Locale;
@@ -45,6 +46,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
     private final String SHARED_PREF_PATIENT_USER_LOGGED_KEY = "patient_user_logged";
+    private final String SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY = "professional_user_logged";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +80,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         checkLanguage();
         changeLanguage();
-        checkIfPatientIsLogged();
+        checkIfUserIsLogged();
 
         setUiListener();
     }
@@ -268,11 +270,16 @@ public class IdentificationActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    private void checkIfPatientIsLogged() {
+    private void checkIfUserIsLogged() {
 
         if (isPatientLogged()) {
 
             Intent intent = new Intent(this, PatientHome.class);
+            startActivity(intent);
+        }
+        else if (isProfessionalLogged()) {
+
+            Intent intent = new Intent(this, ProfessionalHome.class);
             startActivity(intent);
         }
     }
@@ -285,5 +292,33 @@ public class IdentificationActivity extends AppCompatActivity {
         logged = sharedPreferences.getBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, logged);
 
         return logged;
+    }
+
+    private boolean isProfessionalLogged() {
+
+        if (hasInternetConnection()) {
+            
+            SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+            boolean logged = false;
+
+            logged = sharedPreferences.getBoolean(SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY, logged);
+
+            return logged;
+        }
+
+        return false;
+    }
+
+    private boolean hasInternetConnection() {
+
+        boolean hasInternet = false;
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        hasInternet = activeNetwork != null &&
+                activeNetwork.isConnected();
+
+        return hasInternet;
     }
 }

@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Build;
@@ -47,6 +48,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "EmailPassword";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY = "professional_user_logged";
 
     EditText mailP, paswP;
     FirebaseDatabase firebaseDatabase;
@@ -303,6 +306,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     public void goToProfessionalHome() {
 
+        saveLoggedUser();
+
         if (firebaseAuth.getCurrentUser() != null) {
 
             String name = firebaseAuth.getCurrentUser().getDisplayName();
@@ -444,5 +449,15 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void saveLoggedUser() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY, true);
+
+        editor.apply();
     }
 }
