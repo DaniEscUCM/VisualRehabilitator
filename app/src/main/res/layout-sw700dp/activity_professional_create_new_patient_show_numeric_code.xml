@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/professional_patientForm_new_patient"
-        android:textSize="24sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre"
-        android:textSize="20sp"
+        android:textSize="60sp"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="@+id/guideline33" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="@string/professional_patientForm_show_numeric_code"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline6" />
@@ -41,7 +41,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/professional_patientForm_continueToTest_button"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:backgroundTint="@color/blue"
         app:layout_constraintBottom_toBottomOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/professional_patientForm_show_numeric_code"
-        android:textSize="20sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline5" />
@@ -63,7 +63,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/professional_patientForm_numeric_code_explanation"
-        android:textSize="16sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"

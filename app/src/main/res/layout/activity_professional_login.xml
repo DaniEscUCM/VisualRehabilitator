@@ -9,17 +9,18 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_prof_login"
-        android:contentDescription="@string/imagebutton_des_back"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="@color/grey"
+        app:layout_constraintDimensionRatio="1:1"
         android:clickable="true"
+        android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="@+id/guideline_back"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
@@ -28,11 +29,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textview_professional_loggin"
-        android:textSize="60sp"
+        android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout10"
@@ -54,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@+id/editTextTextProfessionalEmail"
                 android:text="@string/hint_professional_signup_email"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/editTextTextProfessionalEmail"
@@ -63,7 +65,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
@@ -78,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@+id/editTextTextProfessionalPassword"
                 android:text="@string/textview_password"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -91,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     tools:ignore="DuplicateSpeakableTextCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,7 +101,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="10dp" />
 
         <Button
             android:id="@+id/button_professional_login2"
@@ -107,7 +109,15 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/blue"
             android:text="@string/button_login"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/professional_logIn_forgotPassword_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:text="@string/professional_login_forgot_password"
+            android:textSize="20sp" />
 
     </LinearLayout>
     <androidx.constraintlayout.widget.Guideline
@@ -122,7 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -138,16 +148,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.8" />
 
-    <Button
-        android:id="@+id/professional_logIn_forgotPassword_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="@string/professional_login_forgot_password"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

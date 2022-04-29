@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <ImageButton
         android:id="@+id/imageButton_back_ident"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
+        android:contentDescription="@string/imagebutton_des_back"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="@color/grey"
         android:clickable="true"
-        android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="@+id/guidelineVertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
@@ -28,19 +26,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hint_patient_signup_signup"
-        android:textSize="35sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline1"  />
 
     <TextView
         android:id="@+id/textView_username_explained"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/patient_signup_enter_username"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="@+id/guidelineVertical2"
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
@@ -51,7 +49,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="@+id/guidelineVertical2"
         app:layout_constraintStart_toEndOf="@+id/textView_username_text"
@@ -63,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hint_patient_signup_email"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:drawableStart="@drawable/login_logo_vectorized"
         android:labelFor="@+id/editText_patient_signup_username"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
@@ -77,7 +75,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_500"
         android:text="@string/hint_patient_signup_signup_button"
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="@+id/guidelineVertical2"
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/guideline6" />
@@ -139,7 +137,6 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/patient_signup_loading_imageView"
         android:layout_width="0dp"
-        app:layout_constraintDimensionRatio="1:1"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/button_patient_continue_signup"
         app:layout_constraintEnd_toEndOf="@id/guidelineVertical2"

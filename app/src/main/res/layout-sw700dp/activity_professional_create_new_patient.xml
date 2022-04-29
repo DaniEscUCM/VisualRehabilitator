@@ -7,15 +7,14 @@
 
     <ImageButton
         android:id="@+id/professional_patient_patientForm_go_back_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="@+id/guideline_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_back_small" />
 
     <TextView
@@ -23,12 +22,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/professional_patientForm_new_patient"
-        android:textSize="24sp"
+        android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline1"/>
 
     <Button
         android:id="@+id/button_create_patient_continue"
@@ -37,7 +35,7 @@
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_patientForm_continue_button"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline_back" />
@@ -48,7 +46,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_create_patient_continue"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline_back"
-        app:layout_constraintTop_toTopOf="@+id/guideline1">
+        app:layout_constraintTop_toBottomOf="@+id/professional_patient_form_newPatient_textView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,114 +58,111 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
                 <TextView
                     android:id="@+id/textView34"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_date"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView35"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_name"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView40"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_first_lastName"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView41"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_second_lastName"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_gender"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView42"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_date_of_birth"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView43"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_diagnostic"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView44"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_av"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView45"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_cv"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:layout_height="21dp" />
 
                 <TextView
                     android:id="@+id/textView46"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/professional_patientForm_observations"
-                    android:textSize="16sp" />
+                    android:textSize="40sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -182,7 +177,7 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_date"
                     android:inputType="date"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -195,7 +190,7 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_name"
                     android:inputType="textPersonName"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -208,7 +203,7 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_first_lastName"
                     android:inputType="textPersonName"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -221,21 +216,18 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_second_lastName"
                     android:inputType="textPersonName"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="8dp" />
 
                 <Spinner
                     android:id="@+id/spinner_input_create_patient_gender"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:entries="@array/professional_patientForm_genders"
-                    android:textSize="16sp" />
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp" />
+                    android:textSize="60sp" />
 
                 <EditText
                     android:id="@+id/input_create_patient_date_of_birth"
@@ -244,11 +236,11 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_date_of_birth_hint"
                     android:inputType="date"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="54dp" />
 
                 <EditText
                     android:id="@+id/input_create_patient_diagnostic"
@@ -257,11 +249,11 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_diagnostic_hint"
                     android:inputType="textPersonName"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="27dp" />
+                    android:layout_height="54dp" />
 
                 <EditText
                     android:id="@+id/input_create_patient_av"
@@ -270,7 +262,7 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_av_hint"
                     android:inputType="numberDecimal"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -283,7 +275,7 @@
                     android:ems="10"
                     android:hint="@string/professional_patientForm_cv_hint"
                     android:inputType="numberDecimal"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -297,7 +289,7 @@
                     android:gravity="start|top"
                     android:hint="@string/professional_patientForm_observations_hint"
                     android:inputType="textMultiLine"
-                    android:textSize="16sp" />
+                    android:textSize="34sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -323,7 +315,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.1" />
 
 
     <androidx.constraintlayout.widget.Guideline
