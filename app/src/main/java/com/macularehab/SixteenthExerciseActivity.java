@@ -621,6 +621,7 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
     }
 
     public void Close(View view) {
+        counterCorrect = counterFailed = 0;
         timer_1.cancel();
         finish();
     }

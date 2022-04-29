@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="61dp"
-        android:layout_height="81dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
