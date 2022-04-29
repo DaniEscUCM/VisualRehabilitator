@@ -211,7 +211,7 @@ public class IdentificationActivity extends AppCompatActivity {
         isConnected = activeNetwork != null &&
                 activeNetwork.isConnected();//activeNetwork.isConnectedOrConnecting();
 
-        isConnected = true;
+        //isConnected = true;
     }
 
     private void showAlertNotInternetConnection() {

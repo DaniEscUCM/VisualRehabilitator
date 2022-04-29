@@ -1,7 +1,11 @@
 package com.macularehab.patient;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -55,6 +59,8 @@ public class PatientHome extends AppCompatActivity {
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
     private final String isFocus = "focusIsOn";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PATIENT_USER_LOGGED_KEY = "patient_user_logged";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,16 +213,6 @@ public class PatientHome extends AppCompatActivity {
         writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
     }
 
-    private void logOut() {
-
-        FirebaseAuth.getInstance().signOut();
-
-        patient_username_textView.setText("Patient");
-
-        Intent mainActivity = new Intent(this, IdentificationActivity.class);
-        startActivity(mainActivity);
-    }
-
     private void goToPatientData() {
 
         Intent intent = new Intent(this, PatientDataInfoActivity.class);
@@ -272,5 +268,47 @@ public class PatientHome extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void logOut() {
+
+        if (hasInternetConnection()) {
+            FirebaseAuth.getInstance().signOut();
+        }
+
+        logOutAux();
+
+        patient_username_textView.setText("Patient");
+
+        Intent mainActivity = new Intent(this, IdentificationActivity.class);
+        startActivity(mainActivity);
+    }
+
+    /**
+     * Auxiliary function to change the SharedPreference
+     * boolean that indicates if a patient is logged, to
+     * false
+     *
+     */
+    private void logOutAux() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, false);
+        editor.apply();
+    }
+
+    private boolean hasInternetConnection() {
+
+        boolean isConnected = false;
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+
+        return isConnected;
     }
 }

@@ -151,6 +151,7 @@ public class PatientLogin extends AppCompatActivity  {
         }
     }
 
+    //TODO
     public void user_loggedIn_successfully() {
 
         Resources resources = PatientLogin.this.getResources();
@@ -241,6 +242,8 @@ public class PatientLogin extends AppCompatActivity  {
 
     public void reload() {
 
+        saveLoggedUser();
+
         Intent intent = new Intent( this, PatientHome.class);
         startActivity(intent);
     }
@@ -292,8 +295,18 @@ public class PatientLogin extends AppCompatActivity  {
 
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         isConnected = activeNetwork != null &&
-                activeNetwork.isConnected();//activeNetwork.isConnectedOrConnecting();
+                activeNetwork.isConnected();
 
         return isConnected;
+    }
+
+    private void saveLoggedUser() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, true);
+
+        editor.apply();
     }
 }
