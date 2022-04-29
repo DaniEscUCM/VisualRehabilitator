@@ -37,9 +37,9 @@
         android:id="@+id/professional_profile_editProfile_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_for_layout_phone"
+        android:background="@drawable/border_for_layout_profile"
         android:text="Nombre"
-        android:textSize="16sp"
+        android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
         app:layout_constraintEnd_toStartOf="@+id/guideline49"
         app:layout_constraintHorizontal_bias="0.0"
@@ -54,7 +54,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/professional_profile_nameText"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline21" />
 
@@ -67,7 +67,7 @@
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_profile_changeName_button"
-        android:textSize="10sp"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/professional_profile_editProfile_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -82,7 +82,7 @@
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_profile_changeEmail_button"
-        android:textSize="10sp"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/professional_profile_editProfile_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline48" />
@@ -97,7 +97,7 @@
         android:backgroundTint="@android:color/holo_blue_dark"
         android:padding="10dp"
         android:text="@string/professional_profile_changePassword_button"
-        android:textSize="10sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline48"
         app:layout_constraintTop_toBottomOf="@+id/professional_profile_editProfile_changeEmail_button" />
@@ -111,7 +111,7 @@
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_profile_changePhone_button"
-        android:textSize="10sp"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/professional_profile_editProfile_phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline48" />
@@ -125,7 +125,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/professional_profile_emailText"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -140,9 +140,9 @@
         android:id="@+id/professional_profile_editProfile_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_for_layout_phone"
+        android:background="@drawable/border_for_layout_profile"
         android:text="email"
-        android:textSize="16sp"
+        android:textSize="28sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView24"
         app:layout_constraintEnd_toStartOf="@+id/guideline49"
         app:layout_constraintStart_toStartOf="@+id/guideline50" />
@@ -156,7 +156,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/professional_profile_phoneText"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/professional_profile_editProfile_changePassword_button" />
 
@@ -164,23 +164,23 @@
         android:id="@+id/professional_profile_editProfile_phone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_for_layout_phone"
+        android:background="@drawable/border_for_layout_profile"
         android:text="@string/professional_profile_defaultPhoneText"
-        android:textSize="16sp"
+        android:textSize="28sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView60"
         app:layout_constraintEnd_toStartOf="@+id/guideline49"
         app:layout_constraintStart_toStartOf="@+id/guideline50" />
 
     <Button
         android:id="@+id/professional_profile_editProfile_changeImage_button"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/border_for_buttons_profile"
+        android:background="@drawable/border_for_layout"
         android:text="@string/professional_profile_changePhoto_button"
-        android:textSize="10sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline21"
         app:layout_constraintEnd_toStartOf="@+id/guideline48"
         app:layout_constraintStart_toStartOf="@+id/guideline47"
