@@ -32,6 +32,7 @@ import com.macularehab.ExercisesActivity;
 import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.UploadPatientData;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.data.PatientDataInfoActivity;
 
@@ -105,6 +106,14 @@ public class PatientHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logOut();
+            }
+        });
+
+        Button uploadDataButton = findViewById(R.id.professional_patient_home_uploadData_button);
+        uploadDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadPatientData();
             }
         });
 
@@ -198,7 +207,9 @@ public class PatientHome extends AppCompatActivity {
                         map = new HashMap<>();
                     }
 
-                    writeInternalStoragePatientList(map);
+                    if (hasInternetConnection()) {
+                        writeInternalStoragePatientList(map);
+                    }
                 }
             }
         });
@@ -246,6 +257,12 @@ public class PatientHome extends AppCompatActivity {
                         child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isChecked);
             });
         }
+    }
+
+    private void uploadPatientData() {
+
+        UploadPatientData uploadPatientData = new UploadPatientData();
+        uploadPatientData.upload(getApplicationContext(), filenameCurrentPatient);
     }
 
     private void hideNavigationAndStatusBar() {

@@ -2,9 +2,12 @@ package com.macularehab.professional.account;
 
 import android.animation.Animator;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -66,7 +69,13 @@ public class ChangeName extends AppCompatActivity {
         changeEmailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                readEmailAddress();
+
+                if (hasInternetConnection()) {
+                    readEmailAddress();
+                }
+                else {
+                    showAlertErrorUser(resources.getString(R.string.noInternetConnection));
+                }
             }
         });
 
@@ -278,6 +287,20 @@ public class ChangeName extends AppCompatActivity {
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private boolean hasInternetConnection() {
+
+        boolean isConnected = false;
+
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+
+        return isConnected;
     }
 
     private void hideNavigationAndStatusBar() {
