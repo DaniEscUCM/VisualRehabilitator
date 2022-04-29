@@ -4,42 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondExerciseActivity">
+    tools:context=".NinthExerciseActivity">
+
 
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="61dp"
+        android:layout_height="81dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toStartOf="@+id/guideline38"
-        app:srcCompat="@drawable/pausa"  />
+        app:srcCompat="@drawable/pausa"/>
 
-    <ImageButton
-        android:id="@+id/dot_button"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.12109375" />
+
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
         android:backgroundTint="@color/grey"
+        android:clickable="true"
         android:contentDescription="@string/button_for_click"
+        android:focusable="true"
         android:scaleType="fitCenter"
+        android:text="@string/letter"
+        android:textColor="@color/black"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/circle_black" />
+        app:layout_constraintVertical_bias="0.323" />
 
     <ImageView
-        android:id="@+id/foco"
+        android:id="@+id/focus_1"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:contentDescription="@string/foco"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button"
-        app:layout_constraintStart_toStartOf="@+id/dot_button"
-        app:layout_constraintTop_toTopOf="@+id/dot_button"
+        app:layout_constraintBottom_toBottomOf="@+id/button_1"
+        app:layout_constraintEnd_toEndOf="@+id/button_1"
+        app:layout_constraintStart_toStartOf="@+id/button_1"
+        app:layout_constraintTop_toTopOf="@+id/button_1"
+        app:srcCompat="@drawable/circle_black"
+        app:tint="@color/red" />
+
+    <Button
+        android:id="@+id/button_2"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/grey"
+        android:clickable="true"
+        android:contentDescription="@string/button_for_click"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        android:text="@string/letter"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773" />
+
+    <ImageView
+        android:id="@+id/focus_2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:contentDescription="@string/foco"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/button_2"
+        app:layout_constraintEnd_toEndOf="@+id/button_2"
+        app:layout_constraintStart_toStartOf="@+id/button_2"
+        app:layout_constraintTop_toTopOf="@+id/button_2"
         app:srcCompat="@drawable/circle_black"
         app:tint="@color/red" />
 
@@ -128,24 +182,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15125" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.12109375" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
