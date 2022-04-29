@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -22,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.macularehab.language.LocaleHelper;
+import com.macularehab.patient.PatientHome;
 import com.macularehab.patient.PatientIdentificationActivity;
 import com.macularehab.professional.account.ProfessionalIdentificationActivity;
 
@@ -41,7 +43,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
     private boolean isConnected;
 
-    private int count;
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PATIENT_USER_LOGGED_KEY = "patient_user_logged";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 professional(v);
             }
         });
+
+        checkIfPatientIsLogged();
 
         setUiListener();
     }
@@ -245,5 +250,24 @@ public class IdentificationActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void checkIfPatientIsLogged() {
+
+        if (isPatientLogged()) {
+
+            Intent intent = new Intent(this, PatientHome.class);
+            startActivity(intent);
+        }
+    }
+
+    private boolean isPatientLogged() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        boolean logged = false;
+
+        logged = sharedPreferences.getBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, logged);
+
+        return logged;
     }
 }
