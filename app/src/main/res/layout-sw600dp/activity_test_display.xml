@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TestsResultsActivity">
+    tools:context=".TestDisplayActivity">
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
@@ -22,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:text="@string/tests_results"
+        android:text="@string/test"
         android:textAlignment="viewStart"
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,6 +46,66 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/resume_stain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/resume_stain"
+                    android:textAlignment="textStart"
+                    android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline30"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/grid_resume_stain"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline30"
+                    app:srcCompat="@drawable/tencmgrid" />
+
+                <ImageView
+                    android:id="@+id/draw_dots_resume_stain"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/circular_grid"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_resume_stain"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_resume_stain"
+                    app:layout_constraintStart_toStartOf="@+id/grid_resume_stain"
+                    app:layout_constraintTop_toTopOf="@+id/grid_resume_stain"
+                    app:srcCompat="@drawable/house_icon" />
+
+                <ImageView
+                    android:id="@+id/focus_display"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
+                    android:contentDescription="@string/calculated_focus"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/grid_resume_stain"
+                    app:layout_constraintEnd_toEndOf="@+id/grid_resume_stain"
+                    app:layout_constraintStart_toStartOf="@+id/grid_resume_stain"
+                    app:layout_constraintTop_toTopOf="@+id/grid_resume_stain"
+                    app:srcCompat="@drawable/house_icon" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1380531" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -54,15 +115,15 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_left"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline19"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/grid_manual_left"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +133,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_manual_left"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_manual_left"
@@ -101,15 +162,15 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/manual_stain_right"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline20"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/grid_manual_right"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -119,8 +180,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_manual_right"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_manual_right"
@@ -156,8 +217,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_manual_both"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_manual_both"
@@ -168,8 +229,8 @@
 
                 <ImageView
                     android:id="@+id/grid_manual_both"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -197,15 +258,15 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/first_test_left"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <ImageView
                     android:id="@+id/grid_first_left"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -215,8 +276,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_first_left"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_first_left"
@@ -245,7 +306,7 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/first_test_right"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline25"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -253,8 +314,8 @@
 
                 <ImageView
                     android:id="@+id/grid_first_right"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -264,8 +325,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_first_right"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_first_right"
@@ -293,7 +354,7 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/first_test_both"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline26"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -301,8 +362,8 @@
 
                 <ImageView
                     android:id="@+id/grid_first_both"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -312,8 +373,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_first_both"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_first_both"
@@ -344,7 +405,7 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_left"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline27"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -352,8 +413,8 @@
 
                 <ImageView
                     android:id="@+id/grid_second_left"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -363,8 +424,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_second_left"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_second_left"
@@ -392,15 +453,15 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_right"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline28"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/grid_second_right"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -410,8 +471,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_second_right"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_second_right"
@@ -439,15 +500,15 @@
                     android:layout_marginStart="10dp"
                     android:text="@string/second_test_both"
                     android:textAlignment="textStart"
-                    android:textSize="24sp"
+                    android:textSize="48sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline29"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/grid_second_both"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:layout_marginBottom="1dp"
                     android:contentDescription="@string/circular_grid"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -458,8 +519,8 @@
 
                 <ImageView
                     android:id="@+id/draw_dots_second_both"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
+                    android:layout_width="545dp"
+                    android:layout_height="545dp"
                     android:contentDescription="@string/circular_grid"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/grid_second_both"
@@ -477,20 +538,8 @@
                     app:layout_constraintGuide_percent="0.1380531" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/next_view"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginEnd="28dp"
-        android:text="@string/view_resume"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

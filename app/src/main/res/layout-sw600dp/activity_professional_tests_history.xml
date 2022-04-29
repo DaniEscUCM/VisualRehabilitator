@@ -22,14 +22,13 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
         android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        android:contentDescription="@string/imagebutton_des_back"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
@@ -39,7 +38,7 @@
         android:layout_marginStart="32dp"
         android:text="@string/tests_history"
         android:textAlignment="viewStart"
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_results"
         app:layout_constraintTop_toTopOf="parent" />
@@ -102,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.86" />
+        app:layout_constraintGuide_percent="0.83" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
@@ -116,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32" />
+        app:layout_constraintGuide_percent="0.22" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

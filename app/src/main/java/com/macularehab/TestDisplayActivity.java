@@ -6,9 +6,11 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -46,6 +48,15 @@ public class TestDisplayActivity extends AppCompatActivity {
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit*20;//10cm
+
+        Display display_measure = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display_measure.getSize(point);
+
+        if(size>point.y){
+            size= (int) Math.round(point.y);
+            metric_unit =  Math.round(size/(float)20);
+        }
 
         //Resume Grid
         ImageView grid_resume_stain=findViewById(R.id.grid_resume_stain);
