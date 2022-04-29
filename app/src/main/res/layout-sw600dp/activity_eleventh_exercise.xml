@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThirteenthExerciseActivity">
+    tools:context=".EleventhExerciseActivity">
+<!--Para tablet pequeña -->
 
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="61dp"
-        android:layout_height="81dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
@@ -31,26 +33,25 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.12109375" />
 
-
     <ImageView
         android:id="@+id/image_background"
-        android:layout_width="800dp"
-        android:layout_height="620dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:contentDescription="@string/image_background"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439"
-        app:srcCompat="@drawable/living_room" />
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/woman_image" />
 
     <ImageButton
-        android:id="@+id/dot_button_sofa"
-        android:layout_width="315dp"
-        android:layout_height="126dp"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="324dp"
+        android:id="@+id/dot_button_nose"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="224dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -60,80 +61,78 @@
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
-        android:id="@+id/focus_sofa"
+        android:id="@+id/focus_nose"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:contentDescription="@string/foco"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button_sofa"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button_sofa"
-        app:layout_constraintStart_toStartOf="@+id/dot_button_sofa"
-        app:layout_constraintTop_toTopOf="@+id/dot_button_sofa"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_nose"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_nose"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_nose"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_nose"
         app:srcCompat="@drawable/circle_black"
         app:tint="@color/red" />
 
     <ImageButton
-        android:id="@+id/dot_button_lamp"
-        android:layout_width="84dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="204dp"
+        android:id="@+id/dot_button_left_eye"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="160dp"
         android:alpha="0.01"
-        android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
-        android:foregroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
-        android:id="@+id/focus_lamp"
+        android:id="@+id/focus_left_eye"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:contentDescription="@string/foco"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button_lamp"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button_lamp"
-        app:layout_constraintStart_toStartOf="@+id/dot_button_lamp"
-        app:layout_constraintTop_toTopOf="@+id/dot_button_lamp"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_left_eye"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_left_eye"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_left_eye"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_left_eye"
         app:srcCompat="@drawable/circle_black"
         app:tint="@color/red" />
 
     <ImageButton
-        android:id="@+id/dot_button_plant"
-        android:layout_width="119dp"
-        android:layout_height="318dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="24dp"
+        android:id="@+id/dot_button_right_eye"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="160dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="@+id/image_background"
+        app:layout_constraintStart_toStartOf="@+id/image_background"
         app:layout_constraintTop_toTopOf="@+id/image_background"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
-        android:id="@+id/focus_plant"
+        android:id="@+id/focus_right_eye"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:contentDescription="@string/foco"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button_plant"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button_plant"
-        app:layout_constraintStart_toStartOf="@+id/dot_button_plant"
-        app:layout_constraintTop_toTopOf="@+id/dot_button_plant"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_right_eye"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_right_eye"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_right_eye"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_right_eye"
         app:srcCompat="@drawable/circle_black"
         app:tint="@color/red" />
 
     <ImageButton
-        android:id="@+id/dot_button_carpet"
-        android:layout_width="529dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="464dp"
+        android:id="@+id/dot_button_mouth"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="272dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -143,15 +142,15 @@
         app:srcCompat="@drawable/border_rectangle_for_layout" />
 
     <ImageView
-        android:id="@+id/focus_carpet"
+        android:id="@+id/focus_mouth"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:contentDescription="@string/foco"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button_carpet"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button_carpet"
-        app:layout_constraintStart_toStartOf="@+id/dot_button_carpet"
-        app:layout_constraintTop_toTopOf="@+id/dot_button_carpet"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_button_mouth"
+        app:layout_constraintEnd_toEndOf="@+id/dot_button_mouth"
+        app:layout_constraintStart_toStartOf="@+id/dot_button_mouth"
+        app:layout_constraintTop_toTopOf="@+id/dot_button_mouth"
         app:srcCompat="@drawable/circle_black"
         app:tint="@color/red" />
 
@@ -159,100 +158,13 @@
         android:id="@+id/text_findX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
         android:gravity="center"
-        android:text="@string/thirteenth_exercise_find_pot"
-        android:textSize="40sp"
+        android:text="@string/eleventh_exercise_find_nose"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/dot_button_left_window"
-        android:layout_width="97dp"
-        android:layout_height="279dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="72dp"
-        android:alpha="0.01"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:foregroundTint="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="@+id/image_background"
-        app:layout_constraintTop_toTopOf="@+id/image_background"
-        app:srcCompat="@drawable/circle_line" />
-
-    <ImageView
-        android:id="@+id/focus_left_window"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:contentDescription="@string/foco"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button_left_window"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button_left_window"
-        app:layout_constraintStart_toStartOf="@+id/dot_button_left_window"
-        app:layout_constraintTop_toTopOf="@+id/dot_button_left_window"
-        app:srcCompat="@drawable/circle_black"
-        app:tint="@color/red" />
-
-    <ImageButton
-        android:id="@+id/dot_button_right_window"
-        android:layout_width="159dp"
-        android:layout_height="229dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="164dp"
-        android:alpha="0.01"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:foregroundTint="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="@+id/image_background"
-        app:layout_constraintTop_toTopOf="@+id/image_background"
-        app:srcCompat="@drawable/circle_line" />
-
-    <ImageView
-        android:id="@+id/focus_right_window"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:contentDescription="@string/foco"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button_right_window"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button_right_window"
-        app:layout_constraintStart_toStartOf="@+id/dot_button_right_window"
-        app:layout_constraintTop_toTopOf="@+id/dot_button_right_window"
-        app:srcCompat="@drawable/circle_black"
-        app:tint="@color/red" />
-
-    <ImageButton
-        android:id="@+id/dot_button_pot"
-        android:layout_width="94dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginEnd="44dp"
-        android:alpha="0.01"
-        android:background="@android:color/transparent"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/button_for_click"
-        android:foregroundTint="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="@+id/image_background"
-        app:layout_constraintTop_toTopOf="@+id/image_background"
-        app:srcCompat="@drawable/circle_line" />
-
-    <ImageView
-        android:id="@+id/focus_pot"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:contentDescription="@string/foco"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_button_pot"
-        app:layout_constraintEnd_toEndOf="@+id/dot_button_pot"
-        app:layout_constraintStart_toStartOf="@+id/dot_button_pot"
-        app:layout_constraintTop_toTopOf="@+id/dot_button_pot"
-        app:srcCompat="@drawable/circle_black"
-        app:tint="@color/red" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -295,14 +207,15 @@
 
         <Switch
             android:id="@+id/focus_switch1"
-            android:layout_width="394dp"
+            android:layout_width="200dp"
             android:layout_height="73dp"
             android:text="@string/focus_switch"
             android:textColor="#D3D1D1"
-            android:textSize="48sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.315" />
 
         <TextView
             android:id="@+id/textView13"
@@ -310,11 +223,13 @@
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
             android:textColor="#D3D1D1"
-            android:textSize="60sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline36"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/return_button"
+            app:layout_constraintEnd_toStartOf="@+id/focus_switch1"
+            app:layout_constraintHorizontal_bias="0.53"
+            app:layout_constraintStart_toEndOf="@+id/home_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85" />
 
         <ImageButton
             android:id="@+id/return_button"
@@ -336,6 +251,31 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.53" />
+
+        <ImageView
+            android:id="@+id/volver"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/pause_button"
+            android:rotation="-90"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/return_button"
+            app:layout_constraintStart_toEndOf="@+id/return_button"
+            app:layout_constraintTop_toTopOf="@+id/return_button"
+            app:srcCompat="@drawable/touch_sin_fondo"
+            app:tint="#D3D1D1" />
+
+        <TextView
+            android:id="@+id/textoVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tuto_resume"
+            android:textColor="#D3D1D1"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/volver"
+            app:layout_constraintStart_toEndOf="@+id/volver"
+            app:layout_constraintTop_toTopOf="@+id/volver" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

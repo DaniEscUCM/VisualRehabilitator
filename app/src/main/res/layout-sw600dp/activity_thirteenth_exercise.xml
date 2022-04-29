@@ -34,8 +34,8 @@
 
     <ImageView
         android:id="@+id/image_background"
-        android:layout_width="800dp"
-        android:layout_height="620dp"
+        android:layout_width="600dp"
+        android:layout_height="420dp"
         android:contentDescription="@string/image_background"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,10 +47,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_sofa"
-        android:layout_width="315dp"
-        android:layout_height="126dp"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="324dp"
+        android:layout_width="231dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="212dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -74,10 +74,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_lamp"
-        android:layout_width="84dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="204dp"
+        android:layout_width="65dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="136dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -103,10 +103,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_plant"
-        android:layout_width="119dp"
-        android:layout_height="318dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="104dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -130,10 +130,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_carpet"
-        android:layout_width="529dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="464dp"
+        android:layout_width="442dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="324dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -159,20 +159,19 @@
         android:id="@+id/text_findX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
         android:gravity="center"
         android:text="@string/thirteenth_exercise_find_pot"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/dot_button_left_window"
-        android:layout_width="97dp"
-        android:layout_height="279dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="67dp"
+        android:layout_height="196dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="32dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -198,10 +197,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_right_window"
-        android:layout_width="159dp"
-        android:layout_height="229dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="164dp"
+        android:layout_width="110dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="128dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -227,10 +226,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_pot"
-        android:layout_width="94dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginEnd="44dp"
+        android:layout_width="60dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="36dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
