@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="@string/second_exercise"
         android:textAlignment="viewStart"
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,7 +56,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="@string/second_exercise_description"
-        android:textSize="16sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
@@ -73,14 +73,12 @@
         android:inputType="number"
         android:text="@string/num_seconds"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView_insertseconds"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toEndOf="@+id/textView_insertseconds"
-        app:layout_constraintTop_toTopOf="@+id/textView_insertseconds"
-        tools:textSize="20sp" />
+        app:layout_constraintTop_toTopOf="@+id/textView_insertseconds" />
 
     <TextView
         android:id="@+id/textView_insertseconds"
@@ -88,7 +86,7 @@
         android:layout_height="wrap_content"
         android:text="@string/seconds_description_letter"
         android:textAlignment="textEnd"
-        android:textSize="16sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toStartOf="@id/seconds"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
@@ -128,7 +126,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/focus_switch"
-        android:textSize="24sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
