@@ -62,6 +62,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout_patient_prof_name"
+        android:text="@string/patient_professional_profile_phoneTextDefault"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline52"
         app:layout_constraintEnd_toStartOf="@+id/guideline55"
