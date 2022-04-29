@@ -76,6 +76,8 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
+        checkLanguage();
+        changeLanguage();
         checkIfPatientIsLogged();
 
         setUiListener();
@@ -119,6 +121,20 @@ public class IdentificationActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         hideNavigationAndStatusBar();
+    }
+
+    private void checkLanguage() {
+
+        String lang = Locale.getDefault().getLanguage();
+
+        buttonProfessional.setText(lang);
+
+        if (lang.equals("en")) {
+            currentLanguage = 0;
+        }
+        else {
+            currentLanguage = 1;
+        }
     }
 
     private void changeLanguage() {
