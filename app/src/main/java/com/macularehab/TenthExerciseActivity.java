@@ -6,10 +6,12 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -81,9 +83,16 @@ public class TenthExerciseActivity extends AppCompatActivity {
         time_left=num_miliseconds;
         button_dot = findViewById(R.id.dot_button);
         //Calculate based on screen size
+        Display display_measure = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display_measure.getSize(point);
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit * 20;//10cm
+        if(size>point.y){
+            size= (int) Math.round(point.y);
+            metric_unit = Math.round(size/(float)20);
+        }
         button_dot.getLayoutParams().width = metric_unit * 6;//3cm diametro de las figuras
         button_dot.getLayoutParams().height = metric_unit * 6;
 
