@@ -35,7 +35,7 @@
     <ImageView
         android:id="@+id/image_background"
         android:layout_width="600dp"
-        android:layout_height="310dp"
+        android:layout_height="280dp"
         android:contentDescription="@string/image_background"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,10 +48,11 @@
 
     <ImageButton
         android:id="@+id/dot_button_sofa"
-        android:layout_width="195dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="156dp"
+        android:layout_width="160dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginLeft="252dp"
+        android:layout_marginTop="140dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -75,10 +76,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_lamp"
-        android:layout_width="65dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="52dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="203dp"
+        android:layout_marginTop="87dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -104,10 +105,11 @@
 
     <ImageButton
         android:id="@+id/dot_button_plant"
-        android:layout_width="92dp"
-        android:layout_height="182dp"
+        android:layout_width="74dp"
+        android:layout_height="163dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -131,10 +133,11 @@
 
     <ImageButton
         android:id="@+id/dot_button_carpet"
-        android:layout_width="350dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="236dp"
+        android:layout_width="288dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="224dp"
         android:alpha="0.01"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -171,10 +174,11 @@
 
     <ImageButton
         android:id="@+id/dot_button_left_window"
-        android:layout_width="66dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="57dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="24dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -200,10 +204,11 @@
 
     <ImageButton
         android:id="@+id/dot_button_right_window"
-        android:layout_width="95dp"
-        android:layout_height="130dp"
+        android:layout_width="79dp"
+        android:layout_height="117dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="167dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginRight="188dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
@@ -229,10 +234,10 @@
 
     <ImageButton
         android:id="@+id/dot_button_pot"
-        android:layout_width="60dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="92dp"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="183dp"
+        android:layout_marginRight="114dp"
         android:alpha="0.01"
         android:background="@android:color/transparent"
         android:backgroundTint="@color/grey"
