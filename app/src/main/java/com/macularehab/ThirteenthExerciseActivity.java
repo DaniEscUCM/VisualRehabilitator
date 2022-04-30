@@ -343,7 +343,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             focus.setVisibility(View.VISIBLE);
             startTimerFoco();
         }
-        else{ //5 sofa
+        else{ //6 sofa
             focus = findViewById(R.id.focus_sofa);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
