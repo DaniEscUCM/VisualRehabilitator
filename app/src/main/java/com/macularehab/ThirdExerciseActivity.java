@@ -97,8 +97,8 @@ public class ThirdExerciseActivity extends AppCompatActivity {
         int metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit * 20;//10cm
         if(size>point.y){
-            size= (int) Math.round(point.y);
-            metric_unit = Math.round(size/(float)20);
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
         }
         button_dot.getLayoutParams().width = metric_unit*3;//1.5cm diametro de las figuras
         button_dot.getLayoutParams().height = metric_unit*3;
