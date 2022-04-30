@@ -89,8 +89,8 @@ public class CalculateFocusActivity extends AppCompatActivity {
         centre_y = point.y / (float) 2;
 
         if(size>point.y){
-            size= (int) Math.round(point.y);
-            metric_unit =  Math.round(size/(float)20);
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
         }
 
         focus = findViewById(R.id.focus);

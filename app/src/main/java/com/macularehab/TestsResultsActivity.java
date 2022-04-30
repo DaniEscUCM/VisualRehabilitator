@@ -105,8 +105,8 @@ public class TestsResultsActivity extends AppCompatActivity {
         display_measure.getSize(point);
 
         if(size>point.y){
-            size= (int) Math.round(point.y);
-            metric_unit =  Math.round(size/(float)20);
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
         }
 
         //Manual Grid Left
