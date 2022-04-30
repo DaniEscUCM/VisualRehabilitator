@@ -106,13 +106,13 @@
         android:id="@+id/professional_home_logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/pink_dark"
         android:paddingLeft="16dp"
         android:paddingTop="7dp"
         android:paddingRight="16dp"
         android:paddingBottom="7dp"
         android:text="@string/hint_professional_home_logout_button"
-        android:textSize="20sp"
+        android:textSize="16sp"
+        app:backgroundTint="@color/pink_dark"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintTop_toBottomOf="@+id/guideline_top2" />
 
