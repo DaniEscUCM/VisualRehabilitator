@@ -8,25 +8,25 @@
     <ImageButton
         android:id="@+id/professional_patient_patientForm_go_back_button"
         android:layout_width="100dp"
-        android:layout_height="101dp"
+        android:layout_height="100dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
-        app:layout_constraintEnd_toEndOf="@+id/guideline_back"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_back"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_back_small" />
 
     <TextView
         android:id="@+id/professional_patient_form_newPatient_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/professional_patientForm_new_patient"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_create_patient_continue"
@@ -43,6 +43,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/button_create_patient_continue"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline_back"
@@ -303,12 +304,13 @@
         android:textSize="48sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/professional_patient_form_newPatient_textView"
         app:layout_constraintStart_toEndOf="@+id/professional_patient_form_newPatient_textView" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
@@ -323,5 +325,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.92" />
 </androidx.constraintlayout.widget.ConstraintLayout>

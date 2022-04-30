@@ -166,6 +166,9 @@
     <string name="professional_patientForm_observations">Observaciones</string>
     <string name="professional_patientForm_observations_hint">Escribe aquí si tienes alguna observación</string>
     <string name="professional_patientForm_continue_button">Continuar</string>
+    <string name="professional_patientForm_continue_confirmationMessage">¿Seguro que deseas continuar?\nNo podrás regresar a este apartado hasta terminar el proceso de crear el paciente.\nUna vez terminado de crear el paciente podrás modificar cualquier dato.\n</string>
+    <string name="professional_patientForm_continue_confirmationMessage_yes">Continuar</string>
+    <string name="professional_patientForm_continue_confirmationMessage_no">Cancelar</string>
 
     <string name="professional_patientForm_section_1">Dificultades funcionales visuales en niños y adultos</string>
     <string name="professional_patientForm_checkBox_1">Lee</string>

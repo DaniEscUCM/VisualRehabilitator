@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -116,7 +117,7 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         button_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buttonContinueClicked();
+                confirmContinueDialog();
             }
         });
 
@@ -365,20 +366,39 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
         // Hide both the navigation bar and the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                //| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                //| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
             uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    //| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    //| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_IMMERSIVE;
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void confirmContinueDialog() {
+
+        new MaterialAlertDialogBuilder(this)
+                .setMessage(resources.getString(R.string.professional_patientForm_continue_confirmationMessage))
+                .setPositiveButton(resources.getString(R.string.professional_patientForm_continue_confirmationMessage_yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        buttonContinueClicked();
+                    }
+                })
+                .setNegativeButton(resources.getString(R.string.professional_patientForm_continue_confirmationMessage_no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+        .show();
     }
 }

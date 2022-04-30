@@ -34,6 +34,7 @@
         android:id="@+id/button_create_patient_continue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/blue"
         android:padding="10dp"
         android:text="@string/professional_patientForm_continue_button"

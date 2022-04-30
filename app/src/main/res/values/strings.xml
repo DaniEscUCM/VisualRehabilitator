@@ -162,6 +162,9 @@
     <string name="professional_patientForm_observations">Observations</string>
     <string name="professional_patientForm_observations_hint">Write here if you have an observation</string>
     <string name="professional_patientForm_continue_button">Continue</string>
+    <string name="professional_patientForm_continue_confirmationMessage">Are you sure you want to continue?\nCheck info, you will not we able to come back until the patient is created.\nBut later you will be able to modify any patient\'s data.\n</string>
+    <string name="professional_patientForm_continue_confirmationMessage_yes">Continue</string>
+    <string name="professional_patientForm_continue_confirmationMessage_no">Cancel</string>
 
     <string name="professional_patientForm_section_1">Visual difficulties in children and adults</string>
     <string name="professional_patientForm_checkBox_1">Read</string>
