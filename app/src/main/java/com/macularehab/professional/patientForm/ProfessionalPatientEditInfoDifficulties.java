@@ -2,6 +2,7 @@ package com.macularehab.professional.patientForm;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -38,6 +39,8 @@ public class ProfessionalPatientEditInfoDifficulties extends AppCompatActivity {
     private final String db_patients = "Patients";
     private final String db_professional = "Professional";
 
+    private Resources resources;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,8 @@ public class ProfessionalPatientEditInfoDifficulties extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        resources = this.getResources();
 
         Button continue_button = findViewById(R.id.button_create_new_patient_difficulties_continue);
         continue_button.setOnClickListener(new View.OnClickListener() {
@@ -111,11 +116,13 @@ public class ProfessionalPatientEditInfoDifficulties extends AppCompatActivity {
             if (v instanceof CheckBox) {
                 if (((CheckBox) v).isChecked()) {
                     arrayList.add(true);
-                } else {
+                }
+                else {
                     arrayList.add(false);
                 }
                 count++;
-            } else if (v instanceof LinearLayout) {
+            }
+            else if (v instanceof LinearLayout) {
 
                 LinearLayout linearLayout = (LinearLayout) v;
                 for (int j = 0; j < linearLayout.getChildCount(); j++) {

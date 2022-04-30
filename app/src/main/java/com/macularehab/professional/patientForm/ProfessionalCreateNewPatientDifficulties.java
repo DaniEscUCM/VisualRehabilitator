@@ -1,7 +1,9 @@
 package com.macularehab.professional.patientForm;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -17,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -47,6 +50,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
     private final String db_numberOfPatients = "numberOfPatients";
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
+    private Resources resources;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,11 +62,13 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        resources = this.getResources();
+
         Button continue_button = findViewById(R.id.button_create_new_patient_difficulties_continue);
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getCheckBoxesClicked();
+                confirmContinueDialog();
             }
         });
 
@@ -237,5 +243,24 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void confirmContinueDialog() {
+
+        new MaterialAlertDialogBuilder(this)
+                .setMessage(resources.getString(R.string.professional_patientForm_continue_confirmationMessage))
+                .setPositiveButton(resources.getString(R.string.professional_patientForm_continue_confirmationMessage_yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getCheckBoxesClicked();
+                    }
+                })
+                .setNegativeButton(resources.getString(R.string.professional_patientForm_continue_confirmationMessage_no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .show();
     }
 }

@@ -67,6 +67,7 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
     private String observations;
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
+    private Resources resources;
 
     private TextView newPatientTextView;
     private TextView patientNameTextView;
@@ -80,6 +81,8 @@ public class ProfessionalPatientEditInfo extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        resources = this.getResources();
 
         newPatientTextView = findViewById(R.id.professional_patient_form_newPatient_textView);
         Resources resources = this.getResources();
