@@ -136,7 +136,7 @@
     <string name="professional_home_name_default">Professional</string>
     <string name="professional_home_changePassword_button_hint">Change My Password</string>
     <string name="professional_home_editAccount_button_hint">My Account</string>
-
+    <string name="professional_home_patientList_text">Patients\'s List</string>
 
     <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_patient">Patient</string>

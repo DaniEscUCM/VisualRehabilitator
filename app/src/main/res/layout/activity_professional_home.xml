@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="20dp"
             android:paddingLeft="20dp"
-            android:text="Lista de Pacientes"
+            android:text="@string/professional_home_patientList_text"
             android:textSize="24sp" />
 
         <SearchView
