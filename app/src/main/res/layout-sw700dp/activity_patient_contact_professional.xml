@@ -12,7 +12,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="@color/grey"
+        app:backgroundTint="@color/grey"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
@@ -20,7 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
-        tools:srcCompat="?attr/actionModeCloseDrawable" />
+        tools:srcCompat="?attr/actionModeCloseDrawable"
+        android:layout_marginLeft="32dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -121,7 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/blue"
+        app:backgroundTint="@color/blue"
         android:text="@string/patient_professional_profile_email_sendEmailText_button"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline52"
@@ -135,7 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/blue"
+        app:backgroundTint="@color/blue"
         android:text="@string/patient_professional_profile_email_callText_button"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline53"
@@ -150,7 +151,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        app:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/patient_professional_profile_returnHome_button"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
