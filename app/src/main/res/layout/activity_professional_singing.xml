@@ -10,7 +10,7 @@
         android:id="@+id/imageButton_back_exerc_prof"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/grey"
+        app:backgroundTint="@color/grey"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
@@ -148,7 +148,7 @@
             android:id="@+id/button_singIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            app:backgroundTint="@color/blue"
             android:text="@string/button_singin"
             android:textSize="16sp" />
     </LinearLayout>

@@ -10,7 +10,7 @@
         android:id="@+id/imageButton_back_pat_login"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/grey"
+        app:backgroundTint="@color/grey"
         app:layout_constraintDimensionRatio="1:1"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
@@ -105,7 +105,7 @@
             android:id="@+id/patient_login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            app:backgroundTint="@color/blue"
             android:text="@string/hint_patient_login_login_button"
             android:textSize="35sp" />
     </LinearLayout>

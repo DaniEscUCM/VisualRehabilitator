@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -32,7 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1:1"
-        android:backgroundTint="#00FFFFFF"
+        app:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
@@ -787,11 +786,6 @@
                 android:layout_height="2dp"
                 android:background="@color/black" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
@@ -828,7 +822,7 @@
                     android:id="@+id/professional_patient_info_editInfo_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/blue"
+                    app:backgroundTint="@color/blue"
                     android:text="@string/professional_patientInfo_editPatient_button"
                     android:textSize="20sp" />
 
@@ -842,7 +836,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/pink_dark"
+                    app:backgroundTint="@color/pink_dark"
                     android:text="@string/professional_patientInfo_deletePatient_button"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -874,7 +868,7 @@
                 android:id="@+id/button_tests"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/holo_blue_dark"
+                app:backgroundTint="@android:color/holo_blue_dark"
                 android:text="@string/tests_history"
                 android:textSize="20sp" />
 
@@ -921,7 +915,7 @@
                 android:id="@+id/professional_patient_info_exercisesHistory_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/holo_red_dark"
+                app:backgroundTint="@android:color/holo_red_dark"
                 android:text="@string/professional_patientInfo_exercisesHistory_button"
                 android:textSize="20sp" />
             <Space
@@ -952,7 +946,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        app:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/professional_patientInfo_professionalProfile_button"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"

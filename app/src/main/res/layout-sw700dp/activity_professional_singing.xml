@@ -11,7 +11,7 @@
         android:contentDescription="@string/imagebutton_des_back"
         android:layout_width="100dp"
         android:layout_height="101dp"
-        android:backgroundTint="@color/grey"
+        app:backgroundTint="@color/grey"
         android:clickable="true"
         android:focusable="true"
         android:scaleType="fitCenter"
@@ -146,7 +146,7 @@
             android:id="@+id/button_singIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            app:backgroundTint="@color/blue"
             android:text="@string/button_singin" />
     </LinearLayout>
 

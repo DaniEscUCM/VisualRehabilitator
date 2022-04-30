@@ -11,7 +11,7 @@
         android:id="@+id/imageButton_back_prof_login"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/grey"
+        app:backgroundTint="@color/grey"
         app:layout_constraintDimensionRatio="1:1"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
@@ -107,7 +107,7 @@
             android:id="@+id/button_professional_login2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            app:backgroundTint="@color/blue"
             android:text="@string/button_login"
             android:textSize="20sp" />
 
@@ -115,7 +115,7 @@
             android:id="@+id/professional_logIn_forgotPassword_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_blue_dark"
+            app:backgroundTint="@android:color/holo_blue_dark"
             android:text="@string/professional_login_forgot_password"
             android:textSize="20sp" />
 
