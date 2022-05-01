@@ -101,8 +101,6 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             }
         });
 
-        //API 19
-
         ConstraintLayout constraintLayout = findViewById(R.id.professional_login_constrainLayout_lottieImage);
         layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
         constraintLayout.addView(layout_loading);

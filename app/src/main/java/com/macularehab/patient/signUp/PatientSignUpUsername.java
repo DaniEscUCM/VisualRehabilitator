@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,6 +40,7 @@ public class PatientSignUpUsername extends AppCompatActivity {
     private String username;
     private String password;
     private LottieAnimationView loading_imageView;
+    private View layout_loading;
 
     private final String db_patientsNumericCode = "PatientsNumericCodes";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
@@ -63,14 +65,18 @@ public class PatientSignUpUsername extends AppCompatActivity {
         Intent intent = getIntent();
         password = intent.getStringExtra(PatientSignUpPassword.extra_password);
 
-        //Loading Image
-        loading_imageView = findViewById(R.id.patient_signup_loading_imageView);
-        loading_imageView.setVisibility(View.INVISIBLE);
-
         //EditText of username
         input_username = findViewById(R.id.editText_patient_signup_username);
-        //Button
 
+        //Loading Image
+        ConstraintLayout constraintLayout = findViewById(R.id.patient_signup_constrainLayout_lottieImage);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+        constraintLayout.addView(layout_loading);
+
+        loading_imageView = findViewById(R.id.general_loading_image);
+        loading_imageView.setVisibility(View.INVISIBLE);
+
+        //Buttons
         button_continue_signup = findViewById(R.id.button_patient_continue_signup);
         button_continue_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,9 +104,10 @@ public class PatientSignUpUsername extends AppCompatActivity {
     private void validateUsername() {
 
         boolean all_correct = true;
+        Resources resources = this.getResources();
 
         if (username.equals("")) {
-            input_username.setError("Need to fill");
+            input_username.setError(resources.getString(R.string.message_fill_fields));
             all_correct = false;
         }
 
