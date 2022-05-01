@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.gson.Gson;
 import com.macularehab.actions.ManualActions;
 
 public class ManualInputStainLeftActivity extends AppCompatActivity {
@@ -124,7 +125,8 @@ public class ManualInputStainLeftActivity extends AppCompatActivity {
 
     private void next_test(View v) {
         Intent i = new Intent( this, ManualInputStainRightActivity.class );
-        String value= actions.getResult_coor().toString();
+        Gson gson = new Gson();
+        String value= gson.toJson(actions.getResult_coor());
         i.putExtra("manual_left",value);
         value= getIntent().getExtras().getString("patient_id");
         i.putExtra("patient_id",value);

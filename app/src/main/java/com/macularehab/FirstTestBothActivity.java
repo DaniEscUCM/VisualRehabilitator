@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.macularehab.actions.MapTestActions;
 
 public class FirstTestBothActivity extends AppCompatActivity {
@@ -112,7 +113,8 @@ public class FirstTestBothActivity extends AppCompatActivity {
     }
     private void next_test(View v) {
         Intent i = new Intent( this, SecondTestLeftExplanationActivity.class );
-        String value = action.getCoor_result().toString();
+        Gson gson = new Gson();
+        String value= gson.toJson(action.getCoor_result());
         i.putExtra("map_both",value);
         value = getIntent().getExtras().getString("map_right");
         i.putExtra("map_right",value);
