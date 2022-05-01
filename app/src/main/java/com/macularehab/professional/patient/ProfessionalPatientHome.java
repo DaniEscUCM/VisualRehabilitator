@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     private TextView patientName_textView;
     private Button dataButton;
     private Button exercisesButton;
-    private Button uploadButton;
+    private LinearLayout dataManagementButtons;
     private final String filenameCurrentPatient = "CurrentPatient.json";
     private final String isFocus = "focusIsOn";
     private boolean isOn;
@@ -71,6 +72,9 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         Button logoutButton = findViewById(R.id.professional_patient_home_logout_button);
         logoutButton.setVisibility(View.INVISIBLE);
 
+        dataManagementButtons = findViewById(R.id.professional_patient_info_dataManagement_linearLayout);
+        dataManagementButtons.setVisibility(View.GONE);
+
         //readPatientName();
 
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
@@ -82,8 +86,6 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             isOn=!isOn;
         });
-
-        uploadButton = findViewById(R.id.professional_patient_home_uploadData_button);
 
         setUiListener();
     }
@@ -114,14 +116,12 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         hideNavigationAndStatusBar();
-        hideUploadButton();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         hideNavigationAndStatusBar();
-        hideUploadButton();
 
         readPatientName();
     }
@@ -130,7 +130,6 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         hideNavigationAndStatusBar();
-        hideUploadButton();
 
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
         HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
@@ -143,10 +142,6 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         });
     }
 
-    private void hideUploadButton() {
-
-        uploadButton.setVisibility(View.INVISIBLE);
-    }
     private void readPatientName() {
 
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();

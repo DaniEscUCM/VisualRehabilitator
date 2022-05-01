@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
+import com.macularehab.internalStorage.DownloadPatientData;
+import com.macularehab.internalStorage.UploadPatientData;
 import com.macularehab.patient.PatientHome;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.patient.professional.ProfessionalProfile;
@@ -98,6 +100,22 @@ public class PatientDataInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goToProfessionalProfile();
+            }
+        });
+
+        Button uploadDataButton = findViewById(R.id.professional_patient_info_dataManagement_uploadData_button);
+        uploadDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadPatientData();
+            }
+        });
+
+        Button downloadButton = findViewById(R.id.professional_patient_info_dataManagement_downloadData_button);
+        downloadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downloadPatientData();
             }
         });
 
@@ -315,5 +333,16 @@ public class PatientDataInfoActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void uploadPatientData() {
+
+        UploadPatientData uploadPatientData = new UploadPatientData();
+        uploadPatientData.upload(getApplicationContext(), filenameCurrentPatient);
+    }
+
+    private void downloadPatientData() {
+
+        new DownloadPatientData(getApplicationContext());
     }
 }

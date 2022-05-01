@@ -111,14 +111,6 @@ public class PatientHome extends AppCompatActivity {
             }
         });
 
-        Button uploadDataButton = findViewById(R.id.professional_patient_home_uploadData_button);
-        uploadDataButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadPatientData();
-            }
-        });
-
         patientUID = mAuth.getUid();
         getProfessionalUID();
 

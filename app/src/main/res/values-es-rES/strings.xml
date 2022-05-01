@@ -229,6 +229,9 @@
     <string name="professional_patientInfo_lastTest">Último Test</string>
     <string name="professional_patientInfo_exercises">Ejercicios</string>
     <string name="professional_patientInfo_exercisesProgress">Progreso Ejercicios</string>
+    <string name="professional_patientInfo_dataManagement_hint_text">Manejo de los datos</string>
+    <string name="professional_patientInfo_dataManagement_uploadData">Subir datos</string>
+    <string name="professional_patientInfo_dataManagement_dowloadData">Descargar datos</string>
     <string name="professional_patientInfo_confirmDeletePatient">¿Seguro que quieres eliminar este paciente?</string>
     <string name="professional_patientInfo_delete_yes">Sí, Eliminar</string>
     <string name="professional_patientInfo_delete_no">No, Cancelar</string>

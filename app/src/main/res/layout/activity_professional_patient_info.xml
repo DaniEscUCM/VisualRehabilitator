@@ -918,9 +918,52 @@
                 app:backgroundTint="@android:color/holo_red_dark"
                 android:text="@string/professional_patientInfo_exercisesHistory_button"
                 android:textSize="20sp" />
+
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="30dp" />
+
+            <LinearLayout
+                android:id="@+id/professional_patient_info_dataManagement_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/professional_patientInfo_dataManagement_hint_text"
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <Button
+                    android:id="@+id/professional_patient_info_dataManagement_uploadData_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/professional_patientInfo_dataManagement_uploadData"
+                    android:textSize="20sp"
+                    app:backgroundTint="@color/blue" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <Button
+                    android:id="@+id/professional_patient_info_dataManagement_downloadData_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/professional_patientInfo_dataManagement_dowloadData"
+                    android:textSize="20sp"
+                    app:backgroundTint="@color/pink_dark" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
 
         </LinearLayout>
     </ScrollView>

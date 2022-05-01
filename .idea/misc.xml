@@ -140,18 +140,14 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_exercise_results_history.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_exercises_show_results.xml" value="0.18" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_fifteenth_exercise_description.xml" value="0.1" />
-        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_fifth_exercise.xml" value="0.15016501650165018" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_fifth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_first_exercise_description.xml" value="0.1" />
-        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_first_test_both.xml" value="0.15016501650165018" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_fourteenth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_fourth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_manual_input_stain_left.xml" value="0.18125" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_ninth_exercise_description.xml" value="0.1" />
-        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_patient_home_choose_data_exercise.xml" value="0.15016501650165018" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_second_exercise.xml" value="0.18125" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_second_test_right_explanation.xml" value="0.1" />
-        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_sixteenth_exercise.xml" value="0.14180929095354522" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw800dp/activity_patient_home_choose_data_exercise.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_calculate_focus.xml" value="0.18125" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_eighth_exercise.xml" value="0.16417272338606242" />
@@ -204,7 +200,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_ninth_exercise.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_ninth_exercise_description.xml" value="0.25" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_patient_home.xml" value="0.1" />
-        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.5" />
+        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.22" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_patient_login.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_patient_test_history.xml" value="0.25" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_professional_login.xml" value="0.22" />
@@ -236,7 +232,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_tests_results.xml" value="0.16" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_third_exercise.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_third_exercise_description.xml" value="0.33" />
-        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_thirteenth_exercise.xml" value="0.67" />
+        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_thirteenth_exercise.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_thirteenth_exercise_description.xml" value="0.33" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_twelfth_exercise.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_twelfth_exercise_description.xml" value="0.2" />
@@ -252,11 +248,13 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_contact_professional.xml" value="0.12213541666666666" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_patient_home_choose_data_exercise.xml" value="0.11901815181518152" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_login_choose.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_signup_username.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_change_password.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_home.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_professional_patient_info.xml" value="0.18" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_profile_change_email.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_profile_change_name.xml" value="0.18" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_profile_change_phone.xml" value="0.1188118811881188" />

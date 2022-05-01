@@ -225,6 +225,9 @@
     <string name="professional_patientInfo_lastTest">Last Test</string>
     <string name="professional_patientInfo_exercises">Exercises</string>
     <string name="professional_patientInfo_exercisesProgress">Exercises Progress</string>
+    <string name="professional_patientInfo_dataManagement_hint_text">Data Management</string>
+    <string name="professional_patientInfo_dataManagement_uploadData">Upload Data</string>
+    <string name="professional_patientInfo_dataManagement_dowloadData">Download Data</string>
     <string name="professional_patientInfo_confirmDeletePatient">Are you sure you want to delete this patient?</string>
     <string name="professional_patientInfo_delete_yes">Yes, Delete</string>
     <string name="professional_patientInfo_delete_no">No, Cancel</string>

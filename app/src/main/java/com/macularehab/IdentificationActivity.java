@@ -153,8 +153,6 @@ public class IdentificationActivity extends AppCompatActivity {
             Configuration configuration = context.getResources().getConfiguration();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 configuration.setLocale(locale);
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 context.createConfigurationContext(configuration);
             }
             context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());

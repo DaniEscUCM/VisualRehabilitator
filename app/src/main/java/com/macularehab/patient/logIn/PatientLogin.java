@@ -192,13 +192,13 @@ public class PatientLogin extends AppCompatActivity  {
         return all_correct;
     }
 
+    //TODO
     public void showAlertEnterEmailAndPassword() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Name and/or Email and/or Password field is empty")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
                     }
                 });
 
