@@ -172,12 +172,17 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     public void login(View view) {
 
+        showLoadingImage();
+
         String mail = mailP.getText().toString().trim();
         String pasword = paswP.getText().toString().trim();
 
-        if(mail.equals("")||pasword.equals("")){
+        if(mail.equals("") || pasword.equals("")){
+
+            stopLoadingImage();
             validate();
-        }else{
+        }
+        else{
 
             int email_length = mail.length();
             boolean is_email = false;
@@ -204,6 +209,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
                         } else {
                             // If sign in fails, display a message to the user.
+                            stopLoadingImage();
+
                             Log.w(TAG, "loginUserWithEmail:failure", task.getException());
                             Toast.makeText(ProfessionalLoginActivity.this,
                                     task.getException().getLocalizedMessage(),
@@ -272,6 +279,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                 .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                stopLoadingImage();
 
                 if (!task.isSuccessful()) {
                     isNotAProfessional();
