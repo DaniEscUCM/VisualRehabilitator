@@ -248,6 +248,7 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_contact_professional.xml" value="0.12213541666666666" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_professional_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise_description.xml" value="0.12911184210526316" />
