@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.textfield.TextInputEditText;
@@ -41,6 +42,8 @@ public class ChangePhone extends AppCompatActivity {
 
     private LottieAnimationView loading_imageView;
     private LottieAnimationView result_imageView;
+    private View layout_loading;
+    private View layout_result;
 
     private Resources resources;
 
@@ -59,8 +62,17 @@ public class ChangePhone extends AppCompatActivity {
         changePhoneLayout = findViewById(R.id.professional_profile_changePhone_textInputLayout);
         phoneAddressTextInput = findViewById(R.id.professional_profile_changePhone_textInputLayout_textInput);
 
-        loading_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect);
-        result_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect_result);
+        //Loading Image
+        ConstraintLayout constraintLayout1 = findViewById(R.id.professional_profile_changePhone_constrainsLayout_lottieImage1);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout1, false);
+        constraintLayout1.addView(layout_loading);
+        //Result Image
+        ConstraintLayout constraintLayout2 = findViewById(R.id.professional_profile_changePhone_constrainsLayout_lottieImage2);
+        layout_result = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout2, false);
+        constraintLayout2.addView(layout_result);
+
+        loading_imageView = findViewById(R.id.general_loading_image);
+        result_imageView = findViewById(R.id.general_loading_image);
 
         Button changeEmailButton = findViewById(R.id.professional_profile_changePhone_button);
         changeEmailButton.setOnClickListener(new View.OnClickListener() {
