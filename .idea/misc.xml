@@ -254,6 +254,7 @@
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_home.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_profile_change_email.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_professional_profile_change_name.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_calculate_focus.xml" value="0.20051303976058144" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />

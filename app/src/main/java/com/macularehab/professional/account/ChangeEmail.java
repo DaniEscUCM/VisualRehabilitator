@@ -71,7 +71,7 @@ public class ChangeEmail extends AppCompatActivity {
         ConstraintLayout constraintLayout1 = findViewById(R.id.professional_profile_changeEmail_constrainsLayout_lottieImage1);
         layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout1, false);
         constraintLayout1.addView(layout_loading);
-        //Loading Image
+        //Result Image
         ConstraintLayout constraintLayout2 = findViewById(R.id.professional_profile_changeEmail_constrainsLayout_lottieImage2);
         layout_result = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout2, false);
         constraintLayout2.addView(layout_result);
