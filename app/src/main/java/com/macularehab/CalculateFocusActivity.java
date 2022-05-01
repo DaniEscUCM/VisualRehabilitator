@@ -155,40 +155,17 @@ public class CalculateFocusActivity extends AppCompatActivity {
         draw_dots.getLayoutParams().height = size;
         draw_dots.requestLayout();
 
-        float x=0, y=0;
-        if(value!=null) {
-            List<String> list = Arrays.asList(value.substring(1, value.length() - 1).split(", "));
-            List<Pair<Float, Float>> coor_result = new ArrayList<>();
-            char aux = ' ';
-            String accumulate = "";
-            float first = 0;
-            float second;
-            for (String word : list) {
-                for (char charac : word.toCharArray()) {
-                    if (charac != 'P' && charac != 'a' && charac != 'i' && charac != 'r') {
-                        if (charac == '{' || charac == '}') {
-                            aux = charac;
-                            if (charac == '}') {
-                                second = Float.parseFloat(accumulate);
-                                Pair<Float,Float> pair =new Pair<>(first, second);
-                                coor_result.add(pair);
-                                x+=pair.first;
-                                y+=pair.second;
-                                accumulate = "";
-                            }
-                        } else if (aux == '{' && charac == ' ') {
-                            first = Float.parseFloat(accumulate);
-                            accumulate = "";
-                        } else if (charac != ' ') {
-                            accumulate += charac;
-                        }
-                    }
 
-                }
+        List<Pair<Float, Float>> coor_result = new ArrayList<>();
+        Gson gson = new Gson();
+        List<LinkedTreeMap> aux = gson.fromJson(value,coor_result.getClass());
+        Pair<Double,Double> pair = new Pair<>((double) 0, (double) 0);
+        if(aux!=null) {
+            for (LinkedTreeMap coor:aux) {
+                pair = gson.fromJson(gson.toJson(coor), pair.getClass());
+                Pair<Float,Float> pair2 = new Pair<>(pair.first.floatValue(),pair.second.floatValue());
+                coor_result.add(pair2);
             }
-            //calculated_focus = new Pair<>(x/coor_result.size(),y/coor_result.size());
-            //result_coor.add(calculated_focus);
-
             Bitmap btm = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
 
             Canvas canvas = new Canvas(btm);
