@@ -432,7 +432,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             else if(current == 4) { //right window
                 text.setText(res.getString(R.string.thirteenth_exercise_find_right_window));
             }
-            else if (counter == 5){ //pot
+            else if (current == 5){ //pot
                 text.setText(res.getString(R.string.thirteenth_exercise_find_pot));
             }
              else { //sofa
