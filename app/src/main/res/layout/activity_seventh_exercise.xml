@@ -172,31 +172,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.53" />
 
-        <ImageView
-            android:id="@+id/volver"
-            android:layout_width="90dp"
-            android:layout_height="80dp"
-            android:contentDescription="@string/pause_button"
-            android:rotation="-90"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/return_button"
-            app:layout_constraintStart_toEndOf="@+id/return_button"
-            app:layout_constraintTop_toTopOf="@+id/return_button"
-            app:srcCompat="@drawable/touch_sin_fondo"
-            app:tint="#D3D1D1" />
-
-        <TextView
-            android:id="@+id/textoVolver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tuto_resume"
-            android:textColor="#D3D1D1"
-            android:textSize="20sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/volver"
-            app:layout_constraintStart_toEndOf="@+id/volver"
-            app:layout_constraintTop_toTopOf="@+id/volver" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
