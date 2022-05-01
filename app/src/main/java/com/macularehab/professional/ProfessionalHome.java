@@ -104,24 +104,18 @@ public class ProfessionalHome extends AppCompatActivity {
         Log.w("Here" , "A ver aqui");
         //getPatientList();
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
 
-            ConstraintLayout constraintLayout = findViewById(R.id.professional_home_loading_image_constrainLayout);
-            layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+        ConstraintLayout constraintLayout = findViewById(R.id.professional_home_loading_image_constrainLayout);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
 
-            constraintLayout.addView(layout_loading);
+        constraintLayout.addView(layout_loading);
 
-            loading_imageView = findViewById(R.id.general_loading_image);
+        loading_imageView = findViewById(R.id.general_loading_image);
 
-            loading_imageView.setBottom(R.id.linearLayout5);
-            loading_imageView.setTop(R.id.linearLayout5);
-            loading_imageView.setLeft(R.id.linearLayout5);
-            loading_imageView.setRight(R.id.linearLayout5);
-        }
-        else {
-
-            progressDialog = new ProgressDialog(this);
-        }
+        loading_imageView.setBottom(R.id.linearLayout5);
+        loading_imageView.setTop(R.id.linearLayout5);
+        loading_imageView.setLeft(R.id.linearLayout5);
+        loading_imageView.setRight(R.id.linearLayout5);
 
         searchView = (SearchView) findViewById(R.id.professional_home_search_patient_searchView);
         searchView.setOnClickListener(new View.OnClickListener() {
@@ -394,48 +388,33 @@ public class ProfessionalHome extends AppCompatActivity {
 
     private void showLoadingImage() {
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
-            loading_imageView.setVisibility(View.VISIBLE);
-            loading_imageView.setAnimation(R.raw.loading_rainbow);
-            loading_imageView.playAnimation();
-            loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
-                @Override
-                public void onAnimationStart(Animator animation) {
-                }
+        loading_imageView.setVisibility(View.VISIBLE);
+        loading_imageView.setAnimation(R.raw.loading_rainbow);
+        loading_imageView.playAnimation();
+        loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
 
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    loading_imageView.playAnimation();
-                }
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                loading_imageView.playAnimation();
+            }
 
-                @Override
-                public void onAnimationCancel(Animator animation) {
-                }
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
 
-                @Override
-                public void onAnimationRepeat(Animator animation) {
-                }
-            });
-        }
-        else {
-
-            //TODO for spanish
-            progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Loading");
-            progressDialog.setMessage("Please Wait");
-            progressDialog.show();
-        }
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
     }
 
     private void stopLoadingImage() {
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
-            loading_imageView.cancelAnimation();
-            loading_imageView.setVisibility(View.INVISIBLE);
-        }
-        else {
-            progressDialog.dismiss();
-        }
+        loading_imageView.cancelAnimation();
+        loading_imageView.setVisibility(View.INVISIBLE);
     }
 
     private void hideNavigationAndStatusBar() {
