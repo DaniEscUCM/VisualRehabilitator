@@ -145,9 +145,19 @@ public class IdentificationActivity extends AppCompatActivity {
 
             selectLanguage.setImageResource(R.drawable.united_kingdom);
             currentLanguage = 0;
+            //context = LocaleHelper.setLocale(IdentificationActivity.this, "es");
+            // resources = context.getResources();
 
-            context = LocaleHelper.setLocale(IdentificationActivity.this, "es");
-            resources = context.getResources();
+            Locale locale = new Locale("es");
+            Locale.setDefault(locale);
+            Configuration configuration = context.getResources().getConfiguration();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                configuration.setLocale(locale);
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                context.createConfigurationContext(configuration);
+            }
+            context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
 
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
@@ -157,9 +167,22 @@ public class IdentificationActivity extends AppCompatActivity {
         else {
             selectLanguage.setImageResource(R.drawable.spain);
             currentLanguage = 1;
-
-            context = LocaleHelper.setLocale(IdentificationActivity.this, "en");
-            resources = context.getResources();
+            //context = LocaleHelper.setLocale(IdentificationActivity.this, "en");
+            //resources = context.getResources();
+            
+            Locale locale = new Locale("en");
+            Locale.setDefault(locale);
+            Configuration configuration = context.getResources().getConfiguration();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                configuration.setLocale(locale);
+            }
+            else {
+                configuration.locale = locale;
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                context.createConfigurationContext(configuration);
+            }
+            context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
 
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
