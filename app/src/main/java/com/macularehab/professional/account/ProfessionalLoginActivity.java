@@ -101,18 +101,13 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             }
         });
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
+        //API 19
 
-            ConstraintLayout constraintLayout = findViewById(R.id.professional_logIn_constrainLayout);
-            layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
-            constraintLayout.addView(layout_loading);
+        ConstraintLayout constraintLayout = findViewById(R.id.professional_login_constrainLayout_lottieImage);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+        constraintLayout.addView(layout_loading);
 
-            loading_imageView = findViewById(R.id.general_loading_image);
-        }
-        else {
-
-            progressDialog = new ProgressDialog(this);
-        }
+        loading_imageView = findViewById(R.id.general_loading_image);
 
         showLoadingImage();
         //setImagesInvisible();
@@ -384,48 +379,33 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     private void showLoadingImage() {
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
-            loading_imageView.setVisibility(View.VISIBLE);
-            loading_imageView.setAnimation(R.raw.loading_rainbow);
-            loading_imageView.playAnimation();
-            loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
-                @Override
-                public void onAnimationStart(Animator animation) {
-                }
+        loading_imageView.setVisibility(View.VISIBLE);
+        loading_imageView.setAnimation(R.raw.loading_rainbow);
+        loading_imageView.playAnimation();
+        loading_imageView.addAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
 
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    loading_imageView.playAnimation();
-                }
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                loading_imageView.playAnimation();
+            }
 
-                @Override
-                public void onAnimationCancel(Animator animation) {
-                }
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
 
-                @Override
-                public void onAnimationRepeat(Animator animation) {
-                }
-            });
-        }
-        else {
-
-            //TODO for spanish
-            progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Loading");
-            progressDialog.setMessage("Please Wait");
-            progressDialog.show();
-        }
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
     }
 
     public void stopLoadingImage() {
 
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //API 19
-            loading_imageView.cancelAnimation();
-            loading_imageView.setVisibility(View.INVISIBLE);
-        }
-        else {
-            progressDialog.dismiss();
-        }
+        loading_imageView.cancelAnimation();
+        loading_imageView.setVisibility(View.INVISIBLE);
     }
 
     private void hideNavigationAndStatusBar() {
@@ -438,7 +418,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN

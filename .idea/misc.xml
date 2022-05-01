@@ -248,11 +248,13 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_contact_professional.xml" value="0.12213541666666666" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_patient_login_choose.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_calculate_focus.xml" value="0.20051303976058144" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise_description.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/activity_fourth_exercise_description.xml" value="0.1944696282864914" />
         <entry key="app/src/main/res/layout/activity_grid_test_left.xml" value="0.12623762376237624" />
         <entry key="app/src/main/res/layout/activity_identification.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.12911184210526316" />
@@ -269,7 +271,8 @@
         <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.13854166666666667" />
         <entry key="app/src/main/res/layout/activity_patient_home_choose_data_exercise.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout/activity_patient_login_choose.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_patient_professional_profile.xml" value="0.20051303976058144" />
         <entry key="app/src/main/res/layout/activity_patient_signup.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_patient_signup_password.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_patient_signup_username.xml" value="0.146875" />
@@ -291,6 +294,7 @@
         <entry key="app/src/main/res/layout/activity_tenth_exercise_description.xml" value="0.15222772277227722" />
         <entry key="app/src/main/res/layout/activity_tests_history.xml" value="0.11041666666666666" />
         <entry key="app/src/main/res/layout/activity_tests_results.xml" value="0.11041666666666666" />
+        <entry key="app/src/main/res/layout/layout_loading.xml" value="0.20051303976058144" />
         <entry key="app/src/main/res/layout/pruena.xml" value="0.10807291666666667" />
         <entry key="app/src/main/res/layout/recycler_view_patient_information.xml" value="0.25" />
       </map>
