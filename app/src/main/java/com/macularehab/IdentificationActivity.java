@@ -148,6 +148,7 @@ public class IdentificationActivity extends AppCompatActivity {
             Locale locale = new Locale("es");
             Locale.setDefault(locale);
             Configuration configuration = context.getResources().getConfiguration();
+            resources = getResources();
             //ok
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 configuration.setLocale(locale);
@@ -155,13 +156,7 @@ public class IdentificationActivity extends AppCompatActivity {
             }
             else {
                 configuration.locale = locale;
-                resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                configuration.setLocale(locale);
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                context.createConfigurationContext(configuration);
+                context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
             }
             context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
 
@@ -183,13 +178,7 @@ public class IdentificationActivity extends AppCompatActivity {
             }
             else {
                 configuration.locale = locale;
-                resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                configuration.setLocale(locale);
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                context.createConfigurationContext(configuration);
+                context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
             }
             context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
 
