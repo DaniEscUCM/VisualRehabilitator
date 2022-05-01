@@ -316,6 +316,7 @@
     <string name="imagebutton_des_settings">Ajustes</string>
     <string name="textview_settings">Ajustes</string>
     <string name="textview_exercises">Ejercicios</string>
+    <string name="textview_exercises_history">Historial de Ejercicios</string>
     <string name="foco">Foco</string>
     <string name="image_background">Imagen</string>
     <string name="seconds_description_shape">Inserta los segundos que quieras para cada figura:</string>
