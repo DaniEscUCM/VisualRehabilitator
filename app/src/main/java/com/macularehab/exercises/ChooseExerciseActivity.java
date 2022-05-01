@@ -11,6 +11,7 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,11 +21,16 @@ import com.macularehab.R;
 public class ChooseExerciseActivity extends AppCompatActivity {
 
     private int exercise_id;
+    private Resources resources;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_exercises);
+
+        resources = this.getResources();
+        TextView textExercises = findViewById(R.id.chooseExercise_exerciseText_textView);
+        textExercises.setText(resources.getString(R.string.choose_exercise_exercises_text_hint));
 
         Button button_exercise_1 = findViewById(R.id.button_exercise1);
         button_exercise_1.setOnClickListener(new View.OnClickListener() {

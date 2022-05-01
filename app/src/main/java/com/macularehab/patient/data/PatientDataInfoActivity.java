@@ -131,6 +131,7 @@ public class PatientDataInfoActivity extends AppCompatActivity {
     }
 
     private void close(){
+
         Intent intent = new Intent(this, PatientHome.class);
         startActivity(intent);
     }

@@ -290,6 +290,7 @@
     <!-- Fin Apartado Professional .-->
 
     <!-- Exercises Section -->
+    <string name="choose_exercise_exercises_text_hint">Historial de Ejercicios</string>
     <string name="exercises_show_results_results">Resultados</string>
     <string name="exercises_show_results_numCorrectText">Número de Aciertos</string>
     <string name="exercises_show_results_numFailedText">Número de Fallos</string>

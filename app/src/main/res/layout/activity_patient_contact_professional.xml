@@ -10,14 +10,13 @@
         android:id="@+id/patient_professional_contact_back_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:backgroundTint="@color/grey"
-        app:layout_constraintDimensionRatio="1:1"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
         android:scaleType="fitCenter"
+        app:backgroundTint="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/guideline51"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_back"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
@@ -38,11 +37,12 @@
         android:id="@+id/textView58"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/patient_professional_profile_emailText"
         android:textColor="@color/black"
-        android:textSize="35sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline52"
-        app:layout_constraintEnd_toStartOf="@+id/patient_professional_contact_emailTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline51" />
 
@@ -50,13 +50,14 @@
         android:id="@+id/textView62"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/patient_professional_profile_phoneText"
         android:textColor="@color/black"
-        android:textSize="35sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline53"
-        app:layout_constraintEnd_toStartOf="@+id/patient_professional_contact_phoneTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline52"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline52" />
 
     <TextView
         android:id="@+id/patient_professional_contact_emailTextView"
@@ -64,7 +65,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout_patient_prof_name"
         android:text="@string/patient_professional_profile_phoneTextDefault"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline52"
         app:layout_constraintEnd_toStartOf="@+id/guideline55"
         app:layout_constraintStart_toStartOf="@+id/guideline54"
@@ -76,7 +77,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout_patient_prof_name"
         android:text="@string/patient_professional_profile_phoneTextDefault"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline53"
         app:layout_constraintEnd_toStartOf="@+id/guideline55"
         app:layout_constraintStart_toStartOf="@+id/guideline54"
@@ -108,14 +109,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.17" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline55"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="847dp" />
+        app:layout_constraintGuide_begin="660dp" />
 
     <Button
         android:id="@+id/patient_professional_contact_sendEmail_button"
@@ -123,9 +124,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:backgroundTint="@color/blue"
         android:text="@string/patient_professional_profile_email_sendEmailText_button"
-        android:textSize="34sp"
+        android:textSize="20sp"
+        app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/guideline52"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline55"
@@ -137,9 +138,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:backgroundTint="@color/blue"
         android:text="@string/patient_professional_profile_email_callText_button"
-        android:textSize="34sp"
+        android:textSize="20sp"
+        app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/guideline53"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline55"
