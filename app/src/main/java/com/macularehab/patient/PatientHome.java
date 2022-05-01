@@ -73,6 +73,8 @@ public class PatientHome extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        mAuth.updateCurrentUser(mAuth.getCurrentUser());
+
         patientUID = mAuth.getUid();
 
         patient_username_textView = findViewById(R.id.patient_home_patient_name_textView);

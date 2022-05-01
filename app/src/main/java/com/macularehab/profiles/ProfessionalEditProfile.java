@@ -308,6 +308,9 @@ public class ProfessionalEditProfile extends AppCompatActivity {
                         /*databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid())
                                 .child("contact_info").child("profilePic_url")*/
 
+                        String imageUri = String.valueOf(myUri);
+                        Picasso.get().load(imageUri).into(profileImageView);
+
                         progressDialog.dismiss();
                     }
                 }

@@ -160,6 +160,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 context.createConfigurationContext(configuration);
             }
             context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
             buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));
@@ -183,6 +184,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 context.createConfigurationContext(configuration);
             }
             context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
             buttonProfessional.setText(resources.getString(R.string.textview_loginProfessional));

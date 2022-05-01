@@ -90,6 +90,8 @@ public class ProfessionalHome extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        mAuth.updateCurrentUser(mAuth.getCurrentUser());
+
         professional_uid = mAuth.getUid();
         Log.w("Here" , "Despues de getUid");
 
@@ -345,21 +347,24 @@ public class ProfessionalHome extends AppCompatActivity {
 
     private void getProfessionalNameFromDB() {
 
-        databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid()).child("name")
-                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
+        if (mAuth.getCurrentUser().getUid() != null) {
 
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
+            databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid()).child("name")
+                    .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                    if (!task.isSuccessful()) {
+                        Log.e("firebase", "Error getting data", task.getException());
+                    }
+                    else {
+                        String value = String.valueOf(task.getResult().getValue());
+                        Log.w("firebase", value);
+                        professional_name_text.setText(value);
+                    }
                 }
-                else {
-                    String value = String.valueOf(task.getResult().getValue());
-                    Log.w("firebase", value);
-                    professional_name_text.setText(value);
-                }
-            }
-        });
+            });
+        }
     }
 
     private void startActivityCreatePatient() {
