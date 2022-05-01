@@ -129,8 +129,6 @@ public class IdentificationActivity extends AppCompatActivity {
 
         String lang = Locale.getDefault().getLanguage();
 
-        buttonProfessional.setText(lang);
-
         if (lang.equals("en")) {
             currentLanguage = 0;
         }
