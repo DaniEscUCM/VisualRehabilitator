@@ -1,6 +1,8 @@
 package com.macularehab.internalStorage;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import androidx.annotation.NonNull;
 
@@ -62,9 +64,11 @@ public class DownloadPatientData {
 
                     HashMap<String, Object> map = (HashMap<String, Object>) task.getResult().getValue();
 
-                    if (map != null) {
+                    if (hasInternetConnection()) {
+                        if (map != null) {
 
-                        writeDataFromDataBase(map);
+                            writeDataFromDataBase(map);
+                        }
                     }
                 }
             }
@@ -79,4 +83,17 @@ public class DownloadPatientData {
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(context, filename, data);
     }
+
+        private boolean hasInternetConnection() {
+
+            boolean isConnected = false;
+            ConnectivityManager cm =
+                    (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            isConnected = activeNetwork != null &&
+                    activeNetwork.isConnected();
+
+            return isConnected;
+        }
 }
