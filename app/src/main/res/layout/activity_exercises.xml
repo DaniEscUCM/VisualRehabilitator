@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="@string/textview_exercises"
+        android:text="@string/textview_exercises_history"
         android:textAlignment="viewStart"
         android:textSize="45sp"
         android:textStyle="bold"
