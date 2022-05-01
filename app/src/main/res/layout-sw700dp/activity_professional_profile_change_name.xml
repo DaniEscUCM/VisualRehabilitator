@@ -94,38 +94,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toTopOf="@+id/guideline40" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/professional_logIn_restorePassword_loadingEffect"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changeName_textInputLayout"
-        app:layout_goneMarginStart="10dp"
-        app:layout_goneMarginTop="1dp"
-        app:lottie_autoPlay="false"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/professional_logIn_restorePassword_loadingEffect_result"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:scaleType="center"
-        android:scaleX="1"
-        android:scaleY="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changeName_textInputLayout"
-        app:layout_goneMarginStart="10dp"
-        app:layout_goneMarginTop="1dp"
-        app:lottie_autoPlay="false"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline40"
         android:layout_width="wrap_content"
@@ -146,4 +114,33 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9"  />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/professional_profile_changeName_constrainsLayout_lottieImage1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changeName_textInputLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/professional_profile_changeName_constrainsLayout_lottieImage2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changeName_textInputLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -134,13 +134,14 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/patient_signup_loading_imageView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/patient_signup_constrainLayout_lottieImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/button_patient_continue_signup"
-        app:layout_constraintEnd_toEndOf="@id/guidelineVertical2"
-        app:layout_constraintStart_toStartOf="@id/guidelineVertical"
-        app:layout_constraintTop_toBottomOf="@+id/textView_username_text"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_username_text">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

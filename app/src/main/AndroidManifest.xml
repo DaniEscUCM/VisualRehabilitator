@@ -18,149 +18,195 @@
         android:theme="@style/Theme.MaculaRehab" >
         <activity
             android:name=".patient.data.PatientTestHistoryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ResultsFirstExerciseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TestDisplayActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patient.ProfessionalTestsHistoryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".CalculateFocusActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TestsResultsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondTestBothActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondTestBothExplanationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondTestRightActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondTestRightExplanationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondTestLeftExplanationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondTestLeftActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ManualInputStainBothActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ManualInputStainRightActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ManualInputStainLeftActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FirstTestBothActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FirstTestBothExplanationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FirstTestRightExplanationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FirstTestRightActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FirstTestLeftActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FirstTestLeftExplanationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
 
         <!-- Professional Section . -->
         <activity
             android:name=".professional.account.ProfessionalLoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.account.ProfessionalSignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.account.ProfessionalIdentificationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patientForm.ProfessionalCreateNewPatient"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patientForm.ProfessionalCreateNewPatientDifficulties"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patientForm.ProfessionalCreateNewPatientShowNumericCode"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.ProfessionalHome"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patient.ProfessionalPatientInfo"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patient.ProfessionalPatientHome"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patientForm.ProfessionalPatientEditInfo"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.patientForm.ProfessionalPatientEditInfoDifficulties"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.account.RestorePassword"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.account.ChangePassword"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.account.ChangeEmail"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.account.ChangeName"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".professional.account.ChangePhone"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <!-- Professional Section Ends . -->
 
         <!-- Patient Section . -->
         <activity
             android:name=".patient.PatientHome"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.logIn.PatientLogin"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.PatientIdentificationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".patient.signUp.PatientSignUpUsername"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.signUp.PatientSignUpPassword"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.data.PatientDataInfoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.professional.ProfessionalProfile"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.professional.ContactProfessional"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <!-- Patient Section End . -->
 
         <activity
             android:name=".IdentificationActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -169,129 +215,170 @@
         </activity>
         <activity
             android:name=".FirstExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FirstExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SecondExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ThirdExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ThirdExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FourthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FourthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FifthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FifthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SixthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SixthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SeventhExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SeventhExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".EighthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".EighthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".NinthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".NinthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TenthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TenthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".EleventhExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".EleventhExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TwelfthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TwelfthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ThirteenthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ThirteenthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FourteenthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FourteenthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FifteenthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FifteenthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SixteenthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SixteenthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SeventeenthExerciseActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SeventeenthExerciseDescriptionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".exercises.ShowResultActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".exercises.ChooseExerciseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".exercises.ExerciseResultHistory"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
 
         <activity
             android:name=".ExercisesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SettingsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <!-- Profiles -->
         <activity
             android:name=".profiles.ProfessionalEditProfile"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>
     </application>

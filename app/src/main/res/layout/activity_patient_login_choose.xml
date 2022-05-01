@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_ask_patient_signup"
-        android:textSize="35sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="@+id/button_choose_signup_patient"
         app:layout_constraintStart_toStartOf="@+id/button_choose_signup_patient"
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/text_ask_patient_login"
-        android:textSize="35sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="@+id/button_choose_login_patient"
         app:layout_constraintStart_toStartOf="@+id/button_choose_login_patient"
@@ -109,14 +109,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"

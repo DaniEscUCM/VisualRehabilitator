@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -56,6 +57,7 @@ public class ChangePassword extends AppCompatActivity {
 
     private Resources resources;
     private LottieAnimationView lottieAnimationView;
+    private View layout_loading;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -175,7 +177,12 @@ public class ChangePassword extends AppCompatActivity {
             }
         });
 
-        lottieAnimationView = findViewById(R.id.professional_home_change_password_imageSuccess);
+        //Loading Image
+        ConstraintLayout constraintLayout = findViewById(R.id.professional_change_password_constrainsLayout_lottieImage);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+        constraintLayout.addView(layout_loading);
+
+        lottieAnimationView = findViewById(R.id.general_loading_image);
         setImageInvisible();
 
         setUiListener();

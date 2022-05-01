@@ -75,9 +75,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        app:backgroundTint="@color/blue"
         android:text="@string/professional_profile_changePhone_change_button"
         android:textSize="20sp"
+        app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
         app:layout_constraintStart_toStartOf="@+id/guideline44" />
@@ -92,33 +92,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toTopOf="@+id/guideline40" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/professional_logIn_restorePassword_loadingEffect"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changePhone_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout"
-        app:lottie_autoPlay="false"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/professional_logIn_restorePassword_loadingEffect_result"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="center"
-        app:layout_constraintDimensionRatio="1:1"
-        android:scaleX="1"
-        android:scaleY="1"
-        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changePhone_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout"
-        app:lottie_autoPlay="false"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline40"
@@ -140,4 +113,35 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9"  />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/professional_profile_changePhone_constrainsLayout_lottieImage1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changePhone_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/professional_profile_changePhone_constrainsLayout_lottieImage2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changePhone_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

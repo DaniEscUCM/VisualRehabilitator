@@ -117,6 +117,9 @@ public class PatientHome extends AppCompatActivity {
             }
         });
 
+        patientUID = mAuth.getUid();
+        getProfessionalUID();
+
         readFocusSwitch();
 
         setUiListener();
@@ -155,8 +158,8 @@ public class PatientHome extends AppCompatActivity {
         super.onStart();
         hideNavigationAndStatusBar();
 
-        patientUID = mAuth.getUid();
-        getProfessionalUID();
+        /*patientUID = mAuth.getUid();
+        getProfessionalUID();*/
     }
 
     @Override

@@ -19,17 +19,33 @@
       </config>
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8db18b68-10c9-484a-92c4-a8c4853abe7c" name="Default Changelist" comment="" />
+    <list default="true" id="edb63ed4-9bb7-49fe-9523-941012296234" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangeEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangeEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangePhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangePhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_email.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_name.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_phone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_restore_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_restore_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_name.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_phone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_restore_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_restore_password.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[05932b280405]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/diegoalrp/.android/avd/3_-_Pixel_C_API_31_2.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -226,16 +242,6 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ProfessionalLoginActivity.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/internalStorage/UploadPatientData.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/actions/ManualActions.java</url>
           <line>93</line>
           <option name="timeStamp" value="33" />
@@ -249,6 +255,61 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/actions/ManualActions.java</url>
           <line>91</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/PatientHome.java</url>
+          <line>267</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/PatientHome.java</url>
+          <line>303</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/PatientHome.java</url>
+          <line>314</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/signUp/PatientSignUpUsername.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/signUp/PatientSignUpUsername.java</url>
+          <line>228</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/signUp/PatientSignUpUsername.java</url>
+          <line>266</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/signUp/PatientSignUpUsername.java</url>
+          <line>276</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/signUp/PatientSignUpUsername.java</url>
+          <line>236</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/signUp/PatientSignUpUsername.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/PatientHome.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/patient/data/PatientDataInfoActivity.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/macularehab/actions/ManualActions.java</url>

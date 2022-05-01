@@ -20,7 +20,7 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/chooseExercise_exerciseText_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
