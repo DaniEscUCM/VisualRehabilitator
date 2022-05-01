@@ -187,6 +187,15 @@ public class ChangePhone extends AppCompatActivity {
         Toast.makeText(this, resources.getString(R.string.professional_profile_changePhone_successMessage), Toast.LENGTH_LONG).show();
 
         showReadyImage();
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 2000ms
+                finish();
+            }
+        }, 2000);
     }
 
 

@@ -243,6 +243,14 @@ public class ChangeName extends AppCompatActivity {
 
         databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid())
                 .child("name").setValue(nameAddress);
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+            }
+        }, 2000);
     }
 
     private void showLoadingImage() {

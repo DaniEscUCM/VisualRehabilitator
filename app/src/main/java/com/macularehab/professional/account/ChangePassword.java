@@ -432,6 +432,14 @@ public class ChangePassword extends AppCompatActivity {
             @Override
             public void onAnimationRepeat(Animator animation) { }
         });
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+            }
+        }, 2000);
     }
 
     private boolean hasInternetConnection() {

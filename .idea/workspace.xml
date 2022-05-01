@@ -3,9 +3,9 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="_device_class_tablet" />
         <device id="_device_class_phone" />
         <device id="_device_class_foldable" />
-        <device id="_device_class_tablet" />
         <device id="pixel_4" />
         <device id="Nexus 7 2013" />
         <device id="Nexus 6P" />
@@ -27,18 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb63ed4-9bb7-49fe-9523-941012296234" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangeEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangeEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangeName.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangeName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangePassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangePhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/ChangePhone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/professional/account/RestorePassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_email.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_name.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_profile_change_phone.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_restore_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_professional_restore_password.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_name.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_profile_change_phone.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_restore_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_professional_restore_password.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

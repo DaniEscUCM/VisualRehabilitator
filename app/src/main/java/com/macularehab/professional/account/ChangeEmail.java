@@ -68,11 +68,11 @@ public class ChangeEmail extends AppCompatActivity {
         emailAddressTextInput = findViewById(R.id.professional_profile_changeEmail_textInputLayout_textInput);
 
         //Loading Image
-        ConstraintLayout constraintLayout1 = findViewById(R.id.professional_restore_password_constrainsLayout_lottieImage1);
+        ConstraintLayout constraintLayout1 = findViewById(R.id.professional_profile_changeEmail_constrainsLayout_lottieImage1);
         layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout1, false);
         constraintLayout1.addView(layout_loading);
         //Result Image
-        ConstraintLayout constraintLayout2 = findViewById(R.id.professional_restore_password_constrainsLayout_lottieImage2);
+        ConstraintLayout constraintLayout2 = findViewById(R.id.professional_profile_changeEmail_constrainsLayout_lottieImage2);
         layout_result = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout2, false);
         constraintLayout2.addView(layout_result);
 
@@ -242,6 +242,15 @@ public class ChangeEmail extends AppCompatActivity {
 
         databaseReference.child("Professional").child(mAuth.getCurrentUser().getUid())
                 .child("contact_info").child("email_address").setValue(emailAddress);
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 2000ms
+                finish();
+            }
+        }, 2000);
     }
 
     private void showLoadingImage() {
