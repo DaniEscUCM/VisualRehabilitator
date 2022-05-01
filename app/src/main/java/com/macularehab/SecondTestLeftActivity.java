@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.gson.Gson;
 import com.macularehab.actions.ManualActions;
 
 public class SecondTestLeftActivity extends AppCompatActivity {
@@ -119,7 +120,8 @@ public class SecondTestLeftActivity extends AppCompatActivity {
 
     private void next_test(View v) {
         Intent i = new Intent( this, SecondTestRightExplanationActivity.class );
-        String value = actions.getResult_coor().toString();
+        Gson gson = new Gson();
+        String value= gson.toJson(actions.getResult_coor());
         i.putExtra("grid_left",value);
         value =  getIntent().getExtras().getString("map_both");
         i.putExtra("map_both",value);
