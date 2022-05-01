@@ -145,20 +145,9 @@ public class IdentificationActivity extends AppCompatActivity {
 
             selectLanguage.setImageResource(R.drawable.united_kingdom);
             currentLanguage = 0;
-            Locale locale = new Locale("es");
-            Locale.setDefault(locale);
-            Configuration configuration = context.getResources().getConfiguration();
-            resources = getResources();
-            //ok
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                configuration.setLocale(locale);
-                context.createConfigurationContext(configuration);
-            }
-            else {
-                configuration.locale = locale;
-                context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
-            }
-            context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+
+            context = LocaleHelper.setLocale(IdentificationActivity.this, "es");
+            resources = context.getResources();
 
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
@@ -168,19 +157,9 @@ public class IdentificationActivity extends AppCompatActivity {
         else {
             selectLanguage.setImageResource(R.drawable.spain);
             currentLanguage = 1;
-            Locale locale = new Locale("en");
-            Locale.setDefault(locale);
-            Configuration configuration = context.getResources().getConfiguration();
-            //ok
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                configuration.setLocale(locale);
-                context.createConfigurationContext(configuration);
-            }
-            else {
-                configuration.locale = locale;
-                context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
-            }
-            context.getResources().updateConfiguration(configuration, context.getResources().getDisplayMetrics());
+
+            context = LocaleHelper.setLocale(IdentificationActivity.this, "en");
+            resources = context.getResources();
 
             resources = context.getResources();
             buttonPatient.setText(resources.getString(R.string.textview_loginPatient));
