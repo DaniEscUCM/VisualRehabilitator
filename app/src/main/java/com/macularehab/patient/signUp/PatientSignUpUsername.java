@@ -158,7 +158,6 @@ public class PatientSignUpUsername extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         loading_imageView.cancelAnimation();
-                        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
                         loading_imageView.setVisibility(View.INVISIBLE);
 
                         if (task.isSuccessful()) {

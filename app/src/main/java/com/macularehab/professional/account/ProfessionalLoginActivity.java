@@ -419,10 +419,9 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     public void stopLoadingImage() {
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //API 19
             loading_imageView.cancelAnimation();
             loading_imageView.setVisibility(View.INVISIBLE);
-            loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
         }
         else {
             progressDialog.dismiss();

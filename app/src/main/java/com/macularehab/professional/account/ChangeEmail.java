@@ -257,7 +257,6 @@ public class ChangeEmail extends AppCompatActivity {
 
         loading_imageView.cancelAnimation();
         loading_imageView.setVisibility(View.INVISIBLE);
-        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
     }
 
     private void showReadyImage() {
