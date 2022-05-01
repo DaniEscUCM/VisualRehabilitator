@@ -24,28 +24,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb63ed4-9bb7-49fe-9523-941012296234" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/CalculateFocusActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/CalculateFocusActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/EighthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/EighthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/EleventhExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/EleventhExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FifthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FifthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FirstExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FirstExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FourthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/FourthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainBothActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainBothActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainLeftActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainLeftActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainRightActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ManualInputStainRightActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/NinthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/NinthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SecondExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SecondExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SeventhExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SeventhExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SixthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SixthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TenthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TenthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TestDisplayActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TestDisplayActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TestsResultsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TestsResultsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ThirdExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ThirdExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ThirteenthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/ThirteenthExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TwelfthExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/TwelfthExerciseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_eleventh_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_eleventh_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_twelfth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_twelfth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_eighth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_eighth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_eleventh_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_eleventh_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fifteenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fifteenth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fifth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fifth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourteenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourteenth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_ninth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_ninth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_second_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_second_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_seventh_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_seventh_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sixteenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sixteenth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sixth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sixth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tenth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_third_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_third_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_thirteenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_thirteenth_exercise.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_twelfth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_twelfth_exercise.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
