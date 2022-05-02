@@ -1,6 +1,8 @@
 package com.macularehab.exercises;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -68,6 +70,21 @@ public class ExerciseWriteDB {
         String professional_uid = String.valueOf(patientHashMap.get("professional_uid"));
         String patient_uid = String.valueOf(patientHashMap.get("patient_numeric_code"));
 
-        databaseReference.child("Professional").child(professional_uid).child("Patients").child(patient_uid).setValue(patientHashMap);
+        if (checkInternetConnection(context)) {
+            databaseReference.child("Professional").child(professional_uid).child("Patients").child(patient_uid).setValue(patientHashMap);
+        }
+    }
+
+    private boolean checkInternetConnection(Context context) {
+
+        boolean isConnected = false;
+        ConnectivityManager cm =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+
+        return isConnected;
     }
 }

@@ -7,10 +7,14 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -93,9 +97,17 @@ public class NinthExerciseActivity extends AppCompatActivity {
 
         button_1 = findViewById(R.id.button_1);
         button_2 = findViewById(R.id.button_2);
+        Display display_measure = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display_measure.getSize(point);
+
         DisplayMetrics display = this.getResources().getDisplayMetrics();
-        int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
-        int size = metric_unit*20;//10cm
+        int metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
+        int size = metric_unit * 20;//10cm
+        if(size>point.y){
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
+        }
 
         focus_1 = findViewById(R.id.focus_1);
         focus_2 = findViewById(R.id.focus_2);
@@ -169,7 +181,50 @@ public class NinthExerciseActivity extends AppCompatActivity {
                 Close(v);
             }
         });
+
+        setUiListener();
     }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
+    }
+
     private void resume(){
         if(isOn){
             if(hiden){
@@ -413,5 +468,27 @@ public class NinthExerciseActivity extends AppCompatActivity {
         resultIntent.putExtra("numCorrect", correct);
         resultIntent.putExtra("numFailed", failed);
         startActivity(resultIntent);
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

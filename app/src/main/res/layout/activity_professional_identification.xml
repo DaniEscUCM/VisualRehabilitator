@@ -8,27 +8,30 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_ident"
-        android:contentDescription="@string/imagebutton_des_back"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:backgroundTint="@color/grey"
         android:clickable="true"
+        android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
         android:id="@+id/button_professional_login"
-        android:text="@string/button_login"
-        android:layout_width="450dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/blue"
-        android:textSize="34sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:backgroundTint="@color/blue"
+        android:text="@string/button_login"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/button_professional_singin"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,11 +39,13 @@
 
     <Button
         android:id="@+id/button_professional_singin"
-        android:layout_width="450dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/pink_dark"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:backgroundTint="@color/pink_dark"
         android:text="@string/button_singin"
-        android:textSize="34sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_professional_login"
@@ -51,7 +56,7 @@
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:text="@string/textview_infoLogin"
-        android:textSize="34sp"
+        android:textSize="24sp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="@+id/button_professional_login"
@@ -64,7 +69,7 @@
         android:layout_height="70dp"
         android:gravity="center"
         android:text="@string/textview_infoSingin"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="@+id/button_professional_singin"
         app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -76,19 +81,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textview_professionalAccount"
-        android:textSize="60sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -102,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -116,14 +114,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.52" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"

@@ -29,7 +29,10 @@ public class ReadInternalStorage {
             File file = new File(context.getFilesDir(), filename);
             FileInputStream fileInputStream = new FileInputStream(file);
 
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.ISO_8859_1);
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
+                inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.ISO_8859_1);
+            }
             BufferedReader reader = new BufferedReader(inputStreamReader);
 
             int character;

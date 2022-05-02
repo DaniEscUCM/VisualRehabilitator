@@ -23,9 +23,13 @@ public class WriteInternalStorage {
 
             File file = new File(context.getFilesDir(), filename);
             FileOutputStream fileOutputStream = new FileOutputStream(file);
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, StandardCharsets.ISO_8859_1);
-            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) { //API 19
+                outputStreamWriter = new OutputStreamWriter(fileOutputStream, StandardCharsets.ISO_8859_1);
+            }
+
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
             bufferedWriter.write(data);
             bufferedWriter.flush();

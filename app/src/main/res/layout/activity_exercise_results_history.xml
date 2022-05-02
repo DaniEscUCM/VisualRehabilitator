@@ -6,9 +6,9 @@
 
     <ImageButton
         android:id="@+id/exercise_results_history_backButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"

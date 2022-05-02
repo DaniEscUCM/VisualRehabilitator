@@ -72,6 +72,7 @@
     <string name="hint_patient_home_logout_button">Cerrar Sesión</string>
     <string name="patient_home_welcome_text">Bienvenido</string>
     <string name="patient_home_name_default">Paciente</string>
+    <string name="patient_home_upload_data">Subir mis datos</string>
 
     <!-- Patient - Professional Section -->
     <string name="patient_professional_profile_nameText">Nombre del\nProfesional:</string>
@@ -139,6 +140,7 @@
     <string name="professional_home_name_default">Profesional</string>
     <string name="professional_home_changePassword_button_hint">Cambiar mi contraseña</string>
     <string name="professional_home_editAccount_button_hint">Mi Cuenta</string>
+    <string name="professional_home_patientList_text">Lista de Pacientes</string>
 
         <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_patient">Paciente</string>
@@ -164,9 +166,12 @@
     <string name="professional_patientForm_observations">Observaciones</string>
     <string name="professional_patientForm_observations_hint">Escribe aquí si tienes alguna observación</string>
     <string name="professional_patientForm_continue_button">Continuar</string>
+    <string name="professional_patientForm_continue_confirmationMessage">¿Seguro que deseas continuar?\nNo podrás regresar a este apartado hasta terminar el proceso de crear el paciente.\nUna vez terminado de crear el paciente podrás modificar cualquier dato.\n</string>
+    <string name="professional_patientForm_continue_confirmationMessage_yes">Continuar</string>
+    <string name="professional_patientForm_continue_confirmationMessage_no">Cancelar</string>
 
     <string name="professional_patientForm_section_1">Dificultades funcionales visuales en niños y adultos</string>
-    <string name="professional_patientForm_checkBox_1">Lee</string>
+    <string name="professional_patientForm_checkBox_1">Leer</string>
     <string name="professional_patientForm_checkBox_1.1">Rótulos</string>
     <string name="professional_patientForm_checkBox_1.2">Etiquetas</string>
     <string name="professional_patientForm_checkBox_1.3">Caras</string>
@@ -224,6 +229,9 @@
     <string name="professional_patientInfo_lastTest">Último Test</string>
     <string name="professional_patientInfo_exercises">Ejercicios</string>
     <string name="professional_patientInfo_exercisesProgress">Progreso Ejercicios</string>
+    <string name="professional_patientInfo_dataManagement_hint_text">Manejo de los datos</string>
+    <string name="professional_patientInfo_dataManagement_uploadData">Subir datos</string>
+    <string name="professional_patientInfo_dataManagement_dowloadData">Descargar datos</string>
     <string name="professional_patientInfo_confirmDeletePatient">¿Seguro que quieres eliminar este paciente?</string>
     <string name="professional_patientInfo_delete_yes">Sí, Eliminar</string>
     <string name="professional_patientInfo_delete_no">No, Cancelar</string>
@@ -285,6 +293,7 @@
     <!-- Fin Apartado Professional .-->
 
     <!-- Exercises Section -->
+    <string name="choose_exercise_exercises_text_hint">Historial de Ejercicios</string>
     <string name="exercises_show_results_results">Resultados</string>
     <string name="exercises_show_results_numCorrectText">Número de Aciertos</string>
     <string name="exercises_show_results_numFailedText">Número de Fallos</string>
@@ -311,6 +320,7 @@
     <string name="imagebutton_des_settings">Ajustes</string>
     <string name="textview_settings">Ajustes</string>
     <string name="textview_exercises">Ejercicios</string>
+    <string name="textview_exercises_history">Historial de Ejercicios</string>
     <string name="foco">Foco</string>
     <string name="image_background">Imagen</string>
     <string name="seconds_description_shape">Inserta los segundos que quieras para cada figura:</string>
@@ -345,24 +355,24 @@
     <string name="sixteenth_exercise">Ejercicio 16</string>
     <string name="seventeenth_exercise">Exercise 17</string>
     <string name="button_play">Empezar</string>
-    <string name="first_exercise_description">Encuentra el punto rojo (punto de foco) y da click a la figura.\n Primero aparece el punto de foco y después de unos segundos saldrá la figura \n Para otros ejercicios aparecerá el punto de foco para ayudarte a encontrar figuras.</string>
+    <string name="first_exercise_description">Encuentra el punto rojo (punto de foco) y toca la figura.\n Primero aparece el punto de foco y después de unos segundos saldrá la figura \n Para otros ejercicios aparecerá el punto de foco para ayudarte a encontrar figuras.</string>
     <string name="first_exercise_congrats"> ¡Enhorabuena! ¡Has terminado la demostración!</string>
-    <string name="second_exercise_description">Aparecerán una serie de figuras. Encuentra los triángulos.</string>
-    <string name="third_exercise_description">Aparecerán una serie de figuras, más pequeñas y sin relleno. Encuentra los triángulos.</string>
-    <string name="fourth_exercise_description">Aparecerán una serie de letras. Encuentra las letras E.</string>
-    <string name="fifth_exercise_description">Aparecerán una serie de letras más pequeñas que en el ejercicio anterior. Encuentra las letras E.</string>
-    <string name="sixth_exercise_description">Aparecerán figuras de dos en dos. Encuentra los círculos.</string>
-    <string name="seventh_exercise_description">Aparecerán figuras de dos en dos, más pequeñas y sin relleno. Encuentra los círculos</string>
-    <string name="eighth_exercise_description">Aparecerán letras de dos en dos. Encuentra las M.</string>
-    <string name="ninth_exercise_description">Aparecerán letras de dos en dos, más pequeñas que antes. Encuentra las M.</string>
-    <string name="tenth_exercise_description">Aparecerán imágenes de bebias. Encuentra la taza de café.</string>
-    <string name="eleventh_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
-    <string name="twelfth_exercise_description">Aparecerá una cara. Encuentra las diferentes partes del rostro que se irán indicando arriba.</string>
-    <string name="thirteenth_exercise_description">Aparecerá la imagen de un salon. Encuentra las diferentes partes que se irán indicando arriba.</string>
-    <string name="fourteenth_exercise_description">Aparecerán varios círculos y cruces rojas. Encuentra todas las cruces. Se pondrán en verde al tocarlas.</string>
-    <string name="fifteenth_exercise_description">Aparecerán varios círculos y cruces rojas. Encuentra todos los círculos. Se pondrán en verde al tocarlas.</string>
-    <string name="sixteenth_exercise_description">Aparecerán tres frases. Encuentra las letras indicadas encima de cada frase. Se pondrán en verdes al tocarlas.</string>
-    <string name="seventeenth_exercise_description">Aparecerán tres frases, más largas que antes. Encuentra las letras indicadas encima de cada frase. Se pondrán en verdes al tocarlas.</string>
+    <string name="second_exercise_description">Mira a tu referencia. Aparecerán una serie de figuras. Toca los triángulos.</string>
+    <string name="third_exercise_description">Mira a tu referencia. Aparecerán una serie de figuras, más pequeñas y sin relleno. Toca los triángulos.</string>
+    <string name="fourth_exercise_description">Mira a tu referencia. Aparecerán una serie de letras. Toca las letras E.</string>
+    <string name="fifth_exercise_description">Mira a tu referencia. Aparecerán una serie de letras más pequeñas que en el ejercicio anterior. Toca las letras E.</string>
+    <string name="sixth_exercise_description">Mira a tu referencia. Aparecerán figuras de dos en dos. Toca los círculos.</string>
+    <string name="seventh_exercise_description">Mira a tu referencia. Aparecerán figuras de dos en dos, más pequeñas y sin relleno. Toca los círculos</string>
+    <string name="eighth_exercise_description">Mira a tu referencia. Aparecerán letras de dos en dos. Toca las M.</string>
+    <string name="ninth_exercise_description">Mira a tu referencia. Aparecerán letras de dos en dos, más pequeñas que antes. Toca las M.</string>
+    <string name="tenth_exercise_description">Mira a tu referencia. Aparecerán imágenes de bebias. Toca la taza de café.</string>
+    <string name="eleventh_exercise_description">Mira a tu referencia. Aparecerá una cara. Toca las diferentes partes del rostro que se irán indicando arriba.</string>
+    <string name="twelfth_exercise_description">Mira a tu referencia. Aparecerá una cara. Toca las diferentes partes del rostro que se irán indicando arriba.</string>
+    <string name="thirteenth_exercise_description">Mira a tu referencia. Aparecerá la imagen de un salon. Toca las diferentes partes que se irán indicando arriba.</string>
+    <string name="fourteenth_exercise_description">Mira a tu referencia. Aparecerán varios círculos y cruces rojas. Toca todas las cruces. Se pondrán en verde al tocarlas.</string>
+    <string name="fifteenth_exercise_description">Mira a tu referencia. Aparecerán varios círculos y cruces rojas. Toca todos los círculos. Se pondrán en verde al tocarlas.</string>
+    <string name="sixteenth_exercise_description">Mira a tu referencia. Aparecerán tres frases. Toca las letras indicadas encima de cada frase. Se pondrán en verdes al tocarlas.</string>
+    <string name="seventeenth_exercise_description">Mira a tu referencia. Aparecerán tres frases, más largas que antes. Toca las letras indicadas encima de cada frase. Se pondrán en verdes al tocarlas.</string>
 
     <string name="button_home">Home</string>
     <string name="circle_for_click">Circulo</string>

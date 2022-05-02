@@ -1,8 +1,14 @@
 package com.macularehab.patient;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +32,7 @@ import com.macularehab.ExercisesActivity;
 import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
+import com.macularehab.internalStorage.UploadPatientData;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.patient.data.PatientDataInfoActivity;
 
@@ -53,6 +60,8 @@ public class PatientHome extends AppCompatActivity {
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
     private final String isFocus = "focusIsOn";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PATIENT_USER_LOGGED_KEY = "patient_user_logged";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +72,8 @@ public class PatientHome extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
+
+        mAuth.updateCurrentUser(mAuth.getCurrentUser());
 
         patientUID = mAuth.getUid();
 
@@ -100,21 +111,56 @@ public class PatientHome extends AppCompatActivity {
             }
         });
 
+        patientUID = mAuth.getUid();
+        getProfessionalUID();
+
         readFocusSwitch();
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        hideNavigationAndStatusBar();
 
-        patientUID = mAuth.getUid();
-        getProfessionalUID();
+        /*patientUID = mAuth.getUid();
+        getProfessionalUID();*/
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         readFocusSwitch();
+        hideNavigationAndStatusBar();
     }
 
     private void getProfessionalUID() {
@@ -158,7 +204,9 @@ public class PatientHome extends AppCompatActivity {
                         map = new HashMap<>();
                     }
 
-                    writeInternalStoragePatientList(map);
+                    if (hasInternetConnection()) {
+                        writeInternalStoragePatientList(map);
+                    }
                 }
             }
         });
@@ -171,16 +219,6 @@ public class PatientHome extends AppCompatActivity {
 
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
-    }
-
-    private void logOut() {
-
-        FirebaseAuth.getInstance().signOut();
-
-        patient_username_textView.setText("Patient");
-
-        Intent mainActivity = new Intent(this, IdentificationActivity.class);
-        startActivity(mainActivity);
     }
 
     private void goToPatientData() {
@@ -216,5 +254,75 @@ public class PatientHome extends AppCompatActivity {
                         child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isChecked);
             });
         }
+    }
+
+    private void uploadPatientData() {
+
+        UploadPatientData uploadPatientData = new UploadPatientData();
+        uploadPatientData.upload(getApplicationContext(), filenameCurrentPatient);
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void logOut() {
+
+        if (hasInternetConnection()) {
+            FirebaseAuth.getInstance().signOut();
+        }
+
+        logOutAux();
+
+        patient_username_textView.setText("Patient");
+
+        Intent mainActivity = new Intent(this, IdentificationActivity.class);
+        startActivity(mainActivity);
+    }
+
+    /**
+     * Auxiliary function to change the SharedPreference
+     * boolean that indicates if a patient is logged, to
+     * false
+     *
+     */
+    private void logOutAux() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, false);
+        editor.apply();
+    }
+
+    private boolean hasInternetConnection() {
+
+        boolean isConnected = false;
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+
+        return isConnected;
     }
 }

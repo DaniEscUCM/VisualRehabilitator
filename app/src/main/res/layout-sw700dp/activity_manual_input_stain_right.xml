@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManualInputStainRightActivity">
+
+
+    <ImageButton
+        android:id="@+id/imageButton_back_results"
+        android:layout_width="100dp"
+        android:layout_height="101dp"
+        app:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/imagebutton_des_back"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <ImageView
+        android:id="@+id/circleGrid"
+        android:layout_width="545dp"
+        android:layout_height="545dp"
+        android:contentDescription="@string/circular_grid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tencmgrid" />
+
+    <ImageView
+        android:id="@+id/dotsPainting"
+        android:layout_width="545dp"
+        android:layout_height="545dp"
+        android:contentDescription="@string/circular_grid"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/circleGrid"
+        app:layout_constraintEnd_toEndOf="@+id/circleGrid"
+        app:layout_constraintStart_toStartOf="@+id/circleGrid"
+        app:layout_constraintTop_toTopOf="@+id/circleGrid"
+        app:srcCompat="@drawable/house_icon" />
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/next_test"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_media_ff"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:tint="#000000" />
+
+    <ImageButton
+        android:id="@+id/repeatButton"
+        android:layout_width="118dp"
+        android:layout_height="102dp"
+        app:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/repeat_test"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:srcCompat="@android:drawable/stat_notify_sync"
+        app:tint="#429A37" />
+
+    <TextView
+        android:id="@+id/gridTittleBoth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/manual_stain_right"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/circleGrid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ManualLeftInstructions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/explain_manual"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/circleGrid"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15 " />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9 " />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9 " />
+</androidx.constraintlayout.widget.ConstraintLayout>

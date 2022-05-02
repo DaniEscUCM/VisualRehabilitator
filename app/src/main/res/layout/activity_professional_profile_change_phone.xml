@@ -7,9 +7,10 @@
 
     <ImageButton
         android:id="@+id/professional_profile_changePhone_backButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:backgroundTint="@color/grey"
         android:clickable="true"
         android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/professional_profile_changePhone_title"
-        android:textSize="60sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline40"
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +37,6 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         app:helperText="@string/required"
         app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/professional_profile_changePhone_phone_hint"
             android:inputType="phone"
-            android:textSize="24sp" />
+            android:textSize="16sp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline45"
@@ -64,9 +64,9 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="10dp"
         android:text="@string/professional_profile_changePhone_insertEmailText"
-        android:textSize="34sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toBottomOf="@+id/textView47" />
 
@@ -75,9 +75,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/blue"
         android:text="@string/professional_profile_changePhone_change_button"
-        android:textSize="34sp"
+        android:textSize="20sp"
+        app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
         app:layout_constraintStart_toStartOf="@+id/guideline44" />
@@ -86,45 +86,12 @@
         android:id="@+id/textView47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:gravity="center"
         android:text="@string/professional_profile_changePhone_helpText"
-        android:textSize="24sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline46"
         app:layout_constraintStart_toStartOf="@+id/guideline44"
         app:layout_constraintTop_toTopOf="@+id/guideline40" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/professional_logIn_restorePassword_loadingEffect"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout"
-        app:layout_goneMarginStart="10dp"
-        app:layout_goneMarginTop="1dp"
-        app:lottie_autoPlay="false"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/professional_logIn_restorePassword_loadingEffect_result"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:scaleType="center"
-        android:scaleX="1"
-        android:scaleY="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout"
-        app:layout_goneMarginStart="10dp"
-        app:layout_goneMarginTop="1dp"
-        app:lottie_autoPlay="false"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline40"
@@ -146,4 +113,35 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9"  />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/professional_profile_changePhone_constrainsLayout_lottieImage1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changePhone_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/professional_profile_changePhone_constrainsLayout_lottieImage2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/professional_profile_changePhone_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/professional_profile_changePhone_textInputLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

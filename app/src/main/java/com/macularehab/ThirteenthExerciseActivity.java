@@ -6,10 +6,14 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -82,9 +86,18 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             focus_on=!focus_on;
         });
 
+        Display display_measure = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display_measure.getSize(point);
+
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
         size = metric_unit * 20;//10cm
+        if(size>point.y){
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
+        }
+
         move();
 
         /*
@@ -190,6 +203,48 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
                 Close(v);
             }
         });
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     private void startTimerFoco() {
@@ -288,7 +343,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             focus.setVisibility(View.VISIBLE);
             startTimerFoco();
         }
-        else{ //5 sofa
+        else{ //6 sofa
             focus = findViewById(R.id.focus_sofa);
             focus.getLayoutParams().width = size;
             focus.getLayoutParams().height = size;
@@ -377,7 +432,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             else if(current == 4) { //right window
                 text.setText(res.getString(R.string.thirteenth_exercise_find_right_window));
             }
-            else if (counter == 5){ //pot
+            else if (current == 5){ //pot
                 text.setText(res.getString(R.string.thirteenth_exercise_find_pot));
             }
              else { //sofa
@@ -486,5 +541,27 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         resultIntent.putExtra("numCorrect", correct);
         resultIntent.putExtra("numFailed", failed);
         startActivity(resultIntent);
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

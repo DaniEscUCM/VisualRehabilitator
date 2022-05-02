@@ -8,23 +8,26 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_exerc_menu"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
+        app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:srcCompat="?attr/actionModeCloseDrawable"/>
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/chooseExercise_exerciseText_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/textview_exercises"
         android:textAlignment="viewStart"
-        android:textSize="48sp"
+        android:textSize="45sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintStart_toEndOf="@+id/imageButton_back_exerc_menu"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,204 +59,204 @@
                 android:focusable="true"
                 android:text="@string/first_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/second_exercise"
                 android:focusable="true"
                 android:text="@string/second_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:clickable="true"
                 android:contentDescription="@string/third_exercise"
                 android:focusable="true"
                 android:text="@string/third_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/fourth_exercise"
                 android:focusable="true"
                 android:text="@string/fourth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:clickable="true"
                 android:contentDescription="@string/fifth_exercise"
                 android:focusable="true"
                 android:text="@string/fifth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/sixth_exercise"
                 android:focusable="true"
                 android:text="@string/sixth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:contentDescription="@string/seventh_exercise"
                 android:focusable="true"
                 android:text="@string/seventh_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/eighth_exercise"
                 android:focusable="true"
                 android:text="@string/eighth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:clickable="true"
                 android:contentDescription="@string/ninth_exercise"
                 android:focusable="true"
                 android:text="@string/ninth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/tenth_exercise"
                 android:focusable="true"
                 android:text="@string/tenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:clickable="true"
                 android:contentDescription="@string/eleventh_exercise"
                 android:focusable="true"
                 android:text="@string/eleventh_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/twelfth_exercise"
                 android:focusable="true"
                 android:text="@string/twelfth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:clickable="true"
                 android:contentDescription="@string/thirteenth_exercise"
                 android:focusable="true"
                 android:text="@string/thirteenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/fourteenth_exercise"
                 android:focusable="true"
                 android:text="@string/fourteenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/button_exercise15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:clickable="true"
                 android:contentDescription="@string/fifteenth_exercise"
                 android:focusable="true"
                 android:text="@string/fifteenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
             <Button
                 android:id="@+id/button_exercise16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:backgroundTint="@color/pink_dark"
+                android:layout_marginTop="35sp"
+                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/sixteenth_exercise"
                 android:focusable="true"
                 android:text="@string/sixteenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
             <Button
                 android:id="@+id/button_exercise17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="35sp"
                 android:clickable="true"
                 android:contentDescription="@string/seventeenth_exercise"
                 android:focusable="true"
                 android:text="@string/seventeenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="35sp" />
         </LinearLayout>
     </ScrollView>
     <androidx.constraintlayout.widget.Guideline

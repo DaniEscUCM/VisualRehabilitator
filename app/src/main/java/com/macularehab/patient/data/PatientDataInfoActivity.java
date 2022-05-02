@@ -5,6 +5,8 @@ import android.content.pm.ActivityInfo;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
 import com.macularehab.exercises.ChooseExerciseActivity;
+import com.macularehab.internalStorage.DownloadPatientData;
+import com.macularehab.internalStorage.UploadPatientData;
 import com.macularehab.patient.PatientHome;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.patient.professional.ProfessionalProfile;
@@ -99,12 +103,53 @@ public class PatientDataInfoActivity extends AppCompatActivity {
             }
         });
 
+        Button uploadDataButton = findViewById(R.id.professional_patient_info_dataManagement_uploadData_button);
+        uploadDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadPatientData();
+            }
+        });
+
+        Button downloadButton = findViewById(R.id.professional_patient_info_dataManagement_downloadData_button);
+        downloadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downloadPatientData();
+            }
+        });
+
         setInvisibleButtons();
 
         fillFields();
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
     }
 
     private void close(){
+
         Intent intent = new Intent(this, PatientHome.class);
         startActivity(intent);
     }
@@ -113,18 +158,21 @@ public class PatientDataInfoActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         setInvisibleButtons();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         setInvisibleButtons();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         setInvisibleButtons();
+        hideNavigationAndStatusBar();
     }
 
     private void setInvisibleButtons() {
@@ -263,5 +311,38 @@ public class PatientDataInfoActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, ProfessionalProfile.class);
         startActivity(intent);
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void uploadPatientData() {
+
+        UploadPatientData uploadPatientData = new UploadPatientData();
+        uploadPatientData.upload(getApplicationContext(), filenameCurrentPatient);
+    }
+
+    private void downloadPatientData() {
+
+        new DownloadPatientData(getApplicationContext());
     }
 }

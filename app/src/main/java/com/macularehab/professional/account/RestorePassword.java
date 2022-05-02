@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,6 +37,8 @@ public class RestorePassword extends AppCompatActivity {
 
     private LottieAnimationView loading_imageView;
     private LottieAnimationView result_imageView;
+    private View layout_loading;
+    private View layout_result;
     private TextView successTextView;
 
     @Override
@@ -61,29 +66,66 @@ public class RestorePassword extends AppCompatActivity {
             }
         });
 
-        loading_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect);
-        result_imageView = findViewById(R.id.professional_logIn_restorePassword_loadingEffect_result);
+        //Loading Image
+        ConstraintLayout constraintLayout1 = findViewById(R.id.professional_restore_password_constrainsLayout_lottieImage1);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout1, false);
+        constraintLayout1.addView(layout_loading);
+        //Result Image
+        ConstraintLayout constraintLayout2 = findViewById(R.id.professional_restore_password_constrainsLayout_lottieImage2);
+        layout_result = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout2, false);
+        constraintLayout2.addView(layout_result);
+
+        loading_imageView = findViewById(R.id.general_loading_image);
+        result_imageView = findViewById(R.id.general_loading_image);
+
         successTextView = findViewById(R.id.professional_logIn_restorePassword_successTextView);
 
         setImagesInvisible();
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         setImagesInvisible();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         setImagesInvisible();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         setImagesInvisible();
+        hideNavigationAndStatusBar();
     }
 
     private void setImagesInvisible() {
@@ -199,7 +241,6 @@ public class RestorePassword extends AppCompatActivity {
 
         loading_imageView.cancelAnimation();
         loading_imageView.setVisibility(View.INVISIBLE);
-        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
     }
 
     private void showReadyImage() {
@@ -227,5 +268,27 @@ public class RestorePassword extends AppCompatActivity {
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

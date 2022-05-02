@@ -1,8 +1,12 @@
 package com.macularehab.professional.patientForm;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -45,6 +50,7 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
     private final String db_numberOfPatients = "numberOfPatients";
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
+    private Resources resources;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,15 +62,59 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
         databaseReference = firebaseDatabase.getReference();
         mAuth = FirebaseAuth.getInstance();
 
+        resources = this.getResources();
+
         Button continue_button = findViewById(R.id.button_create_new_patient_difficulties_continue);
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getCheckBoxesClicked();
+                confirmContinueDialog();
             }
         });
 
         getPatient();
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     private void getPatient() {
@@ -171,5 +221,46 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
         Intent continueActivity = new Intent(this, ProfessionalCreateNewPatientShowNumericCode.class);
         continueActivity.putExtra(ProfessionalCreateNewPatientDifficulties.numericCodeString, numericCode);
         startActivity(continueActivity);
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                //| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                //| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    //| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    //| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void confirmContinueDialog() {
+
+        new MaterialAlertDialogBuilder(this)
+                .setMessage(resources.getString(R.string.professional_patientForm_continue_confirmationMessage))
+                .setPositiveButton(resources.getString(R.string.professional_patientForm_continue_confirmationMessage_yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getCheckBoxesClicked();
+                    }
+                })
+                .setNegativeButton(resources.getString(R.string.professional_patientForm_continue_confirmationMessage_no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .show();
     }
 }

@@ -9,6 +9,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.Display;
@@ -86,6 +88,11 @@ public class CalculateFocusActivity extends AppCompatActivity {
         centre_x = point.x / (float) 2;
         centre_y = point.y / (float) 2;
 
+        if(size>point.y){
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
+        }
+
         focus = findViewById(R.id.focus);
         focus.getLayoutParams().width = size;
         focus.getLayoutParams().height = size;
@@ -96,7 +103,47 @@ public class CalculateFocusActivity extends AppCompatActivity {
         String value = getIntent().getExtras().getString("resume_stain");
         draw_stain(grid, size, stain, value, metric_unit);
 
+        setUiListener();
+    }
 
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     void draw_stain(ImageView grid, int size, ImageView draw_dots, String value, int metric_unit){
@@ -108,40 +155,17 @@ public class CalculateFocusActivity extends AppCompatActivity {
         draw_dots.getLayoutParams().height = size;
         draw_dots.requestLayout();
 
-        float x=0, y=0;
-        if(value!=null) {
-            List<String> list = Arrays.asList(value.substring(1, value.length() - 1).split(", "));
-            List<Pair<Float, Float>> coor_result = new ArrayList<>();
-            char aux = ' ';
-            String accumulate = "";
-            float first = 0;
-            float second;
-            for (String word : list) {
-                for (char charac : word.toCharArray()) {
-                    if (charac != 'P' && charac != 'a' && charac != 'i' && charac != 'r') {
-                        if (charac == '{' || charac == '}') {
-                            aux = charac;
-                            if (charac == '}') {
-                                second = Float.parseFloat(accumulate);
-                                Pair<Float,Float> pair =new Pair<>(first, second);
-                                coor_result.add(pair);
-                                x+=pair.first;
-                                y+=pair.second;
-                                accumulate = "";
-                            }
-                        } else if (aux == '{' && charac == ' ') {
-                            first = Float.parseFloat(accumulate);
-                            accumulate = "";
-                        } else if (charac != ' ') {
-                            accumulate += charac;
-                        }
-                    }
 
-                }
+        List<Pair<Float, Float>> coor_result = new ArrayList<>();
+        Gson gson = new Gson();
+        List<LinkedTreeMap> aux = gson.fromJson(value,coor_result.getClass());
+        Pair<Double,Double> pair = new Pair<>((double) 0, (double) 0);
+        if(aux!=null) {
+            for (LinkedTreeMap coor:aux) {
+                pair = gson.fromJson(gson.toJson(coor), pair.getClass());
+                Pair<Float,Float> pair2 = new Pair<>(pair.first.floatValue(),pair.second.floatValue());
+                coor_result.add(pair2);
             }
-            //calculated_focus = new Pair<>(x/coor_result.size(),y/coor_result.size());
-            //result_coor.add(calculated_focus);
-
             Bitmap btm = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
 
             Canvas canvas = new Canvas(btm);
@@ -237,5 +261,27 @@ public class CalculateFocusActivity extends AppCompatActivity {
 
     public void Close(View view){
         finish();
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

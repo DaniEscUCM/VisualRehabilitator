@@ -8,27 +8,31 @@
 
     <Button
         android:id="@+id/button_patient_iden"
-        android:layout_width="450dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/textview_loginPatient"
-        android:textSize="34sp"
+        android:textSize="30sp"
+        app:backgroundTint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/button_professional_ident"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintBottom_toTopOf="@id/guideline4" />
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <Button
         android:id="@+id/button_professional_ident"
-        android:layout_width="450dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/pink_dark"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/textview_loginProfessional"
-        android:textSize="34sp"
+        android:textSize="30sp"
+        app:backgroundTint="@color/pink_dark"
+        app:layout_constraintBottom_toTopOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_patient_iden"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintBottom_toTopOf="@id/guideline4"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <ImageView
         android:id="@+id/imageView_select_language"
@@ -46,12 +50,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textview_whoIsUsing"
-        android:textSize="60sp"
+        android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -72,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6"
+        app:layout_constraintGuide_percent="0.55"
         app:layout_constraintTop_toTopOf="@+id/button_patient_iden" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -81,6 +85,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"

@@ -2,14 +2,20 @@ package com.macularehab.professional.account;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.animation.Animator;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,11 +40,16 @@ import com.macularehab.model.Professional;
 import com.macularehab.patient.signUp.PatientSignUpUsername;
 import com.macularehab.professional.ProfessionalHome;
 
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+
 public class ProfessionalLoginActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "EmailPassword";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY = "professional_user_logged";
 
     EditText mailP, paswP;
     FirebaseDatabase firebaseDatabase;
@@ -47,6 +58,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     final boolean[] encontrado = {false,false}; //[0]name in db [1]pasw correct
 
     private LottieAnimationView loading_imageView;
+    private ProgressDialog progressDialog;
+    private View layout_loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,15 +101,56 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             }
         });
 
-        loading_imageView = findViewById(R.id.professional_logIn_loading_image);
+        ConstraintLayout constraintLayout = findViewById(R.id.professional_login_constrainLayout_lottieImage);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+        constraintLayout.addView(layout_loading);
+
+        loading_imageView = findViewById(R.id.general_loading_image);
 
         showLoadingImage();
         //setImagesInvisible();
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        hideNavigationAndStatusBar();
 
         LogIn logIn = new LogIn();
 
@@ -118,12 +172,17 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
     public void login(View view) {
 
+        showLoadingImage();
+
         String mail = mailP.getText().toString().trim();
         String pasword = paswP.getText().toString().trim();
 
-        if(mail.equals("")||pasword.equals("")){
+        if(mail.equals("") || pasword.equals("")){
+
+            stopLoadingImage();
             validate();
-        }else{
+        }
+        else{
 
             int email_length = mail.length();
             boolean is_email = false;
@@ -150,6 +209,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
                         } else {
                             // If sign in fails, display a message to the user.
+                            stopLoadingImage();
+
                             Log.w(TAG, "loginUserWithEmail:failure", task.getException());
                             Toast.makeText(ProfessionalLoginActivity.this,
                                     task.getException().getLocalizedMessage(),
@@ -219,6 +280,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
 
+                stopLoadingImage();
+
                 if (!task.isSuccessful()) {
                     isNotAProfessional();
                 }
@@ -244,6 +307,8 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     }
 
     public void goToProfessionalHome() {
+
+        saveLoggedUser();
 
         if (firebaseAuth.getCurrentUser() != null) {
 
@@ -328,13 +393,16 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
             @Override
             public void onAnimationStart(Animator animation) {
             }
+
             @Override
             public void onAnimationEnd(Animator animation) {
                 loading_imageView.playAnimation();
             }
+
             @Override
             public void onAnimationCancel(Animator animation) {
             }
+
             @Override
             public void onAnimationRepeat(Animator animation) {
             }
@@ -345,6 +413,37 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
 
         loading_imageView.cancelAnimation();
         loading_imageView.setVisibility(View.INVISIBLE);
-        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void saveLoggedUser() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY, true);
+
+        editor.apply();
     }
 }

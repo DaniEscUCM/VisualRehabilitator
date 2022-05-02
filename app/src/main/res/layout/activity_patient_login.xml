@@ -8,41 +8,43 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_pat_login"
-        android:contentDescription="@string/imagebutton_des_back"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:backgroundTint="@color/grey"
+        app:layout_constraintDimensionRatio="1:1"
         android:clickable="true"
+        android:contentDescription="@string/imagebutton_des_back"
         android:focusable="true"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="@+id/guideline_back"
         app:layout_constraintStart_toStartOf="parent"
-        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
         tools:srcCompat="?attr/actionModeCloseDrawable" />
+
     <TextView
         android:id="@+id/text_login"
-        android:text="@string/hint_patient_login_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="60sp"
+        android:text="@string/hint_patient_login_login"
+        android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_login">
+        app:layout_constraintTop_toTopOf="@+id/guideline1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +57,7 @@
                 android:drawableStart="@drawable/login_logo_vectorized"
                 android:labelFor="@+id/patient_email_login"
                 android:text="@string/hint_patient_login_email"
-                android:textSize="34sp" />
+                android:textSize="35sp" />
 
             <EditText
                 android:id="@+id/patient_email_login"
@@ -64,13 +66,13 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text"
-                android:textSize="48sp"
+                android:textSize="35sp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@+id/patient_password_login"
                 android:text="@string/hint_patient_login_password"
-                android:textSize="34sp" />
+                android:textSize="35sp" />
 
             <EditText
                 android:id="@+id/patient_password_login"
@@ -91,21 +93,21 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:textSize="48sp"
+                android:textSize="35sp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="10dp" />
 
         <Button
             android:id="@+id/patient_login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            app:backgroundTint="@color/blue"
             android:text="@string/hint_patient_login_login_button"
-            android:textSize="48sp" />
+            android:textSize="35sp" />
     </LinearLayout>
 
 
@@ -121,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

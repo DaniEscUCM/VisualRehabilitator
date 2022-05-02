@@ -22,25 +22,27 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="72dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#00FFFFFF"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/testsHistory"
         android:layout_width="wrap_content"
-        android:layout_height="67dp"
-        android:layout_marginStart="4dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:text="@string/tests_history"
         android:textAlignment="viewStart"
-        android:textSize="48sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_results" />
+        app:layout_constraintStart_toEndOf="@+id/imageButton_back_results"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/testsList_recyclerView"
@@ -86,5 +88,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.32" />
 </androidx.constraintlayout.widget.ConstraintLayout>

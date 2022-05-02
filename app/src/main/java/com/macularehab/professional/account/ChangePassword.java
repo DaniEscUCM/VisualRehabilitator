@@ -2,10 +2,15 @@ package com.macularehab.professional.account;
 
 import android.animation.Animator;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -16,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -51,6 +57,7 @@ public class ChangePassword extends AppCompatActivity {
 
     private Resources resources;
     private LottieAnimationView lottieAnimationView;
+    private View layout_loading;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,7 +87,13 @@ public class ChangePassword extends AppCompatActivity {
         changePassButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                readInputs();
+
+                if (hasInternetConnection()) {
+                    readInputs();
+                }
+                else {
+                    showAlertErrorUser(resources.getString(R.string.noInternetConnection));
+                }
             }
         });
 
@@ -164,26 +177,58 @@ public class ChangePassword extends AppCompatActivity {
             }
         });
 
-        lottieAnimationView = findViewById(R.id.professional_home_change_password_imageSuccess);
+        //Loading Image
+        ConstraintLayout constraintLayout = findViewById(R.id.professional_change_password_constrainsLayout_lottieImage);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+        constraintLayout.addView(layout_loading);
+
+        lottieAnimationView = findViewById(R.id.general_loading_image);
         setImageInvisible();
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         setImageInvisible();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         setImageInvisible();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         setImageInvisible();
+        hideNavigationAndStatusBar();
     }
 
     private void setImageInvisible() {
@@ -387,5 +432,49 @@ public class ChangePassword extends AppCompatActivity {
             @Override
             public void onAnimationRepeat(Animator animation) { }
         });
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+            }
+        }, 2000);
+    }
+
+    private boolean hasInternetConnection() {
+
+        boolean isConnected = false;
+
+        ConnectivityManager cm =
+                (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+
+        return isConnected;
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

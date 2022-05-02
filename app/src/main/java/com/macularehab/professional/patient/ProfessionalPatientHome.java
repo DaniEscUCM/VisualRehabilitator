@@ -3,9 +3,12 @@ package com.macularehab.professional.patient;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -28,6 +31,7 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     private TextView patientName_textView;
     private Button dataButton;
     private Button exercisesButton;
+    private LinearLayout dataManagementButtons;
     private final String filenameCurrentPatient = "CurrentPatient.json";
     private final String isFocus = "focusIsOn";
     private boolean isOn;
@@ -68,6 +72,9 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         Button logoutButton = findViewById(R.id.professional_patient_home_logout_button);
         logoutButton.setVisibility(View.INVISIBLE);
 
+        dataManagementButtons = findViewById(R.id.professional_patient_info_dataManagement_linearLayout);
+        dataManagementButtons.setVisibility(View.GONE);
+
         //readPatientName();
 
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
@@ -79,11 +86,42 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             isOn=!isOn;
         });
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        hideNavigationAndStatusBar();
 
         readPatientName();
     }
@@ -91,6 +129,8 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        hideNavigationAndStatusBar();
+
         ReadInternalStorage readInternalStorage = new ReadInternalStorage();
         HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
 
@@ -146,5 +186,27 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
         databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
                 child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

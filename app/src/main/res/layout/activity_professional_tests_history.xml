@@ -10,11 +10,11 @@
     <SearchView
         android:id="@+id/search_test"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/border_for_layout"
         android:queryHint="@string/tests_testHistory_queryHint"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintBottom_toTopOf="@+id/testsList_recyclerView"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
@@ -22,43 +22,45 @@
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:backgroundTint="#FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/testsHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:text="@string/tests_history"
         android:textAlignment="viewStart"
-        android:textSize="48sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_back_results"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/testsList_recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/border_for_layout"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toTopOf="@+id/guideline14" />
+        app:layout_constraintTop_toBottomOf="@+id/search_test" />
 
     <ImageButton
         android:id="@+id/new_test"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="#00FFFFFF"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintDimensionRatio="1:1"
         android:contentDescription="@string/new_test"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
@@ -101,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.86" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
@@ -115,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.32" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

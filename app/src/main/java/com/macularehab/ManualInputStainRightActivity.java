@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.gson.Gson;
 import com.macularehab.actions.ManualActions;
 
 public class ManualInputStainRightActivity extends AppCompatActivity {
@@ -33,6 +36,11 @@ public class ManualInputStainRightActivity extends AppCompatActivity {
         display_measure.getSize(point);
         float centre_x=point.x/(float)2;
         float centre_y=point.y/(float)2;
+
+       if(size>point.y){
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
+        }
 
         ImageView grid=findViewById(R.id.circleGrid);
         grid.getLayoutParams().width = size;
@@ -59,6 +67,48 @@ public class ManualInputStainRightActivity extends AppCompatActivity {
 
         ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_results);
         button.setOnClickListener(v -> Close(v));
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     @Override
@@ -74,7 +124,8 @@ public class ManualInputStainRightActivity extends AppCompatActivity {
 
     private void next_test(View v) {
         Intent i = new Intent( this, ManualInputStainBothActivity.class );
-        String value= actions.getResult_coor().toString();
+        Gson gson = new Gson();
+        String value= gson.toJson(actions.getResult_coor());
         i.putExtra("manual_right",value);
         value= getIntent().getExtras().getString("manual_left");
         i.putExtra("manual_left",value);
@@ -86,5 +137,27 @@ public class ManualInputStainRightActivity extends AppCompatActivity {
 
     public void Close(View view){
         finish();
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

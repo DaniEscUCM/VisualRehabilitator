@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/pause_button"
-        android:layout_width="61dp"
-        android:layout_height="81dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/pause_button"
         android:scaleType="fitCenter"
@@ -34,21 +34,22 @@
 
     <ImageButton
         android:id="@+id/circle_1"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/circle_line" />
     <ImageView
         android:id="@+id/cross1.1"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_1"
@@ -59,9 +60,9 @@
 
     <ImageView
         android:id="@+id/cross1.2"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/circle_1"
@@ -71,9 +72,9 @@
 
     <ImageView
         android:id="@+id/cross1.3"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_1"
@@ -83,9 +84,9 @@
 
     <ImageView
         android:id="@+id/cross1.4"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="@+id/circle_1"
@@ -96,22 +97,23 @@
 
     <ImageButton
         android:id="@+id/circle_2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/circle"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53"
         app:srcCompat="@drawable/circle_line" />
 
     <ImageView
         android:id="@+id/cross2.1"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_2"
@@ -123,9 +125,9 @@
 
     <ImageView
         android:id="@+id/cross2.2"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/circle_2"
@@ -135,9 +137,9 @@
 
     <ImageView
         android:id="@+id/cross2.3"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_2"
@@ -147,9 +149,9 @@
 
     <ImageView
         android:id="@+id/cross2.4"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="@+id/circle_2"
@@ -160,11 +162,11 @@
 
     <ImageButton
         android:id="@+id/circle_3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/circle"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,9 +175,9 @@
 
     <ImageView
         android:id="@+id/cross3.1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_3"
@@ -185,9 +187,9 @@
 
     <ImageView
         android:id="@+id/cross3.2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/circle_3"
@@ -198,9 +200,9 @@
 
     <ImageView
         android:id="@+id/cross3.3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_3"
@@ -211,9 +213,9 @@
 
     <ImageView
         android:id="@+id/cross3.4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="@+id/circle_3"
@@ -223,11 +225,11 @@
 
     <ImageButton
         android:id="@+id/circle_4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/circle"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline18"
@@ -236,9 +238,9 @@
 
     <ImageView
         android:id="@+id/cross4.1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_4"
@@ -248,9 +250,9 @@
 
     <ImageView
         android:id="@+id/cross4.2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/circle_4"
@@ -261,9 +263,9 @@
 
     <ImageView
         android:id="@+id/cross4.3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_4"
@@ -273,9 +275,9 @@
 
     <ImageView
         android:id="@+id/cross4.4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="@+id/circle_4"
@@ -285,11 +287,11 @@
 
     <ImageButton
         android:id="@+id/circle_5"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/circle"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toStartOf="@+id/cross5.3"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
@@ -297,9 +299,9 @@
 
     <ImageView
         android:id="@+id/cross5.1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_5"
@@ -309,9 +311,9 @@
 
     <ImageView
         android:id="@+id/cross5.2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/circle_5"
@@ -322,9 +324,9 @@
 
     <ImageView
         android:id="@+id/cross5.3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_5"
@@ -335,9 +337,9 @@
 
     <ImageView
         android:id="@+id/cross5.4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="@+id/circle_5"
@@ -348,11 +350,11 @@
 
     <ImageButton
         android:id="@+id/circle_6"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/circle"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/cross6.1"
         app:layout_constraintTop_toTopOf="@+id/guideline33"
@@ -360,9 +362,9 @@
 
     <ImageView
         android:id="@+id/cross6.1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_6"
@@ -372,9 +374,9 @@
 
     <ImageView
         android:id="@+id/cross6.2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/circle_6"
@@ -385,9 +387,9 @@
 
     <ImageView
         android:id="@+id/cross6.3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/circle_6"
@@ -397,9 +399,9 @@
 
     <ImageView
         android:id="@+id/cross6.4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/grey"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="@+id/circle_6"
@@ -422,7 +424,7 @@
             android:id="@+id/home_button"
             android:layout_width="117dp"
             android:layout_height="107dp"
-            android:backgroundTint="#00FFFFFF"
+            app:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/button_home"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -447,15 +449,15 @@
 
         <Switch
             android:id="@+id/focus_switch1"
-            android:layout_width="394dp"
+            android:layout_width="200dp"
             android:layout_height="73dp"
             android:text="@string/focus_switch"
             android:textColor="#D3D1D1"
-            android:textSize="48sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.501" />
+            app:layout_constraintVertical_bias="0.315" />
 
         <TextView
             android:id="@+id/textView13"
@@ -463,11 +465,13 @@
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
             android:textColor="#D3D1D1"
-            android:textSize="60sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline36"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/return_button"
+            app:layout_constraintEnd_toStartOf="@+id/focus_switch1"
+            app:layout_constraintHorizontal_bias="0.53"
+            app:layout_constraintStart_toEndOf="@+id/home_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85" />
 
         <ImageButton
             android:id="@+id/return_button"
@@ -489,6 +493,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.53" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

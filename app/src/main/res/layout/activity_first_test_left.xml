@@ -8,20 +8,20 @@
 
     <ImageView
         android:id="@+id/circle_grid"
-        android:layout_width="545dp"
-        android:layout_height="545dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:contentDescription="@string/dot_instruction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tencmgrid" />
 
     <ImageButton
         android:id="@+id/imageButton_back_results"
-        android:layout_width="100dp"
-        android:layout_height="101dp"
-        android:backgroundTint="#00FFFFFF"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
@@ -31,25 +31,24 @@
 
     <TextView
         android:id="@+id/firstTestLeft"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:text="@string/first_test_left"
-        android:textAlignment="viewStart"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/circle_grid"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textInstruction"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
+        app:backgroundTint="#FFFFFF"
         android:text="@string/dot_instruction"
         android:textAlignment="center"
-        android:textSize="60sp"
+        android:textSize="48sp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/centre_dot"
         app:layout_constraintEnd_toStartOf="@id/centre_dot"
@@ -58,8 +57,8 @@
 
     <ImageView
         android:id="@+id/centre_dot"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
         android:contentDescription="@string/dot_instruction"
         app:layout_constraintBottom_toBottomOf="@+id/circle_grid"
         app:layout_constraintEnd_toEndOf="@+id/circle_grid"
@@ -73,7 +72,7 @@
         android:layout_height="110dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="#00FFFFFF"
+        app:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/next_test"
         android:scaleType="fitCenter"
         android:src="@android:drawable/ic_media_ff"
@@ -84,8 +83,8 @@
 
     <ImageView
         android:id="@+id/multiple_dots"
-        android:layout_width="545dp"
-        android:layout_height="545dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:contentDescription="@string/dot_instruction"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/circle_grid"
@@ -100,7 +99,7 @@
         android:layout_height="102dp"
         android:layout_marginStart="92dp"
         android:layout_marginBottom="52dp"
-        android:backgroundTint="#00FFFFFF"
+        app:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/repeat_test"
         android:scaleType="fitCenter"
         android:visibility="gone"

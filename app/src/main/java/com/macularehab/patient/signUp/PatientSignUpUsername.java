@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,9 +40,12 @@ public class PatientSignUpUsername extends AppCompatActivity {
     private String username;
     private String password;
     private LottieAnimationView loading_imageView;
+    private View layout_loading;
 
     private final String db_patientsNumericCode = "PatientsNumericCodes";
     private static final String GENERIC_EMAIL = "@maculaRehabTFG.com";
+    private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
+    private final String SHARED_PREF_PATIENT_USER_LOGGED_KEY = "patient_user_logged";
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -60,14 +65,18 @@ public class PatientSignUpUsername extends AppCompatActivity {
         Intent intent = getIntent();
         password = intent.getStringExtra(PatientSignUpPassword.extra_password);
 
-        //Loading Image
-        loading_imageView = findViewById(R.id.patient_signup_loading_imageView);
-        loading_imageView.setVisibility(View.INVISIBLE);
-
         //EditText of username
         input_username = findViewById(R.id.editText_patient_signup_username);
-        //Button
 
+        //Loading Image
+        ConstraintLayout constraintLayout = findViewById(R.id.patient_signup_constrainLayout_lottieImage);
+        layout_loading = getLayoutInflater().inflate(R.layout.layout_loading, constraintLayout, false);
+        constraintLayout.addView(layout_loading);
+
+        loading_imageView = findViewById(R.id.general_loading_image);
+        loading_imageView.setVisibility(View.INVISIBLE);
+
+        //Buttons
         button_continue_signup = findViewById(R.id.button_patient_continue_signup);
         button_continue_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,9 +104,10 @@ public class PatientSignUpUsername extends AppCompatActivity {
     private void validateUsername() {
 
         boolean all_correct = true;
+        Resources resources = this.getResources();
 
         if (username.equals("")) {
-            input_username.setError("Need to fill");
+            input_username.setError(resources.getString(R.string.message_fill_fields));
             all_correct = false;
         }
 
@@ -155,7 +165,6 @@ public class PatientSignUpUsername extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         loading_imageView.cancelAnimation();
-                        loading_imageView.setImageResource(R.drawable.ic_launcher_foreground);
                         loading_imageView.setVisibility(View.INVISIBLE);
 
                         if (task.isSuccessful()) {
@@ -234,8 +243,6 @@ public class PatientSignUpUsername extends AppCompatActivity {
                 .child("Patients").child(password).child("hasAccount").setValue(true);
         databaseReference.child("Professional").child(professionalUID)
                 .child("Patients").child(password).child("patient_username").setValue(username);
-        databaseReference.child("Professional").child(professionalUID)
-                .child("Patients").child(password).child("patient_uid").setValue(mAuth.getUid());
 
         databaseReference.child("Patient").child(password).removeValue();
 
@@ -257,10 +264,21 @@ public class PatientSignUpUsername extends AppCompatActivity {
 
     private void startPatientHomeActivity() {
 
+        saveLoggedUser();
+
         databaseReference.child(db_patientsNumericCode).child(password).removeValue();
 
         Intent patient_home_intent = new Intent(this, PatientHome.class);
         startActivity(patient_home_intent);
     }
 
+    private void saveLoggedUser() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(SHARED_PREF_PATIENT_USER_LOGGED_KEY, true);
+
+        editor.apply();
+    }
 }

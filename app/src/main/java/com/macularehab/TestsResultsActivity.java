@@ -7,9 +7,13 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -96,6 +100,15 @@ public class TestsResultsActivity extends AppCompatActivity {
         int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
         int size = metric_unit*20;//10cm
 
+        Display display_measure = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display_measure.getSize(point);
+
+        if(size>point.y){
+            metric_unit = (int) Math.floor(point.y/(double) 20);
+            size= metric_unit*20;
+        }
+
         //Manual Grid Left
         ImageView grid_manual_left=findViewById(R.id.grid_manual_left);
         ImageView draw_dots_left=findViewById(R.id.draw_dots_manual_left);
@@ -149,6 +162,48 @@ public class TestsResultsActivity extends AppCompatActivity {
         ImageView draw_dots_second_both=findViewById(R.id.draw_dots_second_both);
         String value8 = getIntent().getExtras().getString("grid_both");
         draw(grid_second_both,size,draw_dots_second_both,value8,metric_unit, "grid_both");
+
+        setUiListener();
+    }
+
+    private void setUiListener() {
+
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationAndStatusBar();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        hideNavigationAndStatusBar();
     }
 
     void draw(ImageView grid, int size, ImageView draw_dots, String value, int metric_unit, String name_grid){
@@ -162,38 +217,20 @@ public class TestsResultsActivity extends AppCompatActivity {
 
         List<Pair<Float, Float>> coor_result = new ArrayList<>();
 
-        if(value!=null) {
-            List<String> list = Arrays.asList(value.substring(1, value.length() - 1).split(", "));
-            char aux = ' ';
-            String accumulate = "";
-            float first = 0;
-            float second;
-            for (String word : list) {
-                for (char charac : word.toCharArray()) {
-                    if (charac != 'P' && charac != 'a' && charac != 'i' && charac != 'r') {
-                        if (charac == '{' || charac == '}') {
-                            aux = charac;
-                            if (charac == '}') {
-                                second = Float.parseFloat(accumulate);
-                                Pair<Float,Float> pair =new Pair<>(first, second);
-                                coor_result.add(pair);
-                                accumulate = "";
-                                x+=pair.first;
-                                y+= pair.second;
-                                cont++;
-                                if(!dots.contains(pair)){
-                                    dots.add(pair);
-                                    this.coor_resul.add(pair);
-                                }
-                            }
-                        } else if (aux == '{' && charac == ' ') {
-                            first = Float.parseFloat(accumulate);
-                            accumulate = "";
-                        } else if (charac != ' ') {
-                            accumulate += charac;
-                        }
-                    }
-
+        Gson gson = new Gson();
+        List<LinkedTreeMap> aux = gson.fromJson(value,coor_result.getClass());
+        Pair<Double,Double> pair = new Pair<>((double) 0, (double) 0);
+        if(aux!=null) {
+            for (LinkedTreeMap coor:aux) {
+                pair = gson.fromJson(gson.toJson(coor), pair.getClass());
+                Pair<Float,Float> pair2 = new Pair<>(pair.first.floatValue(),pair.second.floatValue());
+                coor_result.add(pair2);
+                x+= pair2.first;
+                y+= pair2.second;
+                cont++;
+                if(!dots.contains(pair2)){
+                    dots.add(pair2);
+                    coor_resul.add(pair2);
                 }
             }
 
@@ -218,7 +255,8 @@ public class TestsResultsActivity extends AppCompatActivity {
         Intent i = new Intent( this, CalculateFocusActivity.class );
         databaseReference.child("Professional").child(firebaseAuth.getUid()).child("Patients").child(patient_num_cod).
                 child("Tests").child(date).child("resume_stain").setValue(coor_resul);
-        String value= coor_resul.toString();
+        Gson gson = new Gson();
+        String value= gson.toJson(coor_resul);
         x = x/cont;
         y = y/cont;
 
@@ -231,7 +269,7 @@ public class TestsResultsActivity extends AppCompatActivity {
         if(map!=null) {
             ((LinkedTreeMap)((LinkedTreeMap)map.get("Tests")).get(date)).put("resume_stain",coor_resul);
 
-            Gson gson = new Gson();
+
             String data = gson.toJson(map);
             WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
             writeInternalStorage.write(getApplicationContext(),filenameCurrentPatient,data);
@@ -241,5 +279,27 @@ public class TestsResultsActivity extends AppCompatActivity {
 
     public void Close(View view){
         finish();
+    }
+
+    private void hideNavigationAndStatusBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        }
+
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
