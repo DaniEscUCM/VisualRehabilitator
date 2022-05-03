@@ -248,6 +248,7 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/login_logo_vectorized.xml" value="0.225" />
         <entry key="app/src/main/res/layout-sw700dp/activity_exercise_results_history.xml" value="0.17725409836065573" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_identification.xml" value="0.17725409836065573" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_contact_professional.xml" value="0.12213541666666666" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_home_choose_data_exercise.xml" value="0.11901815181518152" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_login_choose.xml" value="0.1" />
@@ -262,6 +263,7 @@
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_profile_change_phone.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_restore_password.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout/activity_calculate_focus.xml" value="0.20051303976058144" />
+        <entry key="app/src/main/res/layout/activity_eighth_exercise.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout/activity_exercise_results_history.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout/activity_exercises.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_first_exercise.xml" value="0.1" />
@@ -275,6 +277,7 @@
         <entry key="app/src/main/res/layout/activity_login_patient_choose.xml" value="0.2582236842105263" />
         <entry key="app/src/main/res/layout/activity_login_professional.xml" value="0.12911184210526316" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12911184210526316" />
+        <entry key="app/src/main/res/layout/activity_manual_input_stain_both.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout/activity_map_test.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_map_test_explanation.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_map_test_right.xml" value="0.10911458333333333" />
