@@ -251,9 +251,14 @@
         <entry key="app/src/main/res/layout-sw700dp/activity_identification.xml" value="0.17725409836065573" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_contact_professional.xml" value="0.12213541666666666" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_home_choose_data_exercise.xml" value="0.11901815181518152" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_patient_login.xml" value="0.10705445544554455" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_login_choose.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_patient_professional_profile.xml" value="0.10705445544554455" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_patient_signup_password.xml" value="0.10705445544554455" />
         <entry key="app/src/main/res/layout-sw700dp/activity_patient_signup_username.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_change_password.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_professional_create_new_patient.xml" value="0.10705445544554455" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_professional_create_new_patient_difficulties.xml" value="0.15882838283828382" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_home.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_identification.xml" value="0.17725409836065573" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_login.xml" value="0.1" />
@@ -293,7 +298,7 @@
         <entry key="app/src/main/res/layout/activity_patient_signup_username.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/activity_professional_change_password.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.1318069306930693" />
+        <entry key="app/src/main/res/layout/activity_professional_create_new_patient_difficulties.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_professional_create_new_patient_show_numeric_code.xml" value="0.17760416666666667" />
         <entry key="app/src/main/res/layout/activity_professional_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_professional_identification.xml" value="0.335" />
