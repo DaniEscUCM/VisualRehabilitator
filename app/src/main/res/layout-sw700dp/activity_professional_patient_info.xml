@@ -797,7 +797,7 @@
 
     <ScrollView
         android:id="@+id/scrollView4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
@@ -814,34 +814,46 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/professional_patient_info_editAndDelete_linearLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/professional_patient_info_editInfo_button"
-                    android:layout_width="match_parent"
+                    android:id="@+id/professional_patient_info_deletePatient_button"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/professional_patientInfo_deletePatient_button"
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/pink_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/professional_patient_info_editInfo_button"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/professional_patient_info_editInfo_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
                     android:text="@string/professional_patientInfo_editPatient_button"
                     android:textSize="30sp"
-                    app:backgroundTint="@color/blue" />
+                    app:backgroundTint="@color/blue"
+                    app:layout_constraintEnd_toStartOf="@id/professional_patient_info_deletePatient_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Space
+                    android:id="@+id/space"
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
-                <Button
-                    android:id="@+id/professional_patient_info_deletePatient_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/professional_patientInfo_deletePatient_button"
-                    android:textSize="30sp"
-                    app:backgroundTint="@color/pink_dark" />
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Space
                 android:layout_width="match_parent"
