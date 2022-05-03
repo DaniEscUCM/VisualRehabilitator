@@ -31,7 +31,6 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     private TextView patientName_textView;
     private Button dataButton;
     private Button exercisesButton;
-    private LinearLayout dataManagementButtons;
     private final String filenameCurrentPatient = "CurrentPatient.json";
     private final String isFocus = "focusIsOn";
     private boolean isOn;
@@ -71,9 +70,6 @@ public class ProfessionalPatientHome extends AppCompatActivity {
 
         Button logoutButton = findViewById(R.id.professional_patient_home_logout_button);
         logoutButton.setVisibility(View.INVISIBLE);
-
-        dataManagementButtons = findViewById(R.id.professional_patient_info_dataManagement_linearLayout);
-        dataManagementButtons.setVisibility(View.GONE);
 
         //readPatientName();
 

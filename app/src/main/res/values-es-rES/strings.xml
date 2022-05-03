@@ -237,7 +237,7 @@
     <string name="professional_patientInfo_delete_no">No, Cancelar</string>
     <!-- Botones -->
     <string name="professional_patientInfo_editPatient_button">Editar\nPaciente</string>
-    <string name="professional_patientInfo_deletePatient_button">Eliminar\nPatient</string>
+    <string name="professional_patientInfo_deletePatient_button">Eliminar\nPaciente</string>
     <string name="professional_patientInfo_seeTestHistory_button">Historial de Tests</string>
     <string name="professional_patientInfo_exercisesHistory_button">Historial de Ejercicios</string>
     <string name="professional_patientInfo_professionalProfile_button">Perfil Profesional</string>

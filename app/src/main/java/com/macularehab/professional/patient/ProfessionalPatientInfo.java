@@ -61,6 +61,7 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private final String filenameCurrentPatient = "CurrentPatient.json";
+    private LinearLayout dataManagementButtons;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -134,7 +135,10 @@ public class ProfessionalPatientInfo extends AppCompatActivity {
 
         //TODO
         professionalProfileButton = findViewById(R.id.professional_patient_info_professionalProfile_button);
-        professionalProfileButton.setVisibility(View.INVISIBLE);
+        professionalProfileButton.setVisibility(View.GONE);
+
+        dataManagementButtons = findViewById(R.id.professional_patient_info_dataManagement_linearLayout);
+        dataManagementButtons.setVisibility(View.GONE);
 
         fillFields();
 
