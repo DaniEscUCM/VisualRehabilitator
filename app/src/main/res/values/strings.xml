@@ -89,7 +89,9 @@
     <!-- Login and SignUp -->
     <string name="text_professional_singup_text">Professional Sing Up</string>
     <string name="hint_professional_signup_name">Name</string>
+    <string name="professional_signup_email_text">Insert Email Address</string>
     <string name="hint_professional_signup_email">Email Address</string>
+    <string name="professional_signup_password_text">Insert Password</string>
     <string name="hint_professional_signup_password">Password</string>
     <string name="professional_signup_wrongPassword">Wrong Password!</string>
     <string name="hint_professional_signup_repeat_password">Repeat Password</string>

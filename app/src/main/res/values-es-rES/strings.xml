@@ -94,7 +94,9 @@
     <!-- Login and SignUp -->
     <string name="text_professional_singup_text">Registro de Profesional</string>
     <string name="hint_professional_signup_name">Nombre</string>
-    <string name="hint_professional_signup_email">Dirección de correo</string>
+    <string name="professional_signup_email_text">Introduce Dirección de Correo</string>
+    <string name="hint_professional_signup_email">Dirección de Correo</string>
+    <string name="professional_signup_password_text">Introduce Contraseña</string>
     <string name="hint_professional_signup_password">Contraseña</string>
     <string name="hint_professional_signup_repeat_password">Repetir contraseña</string>
     <string name="professional_signup_wrongPassword">Contraseña Incorrecta!</string>
