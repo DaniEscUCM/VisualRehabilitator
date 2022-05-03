@@ -46,7 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -799,12 +799,13 @@
         android:id="@+id/scrollView4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/border_for_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline58"
         app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
         <LinearLayout
@@ -823,9 +824,9 @@
                     android:id="@+id/professional_patient_info_editInfo_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:backgroundTint="@color/blue"
                     android:text="@string/professional_patientInfo_editPatient_button"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/blue" />
 
                 <Space
                     android:layout_width="10dp"
@@ -837,9 +838,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:backgroundTint="@color/pink_dark"
                     android:text="@string/professional_patientInfo_deletePatient_button"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    app:backgroundTint="@color/pink_dark" />
             </LinearLayout>
 
             <Space
@@ -869,9 +870,9 @@
                 android:id="@+id/button_tests"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:backgroundTint="@android:color/holo_blue_dark"
                 android:text="@string/tests_history"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                app:backgroundTint="@android:color/holo_blue_dark" />
 
             <Space
                 android:layout_width="match_parent"
@@ -916,9 +917,9 @@
                 android:id="@+id/professional_patient_info_exercisesHistory_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:backgroundTint="@android:color/holo_red_dark"
                 android:text="@string/professional_patientInfo_exercisesHistory_button"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                app:backgroundTint="@android:color/holo_red_dark" />
 
             <Space
                 android:layout_width="match_parent"
@@ -996,4 +997,11 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/scrollView4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline58"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
 </androidx.constraintlayout.widget.ConstraintLayout>
