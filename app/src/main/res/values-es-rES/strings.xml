@@ -426,7 +426,7 @@
     <string name="second_test_left">Segunda Prueba Ojo Izquierdo</string>
     <string name="second_test_right">Segunda Prueba Ojo Derecho</string>
     <string name="second_test_both">Segunda Prueba Ambos Ojos</string>
-    <string name="explain_manual">Tocar los espacios donde la mancha está. Puede ser mejor con un lápiz táctil, pero no es necesario. \n\n¡Rellenado por el profecional con datos previos! \n\nPara saltarse la actividad presione el botón del siguiente</string>
+    <string name="explain_manual">Tocar los espacios donde la mancha está. Puede ser mejor con un lápiz táctil, pero no es necesario. \n\n¡Rellenado por el profesional con datos previos! \n\nPara saltarse la actividad presione el botón del siguiente</string>
     <string name="explain_second">Tocar donde las líneas estén onduladas, borrosas, distorsionadas, zonas que faltan o se vean sombreadas. Puede ser mejor con un lápiz táctil, pero no es necesario. \n\nRellenado por el paciente \n\nPara continuar presione el botón del siguiente</string>
     <string name="short_explain_second">Tocar donde las líneas estén onduladas, borrosas, distorsionadas, zonas que faltan o se vean sombreadas.</string>
     <string name="resume_stain">Resumen de Mancha</string>
@@ -444,5 +444,6 @@
     <string name="continue_exercise">Continua con el ejercicio</string>
     <string name="tuto_pause">Pausa el ejercicio</string>
     <string name="tuto_resume">Vuelve al ejercicio</string>
+    <string name="exerc_distance">Para todos los ejercicios</string>
 
 </resources>

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.macularehab" >
+    package="com.macularehab">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +18,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaculaRehab" >
+        android:theme="@style/Theme.MaculaRehab">
+        <activity
+            android:name=".DistanceExercisesActivity"
+            android:exported="false" />
         <activity
             android:name=".patient.data.PatientTestHistoryActivity"
             android:exported="false"
@@ -99,9 +105,7 @@
         <activity
             android:name=".FirstTestLeftExplanationActivity"
             android:exported="false"
-            android:screenOrientation="landscape" />
-
-        <!-- Professional Section . -->
+            android:screenOrientation="landscape" /> <!-- Professional Section . -->
         <activity
             android:name=".professional.account.ProfessionalLoginActivity"
             android:exported="false"
@@ -165,9 +169,7 @@
         <activity
             android:name=".professional.account.ChangePhone"
             android:exported="false"
-            android:screenOrientation="landscape" />
-        <!-- Professional Section Ends . -->
-
+            android:screenOrientation="landscape" /> <!-- Professional Section Ends . -->
         <!-- Patient Section . -->
         <activity
             android:name=".patient.PatientHome"
@@ -180,7 +182,7 @@
         <activity
             android:name=".patient.PatientIdentificationActivity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.signUp.PatientSignUpUsername"
             android:exported="false"
@@ -200,13 +202,11 @@
         <activity
             android:name=".patient.professional.ContactProfessional"
             android:exported="false"
-            android:screenOrientation="landscape" />
-        <!-- Patient Section End . -->
-
+            android:screenOrientation="landscape" /> <!-- Patient Section End . -->
         <activity
             android:name=".IdentificationActivity"
             android:exported="true"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -361,7 +361,6 @@
             android:name=".exercises.ExerciseResultHistory"
             android:exported="false"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".ExercisesActivity"
             android:exported="false"
@@ -373,14 +372,14 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="landscape" />
-        <!-- Profiles -->
+            android:screenOrientation="landscape" /> <!-- Profiles -->
         <activity
             android:name=".profiles.ProfessionalEditProfile"
             android:exported="true"
             android:screenOrientation="landscape" />
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>

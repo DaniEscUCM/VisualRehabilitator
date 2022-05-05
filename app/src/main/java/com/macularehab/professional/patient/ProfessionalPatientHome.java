@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
+import com.macularehab.DistanceExercisesActivity;
 import com.macularehab.ExercisesActivity;
 import com.macularehab.R;
 import com.macularehab.internalStorage.ReadInternalStorage;
@@ -157,7 +158,7 @@ public class ProfessionalPatientHome extends AppCompatActivity {
 
     private void goToExercisesActivity() {
         saveInfo();
-        Intent intent = new Intent(this, ExercisesActivity.class);
+        Intent intent = new Intent(this, DistanceExercisesActivity.class);
         startActivity(intent);
     }
 
