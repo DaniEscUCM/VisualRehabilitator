@@ -120,6 +120,7 @@
                 android:id="@+id/editTextTextProfessionalEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 android:hint="@string/hint_professional_signup_email"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
