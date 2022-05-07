@@ -48,11 +48,13 @@
         android:id="@+id/patient_home_back_button"
         android:layout_width="100dp"
         android:layout_height="101dp"
-        app:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/imagebutton_des_back"
         android:scaleType="fitCenter"
+        app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button

@@ -10,12 +10,12 @@
         android:id="@+id/imageButton_back_exerc_menu"
         android:layout_width="100dp"
         android:layout_height="101dp"
-        app:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
+        app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:srcCompat="?attr/actionModeCloseDrawable"/>
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/chooseExercise_exerciseText_textView"
