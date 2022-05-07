@@ -21,7 +21,8 @@
         android:theme="@style/Theme.MaculaRehab">
         <activity
             android:name=".DistanceExercisesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".patient.data.PatientTestHistoryActivity"
             android:exported="false"
