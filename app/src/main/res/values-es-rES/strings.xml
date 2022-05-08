@@ -143,6 +143,9 @@
     <string name="professional_home_changePassword_button_hint">Cambiar mi contraseña</string>
     <string name="professional_home_editAccount_button_hint">Mi Cuenta</string>
     <string name="professional_home_patientList_text">Lista de Pacientes</string>
+    <string name="professional_home_logOut_confirmation_message">¿Estás seguro que quieres cerrar sesión?</string>
+    <string name="professional_home_logOut_confirmation_message_yes_logOut">Cerrar Sesión</string>
+    <string name="professional_home_logOut_confirmation_message_no_cancel">Cancelar</string>
 
         <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_patient">Paciente</string>

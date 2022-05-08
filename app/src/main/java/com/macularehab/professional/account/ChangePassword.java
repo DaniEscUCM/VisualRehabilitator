@@ -477,4 +477,17 @@ public class ChangePassword extends AppCompatActivity {
 
         decorView.setSystemUiVisibility(uiOptions);
     }
+
+    /*private void askChangeConfirmation(String st_error) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }*/
 }

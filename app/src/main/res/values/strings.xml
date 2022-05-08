@@ -139,6 +139,9 @@
     <string name="professional_home_changePassword_button_hint">Change My Password</string>
     <string name="professional_home_editAccount_button_hint">My Account</string>
     <string name="professional_home_patientList_text">Patients\'s List</string>
+    <string name="professional_home_logOut_confirmation_message">Are you sure you want to log out?</string>
+    <string name="professional_home_logOut_confirmation_message_yes_logOut">Log Out</string>
+    <string name="professional_home_logOut_confirmation_message_no_cancel">Cancel</string>
 
     <!-- Apartado Professional - Patient Form .-->
     <string name="professional_patientForm_patient">Patient</string>
