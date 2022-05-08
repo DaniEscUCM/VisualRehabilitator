@@ -58,7 +58,7 @@
     <string name="hint_patient_signup_signup_button">Registrarse</string>
     <string name="hint_patient_signup_signup_button_continue">Continua Registrandote</string> Pulsa el botón Continua Registrandote para continuar el proceso de registro
     <string name="patient_signup_continue_explained">Pulsa el botón Continua Registrandote para continuar el proceso de registro \nTendrás que introducir el código numérico que te dio el profesional</string>
-    <string name="patient_signup_enter_username">Crea un nombre de usuario, sin espacios, puede ser tu nombre</string>
+    <string name="patient_signup_enter_username">Crea un nombre de usuario, sin espacios, puede ser tu propio nombre</string>
     <string name="patient_signup_password_explained">Introduce el código numérico que te dió el profesional \ncomo contraseña</string>
     <string name="patient_signup_passwords_doest_match">Los dos códigos introducidos no son iguales</string>
     <string name="patient_signup_password_doest_exist">¡El código introducido no es válido! Vuelva a intentar o contacte su médico</string>
@@ -73,6 +73,9 @@
     <string name="patient_home_welcome_text">Bienvenido</string>
     <string name="patient_home_name_default">Paciente</string>
     <string name="patient_home_upload_data">Subir mis datos</string>
+    <string name="patient_home_logOut_confirmation_message">¿Estás seguro que quieres cerrar sesión?</string>
+    <string name="patient_home_logOut_confirmation_message_yes_logOut">Cerrar Sesión</string>
+    <string name="patient_home_logOut_confirmation_message_no_cancel">Cancelar</string>
 
     <!-- Patient - Professional Section -->
     <string name="patient_professional_profile_nameText">Nombre del\nProfesional:</string>

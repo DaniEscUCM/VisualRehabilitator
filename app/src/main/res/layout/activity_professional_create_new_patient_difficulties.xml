@@ -9,7 +9,7 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/professional_patientForm_new_patient"
         android:textSize="24sp"
         android:textStyle="bold"

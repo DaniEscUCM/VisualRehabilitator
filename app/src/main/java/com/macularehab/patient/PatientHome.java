@@ -1,9 +1,12 @@
 package com.macularehab.patient;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -108,7 +111,7 @@ public class PatientHome extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logOut();
+                askLogOutConfirmation();
             }
         });
 
@@ -162,6 +165,12 @@ public class PatientHome extends AppCompatActivity {
         super.onResume();
         readFocusSwitch();
         hideNavigationAndStatusBar();
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        askLogOutConfirmation();
     }
 
     private void getProfessionalUID() {
@@ -325,5 +334,29 @@ public class PatientHome extends AppCompatActivity {
                 activeNetwork.isConnected();
 
         return isConnected;
+    }
+
+    private void askLogOutConfirmation() {
+
+        Resources resources = this.getResources();
+        String question = resources.getString(R.string.patient_home_logOut_confirmation_message);
+        String affirmative = resources.getString(R.string.patient_home_logOut_confirmation_message_yes_logOut);
+        String negative = resources.getString(R.string.patient_home_logOut_confirmation_message_no_cancel);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(question)
+                .setPositiveButton(affirmative, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        logOut();
+                    }
+                })
+                .setNegativeButton(negative, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
