@@ -215,6 +215,8 @@
     <string name="professional_patientForm_show_numeric_code">Numeric Code:</string>
     <string name="professional_patientForm_numeric_code_explanation">Give this numeric code and the instructions to your patient so that they can register. Remind them to keep this code safe</string>
     <string name="professional_patientForm_continueToTest_button">Take the test (continue)</string>
+
+    <string name="professional_patientForm_cannot_return_message">Sorry, you can not return.\n\nIf you want to change any data you have to finish filling in the data and later you can change it.\n</string>
     <!-- Fin Apartado Professional - Patient Form .-->
 
     <!-- Apartado Professional - Patient Info .-->

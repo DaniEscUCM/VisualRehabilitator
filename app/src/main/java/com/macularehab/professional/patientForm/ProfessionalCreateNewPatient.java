@@ -167,6 +167,12 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
         hideNavigationAndStatusBar();
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        showMessageCanNotReturn();
+    }
+
     private void setDate() {
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -400,5 +406,20 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
                     }
                 })
         .show();
+    }
+
+    private void showMessageCanNotReturn() {
+
+        Resources resources = this.getResources();
+        String message = resources.getString(R.string.professional_patientForm_cannot_return_message);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

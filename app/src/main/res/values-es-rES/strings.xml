@@ -219,6 +219,8 @@
     <string name="professional_patientForm_show_numeric_code">Código Numérico:</string>
     <string name="professional_patientForm_numeric_code_explanation">Dale este código numérico a tu paciente y también las instrucciones para registrarse. Recuérdale guardar bien este código</string>
     <string name="professional_patientForm_continueToTest_button">Realizar Test (Continuar)</string>
+
+    <string name="professional_patientForm_cannot_return_message">Perdona, pero no puedes regresar.\n\nSi deseas editar algún dato tienes que terminar de rellenar los datos y después podrás modificarlos.\n</string>
         <!-- Fin Apartado Professional - Patient Form .-->
 
     <!-- Apartado Professional - Patient Info .-->

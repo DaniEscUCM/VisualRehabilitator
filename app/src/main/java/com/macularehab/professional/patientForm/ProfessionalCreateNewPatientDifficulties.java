@@ -1,5 +1,6 @@
 package com.macularehab.professional.patientForm;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -115,6 +116,12 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
     protected void onRestart() {
         super.onRestart();
         hideNavigationAndStatusBar();
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        showMessageCanNotReturn();
     }
 
     private void getPatient() {
@@ -262,5 +269,20 @@ public class ProfessionalCreateNewPatientDifficulties extends AppCompatActivity 
                     }
                 })
                 .show();
+    }
+
+    private void showMessageCanNotReturn() {
+
+        Resources resources = this.getResources();
+        String message = resources.getString(R.string.professional_patientForm_cannot_return_message);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
