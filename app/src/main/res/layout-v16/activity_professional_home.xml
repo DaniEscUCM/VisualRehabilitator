@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/professional_home_constrainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/professional_home_professional_text"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_top2"
+        app:layout_constraintEnd_toStartOf="@+id/text_professional_home_professional_name_text"
+        app:layout_constraintStart_toStartOf="@id/guideline_beg"
+        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+
+    <TextView
+        android:id="@+id/text_professional_home_professional_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/textView9" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top3"
+        app:layout_constraintEnd_toStartOf="@id/guideline_mid"
+        app:layout_constraintStart_toStartOf="@id/guideline_beg"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_top2">
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/professional_home_patientList_text"
+            android:textSize="24sp" />
+
+        <SearchView
+            android:id="@+id/professional_home_search_patient_searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="@string/professional_home_patientName_text"
+            app:actionViewClass="androidx.appcompat.widget.SearchView"
+            app:showAsAction="ifRoom|collapseActionView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/professional_patientList_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_for_layout"
+            app:backgroundTint= "@color/white"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constainLayoutCreatePatient"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/border_for_layout"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_mid"
+        app:layout_constraintTop_toBottomOf="@+id/professional_home_logout_button">
+
+
+        <Button
+            android:id="@+id/professional_home_create_new_patient_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/blue"
+            android:text="@string/professional_home_create_patient_button"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/professional_home_changePassword_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/professional_home_changePassword_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@android:color/holo_blue_dark"
+            android:text="@string/professional_home_editAccount_button_hint"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/professional_home_create_new_patient_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/professional_home_logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="7dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="7dp"
+        android:text="@string/hint_professional_home_logout_button"
+        android:textSize="16sp"
+        app:backgroundTint="@color/pink_dark"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_top2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_beg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.00"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/professional_home_loading_image_constrainLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription=""
+        app:layout_constraintBottom_toTopOf="@+id/guideline_top3"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout5"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout5" />
+</androidx.constraintlayout.widget.ConstraintLayout>
