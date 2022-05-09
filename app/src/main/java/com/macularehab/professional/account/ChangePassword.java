@@ -274,7 +274,7 @@ public class ChangePassword extends AppCompatActivity {
             error_length = true;
         }
         if (repeatNewPassword.length() < 6) {
-            newPasswordLayout.setError(resources.getString(R.string.professional_home_changePassword_error_passwordWeak));
+            repeatNewPasswordLayout.setError(resources.getString(R.string.professional_home_changePassword_error_passwordWeak));
             all_ok = false;
             error_length = true;
         }
