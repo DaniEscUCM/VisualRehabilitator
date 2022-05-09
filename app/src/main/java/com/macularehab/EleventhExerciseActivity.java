@@ -13,6 +13,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Display;
 import android.view.View;
@@ -356,7 +357,14 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     }
 
     private void move() {
-        if (++counter == total) {
+
+        //System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
+        counter++;
+        Log.e("AYUDA_C", String.valueOf(counter));
+        if (counter == total) {
+
+            Log.e("AYUDA", "if");
+            System.out.println("if");
             writeResultInDataBase(counterCorrect, counterFailed);
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
 
@@ -371,7 +379,11 @@ public class EleventhExerciseActivity extends AppCompatActivity {
 
             saveFocusOn();
             finish();
-        } else {
+
+        } else if (counter < total) {
+
+            Log.e("AYUDA", "else if");
+            System.out.println("else if");
             ImageView focus_left_eye = findViewById(R.id.focus_left_eye);
             ImageView focus_right_eye = findViewById(R.id.focus_right_eye);
             ImageView focus_mouth = findViewById(R.id.focus_mouth);
@@ -380,35 +392,31 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             focus_right_eye.setVisibility(View.INVISIBLE);
             focus_nose.setVisibility(View.INVISIBLE);
             focus_mouth.setVisibility(View.INVISIBLE);
-            time_left=num_miliseconds;
-            time_left_focus=5000;
+            time_left = num_miliseconds;
+            time_left_focus = 5000;
             int rand1;
             do {
                 rand1 = new Random().nextInt(num_shapes);
 
-            } while (current==rand1);
+            } while (current == rand1);
             current = rand1;
             TextView text = findViewById(R.id.text_findX);
             Resources res = EleventhExerciseActivity.this.getResources();
             stopPlayer();
-            if(current == 0) {
+            if (current == 0) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_left_eye));
-                playAudio("");
-            }
-            else if(current == 1) {
+            } else if (current == 1) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_right_eye));
-            }
-            else if(current == 2) {
+            } else if (current == 2) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_nose));
-            }
-            else {
+            } else {
                 text.setText(res.getString(R.string.eleventh_exercise_find_mouth));
             }
+            playAudio(current);
 
-            if(isOn) {
+            if (isOn) {
                 focus_function();
-            }
-            else {
+            } else {
                 startTimer();
             }
         }
@@ -482,14 +490,25 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    private void playAudio(String filename) {
+    private void playAudio(int type) {
 
         if (mediaPlayer != null) {
-            stopAndPlay(filename);
+            stopAndPlay(type);
         }
         else {
 
-            mediaPlayer = MediaPlayer.create(this, R.raw.encuentra_ojo_izquierdo);
+            if (type == 0) {
+                mediaPlayer = MediaPlayer.create(this, R.raw.ojo_izquierdo);
+            }
+            else if (type == 1) {
+                mediaPlayer = MediaPlayer.create(this, R.raw.ojo_derecho);
+            }
+            else if (type == 2) {
+                mediaPlayer = MediaPlayer.create(this, R.raw.nariz);
+            }
+            else {
+                mediaPlayer = MediaPlayer.create(this, R.raw.boca);
+            }
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
@@ -508,9 +527,9 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         }
     }
 
-    private void stopAndPlay(String filename) {
+    private void stopAndPlay(int type) {
         stopPlayer();
-        playAudio(filename);
+        playAudio(type);
     }
 
     @Override
