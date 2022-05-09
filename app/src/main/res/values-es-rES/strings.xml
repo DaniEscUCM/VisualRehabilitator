@@ -338,7 +338,8 @@
     <string name="seconds_description_instructions">Inserta los segundos que quieras para cada instrucción:</string>
     <string name="seconds_description_whole_exercise">Inserta los segundos para completar el ejercicio entero:</string>
     <string name="seconds">segundos</string>
-    <string name="num_seconds">10</string>
+    <string name="num_seconds">5</string>
+    <string name="num_seconds_v2">7</string>
     <string name="num_seconds_whole_exercise">60</string>
     <string name="num_seconds_whole_exercise_90s">90</string>
     <string name="textview_name">Nombre</string>

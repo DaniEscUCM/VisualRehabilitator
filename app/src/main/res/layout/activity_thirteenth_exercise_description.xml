@@ -71,7 +71,7 @@
         android:background="@drawable/border_seconds"
         android:hint="@string/seconds"
         android:inputType="number"
-        android:text="@string/num_seconds"
+        android:text="@string/num_seconds_v2"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
