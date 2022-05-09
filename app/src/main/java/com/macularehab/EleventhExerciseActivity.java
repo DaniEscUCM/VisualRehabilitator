@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -56,6 +57,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     private ImageButton button_mouth;
     private ImageButton button_nose;
     private boolean hiden=false;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -218,6 +220,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) { time_left_focus=millisUntilFinished;}
             public void onFinish() {
                 hiden=false;
+                cancelTimer_1();
                 startTimer();
             }
         };
@@ -289,19 +292,22 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     }
 
     private void startTimer() {
+
         timer = new CountDownTimer(time_left, 1000) {
             public void onTick(long millisUntilFinished) { time_left=millisUntilFinished;}
             public void onFinish() {
                 ++counterFailed; //they didn't touch when they should have.
                 move();
+                timer.cancel();
             }
         };
         timer.start();
     }
 
     private void cancelTimer_1() {
-        if (timer != null)
+        if (timer != null) {
             timer.cancel();
+        }
     }
 
     private void resume(){
@@ -384,8 +390,10 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             current = rand1;
             TextView text = findViewById(R.id.text_findX);
             Resources res = EleventhExerciseActivity.this.getResources();
+            stopPlayer();
             if(current == 0) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_left_eye));
+                playAudio("");
             }
             else if(current == 1) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_right_eye));
@@ -396,6 +404,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             else {
                 text.setText(res.getString(R.string.eleventh_exercise_find_mouth));
             }
+
             if(isOn) {
                 focus_function();
             }
@@ -471,5 +480,42 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void playAudio(String filename) {
+
+        if (mediaPlayer != null) {
+            stopAndPlay(filename);
+        }
+        else {
+
+            mediaPlayer = MediaPlayer.create(this, R.raw.encuentra_ojo_izquierdo);
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    stopPlayer();
+                }
+            });
+
+            mediaPlayer.start();
+        }
+    }
+
+    private void stopPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    private void stopAndPlay(String filename) {
+        stopPlayer();
+        playAudio(filename);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlayer();
     }
 }
