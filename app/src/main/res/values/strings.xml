@@ -6,7 +6,7 @@
     <string name="button_login">Log In</string>
 
     <!-- Apartado general .-->
-    <string name="message_fill_fields">You have to fill the fields</string>
+    <string name="message_fill_fields">You have to fill all the fields</string>
     <string name="message_error">Error! Try Again Later</string>
     <string name="email">Email Address</string>
     <string name="password">Password</string>

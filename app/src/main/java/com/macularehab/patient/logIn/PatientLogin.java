@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 //Firebase Analytics
 //import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.macularehab.R;
 import com.macularehab.login.LogIn;
 import com.macularehab.patient.PatientHome;
@@ -160,12 +161,47 @@ public class PatientLogin extends AppCompatActivity  {
         clean();
     }
 
-    public void user_login_failed() {
+    public void user_login_failed(FirebaseAuthException firebaseAuthException) {
 
         Resources resources = PatientLogin.this.getResources();
-        Toast.makeText(PatientLogin.this, resources.getString(R.string.error_authentication_failed),
-                Toast.LENGTH_LONG).show();
-        showAlertFailToLogIn();
+        String st_error;
+
+        switch (firebaseAuthException.getErrorCode()) {
+
+            case "ERROR_EMAIL_ALREADY_IN_USE":
+                st_error = resources.getString(R.string.patient_signup_error_user_already_in_use);
+                break;
+            case "ERROR_WEAK_PASSWORD":
+                st_error = resources.getString(R.string.professional_home_changePassword_error_passwordWeak);
+                break;
+            case "ERROR_WRONG_PASSWORD":
+                st_error = resources.getString(R.string.professional_login_wrongPassword);
+                break;
+            case "ERROR_NETWORK_REQUEST_FAILED":
+                st_error = resources.getString(R.string.patient_signup_error_network_failed);
+                break;
+            case "ERROR_OPERATION_NOT_ALLOWED":
+                st_error = resources.getString(R.string.patient_signup_error_operations_not_allowed);
+                break;
+            case "ERROR_USER_NOT_FOUND":
+                st_error = resources.getString(R.string.professional_login_restorePassword_error_userNotFound);
+                break;
+            case "ERROR_INVALID_EMAIL":
+                st_error = resources.getString(R.string.professional_login_restorePassword_error_emailNotValid);
+                break;
+            case "ERROR_USER_MISMATCH":
+                st_error = resources.getString(R.string.professional_login_restorePassword_error_userMismatch);
+                break;
+            case "USER_DISABLED":
+                st_error = resources.getString(R.string.professional_login_restorePassword_error_userDisabled);
+                break;
+            default:
+                st_error = resources.getString(R.string.message_error);
+                break;
+        }
+
+        Toast.makeText(PatientLogin.this, st_error, Toast.LENGTH_LONG).show();
+        showAlertFailToLogIn(st_error);
     }
 
 
@@ -173,18 +209,20 @@ public class PatientLogin extends AppCompatActivity  {
 
         boolean all_correct = true;
 
+        Resources resources = this.getResources();
+
         if(this.email_username.equals("")){
-            this.email_text.setError("required");
+            this.email_text.setError(resources.getString(R.string.required));
             all_correct = false;
             showAlertEnterEmailAndPassword();
         }
         if(this.password.equals("")){
-            this.password_text.setError("required");
+            this.password_text.setError(resources.getString(R.string.required));
             all_correct = false;
             showAlertEnterEmailAndPassword();
         }
         if (this.password.length() < 6) {
-            this.password_text.setError("Password must be at least 6 characters");
+            this.password_text.setError(resources.getString(R.string.error_weak_password));
             all_correct = false;
             showAlertWeakPassword();
         }
@@ -192,11 +230,14 @@ public class PatientLogin extends AppCompatActivity  {
         return all_correct;
     }
 
-    //TODO
+
     public void showAlertEnterEmailAndPassword() {
 
+        Resources resources = this.getResources();
+        String message = resources.getString(R.string.message_fill_fields);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Name and/or Email and/or Password field is empty")
+        builder.setMessage(message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
@@ -208,11 +249,13 @@ public class PatientLogin extends AppCompatActivity  {
 
     public void showAlertWeakPassword() {
 
+        Resources resources = this.getResources();
+        String message = resources.getString(R.string.error_weak_password);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Name and/or Email and/or Password field is empty")
+        builder.setMessage(message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
                     }
                 });
 
@@ -221,13 +264,12 @@ public class PatientLogin extends AppCompatActivity  {
     }
 
 
-    public void showAlertFailToLogIn() {
+    public void showAlertFailToLogIn(String st_error) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Failed To LogIn. Email/Username and/or Password incorrect")
+        builder.setMessage(st_error)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // FIRE ZE MISSILES!
                     }
                 });
 
