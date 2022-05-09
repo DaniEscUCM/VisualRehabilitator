@@ -3,6 +3,7 @@ package com.macularehab;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -152,13 +153,11 @@ public class SecondExerciseDescriptionActivity extends AppCompatActivity {
         //
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
-        num_seconds = 10;
-        if (se.equals("")) {
-            System.out.println("Hola, quieres estos segundos: " + se);
-
-        } else {
+        Resources res = getResources();
+        String default_time = res.getString(R.string.num_seconds);
+        num_seconds = Integer.parseInt(default_time);
+        if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
-            System.out.println("Hola, quieres estos segundos: " + se + "en int: " + num_seconds);
         }
 
         finish();
