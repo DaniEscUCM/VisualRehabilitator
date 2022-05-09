@@ -243,6 +243,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/border_for_layout.xml" value="0.3395" />
         <entry key="app/src/main/res/drawable/border_for_layout_scroll.xml" value="0.3395" />
+        <entry key="app/src/main/res/drawable/border_for_layout_small.xml" value="0.3035" />
         <entry key="app/src/main/res/drawable/border_rectangle_for_layout.xml" value="0.266" />
         <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.2635" />
         <entry key="app/src/main/res/drawable/ic_arrow_back_small.xml" value="0.275" />
@@ -263,7 +264,7 @@
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_create_new_patient.xml" value="0.10705445544554455" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_create_new_patient_difficulties.xml" value="0.15882838283828382" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_create_new_patient_show_numeric_code.xml" value="0.12417491749174918" />
-        <entry key="app/src/main/res/layout-sw700dp/activity_professional_home.xml" value="0.1188118811881188" />
+        <entry key="app/src/main/res/layout-sw700dp/activity_professional_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_identification.xml" value="0.17725409836065573" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_patient_info.xml" value="0.1" />
@@ -273,6 +274,8 @@
         <entry key="app/src/main/res/layout-sw700dp/activity_professional_restore_password.xml" value="0.1188118811881188" />
         <entry key="app/src/main/res/layout-v16/activity_professional_home.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout-v16/activity_professional_patient_info.xml" value="0.33" />
+        <entry key="app/src/main/res/layout-v17/activity_professional_home.xml" value="0.23505434782608695" />
+        <entry key="app/src/main/res/layout-v17/activity_professional_patient_info.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout/activity_calculate_focus.xml" value="0.20051303976058144" />
         <entry key="app/src/main/res/layout/activity_eighth_exercise.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout/activity_exercise_results_history.xml" value="0.23505434782608695" />

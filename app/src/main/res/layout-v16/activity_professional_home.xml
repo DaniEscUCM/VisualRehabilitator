@@ -67,8 +67,8 @@
         android:id="@+id/constainLayoutCreatePatient"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/border_for_layout"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top3"
@@ -81,9 +81,9 @@
             android:id="@+id/professional_home_create_new_patient_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/blue"
             android:text="@string/professional_home_create_patient_button"
             android:textSize="20sp"
+            app:backgroundTint="@color/blue"
             app:layout_constraintBottom_toTopOf="@id/professional_home_changePassword_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -92,10 +92,10 @@
             android:id="@+id/professional_home_changePassword_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@android:color/holo_blue_dark"
             android:text="@string/professional_home_editAccount_button_hint"
             android:textColor="@color/white"
             android:textSize="20sp"
+            app:backgroundTint="@android:color/holo_blue_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/professional_home_create_new_patient_button" />
@@ -134,7 +134,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.7" />
+        app:layout_constraintGuide_percent="0.72" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
@@ -148,12 +148,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90"/>
+        app:layout_constraintGuide_percent="0.92" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/professional_home_loading_image_constrainLayout"
