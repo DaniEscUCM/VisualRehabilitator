@@ -264,8 +264,11 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
     private void showAlertMissingData() {
 
         String st_error = resources.getString(R.string.error_fields_empty);
+        String st_title = resources.getString(R.string.error_fields_empty_title);
+        String st_subtitle = resources.getString(R.string.error_fields_empty_message);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(st_error)
+        builder.setMessage(st_subtitle)
+                .setTitle(st_title)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
@@ -391,8 +394,11 @@ public class ProfessionalCreateNewPatient extends AppCompatActivity {
 
     private void confirmContinueDialog() {
 
+        String title = resources.getString(R.string.professional_patientForm_continue_confirmationMessage_title);
+        String subtitle = resources.getString(R.string.professional_patientForm_continue_confirmationMessage_message);
         new MaterialAlertDialogBuilder(this)
-                .setMessage(resources.getString(R.string.professional_patientForm_continue_confirmationMessage))
+                .setTitle(title)
+                .setMessage(subtitle)
                 .setPositiveButton(resources.getString(R.string.professional_patientForm_continue_confirmationMessage_yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

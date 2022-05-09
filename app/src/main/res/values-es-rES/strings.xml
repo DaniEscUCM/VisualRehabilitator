@@ -24,7 +24,9 @@
     <string name="emptyField">Casilla sin rellenar. Es obligatorio rellenar la(s) casilla(s)</string>
     <string name="required">* Obligatorio</string>
     <string name="noInternetConnection">Sin conexión a Internet.\nPor favor asegúrate de que estás conectado a Internet</string>
-    <string name="error_fields_empty">Hay algunos campos que faltan por rellenar</string>
+    <string name="error_fields_empty">Hay algunos campos que faltan por rellenar.\n\nRellénalos antes de continuar.</string>
+    <string name="error_fields_empty_title">Hay algunos campos que faltan por rellenar.</string>
+    <string name="error_fields_empty_message">Rellénalos antes de continuar.</string>
     <string name="error_required_field">Obligatorio</string>
     <string name="error_weak_password">Error: contraseña debe de contener al menos 6 carácteres</string>
     <string name="error_passwords_not_match">Error: las contraseñas no coinciden</string>
@@ -175,6 +177,8 @@
     <string name="professional_patientForm_observations_hint">Escribe aquí si tienes alguna observación</string>
     <string name="professional_patientForm_continue_button">Continuar</string>
     <string name="professional_patientForm_continue_confirmationMessage">¿Seguro que deseas continuar?\nNo podrás regresar a este apartado hasta terminar el proceso de crear el paciente.\nUna vez terminado de crear el paciente podrás modificar cualquier dato.\n</string>
+    <string name="professional_patientForm_continue_confirmationMessage_title">¿Seguro que deseas continuar?</string>
+    <string name="professional_patientForm_continue_confirmationMessage_message">No podrás regresar a este apartado hasta terminar el proceso de crear el paciente.\nUna vez terminado de crear el paciente podrás modificar cualquier dato.\n</string>
     <string name="professional_patientForm_continue_confirmationMessage_yes">Continuar</string>
     <string name="professional_patientForm_continue_confirmationMessage_no">Cancelar</string>
 
