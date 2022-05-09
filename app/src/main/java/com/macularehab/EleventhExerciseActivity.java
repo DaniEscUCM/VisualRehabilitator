@@ -360,11 +360,8 @@ public class EleventhExerciseActivity extends AppCompatActivity {
 
         //System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
         counter++;
-        Log.e("AYUDA_C", String.valueOf(counter));
         if (counter == total) {
 
-            Log.e("AYUDA", "if");
-            System.out.println("if");
             writeResultInDataBase(counterCorrect, counterFailed);
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
 
@@ -382,8 +379,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
 
         } else if (counter < total) {
 
-            Log.e("AYUDA", "else if");
-            System.out.println("else if");
             ImageView focus_left_eye = findViewById(R.id.focus_left_eye);
             ImageView focus_right_eye = findViewById(R.id.focus_right_eye);
             ImageView focus_mouth = findViewById(R.id.focus_mouth);
