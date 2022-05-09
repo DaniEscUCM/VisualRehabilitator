@@ -55,6 +55,9 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     private boolean hiden=false;
     private MediaPlayer mediaPlayer;
 
+    private int size_focus;
+    private ArrayList<Pair<Float, Float>> coor_result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,12 +84,15 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
+
+
+        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
         focus_on=(Boolean) patientHashMap.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            focus_on=!focus_on;
-        });
+
 
         Display display_measure = getWindowManager().getDefaultDisplay();
         Point point = new Point();
@@ -99,6 +105,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
         }
+        size_focus = (int) Math.round(metric_unit * (double) patientHashMap.get("focus_size"));
         move();
 
         /*
@@ -262,102 +269,32 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     }
 
     private void focus_function () {
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-
         if (current == 0) { //lamp
             focus = findViewById(R.id.focus_lamp);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 1) { //plant
             focus = findViewById(R.id.focus_plant);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 2) { //carpet
             focus = findViewById(R.id.focus_carpet);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 3) { //left window
             focus = findViewById(R.id.focus_left_window);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 4) { //right window
             focus = findViewById(R.id.focus_right_window);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 5) { //5 pot
             focus = findViewById(R.id.focus_pot);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else{ //6 sofa
             focus = findViewById(R.id.focus_sofa);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
+        focus.getLayoutParams().width = size;
+        focus.getLayoutParams().height = size;
+        focus.requestLayout();
+        drawFocusDot();
+        startTimerFoco();
     }
 
     private void startTimer() {
@@ -390,8 +327,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
 
             String message_correct = correctsString + " " + counterCorrect + " " + incorrectsString + " " + counterFailed + " " + ofTotalString + " " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
-            
-            saveFocusOn();
+
             finish();
         } else if (counter < total) {
 
@@ -460,9 +396,28 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         finish();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void drawFocusDot(){
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, size_focus / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus.setImageBitmap(btm_manual_left);
+        focus.setVisibility(View.VISIBLE);
+    }
     private void resume(){
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        focus_on=(Boolean) map.get(isFocus);
+        size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
+
         if(focus_on){
             if(hiden){
+                drawFocusDot();
                 startTimerFoco();
             }
             else{
@@ -504,11 +459,6 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         button_sofa.setClickable(false);
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);
-    }
-
-    private void saveFocusOn(){
-
-        new SaveFocusInfo(getApplicationContext(), focus_on);
     }
 
 

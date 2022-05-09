@@ -455,5 +455,9 @@
     <string name="tuto_pause">Pausa el ejercicio</string>
     <string name="tuto_resume">Vuelve al ejercicio</string>
     <string name="exerc_distance">Para todos los ejercicios</string>
+    <string name="dot_settings">Ajustes de punto</string>
+    <string name="change_dot_size">Cambia tamaño del punto:</string>
+    <string name="bigger">más grande</string>
+    <string name="smaller">más pequeño</string>
 
 </resources>

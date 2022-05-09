@@ -19,23 +19,17 @@ import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
-import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
-import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +54,9 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     private boolean hiden=false;
     private MediaPlayer mediaPlayer;
 
+    private int size_focus;
+    private ArrayList<Pair<Float, Float>> coor_result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,12 +72,13 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
+
+        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
         isOn=(Boolean) patientHashMap.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
 
         counterCorrect = counterFailed = 0;
         counter = current = -1;
@@ -104,6 +102,7 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
         }
+        size_focus = (int) Math.round(metric_unit * (double) patientHashMap.get("focus_size"));
         move();
 
         /*
@@ -229,67 +228,23 @@ public class EleventhExerciseActivity extends AppCompatActivity {
     }
 
     private void focus_function () {
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-
         if (current == 0) {
             focus = findViewById(R.id.focus_left_eye);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 1) {
-            //focus = findViewById(R.id.focus_right_eye);
             focus = findViewById(R.id.focus_right_eye);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 2) {
-            //focus = findViewById(R.id.focus_nose);
             focus = findViewById(R.id.focus_nose);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else{
-            //focus = findViewById(R.id.focus_mouth);
             focus = findViewById(R.id.focus_mouth);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
-
+        focus.getLayoutParams().width = size;
+        focus.getLayoutParams().height = size;
+        focus.requestLayout();
+        drawFocusDot();
+        startTimerFoco();
     }
 
     private void startTimer() {
@@ -311,9 +266,27 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         }
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void drawFocusDot(){
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, size_focus / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus.setImageBitmap(btm_manual_left);
+        focus.setVisibility(View.VISIBLE);
+    }
     private void resume(){
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        isOn=(Boolean) map.get(isFocus);
+        size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
         if(isOn){
             if(hiden){
+                drawFocusDot();
                 startTimerFoco();
             }
             else{
@@ -351,11 +324,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         menu.setVisibility(View.VISIBLE);
     }
 
-    private void saveFocusOn(){
-
-        new SaveFocusInfo(getApplicationContext(), isOn);
-    }
-
     private void move() {
 
         //System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
@@ -374,7 +342,6 @@ public class EleventhExerciseActivity extends AppCompatActivity {
             String message_correct = correctsString + " " + counterCorrect + " " + incorrectsString + " " + counterFailed + " " + ofTotalString + " " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
 
-            saveFocusOn();
             finish();
 
         } else if (counter < total) {

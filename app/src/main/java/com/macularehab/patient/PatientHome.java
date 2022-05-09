@@ -35,6 +35,7 @@ import com.macularehab.DistanceExercisesActivity;
 import com.macularehab.ExercisesActivity;
 import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
+import com.macularehab.SettingsActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.UploadPatientData;
 import com.macularehab.internalStorage.WriteInternalStorage;
@@ -89,6 +90,8 @@ public class PatientHome extends AppCompatActivity {
         ImageButton goBackButton = findViewById(R.id.patient_home_back_button);
         goBackButton.setVisibility(View.GONE);
 
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
         //getProfessionalUID();
 
         Button dataButton = findViewById(R.id.professional_patient_home_data_button);
@@ -118,7 +121,7 @@ public class PatientHome extends AppCompatActivity {
         patientUID = mAuth.getUid();
         getProfessionalUID();
 
-        readFocusSwitch();
+        //readFocusSwitch();
 
         setUiListener();
     }
@@ -163,7 +166,7 @@ public class PatientHome extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        readFocusSwitch();
+        //readFocusSwitch();
         hideNavigationAndStatusBar();
     }
 
@@ -193,6 +196,11 @@ public class PatientHome extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     private void loadPatientInfoToInternalStorage() {
@@ -243,31 +251,7 @@ public class PatientHome extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void readFocusSwitch() {
-
-        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-
-        Switch focus_switch = findViewById(R.id.focus_switch);
-        if (map.containsKey(isFocus)) {
-            focus_switch.setChecked((Boolean) map.get(isFocus));
-            //Listener
-            focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-                HashMap<String, Object> mapS = readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
-                mapS.put(isFocus, isChecked);
-                Gson gson = new Gson();
-                String data = gson.toJson(mapS);
-                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
-                databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                        child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isChecked);
-            });
-        }
-    }
-
     private void uploadPatientData() {
-
         UploadPatientData uploadPatientData = new UploadPatientData();
         uploadPatientData.upload(getApplicationContext(), filenameCurrentPatient);
     }

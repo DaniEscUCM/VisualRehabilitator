@@ -34,31 +34,15 @@ public class SixthExerciseDescriptionActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_sixth_exercise_description);
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Close(v);
-            }
-        });
+        ImageButton button = findViewById(R.id.imageButton_back_exerc);
+        button.setOnClickListener(v -> Close(v));
 
-        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex);
-        button_play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                play_exercise(v);
-            }
-        });
+        ImageButton button_play =  findViewById(R.id.button_play_ex);
+        button_play.setOnClickListener(v -> play_exercise(v));
 
-        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentUser);
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
-        Switch focus_switch = findViewById(R.id.focus_switch);
-        focus_switch.setChecked((Boolean) map.get(isFocus));
-        isOn=(Boolean) map.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
 
         setUiListener();
     }
@@ -103,9 +87,12 @@ public class SixthExerciseDescriptionActivity extends AppCompatActivity {
         hideNavigationAndStatusBar();
     }
 
-    private void play_exercise(View v) {
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
 
-        saveInfo();
+    private void play_exercise(View v) {
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
         Resources res = getResources();
@@ -127,10 +114,6 @@ public class SixthExerciseDescriptionActivity extends AppCompatActivity {
         finish();
     }
 
-    private void saveInfo() {
-
-        new SaveFocusInfo(getApplicationContext(), isOn);
-    }
 
     private void hideNavigationAndStatusBar() {
 

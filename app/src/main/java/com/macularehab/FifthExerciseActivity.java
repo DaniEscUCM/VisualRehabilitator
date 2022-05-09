@@ -18,22 +18,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
-import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
-import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,6 +48,10 @@ public class FifthExerciseActivity extends AppCompatActivity {
     private Button button_dot;
     private boolean hiden=false;
 
+    private int size_focus;
+    private int metric_unit, size;
+    private ArrayList<Pair<Float, Float>> coor_result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,12 +68,8 @@ public class FifthExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
-        isOn=(Boolean) patientHashMap.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
         counter = -1;
         counterCorrect = counterFailed = 0;
@@ -89,26 +83,25 @@ public class FifthExerciseActivity extends AppCompatActivity {
         display_measure.getSize(point);
 
         DisplayMetrics display = this.getResources().getDisplayMetrics();
-        int metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
-        int size = metric_unit * 20;//10cm
+        metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
+        size = metric_unit * 20;//10cm
         if(size>point.y){
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
         }
         focus = findViewById(R.id.foco);
-
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
         focus.getLayoutParams().width = size;
         focus.getLayoutParams().height = size;
         focus.requestLayout();
-        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(btm_manual_left);
-        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-        all_dots.draw(canvas);
-        focus.setImageBitmap(btm_manual_left);
+
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        isOn=(Boolean) map.get(isFocus);
+        LinkedTreeMap tree = (LinkedTreeMap) map.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+        size_focus = (int) Math.round(metric_unit * (double) map.get("focus_size"));
+
+        drawFocusDot();
 
         if(isOn){
             button_dot.setVisibility(View.INVISIBLE);
@@ -180,9 +173,27 @@ public class FifthExerciseActivity extends AppCompatActivity {
         hideNavigationAndStatusBar();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void drawFocusDot(){
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, size_focus / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus.setImageBitmap(btm_manual_left);
+        focus.setVisibility(View.VISIBLE);
+    }
 
     private void resume(){
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        isOn=(Boolean) map.get(isFocus);
         if(isOn){
+            size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
+            drawFocusDot();
             if(hiden){
                 startTimerFoco(button_dot);
             }
@@ -215,12 +226,6 @@ public class FifthExerciseActivity extends AppCompatActivity {
         button_dot.setClickable(false);
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);
-    }
-
-
-    private void saveFocusOn(){
-
-        new SaveFocusInfo(getApplicationContext(), isOn);
     }
 
     private void startTimerFoco(Button button_dot) {     //Timer para que aparezca el foco solo 5s
@@ -266,7 +271,6 @@ public class FifthExerciseActivity extends AppCompatActivity {
             String message_correct = correctsString + " " + counterCorrect + " " + incorrectsString + " " + counterFailed + " " + ofTotalString + " " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
 
-            saveFocusOn();
             finish();
         }
         else {

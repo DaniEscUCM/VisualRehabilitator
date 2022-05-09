@@ -44,7 +44,7 @@ public class SaveFocusInfo {
 
         WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
         writeInternalStorage.write(context, filenameCurrentUser, data);
-        /*databaseReference.child("Professional").child(professional_uid).
-                child("Patients").child(patient_code).child(db_focus).setValue(isOn);*/
+        databaseReference.child("Professional").child(professional_uid).
+                child("Patients").child(patient_code).child(db_focus).setValue(isOn);
     }
 }

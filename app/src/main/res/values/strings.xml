@@ -467,5 +467,9 @@
     <string name="tuto_pause">Pause the exercise</string>
     <string name="tuto_resume">Return to the exercise</string>
     <string name="exerc_distance">For all exercises</string>
+    <string name="dot_settings">Dots settings</string>
+    <string name="change_dot_size">Change dot size:</string>
+    <string name="bigger">bigger</string>
+    <string name="smaller">smaller</string>
 
 </resources>
