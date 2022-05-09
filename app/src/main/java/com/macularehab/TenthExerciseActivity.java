@@ -270,7 +270,6 @@ public class TenthExerciseActivity extends AppCompatActivity {
             //In this exercise: correct is touching the coffee cups and not touching the other images,
             //incorrect is not touching the coffee cups and touching other images.
 
-            //TO DO
             writeResultInDataBase(counterCorrect, counterFailed);
             System.out.println("counter: " + counter + " counterCorrect: " + counterCorrect + " counterFailed: " + counterFailed);
 
@@ -290,30 +289,28 @@ public class TenthExerciseActivity extends AppCompatActivity {
             do {
                 rand = new Random().nextInt(num_shapes);
             } while (previous==rand);
-            previous = rand;
+            if(counter == 5 && previous != 1) {
+                previous = 1;
+            }
+            else {
+                previous = rand;
+            }
 
             ImageButton button_dot = (ImageButton) findViewById(R.id.dot_button);
-            System.out.println("counter: " + counter);
             time_left=num_miliseconds;
             startTimer();
             if (previous == 0) {
                 button_dot.setImageResource(R.drawable.juice);
                 coffee = false;
-                System.out.println("counter: " + counter + ". juice");
             } else if (previous == 1) {
                 button_dot.setImageResource(R.drawable.coffee);
                 coffee = true;
-                System.out.println("counter: " + counter + ". coffee");
             } else if (previous == 2) {
                 button_dot.setImageResource(R.drawable.cola);
                 coffee = false;
-                System.out.println("counter: " + counter + ". cola");
-
             } else {
                 button_dot.setImageResource(R.drawable.water);
                 coffee = false;
-                System.out.println("counter: " + counter + ". water");
-
             }
         }
     }
