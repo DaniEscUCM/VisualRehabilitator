@@ -178,9 +178,6 @@ public class PatientDataInfoActivity extends AppCompatActivity {
 
     private void setInvisibleButtons() {
 
-        //LinearLayout editAndDeleteLinearLayot = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
-        //editAndDeleteLinearLayot.setVisibility(View.INVISIBLE);
-
         LinearLayout editAndDeleteLinearLayot = findViewById(R.id.linearLayoutPatientInfo);
         ConstraintLayout deleteView = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
         editAndDeleteLinearLayot.removeView(deleteView);
