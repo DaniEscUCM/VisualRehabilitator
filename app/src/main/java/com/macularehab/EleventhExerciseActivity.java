@@ -492,18 +492,38 @@ public class EleventhExerciseActivity extends AppCompatActivity {
         }
         else {
 
-            if (type == 0) {
-                mediaPlayer = MediaPlayer.create(this, R.raw.ojo_izquierdo);
-            }
-            else if (type == 1) {
-                mediaPlayer = MediaPlayer.create(this, R.raw.ojo_derecho);
-            }
-            else if (type == 2) {
-                mediaPlayer = MediaPlayer.create(this, R.raw.nariz);
+            Resources resources = this.getResources();
+            String lan = resources.getString(R.string.eleventh_exercise_find_left_eye);
+            if (lan.charAt(0) == 'F') {
+
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.left_eye);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.right_eye);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.nose);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.mouth);
+                }
             }
             else {
-                mediaPlayer = MediaPlayer.create(this, R.raw.boca);
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ojo_izquierdo);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ojo_derecho);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.nariz);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.boca);
+                }
             }
+
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {

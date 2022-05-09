@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -52,6 +53,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     private ImageView focus;
     private ImageButton button_lamp,button_plant,button_carpet,button_left_window, button_right_window,button_pot,button_sofa;
     private boolean hiden=false;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +99,6 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
         }
-
         move();
 
         /*
@@ -253,6 +254,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {time_left_focus=millisUntilFinished; }
             public void onFinish() {
                 hiden=false;
+                cancelTimer_1();
                 startTimer();
             }
         };
@@ -364,6 +366,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             public void onFinish() {
                 ++counterFailed; //they didn't touch when they should have.
                 move();
+                timer.cancel();
             }
         };
         timer.start();
@@ -390,7 +393,8 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             
             saveFocusOn();
             finish();
-        } else {
+        } else if (counter < total) {
+
             ImageView focus_lamp = findViewById(R.id.focus_lamp);
             ImageView focus_plant = findViewById(R.id.focus_plant);
             ImageView focus_carpet = findViewById(R.id.focus_carpet);
@@ -417,6 +421,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             current = rand1;
             TextView text = findViewById(R.id.text_findX);
             Resources res = ThirteenthExerciseActivity.this.getResources();
+            stopPlayer();
             if(current == 0) { //lamp
                 text.setText(res.getString(R.string.thirteenth_exercise_find_lamp));
             }
@@ -438,6 +443,9 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
              else { //sofa
                 text.setText(res.getString(R.string.thirteenth_exercise_find_sofa));
             }
+
+             playAudio(current);
+
             if(focus_on) {
                 focus_function();
             }
@@ -563,5 +571,91 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void playAudio(int type) {
+
+        if (mediaPlayer != null) {
+            stopAndPlay(type);
+        }
+        else {
+            
+            Resources resources = this.getResources();
+            String lan = resources.getString(R.string.eleventh_exercise_find_left_eye);
+            if (lan.charAt(0) == 'F') {
+
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.lamp);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.plant);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.carpet);
+                }
+                else if (type == 3) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.left_window);
+                }
+                else if (type == 4) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.right_window);
+                }
+                else if (type == 5) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.pot);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.sofa_en);
+                }
+            }
+            else {
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.lampara);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.planta);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.alfrombra);
+                }
+                else if (type == 3) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ventana_izquierda);
+                }
+                else if (type == 4) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ventana_derecha);
+                }
+                else if (type == 5) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.maceta);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.sofa);
+                }
+            }
+
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    stopPlayer();
+                }
+            });
+
+            mediaPlayer.start();
+        }
+    }
+
+    private void stopPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    private void stopAndPlay(int type) {
+        stopPlayer();
+        playAudio(type);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlayer();
     }
 }
