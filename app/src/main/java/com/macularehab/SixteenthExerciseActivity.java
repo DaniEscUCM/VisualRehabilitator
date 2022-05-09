@@ -3,33 +3,22 @@ package com.macularehab;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.DisplayMetrics;
-import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.google.gson.internal.LinkedTreeMap;
-import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
-import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
-import com.macularehab.internalStorage.ReadInternalStorage;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SixteenthExerciseActivity extends AppCompatActivity {
@@ -64,6 +53,9 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
 
         ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(v -> Close(v));
+
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
         counterCorrect = counterFailed = 0;
         num_miliseconds = SixteenthExerciseDescriptionActivity.getNumSeconds() * 1000;
@@ -540,6 +532,10 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
         setUiListener();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
     private void setUiListener() {
 
         View decorView = getWindow().getDecorView();
