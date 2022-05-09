@@ -415,6 +415,8 @@
     <string name="v_letter" translatable="false">v</string>
     <string name="y_letter" translatable="false">y</string>
     <string name="w_letter" translatable="false">w</string>
+    <string name="sixteenth_letters">Touch these letters:</string>
+    <string name="sixteenth_the_letters" translatable="false">N O V</string>
 
 
     <string name="toast_user_created">User created</string>

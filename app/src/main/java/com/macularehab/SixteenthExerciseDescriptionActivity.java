@@ -106,7 +106,7 @@ public class SixteenthExerciseDescriptionActivity extends AppCompatActivity {
         }
 
         finish();
-        Intent i = new Intent( this, SixteenthExerciseActivity.class );
+        Intent i = new Intent( this, SixteenthLettersActivity.class );
         startActivity(i);
     }
 

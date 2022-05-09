@@ -20,9 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaculaRehab">
         <activity
+            android:name=".SeventeenthLettersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SixteenthLettersActivity"
+            android:exported="false" />
+        <activity
             android:name=".DistanceExercisesActivity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".patient.data.PatientTestHistoryActivity"
             android:exported="false"

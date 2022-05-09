@@ -22,14 +22,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_begin="62dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.12109375" />
+        app:layout_constraintGuide_percent="0.12" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -37,34 +37,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
-
-    <TextView
-        android:id="@+id/text_find_n"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_n"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline37"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <TextView
         android:id="@+id/text_sequence_n"
         android:layout_width="900dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/sequence_n"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
+        app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
     <ImageButton
         android:id="@+id/button_n_correct1"
@@ -311,31 +296,16 @@
 
 
     <TextView
-        android:id="@+id/text_find_o"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_o"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline33"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
-
-    <TextView
         android:id="@+id/text_sequence_o"
         android:layout_width="900dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/sequence_o"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o" />
+        app:layout_constraintTop_toTopOf="@+id/guideline33" />
 
     <ImageButton
         android:id="@+id/button_o_correct1"
@@ -521,31 +491,18 @@
         app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
-    <TextView
-        android:id="@+id/text_find_v"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_v"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline39"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
 
     <TextView
         android:id="@+id/text_sequence_v"
         android:layout_width="900dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/sequence_v"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <ImageButton
         android:id="@+id/button_v_correct1"
@@ -803,6 +760,7 @@
         app:srcCompat="@drawable/border_rectangle_v2" />
 
     <View
+        android:id="@+id/view10"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
@@ -811,6 +769,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view33"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
@@ -819,7 +778,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_sequence_n" />
 
     <View
-        android:layout_width="match_parent"
+        android:layout_width="898dp"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
         app:layout_constraintBottom_toTopOf="@+id/text_sequence_o"
@@ -827,6 +786,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view34"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
@@ -941,7 +901,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51121653" />
+        app:layout_constraintGuide_percent="0.45" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

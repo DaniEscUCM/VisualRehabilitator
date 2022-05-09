@@ -31,26 +31,11 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.12109375" />
 
-    <TextView
-        android:id="@+id/text_find_n"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_n"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline37"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
-
     <Button
         android:id="@+id/button_n_incorrect2"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -58,36 +43,35 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_correct4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct3"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
     <Button
         android:id="@+id/button_n_correct4"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:text="@string/n_letter"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect3"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect2"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_incorrect1"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -95,18 +79,18 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect4"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct1"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_correct6"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -114,18 +98,18 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect5"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct5"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_incorrect5"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -133,38 +117,38 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_correct7"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct6"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_correct2"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:text="@string/n_letter"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_correct3"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect4"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_correct7"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -172,11 +156,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect5"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_correct1"
@@ -184,18 +170,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:text="@string/n_letter"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_correct3"
@@ -203,27 +189,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:text="@string/n_letter"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_incorrect2"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct2"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_incorrect3"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -231,19 +215,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_correct5"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_correct4"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_incorrect4"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -251,10 +235,12 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_correct2"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect1"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        tools:layout_editor_absoluteY="60dp" />
 
     <Button
         android:id="@+id/button_n_correct5"
@@ -262,8 +248,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -271,24 +255,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_n_correct6"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
         app:layout_constraintStart_toEndOf="@+id/button_n_incorrect3"
-        app:layout_constraintTop_toBottomOf="@+id/guideline37" />
+        tools:layout_editor_absoluteY="60dp" />
 
-
-    <TextView
-        android:id="@+id/text_find_o"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_o"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline33"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
@@ -304,6 +277,7 @@
         android:background="@android:color/holo_red_dark"
         app:layout_constraintBottom_toTopOf="@+id/button_n_incorrect2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
@@ -344,8 +318,6 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -353,10 +325,12 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_correct2"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct1"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o" />
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_correct5"
@@ -364,8 +338,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -373,19 +345,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect6"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect7"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect9"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -393,20 +365,20 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect10"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect6"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect10"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -414,19 +386,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect9"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect2"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -434,19 +406,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_correct3"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct2"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect8"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -454,11 +426,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect5"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct4"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_correct1"
@@ -466,8 +440,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -475,19 +447,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect1"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_correct6"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -495,19 +467,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_correct4"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect4"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect5"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -515,19 +487,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect7"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect8"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect7"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -535,19 +507,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_correct5"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect5"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect3"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -555,19 +527,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect4"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct3"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect6"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -575,19 +547,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect9"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct5"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_incorrect4"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -595,11 +567,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_correct6"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect3"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_correct4"
@@ -607,8 +581,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -616,11 +588,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect8"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_correct6"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_correct3"
@@ -628,8 +602,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -637,19 +609,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect3"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect2"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_o_correct2"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -657,23 +629,12 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_o_incorrect2"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline33"
         app:layout_constraintStart_toEndOf="@+id/button_o_incorrect1"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o" />
-
-    <TextView
-        android:id="@+id/text_find_v"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_v"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline39"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
+        tools:layout_editor_absoluteY="187dp" />
 
     <Button
         android:id="@+id/button_v_correct1"
@@ -681,8 +642,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -690,10 +649,11 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
+        app:layout_constraintTop_toTopOf="@+id/guideline39"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
     <Button
@@ -701,8 +661,6 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -710,19 +668,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct1"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct2"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -730,19 +688,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct3"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect1"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct3"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -750,11 +708,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect2"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct2"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_incorrect2"
@@ -762,8 +722,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -771,19 +729,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct4"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct3"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct4"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -791,19 +749,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect3"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect2"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_incorrect3"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -811,11 +769,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect8"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct4"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct5"
@@ -823,8 +783,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -832,19 +790,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect4"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect8"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_incorrect4"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -852,19 +810,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct6"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct5"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct6"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -872,19 +830,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct7"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect4"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct7"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -892,11 +850,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect5"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct6"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_incorrect5"
@@ -904,8 +864,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -913,19 +871,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_incorrect6"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct7"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_incorrect6"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -933,19 +891,19 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct9"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect5"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct9"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -953,20 +911,20 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct10"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect6"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_correct10"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -974,18 +932,18 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_correct9"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v" />
+        tools:layout_editor_absoluteY="310dp" />
 
     <Button
         android:id="@+id/button_v_incorrect8"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
         android:minWidth="0dp"
         android:scaleType="fitCenter"
@@ -993,11 +951,13 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="40dp"
+        app:backgroundTint="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/button_v_correct5"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/guideline39"
         app:layout_constraintStart_toEndOf="@+id/button_v_incorrect3"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v"
-        app:srcCompat="@drawable/border_rectangle_v2" />
+        app:srcCompat="@drawable/border_rectangle_v2"
+        tools:layout_editor_absoluteY="310dp" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -1040,15 +1000,15 @@
 
         <Switch
             android:id="@+id/focus_switch1"
-            android:layout_width="394dp"
+            android:layout_width="200dp"
             android:layout_height="73dp"
             android:text="@string/focus_switch"
             android:textColor="#D3D1D1"
-            android:textSize="48sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.501" />
+            app:layout_constraintVertical_bias="0.315" />
 
         <TextView
             android:id="@+id/textView13"
@@ -1056,11 +1016,13 @@
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
             android:textColor="#D3D1D1"
-            android:textSize="60sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline36"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/return_button"
+            app:layout_constraintEnd_toStartOf="@+id/focus_switch1"
+            app:layout_constraintHorizontal_bias="0.53"
+            app:layout_constraintStart_toEndOf="@+id/home_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.85" />
 
         <ImageButton
             android:id="@+id/return_button"

@@ -407,6 +407,7 @@
     <string name="fifteenth_exercise_find_o">Encuentra la letra o</string>
     <string name="fifteenth_exercise_find_v">Encuentra la letra v</string>
     <string name="sequence_n">n m m n &#160; n m n m &#160; m m n n &#160; m n m n &#160; n n m m</string>
+    <string name="sixteenth_letters">Toca estas letras: N O V</string>
 
     <string name="toast_user_created">Usuario creado</string>
     <string name="toast_fill_fields">Por favor, rellena todos los campos</string>
