@@ -84,7 +84,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline34"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/house_icon"
-            app:tint="#D3D1D1" />
+            app:tint="@color/pause_light_gray" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline34"
@@ -107,7 +107,7 @@
             android:background="#00FFFFFF"
             android:contentDescription="@string/imagebutton_des_settings"
             android:scaleType="fitEnd"
-            android:tint="#D3D2D2"
+            android:tint="@color/pause_light_gray"
             app:layout_constraintBottom_toBottomOf="@+id/home_button"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
             app:layout_constraintTop_toTopOf="@+id/home_button"
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
-            android:textColor="#D3D1D1"
+            android:textColor="@color/pause_light_gray"
             android:textSize="28sp"
             app:layout_constraintBottom_toTopOf="@+id/return_button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +137,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline36"
             app:srcCompat="@android:drawable/ic_media_play"
-            app:tint="#D3D1D1" />
+            app:tint="@color/pause_light_gray" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline36"
