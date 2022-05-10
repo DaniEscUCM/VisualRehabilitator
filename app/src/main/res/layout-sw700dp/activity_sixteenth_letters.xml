@@ -7,7 +7,7 @@
     tools:context=".SixteenthLettersActivity">
 
     <ImageButton
-        android:id="@+id/imageButton_back_exerc"
+        android:id="@+id/imageButton_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:backgroundTint="#FFFFFF"

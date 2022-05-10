@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class SixteenthExerciseActivity extends AppCompatActivity {
 
-    private final int exercise_id = 15, maxCorrect = 21;
+    private final int exercise_id = 15, maxCorrect = 22;
     private int counterCorrect, counterFailed, num_miliseconds, total=0;
     private CountDownTimer timer_1 = null;
     private HashMap<String, Object> patientHashMap;
