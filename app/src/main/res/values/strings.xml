@@ -420,7 +420,7 @@
     <string name="y_letter" translatable="false">y</string>
     <string name="w_letter" translatable="false">w</string>
     <string name="sixteenth_letters">Touch these letters:</string>
-    <string name="sixteenth_the_letters" translatable="false">N O V</string>
+    <string name="sixteenth_the_letters" translatable="false">n &#160; &#160; o &#160; &#160; v</string>
 
 
     <string name="toast_user_created">User created</string>
