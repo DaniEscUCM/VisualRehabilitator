@@ -24,21 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="783d75e4-cbe1-4682-ae5a-22569df0b7ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SeventeenthLettersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SeventeenthLettersActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SixteenthLettersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/macularehab/SixteenthLettersActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_eleventh_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_eleventh_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_eleventh_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_eleventh_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_fifteenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_fifteenth_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_first_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_first_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_fourteenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_fourteenth_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_sixth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-sw700dp/activity_sixth_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_eighth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_eighth_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_first_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_first_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fourth_exercise.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tenth_exercise.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tenth_exercise.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
