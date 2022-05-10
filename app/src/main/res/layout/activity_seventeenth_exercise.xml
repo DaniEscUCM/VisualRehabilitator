@@ -778,7 +778,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_sequence_n" />
 
     <View
-        android:layout_width="898dp"
+        android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
         app:layout_constraintBottom_toTopOf="@+id/text_sequence_o"

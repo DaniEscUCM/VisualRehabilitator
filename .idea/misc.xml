@@ -135,6 +135,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_twelfth_exercise.xml" value="0.20537897310513448" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw600dp/activity_twelfth_exercise_description.xml" value="0.1" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw600dp/recycler_view_test.xml" value="0.1" />
+        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp-small/activity_sixteenth_letters.xml" value="0.15490924092409242" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_eighth_exercise.xml" value="0.10231023102310231" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_eighth_exercise_description.xml" value="0.18" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_eleventh_exercise.xml" value="0.10231023102310231" />
@@ -152,6 +153,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_fourth_exercise.xml" value="0.1707920792079208" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_fourth_exercise_description.xml" value="0.18" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_manual_input_stain_left.xml" value="0.18125" />
+        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_ninth_exercise.xml" value="0.15490924092409242" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_ninth_exercise_description.xml" value="0.18" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_patient_home_choose_data_exercise.xml" value="0.16336633663366337" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_second_exercise.xml" value="0.18125" />
@@ -160,6 +162,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_settings.xml" value="0.22" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_seventeenth_exercise.xml" value="0.1707920792079208" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_seventeenth_exercise_description.xml" value="0.18" />
+        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_seventeenth_letters.xml" value="0.15490924092409242" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_seventh_exercise.xml" value="0.10231023102310231" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_seventh_exercise_description.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout-sw700dp/activity_sixteenth_exercise.xml" value="0.1707920792079208" />
@@ -250,6 +253,7 @@
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_seventh_exercise_description.xml" value="0.2" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_sixteenth_exercise.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_sixteenth_exercise_description.xml" value="0.33" />
+        <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_sixteenth_letters.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_sixth_exercise.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_sixth_exercise_description.xml" value="0.21" />
         <entry key="..\:/Users/dani_/didone/didone/VisualRehabilitator/app/src/main/res/layout/activity_tenth_exercise.xml" value="0.2975630611372381" />

@@ -406,7 +406,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#2A2D35"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

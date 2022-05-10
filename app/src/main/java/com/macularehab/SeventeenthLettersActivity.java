@@ -39,6 +39,7 @@ public class SeventeenthLettersActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, SeventeenthExerciseActivity.class);
         startActivity(intent);
+        finish();
     }
 
 }
