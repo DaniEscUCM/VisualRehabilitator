@@ -8,32 +8,125 @@
 
   <ImageButton
       android:id="@+id/imageButton_back_set"
-      android:layout_width="117dp"
-      android:layout_height="107dp"
-      android:layout_marginStart="44dp"
-      android:layout_marginTop="40dp"
-      app:backgroundTint="#00FFFFFF"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
       android:clickable="true"
       android:contentDescription="@string/imagebutton_des_back"
       android:focusable="true"
       android:scaleType="fitCenter"
+      app:backgroundTint="#00FFFFFF"
+      app:layout_constraintBottom_toTopOf="@+id/guideline2"
+      app:layout_constraintEnd_toStartOf="@+id/textView2"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:srcCompat="?attr/actionModeCloseDrawable"
-      app:tint="#5C5757"
-      android:layout_marginLeft="44dp" />
+      app:tint="#5C5757" />
 
   <TextView
       android:id="@+id/textView2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="56dp"
-      android:layout_marginTop="48dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginLeft="8dp"
       android:text="@string/textview_settings"
       android:textSize="60sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toEndOf="@+id/imageButton_back_set"
+      app:layout_constraintBottom_toTopOf="@+id/guideline2"
+      app:layout_constraintStart_toStartOf="@+id/guideline1"
       app:layout_constraintTop_toTopOf="parent" />
 
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.08" />
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.15 " />
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline64"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.92" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintEnd_toStartOf="@+id/guideline64"
+      app:layout_constraintStart_toStartOf="@+id/guideline1"
+      app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+    <ImageView
+        android:id="@+id/dotImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/focus_switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/plus_button"
+        app:layout_constraintTop_toBottomOf="@+id/titleDot"
+        app:srcCompat="@drawable/red_dot" />
+
+    <TextView
+        android:id="@+id/titleDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dot_settings"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/focus_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/focus_switch"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/change_dot_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_dot_size"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dotImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dotImage" />
+
+    <ImageButton
+        android:id="@+id/plus_button"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="bigger"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/change_dot_size"
+        app:layout_constraintStart_toEndOf="@+id/minus_button"
+        app:layout_constraintTop_toTopOf="@+id/change_dot_size"
+        app:srcCompat="@android:drawable/btn_plus" />
+
+    <ImageButton
+        android:id="@+id/minus_button"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/smaller"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/change_dot_size"
+        app:layout_constraintStart_toEndOf="@+id/change_dot_size"
+        app:layout_constraintTop_toTopOf="@+id/change_dot_size"
+        app:srcCompat="@android:drawable/btn_minus" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -52,6 +53,10 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     private ImageView focus;
     private ImageButton button_lamp,button_plant,button_carpet,button_left_window, button_right_window,button_pot,button_sofa;
     private boolean hiden=false;
+    private MediaPlayer mediaPlayer;
+
+    private int size_focus;
+    private ArrayList<Pair<Float, Float>> coor_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,12 +84,15 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
+
+
+        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
         focus_on=(Boolean) patientHashMap.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            focus_on=!focus_on;
-        });
+
 
         Display display_measure = getWindowManager().getDefaultDisplay();
         Point point = new Point();
@@ -97,7 +105,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
         }
-
+        size_focus = (int) Math.round(metric_unit * (double) patientHashMap.get("focus_size"));
         move();
 
         /*
@@ -253,6 +261,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {time_left_focus=millisUntilFinished; }
             public void onFinish() {
                 hiden=false;
+                cancelTimer_1();
                 startTimer();
             }
         };
@@ -260,102 +269,32 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
     }
 
     private void focus_function () {
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-
         if (current == 0) { //lamp
             focus = findViewById(R.id.focus_lamp);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 1) { //plant
             focus = findViewById(R.id.focus_plant);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 2) { //carpet
             focus = findViewById(R.id.focus_carpet);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 3) { //left window
             focus = findViewById(R.id.focus_left_window);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 4) { //right window
             focus = findViewById(R.id.focus_right_window);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 5) { //5 pot
             focus = findViewById(R.id.focus_pot);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else{ //6 sofa
             focus = findViewById(R.id.focus_sofa);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
+        focus.getLayoutParams().width = size;
+        focus.getLayoutParams().height = size;
+        focus.requestLayout();
+        drawFocusDot();
+        startTimerFoco();
     }
 
     private void startTimer() {
@@ -364,6 +303,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             public void onFinish() {
                 ++counterFailed; //they didn't touch when they should have.
                 move();
+                timer.cancel();
             }
         };
         timer.start();
@@ -387,10 +327,10 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
 
             String message_correct = correctsString + " " + counterCorrect + " " + incorrectsString + " " + counterFailed + " " + ofTotalString + " " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
-            
-            saveFocusOn();
+
             finish();
-        } else {
+        } else if (counter < total) {
+
             ImageView focus_lamp = findViewById(R.id.focus_lamp);
             ImageView focus_plant = findViewById(R.id.focus_plant);
             ImageView focus_carpet = findViewById(R.id.focus_carpet);
@@ -417,6 +357,7 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
             current = rand1;
             TextView text = findViewById(R.id.text_findX);
             Resources res = ThirteenthExerciseActivity.this.getResources();
+            stopPlayer();
             if(current == 0) { //lamp
                 text.setText(res.getString(R.string.thirteenth_exercise_find_lamp));
             }
@@ -438,6 +379,9 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
              else { //sofa
                 text.setText(res.getString(R.string.thirteenth_exercise_find_sofa));
             }
+
+             playAudio(current);
+
             if(focus_on) {
                 focus_function();
             }
@@ -452,9 +396,28 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         finish();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void drawFocusDot(){
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, size_focus / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus.setImageBitmap(btm_manual_left);
+        focus.setVisibility(View.VISIBLE);
+    }
     private void resume(){
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        focus_on=(Boolean) map.get(isFocus);
+        size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
+
         if(focus_on){
             if(hiden){
+                drawFocusDot();
                 startTimerFoco();
             }
             else{
@@ -496,11 +459,6 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         button_sofa.setClickable(false);
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.VISIBLE);
-    }
-
-    private void saveFocusOn(){
-
-        new SaveFocusInfo(getApplicationContext(), focus_on);
     }
 
 
@@ -563,5 +521,91 @@ public class ThirteenthExerciseActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void playAudio(int type) {
+
+        if (mediaPlayer != null) {
+            stopAndPlay(type);
+        }
+        else {
+            
+            Resources resources = this.getResources();
+            String lan = resources.getString(R.string.eleventh_exercise_find_left_eye);
+            if (lan.charAt(0) == 'F') {
+
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.lamp);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.plant);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.carpet);
+                }
+                else if (type == 3) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.left_window);
+                }
+                else if (type == 4) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.right_window);
+                }
+                else if (type == 5) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.pot);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.sofa_en);
+                }
+            }
+            else {
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.lampara);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.planta);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.alfrombra);
+                }
+                else if (type == 3) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ventana_izquierda);
+                }
+                else if (type == 4) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ventana_derecha);
+                }
+                else if (type == 5) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.maceta);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.sofa);
+                }
+            }
+
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    stopPlayer();
+                }
+            });
+
+            mediaPlayer.start();
+        }
+    }
+
+    private void stopPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    private void stopAndPlay(int type) {
+        stopPlayer();
+        playAudio(type);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlayer();
     }
 }

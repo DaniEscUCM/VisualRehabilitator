@@ -3,6 +3,7 @@ package com.macularehab;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -24,9 +25,7 @@ import java.util.HashMap;
 
 public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
     private static int num_seconds;
-    private final String filenameCurrentUser = "CurrentPatient.json";
-    private final String isFocus = "focusIsOn";
-    private boolean isOn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,32 +33,22 @@ public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_eleventh_exercise_description);
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton_back_exerc);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Close(v);
-            }
-        });
+        ImageButton button = findViewById(R.id.imageButton_back_exerc);
+        button.setOnClickListener(v -> Close(v));
 
-        ImageButton button_play = (ImageButton) findViewById(R.id.button_play_ex);
-        button_play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                play_exercise(v);
-            }
-        });
-        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentUser);
+        ImageButton button_play =  findViewById(R.id.button_play_ex);
+        button_play.setOnClickListener(v -> play_exercise(v));
 
-        Switch focus_switch = findViewById(R.id.focus_switch);
-        focus_switch.setChecked((Boolean) map.get(isFocus));
-        isOn=(Boolean) map.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
+
 
         setUiListener();
+    }
+
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     private void setUiListener() {
@@ -103,10 +92,11 @@ public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
     }
 
     private void play_exercise(View v) {
-        saveInfo();
         EditText seconds = (EditText) findViewById(R.id.seconds);
         String se = seconds.getText().toString();
-        num_seconds = 10;
+        Resources res = getResources();
+        String default_time = res.getString(R.string.num_seconds_v2);
+        num_seconds = Integer.parseInt(default_time);
         if (!se.equals("")) {
             num_seconds = Integer.parseInt(se);
         }
@@ -124,10 +114,6 @@ public class EleventhExerciseDescriptionActivity extends AppCompatActivity {
         finish();
     }
 
-    private void saveInfo() {
-
-        new SaveFocusInfo(getApplicationContext(), isOn);
-    }
 
     private void hideNavigationAndStatusBar() {
 

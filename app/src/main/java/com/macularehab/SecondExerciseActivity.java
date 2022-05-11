@@ -17,8 +17,6 @@ import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,19 +25,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
-import com.macularehab.exercises.ResultInfo;
-import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
-import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 public class SecondExerciseActivity extends AppCompatActivity {
@@ -59,11 +52,15 @@ public class SecondExerciseActivity extends AppCompatActivity {
     protected CountDownTimer timer = null,timer_focus = null;
     private long time_left=3000,time_left_focus=5000;
 
-    private final String isFocus = "focusIsOn";
     private boolean isOn;
-    private ImageView foco;
+    private ImageView  focus;
     private ImageButton button_dot;
     private boolean hiden=false;
+
+    private final String isFocus = "focusIsOn";
+    private int size_focus;
+    private int metric_unit, size;
+    private ArrayList<Pair<Float, Float>> coor_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,13 +86,8 @@ public class SecondExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
-        isOn=(Boolean) patientHashMap.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
         counterCorrect = counterFailed = 0; counter = -1;
         triangle = false;
@@ -111,8 +103,8 @@ public class SecondExerciseActivity extends AppCompatActivity {
         display_measure.getSize(point);
 
         DisplayMetrics display = this.getResources().getDisplayMetrics();
-        int metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
-        int size = metric_unit * 20;//10cm
+        metric_unit = (int) Math.round(display.xdpi * 0.19685); //0.5cm
+        size = metric_unit * 20;//10cm
         if(size>point.y){
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
@@ -120,27 +112,26 @@ public class SecondExerciseActivity extends AppCompatActivity {
         button_dot.getLayoutParams().width = metric_unit*6;//3cm diametro de las figuras
         button_dot.getLayoutParams().height = metric_unit*6;
 
-        foco = findViewById(R.id.foco);
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree= (LinkedTreeMap)patientHashMap.get("focus");
+         focus = findViewById(R.id.foco);
+         focus.getLayoutParams().width = size;
+         focus.getLayoutParams().height = size;
+         focus.requestLayout();
+
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        isOn=(Boolean) map.get(isFocus);
+        LinkedTreeMap tree = (LinkedTreeMap) map.get("focus");
         coor_result = new ArrayList<>();
         coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+        size_focus = (int) Math.round(metric_unit * (double) map.get("focus_size"));
 
-        foco.getLayoutParams().width = size;
-        foco.getLayoutParams().height = size;
-        foco.requestLayout();
-        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(btm_manual_left);
-        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-        all_dots.draw(canvas);
-        foco.setImageBitmap(btm_manual_left);
+        drawFocusDot();
 
         if(isOn){
             button_dot.setVisibility(View.INVISIBLE);
             startTimerFoco(button_dot); //Durante 5s solo se ve el foco
         }
         else{
-            foco.setVisibility(View.INVISIBLE);
+             focus.setVisibility(View.INVISIBLE);
             move();
         }
 
@@ -197,6 +188,19 @@ public class SecondExerciseActivity extends AppCompatActivity {
         hideNavigationAndStatusBar();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void drawFocusDot(){
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, size_focus / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+         focus.setImageBitmap(btm_manual_left);
+         focus.setVisibility(View.VISIBLE);
+    }
     private void startTimerFoco(ImageButton button_dot) {     //Timer para que aparezca el foco solo 5s
         hiden=true;
         timer_focus = new CountDownTimer(time_left_focus, 1000) {
@@ -248,7 +252,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
             String message_correct = correctsString + " " + counterCorrect + " " + incorrectsString + " " + counterFailed + " " + ofTotalString + " " + total;
             Toast.makeText(this, message_correct, Toast.LENGTH_LONG).show();
 
-            saveFocusOn();
             finish();
         }
         else {
@@ -285,17 +288,21 @@ public class SecondExerciseActivity extends AppCompatActivity {
 
 
     private void resume(){
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        isOn=(Boolean) map.get(isFocus);
         if(isOn){
+            size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
+            drawFocusDot();
             if(hiden){
                 startTimerFoco(button_dot);
             }
             else{
-                foco.setVisibility(View.VISIBLE);
                 startTimer();
             }
         }
         else{
-            foco.setVisibility(View.INVISIBLE);
+            focus.setVisibility(View.INVISIBLE);
             if(hiden){
                 hiden=false;
                 button_dot.setVisibility(View.VISIBLE);
@@ -322,10 +329,6 @@ public class SecondExerciseActivity extends AppCompatActivity {
     }
 
 
-    private void saveFocusOn(){
-
-        new SaveFocusInfo(getApplicationContext(), isOn);
-    }
 
     //Database
     /**

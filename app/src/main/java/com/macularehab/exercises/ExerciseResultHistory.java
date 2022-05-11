@@ -18,6 +18,7 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -126,7 +127,7 @@ public class ExerciseResultHistory extends AppCompatActivity {
         //Axis
         XAxis xAxis = barChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labelNames));
-        xAxis.setPosition(XAxis.XAxisPosition.TOP_INSIDE);
+        xAxis.setPosition(XAxis.XAxisPosition.TOP);
         xAxis.setDrawLabels(true);
         xAxis.setDrawGridLines(false);
         xAxis.setDrawAxisLine(true);
@@ -138,6 +139,8 @@ public class ExerciseResultHistory extends AppCompatActivity {
         xAxis.setAxisMinimum(AXIS_MINIMUM);
         xAxis.setAxisMaximum(barEntryArrayListCorrects.size());
         xAxis.setTextSize(TOP_TEXT_SIZE);
+
+        barChart.setExtraTopOffset(3f);
 
         barChart.setDrawBorders(true);
         barChart.animateY(DURATION_MILLIS);

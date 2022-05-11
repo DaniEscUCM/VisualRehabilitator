@@ -179,6 +179,7 @@ public class ContactProfessional extends AppCompatActivity {
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{ professionalEmail});
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "MaculaRehabApp:");
         emailIntent.setType("message/rfc822");
         //emailIntent.setType("*/*");
         startActivity(Intent.createChooser(emailIntent, "Choose:"));

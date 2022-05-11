@@ -47,6 +47,10 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(v -> Close(v));
 
+
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
+
         counterCorrect = counterFailed = 0;
         num_miliseconds = SeventeenthExerciseDescriptionActivity.getNumSeconds() * 1000;
         //SEQUENCE N:
@@ -513,6 +517,10 @@ public class SeventeenthExerciseActivity  extends AppCompatActivity {
         setUiListener();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
     private void setUiListener() {
 
         View decorView = getWindow().getDecorView();

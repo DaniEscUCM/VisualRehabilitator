@@ -63,7 +63,7 @@
         android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#2A2D35"
+        android:background="@color/pause_background"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,14 +74,14 @@
             android:id="@+id/home_button"
             android:layout_width="117dp"
             android:layout_height="107dp"
-            app:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/button_home"
             android:scaleType="fitCenter"
+            app:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline34"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/house_icon"
-            app:tint="#D3D1D1" />
+            app:tint="@color/pause_light_gray" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline34"
@@ -97,31 +97,30 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.96" />
 
-        <Switch
-            android:id="@+id/focus_switch1"
-            android:layout_width="200dp"
-            android:layout_height="73dp"
-            android:text="@string/focus_switch"
-            android:textColor="#D3D1D1"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageButton
+            android:id="@+id/settingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/imagebutton_des_settings"
+            android:scaleType="fitEnd"
+            android:tint="@color/pause_light_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/home_button"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.315" />
+            app:layout_constraintTop_toTopOf="@+id/home_button"
+            app:srcCompat="@drawable/settings" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
-            android:textColor="#D3D1D1"
+            android:textColor="@color/pause_light_gray"
             android:textSize="28sp"
             app:layout_constraintBottom_toTopOf="@+id/return_button"
-            app:layout_constraintEnd_toStartOf="@+id/focus_switch1"
-            app:layout_constraintHorizontal_bias="0.53"
-            app:layout_constraintStart_toEndOf="@+id/home_button"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.85" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/return_button"
@@ -135,7 +134,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline36"
             app:srcCompat="@android:drawable/ic_media_play"
-            app:tint="#D3D1D1" />
+            app:tint="@color/pause_light_gray" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline36"

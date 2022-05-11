@@ -1,11 +1,14 @@
 package com.macularehab.professional;
 
 import android.animation.Animator;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -118,6 +121,7 @@ public class ProfessionalHome extends AppCompatActivity {
         loading_imageView.setTop(R.id.linearLayout5);
         loading_imageView.setLeft(R.id.linearLayout5);
         loading_imageView.setRight(R.id.linearLayout5);
+        showLoadingImage();
 
         searchView = (SearchView) findViewById(R.id.professional_home_search_patient_searchView);
         searchView.setOnClickListener(new View.OnClickListener() {
@@ -151,7 +155,7 @@ public class ProfessionalHome extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logOutProfessional();
+                askLogOutConfirmation();
             }
         });
 
@@ -210,6 +214,12 @@ public class ProfessionalHome extends AppCompatActivity {
         super.onResume();
         stopLoadingImage();
         hideNavigationAndStatusBar();
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        askLogOutConfirmation();
     }
 
     public void updatePatientsList(List<Patient> patientList) {
@@ -470,5 +480,29 @@ public class ProfessionalHome extends AppCompatActivity {
                 activeNetwork.isConnected();
 
         return isConnected;
+    }
+
+    private void askLogOutConfirmation() {
+
+        Resources resources = this.getResources();
+        String question = resources.getString(R.string.professional_home_logOut_confirmation_message);
+        String affirmative = resources.getString(R.string.professional_home_logOut_confirmation_message_yes_logOut);
+        String negative = resources.getString(R.string.professional_home_logOut_confirmation_message_no_cancel);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(question)
+                .setPositiveButton(affirmative, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        logOutProfessional();
+                    }
+                })
+                .setNegativeButton(negative, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

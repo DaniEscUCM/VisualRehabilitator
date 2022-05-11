@@ -1,9 +1,12 @@
 package com.macularehab.patient;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -28,9 +31,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
+import com.macularehab.DistanceExercisesActivity;
 import com.macularehab.ExercisesActivity;
 import com.macularehab.IdentificationActivity;
 import com.macularehab.R;
+import com.macularehab.SettingsActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.UploadPatientData;
 import com.macularehab.internalStorage.WriteInternalStorage;
@@ -85,6 +90,8 @@ public class PatientHome extends AppCompatActivity {
         ImageButton goBackButton = findViewById(R.id.patient_home_back_button);
         goBackButton.setVisibility(View.GONE);
 
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
         //getProfessionalUID();
 
         Button dataButton = findViewById(R.id.professional_patient_home_data_button);
@@ -107,14 +114,14 @@ public class PatientHome extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logOut();
+                askLogOutConfirmation();
             }
         });
 
         patientUID = mAuth.getUid();
         getProfessionalUID();
 
-        readFocusSwitch();
+        //readFocusSwitch();
 
         setUiListener();
     }
@@ -159,8 +166,14 @@ public class PatientHome extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        readFocusSwitch();
+        //readFocusSwitch();
         hideNavigationAndStatusBar();
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        askLogOutConfirmation();
     }
 
     private void getProfessionalUID() {
@@ -183,6 +196,11 @@ public class PatientHome extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     private void loadPatientInfoToInternalStorage() {
@@ -229,35 +247,11 @@ public class PatientHome extends AppCompatActivity {
 
     private void goToExercises() {
 
-        Intent intent = new Intent(this, ExercisesActivity.class);
+        Intent intent = new Intent(this, DistanceExercisesActivity.class);
         startActivity(intent);
     }
 
-    private void readFocusSwitch() {
-
-        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-
-        Switch focus_switch = findViewById(R.id.focus_switch);
-        if (map.containsKey(isFocus)) {
-            focus_switch.setChecked((Boolean) map.get(isFocus));
-            //Listener
-            focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-                HashMap<String, Object> mapS = readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
-                mapS.put(isFocus, isChecked);
-                Gson gson = new Gson();
-                String data = gson.toJson(mapS);
-                WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-                writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
-                databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                        child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isChecked);
-            });
-        }
-    }
-
     private void uploadPatientData() {
-
         UploadPatientData uploadPatientData = new UploadPatientData();
         uploadPatientData.upload(getApplicationContext(), filenameCurrentPatient);
     }
@@ -324,5 +318,29 @@ public class PatientHome extends AppCompatActivity {
                 activeNetwork.isConnected();
 
         return isConnected;
+    }
+
+    private void askLogOutConfirmation() {
+
+        Resources resources = this.getResources();
+        String question = resources.getString(R.string.patient_home_logOut_confirmation_message);
+        String affirmative = resources.getString(R.string.patient_home_logOut_confirmation_message_yes_logOut);
+        String negative = resources.getString(R.string.patient_home_logOut_confirmation_message_no_cancel);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(question)
+                .setPositiveButton(affirmative, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        logOut();
+                    }
+                })
+                .setNegativeButton(negative, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

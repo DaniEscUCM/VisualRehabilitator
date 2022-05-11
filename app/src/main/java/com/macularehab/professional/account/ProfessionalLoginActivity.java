@@ -16,6 +16,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,8 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.AuthResult;
@@ -51,9 +55,11 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     private final String SHARED_PREF_FILE = "com.macularehab.sharedprefs.user_is_logged";
     private final String SHARED_PREF_PROFESSIONAL_USER_LOGGED_KEY = "professional_user_logged";
 
-    EditText mailP, paswP;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    private TextInputLayout emailInputLayout;
+    private TextInputLayout passwordInputLayout;
+    private TextInputEditText mailP, paswP;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
     Professional prof;
     final boolean[] encontrado = {false,false}; //[0]name in db [1]pasw correct
 
@@ -72,6 +78,9 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
         databaseReference = firebaseDatabase.getReference();
 
+        //TextInputEditText
+        emailInputLayout = findViewById(R.id.professional_login_email_textInputLayout);
+        passwordInputLayout = findViewById(R.id.professional_login_password_textInputLayout);
         mailP = findViewById(R.id.editTextTextProfessionalEmail);
         paswP = findViewById(R.id.editTextTextProfessionalPassword);
 
@@ -106,6 +115,44 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         constraintLayout.addView(layout_loading);
 
         loading_imageView = findViewById(R.id.general_loading_image);
+
+        //TextInputEditText
+        //Email
+        mailP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                emailInputLayout.setError(null);
+            }
+            @Override
+            public void afterTextChanged(Editable s) { }
+        });
+        emailInputLayout.setErrorIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                emailInputLayout.setError(null);
+            }
+        });
+
+        //TextInputEditText
+        //Password
+        paswP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                passwordInputLayout.setError(null);
+            }
+            @Override
+            public void afterTextChanged(Editable s) { }
+        });
+        passwordInputLayout.setErrorIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                passwordInputLayout.setError(null);
+            }
+        });
 
         showLoadingImage();
         //setImagesInvisible();
@@ -177,7 +224,7 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
         String mail = mailP.getText().toString().trim();
         String pasword = paswP.getText().toString().trim();
 
-        if(mail.equals("") || pasword.equals("")){
+        if(mail.equals("") || pasword.equals("") || pasword.length() < 6){
 
             stopLoadingImage();
             validate();
@@ -363,13 +410,19 @@ public class ProfessionalLoginActivity extends AppCompatActivity {
     }
 
     public void validate(){ //to make sure everything is filled
-        String mail = mailP.getText().toString();
-        String pasw = paswP.getText().toString();
+
+        Resources resources = this.getResources();
+
+        String mail = String.valueOf(mailP.getText());
+        String pasw = String.valueOf(paswP.getText());
         if(mail.equals("")){
-            mailP.setError("required");
+            emailInputLayout.setError(resources.getString(R.string.required));
         }
         if(pasw.equals("")){
-            paswP.setError("required");
+            passwordInputLayout.setError(resources.getString(R.string.required));
+        }
+        if (pasw.length() < 6) {
+            passwordInputLayout.setError(resources.getString(R.string.error_weak_password));
         }
     }
 

@@ -73,9 +73,11 @@
         android:id="@+id/button_patient_continue_signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/purple_500"
+        android:layout_marginBottom="16dp"
         android:text="@string/hint_patient_signup_signup_button"
         android:textSize="48sp"
+        app:backgroundTint="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/guidelineVertical2"
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/guideline6" />

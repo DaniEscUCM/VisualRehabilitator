@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -37,6 +38,7 @@ import com.macularehab.internalStorage.WriteInternalStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Random;
 
 public class TwelfthExerciseActivity extends AppCompatActivity {
@@ -56,6 +58,10 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
     private ImageButton button_mouth;
     private ImageButton button_nose;
     private boolean hiden=false;
+    private MediaPlayer mediaPlayer;
+
+    private int size_focus;
+    private ArrayList<Pair<Float, Float>> coor_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +79,13 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
+
+        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
         isOn=(Boolean) patientHashMap.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
 
         counterCorrect = counterFailed = 0;
         counter = current = -1;
@@ -102,6 +109,7 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
         }
+        size_focus = (int) Math.round(metric_unit * (double) patientHashMap.get("focus_size"));
         move();
 
         /*
@@ -219,6 +227,7 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) { time_left_focus=millisUntilFinished;}
             public void onFinish() {
                 hiden=false;
+                cancelTimer_1();
                 startTimer();
             }
         };
@@ -226,63 +235,23 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
     }
 
     private void focus_function () {
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree = (LinkedTreeMap) patientHashMap.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
-
         if (current == 0) {
             focus = findViewById(R.id.focus_left_eye);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 1) {
             focus = findViewById(R.id.focus_right_eye);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else if (current == 2) {
             focus = findViewById(R.id.focus_nose);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
         else{
             focus = findViewById(R.id.focus_mouth);
-            focus.getLayoutParams().width = size;
-            focus.getLayoutParams().height = size;
-            focus.requestLayout();
-            Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(btm_manual_left);
-            DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-            all_dots.draw(canvas);
-            focus.setImageBitmap(btm_manual_left);
-            focus.setVisibility(View.VISIBLE);
-            startTimerFoco();
         }
+        focus.getLayoutParams().width = size;
+        focus.getLayoutParams().height = size;
+        focus.requestLayout();
+        drawFocusDot();
+        startTimerFoco();
 
     }
 
@@ -292,6 +261,7 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             public void onFinish() {
                 ++counterFailed; //they didn't touch when they should have.
                 move();
+                timer.cancel();
             }
         };
         timer.start();
@@ -302,9 +272,27 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             timer.cancel();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void drawFocusDot(){
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, size_focus / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus.setImageBitmap(btm_manual_left);
+        focus.setVisibility(View.VISIBLE);
+    }
     private void resume(){
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        isOn=(Boolean) map.get(isFocus);
+        size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
         if(isOn){
             if(hiden){
+                drawFocusDot();
                 startTimerFoco();
             }
             else{
@@ -363,7 +351,8 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
 
             saveFocusOn();
             finish();
-        } else {
+        } else if (counter < total) {
+
             ImageView focus_left_eye = findViewById(R.id.focus_left_eye);
             ImageView focus_right_eye = findViewById(R.id.focus_right_eye);
             ImageView focus_mouth = findViewById(R.id.focus_mouth);
@@ -382,6 +371,7 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             current = rand1;
             TextView text = findViewById(R.id.text_findX);
             Resources res = TwelfthExerciseActivity.this.getResources();
+            stopPlayer();
             if(current == 0) {
                 text.setText(res.getString(R.string.eleventh_exercise_find_left_eye));
             }
@@ -394,6 +384,9 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
             else {
                 text.setText(res.getString(R.string.eleventh_exercise_find_mouth));
             }
+            playAudio(current);
+
+
             if(isOn) {
                 focus_function();
             }
@@ -469,5 +462,73 @@ public class TwelfthExerciseActivity extends AppCompatActivity {
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void playAudio(int type) {
+
+        if (mediaPlayer != null) {
+            stopAndPlay(type);
+        }
+        else {
+
+            Resources resources = this.getResources();
+            String lan = resources.getString(R.string.eleventh_exercise_find_left_eye);
+            if (lan.charAt(0) == 'F') {
+
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.left_eye);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.right_eye);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.nose);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.mouth);
+                }
+            }
+            else {
+                if (type == 0) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ojo_izquierdo);
+                }
+                else if (type == 1) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.ojo_derecho);
+                }
+                else if (type == 2) {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.nariz);
+                }
+                else {
+                    mediaPlayer = MediaPlayer.create(this, R.raw.boca);
+                }
+            }
+
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    stopPlayer();
+                }
+            });
+
+            mediaPlayer.start();
+        }
+    }
+
+    private void stopPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    private void stopAndPlay(int type) {
+        stopPlayer();
+        playAudio(type);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlayer();
     }
 }

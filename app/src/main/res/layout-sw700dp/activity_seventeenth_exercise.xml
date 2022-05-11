@@ -22,14 +22,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15125" />
+        app:layout_constraintGuide_begin="109dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.12109375" />
+        app:layout_constraintGuide_percent="0.12" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -40,30 +40,16 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <TextView
-        android:id="@+id/text_find_n"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_n"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline37"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
-
-    <TextView
         android:id="@+id/text_sequence_n"
         android:layout_width="900dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/sequence_n"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_n" />
+        app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
     <ImageButton
         android:id="@+id/button_n_correct1"
@@ -141,7 +127,7 @@
     <ImageButton
         android:id="@+id/button_n_correct4"
         android:layout_width="37dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         android:background="@color/green"
         app:backgroundTint="@color/grey"
@@ -156,7 +142,7 @@
     <ImageButton
         android:id="@+id/button_n_incorrect3"
         android:layout_width="40dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -169,7 +155,7 @@
     <ImageButton
         android:id="@+id/button_n_incorrect4"
         android:layout_width="110dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -182,7 +168,7 @@
     <ImageButton
         android:id="@+id/button_n_correct5"
         android:layout_width="38dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         android:background="@color/green"
         app:backgroundTint="@color/grey"
@@ -197,7 +183,7 @@
     <ImageButton
         android:id="@+id/button_n_correct6"
         android:layout_width="45dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         android:background="@color/green"
         app:backgroundTint="@color/grey"
@@ -212,7 +198,7 @@
     <ImageButton
         android:id="@+id/button_n_incorrect5"
         android:layout_width="40dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -225,7 +211,7 @@
     <ImageButton
         android:id="@+id/button_n_correct7"
         android:layout_width="40dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         android:background="@color/green"
         app:backgroundTint="@color/grey"
@@ -310,30 +296,16 @@
 
 
     <TextView
-        android:id="@+id/text_find_o"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_o"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline33"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
-
-    <TextView
         android:id="@+id/text_sequence_o"
         android:layout_width="900dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/sequence_o"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_o" />
+        app:layout_constraintTop_toTopOf="@+id/guideline33" />
 
     <ImageButton
         android:id="@+id/button_o_correct1"
@@ -410,7 +382,7 @@
     <ImageButton
         android:id="@+id/button_o_incorrect3"
         android:layout_width="70dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -423,7 +395,7 @@
     <ImageButton
         android:id="@+id/button_o_correct4"
         android:layout_width="47dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         android:background="@color/green"
         app:backgroundTint="@color/grey"
@@ -438,7 +410,7 @@
     <ImageButton
         android:id="@+id/button_o_incorrect4"
         android:layout_width="92dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -451,7 +423,7 @@
     <ImageButton
         android:id="@+id/button_o_correct5"
         android:layout_width="47dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         android:background="@color/green"
         app:backgroundTint="@color/grey"
@@ -466,7 +438,7 @@
     <ImageButton
         android:id="@+id/button_o_correct6"
         android:layout_width="47dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         android:background="@color/green"
         app:backgroundTint="@color/grey"
@@ -481,7 +453,7 @@
     <ImageButton
         android:id="@+id/button_o_incorrect5"
         android:layout_width="170dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:alpha="0.01"
         app:backgroundTint="@color/grey"
         android:contentDescription="@string/button_for_click"
@@ -519,32 +491,18 @@
         app:layout_constraintTop_toTopOf="@+id/text_sequence_o"
         app:srcCompat="@drawable/border_rectangle_v2" />
 
-    <TextView
-        android:id="@+id/text_find_v"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/fifteenth_exercise_find_v"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline39"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:textStyle="bold" />
 
     <TextView
         android:id="@+id/text_sequence_v"
         android:layout_width="900dp"
         android:layout_height="80dp"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="@string/sequence_v"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_find_v" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <ImageButton
         android:id="@+id/button_v_correct1"
@@ -802,6 +760,7 @@
         app:srcCompat="@drawable/border_rectangle_v2" />
 
     <View
+        android:id="@+id/view10"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
@@ -810,6 +769,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view33"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
@@ -826,6 +786,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
+        android:id="@+id/view34"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/holo_red_dark"
@@ -854,7 +815,7 @@
         android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#2A2D35"
+        android:background="@color/pause_background"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline33"
         app:layout_constraintEnd_toEndOf="parent"
@@ -865,14 +826,14 @@
             android:id="@+id/home_button"
             android:layout_width="117dp"
             android:layout_height="107dp"
-            app:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/button_home"
             android:scaleType="fitCenter"
+            app:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline34"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/house_icon"
-            app:tint="#D3D1D1" />
+            app:tint="@color/pause_light_gray" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline34"
@@ -888,24 +849,25 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.96" />
 
-        <Switch
-            android:id="@+id/focus_switch1"
-            android:layout_width="394dp"
-            android:layout_height="73dp"
-            android:text="@string/focus_switch"
-            android:textColor="#D3D1D1"
-            android:textSize="48sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageButton
+            android:id="@+id/settingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/imagebutton_des_settings"
+            android:scaleType="fitEnd"
+            android:tint="@color/pause_light_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/home_button"
             app:layout_constraintEnd_toStartOf="@+id/guideline35"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.501" />
+            app:layout_constraintTop_toTopOf="@+id/home_button"
+            app:srcCompat="@drawable/settings" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
-            android:textColor="#D3D1D1"
+            android:textColor="@color/pause_light_gray"
             android:textSize="60sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline36"
             app:layout_constraintEnd_toEndOf="parent"
@@ -924,7 +886,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline36"
             app:srcCompat="@android:drawable/ic_media_play"
-            app:tint="#D3D1D1" />
+            app:tint="@color/pause_light_gray" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline36"
@@ -940,7 +902,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.45" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

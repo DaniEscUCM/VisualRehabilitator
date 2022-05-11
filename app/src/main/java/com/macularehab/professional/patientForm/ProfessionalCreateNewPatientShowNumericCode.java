@@ -1,7 +1,10 @@
 package com.macularehab.professional.patientForm;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -116,6 +119,12 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
         hideNavigationAndStatusBar();
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        showMessageCanNotReturn();
+    }
+
     private void getPatientName() {
 
         databaseReference.child(db_professional).child(mAuth.getUid()).child(db_patients).child(String.valueOf(numericCode)).child("name")
@@ -162,5 +171,20 @@ public class ProfessionalCreateNewPatientShowNumericCode extends AppCompatActivi
         }
 
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void showMessageCanNotReturn() {
+
+        Resources resources = this.getResources();
+        String message = resources.getString(R.string.professional_patientForm_cannot_return_message);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

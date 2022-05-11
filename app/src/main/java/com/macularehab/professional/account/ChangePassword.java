@@ -274,7 +274,7 @@ public class ChangePassword extends AppCompatActivity {
             error_length = true;
         }
         if (repeatNewPassword.length() < 6) {
-            newPasswordLayout.setError(resources.getString(R.string.professional_home_changePassword_error_passwordWeak));
+            repeatNewPasswordLayout.setError(resources.getString(R.string.professional_home_changePassword_error_passwordWeak));
             all_ok = false;
             error_length = true;
         }
@@ -477,4 +477,17 @@ public class ChangePassword extends AppCompatActivity {
 
         decorView.setSystemUiVisibility(uiOptions);
     }
+
+    /*private void askChangeConfirmation(String st_error) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(st_error)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }*/
 }

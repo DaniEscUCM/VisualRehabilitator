@@ -60,12 +60,8 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) patientHashMap.get(isFocus));
-        focus_on=(Boolean) patientHashMap.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            focus_on=!focus_on;
-        });
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
         ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(v -> Close());
@@ -460,6 +456,10 @@ public class FourteenthExerciseActivity extends AppCompatActivity {
         setUiListener();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
     private void setUiListener() {
 
         View decorView = getWindow().getDecorView();

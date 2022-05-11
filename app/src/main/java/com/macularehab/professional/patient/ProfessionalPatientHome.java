@@ -18,8 +18,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
+import com.macularehab.DistanceExercisesActivity;
 import com.macularehab.ExercisesActivity;
 import com.macularehab.R;
+import com.macularehab.SettingsActivity;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 import com.macularehab.professional.ProfessionalHome;
@@ -31,10 +33,7 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     private TextView patientName_textView;
     private Button dataButton;
     private Button exercisesButton;
-    private LinearLayout dataManagementButtons;
     private final String filenameCurrentPatient = "CurrentPatient.json";
-    private final String isFocus = "focusIsOn";
-    private boolean isOn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,47 +44,23 @@ public class ProfessionalPatientHome extends AppCompatActivity {
         patientName_textView = findViewById(R.id.patient_home_patient_name_textView);
 
         ImageButton goBackButton = findViewById(R.id.patient_home_back_button);
-        goBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveInfo();
-                Close();
-            }
+        goBackButton.setOnClickListener(v -> {
+            //saveInfo();
+            Close();
         });
+
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
         dataButton = findViewById(R.id.professional_patient_home_data_button);
-        dataButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotToDataActivity();
-            }
-        });
+        dataButton.setOnClickListener(v -> gotToDataActivity());
 
         exercisesButton = findViewById(R.id.professional_patient_home_exercises_button);
-        exercisesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToExercisesActivity();
-            }
-        });
+        exercisesButton.setOnClickListener(v -> goToExercisesActivity());
 
         Button logoutButton = findViewById(R.id.professional_patient_home_logout_button);
         logoutButton.setVisibility(View.INVISIBLE);
 
-        dataManagementButtons = findViewById(R.id.professional_patient_info_dataManagement_linearLayout);
-        dataManagementButtons.setVisibility(View.GONE);
-
-        //readPatientName();
-
-        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-
-        Switch focus_switch = findViewById(R.id.focus_switch);
-        focus_switch.setChecked((Boolean) map.get(isFocus));
-        isOn=(Boolean) map.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
 
         setUiListener();
     }
@@ -130,16 +105,6 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         hideNavigationAndStatusBar();
-
-        ReadInternalStorage readInternalStorage = new ReadInternalStorage();
-        HashMap<String, Object> map= readInternalStorage.read(getApplicationContext(), filenameCurrentPatient);
-
-        Switch focus_switch = findViewById(R.id.focus_switch);
-        focus_switch.setChecked((Boolean) map.get(isFocus));
-        isOn=(Boolean) map.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
     }
 
     private void readPatientName() {
@@ -154,38 +119,23 @@ public class ProfessionalPatientHome extends AppCompatActivity {
     }
 
     private void gotToDataActivity() {
-        saveInfo();
         Intent intent = new Intent(this, ProfessionalPatientInfo.class);
         startActivity(intent);
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     private void goToExercisesActivity() {
-        saveInfo();
-        Intent intent = new Intent(this, ExercisesActivity.class);
+        Intent intent = new Intent(this, DistanceExercisesActivity.class);
         startActivity(intent);
     }
 
     private void Close(){
-        saveInfo();
         Intent intent = new Intent(this, ProfessionalHome.class);
         startActivity(intent);
-    }
-
-    private void saveInfo(){
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
-
-        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentPatient);
-
-        mapS.put(isFocus, isOn);
-
-        Gson gson = new Gson();
-        String data = gson.toJson(mapS);
-        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-        writeInternalStorage.write(getApplicationContext(), filenameCurrentPatient, data);
-        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
     }
 
     private void hideNavigationAndStatusBar() {

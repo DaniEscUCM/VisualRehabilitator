@@ -8,6 +8,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -165,8 +166,10 @@ public class LogIn {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
 
+                            FirebaseAuthException firebaseAuthException = (FirebaseAuthException) task.getException();
+
                             LogIn.this.user_signedIn_successfully = false;
-                            LogIn.this.patientLogin.user_login_failed();
+                            LogIn.this.patientLogin.user_login_failed(firebaseAuthException);
                         }
                     }
                 });

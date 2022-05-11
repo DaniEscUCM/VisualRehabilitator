@@ -16,7 +16,6 @@ import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.draws.DrawDot;
-import com.macularehab.exercises.ExerciseWriteDB;
 import com.macularehab.internalStorage.ReadInternalStorage;
 import com.macularehab.internalStorage.WriteInternalStorage;
 
@@ -45,7 +43,10 @@ public class FirstExerciseActivity extends AppCompatActivity {
     private ImageButton button_dot;
     private final String isFocus = "focusIsOn";
     private boolean isOn;
-
+    private int size_focus;
+    private ImageView focus;
+    private int metric_unit, size;
+    private ArrayList<Pair<Float, Float>> coor_result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +57,7 @@ public class FirstExerciseActivity extends AppCompatActivity {
         HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
 
         button_dot = findViewById(R.id.dot_button);
-        button_dot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { results(); }
-        });
+        button_dot.setOnClickListener(v -> results());
 
         ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(v -> close());
@@ -70,40 +68,32 @@ public class FirstExerciseActivity extends AppCompatActivity {
         ImageButton button_resume = findViewById(R.id.return_button);
         button_resume.setOnClickListener(v->resume());
 
-        Switch focus_switch = findViewById(R.id.focus_switch1);
-        focus_switch.setChecked((Boolean) map.get(isFocus));
-        isOn=(Boolean) map.get(isFocus);
-        focus_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isOn=!isOn;
-        });
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
         //Calculate based on screen size
         Display display_measure = getWindowManager().getDefaultDisplay();
         Point point = new Point();
         display_measure.getSize(point);
         DisplayMetrics display = this.getResources().getDisplayMetrics();
-        int metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
-        int size = metric_unit*20;//10cm
+        metric_unit=(int) Math.round(display.xdpi * 0.19685); //0.5cm
+        size = metric_unit*20;//10cm
         if(size>point.y){
             metric_unit = (int) Math.floor(point.y/(double) 20);
             size= metric_unit*20;
         }
-        ImageView focus = findViewById(R.id.focus_point);
-        ArrayList<Pair<Float, Float>> coor_result;
-        LinkedTreeMap tree= (LinkedTreeMap)map.get("focus");
-        coor_result = new ArrayList<>();
-        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+        focus = findViewById(R.id.focus_point);
 
         focus.getLayoutParams().width = size;
         focus.getLayoutParams().height = size;
         focus.requestLayout();
 
-        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(btm_manual_left);
-        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, metric_unit / (float) 2, metric_unit, Color.RED);
-        all_dots.draw(canvas);
-        focus.setImageBitmap(btm_manual_left);
-        focus.setVisibility(View.VISIBLE);
+        LinkedTreeMap tree= (LinkedTreeMap)map.get("focus");
+        coor_result = new ArrayList<>();
+        coor_result.add(new Pair<>(Float.parseFloat(tree.get("first").toString()), Float.parseFloat(tree.get("second").toString())));
+        size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
+
+        drawFocusDot();
 
         button_dot.getLayoutParams().width = metric_unit*6;
         button_dot.getLayoutParams().height = metric_unit*6;
@@ -112,28 +102,6 @@ public class FirstExerciseActivity extends AppCompatActivity {
          start();
 
         setUiListener();
-    }
-
-    private void setUiListener() {
-
-        View decorView = getWindow().getDecorView();
-
-        decorView.setOnSystemUiVisibilityChangeListener
-                (new View.OnSystemUiVisibilityChangeListener() {
-                    @Override
-                    public void onSystemUiVisibilityChange(int visibility) {
-                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
-                            final Handler handler = new Handler(Looper.getMainLooper());
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    //Do something after 2000ms
-                                    hideNavigationAndStatusBar();
-                                }
-                            }, 2000);
-                        }
-                    }
-                });
     }
 
     @Override
@@ -154,6 +122,19 @@ public class FirstExerciseActivity extends AppCompatActivity {
         hideNavigationAndStatusBar();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    private void drawFocusDot(){
+        Bitmap btm_manual_left = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(btm_manual_left);
+        DrawDot all_dots = new DrawDot(size / (float) 2, size / (float) 2, coor_result, size_focus / (float) 2, metric_unit, Color.RED);
+        all_dots.draw(canvas);
+        focus.setImageBitmap(btm_manual_left);
+        focus.setVisibility(View.VISIBLE);
+    }
     private void pause_menu(){
         timer.cancel();
         button_dot.setClickable(false);
@@ -170,7 +151,14 @@ public class FirstExerciseActivity extends AppCompatActivity {
     }
 
     private void resume(){
+        ReadInternalStorage readIS = new ReadInternalStorage();
+        HashMap<String, Object> map = readIS.read(getApplicationContext(), filenameCurrentUser);
+        isOn=(Boolean) map.get(isFocus);
         button_dot.setClickable(true);
+        if(isOn){
+            size_focus =  (int) Math.round(metric_unit * (double) map.get("focus_size"));
+            drawFocusDot();
+        }
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.GONE);
         ImageView inst = findViewById(R.id.volver);
@@ -196,7 +184,6 @@ public class FirstExerciseActivity extends AppCompatActivity {
     }
 
     private void results(){
-        saveFocusOn();
         Intent i = new Intent( this, ResultsFirstExerciseActivity.class );
         startActivity(i);
         finish();
@@ -208,21 +195,28 @@ public class FirstExerciseActivity extends AppCompatActivity {
         finish();
     }
 
-    private void saveFocusOn(){
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://macularehab-default-rtdb.europe-west1.firebasedatabase.app");
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
 
-        ReadInternalStorage readInternalStorageS = new ReadInternalStorage();
-        HashMap<String, Object> mapS= readInternalStorageS.read(getApplicationContext(), filenameCurrentUser);
 
-        mapS.put(isFocus, isOn);
+    private void setUiListener() {
 
-        Gson gson = new Gson();
-        String data = gson.toJson(mapS);
-        WriteInternalStorage writeInternalStorage = new WriteInternalStorage();
-        writeInternalStorage.write(getApplicationContext(), filenameCurrentUser, data);
-        databaseReference.child("Professional").child((String) mapS.get("professional_uid")).
-                child("Patients").child((String) mapS.get("patient_numeric_code")).child(isFocus).setValue(isOn);
+        View decorView = getWindow().getDecorView();
+
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                            final Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //Do something after 2000ms
+                                    hideNavigationAndStatusBar();
+                                }
+                            }, 2000);
+                        }
+                    }
+                });
     }
 
     private void hideNavigationAndStatusBar() {

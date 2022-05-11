@@ -3,38 +3,27 @@ package com.macularehab;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.DisplayMetrics;
-import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.google.gson.internal.LinkedTreeMap;
-import com.macularehab.draws.DrawDot;
 import com.macularehab.exercises.ExerciseWriteDB;
-import com.macularehab.exercises.SaveFocusInfo;
 import com.macularehab.exercises.ShowResultActivity;
-import com.macularehab.internalStorage.ReadInternalStorage;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SixteenthExerciseActivity extends AppCompatActivity {
 
-    private final int exercise_id = 15, maxCorrect = 21;
+    private final int exercise_id = 15, maxCorrect = 22;
     private int counterCorrect, counterFailed, num_miliseconds, total=0;
     private CountDownTimer timer_1 = null;
     private HashMap<String, Object> patientHashMap;
@@ -64,6 +53,9 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
 
         ImageButton button_home = findViewById(R.id.home_button);
         button_home.setOnClickListener(v -> Close(v));
+
+        ImageButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(v -> gotToSettings());
 
         counterCorrect = counterFailed = 0;
         num_miliseconds = SixteenthExerciseDescriptionActivity.getNumSeconds() * 1000;
@@ -136,12 +128,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_n_correct1.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -151,12 +139,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_n_correct2.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -166,12 +150,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_n_correct3.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -181,12 +161,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_n_correct4.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -196,12 +172,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_n_correct5.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -211,12 +183,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_n_correct6.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -226,12 +194,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_n_correct7.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -261,12 +225,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_o_correct1.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -276,12 +236,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_o_correct2.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -291,12 +247,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_o_correct3.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -306,12 +258,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_o_correct4.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -321,12 +269,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_o_correct5.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -336,12 +280,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_o_correct6.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -386,12 +326,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct1.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -401,12 +337,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct2.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -416,12 +348,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct3.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -431,12 +359,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct4.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -446,12 +370,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct5.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -461,12 +381,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct6.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                 if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -476,12 +392,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct7.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -492,12 +404,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct9.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -507,12 +415,8 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
                 ++counterCorrect;
                 total++;
                 button_v_correct10.setTextColor(Color.GREEN);
-                if(total==21){
-                    timer_1.cancel();
-                    counterFailed = counterFailed + maxCorrect - counterCorrect;
-                    writeResultInDataBase(counterCorrect, counterFailed);
-                    showResults(counterCorrect, counterFailed);
-                    finish();
+                if(total==maxCorrect){
+                    finish_exercise();
                 }
             }
         });
@@ -540,6 +444,10 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
         setUiListener();
     }
 
+    private void gotToSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
     private void setUiListener() {
 
         View decorView = getWindow().getDecorView();
@@ -585,6 +493,14 @@ public class SixteenthExerciseActivity extends AppCompatActivity {
         unblock_buttons();
         ConstraintLayout menu=findViewById(R.id.menu);
         menu.setVisibility(View.GONE);
+    }
+
+    private void finish_exercise(){
+        timer_1.cancel();
+        counterFailed = counterFailed + maxCorrect - counterCorrect;
+        writeResultInDataBase(counterCorrect, counterFailed);
+        showResults(counterCorrect, counterFailed);
+        finish();
     }
 
     private void unblock_buttons() {

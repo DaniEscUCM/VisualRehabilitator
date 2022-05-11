@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.gson.internal.LinkedTreeMap;
 import com.macularehab.R;
@@ -177,11 +178,8 @@ public class PatientDataInfoActivity extends AppCompatActivity {
 
     private void setInvisibleButtons() {
 
-        //LinearLayout editAndDeleteLinearLayot = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
-        //editAndDeleteLinearLayot.setVisibility(View.INVISIBLE);
-
         LinearLayout editAndDeleteLinearLayot = findViewById(R.id.linearLayoutPatientInfo);
-        LinearLayout deleteView = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
+        ConstraintLayout deleteView = findViewById(R.id.professional_patient_info_editAndDelete_linearLayout);
         editAndDeleteLinearLayot.removeView(deleteView);
     }
 

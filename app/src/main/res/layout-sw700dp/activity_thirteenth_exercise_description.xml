@@ -70,7 +70,7 @@
         android:background="@drawable/border_seconds"
         android:hint="@string/seconds"
         android:inputType="number"
-        android:text="@string/num_seconds"
+        android:text="@string/num_seconds_v2"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"
@@ -122,15 +122,17 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
 
-    <Switch
-        android:id="@+id/focus_switch"
-        android:layout_width="394dp"
-        android:layout_height="73dp"
-        android:text="@string/focus_switch"
-        android:textSize="48sp"
+    <ImageButton
+        android:id="@+id/settingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/imagebutton_des_settings"
+        android:scaleType="fitEnd"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settings" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline39"

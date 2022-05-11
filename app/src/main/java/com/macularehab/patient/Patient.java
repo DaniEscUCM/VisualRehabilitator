@@ -26,6 +26,7 @@ public class Patient {
     private String date_last_test;
     private boolean focusIsOn;
     private Exercise exercise;
+    private double focus_size;
 
     /*** visual difficulties in children and adults ***/
     private boolean read;
@@ -62,11 +63,12 @@ public class Patient {
 
     private ArrayList<Boolean> checkBox;
 
+
     public Patient() {
 
         checkBox = new ArrayList<>(33);
         for (int i = 0; i < 33; i++) checkBox.add(false);
-
+        focus_size = 1;
         hasAccount = false;
         focusIsOn = true;
         date_last_test = "01/01/01";
@@ -234,6 +236,10 @@ public class Patient {
     public void setExercise(Exercise exercise) {
         this.exercise = exercise;
     }
+
+    public double getFocus_size() { return focus_size;   }
+
+    public void setFocus_size(double focus_size) {  this.focus_size = focus_size; }
 
     @Override
     public String toString() {

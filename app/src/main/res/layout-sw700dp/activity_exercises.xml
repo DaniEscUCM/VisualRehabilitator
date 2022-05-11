@@ -10,12 +10,12 @@
         android:id="@+id/imageButton_back_exerc_menu"
         android:layout_width="100dp"
         android:layout_height="101dp"
-        app:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
         android:contentDescription="@string/imagebutton_des_back"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:scaleType="fitCenter"
+        app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@id/guideline2"
-        app:srcCompat="?attr/actionModeCloseDrawable"/>
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/chooseExercise_exerciseText_textView"
@@ -37,7 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/border_for_layout"
+        android:background="@drawable/border_for_layout_scroll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,13 +64,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/second_exercise"
                 android:focusable="true"
                 android:text="@string/second_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
 
             <Button
                 android:id="@+id/button_exercise3"
@@ -89,13 +89,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/fourth_exercise"
                 android:focusable="true"
                 android:text="@string/fourth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
 
             <Button
                 android:id="@+id/button_exercise5"
@@ -114,13 +114,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/sixth_exercise"
                 android:focusable="true"
                 android:text="@string/sixth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
 
             <Button
                 android:id="@+id/button_exercise7"
@@ -138,13 +138,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/eighth_exercise"
                 android:focusable="true"
                 android:text="@string/eighth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
 
             <Button
                 android:id="@+id/button_exercise9"
@@ -163,13 +163,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/tenth_exercise"
                 android:focusable="true"
                 android:text="@string/tenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
 
             <Button
                 android:id="@+id/button_exercise11"
@@ -188,13 +188,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/twelfth_exercise"
                 android:focusable="true"
                 android:text="@string/twelfth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
 
             <Button
                 android:id="@+id/button_exercise13"
@@ -213,13 +213,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/fourteenth_exercise"
                 android:focusable="true"
                 android:text="@string/fourteenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
 
             <Button
                 android:id="@+id/button_exercise15"
@@ -232,18 +232,20 @@
                 android:text="@string/fifteenth_exercise"
                 android:textAlignment="viewStart"
                 android:textSize="48sp" />
+
             <Button
                 android:id="@+id/button_exercise16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                app:backgroundTint="@color/pink_dark"
                 android:clickable="true"
                 android:contentDescription="@string/sixteenth_exercise"
                 android:focusable="true"
                 android:text="@string/sixteenth_exercise"
                 android:textAlignment="viewStart"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                app:backgroundTint="@color/pink_dark" />
+
             <Button
                 android:id="@+id/button_exercise17"
                 android:layout_width="match_parent"

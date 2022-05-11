@@ -19,6 +19,8 @@
     <color name="blue_dark">#004cff</color>
     <color name="green_light">#5eeb5e</color>
     <color name="green">#00FF00</color>
+    <color name="pause_light_gray">#D3D1D1</color>
+    <color name="pause_background">#2A2D35</color>
 
     
 </resources>
